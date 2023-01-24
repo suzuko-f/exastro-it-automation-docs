@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
-    <title>目次 &#8212; Documentation  ドキュメント</title>
+    <title>ITA_システム構成/環境構築ガイド Ansible-driver編 &#8212; Documentation  ドキュメント</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/option.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
@@ -124,29 +124,41 @@
 <div id="tableOfContents">
   <div id="tocButton"></div>
   <ul>
-<li><a class="reference internal" href="#"><strong>目次</strong></a></li>
-<li><a class="reference internal" href="#id2">はじめに</a></li>
-<li><a class="reference internal" href="#id3">機能</a></li>
+<li><a class="reference internal" href="#">ITA_システム構成/環境構築ガイド Ansible-driver編</a><ul>
+<li><a class="reference internal" href="#id1">はじめに</a></li>
+<li><a class="reference internal" href="#id2">機能</a></li>
+<li><a class="reference internal" href="#id3">システム構成</a><ul>
 <li><a class="reference internal" href="#id4">システム構成</a><ul>
-<li><a class="reference internal" href="#id5">2.1　システム構成</a></li>
-<li><a class="reference internal" href="#id7">システムの通信要件</a></li>
+<li><a class="reference internal" href="#id5">オールインワン構成イメージ</a></li>
+<li><a class="reference internal" href="#ansible-automation-controller">Ansible Automation Controller 構成イメージ</a></li>
+<li><a class="reference internal" href="#ansible-automation-controller-aee">Ansible Automation Controller + AEE 構成イメージ</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id8">システム要件</a></li>
+<li><a class="reference internal" href="#id6">システムの通信要件</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id7">システム要件</a><ul>
+<li><a class="reference internal" href="#backyard">Backyard</a></li>
+<li><a class="reference internal" href="#ansible-core">Ansible Core</a></li>
+<li><a class="reference internal" href="#id8">Ansible Automation Controller</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#playbook">Playbook連携</a></li>
 <li><a class="reference internal" href="#id9">初期設定</a><ul>
-<li><a class="reference internal" href="#id10">　共有ディレクトリの準備</a></li>
-<li><a class="reference internal" href="#ita">　ITA作業用ディレクトリの準備</a></li>
-<li><a class="reference internal" href="#id11">　ITA作業用ディレクトリの公開</a></li>
-<li><a class="reference internal" href="#ansible-automation-controller">　Ansible Automation Controllerへのファイル転送ユーザーの準備</a></li>
-<li><a class="reference internal" href="#ansible-automation-controllergit">　Ansible Automation Controllerと連携するGitへのユーザーの準備</a></li>
-<li><a class="reference internal" href="#id12">　パッケージ確認</a></li>
-<li><a class="reference internal" href="#id13">　必要リソース準備</a><ul>
-<li><a class="reference internal" href="#id14">5.7.1アプリケーション</a></li>
-<li><a class="reference internal" href="#id15">5.7.2ユーザートークン</a></li>
+<li><a class="reference internal" href="#id10">共有ディレクトリの準備</a></li>
+<li><a class="reference internal" href="#ita">ITA作業用ディレクトリの準備</a></li>
+<li><a class="reference internal" href="#id11">ITA作業用ディレクトリの公開</a></li>
+<li><a class="reference internal" href="#id12">Ansible Automation Controllerへのファイル転送ユーザーの準備</a></li>
+<li><a class="reference internal" href="#ansible-automation-controllergit">Ansible Automation Controllerと連携するGitへのユーザーの準備</a></li>
+<li><a class="reference internal" href="#id13">パッケージ確認</a></li>
+<li><a class="reference internal" href="#id14">必要リソース準備</a><ul>
+<li><a class="reference internal" href="#id15">アプリケーション</a></li>
+<li><a class="reference internal" href="#id16">ユーザートークン</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#proxy">　Proxyの設定</a></li>
+<li><a class="reference internal" href="#proxy">Proxyの設定</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -161,7 +173,7 @@
   <ul>
     <li><a href="../../../../index.html">HOME</a></li>
     
-    <li><strong>目次</strong></li>
+    <li>ITA_システム構成/環境構築ガイド Ansible-driver編</li>
   </ul>
 </div>
 
@@ -169,415 +181,247 @@
 <article class="divInner">
 <div class="body" role="main">
 
-  <a class="reference internal image-reference" href="../../../../_images/image1.png"><img alt="../../../../_images/image1.png" src="../../../../_images/image1.png" style="width: 3.35069in; height: 0.78542in;" /></a>
-<p>ITA_システム構成/環境構築ガイド</p>
-<p>Ansible-driver編</p>
-<p><em>－</em>第1.10版<em>－</em></p>
-<p>Copyright © NEC Corporation 2020. All rights reserved.</p>
-<p>免責事項</p>
-<p>本書の内容はすべて日本電気株式会社が所有する著作権に保護されています。</p>
-<p>本書の内容の一部または全部を無断で転載および複写することは禁止されています。</p>
-<p>本書の内容は将来予告なしに変更することがあります。</p>
-<p>日本電気株式会社は、本書の技術的もしくは編集上の間違い、欠落について、一切責任を負いません。</p>
-<p>日本電気株式会社は、本書の内容に関し、その正確性、有用性、確実性その他いかなる保証もいたしません。</p>
-<p>商標</p>
-<ul class="simple">
-<li><dl class="simple">
-<dt>LinuxはLinus</dt><dd><p>Torvalds氏の米国およびその他の国における登録商標または商標です。</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Red Hatは、Red Hat,</dt><dd><p>Inc.の米国およびその他の国における登録商標または商標です。</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Apache、Apache Tomcat、Tomcatは、Apache Software</dt><dd><p>Foundationの登録商標または商標です。</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Oracle、MySQLは、Oracle Corporation</dt><dd><p>およびその子会社、関連会社の米国およびその他の国における登録商標です。</p>
-</dd>
-</dl>
-</li>
-<li><p>MariaDBは、MariaDB Foundationの登録商標または商標です。</p></li>
-<li><p>Ansibleは、Red Hat, Inc.の登録商標または商標です。</p></li>
-<li><p>AnsibleTowerは、Red Hat, Inc.の登録商標または商標です。</p></li>
-<li><dl class="simple">
-<dt>Ansible Automation Controllerは、Red Hat,</dt><dd><p>Inc.の登録商標または商標です。</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Ansible Automation Pratformは、Red Hat,</dt><dd><p>Inc.の登録商標または商標です。</p>
-</dd>
-</dl>
-</li>
-</ul>
-<p>その他、本書に記載のシステム名、会社名、製品名は、各社の登録商標もしくは商標です。</p>
-<p>なお、® マーク、TMマークは本書に明記しておりません。</p>
-<p>※本書では「Exastro IT Automation」を「ITA」として記載します。</p>
-<p>※「Ansible Tower」はAnsible Automation Pratform2.0以降で「Ansible
-Automation Controller」に名称が変更になりました。本書での「Ansible
-Automation Controller」の記載は、「Ansible
-Tower」も含めた記載となっています。</p>
+  <section id="ita-ansible-driver">
+<h1>ITA_システム構成/環境構築ガイド Ansible-driver編<a class="headerlink" href="#ita-ansible-driver" title="この見出しへのパーマリンク">¶</a></h1>
 <section id="id1">
-<h1><strong>目次</strong><a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h1>
-<p><a class="reference external" href="#はじめに">はじめに</a> <a class="reference external" href="#はじめに">3</a></p>
-<p><a class="reference external" href="#機能">1 機能</a> <a class="reference external" href="#機能">4</a></p>
-<p><a class="reference external" href="#システム構成">2 システム構成</a> <a class="reference external" href="#システム構成">5</a></p>
-<p><a class="reference external" href="#システム要件">3 システム要件</a> <a class="reference external" href="#システム要件">8</a></p>
-<p><a class="reference external" href="#playbook連携">4 Playbook連携</a> <a class="reference external" href="#playbook連携">9</a></p>
-<p><a class="reference external" href="#初期設定">5 初期設定</a> <a class="reference external" href="#初期設定">10</a></p>
-<p><a class="reference external" href="#共有ディレクトリの準備">5.1. 共有ディレクトリの準備</a>
-<a class="reference external" href="#共有ディレクトリの準備">10</a></p>
-<p><a class="reference external" href="#ita作業用ディレクトリの準備">5.2. ITA作業用ディレクトリの準備</a>
-<a class="reference external" href="#ita作業用ディレクトリの準備">10</a></p>
-<p><a class="reference external" href="#ita作業用ディレクトリの公開">5.3. ITA作業用ディレクトリの公開</a>
-<a class="reference external" href="#ita作業用ディレクトリの公開">11</a></p>
-<p><a class="reference external" href="#ansible-automation-controllerへのファイル転送ユーザーの準備">5.4. Ansible Automation
-Controllerへのファイル転送ユーザーの準備</a>
-<a class="reference external" href="#ansible-automation-controllerへのファイル転送ユーザーの準備">11</a></p>
-<p><a class="reference external" href="#ansible-automation-controllerと連携するgitへのユーザーの準備">5.5. Ansible Automation
-Controllerと連携するGitへのユーザーの準備</a>
-<a class="reference external" href="#ansible-automation-controllerと連携するgitへのユーザーの準備">12</a></p>
-<p><a class="reference external" href="#パッケージ確認">5.6. パッケージ確認</a> <a class="reference external" href="#パッケージ確認">12</a></p>
-<p><a class="reference external" href="#必要リソース準備">5.7. 必要リソース準備</a> <a class="reference external" href="#必要リソース準備">13</a></p>
-<p><a class="reference external" href="#アプリケーション">5.7.1アプリケーション</a> <a class="reference external" href="#アプリケーション">13</a></p>
-<p><a class="reference external" href="#ユーザートークン">5.7.2ユーザートークン</a> <a class="reference external" href="#ユーザートークン">13</a></p>
-<p><a class="reference external" href="#proxyの設定">5.8. Proxyの設定</a> <a class="reference external" href="#proxyの設定">14</a></p>
+<h2>はじめに<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">本書では、ITAでAnsibleオプション機能（以下、Ansible driver）として運用する為のシステム構成と環境構築について説明します。</div>
+<div class="line">ITA Ansible driverを利用するにあたっては、ITA基本機能が構築済であることが前提です。</div>
+<div class="line">ITA基本機能の構築に関しては、「 <a class="reference internal" href="../it_automation_base/architecture.html"><span class="doc">Exastro IT Automation システム構成</span></a> 」をご覧ください。</div>
+</div>
 </section>
 <section id="id2">
-<h1>はじめに<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h1>
-<blockquote>
-<div><p>本書では、ITAでAnsibleオプション機能（以下、Ansible
-driver）として運用する為のシステム構成と環境構築について説明します。</p>
-<p>ITA　Ansible
-driverを利用するにあたっては、ITA基本機能が構築済であることが前提です。ITA基本機能の構築に関しては、「システム構成／環境構築ガイド_基本編」をご覧ください。</p>
-</div></blockquote>
-</section>
-<section id="id3">
-<h1>機能<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h1>
-<blockquote>
-<div><p>Ansible driverは以下の機能を提供します。</p>
-</div></blockquote>
-<p>表 1 機能名</p>
-<table class="docutils align-default">
+<h2>機能<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">Ansible driverは以下の機能を提供します。</div>
+</div>
+<table class="docutils align-left" id="id17">
+<caption><span class="caption-text">機能名</span><a class="headerlink" href="#id17" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>No</p></th>
 <th class="head"><p>機能名</p></th>
 <th class="head"><p>用途</p></th>
-<th class="head"><p>WEB</p>
-<p>コン
-テンツ</p>
-</th>
-<th class="head"><p>Ba
-ckyard</p>
-<p>コン
-テンツ</p>
-</th>
+<th class="head"><p>WEBコンテンツ</p></th>
+<th class="head"><p>Backyardコンテンツ</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>1</p></td>
-<td><p>Ansible
-driver</p></td>
-<td><p>ITAからAnsible Core かAnsible
-Automation
-Controller
-を介してサーバ、ストレージ、ネ
-ットワーク機器の構成管理を行う</p></td>
-<td><p>●</p></td>
-<td><p>●</p></td>
+<td><p>Ansible driver</p></td>
+<td><p>ITAからAnsible Core かAnsibleAutomation Controllerを介してサーバ、ストレージ、ネットワーク機器の構成管理を行う</p></td>
+<td><p>〇</p></td>
+<td><p>〇</p></td>
 </tr>
 <tr class="row-odd"><td><p>2</p></td>
-<td><p>Ansible
-driver</p>
-<p>(Agent)</p>
-</td>
-<td><p>Ansible Core
-を外部から操作するため
-のRestAPIを提供するコンテンツ</p></td>
-<td><p>●</p></td>
+<td><p>Ansible driver (Agent)</p></td>
+<td><p>Ansible Coreを外部から操作を外部から操作するためのRestAPIを提供するコンテンツ</p></td>
+<td><p>〇</p></td>
 <td><p>－</p></td>
 </tr>
 </tbody>
 </table>
 </section>
+<section id="id3">
+<h2>システム構成<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h2>
 <section id="id4">
-<h1>システム構成<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h1>
-<section id="id5">
-<span id="id6"></span><h2>2.1　システム構成<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h2>
-<blockquote>
-<div><p>Ansible driver機能のシステム構成は、ITAシステムと同じです。</p>
-<p>Ansible driver（Agent）機能は、Apache、PHP、Ansible Core
-と構成する必要があります、専用サーバを用意するか、ITAシステムにコンソリデーションすることが可能です。</p>
-<p>Ansible Automation
-Controllerにより、Ansible実行における拡張された機能の利用や、</p>
-<p>可用性を高めた構成で運用することが可能です。</p>
-</div></blockquote>
-<p>ITAシステムおよびAnsible
-Coreとは個別の専用サーバを用意する必要があります。</p>
-<blockquote>
-<div><p>また実行するplaybookをAnsible Vaultで暗号化するため、Ansible Core
-[Ansible Driver (Agent)]が必要となります。
-(Backyardサーバとコンソリデーションすることも可能)</p>
-<p>Ansible実行の対象機器の接続台数が多く、Ansible実行サーバのスケールアウトが必要な場合、Ansible
-Automation Controllerによる構成を推奨します。</p>
-</div></blockquote>
-<p>以下に主なAnsible
-driver機能利用の構成パターンと構成イメージを記載します。</p>
-<p>※ITAシステムは省略した構成図を記載。詳細は「システム構成／環境構築ガイド_基本編」を参照してください。</p>
-<blockquote>
-<div><p>表 2.1　システム構成パターン</p>
-</div></blockquote>
-<table class="docutils align-default">
+<h3>システム構成<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">Ansible driver機能のシステム構成は、ITAシステムと同じです。</div>
+<div class="line"><br /></div>
+<div class="line">Ansible driver（Agent）機能は、Apache、PHP、Ansible Core と構成する必要があります、専用サーバを用意するか、ITAシステムにコンソリデーションすることが可能です。</div>
+<div class="line">Ansible Automation Controllerにより、Ansible実行における拡張された機能の利用や、可用性を高めた構成で運用することが可能です。</div>
+<div class="line"><br /></div>
+<div class="line">ITAシステムおよびAnsible Coreとは個別の専用サーバを用意する必要があります。</div>
+<div class="line">また実行するplaybookをAnsible Vaultで暗号化するため、Ansible Core [Ansible Driver (Agent)]が必要となります。 (Backyardサーバとコンソリデーションすることも可能)</div>
+<div class="line"><br /></div>
+<div class="line">Ansible実行の対象機器の接続台数が多く、Ansible実行サーバのスケールアウトが必要な場合、Ansible Automation Controllerによる構成を推奨します。</div>
+<div class="line">以下に主なAnsible driver機能利用の構成パターンと構成イメージを記載します。</div>
+<div class="line">※ITAシステムは省略した構成図を記載。詳細は「 <a class="reference internal" href="../it_automation_base/architecture.html"><span class="doc">Exastro IT Automation システム構成</span></a> 」を参照してください。</div>
+<div class="line"><br /></div>
+</div>
+<table class="docutils align-left" id="id18">
+<caption><span class="caption-text">システム構成パターン</span><a class="headerlink" href="#id18" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
-<tr class="row-odd"><th class="head"><p>N
-o</p></th>
+<tr class="row-odd"><th class="head"><p>No</p></th>
 <th class="head"><p>構成</p></th>
 <th class="head"><p>説明</p></th>
-<th class="head"><p>Ansible</p>
-<p>スケール
-アウト可否</p>
-</th>
+<th class="head"><p>Ansibleスケールアウト可否</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>1</p></td>
-<td><p>オ
-ールインワン構成</p></td>
-<td><p>ITAシステムとAnsible Core
-[Ansible Driver
-(Agent)]　を同一サーバ上に構成</p></td>
+<td><p>オールインワン構成</p></td>
+<td><p>ITAシステムとAnsible Core [Ansible Driver (Agent)] を同一サーバ上に構成</p></td>
 <td><p>×</p></td>
 </tr>
 <tr class="row-odd"><td><p>2</p></td>
-<td><p>Ansible
-Core分離構成</p></td>
-<td><p>ITA
-システムと個別に構築したAnsible
-Core [Ansible Driver (Agent)]
-との連携構成</p></td>
+<td><p>Ansible Core分離構成</p></td>
+<td><p>ITAシステムと個別に構築したAnsible Core [Ansible Driver (Agent)] との連携構成</p></td>
 <td><p>×</p></td>
 </tr>
 <tr class="row-even"><td><p>3</p></td>
-<td><p>Ansible
-Automation
-Controller構成</p></td>
-<td><p>ITAシステム (Ansible Core/
-Ansible Driver (Agent)) と
-Ansible Automation Controller
-の連携構成</p></td>
+<td><p>Ansible Automation Controller構成</p></td>
+<td><p>ITAシステム (Ansible Core/Ansible Driver (Agent)) と Ansible Automation Controllerの連携構成</p></td>
 <td><p>〇</p></td>
 </tr>
 </tbody>
 </table>
-<p>システム構成イメージは「システム構成／環境構築ガイド_基本編」の「2.1
-システム構成」</p>
-<p>を参照してください。</p>
-<a class="reference internal image-reference" href="../../../../_images/image2.png"><img alt="ダイアグラム 自動的に生成された説明" src="../../../../_images/image2.png" style="width: 6.69236in; height: 2.92847in;" /></a>
+<section id="id5">
+<h4>オールインワン構成イメージ<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h4>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../_images/Allinone_configuration_diagram.png"><img alt="オールインワン構成イメージ" src="../../../../_images/Allinone_configuration_diagram.png" style="width: 8.69236in; height: 4.92847in;" /></a>
+</figure>
 </section>
-<section id="id7">
-<h2>システムの通信要件<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h2>
-<p>本システム構成において、各サービス間の通信要件は以下の通りです。</p>
-<p>ITAシステム本体の通信要件の詳細は「システム構成／環境構築ガイド_基本編」を参照してください。</p>
-<blockquote>
-<div><p>表 2.2通信要件一覧</p>
-</div></blockquote>
-<table class="docutils align-default">
+<section id="ansible-automation-controller">
+<h4>Ansible Automation Controller 構成イメージ<a class="headerlink" href="#ansible-automation-controller" title="この見出しへのパーマリンク">¶</a></h4>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../_images/AAC_diagram.png"><img alt="Ansible Automation Controller 構成イメージ" src="../../../../_images/AAC_diagram.png" style="width: 9.69236in; height: 4.92847in;" /></a>
+</figure>
+</section>
+<section id="ansible-automation-controller-aee">
+<h4>Ansible Automation Controller + AEE 構成イメージ<a class="headerlink" href="#ansible-automation-controller-aee" title="この見出しへのパーマリンク">¶</a></h4>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../_images/AAC_diagram_AEE.png"><img alt="Ansible Automation Controller 構成イメージ + AEE" src="../../../../_images/AAC_diagram_AEE.png" style="width: 10.69236in; height: 5.23472in;" /></a>
+</figure>
+</section>
+</section>
+<section id="id6">
+<h3>システムの通信要件<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">本システム構成において、各サービス間の通信要件は以下の通りです。</div>
+<div class="line">ITAシステム本体の通信要件の詳細は「 <a class="reference internal" href="../it_automation_base/architecture.html"><span class="doc">Exastro IT Automation システム構成</span></a> 」を参照してください。</div>
+<div class="line"><br /></div>
+</div>
+<table class="docutils align-left" id="id19">
+<caption><span class="caption-text">通信要件一覧</span><a class="headerlink" href="#id19" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
-<tr class="row-odd"><th class="head"><ul class="simple">
-<li></li>
-</ul>
-<p><em>通
-信
-番
-号※
-1*</em></p>
+<tr class="row-odd"><th class="head"><p><strong>通信番号</strong></p>
+<p><strong>※１</strong></p>
 </th>
 <th class="head"><p><strong>FROM</strong></p></th>
 <th class="head"><p><strong>TO</strong></p></th>
-<th class="head"><p>**
-プロトコル**</p>
-<ul class="simple">
-<li></li>
-</ul>
-<p><em>[ポート番号
-※2]*</em></p>
+<th class="head"><p><strong>プロトコル</strong></p>
+<p><strong>[ポート番号 ※２]</strong></p>
 </th>
 <th class="head"><p><strong>主な用途</strong></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><ol class="arabic simple">
-<li></li>
-</ol>
+<tr class="row-even"><td><p>①</p></td>
+<td><p>ITAサーバ</p>
+<p>(Web/AP 機能)</p>
 </td>
-<td><p>I
-TAサーバ</p>
-<p>(Web
-/AP機能)</p>
-</td>
-<td><p>Ansible
-Core</p></td>
+<td><p>Ansible Core</p></td>
 <td><p>http(s)</p>
-<p>[
-80(443)/tcp]</p>
+<p>[80(443)/tcp]</p>
 </td>
-<td><p>REST
-APIリクエストを投入する
-(緊急停止)</p></td>
+<td><p>REST APIリクエストを投入する(緊急停止)</p></td>
 </tr>
-<tr class="row-odd"><td><ol class="arabic simple" start="2">
-<li></li>
-</ol>
+<tr class="row-odd"><td><p>②</p></td>
+<td><p>ITAサーバ</p>
+<p>(Backyard 機能)</p>
 </td>
-<td><p>I
-TAサーバ</p>
-<p>(Backy
-ard機能)</p>
-</td>
-<td><p>Ansible
-Core</p></td>
+<td><p>Ansible Core</p></td>
 <td><p>http(s)</p>
-<p>[
-80(443)/tcp]</p>
+<p>[80(443)/tcp]</p>
 </td>
-<td><p>REST
-APIリクエストを投入する
-(処理実行等)</p></td>
+<td><p>REST APIリクエストを投入する(処理実行等)</p></td>
 </tr>
-<tr class="row-even"><td><ol class="arabic simple" start="3">
-<li></li>
-</ol>
+<tr class="row-even"><td><p>③</p></td>
+<td rowspan="2"><p>Ansible Core</p></td>
+<td><p>ストレージ機器</p></td>
+<td><p>ファイルアクセス</p>
+<p>(tcp or ストレージ I/O)</p>
 </td>
-<td><p>Ansible
-Core</p></td>
-<td><p>ス
-トレー
-ジ機器</p></td>
-<td><p>ファ
-イルアクセス</p>
-<p>(tcp or
-ス
-トレージI/O)</p>
+<td><p>Ansible コマンド実行時の実行情報</p>
+<p>(Playbook , host_vars 等)の参照</p>
 </td>
-<td><p>Ansibleコマ
-ンド実行時の実行情報(Pla
-ybook,host_vars等)の参照</p></td>
 </tr>
 <tr class="row-odd"><td><p>④</p></td>
-<td></td>
-<td><p>対
-象機器</p></td>
+<td><p>対象機器</p></td>
 <td><p>Any</p>
-<p>(ssh
-[22/tcp]</p>
-<p>telnet
-[23/tcp]
-等※3）</p>
+<p>(ssh [22/tcp ] telnet [23/tcp] 等 ※３)</p>
 </td>
-<td><p>自動構成の
-対象機器へのコマンド実行</p></td>
+<td><p>自動構成の対象機器へのコマンド実行</p></td>
 </tr>
 <tr class="row-even"><td><p>⑤</p></td>
-<td><p>I
-TAサーバ</p>
-<p>(Web
-/AP機能)</p>
+<td><p>ITAサーバ</p>
+<p>(Web/AP 機能)</p>
 </td>
-<td><p>Ansible
-Aut
-omation
-Con
-troller</p></td>
+<td rowspan="3"><p>Ansible Automation Controller</p></td>
 <td><p>http(s)</p>
-<p>[
-80(443)/tcp]</p>
+<p>[80(443)/tcp]</p>
 </td>
-<td><p>REST
-APIリクエストを投入する
-(緊急停止)</p></td>
+<td><p>REST APIリクエストを投入する(緊急停止)</p></td>
 </tr>
-<tr class="row-odd"><td><p>⑥</p></td>
-<td><p>I
-TAサーバ</p>
-<p>(Backy
-ard機能)</p>
+<tr class="row-odd"><td rowspan="2"><div class="line-block">
+<div class="line">⑥</div>
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line">⑦</div>
+</div>
 </td>
-<td></td>
+<td rowspan="2"><p>ITAサーバ</p>
+<p>(Backyard 機能)</p>
+</td>
 <td><p>http(s)</p>
-<p>[
-80(443)/tcp]</p>
+<p>[80(443)/tcp]</p>
 </td>
-<td><p>REST
-APIリクエストを投入する</p>
-<p>(実行データリ
-ソース作成／処理実行等)</p>
+<td><p>REST APIリクエストを投入する</p>
+<p>(実行データリソース作成／処理実行等)</p>
 </td>
 </tr>
-<tr class="row-even"><td><p>⑦</p></td>
-<td></td>
-<td></td>
-<td><p>ssh [22/tcp]</p></td>
-<td><p>Ansibleコマンド実行
-時の実行情報(Playbook,h
-ost_vars等)をITA作業用デ
-ィレクトリに転送（scp）</p></td>
+<tr class="row-even"><td><p>ssh [22/tcp]</p></td>
+<td><p>Ansible コマンド実行時の実行情報</p>
+<p>(Playbook , host_vars 等)をITA作業用ディレクトリに転送 (scp)</p>
+</td>
 </tr>
-<tr class="row-odd"><td><p>⑧</p></td>
-<td><p>Ansible
-Au
-tomation
-Co
-ntroller</p></td>
-<td><p>IT
-Aサーバ</p>
-<p>(Backya
-rd機能)</p>
+<tr class="row-odd"><td rowspan="2"><div class="line-block">
+<div class="line">⑧</div>
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line">⑨</div>
+</div>
+</td>
+<td rowspan="2"><p>Ansible Automation Controller</p></td>
+<td><p>ITAサーバ</p>
+<p>(Backyard 機能)</p>
 </td>
 <td><p>ssh [22/tcp]</p></td>
-<td><p>ITAに作成されてい
-るGitリポジトリをSCM管理
-ディレクトリに連携（git
-clone）</p></td>
+<td><p>ITAに作成されている Gitリポジトリを SCM管理ディレクトリに連携 (git clone)</p></td>
 </tr>
-<tr class="row-even"><td><p>⑨</p></td>
-<td></td>
-<td><p>対
-象機器</p></td>
+<tr class="row-even"><td><p>対象機器</p></td>
 <td><p>Any</p>
-<p>(ssh
-[22/tcp]</p>
-<p>telnet
-[23/tcp]
-等※3）</p>
+<p>(ssh [22/tcp ] telnet [23/tcp] 等 ※３)</p>
 </td>
-<td><p>自動構成の
-対象機器へのコマンド実行</p></td>
+<td><p>自動構成の対象機器へのコマンド実行</p></td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<div><p>※1「2.1システム構成」の構成イメージに上記番号と紐づく通信番号を記載。</p>
-<p>※2 ポート番号は標準的なポート番号を記載。</p>
-<p>※3 代表的な例を記載。Ansibleモジュールにより利用プロトコルが異なる。</p>
-</div></blockquote>
+<div class="line-block">
+<div class="line">※1「2.1システム構成」の構成イメージに上記番号と紐づく通信番号を記載。</div>
+<div class="line">※2 ポート番号は標準的なポート番号を記載。</div>
+<div class="line">※3 代表的な例を記載。Ansibleモジュールにより利用プロトコルが異なる。</div>
+</div>
 </section>
 </section>
-<section id="id8">
-<h1>システム要件<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h1>
-<blockquote>
-<div><p>Ansible driver
-はITAシステムのシステム要件に準拠するため、「システム構成／環境構築ガイド_基本編」を参照してください。ここではBackyard、Ansible
-Core、Ansible Automation Controllerの要件を記載します。</p>
-<p>●Backyard</p>
-</div></blockquote>
-<p>表 3-1.Ansible Backｙard必要Linuxコマンド</p>
-<table class="docutils align-default">
+<section id="id7">
+<h2>システム要件<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">Ansible driver はITAシステムのシステム要件に準拠するため、「 <a class="reference internal" href="../it_automation_base/architecture.html"><span class="doc">Exastro IT Automation システム構成</span></a> 」を参照してください。</div>
+<div class="line">ここではBackyard、Ansible Core、Ansible Automation Controllerの要件を記載します。</div>
+</div>
+<section id="backyard">
+<h3>Backyard<a class="headerlink" href="#backyard" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="docutils align-left" id="id20">
+<caption><span class="caption-text">Ansible Backyard必要Linuxコマンド</span><a class="headerlink" href="#id20" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 27.3%" />
+<col style="width: 72.7%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>コマンド</strong></p></th>
 <th class="head"><p><strong>注意事項</strong></p></th>
@@ -589,34 +433,39 @@ Core、Ansible Automation Controllerの要件を記載します。</p>
 </tr>
 </tbody>
 </table>
-<p>表 3-2.Ansible BackYard必要外部モジュール</p>
-<table class="docutils align-default">
+<table class="docutils align-left" id="id21">
+<caption><span class="caption-text">Ansible BackYard必要外部モジュール</span><a class="headerlink" href="#id21" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 20.0%" />
+<col style="width: 45.0%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>外
-部ﾓｼﾞｭｰﾙ</strong></p></th>
-<th class="head"><p><strong>バー
-ジョン</strong></p></th>
+<tr class="row-odd"><th class="head"><p><strong>外部モジュール</strong></p></th>
+<th class="head"><p><strong>バージョン</strong></p></th>
 <th class="head"><p><strong>注意事項</strong></p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>php-yaml</p></td>
-<td><p>2.1.0
-以上</p></td>
+<td><p>2.1.0 以上</p></td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<div><p>●Ansible Core</p>
-</div></blockquote>
-<p>表 3-3 Ansible Core システム要件</p>
-<table class="docutils align-default">
+</section>
+<section id="ansible-core">
+<h3>Ansible Core<a class="headerlink" href="#ansible-core" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="docutils align-left" id="id22">
+<caption><span class="caption-text">Ansible Core システム要件</span><a class="headerlink" href="#id22" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 20.0%" />
+<col style="width: 45.0%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>パ
-ッケージ</strong></p></th>
-<th class="head"><p><strong>バ
-ージョン</strong></p></th>
+<tr class="row-odd"><th class="head"><p><strong>パッケージ</strong></p></th>
+<th class="head"><p><strong>バージョン</strong></p></th>
 <th class="head"><p><strong>注意事項</strong></p></th>
 </tr>
 </thead>
@@ -631,30 +480,32 @@ Core、Ansible Automation Controllerの要件を記載します。</p>
 </tr>
 <tr class="row-even"><td><p>pywinrm</p></td>
 <td></td>
-<td><p>Pythonモジ
-ュールです。Yumでインストールできない場合
-、pipを使用してインストールしてください。</p></td>
+<td><p>Python モジュールです。Yum でインストールできない場合、pip を使用してインストールしてください。</p></td>
 </tr>
 <tr class="row-odd"><td><p>Pexpect</p></td>
 <td></td>
-<td><p>Pythonモジュールです。</p></td>
+<td><p>Python モジュールです。</p></td>
 </tr>
-<tr class="row-even"><td><p>telnet</p></td>
-<td><p>－</p></td>
-<td><p>構成対象にtelnet接続する場合に必要です。</p></td>
+<tr class="row-even"><td><p>talnet</p></td>
+<td><p>ー</p></td>
+<td><p>構成対象に telnet 接続する場合に必要です。</p></td>
 </tr>
 <tr class="row-odd"><td><p>Apache</p></td>
-<td><p>2.4系</p></td>
-<td><p>ITAシステ
-ムと異なるサーバで運用の場合に必要です。</p>
-<p>パッケージ/バージョ
-ンはITAシステムサーバに合わせてください。</p>
+<td><p>2.4 系</p></td>
+<td><div class="line-block">
+<div class="line">ITA システムと異なるサーバで運用の場合に必要です。</div>
+<div class="line">パッケージ/バージョンは ITA システムサーバに合わせてください。</div>
+</div>
 </td>
 </tr>
 </tbody>
 </table>
-<p>表 3-4 Ansible Driver必要Linuxコマンド</p>
-<table class="docutils align-default">
+<table class="docutils align-left" id="id23">
+<caption><span class="caption-text">Ansible Driver必要Linuxコマンド</span><a class="headerlink" href="#id23" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 27.3%" />
+<col style="width: 72.7%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>コマンド</strong></p></th>
 <th class="head"><p><strong>注意事項</strong></p></th>
@@ -666,90 +517,82 @@ Core、Ansible Automation Controllerの要件を記載します。</p>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<div><p>●Ansible Automation Controller</p>
-</div></blockquote>
-<p>表 3-5 Ansible Automation Controllerシステム要件</p>
-<table class="docutils align-default">
+</section>
+<section id="id8">
+<h3>Ansible Automation Controller<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h3>
+<table class="docutils align-left" id="id24">
+<caption><span class="caption-text">Ansible Automation Controllerシステム要件</span><a class="headerlink" href="#id24" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 20.0%" />
+<col style="width: 45.0%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>パッケージ</strong></p></th>
-<th class="head"><ul class="simple">
-<li></li>
-</ul>
-<p><em>バージ
-ョン*</em></p>
-</th>
+<th class="head"><p><strong>バージョン</strong></p></th>
 <th class="head"><p><strong>注意事項</strong></p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Ansible Tower</p></td>
-<td><p>3.
-5.0以上</p></td>
-<td><p>3.5.0以前
-のバージョンでユーザー/パスワード
-による認証方式には対応できません。</p></td>
+<td><p>3.5.0 以上</p></td>
+<td><p>3.5.0 以前のバージョンでユーザー/パスワードによる認証方式には対応できません。</p></td>
 </tr>
-<tr class="row-odd"><td><p>Ansible Automation
-Controller</p></td>
-<td><p>4.
-0.0以上</p></td>
+<tr class="row-odd"><td><p>Ansible Automation Controller</p></td>
+<td><p>4.0.0 以上</p></td>
 <td></td>
 </tr>
 </tbody>
 </table>
 </section>
+</section>
 <section id="playbook">
-<h1>Playbook連携<a class="headerlink" href="#playbook" title="この見出しへのパーマリンク">¶</a></h1>
-<blockquote>
-<div><p>ITAとAnsible Core 及びAnsible Automation
-Controller間のPlaybook連携について説明します。</p>
-<p>図4-1 ITAとAnsible Core間のPlaybook連携図</p>
-<p>図4-1 ITAとAnsible Tower3.x間のPlaybook連携図</p>
-<p>Ansible Tower3.xではSCMタイプを「手動」で行っていましたが、Ansible
-Automation
-Controller4.xではSCMタイプを「手動」にして各データリソース登録と実行を連続して行うと実行時にエラーとなる事象が発生するようになったため、Gitを介してPlaybook一式を連携するSCMタイプ「Git」に変更しています。</p>
-<p>図4-3 ITAとAnsible Automation Controller4.x間のPlaybook連携図</p>
-</div></blockquote>
+<h2>Playbook連携<a class="headerlink" href="#playbook" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">ITAとAnsible Core 及びAn</div>
+</div>
+<p>sible Automation Controller間のPlaybook連携について説明します。</p>
+<figure class="align-default" id="id25">
+<a class="reference internal image-reference" href="../../../../_images/image2a_1.png"><img alt="ITAとAnsible Core間のPlaybook連携図" src="../../../../_images/image2a_1.png" style="width: 6.69236in; height: 2.92847in;" /></a>
+<figcaption>
+<p><span class="caption-text">ITAとAnsible Core間のPlaybook連携図</span><a class="headerlink" href="#id25" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id26">
+<a class="reference internal image-reference" href="../../../../_images/image2a_2.png"><img alt="ITAとAnsible Tower3.x間のPlaybook連携図" src="../../../../_images/image2a_2.png" style="width: 6.69236in; height: 2.92847in;" /></a>
+<figcaption>
+<p><span class="caption-text">ITAとAnsible Tower3.x間のPlaybook連携図</span><a class="headerlink" href="#id26" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<div class="line-block">
+<div class="line">Ansible Tower3.xではSCMタイプを「手動」で行っていましたが、Ansible Automation Controller4.xではSCMタイプを「手動」にして各データリソース登録と実行を連続して行うと実行時にエラーとなる事象が発生するようになったため、Gitを介してPlaybook一式を連携するSCMタイプ「Git」に変更しています。</div>
+</div>
+<figure class="align-default" id="id27">
+<a class="reference internal image-reference" href="../../../../_images/image2a_3.png"><img alt="ITAとAnsible Automation Controller4.x間のPlaybook連携図" src="../../../../_images/image2a_3.png" style="width: 6.69236in; height: 2.92847in;" /></a>
+<figcaption>
+<p><span class="caption-text">ITAとAnsible Automation Controller4.x間のPlaybook連携図</span><a class="headerlink" href="#id27" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="id9">
-<h1>初期設定<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h1>
-<blockquote>
-<div><p>Ansible Core 及びAnsible Automation
-Controllerインストール後、実行エンジンに応じて各設定を行って下さい。</p>
-</div></blockquote>
-<p>表 5 実行エンジンに応じた設定一覧</p>
-<table class="docutils align-default">
+<h2>初期設定<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">Ansible Core 及びAnsible Automation Controllerインストール後、実行エンジンに応じて各設定を行ってください。</div>
+<div class="line"><br /></div>
+</div>
+<table class="docutils align-left" id="id28">
+<caption><span class="caption-text">実行エンジンに応じた設定一覧</span><a class="headerlink" href="#id28" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
-<tr class="row-odd"><th class="head"><p>設定項目</p></th>
-<th class="head"><p>実
-行
-エ
-ン
-ジ
-ン</p></th>
-<th class="head"></th>
-<th class="head"></th>
+<tr class="row-odd"><th class="head" rowspan="2"><p>設定項目</p></th>
+<th class="head" colspan="3"><p>実行エンジン</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Ansible Core</p></th>
+<th class="head"><p>Ansible Tower3.x</p></th>
+<th class="head"><p>Ansible Automation Controller 4.x</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td></td>
-<td><p>A
-nsi
-ble
-C
-ore</p></td>
-<td><p>　An
-sible
-Tow
-er3.x</p></td>
-<td><p>Ansible
-Aut
-omation
-Contro
-ller4.x</p></td>
-</tr>
-<tr class="row-odd"><td><p>共有ディレクトリの準備</p></td>
+<tr class="row-odd"><td><p>共有ディレクトリ</p></td>
 <td><p>〇</p></td>
 <td><p>×</p></td>
 <td><p>×</p></td>
@@ -764,14 +607,12 @@ ller4.x</p></td>
 <td><p>×</p></td>
 <td><p>〇</p></td>
 </tr>
-<tr class="row-even"><td><p>Ansible Automation
-Controllerへのファイル転送ユーザーの準備</p></td>
+<tr class="row-even"><td><p>Ansible Automation  Controllerへのファイル転送ユーザーの準備</p></td>
 <td><p>×</p></td>
 <td><p>〇</p></td>
 <td><p>〇</p></td>
 </tr>
-<tr class="row-odd"><td><p>Ansible Automation
-Controllerと連携するGitへのユーザーの準備</p></td>
+<tr class="row-odd"><td><p>Ansible Automation Controllerと連携するGitへのユーザーの準備</p></td>
 <td><p>×</p></td>
 <td><p>×</p></td>
 <td><p>〇</p></td>
@@ -793,32 +634,34 @@ Controllerと連携するGitへのユーザーの準備</p></td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<div><p>〇:必須　×:不要　△:必要に応じて</p>
-</div></blockquote>
+<div class="line-block">
+<div class="line">〇:必須　×:不要　△:必要に応じて</div>
+</div>
 <section id="id10">
-<h2>　共有ディレクトリの準備<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">¶</a></h2>
-<blockquote>
-<div><p>ITAとAnsible
-Coreからアクセス可能な共有ディレクトリを準備してください。</p>
-<p>ITAとAnsible
-Coreをインストール後、この共有ディレクトリをITAシステムに登録する必要があります。「利用手順マニュアル_Ansible-driver」の「インターフェース情報」を参照し、登録を行ってください。</p>
-</div></blockquote>
+<h3>共有ディレクトリの準備<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">ITAとAnsible Coreからアクセス可能な共有ディレクトリを準備してください。</div>
+<div class="line">ITAとAnsible Coreをインストール後、この共有ディレクトリをITAシステムに登録する必要があります。</div>
+<div class="line">「利用手順マニュアル_Ansible-driver」の「 <a class="reference internal" href="general_operations.html#general-operations-interface-information"><span class="std std-ref">インターフェース情報</span></a> 」を参照し、登録を行ってください。</div>
+</div>
 </section>
 <section id="ita">
-<h2>　ITA作業用ディレクトリの準備<a class="headerlink" href="#ita" title="この見出しへのパーマリンク">¶</a></h2>
-<blockquote>
-<div><p>Ansible Automation
-ControllerサーバにITA作業用ディレクトリを作成してください。</p>
-<p>クラスタ構成の場合は、構成している全てのサーバにディレクトリを作成して下さい。</p>
-<p>ただし、Ansible Automation Controllerのhop
-nodeにはディレクトリ作成不要です。</p>
-</div></blockquote>
-<p>表 5.1-1 ITA作業用ディレクトリの作成情報</p>
-<table class="docutils align-default">
+<h3>ITA作業用ディレクトリの準備<a class="headerlink" href="#ita" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">Ansible Automation ControllerサーバにITA作業用ディレクトリを作成してください。</div>
+<div class="line">クラスタ構成の場合は、構成している全てのサーバにディレクトリを作成してください。</div>
+<div class="line">ただし、Ansible Automation Controllerのhop nodeにはディレクトリ作成不要です。</div>
+<div class="line"><br /></div>
+</div>
+<table class="docutils align-left" id="id29">
+<caption><span class="caption-text">ITA作業用ディレクトリの作成情報</span><a class="headerlink" href="#id29" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 22.6%" />
+<col style="width: 77.4%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>項目</p></th>
-<th class="head"><p>設定値</p></th>
+<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
+<th class="head"><p><strong>設定値</strong></p></th>
 </tr>
 </thead>
 <tbody>
@@ -835,53 +678,50 @@ nodeにはディレクトリ作成不要です。</p>
 </table>
 </section>
 <section id="id11">
-<h2>　ITA作業用ディレクトリの公開<a class="headerlink" href="#id11" title="この見出しへのパーマリンク">¶</a></h2>
-<blockquote>
-<div><p>ブラウザよりAnsible Automation
-Controllerにログインし、「設定」→「ジョブ」→「分離されたジョブに公開するパス」に「/var/lib/exastro/」を設定します。</p>
+<h3>ITA作業用ディレクトリの公開<a class="headerlink" href="#id11" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">ブラウザよりAnsible Automation Controllerにログインし、「設定」→「ジョブ」→「分離されたジョブに公開するパス」に「/var/lib/exastro/」を設定します。</div>
+<div class="line"><br /></div>
+</div>
+<figure class="align-default">
 <a class="reference internal image-reference" href="../../../../_images/image4.png"><img alt="../../../../_images/image4.png" src="../../../../_images/image4.png" style="width: 5.92014in; height: 2.4375in;" /></a>
-</div></blockquote>
+</figure>
 </section>
-<section id="ansible-automation-controller">
-<h2>　Ansible Automation Controllerへのファイル転送ユーザーの準備<a class="headerlink" href="#ansible-automation-controller" title="この見出しへのパーマリンク">¶</a></h2>
-<blockquote>
-<div><p>ITAからAnsible Automation
-Controllerのプロジェクトを生成する際、Ansible Automation
-Controllerの下記ディレクトリにPlaybook一式をファイル転送します。ファイル転送するLinuxユーザーを準備して下さい。</p>
-<p>・SCM管理ディレクトリ(/var/lib/awx/projects)</p>
-<p>※Ansible
-Tower3.xの場合にLinuxユーザーでPlaybook一式をファイル転送します。</p>
-<p>・ITA作業用ディレクトリ(/var/lib/exastro)</p>
-<p>Linuxユーザーは、Ansible Automation
-Controllerインストール時に生成されるawxユーザーにパスワードを設定し使用することを強く推奨します。また、awxユーザー以外のユーザーを用意し使用する場合、SCM管理パス(/var/lib/awx/projects)のパーミッションの変更はRedhatのサポート対象外となりますのでご注意下さい。</p>
-<p>準備したLinuxユーザーは、ITAシステムに登録する必要があります。「利用手順マニュアル_Ansible-driver」の「Ansible
-Automation Controllerホスト一覧」を参照し、登録を行ってください。</p>
-</div></blockquote>
+<section id="id12">
+<h3>Ansible Automation Controllerへのファイル転送ユーザーの準備<a class="headerlink" href="#id12" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">ITAからAnsible Automation ontrollerのプロジェクトを生成する際、Ansible Automation Controllerの下記ディレクトリにPlaybook一式をファイル転送します。ファイル転送するLinuxユーザーを準備してください。</div>
+<div class="line"><br /></div>
+<div class="line">・SCM管理ディレクトリ(/var/lib/awx/projects)</div>
+<div class="line">　※Ansible Tower3.xの場合にLinuxユーザーでPlaybook一式をファイル転送します。</div>
+<div class="line">・ITA作業用ディレクトリ(/var/lib/exastro)</div>
+</div>
+<div class="line-block">
+<div class="line">Linuxユーザーは、Ansible Automation Controllerインストール時に生成されるawxユーザーにパスワードを設定し使用することを強く推奨します。また、awxユーザー以外のユーザーを用意し使用する場合、SCM管理パス(/var/lib/awx/projects)のパーミッションの変更はRedhatのサポート対象外となりますのでご注意ください。</div>
+<div class="line">準備したLinuxユーザーは、ITAシステムに登録する必要があります。「利用手順マニュアル_Ansible-driver」の「Ansible Automation Controllerホスト一覧」を参照し、登録を行ってください。</div>
+</div>
 </section>
 <section id="ansible-automation-controllergit">
-<h2>　Ansible Automation Controllerと連携するGitへのユーザーの準備<a class="headerlink" href="#ansible-automation-controllergit" title="この見出しへのパーマリンク">¶</a></h2>
-<blockquote>
-<div><p>ITAからAnsible Automation
-Controllerのプロジェクトを生成する際のSCMタイプをGitにしています。</p>
+<h3>Ansible Automation Controllerと連携するGitへのユーザーの準備<a class="headerlink" href="#ansible-automation-controllergit" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">連携先のGitリポジトリは、Ansible
-driverのバックヤード機能がインストールされているホストに作成されます。Ansible
-Automation
-Controllerから、このGitリポジトリにssh鍵認証で接続するLinuxユーザーを準備して下さい。</div>
-<div class="line">準備したLinuxユーザーは、ITAシステムに登録する必要があります。「利用手順マニュアル_Ansible-driver」の「インターフェース情報」の「SCM管理
-Git連携先情報」を参照し、登録を行ってください。</div>
+<div class="line">ITAからAnsible Automation Controllerのプロジェクトを生成する際のSCMタイプをGitにしています。</div>
+<div class="line">連携先のGitリポジトリは、Ansible driverのバックヤード機能がインストールされているホストに作成されます。Ansible Automation Controllerから、このGitリポジトリにssh鍵認証で接続するLinuxユーザーを準備してください。</div>
+<div class="line"><br /></div>
+<div class="line">準備したLinuxユーザーは、ITAシステムに登録する必要があります。「利用手順マニュアル_Ansible-driver」の「インターフェース情報」の「SCM管理 Git連携先情報」を参照し、登録を行ってください。</div>
+<div class="line">尚、ITAインストーラを使用してITAインストールまたはV1.10.0以降へのバージョンアップをした場合、Gitリポジトリに接続するLinuxユーザーと鍵ファイルを生成し、「インターフェース情報」の「SCM管理 Git連携先情報」の「ユーザー」、「ssh秘密鍵ファイル」を初期設定しているため、個別に作成は不要です。「ホスト名」にAnsible driverのバックヤード機能がインストールされているホスト名（またはIPアドレス）を設定してください。</div>
+<div class="line"><br /></div>
+<div class="line">別のユーザーを使用する場合は、Linuxユーザーと鍵ファイルを生成し「インターフェース情報」の「SCM管理 Git連携先情報」を更新してください。</div>
+<div class="line"><br /></div>
 </div>
-<p>尚、ITAインストーラを使用してITAインストールまたはV1.10.0以降へのバージョンアップをした場合、Gitリポジトリに接続するLinuxユーザーと鍵ファイルを生成し、「インターフェース情報」の「SCM管理
-Git連携先情報」の「ユーザー」、「ssh秘密鍵ファイル」を初期設定しているため、個別に作成は不要です。「ホスト名」にAnsible
-driverのバックヤード機能がインストールされているホスト名（またはIPアドレス）を設定して下さい。</p>
-<p>別のユーザーを使用する場合は、Linuxユーザーと鍵ファイルを生成し「インターフェース情報」の「SCM管理
-Git連携先情報」を更新して下さい。</p>
-</div></blockquote>
-<p>表 5.4-1 ITAインストール時に生成されるssh鍵認証用Linuxユーザー情報</p>
-<table class="docutils align-default">
+<table class="docutils align-left" id="id30">
+<caption><span class="caption-text">ITAインストール時に生成されるssh鍵認証用Linuxユーザー情報</span><a class="headerlink" href="#id30" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 14.9%" />
+<col style="width: 85.1%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>項目</p></th>
-<th class="head"><p>項目値</p></th>
+<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
+<th class="head"><p><strong>項目値</strong></p></th>
 </tr>
 </thead>
 <tbody>
@@ -891,122 +731,138 @@ Git連携先情報」を更新して下さい。</p>
 <tr class="row-odd"><td><p>パスワード</p></td>
 <td><p>未設定</p></td>
 </tr>
-<tr class="row-even"><td><p>秘開鍵</p></td>
+<tr class="row-even"><td><p>秘密鍵</p></td>
 <td><p>/home/awx/.ssh/rsa_awx_key</p></td>
 </tr>
-<tr class="row-odd"><td><p>公密鍵</p></td>
+<tr class="row-odd"><td><p>公開鍵</p></td>
 <td><p>/home/awx/.ssh/rsa_awx_key.pub</p></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="id12">
-<h2>　パッケージ確認<a class="headerlink" href="#id12" title="この見出しへのパーマリンク">¶</a></h2>
-<blockquote>
-<div><p>Ansible-driverで必要なパッケージがインストールされているかを確認します。</p>
-<p>インストールされていない場合は、パッケージのインストールが必要です。</p>
-<p>●必要なパッケージ</p>
-<p>pexpect</p>
-<p>●確認方法</p>
-<p>su - awx</p>
-<p>source /var/lib/awx/venv/ansible/bin/activate</p>
-<p>pip list</p>
-<p>deactivate</p>
-<p>●インストール方法</p>
-<p>su - awx</p>
-<p>source /var/lib/awx/venv/ansible/bin/activate</p>
-<p>umask 0022</p>
-<p>pip install --upgrade pexpect</p>
-<p>deactivate</p>
-</div></blockquote>
-</section>
 <section id="id13">
-<h2>　必要リソース準備<a class="headerlink" href="#id13" title="この見出しへのパーマリンク">¶</a></h2>
-<blockquote>
-<div><p>Ansible Automation
-Controllerに認証アプリケーションをあらかじめ登録しておく必要があります。</p>
-</div></blockquote>
-<p>表 5.7-1. Ansible Automation Controller 必要リソース一覧</p>
-<table class="docutils align-default">
+<h3>パッケージ確認<a class="headerlink" href="#id13" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">Ansible-driverで必要なパッケージがインストールされているかを確認します。</div>
+<div class="line">インストールされていない場合は、パッケージのインストールが必要です。</div>
+</div>
+<div class="line-block">
+<div class="line">●必要なパッケージ</div>
+<div class="line">　pexpect</div>
+<div class="line"><br /></div>
+<div class="line">●確認方法</div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>su - awx
+source /var/lib/awx/venv/ansible/bin/activate
+pip list
+deactivate
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">●インストール方法</div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>su - awx
+source /var/lib/awx/venv/ansible/bin/activate
+umask 0022
+pip install --upgrade pexpect
+deactivate
+</pre></div>
+</div>
+</section>
+<section id="id14">
+<h3>必要リソース準備<a class="headerlink" href="#id14" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">Ansible Automation Controllerに認証アプリケーションをあらかじめ登録しておく必要があります。</div>
+<div class="line"><br /></div>
+</div>
+<table class="docutils align-left" id="id31">
+<caption><span class="caption-text">Ansible Automation Controller 必要リソース一覧</span><a class="headerlink" href="#id31" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 15.4%" />
+<col style="width: 23.1%" />
+<col style="width: 23.1%" />
+<col style="width: 38.5%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>**
-種類**</p></th>
+<tr class="row-odd"><th class="head"><p><strong>種類</strong></p></th>
 <th class="head"><p><strong>用途</strong></p></th>
 <th class="head"><p><strong>名前</strong></p></th>
 <th class="head"><p><strong>説明</strong></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>アプ
-リケー
-ション</p></td>
-<td><p>認証
-アプリケ
-ーション</p></td>
-<td><p>o_aut
-h2_access_token</p></td>
-<td><p>ITAからAnsible Automation
-Control
-lerにRestAPIで接続する場合の
-認証用のアプリケーション情報</p></td>
+<tr class="row-even"><td><p>アプリケーション</p></td>
+<td><p>認証アプリケーション</p></td>
+<td><p>o_auth2_access_token</p></td>
+<td><p>ITAからAnsible Automation ControllerにRestAPIで接続する場合の認証用のアプリケーション情報</p></td>
 </tr>
-<tr class="row-odd"><td><p>ユ
-ーザー</p></td>
+<tr class="row-odd"><td><p>ユーザー</p></td>
 <td><p>トークン</p></td>
-<td><ul class="simple">
-<li></li>
-</ul>
-</td>
-<td><p>ITAからAnsible Automation
-ControllerにRestAPIで接続
-するのに使用する接続トークン</p></td>
+<td><p>ー</p></td>
+<td><p>ITAからAnsible Automation ControllerにRestAPIで接続するのに使用する接続トークン</p></td>
 </tr>
 </tbody>
 </table>
-<section id="id14">
-<h3>5.7.1アプリケーション<a class="headerlink" href="#id14" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id15">
+<h4>アプリケーション<a class="headerlink" href="#id15" title="この見出しへのパーマリンク">¶</a></h4>
+<div class="line-block">
+<div class="line">● Ansible Automation Controller設定値</div>
+</div>
 <ul class="simple">
-<li><p>Ansible Automation Controller設定値</p></li>
-<li><p>名前 ：　o_auth2_access_token</p></li>
-<li><p>組織 ：　Default</p></li>
-<li><p>認証付与タイプ ：　リソース所有者のパスワードベース</p></li>
+<li><p>名前 　　　　　　　： o_auth2_access_token</p></li>
+<li><p>組織 　　　　　　　： Default</p></li>
+<li><p>認証付与タイプ 　　： リソース所有者のパスワードベース</p></li>
 <li><p>クライアントタイプ ： 機密</p></li>
 </ul>
 </section>
-<section id="id15">
-<h3>5.7.2ユーザートークン<a class="headerlink" href="#id15" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id16">
+<h4>ユーザートークン<a class="headerlink" href="#id16" title="この見出しへのパーマリンク">¶</a></h4>
+<div class="line-block">
+<div class="line">● Ansible Automation Controller設定値</div>
+</div>
 <ul class="simple">
-<li><p>Ansible Automation Controller設定値</p></li>
-<li><p>APPLICATION ：　o_auth2_access_token</p></li>
-<li><p>SCOPE ：　書き込み</p></li>
+<li><p>APPLICATION 　　　： o_auth2_access_token</p></li>
+<li><p>SCOPE 　　　　　　： 書き込み</p></li>
 </ul>
-<blockquote>
-<div><p>Ansible Automation
-Controllerのログインに使用するユーザーでログインしておく必要があります。</p>
-<p>生成されたトークンは、Ansible共通コンソールのインタフェース情報の接続トークンに設定する必要があります。「利用手順マニュアル_Ansible-driver」の「インタフェース情報」を参照し、登録を行ってください。</p>
-</div></blockquote>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<div class="line-block">
+<div class="line">Ansible Automation Controllerのログインに使用するユーザーでログインしておく必要があります。</div>
+<div class="line">生成されたトークンは、Ansible共通コンソールのインタフェース情報の接続トークンに設定する必要があります。「利用手順マニュアル_Ansible-driver」の「 <a class="reference internal" href="general_operations.html#general-operations-interface-information"><span class="std std-ref">インターフェース情報</span></a> 」を参照し、登録を行ってください。</div>
+</div>
+</div>
 </section>
 </section>
 <section id="proxy">
-<h2>　Proxyの設定<a class="headerlink" href="#proxy" title="この見出しへのパーマリンク">¶</a></h2>
-<blockquote>
-<div><p>Ansible Automation
-Controllerの設定に応じて作業実行時などにRedhat社の所定のサイトより実行環境のコンテナイメージのダウンロードが行われます。</p>
-<p>Ansible Automation ControllerがProxy環境下にある場合、Ansible
-Automation
-ControllerにProxy設定が必要です。Proxyの設定がされていない状態で作業実行を行った場合、エラー原因が取得できない場合があります。</p>
+<h3>Proxyの設定<a class="headerlink" href="#proxy" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">ブラウザよりAnsible Automation
-Controllerにログインし、「設定」→「ジョブ」→「追加の環境変数」に下記の環境変数を設定します。</div>
-<div class="line">　　　https_proxy</div>
+<div class="line">Ansible Automation Controllerの設定に応じて作業実行時などにRedhat社の所定のサイトより実行環境のコンテナイメージのダウンロードが行われます。</div>
+<div class="line">ブラウザよりAnsible Automation Controllerにログインし、「設定」→「ジョブ」→「追加の環境変数」に下記の環境変数を設定します。</div>
+<div class="line"><br /></div>
 </div>
-<p>http_proxy</p>
-<p>no_proxy</p>
-<p>HTTPS_PROXY</p>
-<p>HTTP_PROXY</p>
-<p>NO_PROXY</p>
-<a class="reference internal image-reference" href="../../../../_images/image5.png"><img alt="../../../../_images/image5.png" src="../../../../_images/image5.png" style="width: 6.09896in; height: 2.68264in;" /></a>
-</div></blockquote>
+<ul class="simple">
+<li><p>　https_proxy</p></li>
+<li><p>　http_proxy</p></li>
+<li><p>　no_proxy</p></li>
+<li><p>　HTTPS_PROXY</p></li>
+<li><p>　HTTP_PROXY</p></li>
+<li><p>　NO_PROXY</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="../../../../_images/image5.png"><img alt="../../../../_images/image5.png" class="align-center" src="../../../../_images/image5.png" style="width: 6.09896in; height: 2.68264in;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<div class="line-block">
+<div class="line">Ansible Automation ControllerがProxy環境下にある場合、Ansible Automation ControllerにProxy設定が必要です。Proxyの設定がされていない状態で作業実行を行った場合、エラー原因が取得できない場合があります。</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 

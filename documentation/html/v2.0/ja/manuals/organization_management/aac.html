@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
-    <title>4. Ansible Automation Controller &#8212; Documentation  ドキュメント</title>
+    <title>1. Ansible Automation Controller &#8212; Documentation  ドキュメント</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/option.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
@@ -124,18 +124,18 @@
 <div id="tableOfContents">
   <div id="tocButton"></div>
   <ul>
-<li><a class="reference internal" href="#">4. Ansible Automation Controller</a><ul>
-<li><a class="reference internal" href="#id1">4.1. はじめに</a></li>
-<li><a class="reference internal" href="#id2">4.2. Ansible Automation Controllerとは</a></li>
-<li><a class="reference internal" href="#id3">4.3. Ansible Automation Controllerの登録</a><ul>
-<li><a class="reference internal" href="#id4">4.3.1. 前提条件</a></li>
-<li><a class="reference internal" href="#id5">4.3.2. Ansible Automation Controllerの一括登録</a><ul>
+<li><a class="reference internal" href="#">1. Ansible Automation Controller</a><ul>
+<li><a class="reference internal" href="#id1">1.1. はじめに</a></li>
+<li><a class="reference internal" href="#id2">1.2. Ansible Automation Controllerとは</a></li>
+<li><a class="reference internal" href="#id3">1.3. Ansible Automation Controllerの登録</a><ul>
+<li><a class="reference internal" href="#id4">1.3.1. 前提条件</a></li>
+<li><a class="reference internal" href="#id5">1.3.2. Ansible Automation Controllerの一括登録</a><ul>
 <li><a class="reference internal" href="#aac-create-method-1">方法1: 設定ファイルを使った作成方法</a></li>
 <li><a class="reference internal" href="#rest-api">方法2: Rest API による作成方法</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id7">4.3.3. オーガナイゼーションへのアクセス</a></li>
-<li><a class="reference internal" href="#id8">4.3.4. その他制約事項・備考</a><ul>
+<li><a class="reference internal" href="#id7">1.3.3. オーガナイゼーションへのアクセス</a></li>
+<li><a class="reference internal" href="#id8">1.3.4. その他制約事項・備考</a><ul>
 <li><a class="reference internal" href="#id9">Ansible Automation Controller登録を再実行する場合</a></li>
 </ul>
 </li>
@@ -155,7 +155,7 @@
   <ul>
     <li><a href="../../../../index.html">HOME</a></li>
     
-    <li><span class="section-number">4. </span>Ansible Automation Controller</li>
+    <li><span class="section-number">1. </span>Ansible Automation Controller</li>
   </ul>
 </div>
 
@@ -164,27 +164,27 @@
 <div class="body" role="main">
 
   <section id="ansible-automation-controller">
-<h1><span class="section-number">4. </span>Ansible Automation Controller<a class="headerlink" href="#ansible-automation-controller" title="この見出しへのパーマリンク">¶</a></h1>
+<h1><span class="section-number">1. </span>Ansible Automation Controller<a class="headerlink" href="#ansible-automation-controller" title="この見出しへのパーマリンク">¶</a></h1>
 <section id="id1">
-<h2><span class="section-number">4.1. </span>はじめに<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">1.1. </span>はじめに<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">本章では、Exastro Suite における Ansible Automation Controller について説明します。</div>
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">4.2. </span>Ansible Automation Controllerとは<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">1.2. </span>Ansible Automation Controllerとは<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">Ansible Automation Controllerとは、PF構築自動化ツールであるAnsibleにアクセスコントロール、ジョブスケジューリング、タスクの可視化などの機能を拡張した管理プラットフォームです。</div>
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">4.3. </span>Ansible Automation Controllerの登録<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">1.3. </span>Ansible Automation Controllerの登録<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">Ansible Automation Controllerの登録をすることで、“プロジェクト”、”インベントリ”、”認証情報”の組合せで”ジョブテンプレート”を作成しAnsibleを実行できます。</div>
 <div class="line">複数の“ジョブテンプレート”を組み合せて”ワークフロージョブテンプレート”を作成することによって、より多彩な作業フローを表現することができます。</div>
 </div>
 <section id="id4">
-<h3><span class="section-number">4.3.1. </span>前提条件<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">1.3.1. </span>前提条件<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">本作業には下記のコマンドが必要となるため、事前にインストールをしてください。</div>
 </div>
@@ -199,7 +199,7 @@
 </ul>
 </section>
 <section id="id5">
-<h3><span class="section-number">4.3.2. </span>Ansible Automation Controllerの一括登録<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">1.3.2. </span>Ansible Automation Controllerの一括登録<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">Ansible Automation Controllerの一括登録には、下記の3通りの方法があります。</div>
 </div>
@@ -818,7 +818,7 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </section>
 </section>
 <section id="id7">
-<h3><span class="section-number">4.3.3. </span>オーガナイゼーションへのアクセス<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">1.3.3. </span>オーガナイゼーションへのアクセス<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h3>
 <ol class="arabic">
 <li><p>オーガナイゼーション用サイトが表示できるかWebブラウザから確認します。</p>
 <div class="line-block">
@@ -829,7 +829,7 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </ol>
 </section>
 <section id="id8">
-<h3><span class="section-number">4.3.4. </span>その他制約事項・備考<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">1.3.4. </span>その他制約事項・備考<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h3>
 <section id="id9">
 <h4>Ansible Automation Controller登録を再実行する場合<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">

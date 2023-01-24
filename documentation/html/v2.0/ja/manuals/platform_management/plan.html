@@ -1,0 +1,794 @@
+
+<!DOCTYPE html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>1. プラン &#8212; Documentation  ドキュメント</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/option.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/exastro_documents.css?v=2" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/swagger/swagger-ui.css" />
+    
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/translations.js"></script>
+    <script src="../../../../_static/jquery-3.6.3.min.js"></script>
+    <script src="../../../../_static/exastro_documents.js?v=1"></script>
+    <script src="../../../../_static/swagger/swagger-ui-bundle.js"></script>
+    <script src="../../../../_static/swagger/swagger-ui-standalone-preset.js"></script>
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../../../../genindex.html" />
+    <link rel="search" title="検索" href="../../../../search.html" /> 
+  </head>
+<body id="page" class="ja">
+
+
+<div id="container">
+
+<div id="header">
+  <header class="divInner">
+    <!-- Exastro logo -->
+    <div id="logo"><img src="../../../../_static/img/exastro.svg" alt="Exastro"></div>
+    <!-- Project name -->
+    <div id="projectName"><a href="../../../../index.html">Documentation</a></div>
+    <!-- Heaedr navigation -->
+    <div id="headerSearch">
+      <form class="search" action="../../../../search.html" method="get">
+        <input type="text" name="q" aria-labelledby="searchlabel">
+        <button type="submit" value="検索"><img src="../../../../_static/img/search.png" alt="検索"></button>
+      </form>
+    </div>
+  </header>
+</div><!-- End #header -->
+
+
+<div id="toolbar">
+  <div class="divInner">
+    
+    <div id="documentVersion">
+      <dl>
+        <dt>Document version</dt>
+        <dd>
+          <div>
+            <select name="version" onchange="location.href=value;">
+                file_path: v2.0/ja/manuals/platform_management/plan
+                  <option value="#"
+                  selected
+                  >current</option>
+                file_path: v2.0/ja/manuals/platform_management/plan
+                  <option value="#"
+                  selected
+                  >v2.0 (current)</option>
+            </select>
+          </div>
+        </dd>
+      </dl>
+    </div>
+
+    <div id="documentLanguage">
+      <dl>
+        <dt>Language</dt>
+        <dd>
+          <div>
+            <select name="lang" onchange="location.href=value;">
+                file_path: v2.0/ja/manuals/platform_management/plan
+                hasdoc: True
+                  <option value="#"
+                  selected
+                  >日本語</option>
+                file_path: v2.0/en/manuals/platform_management/plan
+                hasdoc: False
+            </select>
+          </div>
+        </dd>
+      </dl>
+    </div>
+    <div id="toolbarNavigation">
+      <ul>
+      </ul>
+    </div>
+  </div>
+</div><!-- End #toolbar -->
+
+<div id="sideMenu">
+
+  <div id="menuButton"></div>
+  
+  <aside class="divInner">
+    <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Exastro IT Automation Documentation</a></li>
+</ul>
+
+    <!-- <ul>
+      <li class="toctree-l1"><a class="reference internal" href="../../../../genindex.html">索引</a></li>
+    </ul> -->
+    
+  </aside>
+</div><!-- End #sideMenu -->
+
+
+<div id="tableOfContents">
+  <div id="tocButton"></div>
+  <ul>
+<li><a class="reference internal" href="#">1. プラン</a><ul>
+<li><a class="reference internal" href="#id2">1.1. はじめに</a></li>
+<li><a class="reference internal" href="#id3">1.2. プランとは</a><ul>
+<li><a class="reference internal" href="#id4">1.2.1. 運用とシステムの動きについて</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id5">1.3. プラン設定</a><ul>
+<li><a class="reference internal" href="#id6">1.3.1. 前提条件</a></li>
+<li><a class="reference internal" href="#id7">1.3.2. プラン設定の流れ</a></li>
+<li><a class="reference internal" href="#id8">1.3.3. 事前準備</a></li>
+<li><a class="reference internal" href="#id9">1.3.4. プラン設定項目の確認</a></li>
+<li><a class="reference internal" href="#id10">1.3.5. プラン登録</a></li>
+<li><a class="reference internal" href="#id11">1.3.6. 設定済みプランの確認</a></li>
+<li><a class="reference internal" href="#id12">1.3.7. オーガナイゼーションへのプラン設定</a></li>
+<li><a class="reference internal" href="#id13">1.3.8. オーガナイゼーションへのプラン解除</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+<div id="contents">
+<main class="divInner">
+
+ <div id="breadcrumbs">
+  <ul>
+    <li><a href="../../../../index.html">HOME</a></li>
+    
+    <li><span class="section-number">1. </span>プラン</li>
+  </ul>
+</div>
+
+<div id="article">
+<article class="divInner">
+<div class="body" role="main">
+
+  <section id="id1">
+<h1><span class="section-number">1. </span>プラン<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h1>
+<section id="id2">
+<h2><span class="section-number">1.1. </span>はじめに<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">本章では、Exastro Suite における プラン設定 について説明します。</div>
+<div class="line">プランの設定はPlatform管理者のみ可能です（オーガナイゼーションユーザーからはアクセス出来ません）。</div>
+</div>
+</section>
+<section id="id3">
+<h2><span class="section-number">1.2. </span>プランとは<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">Exastro IT Automation の機能を利用するためには、必ずワークスペースの作成が必要となり、ワークスペース数をプラン設定で指定する必要があります。</div>
+<div class="line"><br /></div>
+<div class="line">※ ワークスペースについては <a class="reference internal" href="../organization_management/workspace.html"><span class="doc">Workspase (ワークスペース)</span></a> を参照ください。</div>
+<div class="line"><br /></div>
+<div class="line">{{#1 想像で書いているところが多い部分です。プランとは何であるかご教示いただきたいです。}}</div>
+</div>
+<section id="id4">
+<h3><span class="section-number">1.2.1. </span>運用とシステムの動きについて<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><p>例 １月まで「最大ワークスペース数＝５のプラン」、２月から「最大ワークスペース数＝３のプラン」に変更</p></li>
+</ul>
+<figure class="align-default">
+<img alt="運用とシステムの動き" src="../../../../_images/operation_and_system_movement_num.png" />
+</figure>
+<ol class="arabic simple">
+<li><p>ユーザーから「最大ワークスペース数＝３」へのプラン変更申し込みがあった場合、登録済みデータが「ワークスペース数＝４」であるため、2月からリミット値が超過することをSaaS管理者から警告します。</p></li>
+<li><p>登録済みデータが「ワークスペース数＝４」であるため、リミット値であるプランの「最大ワークスペース数＝５」を超過せずユーザーはワークスペースの追加ができます。</p></li>
+<li><p>登録済みデータが「ワークスペース数＝５」であるため、リミット値であるプランの「最大ワークスペース数＝５」を超過したワークスペースの追加ができません（エラーになります）。</p></li>
+<li><p>「最大ワークスペース数＝３」を超過しているが、利用停止等のシステム的な規制はこの段階ではありません。</p></li>
+<li><p>リミット値である「最大ワークスペース数＝３」を超過しているため、SaaS管理者からオーガナイゼーションの警告が行われます。</p></li>
+<li><p>ユーザーが リミット値を超過した状態で使い続けた場合、SaaS管理者は利用停止を実施します。</p></li>
+<li><p>ユーザーはログイン不可および、「全リミット0プラン」に変更されます。　※スケジュールしていたものも動かなくなります。</p></li>
+</ol>
+<div class="admonition danger">
+<p class="admonition-title">危険</p>
+<div class="line-block">
+<div class="line">登録したワークスペース数を超えた利用が継続される場合はExastro IT Automation の利用が停止されます。</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id5">
+<h2><span class="section-number">1.3. </span>プラン設定<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="id6">
+<h3><span class="section-number">1.3.1. </span>前提条件<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">本作業には下記のコマンドが必要となるため、事前にインストールをしてください。</div>
+</div>
+<ul class="simple">
+<li><p>作業クライアントに必要なアプリケーション</p>
+<ul>
+<li><p><kbd class="kbd docutils literal notranslate">curl</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">git</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">jq</kbd></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id7">
+<h3><span class="section-number">1.3.2. </span>プラン設定の流れ<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">プランを登録する流れは以下の通りとなります。</div>
+</div>
+<a class="reference internal image-reference" href="../../../../_images/plan_setting_flow.png"><img alt="プラン設定の流れ" class="align-center" src="../../../../_images/plan_setting_flow.png" style="width: 6.68819in; height: 3.35972in;" /></a>
+</section>
+<section id="id8">
+<h3><span class="section-number">1.3.3. </span>事前準備<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">GitHub リポジトリから取得した資材の中にある、シェルスクリプトを実行しオーガナイゼーションを作成します。</div>
+<div class="line">confファイルは、各種設定・取得シェルで使用します。</div>
+</div>
+<ol class="arabic">
+<li><p>オーガナイゼーション作成用シェルスクリプトを、リポジトリから <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">git</kbd> <kbd class="kbd docutils literal notranslate">clone</kbd></kbd> により取得します。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exastro Platform の資材を入手</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/exastro-suite/exastro-platform.git
+</pre></div>
+</div>
+</li>
+<li><p>取得した資材のtoolsフォルダに移動し、オーガナイゼーション作成用シェルスクリプト内のAPI実行先URLを、Platform管理者用サイトアドレスに変更します。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vi<span class="w"> </span>api-auth.conf
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">変更箇所</div>
+</div>
+<ul>
+<li><p>api-auth.conf</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CONF_BASE_URL</span><span class="o">={</span>Platform管理者用サイトアドレス<span class="o">}</span>
+<span class="nv">CURL_OPT</span><span class="o">=</span>-svk
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+<div class="line-block">
+<div class="line">※HTTPSで実行する場合は、 <cite>CURL_OPT=-sv</cite> から <cite>CURL_OPT=-svk</cite> に変更してください。</div>
+</div>
+</section>
+<section id="id9">
+<h3><span class="section-number">1.3.4. </span>プラン設定項目の確認<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h3>
+<ul>
+<li><p>コマンド</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./get-plan-item-list.sh
+</pre></div>
+</div>
+</li>
+<li><p>コマンド実行後に入力（入力例）</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>your<span class="w"> </span>username<span class="w"> </span>:<span class="w"> </span>Platform管理者自身のユーザー名を入力します
+your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </span>Platform管理者自身のパスワードを入力します
+</pre></div>
+</div>
+</li>
+<li><p>成功時の結果表示</p>
+<div class="line-block">
+<div class="line"><cite>&quot;result&quot;: &quot;000-00000&quot;</cite> が、成功したことを示しています。</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;<span class="w"> </span>HTTP/1.1<span class="w"> </span><span class="m">200</span><span class="w"> </span>OK
+&lt;<span class="w"> </span>Date:<span class="w"> </span>Fri,<span class="w"> </span><span class="m">09</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="m">06</span>:58:26<span class="w"> </span>GMT
+&lt;<span class="w"> </span>Server:<span class="w"> </span>Apache/2.4.37<span class="w"> </span><span class="o">(</span>Red<span class="w"> </span>Hat<span class="w"> </span>Enterprise<span class="w"> </span>Linux<span class="o">)</span><span class="w"> </span>mod_wsgi/4.7.1<span class="w"> </span>Python/3.9
+&lt;<span class="w"> </span>Content-Length:<span class="w"> </span><span class="m">451</span>
+&lt;<span class="w"> </span>Content-Type:<span class="w"> </span>application/json
+&lt;
+<span class="o">{</span><span class="w"> </span><span class="o">[</span><span class="m">451</span><span class="w"> </span>bytes<span class="w"> </span>data<span class="o">]</span>
+*<span class="w"> </span>Connection<span class="w"> </span><span class="c1">#0 to host platform-auth left intact</span>
+<span class="o">{</span>
+<span class="s2">&quot;data&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">    </span><span class="o">{</span>
+<span class="w">    </span><span class="s2">&quot;id&quot;</span>:<span class="w"> </span><span class="s2">&quot;platform.roles&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;informations&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;description&quot;</span>:<span class="w"> </span><span class="s2">&quot;default limit&quot;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>,
+<span class="w">    </span><span class="o">{</span>
+<span class="w">    </span><span class="s2">&quot;id&quot;</span>:<span class="w"> </span><span class="s2">&quot;platform.users&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;informations&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;description&quot;</span>:<span class="w"> </span><span class="s2">&quot;default limit&quot;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>,
+<span class="w">    </span><span class="o">{</span>
+<span class="w">    </span><span class="s2">&quot;id&quot;</span>:<span class="w"> </span><span class="s2">&quot;platform.workspaces&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;informations&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;description&quot;</span>:<span class="w"> </span><span class="s2">&quot;default limit&quot;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">]</span>,
+<span class="s2">&quot;message&quot;</span>:<span class="w"> </span><span class="s2">&quot;SUCCESS&quot;</span>,
+<span class="s2">&quot;result&quot;</span>:<span class="w"> </span><span class="s2">&quot;000-00000&quot;</span>,
+<span class="s2">&quot;ts&quot;</span>:<span class="w"> </span><span class="s2">&quot;2022-12-09T06:58:26.764Z&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>RestAPIを直接呼び出す場合は以下の内容で呼び出すことが出来ます。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">BASE64_BASIC</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;Platform管理者のユーザー名を設定してください:Platform管理者のパスワードを設定してください&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="k">)</span>
+<span class="nv">BASE_URL</span><span class="o">=</span>Platform管理者用サイトアドレスを設定してください
+
+curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: basic </span><span class="si">${</span><span class="nv">BASE64_BASIC</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w">  </span>@-<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASE_URL</span><span class="si">}</span><span class="s2">/api/platform/plan_items&quot;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="id10">
+<h3><span class="section-number">1.3.5. </span>プラン登録<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">¶</a></h3>
+<ul>
+<li><p>登録するプランのjsonファイルを設定</p>
+<div class="line-block">
+<div class="line">取得した toolsフォルダ配下にある、 <cite>add-plan.sample.json</cite> を コピーして使用してください。</div>
+</div>
+</li>
+<li><p>登録するPlanの設定</p>
+<div class="line-block">
+<div class="line">add-plan.jsonにコピーした例</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vi<span class="w"> </span>add-plan.json
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+<span class="w">    </span><span class="s2">&quot;id&quot;</span>:<span class="w"> </span><span class="s2">&quot;plan-standard&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;スタンダードプラン&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;informations&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;description&quot;</span>:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">    </span><span class="o">}</span>,
+<span class="w">    </span><span class="s2">&quot;limits&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;platform.workspaces&quot;</span>:<span class="w"> </span><span class="m">100</span>,
+<span class="w">        </span><span class="s2">&quot;platform.users&quot;</span>:<span class="w"> </span><span class="m">200</span>,
+<span class="w">        </span><span class="s2">&quot;platform.roles&quot;</span>:<span class="w"> </span><span class="m">200</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>※limitsは、プラン設定項目の確認で取得した内容をもとに作成します</p>
+</li>
+<li><p>項目説明</p>
+<table class="docutils align-left" id="id14">
+<caption><span class="caption-text">プラン設定項目</span><a class="headerlink" href="#id14" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>項目の内容</p></th>
+<th class="head"><p>形式</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>プランID</p></td>
+<td><div class="line-block">
+<div class="line">英小文字、数字、ハイフン、アンダースコア(最大３６文字)</div>
+<div class="line">※先頭文字は英小文字であること</div>
+<div class="line">※予約語(後述)に合致しないこと</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>プラン名</p></td>
+<td><p>最大２５５文字</p></td>
+</tr>
+<tr class="row-even"><td><p>informations.description</p></td>
+<td><p>説明</p></td>
+<td><p>最大２５５文字</p></td>
+</tr>
+<tr class="row-odd"><td><p>limits.xxxxxx.xxxxx</p></td>
+<td><p>取得したプラン項目の内容を設定</p></td>
+<td><p>数値</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>コマンド</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./add-plan.sh<span class="w"> </span>add-plan.json
+</pre></div>
+</div>
+</li>
+<li><p>コマンド実行後に入力（入力例）</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>your<span class="w"> </span>username<span class="w"> </span>:<span class="w"> </span>Platform管理者自身のユーザー名を入力します
+your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </span>Platform管理者自身のパスワードを入力します
+</pre></div>
+</div>
+</li>
+<li><p>成功時の結果表示</p>
+<div class="line-block">
+<div class="line"><cite>&quot;result&quot;: &quot;000-00000&quot;</cite> が、成功したことを示しています。</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;<span class="w"> </span>HTTP/1.1<span class="w"> </span><span class="m">200</span><span class="w"> </span>OK
+&lt;<span class="w"> </span>Date:<span class="w"> </span>Fri,<span class="w"> </span><span class="m">09</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="m">08</span>:12:35<span class="w"> </span>GMT
+&lt;<span class="w"> </span>Server:<span class="w"> </span>Apache/2.4.37<span class="w"> </span><span class="o">(</span>Red<span class="w"> </span>Hat<span class="w"> </span>Enterprise<span class="w"> </span>Linux<span class="o">)</span><span class="w"> </span>mod_wsgi/4.7.1<span class="w"> </span>Python/3.9
+&lt;<span class="w"> </span>Content-Length:<span class="w"> </span><span class="m">104</span>
+&lt;<span class="w"> </span>Content-Type:<span class="w"> </span>application/json
+&lt;
+<span class="o">{</span><span class="w"> </span><span class="o">[</span><span class="m">104</span><span class="w"> </span>bytes<span class="w"> </span>data<span class="o">]</span>
+*<span class="w"> </span>Connection<span class="w"> </span><span class="c1">#0 to host platform-auth left intact</span>
+<span class="o">{</span>
+<span class="s2">&quot;data&quot;</span>:<span class="w"> </span>null,
+<span class="s2">&quot;message&quot;</span>:<span class="w"> </span><span class="s2">&quot;SUCCESS&quot;</span>,
+<span class="s2">&quot;result&quot;</span>:<span class="w"> </span><span class="s2">&quot;000-00000&quot;</span>,
+<span class="s2">&quot;ts&quot;</span>:<span class="w"> </span><span class="s2">&quot;2022-12-09T08:12:36.219Z&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>失敗時の結果表示イメージ</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;<span class="w"> </span>HTTP/1.1<span class="w"> </span><span class="m">400</span><span class="w"> </span>BAD<span class="w"> </span>REQUEST
+&lt;<span class="w"> </span>Date:<span class="w"> </span>Fri,<span class="w"> </span><span class="m">09</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="m">08</span>:16:09<span class="w"> </span>GMT
+&lt;<span class="w"> </span>Server:<span class="w"> </span>Apache/2.4.37<span class="w"> </span><span class="o">(</span>Red<span class="w"> </span>Hat<span class="w"> </span>Enterprise<span class="w"> </span>Linux<span class="o">)</span><span class="w"> </span>mod_wsgi/4.7.1<span class="w"> </span>Python/3.9
+&lt;<span class="w"> </span>Content-Length:<span class="w"> </span><span class="m">265</span>
+&lt;<span class="w"> </span>Connection:<span class="w"> </span>close
+&lt;<span class="w"> </span>Content-Type:<span class="w"> </span>application/json
+&lt;
+<span class="o">{</span><span class="w"> </span><span class="o">[</span><span class="m">265</span><span class="w"> </span>bytes<span class="w"> </span>data<span class="o">]</span>
+*<span class="w"> </span>Closing<span class="w"> </span>connection<span class="w"> </span><span class="m">0</span>
+<span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;data&quot;</span>:<span class="w"> </span>null,
+<span class="w">  </span><span class="s2">&quot;message&quot;</span>:<span class="w"> </span><span class="s2">&quot;指定されたプランはすでに存在しているため作成できません。&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;result&quot;</span>:<span class="w"> </span><span class="s2">&quot;400-27001&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;ts&quot;</span>:<span class="w"> </span><span class="s2">&quot;2022-12-09T08:16:09.830Z&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">BASE64_BASIC</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;Platform管理者のユーザー名を設定してください:Platform管理者のパスワードを設定してください&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="k">)</span>
+<span class="nv">BASE_URL</span><span class="o">=</span>Platform管理者用サイトアドレスを設定してください
+
+curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: basic </span><span class="si">${</span><span class="nv">BASE64_BASIC</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w">  </span>@-<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASE_URL</span><span class="si">}</span><span class="s2">/api/platform/plans&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">{</span>
+<span class="s">  &quot;id&quot;: &quot;plan-standard&quot;,</span>
+<span class="s">  &quot;name&quot;: &quot;スタンダードプラン&quot;,</span>
+<span class="s">  &quot;informations&quot;: {</span>
+<span class="s">    &quot;description&quot;: &quot;&quot;</span>
+<span class="s">  },</span>
+<span class="s">  &quot;limits&quot;: {</span>
+<span class="s">    &quot;platform.workspaces&quot;: 100,</span>
+<span class="s">    &quot;platform.users&quot;: 200,</span>
+<span class="s">    &quot;platform.roles&quot;: 200</span>
+<span class="s">  }</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="id11">
+<h3><span class="section-number">1.3.6. </span>設定済みプランの確認<a class="headerlink" href="#id11" title="この見出しへのパーマリンク">¶</a></h3>
+<ul>
+<li><p>コマンド</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./get-plan-list.sh
+</pre></div>
+</div>
+</li>
+<li><p>コマンド実行後に入力（入力例）</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>your<span class="w"> </span>username<span class="w"> </span>:<span class="w"> </span>Platform管理者自身のユーザー名を入力します
+your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </span>Platform管理者自身のパスワードを入力します
+</pre></div>
+</div>
+</li>
+<li><p>成功時の結果表示</p>
+<div class="line-block">
+<div class="line"><cite>&quot;result&quot;: &quot;000-00000&quot;</cite> が、成功したことを示しています。</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;<span class="w"> </span>HTTP/1.1<span class="w"> </span><span class="m">200</span><span class="w"> </span>OK
+&lt;<span class="w"> </span>Date:<span class="w"> </span>Thu,<span class="w"> </span><span class="m">12</span><span class="w"> </span>Jan<span class="w"> </span><span class="m">2023</span><span class="w"> </span><span class="m">08</span>:26:42<span class="w"> </span>GMT
+&lt;<span class="w"> </span>Server:<span class="w"> </span>Apache/2.4.37<span class="w"> </span><span class="o">(</span>Red<span class="w"> </span>Hat<span class="w"> </span>Enterprise<span class="w"> </span>Linux<span class="o">)</span><span class="w"> </span>mod_wsgi/4.7.1<span class="w"> </span>Python/3.9
+&lt;<span class="w"> </span>Content-Length:<span class="w"> </span><span class="m">4274</span>
+&lt;<span class="w"> </span>Content-Type:<span class="w"> </span>application/json
+&lt;
+<span class="o">{</span><span class="w"> </span><span class="o">[</span><span class="m">4274</span><span class="w"> </span>bytes<span class="w"> </span>data<span class="o">]</span>
+*<span class="w"> </span>Connection<span class="w"> </span><span class="c1">#0 to host platform-auth left intact</span>
+<span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;data&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">    </span><span class="o">{</span>
+<span class="w">      </span><span class="s2">&quot;create_timestamp&quot;</span>:<span class="w"> </span><span class="s2">&quot;2022-12-07T06:04:31.000Z&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;create_user&quot;</span>:<span class="w"> </span><span class="s2">&quot;system&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;id&quot;</span>:<span class="w"> </span><span class="s2">&quot;_default&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;informations&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;description&quot;</span>:<span class="w"> </span><span class="s2">&quot;default plan&quot;</span>
+<span class="w">      </span><span class="o">}</span>,
+<span class="w">      </span><span class="s2">&quot;last_update_timestamp&quot;</span>:<span class="w"> </span><span class="s2">&quot;2022-12-07T06:04:31.000Z&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;last_update_user&quot;</span>:<span class="w"> </span><span class="s2">&quot;system&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;limits&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;platform.workspaces&quot;</span>:<span class="w"> </span><span class="m">100</span>,
+<span class="w">        </span><span class="s2">&quot;platform.roles&quot;</span>:<span class="w"> </span><span class="m">1000</span>,
+<span class="w">        </span><span class="s2">&quot;platform.users&quot;</span>:<span class="w"> </span><span class="m">10000</span>
+<span class="w">      </span><span class="o">}</span>,
+<span class="w">      </span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;_default plan&quot;</span>
+<span class="w">    </span><span class="o">}</span>,
+<span class="w">    </span><span class="o">{</span>
+<span class="w">      </span><span class="s2">&quot;create_timestamp&quot;</span>:<span class="w"> </span><span class="s2">&quot;2022-12-09T08:12:36.000Z&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;create_user&quot;</span>:<span class="w"> </span><span class="s2">&quot;bd09d674-298f-4b55-9777-0758bf6f294e&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;id&quot;</span>:<span class="w"> </span><span class="s2">&quot;plan-standard&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;informations&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;description&quot;</span>:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">      </span><span class="o">}</span>,
+<span class="w">      </span><span class="s2">&quot;last_update_timestamp&quot;</span>:<span class="w"> </span><span class="s2">&quot;2022-12-09T08:12:36.000Z&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;last_update_user&quot;</span>:<span class="w"> </span><span class="s2">&quot;bd09d674-298f-4b55-9777-0758bf6f294e&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;limits&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;platform.roles&quot;</span>:<span class="w"> </span><span class="m">200</span>,
+<span class="w">        </span><span class="s2">&quot;platform.users&quot;</span>:<span class="w"> </span><span class="m">200</span>,
+<span class="w">        </span><span class="s2">&quot;platform.workspaces&quot;</span>:<span class="w"> </span><span class="m">100</span>
+<span class="w">      </span><span class="o">}</span>,
+<span class="w">      </span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;スタンダードプラン&quot;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">  </span><span class="o">]</span>,
+<span class="w">  </span><span class="s2">&quot;message&quot;</span>:<span class="w"> </span><span class="s2">&quot;SUCCESS&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;result&quot;</span>:<span class="w"> </span><span class="s2">&quot;000-00000&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;ts&quot;</span>:<span class="w"> </span><span class="s2">&quot;2023-01-12T08:26:42.375Z&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">BASE64_BASIC</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;Platform管理者のユーザー名を設定してください:Platform管理者のパスワードを設定してください&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="k">)</span>
+<span class="nv">BASE_URL</span><span class="o">=</span>Platform管理者用サイトアドレスを設定してください
+
+curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: basic </span><span class="si">${</span><span class="nv">BASE64_BASIC</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w">  </span>@-<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASE_URL</span><span class="si">}</span><span class="s2">/api/platform/plans&quot;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="id12">
+<h3><span class="section-number">1.3.7. </span>オーガナイゼーションへのプラン設定<a class="headerlink" href="#id12" title="この見出しへのパーマリンク">¶</a></h3>
+<ul>
+<li><p>登録するプランのjsonファイルを設定します。</p>
+<div class="line-block">
+<div class="line">取得した toolsフォルダ配下にある、add-organization-plan.sample.json を コピーして使用してください。</div>
+</div>
+</li>
+<li><p>登録するPlanの設定</p>
+<div class="line-block">
+<div class="line">例はオーガナイゼーションID:org1、プランID:plan-standardを例として説明します。</div>
+<div class="line"><br /></div>
+<div class="line">add-org1-plan.jsonにコピーした例）</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vi<span class="w"> </span>add-org1-plan.json
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;id&quot;</span>:<span class="w"> </span><span class="s2">&quot;plan-standard&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;start_datetime&quot;</span>:<span class="w"> </span><span class="s2">&quot;2022-12-01 00:00:00&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>項目説明</p>
+<table class="docutils align-left" id="id15">
+<caption><span class="caption-text">オーガナイゼーションへのプラン設定項目</span><a class="headerlink" href="#id15" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>項目の内容</p></th>
+<th class="head"><p>形式</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>プランID</p></td>
+<td><p>プラン設定で設定したプランID</p></td>
+</tr>
+<tr class="row-odd"><td><p>start_datetime</p></td>
+<td><p>プラン開始日</p></td>
+<td><p>日時形式、時分秒必須</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>コマンド</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./add-organization-plan.sh<span class="w"> </span>add-org1-plan.json
+</pre></div>
+</div>
+</li>
+<li><p>コマンド実行後に入力（入力例）</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>organization<span class="w"> </span>id<span class="w"> </span>:<span class="w"> </span>プラン設定するorganization<span class="w"> </span>idを入力します
+
+your<span class="w"> </span>username<span class="w"> </span>:<span class="w"> </span>Platform管理者自身のユーザー名を入力します
+your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </span>Platform管理者自身のパスワードを入力します
+</pre></div>
+</div>
+</li>
+<li><p>成功時の結果表示</p>
+<div class="line-block">
+<div class="line"><cite>&quot;result&quot;: &quot;000-00000&quot;</cite> が、成功したことを示しています。</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;<span class="w"> </span>HTTP/1.1<span class="w"> </span><span class="m">200</span><span class="w"> </span>OK
+&lt;<span class="w"> </span>Date:<span class="w"> </span>Mon,<span class="w"> </span><span class="m">12</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="m">01</span>:22:42<span class="w"> </span>GMT
+&lt;<span class="w"> </span>Server:<span class="w"> </span>Apache/2.4.37<span class="w"> </span><span class="o">(</span>Red<span class="w"> </span>Hat<span class="w"> </span>Enterprise<span class="w"> </span>Linux<span class="o">)</span><span class="w"> </span>mod_wsgi/4.7.1<span class="w"> </span>Python/3.9
+&lt;<span class="w"> </span>Content-Length:<span class="w"> </span><span class="m">104</span>
+&lt;<span class="w"> </span>Content-Type:<span class="w"> </span>application/json
+&lt;
+<span class="o">{</span><span class="w"> </span><span class="o">[</span><span class="m">104</span><span class="w"> </span>bytes<span class="w"> </span>data<span class="o">]</span>
+*<span class="w"> </span>Connection<span class="w"> </span><span class="c1">#0 to host platform-auth left intact</span>
+<span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;data&quot;</span>:<span class="w"> </span>null,
+<span class="w">  </span><span class="s2">&quot;message&quot;</span>:<span class="w"> </span><span class="s2">&quot;SUCCESS&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;result&quot;</span>:<span class="w"> </span><span class="s2">&quot;000-00000&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;ts&quot;</span>:<span class="w"> </span><span class="s2">&quot;2022-12-12T01:22:42.886Z&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>失敗時の結果表示イメージ</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;<span class="w"> </span>HTTP/1.1<span class="w"> </span><span class="m">404</span><span class="w"> </span>NOT<span class="w"> </span>FOUND
+<span class="w"> </span>&lt;<span class="w"> </span>Date:<span class="w"> </span>Mon,<span class="w"> </span><span class="m">12</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="m">01</span>:40:02<span class="w"> </span>GMT
+<span class="w"> </span>&lt;<span class="w"> </span>Server:<span class="w"> </span>Apache/2.4.37<span class="w"> </span><span class="o">(</span>Red<span class="w"> </span>Hat<span class="w"> </span>Enterprise<span class="w"> </span>Linux<span class="o">)</span><span class="w"> </span>mod_wsgi/4.7.1<span class="w"> </span>Python/3.9
+<span class="w"> </span>&lt;<span class="w"> </span>Content-Length:<span class="w"> </span><span class="m">127</span>
+<span class="w"> </span>&lt;<span class="w"> </span>Content-Type:<span class="w"> </span>application/json
+<span class="w"> </span>&lt;
+<span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="o">[</span><span class="m">127</span><span class="w"> </span>bytes<span class="w"> </span>data<span class="o">]</span>
+<span class="w"> </span>*<span class="w"> </span>Connection<span class="w"> </span><span class="c1">#0 to host platform-auth left intact</span>
+<span class="w"> </span><span class="o">{</span>
+<span class="w">   </span><span class="s2">&quot;data&quot;</span>:<span class="w"> </span>null,
+<span class="w">   </span><span class="s2">&quot;message&quot;</span>:<span class="w"> </span><span class="s2">&quot;organization not found id:org2&quot;</span>,
+<span class="w">   </span><span class="s2">&quot;result&quot;</span>:<span class="w"> </span><span class="s2">&quot;404-00001&quot;</span>,
+<span class="w">   </span><span class="s2">&quot;ts&quot;</span>:<span class="w"> </span><span class="s2">&quot;2022-12-12T01:40:03.268Z&quot;</span>
+<span class="w"> </span><span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">BASE64_BASIC</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;Platform管理者のユーザー名を設定してください:Platform管理者のパスワードを設定してください&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="k">)</span>
+<span class="nv">BASE_URL</span><span class="o">=</span>Platform管理者用サイトアドレスを設定してください
+<span class="nv">ORG_ID</span><span class="o">=</span>プラン設定するorganization<span class="w"> </span>idを設定してください
+
+curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: basic </span><span class="si">${</span><span class="nv">BASE64_BASIC</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w">  </span>@-<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASE_URL</span><span class="si">}</span><span class="s2">/api/platform/</span><span class="si">${</span><span class="nv">ORG_ID</span><span class="si">}</span><span class="s2">/plans&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">{</span>
+<span class="s">    &quot;id&quot;: &quot;plan-standard&quot;,</span>
+<span class="s">    &quot;start_datetime&quot;: &quot;2022-12-01 00:00:00&quot;</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="id13">
+<h3><span class="section-number">1.3.8. </span>オーガナイゼーションへのプラン解除<a class="headerlink" href="#id13" title="この見出しへのパーマリンク">¶</a></h3>
+<ul>
+<li><p>コマンド</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./delete-organization-plan.sh
+</pre></div>
+</div>
+</li>
+<li><p>コマンド実行後に入力（入力例）</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>organization<span class="w"> </span>id<span class="w"> </span>:<span class="w"> </span>プラン解除するorganization<span class="w"> </span>idを入力します
+start<span class="w"> </span>datetime<span class="w"> </span><span class="o">(</span>yyyy-mm-dd<span class="w"> </span>hh:mm:ss<span class="o">)</span><span class="w"> </span>:<span class="w"> </span>プラン解除するstart<span class="w"> </span>datetimeを入力します<span class="w"> </span><span class="o">(</span>yyyy-mm-dd<span class="w"> </span>hh:mm:ss形式<span class="o">)</span>
+
+your<span class="w"> </span>username<span class="w"> </span>:<span class="w"> </span>Platform管理者自身のユーザー名を入力します
+your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </span>Platform管理者自身のパスワードを入力します
+</pre></div>
+</div>
+</li>
+<li><p>成功時の結果表示</p>
+<div class="line-block">
+<div class="line"><cite>&quot;result&quot;: &quot;000-00000&quot;</cite> が、成功したことを示しています。</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;<span class="w"> </span>HTTP/1.1<span class="w"> </span><span class="m">200</span><span class="w"> </span>OK
+&lt;<span class="w"> </span>Date:<span class="w"> </span>Mon,<span class="w"> </span><span class="m">12</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="m">01</span>:46:58<span class="w"> </span>GMT
+&lt;<span class="w"> </span>Server:<span class="w"> </span>Apache/2.4.37<span class="w"> </span><span class="o">(</span>Red<span class="w"> </span>Hat<span class="w"> </span>Enterprise<span class="w"> </span>Linux<span class="o">)</span><span class="w"> </span>mod_wsgi/4.7.1<span class="w"> </span>Python/3.9
+&lt;<span class="w"> </span>Content-Length:<span class="w"> </span><span class="m">104</span>
+&lt;<span class="w"> </span>Content-Type:<span class="w"> </span>application/json
+&lt;
+<span class="o">{</span><span class="w"> </span><span class="o">[</span><span class="m">104</span><span class="w"> </span>bytes<span class="w"> </span>data<span class="o">]</span>
+*<span class="w"> </span>Connection<span class="w"> </span><span class="c1">#0 to host platform-auth left intact</span>
+<span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;data&quot;</span>:<span class="w"> </span>null,
+<span class="w">  </span><span class="s2">&quot;message&quot;</span>:<span class="w"> </span><span class="s2">&quot;SUCCESS&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;result&quot;</span>:<span class="w"> </span><span class="s2">&quot;000-00000&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;ts&quot;</span>:<span class="w"> </span><span class="s2">&quot;2022-12-12T01:46:58.794Z&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>失敗時の結果表示イメージ</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;<span class="w"> </span>HTTP/1.1<span class="w"> </span><span class="m">404</span><span class="w"> </span>NOT<span class="w"> </span>FOUND
+&lt;<span class="w"> </span>Date:<span class="w"> </span>Mon,<span class="w"> </span><span class="m">12</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="m">01</span>:46:14<span class="w"> </span>GMT
+&lt;<span class="w"> </span>Server:<span class="w"> </span>Apache/2.4.37<span class="w"> </span><span class="o">(</span>Red<span class="w"> </span>Hat<span class="w"> </span>Enterprise<span class="w"> </span>Linux<span class="o">)</span><span class="w"> </span>mod_wsgi/4.7.1<span class="w"> </span>Python/3.9
+&lt;<span class="w"> </span>Content-Length:<span class="w"> </span><span class="m">205</span>
+&lt;<span class="w"> </span>Content-Type:<span class="w"> </span>application/problem+json
+*<span class="w"> </span>HTTP<span class="w"> </span>error<span class="w"> </span>before<span class="w"> </span>end<span class="w"> </span>of<span class="w"> </span>send,<span class="w"> </span>stop<span class="w"> </span>sending
+&lt;
+<span class="o">{</span><span class="w"> </span><span class="o">[</span><span class="m">205</span><span class="w"> </span>bytes<span class="w"> </span>data<span class="o">]</span>
+*<span class="w"> </span>Closing<span class="w"> </span>connection<span class="w"> </span><span class="m">0</span>
+<span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;detail&quot;</span>:<span class="w"> </span><span class="s2">&quot;The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;status&quot;</span>:<span class="w"> </span><span class="m">404</span>,
+<span class="w">  </span><span class="s2">&quot;title&quot;</span>:<span class="w"> </span><span class="s2">&quot;Not Found&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;type&quot;</span>:<span class="w"> </span><span class="s2">&quot;about:blank&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">BASE64_BASIC</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;Platform管理者のユーザー名を設定してください:Platform管理者のパスワードを設定してください&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="k">)</span>
+<span class="nv">BASE_URL</span><span class="o">=</span>Platform管理者用サイトアドレスを設定してください
+<span class="nv">ORG_ID</span><span class="o">=</span>プラン解除するorganization<span class="w"> </span>idを設定してください
+<span class="nv">START_DATETIME</span><span class="o">=</span>プラン解除するプラン開始日時を設定してください<span class="o">(</span>yyyy-mm-dd<span class="w"> </span>hh:mm:ss形式<span class="o">)</span>
+
+curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: basic </span><span class="si">${</span><span class="nv">BASE64_BASIC</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w">  </span>@-<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASE_URL</span><span class="si">}</span><span class="s2">/api/platform/</span><span class="si">${</span><span class="nv">ORG_ID</span><span class="si">}</span><span class="s2">/plans/</span><span class="si">${</span><span class="nv">START_DATETIME</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+</section>
+
+
+</div>
+
+
+<div id="articleNavigation">
+  <ul>
+  </ul>
+</div>
+
+
+<div id="pageTopLink">
+  <a href="#container"><i>↑</i> Page Top</a>
+</div>
+
+</article>
+</div>
+</main>
+</div><!-- End #contents -->
+<div id="footer">
+  <footer class="divInner">
+    <small>Copyright © 2023 NEC Corporation</small>
+  </footer>
+</div><!-- End #footer -->
+
+<div id="overlay"></div>
+<div id="grayBack"></div>
+
+</div><!-- End #container -->
+  </body>
+</html>
