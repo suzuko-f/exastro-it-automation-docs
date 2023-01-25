@@ -128,7 +128,8 @@
 <li class="toctree-l5"><a class="reference internal" href="#id30">表・テーブル</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#manual-syntax-note">メモ</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#id45">リスト・箇条書き</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id54">禁止表現</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id54">リスト・箇条書き (特殊系)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id63">禁止表現</a></li>
 </ul>
 </li>
 </ul>
@@ -252,10 +253,25 @@
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id54">禁止表現</a><ul>
-<li><a class="reference internal" href="#id55">H6 (見出し6) 以上の表現</a><ul>
-<li><a class="reference internal" href="#id56">強調(イタリック、太字)</a></li>
-<li><a class="reference internal" href="#id57">CSVテーブル</a></li>
+<li><a class="reference internal" href="#id54">リスト・箇条書き (特殊系)</a><ul>
+<li><a class="reference internal" href="#id55">番号なしリスト (特殊系)</a><ul>
+<li><a class="reference internal" href="#id56">記載方法</a></li>
+<li><a class="reference internal" href="#id57">記述例</a></li>
+<li><a class="reference internal" href="#id58">表示結果</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id59">番号付きリスト (特殊系)</a><ul>
+<li><a class="reference internal" href="#id60">記載方法</a></li>
+<li><a class="reference internal" href="#id61">記述例</a></li>
+<li><a class="reference internal" href="#id62">表示結果</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id63">禁止表現</a><ul>
+<li><a class="reference internal" href="#id64">H6 (見出し6) 以上の表現</a><ul>
+<li><a class="reference internal" href="#id65">強調(イタリック、太字)</a></li>
+<li><a class="reference internal" href="#id66">CSVテーブル</a></li>
 </ul>
 </li>
 </ul>
@@ -423,7 +439,7 @@
 <div class="line">すべての文章はパラグラフ上に記載される必要があります。</div>
 </div>
 <div class="line-block">
-<div class="line">文章の戦闘に <kbd class="kbd docutils literal notranslate">|</kbd> (パイプ+スペース)を記載します。</div>
+<div class="line">文章の先頭に <kbd class="kbd docutils literal notranslate">|</kbd> (パイプ+スペース)を記載します。</div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">|</span><span class="w"> </span>パラグラフはじまり
 <span class="p">|</span><span class="w"> </span>つづきのパラグラ
@@ -456,8 +472,8 @@
 <div class="line-block">
 <div class="line">本マニュアルでは、内容に応じて下記のような表現方法を用います。</div>
 </div>
-<table class="docutils align-left" id="id58">
-<caption><span class="caption-number">表 32 </span><span class="caption-text">単語表現</span><a class="headerlink" href="#id58" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id67">
+<caption><span class="caption-number">表 32 </span><span class="caption-text">単語表現</span><a class="headerlink" href="#id67" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 18.2%" />
 <col style="width: 18.2%" />
@@ -569,10 +585,10 @@
 <div class="line-block">
 <div class="line">幅100pxで表示されます。</div>
 </div>
-<figure class="align-center" id="id59">
+<figure class="align-center" id="id68">
 <a class="reference internal image-reference" href="../../../_images/chart.png"><img alt="role_of_index" src="../../../_images/chart.png" style="width: 100px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 1 </span><span class="caption-text">「幅100px」の画像</span><a class="headerlink" href="#id59" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 1 </span><span class="caption-text">「幅100px」の画像</span><a class="headerlink" href="#id68" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </section>
@@ -650,8 +666,8 @@
 </section>
 <section id="id34">
 <h4>表示結果<a class="headerlink" href="#id34" title="この見出しへのパーマリンク">¶</a></h4>
-<table class="docutils align-left" id="id60">
-<caption><span class="caption-number">表 33 </span><span class="caption-text">リストテーブルサンプル</span><a class="headerlink" href="#id60" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id69">
+<caption><span class="caption-number">表 33 </span><span class="caption-text">リストテーブルサンプル</span><a class="headerlink" href="#id69" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 25.0%" />
 <col style="width: 25.0%" />
@@ -717,8 +733,8 @@
 </section>
 <section id="id37">
 <h4>表示結果<a class="headerlink" href="#id37" title="この見出しへのパーマリンク">¶</a></h4>
-<table class="docutils align-default" id="id61">
-<caption><span class="caption-number">表 34 </span><span class="caption-text">グリッドテーブルサンプル</span><a class="headerlink" href="#id61" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-default" id="id70">
+<caption><span class="caption-number">表 34 </span><span class="caption-text">グリッドテーブルサンプル</span><a class="headerlink" href="#id70" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>見出1</p></th>
 <th class="head"><p>見出2</p></th>
@@ -811,8 +827,8 @@
 </section>
 <section id="id43">
 <h4>表示結果<a class="headerlink" href="#id43" title="この見出しへのパーマリンク">¶</a></h4>
-<table class="docutils align-default" id="id62">
-<caption><span class="caption-number">表 35 </span><span class="caption-text">CSVテーブルサンプル</span><a class="headerlink" href="#id62" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-default" id="id71">
+<caption><span class="caption-number">表 35 </span><span class="caption-text">CSVテーブルサンプル</span><a class="headerlink" href="#id71" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 14.3%" />
 <col style="width: 42.9%" />
@@ -1025,9 +1041,129 @@
 </section>
 </section>
 <section id="id54">
-<h2>禁止表現<a class="headerlink" href="#id54" title="この見出しへのパーマリンク">¶</a></h2>
+<h2>リスト・箇条書き (特殊系)<a class="headerlink" href="#id54" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">以下の方法では、装飾付きのリスト・箇条書きの方法を説明します。</div>
+</div>
 <section id="id55">
-<h3>H6 (見出し6) 以上の表現<a class="headerlink" href="#id55" title="この見出しへのパーマリンク">¶</a></h3>
+<h3>番号なしリスト (特殊系)<a class="headerlink" href="#id55" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">シンプルな箇条書き(特殊系)をします。</div>
+</div>
+<section id="id56">
+<h4>記載方法<a class="headerlink" href="#id56" title="この見出しへのパーマリンク">¶</a></h4>
+<div class="line-block">
+<div class="line">箇条書きは文頭に <kbd class="kbd docutils literal notranslate">-</kbd> (ハイフン+スペース)を記載することで箇条書きになります。</div>
+<div class="line">項目を複数行で書いたり、次の行にインデントを入れると通常の箇条書きになります。</div>
+</div>
+</section>
+<section id="id57">
+<h4>記述例<a class="headerlink" href="#id57" title="この見出しへのパーマリンク">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-<span class="w"> </span>項目1
+
+<span class="p">|</span><span class="w"> </span>パラグラフ1
+
+-<span class="w"> </span>項目2
+
+<span class="p">|</span><span class="w"> </span>パラグラフ2
+
+-<span class="w"> </span><span class="p">|</span><span class="w"> </span>項目3
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>複数行記載すると通常の箇条書きになります。
+
+-<span class="w"> </span>項目4
+
+<span class="w">  </span>次の行にインデントがあると通常の箇条書きになります。
+</pre></div>
+</div>
+</section>
+<section id="id58">
+<h4>表示結果<a class="headerlink" href="#id58" title="この見出しへのパーマリンク">¶</a></h4>
+<ul class="simple">
+<li><p>項目1</p></li>
+</ul>
+<div class="line-block">
+<div class="line">パラグラフ1</div>
+</div>
+<ul class="simple">
+<li><p>項目2</p></li>
+</ul>
+<div class="line-block">
+<div class="line">パラグラフ2</div>
+</div>
+<ul>
+<li><div class="line-block">
+<div class="line">項目3</div>
+<div class="line">複数行記載すると通常の箇条書きになります。</div>
+</div>
+</li>
+<li><p>項目4</p>
+<p>次の行にインデントがあると通常の箇条書きになります。</p>
+</li>
+</ul>
+</section>
+</section>
+<section id="id59">
+<h3>番号付きリスト (特殊系)<a class="headerlink" href="#id59" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">数字付きの箇条書き(特殊系)をします。</div>
+</div>
+<section id="id60">
+<h4>記載方法<a class="headerlink" href="#id60" title="この見出しへのパーマリンク">¶</a></h4>
+<div class="line-block">
+<div class="line">箇条書きは文頭に <kbd class="kbd docutils literal notranslate">N.</kbd> (数字+ドット+スペース)を記載することで番号付き箇条書き(特殊系)になります。</div>
+<div class="line">項目を複数行で書いたり、次の行にインデントを入れると通常の箇条書きになります。</div>
+</div>
+</section>
+<section id="id61">
+<h4>記述例<a class="headerlink" href="#id61" title="この見出しへのパーマリンク">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">1</span>.<span class="w"> </span>項目1
+
+<span class="p">|</span><span class="w"> </span>パラグラフ1
+
+<span class="m">2</span>.<span class="w"> </span>項目2
+
+<span class="p">|</span><span class="w"> </span>パラグラフ2
+
+<span class="m">3</span>.<span class="w"> </span><span class="p">|</span><span class="w"> </span>項目3
+<span class="w">   </span><span class="p">|</span><span class="w"> </span>複数行記載すると通常の番号付き箇条書きになります。
+
+<span class="m">4</span>.<span class="w"> </span>項目4
+
+<span class="w">   </span>次の行にインデントがあると通常の番号付き箇条書きになります。
+</pre></div>
+</div>
+</section>
+<section id="id62">
+<h4>表示結果<a class="headerlink" href="#id62" title="この見出しへのパーマリンク">¶</a></h4>
+<ol class="arabic simple">
+<li><p>項目1</p></li>
+</ol>
+<div class="line-block">
+<div class="line">パラグラフ1</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>項目2</p></li>
+</ol>
+<div class="line-block">
+<div class="line">パラグラフ2</div>
+</div>
+<ol class="arabic" start="3">
+<li><div class="line-block">
+<div class="line">項目3</div>
+<div class="line">複数行記載すると通常の番号付き箇条書きになります。</div>
+</div>
+</li>
+<li><p>項目4</p>
+<p>次の行にインデントがあると通常の番号付き箇条書きになります。</p>
+</li>
+</ol>
+</section>
+</section>
+</section>
+<section id="id63">
+<h2>禁止表現<a class="headerlink" href="#id63" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="id64">
+<h3>H6 (見出し6) 以上の表現<a class="headerlink" href="#id64" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">H6レベルの見出しを表現する書式です。</div>
 <div class="line">H6レベル以上の見出し(H6を含む)は使ってはなりません。</div>
@@ -1036,8 +1172,8 @@
 <div class="line">通常、H6レベル以上の見出しになる場合は、文章の構造が複雑過ぎています。</div>
 <div class="line">書き方を工夫するなどしてH6レベル以上を使わないようにしなければなりません。</div>
 </div>
-<section id="id56">
-<h4>強調(イタリック、太字)<a class="headerlink" href="#id56" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="id65">
+<h4>強調(イタリック、太字)<a class="headerlink" href="#id65" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">下記に記載する、太字や斜体は使用してはなりません。</div>
 <div class="line">適切な <a class="reference internal" href="#manual-syntax-word"><span class="std std-ref">単語表現</span></a> を選択してください。</div>
@@ -1049,8 +1185,8 @@
 <p><em>使用禁止(イタリック)</em>
 <strong>使用禁止(太字)</strong></p>
 </section>
-<section id="id57">
-<h4>CSVテーブル<a class="headerlink" href="#id57" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="id66">
+<h4>CSVテーブル<a class="headerlink" href="#id66" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">CSV形式で表を表現する記述方法です。</div>
 <div class="line">フィールド内での改行を利用する場合などで上記の2つの記述方法に比べ見づらいため、使用は禁止とします。</div>
