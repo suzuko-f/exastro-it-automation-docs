@@ -12,11 +12,13 @@ Exastro IT Automation Organization API
      $('h1').remove();
      $('#article').attr('id', 'swaggerBody');
 
-     $api_url = "https://raw.githubusercontent.com/exastro-suite/exastro-it-automation/2.0/ita_root/ita_api_organization/openapi.yaml";
+     $api_urls = [
+       {url: "https://raw.githubusercontent.com/exastro-suite/exastro-it-automation/2.0/ita_root/ita_api_organization/openapi.yaml", name: "v2.0"}
+     ]
 
      // Begin Swagger UI call region
      const ui = SwaggerUIBundle({
-       url: $api_url,
+       urls: $api_urls,
        dom_id: '#swagger-ui',
        deepLinking: true,
        presets: [

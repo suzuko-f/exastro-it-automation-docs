@@ -1,0 +1,7 @@
+================
+Ansible ドライバ
+================
+
+.. toctree::
+
+   architecture
