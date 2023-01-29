@@ -336,7 +336,6 @@ Organization (オーガナイゼーション)
 
          | オーガナイゼーション作成時の初期登録情報として下記の項目を設定できます。
 
-
          .. list-table:: オーガナイゼーション作成パラメータ
             :widths: 25 30 20 35
             :header-rows: 1
@@ -426,7 +425,7 @@ Organization (オーガナイゼーション)
 
             bash ./exastro-platform/tools/create-organization.sh
 
-        | :kbd:`your username` と :kbd:`your username` は :ref:`create_system_manager` で登録した、:kbd:`KEYCLOAK_USER` 及び :kbd:`KEYCLOAK_PASSWORD` です。
+         | :kbd:`your username` と :kbd:`your username` は :ref:`create_system_manager` で登録した、:kbd:`KEYCLOAK_USER` 及び :kbd:`KEYCLOAK_PASSWORD` です。
 
          .. code-block:: sh
             :caption: コマンド (入力例)
