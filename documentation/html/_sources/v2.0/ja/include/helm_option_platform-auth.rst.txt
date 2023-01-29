@@ -3,6 +3,7 @@
    :widths: 25 25 10 20
    :header-rows: 1
    :align: left
+   :class: filter-table
 
    * - パラメータ
      - 説明
@@ -48,10 +49,19 @@
      - 不可
      - "httpMng"
    * - platform-auth.service.type
-     - | Exastro Platform のサービスタイプ
-       | ※ 現在 ClusterIP 以外のタイプには対応していません。
-     - 不可
-     - :program:`ClusterIP`
+     - Exastro Platform のサービスタイプ
+     - 可
+     - | :program:`ClusterIP` (デフォルト): Ingress Controller を利用する場合などに選択
+       | :program:`LoadBalancer` : LoadBalancer を利用する場合に選択
+       | :program:`NodePort` : NodePort を利用する場合に選択
+   * - platform-auth.service.http.nodePort
+     - | Exastro Platform のサービス用公開ポート番号
+     - 可 (NodePort利用時)
+     - "30080"
+   * - platform-auth.service.httpMng.nodePort
+     - | Exastro Platform のシステム管理用公開ポート番号
+     - 可 (NodePort利用時)
+     - "30081"
    * - platform-auth.image.repository
      - コンテナイメージのリポジトリ名
      - 不可

@@ -3,6 +3,7 @@
    :widths: 25 25 10 20
    :header-rows: 1
    :align: left
+   :class: filter-table
 
    * - パラメータ
      - 説明
@@ -24,7 +25,7 @@
    * - global.gitlabDefinition.config.GITLAB_HOST
      - GitLab エンドポイントへのホスト名、もしくは、FQDN
      - 可
-     - gitlab.exastro-platform.svc
+     - gitlab
    * - global.gitlabDefinition.config.GITLAB_PORT
      - GitLab エンドポイントのポート番号
      - 可

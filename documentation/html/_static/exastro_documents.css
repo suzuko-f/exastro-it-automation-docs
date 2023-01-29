@@ -560,6 +560,7 @@ a:hover img {
   max-height: 90%;
   height: 90%;
   object-fit: contain;
+  padding-top: 80px;
 }
 
 .divInner {
@@ -577,7 +578,7 @@ span.highlighted {
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 50;
+  z-index: 1000;
   width: 100%;
   height: 64px;
   background-color: #002B62;
@@ -691,7 +692,7 @@ span.highlighted {
   position: fixed;
   top: 64px;
   left: 0;
-  z-index: 40;
+  z-index: 1000;
   width: 100%;
   /* min-height: 32px; */
   background-color: white;
@@ -1035,7 +1036,7 @@ span.highlighted {
   position: absolute;
   left: -1.0em;
   top: 0;
-  width: 1px;
+  width: 0.5px;
   height: 100%;
   background-color: #999;
 }
@@ -1197,7 +1198,14 @@ span.highlighted {
 
 #article h5 {
   line-height: 1.75;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #444;
+}
+
+#article h5::before {
+  content: "■ ";
+  font-size: 1.3rem;
   font-weight: bold;
   color: #444;
 }
@@ -1205,7 +1213,7 @@ span.highlighted {
 #article h6 {
   line-height: 1.75;
   font-size: 1.2rem;
-  font-weight: normal;
+  font-weight: bold;
   color: #444;
 }
 
@@ -1456,9 +1464,11 @@ span.highlighted {
   color: #FFF;
 }
 
-#article thead th.head * {
+#article thead th.head p,
+#article thead th.head div>* {
   color: #FFF;
   padding: 3px 6px;
+  display: block;
 }
 
 #article tbody th.head {
@@ -1473,6 +1483,133 @@ span.highlighted {
 
 #article tr.row-odd td {
   background-color: #F9F9F9;
+}
+
+#article table.filter-table span.icon-filter:before {
+  content: "\e936";
+  display: inline-block;
+  padding: 3px 6px;
+}
+
+#article table.filter-table .iconButton .icon {
+  margin-right: 8px;
+}
+
+#article table.filter-table .button .icon {
+  vertical-align: -10%;
+  font-size: 120%;
+  opacity: .8;
+}
+
+#article table.filter-table .icon {
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#article table.filter-table .icon-filter:before {
+  content: "\e936";
+}
+
+#article table.filter-table .ft-filter{
+  display: inline-block;
+  position: relative;
+  margin: 3px 6px;
+  z-index: 200;
+}
+
+#article table.filter-table .ft-filter {
+  margin: 3px 6px;
+}
+
+#article table.filter-table .ft-button:hover{
+  background: #FFD700;
+}
+
+#article table.filter-table .ft-button path{
+  fill: #777;
+}
+
+#article table.filter-table .ft-button:hover,
+#article table.filter-table .ft-button.selected{
+  background-color: #FFA500;
+  color: #FFF;
+  border: solid 2px #FFF;
+  border-radius: 5px;
+}
+
+#article table.filter-table .ft-list{
+  display: inline-block;
+  position: absolute;
+  max-width: 300px;
+  min-width: 200px;
+  background: #fff;
+  border: 1px solid #002B62;
+  border-radius: 5px;
+  top: 15px;
+  left: 0;
+  line-height: 1.1;
+  font-weight: normal;
+}
+
+#article table.filter-table .ft-list form{
+  max-height: 300px;
+  overflow: scroll;
+  overflow: overflow-y;
+  overflow: auto;
+}
+
+#article table.filter-table .ft-check-row{
+  text-align: left;
+  padding: 2px;
+  width: 250px;
+}
+
+#article table.filter-table .ft-check-row input,
+#article table.filter-table .ft-check-row label{
+  padding: 0 10px 0 3px;
+  color: #333;
+  font-size: 1rem;
+  display: inline;
+  /* text-overflow: ellipsis;
+  width: 275px;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block; */
+}
+
+#article table.filter-table .ft-button-area{
+  text-align: center;
+  font-size: 0.5rem;
+  padding: 8px 5px;
+}
+
+#article table.filter-table .ft-button-area input{
+  display: inline-block;
+  margin: 0 5px;
+  width: 60px;
+  height: 30px;
+  font-size: 1.1rem;
+}
+
+#article table.filter-table .ft-input-area{
+  padding: 5px 3px;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+}
+
+#article table.filter-table .ft-input-area input{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 6px 6px;
+  font-weight: normal;
+  font-size: 95%;
+  border: 1px solid #ccc;
 }
 
 #article .menuselection {
@@ -1943,7 +2080,7 @@ span.highlighted {
   position: fixed;
   left: 0;
   bottom: 0;
-  z-index: 40;
+  z-index: 1000;
   width: 100%;
   height: 24px;
   background-color: #333;

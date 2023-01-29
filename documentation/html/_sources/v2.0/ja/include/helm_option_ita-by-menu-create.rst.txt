@@ -3,6 +3,11 @@
    :widths: 25 25 10 20
    :header-rows: 1
    :align: left
+   :class: filter-table
+
+
+
+
 
    * - パラメータ
      - 説明

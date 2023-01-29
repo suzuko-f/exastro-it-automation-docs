@@ -12,20 +12,17 @@
 Learn
 ==========
 
-.. raw:: html
-
-   </div>
-   <div id="homeIndex">
-
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
+   :numbered: 3
+   
 
    .. rbac/index
    .. host_group_management_and_menu_creation/index
    .. ansible-driver/index
    .. conductor/index
+   quickstart
+   
 
-.. raw:: html
 
-   </div>
 

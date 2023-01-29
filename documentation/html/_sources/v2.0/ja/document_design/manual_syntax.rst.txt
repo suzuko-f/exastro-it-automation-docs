@@ -168,8 +168,201 @@ H6 (見出し6) 以上の表現
   | 内容1
   | 内容2
 
+タブ
+====
+
+| 説明をする上で選択肢が有る場合などに利用します。
+
+記載方法
+^^^^^^^^
+
+| 下記のように :kbd:`.. tabs::` でディレクティブを定義します。
+
+記述例
+^^^^^^
+
+.. code-block:: bash
+
+   Hello world を出力するプログラム
+   
+   .. tabs::
+   
+      .. tab:: C言語
+
+         :kbd:`printf` を使います。
+   
+         .. code-block:: c
+            :caption: helloworld.c
+            :linenos:
+
+            #include <stdio.h>
+         
+            main()
+            {
+               printf("Hello World\n");
+            }
+   
+      .. tab:: シェルスクリプト
+
+         :kbd:`echo` を使用します。
+   
+         .. code-block:: shell
+            :caption: helloworld.sh
+            :linenos:
+
+            #!/bin/bash
+            echo "Hello World"
+            exit 0
+ 
+      .. tab:: Python
+
+         :kbd:`print` を使います。
+
+         .. code-block:: python
+            :caption: helloworld.py
+            :linenos:
+
+            print("Hello World")
+
+表示結果
+^^^^^^^^
+
+Hello world を出力するプログラム
+
+.. tabs::
+
+   .. tab:: C言語
+
+      :kbd:`printf` を使います。
+
+      .. code-block:: c
+         :caption: helloworld.c
+         :linenos:
+
+         #include <stdio.h>
+      
+         main()
+         {
+            printf("Hello World\n");
+         }
+
+   .. tab:: シェルスクリプト
+
+      :kbd:`echo` を使用します。
+
+      .. code-block:: shell
+         :caption: helloworld.sh
+         :linenos:
+
+         #!/bin/bash
+         echo "Hello World"
+         exit 0
+
+   .. tab:: Python
+
+      :kbd:`printf` を使います。
+
+      .. code-block:: python
+         :caption: helloworld.py
+         :linenos:
+
+         print("Hello World")
+
 
 .. _manual_syntax_word:
+
+コード
+======
+
+| ファイル内のソースコードやコマンドなどを表現する際に利用します。
+
+記載方法
+^^^^^^^^
+| 下記のように :kbd:`.. code-block:: [コードの言語]` でディレクティブを定義します。
+
+| オプションは下記のとおりです。
+
+
+.. list-table:: code-block のオプション
+   :widths: 20, 40, 30
+   :header-rows: 1
+   :align: left
+
+   * - オプション
+     - 説明
+     - 設定値
+   * - name
+     - 参照の定義
+     - exastro_yaml
+   * - caption
+     - ファイル名
+     - (例) exastro.yaml
+   * - linenos
+     - 行数表示の有無
+     - (不要)
+   * - lineno-start
+     - 行数表示の開始行番号
+     - 5 (数値)
+   * - emphasize-lines
+     - コード内の特定の行を強調
+     - 12,13 (行の範囲)
+
+
+.. note:: 
+   | code-block の定義と実際のコードは1行空行を空ける必要があります。
+   | インデントは半角スペース3文字分必要です。
+
+記述例
+^^^^^^
+
+.. code-block:: code
+
+   .. code-block:: yaml
+      :name: exastro_yaml
+      :caption: exastro.yaml
+      :linenos:
+      :lineno-start: 5
+      :emphasize-lines: 12,13
+   
+      # Default values for Exastro.
+      # This is a YAML-formatted file.
+      # Declare variables to be passed into your templates.
+      global:
+        itaGlobalDefinition:
+          name: ita-global
+          enabled: true
+          image:
+            registry: "docker.io"
+            organization: exastro
+            package: exastro-it-automation
+          config:
+            DEFAULT_LANGUAGE: "ja"
+            LANGUAGE: "en"
+
+表示結果
+^^^^^^^^
+
+.. code-block:: yaml
+   :name: exastro_yaml
+   :caption: exastro.yaml
+   :linenos:
+   :lineno-start: 5
+   :emphasize-lines: 12,13
+
+   # Default values for Exastro.
+   # This is a YAML-formatted file.
+   # Declare variables to be passed into your templates.
+   global:
+     itaGlobalDefinition:
+       name: ita-global
+       enabled: true
+       image:
+         registry: "docker.io"
+         organization: exastro
+         package: exastro-it-automation
+       config:
+         DEFAULT_LANGUAGE: "ja"
+         LANGUAGE: "en"
 
 単語表現
 ========
@@ -229,6 +422,7 @@ H6 (見出し6) 以上の表現
 --------------
 
 | 画像を本文中に挿入するためには figure を利用します。
+| 画像は左寄せ表示を基本とします。
 
 記載方法
 ^^^^^^^^
@@ -244,7 +438,6 @@ H6 (見出し6) 以上の表現
 
    .. figure:: ../../../images/manual_design/charg.png
       :width: 100px
-      :align: center
       :alt: role_of_index
 
       「幅100px」の画像 <--- キャプション
@@ -256,7 +449,6 @@ H6 (見出し6) 以上の表現
 
 .. figure:: ../../../images/manual_design/chart.png
    :width: 100px
-   :align: center
    :alt: role_of_index
 
    「幅100px」の画像
@@ -356,6 +548,67 @@ H6 (見出し6) 以上の表現
    * - レコード2
      - フィールド(2,2)
      - フィールド(2,3)
+
+フィルター付きリストテーブル
+----------------------------
+
+| リスト形式を使ったカラムにフィルターがついた表の記述方法です。
+
+記載方法
+^^^^^^^^
+
+| リスト形式でテーブルヘッダーや各レコードを記述します。
+| クラスに :kbd:`filter-table` を指定します。
+
+記述例
+^^^^^^
+
+.. code-block:: bash
+   :emphasize-lines: 5
+
+   .. list-table:: リストテーブルサンプル
+      :widths: 10 10 20
+      :header-rows: 1
+      :align: left
+      :class: filter-table
+
+      * - カラム1
+        - カラム2
+        - | カラム3
+          | (複数行)
+      * - レコード1
+        - | フィールド(1,2)
+        - | フィールド(1,3)
+          | リストテーブルでは
+          | １セル内に複数行入れることが
+          | 容易にできます。
+      * - レコード2
+        - フィールド(2,2)
+        - フィールド(2,3)
+
+表示結果
+^^^^^^^^
+
+.. list-table:: リストテーブルサンプル
+   :widths: 10 10 20
+   :header-rows: 1
+   :align: left
+   :class: filter-table
+
+   * - カラム1
+     - カラム2
+     - | カラム3
+       | (複数行)
+   * - レコード1
+     - | フィールド(1,2)
+     - | フィールド(1,3)
+       | リストテーブルでは
+       | １セル内に複数行入れることが
+       | 容易にできます。
+   * - レコード2
+     - フィールド(2,2)
+     - フィールド(2,3)
+
 
 
 グリッドテーブル(非推奨)
