@@ -3,6 +3,7 @@
    :widths: 25 25 10 20
    :header-rows: 1
    :align: left
+   :class: filter-table
 
    * - パラメータ
      - 説明
@@ -24,7 +25,7 @@
    * - global.itaDefinition.config.ITA_WEB_HOST
      - Exastro IT Automation エンドポイントのホスト名、もしくは、FQDN
      - 不可
-     - "ita-web-server.exastro-it-automation.svc"
+     - "ita-web-server"
    * - global.itaDefinition.config.ITA_WEB_PORT
      - Exastro IT Automation エンドポイントのポート番号
      - 不可
@@ -36,7 +37,7 @@
    * - global.itaDefinition.config.ITA_API_HOST
      - Exastro IT Automation API エンドポイントのホスト名、もしくは、FQDN
      - 不可
-     - "ita-api-organization.exastro-it-automation.svc"
+     - "ita-api-organization"
    * - global.itaDefinition.config.ITA_API_PORT
      - Exastro IT Automation API エンドポイントのポート番号
      - 不可
@@ -48,7 +49,7 @@
    * - global.itaDefinition.config.ITA_API_ADMIN_HOST
      - Exastro IT Automation API Admin エンドポイントのホスト名、もしくは、FQDN
      - 不可
-     - "ita-api-admin.exastro-it-automation.svc"
+     - "ita-api-admin"
    * - global.itaDefinition.config.ITA_API_ADMIN_PORT
      - Exastro IT Automation API Admin エンドポイントのポート番号
      - 不可

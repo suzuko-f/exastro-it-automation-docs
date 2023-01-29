@@ -3,6 +3,7 @@
    :widths: 25 25 10 20
    :header-rows: 1
    :align: left
+   :class: filter-table
 
    * - パラメータ
      - 説明
@@ -25,7 +26,7 @@
    * - global.keycloakDefinition.config.API_KEYCLOAK_HOST
      - Keycloak API エンドポイントのホスト名、もしくは、FQDN
      - 可 (外部Keycloak利用時)
-     - "keycloak.exastro-platform.svc"
+     - "keycloak"
    * - global.keycloakDefinition.config.API_KEYCLOAK_PORT
      - Keycloak API エンドポイントのポート番号
      - 可 (外部Keycloak利用時)
@@ -37,7 +38,7 @@
    * - global.keycloakDefinition.config.KEYCLOAK_HOST
      - Keycloak エンドポイントのホスト名、もしくは、FQDN
      - 可 (外部Keycloak利用時)
-     - "keycloak.exastro-platform.svc"
+     - "keycloak"
    * - global.keycloakDefinition.config.KEYCLOAK_PORT
      - Keycloak API エンドポイントのポート番号
      - 可 (外部Keycloak利用時)

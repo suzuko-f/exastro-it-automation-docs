@@ -3,6 +3,7 @@
    :widths: 25 25 10 20
    :header-rows: 1
    :align: left
+   :class: filter-table
 
    * - パラメータ
      - 説明
@@ -27,7 +28,7 @@
        | デフォルト状態では、同一の Kubernetes クラスタ内にデプロイされるコンテナを指定しています。
        | クラスタ外部の DB を利用する場合には設定が必要となります。 
      - 可 (外部データベース利用時)
-     - "mariadb.exastro-platform.svc"
+     - "mariadb"
    * - global.authDatabaseDefinition.config.DB_PORT
      - 認証機能用データベースで利用するポート番号(TCP)
      - 可 (外部データベース利用時)

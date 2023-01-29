@@ -6,3 +6,4 @@ sphinxcontrib-seqdiag
 sphinxcontrib-actdiag
 sphinxcontrib-nwdiag
 sphinx-copybutton
+sphinx-tabs
