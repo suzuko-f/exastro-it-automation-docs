@@ -36,7 +36,7 @@ Workspase (ワークスペース)
 
 #. | 新規ワークスペース画面が表示されるので、ワークスペースの情報を入力し、 :guilabel:`登録` ボタンをクリックします。
 
-   .. figure:: /images/platform/workspace/新規ワークスペース作成画面.png
+   .. figure:: /images/ja/manuals/platform/workspace/新規ワークスペース作成画面.png
       :width: 600px
       :align: left
 

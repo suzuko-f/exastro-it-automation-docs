@@ -14,10 +14,9 @@
      - 不可
      - "mariadb"
    * - global.databaseDefinition.enabled
-     - Exastro 共用データベースのデプロイ要否
-     - 可
-     - | :program:`"true"` (デフォルト): DBコンテナをデプロイする
-       | :program:`"false"`: DBコンテナをデプロイしない
+     - Exastro 共用データベースの定義の利用有無
+     - 不可
+     - true
    * - global.databaseDefinition.secret.MARIADB_ROOT_PASSWORD
      - Exastro 共用データベースの root アカウントに設定するパスワード(エンコードなし)
      - 必須

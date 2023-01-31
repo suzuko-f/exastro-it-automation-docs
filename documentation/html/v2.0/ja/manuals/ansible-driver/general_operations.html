@@ -357,7 +357,7 @@
 <div class="line-block">
 <div class="line">Ansible driverは、ITAシステムのオプションとして機能し、ITAシステムで登録した構築対象のサーバ・ストレージ・ネットワーク各機器に対し、Ansible Core、Ansible Automation Controllerのどちらを経由するかを選択し、実際の運用設定を自動的に行います。</div>
 </div>
-<a class="reference internal image-reference" href="../../../../_images/image41.png"><img alt="Exastro概要" class="align-center" src="../../../../_images/image41.png" style="width: 6.68819in; height: 3.35972in;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/overview.png"><img alt="Exastro概要" class="align-center" src="../../../../_images/overview.png" style="width: 6.68819in; height: 3.35972in;" /></a>
 <div class="line-block">
 <div class="line">Ansible driverには以下のモードを用意しています。</div>
 </div>
@@ -1032,7 +1032,7 @@
 <div class="line">Playbookで定義した変数の値は代入値登録機能により上書きすることができます。</div>
 <div class="line">Playbook中の変数と、代入値管理機能で登録した変数の値の関係を、以下の図に示します。</div>
 </div>
-<a class="reference internal image-reference" href="../../../../_images/image_2a_1.png"><img alt="../../../../_images/image_2a_1.png" class="align-center" src="../../../../_images/image_2a_1.png" style="width: 6.68819in; height: 3.35972in;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/hensu.png"><img alt="../../../../_images/hensu.png" class="align-center" src="../../../../_images/hensu.png" style="width: 6.68819in; height: 3.35972in;" /></a>
 <div class="line-block">
 <div class="line">代入値管理機能で登録した変数の値は、各ホスト用に変数定義ファイル(host_vars)に出力され、Ansibleで元のPlaybookと変数定義用ファイルを入力として各ホストに実行されます。</div>
 </div>
@@ -1423,7 +1423,7 @@ Controllerにファイル転送するために必要な情報を管理します�
 <div class="line">登録方法の詳細は、関連マニュアルの <a class="reference internal" href="../it_automation_base/basic_console.html"><span class="doc">基本コンソール</span></a> をご参照下さい。</div>
 </div>
 <figure class="align-default" id="id96">
-<a class="reference internal image-reference" href="../../../../_images/submenu_screen_operation_list.png"><img alt="サブメニュー画面（オペレーション一覧）" src="../../../../_images/submenu_screen_operation_list.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/register.png"><img alt="サブメニュー画面（オペレーション一覧）" src="../../../../_images/register.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">サブメニュー画面（オペレーション一覧）</span><a class="headerlink" href="#id96" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -1442,7 +1442,7 @@ Controllerにファイル転送するために必要な情報を管理します�
 <div class="line"><span class="menuselection">Ansible共通‣機器一覧</span> では、作業対象ホストの情報のメンテナンス(閲覧/登録/更新/廃止)を行います。</div>
 </div>
 <figure class="align-default" id="id97">
-<a class="reference internal image-reference" href="../../../../_images/submenu_screen_device_list.png"><img alt="サブメニュー画面（機器一覧）" src="../../../../_images/submenu_screen_device_list.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/device_list.png"><img alt="サブメニュー画面（機器一覧）" src="../../../../_images/device_list.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">サブメニュー画面（機器一覧）</span><a class="headerlink" href="#id97" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -1452,7 +1452,7 @@ Controllerにファイル転送するために必要な情報を管理します�
 <div class="line"><span class="guilabel"> 登録</span> ボタンより、機器情報の登録を行います。</div>
 </div>
 <figure class="align-default" id="id98">
-<a class="reference internal image-reference" href="../../../../_images/registration_screen_device_list.gif"><img alt="登録画面（機器一覧）" src="../../../../_images/registration_screen_device_list.gif" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/registration_device_list.gif"><img alt="登録画面（機器一覧）" src="../../../../_images/registration_device_list.gif" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">登録画面（機器一覧）</span><a class="headerlink" href="#id98" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -1721,7 +1721,7 @@ Controllerにファイル転送するために必要な情報を管理します�
 <div class="line">Ansible Automation Controllerのawxユーザーから作業対象ホストにssh接続しています。</div>
 <div class="line">awxユーザーの公開鍵ファイルをログイン先ユーザーのauthorized_keysにコピーして下さい。ブラウザよりAnsible Automation Controllerにログインし、「設定」→「ジョブ」→「分離されたジョブに公開するパス」に <code class="file docutils literal notranslate"><span class="pre">/var/lib/awx/.ssh/</span></code> を設定します。</div>
 </div>
-<a class="reference internal image-reference" href="../../../../_images/image8.png"><img alt="../../../../_images/image8.png" class="align-center" src="../../../../_images/image8.png" style="width: 4.97986in; height: 1.51304in;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/ansible_automationcontroller.png"><img alt="../../../../_images/ansible_automationcontroller.png" class="align-center" src="../../../../_images/ansible_automationcontroller.png" style="width: 4.97986in; height: 1.51304in;" /></a>
 <div class="line-block">
 <div class="line">尚、AnsibleTower4.x以降、awxユーザーの.sshディレクトリが扱えない為、作業対象ホストと鍵認証（鍵交換済み）での接続は出来ません。</div>
 </div>
@@ -1744,7 +1744,7 @@ Controllerにファイル転送するために必要な情報を管理します�
 <div class="line"><span class="menuselection">Ansible共通‣インターフェース情報</span> では、Ansible Core、AnsibleTower、Ansible Automation Controllerのいずれかを実行エンジンに選択し、ITAシステム・Ansible driverサーバと実行エンジンのサーバが共有するディレクトリのパスのおよび実行エンジンのサーバへの接続インターフェース情報のメンテナンス(閲覧/更新)を行います。</div>
 </div>
 <figure class="align-default" id="id100">
-<a class="reference internal image-reference" href="../../../../_images/submenu_screen_interface_information.png"><img alt="サブメニュー画面（インタフェース情報）" src="../../../../_images/submenu_screen_interface_information.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/interface_information.png"><img alt="サブメニュー画面（インタフェース情報）" src="../../../../_images/interface_information.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">サブメニュー画面（インタフェース情報）</span><a class="headerlink" href="#id100" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -1754,7 +1754,7 @@ Controllerにファイル転送するために必要な情報を管理します�
 <div class="line"><span class="guilabel">編集</span> ボタンより、インターフェース情報の登録を行います。</div>
 </div>
 <figure class="align-default" id="id101">
-<a class="reference internal image-reference" href="../../../../_images/registration_screen_interface_information.gif"><img alt="登録画面（インタフェース情報）" src="../../../../_images/registration_screen_interface_information.gif" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/registration_interface_information.gif"><img alt="登録画面（インタフェース情報）" src="../../../../_images/registration_interface_information.gif" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">登録画面（インタフェース情報）</span><a class="headerlink" href="#id101" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -1961,7 +1961,7 @@ Controllerにファイル転送するために必要な情報を管理します�
 <div class="line">ただし、Ansible Automation Controllerのhop nodeの登録は不要です。</div>
 </div>
 <figure class="align-default" id="id103">
-<a class="reference internal image-reference" href="../../../../_images/submenu_screen_ansible_automation_controller_host_list.png"><img alt="サブメニュー画面（Ansible Automation Controller ホスト一覧）" src="../../../../_images/submenu_screen_ansible_automation_controller_host_list.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/ansible_automation_controller_host_list.png"><img alt="サブメニュー画面（Ansible Automation Controller ホスト一覧）" src="../../../../_images/ansible_automation_controller_host_list.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">サブメニュー画面（Ansible Automation Controller ホスト一覧）</span><a class="headerlink" href="#id103" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -1971,7 +1971,7 @@ Controllerにファイル転送するために必要な情報を管理します�
 <div class="line"><span class="guilabel"> 登録</span> ボタンより、Ansible Automation Controllerのホスト情報の登録を行います。</div>
 </div>
 <figure class="align-default" id="id104">
-<a class="reference internal image-reference" href="../../../../_images/registration_screen_ansible_automation_controller_host_list.gif"><img alt="登録画面（Ansible Automation Controller ホスト一覧）" src="../../../../_images/registration_screen_ansible_automation_controller_host_list.gif" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/ansible_automation_controller_host_list.gif"><img alt="登録画面（Ansible Automation Controller ホスト一覧）" src="../../../../_images/ansible_automation_controller_host_list.gif" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">登録画面（Ansible Automation Controller ホスト一覧）</span><a class="headerlink" href="#id104" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -2092,7 +2092,7 @@ Controllerにファイル転送するために必要な情報を管理します�
 <div class="line"><span class="menuselection">Ansible共通‣グローバル変数管理</span> では、Playbookで利用するグローバル変数名のメンテナンス(閲覧/登録/更新/廃止)を行います。</div>
 </div>
 <figure class="align-default" id="id106">
-<a class="reference internal image-reference" href="../../../../_images/submenu_screen_global_variable_list.png"><img alt="サブメニュー画面（グローバル変数管理）" src="../../../../_images/submenu_screen_global_variable_list.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/global_variable_list.png"><img alt="サブメニュー画面（グローバル変数管理）" src="../../../../_images/global_variable_list.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">サブメニュー画面（グローバル変数管理）</span><a class="headerlink" href="#id106" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -2102,7 +2102,7 @@ Controllerにファイル転送するために必要な情報を管理します�
 <div class="line"><span class="guilabel"> 登録</span> ボタンより、グローバル変数管理情報の登録を行います。</div>
 </div>
 <figure class="align-default" id="id107">
-<a class="reference internal image-reference" href="../../../../_images/registration_screen_global_variable_list.gif"><img alt="登録画面（グローバル変数管理）" src="../../../../_images/registration_screen_global_variable_list.gif" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/global_variable_list.gif"><img alt="登録画面（グローバル変数管理）" src="../../../../_images/global_variable_list.gif" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">登録画面（グローバル変数管理）</span><a class="headerlink" href="#id107" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -2176,7 +2176,7 @@ _
 <div class="line">ファイル管理でファイル素材を登録しておくことで、Playbook内で定義している各モジュールで使用するファイルをファイル埋込変数名で指定することができます。</div>
 </div>
 <figure class="align-default" id="id109">
-<a class="reference internal image-reference" href="../../../../_images/submenu_screen_contents_list.png"><img alt="サブメニュー画面（ファイル管理）" src="../../../../_images/submenu_screen_contents_list.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/contents_list.png"><img alt="サブメニュー画面（ファイル管理）" src="../../../../_images/contents_list.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">サブメニュー画面（ファイル管理）</span><a class="headerlink" href="#id109" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -2186,7 +2186,7 @@ _
 <div class="line"><span class="guilabel"> 登録</span> ボタンより、ファイル管理情報の登録を行います。</div>
 </div>
 <figure class="align-default" id="id110">
-<a class="reference internal image-reference" href="../../../../_images/registration_screen_contents_list.gif"><img alt="登録画面（ファイル管理）" src="../../../../_images/registration_screen_contents_list.gif" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/contents_list.gif"><img alt="登録画面（ファイル管理）" src="../../../../_images/contents_list.gif" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">登録画面（ファイル管理）</span><a class="headerlink" href="#id110" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -2330,7 +2330,7 @@ _
 <div class="line">テンプレート管理でテンプレート素材を登録しておくことで、Playbook内で定義しているtemplateモジュールなどで使用するtemplateファイルをテンプレート埋込変数で指定することができます。</div>
 </div>
 <figure class="align-default" id="id114">
-<a class="reference internal image-reference" href="../../../../_images/submenu_screen_template_list.png"><img alt="サブメニュー画面（テンプレート管理）" src="../../../../_images/submenu_screen_template_list.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/template_list.png"><img alt="サブメニュー画面（テンプレート管理）" src="../../../../_images/template_list.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">サブメニュー画面（テンプレート管理）</span><a class="headerlink" href="#id114" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -2340,7 +2340,7 @@ _
 <div class="line"><span class="guilabel"> 登録</span> ボタンより、テンプレート管理情報の登録を行います。</div>
 </div>
 <figure class="align-default" id="id115">
-<a class="reference internal image-reference" href="../../../../_images/registration_screen_template_list.gif"><img alt="登録画面（テンプレート管理）" src="../../../../_images/registration_screen_template_list.gif" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/template_list.gif"><img alt="登録画面（テンプレート管理）" src="../../../../_images/template_list.gif" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">登録画面（テンプレート管理）</span><a class="headerlink" href="#id115" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -2608,7 +2608,7 @@ _
 <div class="line"><span class="menuselection">Ansible-LegacyRole‣Movement一覧</span> ではMovement名のメンテナンス(閲覧/登録/更新/廃止)を行います。</div>
 </div>
 <figure class="align-default" id="id122">
-<a class="reference internal image-reference" href="../../../../_images/submenu_screen_movement_list.png"><img alt="サブメニュー画面（Movement一覧）" src="../../../../_images/submenu_screen_movement_list.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/movement_list.png"><img alt="サブメニュー画面（Movement一覧）" src="../../../../_images/movement_list.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">サブメニュー画面（Movement一覧）</span><a class="headerlink" href="#id122" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -2618,7 +2618,7 @@ _
 <div class="line"><span class="guilabel"> 登録</span> ボタンより、Movement情報の登録を行います。</div>
 </div>
 <figure class="align-default" id="id123">
-<a class="reference internal image-reference" href="../../../../_images/registration_screen_movement_list.gif"><img alt="登録画面（Movement一覧）" src="../../../../_images/registration_screen_movement_list.gif" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/registration_movement_list.gif"><img alt="登録画面（Movement一覧）" src="../../../../_images/registration_movement_list.gif" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">登録画面（Movement一覧）</span><a class="headerlink" href="#id123" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -2774,7 +2774,7 @@ _
 <div class="line">ロールパッケージファイルは、「roles」のある階層のディレクトリをzipにて圧縮したものを登録してください。ロールパッケージディレクトリ構成などは「 <span class="xref std std-ref">general_operations_write_role_package_ansible_legacy_role</span> 」を参照してください。</div>
 </div>
 <figure class="align-default" id="id125">
-<a class="reference internal image-reference" href="../../../../_images/submenu_screen_role_package_list.png"><img alt="サブメニュー画面（ロールパッケージ管理）" src="../../../../_images/submenu_screen_role_package_list.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/role_package_list.png"><img alt="サブメニュー画面（ロールパッケージ管理）" src="../../../../_images/role_package_list.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">サブメニュー画面（ロールパッケージ管理）</span><a class="headerlink" href="#id125" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -2784,7 +2784,7 @@ _
 <div class="line"><span class="guilabel"> 登録</span> ボタンより、ロールパッケージ情報の登録を行います。</div>
 </div>
 <figure class="align-default" id="id126">
-<a class="reference internal image-reference" href="../../../../_images/registration_screen_role_package_list.gif"><img alt="登録画面（ロールパッケージ管理）" src="../../../../_images/registration_screen_role_package_list.gif" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/registration_role_package_list.gif"><img alt="登録画面（ロールパッケージ管理）" src="../../../../_images/registration_role_package_list.gif" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">登録画面（ロールパッケージ管理）</span><a class="headerlink" href="#id126" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -2852,7 +2852,7 @@ _
 <div class="line">Movementで実行するロールパッケージのメンテナンス(閲覧/登録/更新/廃止)を行います。</div>
 </div>
 <figure class="align-default" id="id128">
-<a class="reference internal image-reference" href="../../../../_images/submenu_screen_movement_role.png"><img alt="サブメニュー画面（Movement-ロール紐付）" src="../../../../_images/submenu_screen_movement_role.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/movement_role.png"><img alt="サブメニュー画面（Movement-ロール紐付）" src="../../../../_images/movement_role.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">サブメニュー画面（Movement-ロール紐付）</span><a class="headerlink" href="#id128" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -2862,7 +2862,7 @@ _
 <div class="line"><span class="guilabel"> 登録</span> ボタンより、Movement-ロール紐付の登録を行います。</div>
 </div>
 <figure class="align-default" id="id129">
-<a class="reference internal image-reference" href="../../../../_images/registration_screen_movement_role.gif"><img alt="登録画面（Movement-ロール紐付）" src="../../../../_images/registration_screen_movement_role.gif" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/registration_movement_role.gif"><img alt="登録画面（Movement-ロール紐付）" src="../../../../_images/registration_movement_role.gif" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">登録画面（Movement-ロール紐付）</span><a class="headerlink" href="#id129" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -2942,7 +2942,7 @@ _
 <div class="line"><span class="menuselection">Ansible-LegacyRole‣変数ネスト管理</span> では、「 <a class="reference internal" href="#general-operations-role-package-list-ansible-legacy-role-only"><span class="std std-ref">ロールパッケージ管理</span></a> 」で登録したロールパッケージで定義されている多段変数内で繰返配列定義されているメンバー変数の配列の最大繰返数のメンテナンス(閲覧/更新)を行います。</div>
 </div>
 <figure class="align-default" id="id131">
-<a class="reference internal image-reference" href="../../../../_images/submenu_screen_nested_variable_list.png"><img alt="サブメニュー画面（変数ネスト管理）" src="../../../../_images/submenu_screen_nested_variable_list.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/nested_variable_list.png"><img alt="サブメニュー画面（変数ネスト管理）" src="../../../../_images/nested_variable_list.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">サブメニュー画面（変数ネスト管理）</span><a class="headerlink" href="#id131" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -2952,7 +2952,7 @@ _
 <div class="line"><span class="guilabel">編集</span> ボタンより最大繰返数の更新を行います。</div>
 </div>
 <figure class="align-default" id="id132">
-<a class="reference internal image-reference" href="../../../../_images/registration_screen_nested_variable_list.gif"><img alt="登録画面（変数ネスト管理）" src="../../../../_images/registration_screen_nested_variable_list.gif" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/registration_nested_variable_list.gif"><img alt="登録画面（変数ネスト管理）" src="../../../../_images/registration_nested_variable_list.gif" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">登録画面（変数ネスト管理）</span><a class="headerlink" href="#id132" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -3011,7 +3011,7 @@ _
 <div class="line"><span class="xref std std-ref">general_operations_substitution_value_auto_registration_setting2</span> に反映ルールを記載しています。</div>
 </div>
 <figure class="align-default" id="id134">
-<a class="reference internal image-reference" href="../../../../_images/submenu_screen_substitution_value_auto_registration_setting_role.png"><img alt="サブメニュー画面（代入値自動登録設定）" src="../../../../_images/submenu_screen_substitution_value_auto_registration_setting_role.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/substitution_value_auto_registration_setting_role.png"><img alt="サブメニュー画面（代入値自動登録設定）" src="../../../../_images/substitution_value_auto_registration_setting_role.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">サブメニュー画面（代入値自動登録設定）</span><a class="headerlink" href="#id134" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -3021,7 +3021,7 @@ _
 <div class="line"><span class="guilabel"> 登録</span> ボタンより代入値自動登録設定を行います。</div>
 </div>
 <figure class="align-default" id="id135">
-<a class="reference internal image-reference" href="../../../../_images/registration_screen_substitution_value_auto_registration_setting_role.gif"><img alt="登録画面（代入値自動登録設定）" src="../../../../_images/registration_screen_substitution_value_auto_registration_setting_role.gif" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/registration_substitution_value_auto_registration_setting_role.gif"><img alt="登録画面（代入値自動登録設定）" src="../../../../_images/registration_substitution_value_auto_registration_setting_role.gif" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">登録画面（代入値自動登録設定）</span><a class="headerlink" href="#id135" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -3567,7 +3567,7 @@ _
 <div class="line"><span class="menuselection">メニュー作成‣メニュー定義・作成</span> で「Ansible共通:ファイル管理:ファイル埋込変数名」「Ansible共通:テンプレート管理:テンプレート埋込変数名」をパラメータシートの項目としてメニュー作成後、 <span class="menuselection">入力用‣サンプルパラメータシート(メニュー名)</span> で項目の設定値としてファイル埋込変数とテンプレート埋込変数を登録します。</div>
 </div>
 <figure class="align-default" id="id147">
-<a class="reference internal image-reference" href="../../../../_images/general_operations_note_1a.png"><img alt="メニュー定義・作成画面" src="../../../../_images/general_operations_note_1a.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/legacyrole_menucreate.png"><img alt="メニュー定義・作成画面" src="../../../../_images/legacyrole_menucreate.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">メニュー定義・作成画面</span><a class="headerlink" href="#id147" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -3620,7 +3620,7 @@ _
 <div class="line">また、作業実行後、作業対象サーバに1. で登録したファイル素材とテンプレート素材が設置されます。</div>
 </div>
 <figure class="align-default" id="id150">
-<a class="reference internal image-reference" href="../../../../_images/general_operations_note_1b.png"><img alt="作業状態確認の代入値確認画面" src="../../../../_images/general_operations_note_1b.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/general_operations_note.png"><img alt="作業状態確認の代入値確認画面" src="../../../../_images/general_operations_note.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">作業状態確認の代入値確認画面</span><a class="headerlink" href="#id150" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -3665,7 +3665,7 @@ _
 <div class="line">作業の実行状態を監視します。</div>
 </div>
 <figure class="align-default" id="id152">
-<a class="reference internal image-reference" href="../../../../_images/submenu_screen_check_operation_status.png"><img alt="サブメニュー画面（作業状態確認）" src="../../../../_images/submenu_screen_check_operation_status.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/check_operation_status.png"><img alt="サブメニュー画面（作業状態確認）" src="../../../../_images/check_operation_status.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">サブメニュー画面（作業状態確認）</span><a class="headerlink" href="#id152" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -3710,7 +3710,7 @@ _
 <div class="line">さらに、Movement一覧のオプションパラメータでジョブスライス数を指定するすることによりグループ化された構築対象機器をさらにジョブスライス数で分割しplaybookが実行され、ansibleの実行ログも分割されます。</div>
 <div class="line">実行ログが分割された場合、表示ログファイルのプルダウンが表示され、表示したいログファイルを選択する事ができます。</div>
 </div>
-<a class="reference internal image-reference" href="../../../../_images/image62.png"><img alt="../../../../_images/image62.png" class="align-center" src="../../../../_images/image62.png" style="width: 6.68819in; height: 0.736in;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/executionlog.png"><img alt="../../../../_images/executionlog.png" class="align-center" src="../../../../_images/executionlog.png" style="width: 6.68819in; height: 0.736in;" /></a>
 <div class="line-block">
 <div class="line">表示ログファイルのプルダウンに表示されるログファイル名は以下の2種類があります。</div>
 <div class="line">exec.log:　全ての実行ログをまとめたログファイルです。</div>
@@ -3745,7 +3745,7 @@ _
 <div class="line"><span class="guilabel">詳細</span> ボタンで <a class="reference internal" href="#general-operations-check-operation-status"><span class="std std-ref">作業状態確認</span></a> に遷移し、実行状態の詳細を見ることができます。</div>
 </div>
 <figure class="align-default" id="id153">
-<a class="reference internal image-reference" href="../../../../_images/submenu_screen_execution_list.png"><img alt="サブメニュー画面（作業管理）" src="../../../../_images/submenu_screen_execution_list.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/execution_list.png"><img alt="サブメニュー画面（作業管理）" src="../../../../_images/execution_list.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">サブメニュー画面（作業管理）</span><a class="headerlink" href="#id153" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -3758,7 +3758,7 @@ _
 <div class="line"><span class="menuselection">Ansible-LegacyRole‣作業対象ホスト</span> では、オペレーションに紐付くMovementおよびホストを閲覧できます。</div>
 </div>
 <figure class="align-default" id="id154">
-<a class="reference internal image-reference" href="../../../../_images/submenu_screen_target_host.png"><img alt="サブメニュー画面（作業対象ホスト）" src="../../../../_images/submenu_screen_target_host.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/target_host.png"><img alt="サブメニュー画面（作業対象ホスト）" src="../../../../_images/target_host.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">サブメニュー画面（作業対象ホスト）</span><a class="headerlink" href="#id154" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -3806,7 +3806,7 @@ _
 <div class="line">オペレーションに紐付くMovementで利用されるRole内の変数に代入する具体値を閲覧できます。</div>
 </div>
 <figure class="align-default" id="id156">
-<a class="reference internal image-reference" href="../../../../_images/submenu_screen_substitution_value_list.png"><img alt="サブメニュー画面（代入値管理）" src="../../../../_images/submenu_screen_substitution_value_list.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/substitution_value_list.png"><img alt="サブメニュー画面（代入値管理）" src="../../../../_images/substitution_value_list.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-text">サブメニュー画面（代入値管理）</span><a class="headerlink" href="#id156" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -4106,7 +4106,7 @@ _
 <div class="line">アップロードさたロールパッケージ内のロールを、「 <a class="reference internal" href="#general-operations-movement-details"><span class="std std-ref">Movement-ロール紐付</span></a> 」のインクルード順序に従いroleで実行します。</div>
 </div>
 <figure class="align-center">
-<a class="reference internal image-reference" href="../../../../_images/image_2b_2.png"><img alt="../../../../_images/image_2b_2.png" src="../../../../_images/image_2b_2.png" style="width: 8.85417in; height: 6.67187in;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/role_session.png"><img alt="../../../../_images/role_session.png" src="../../../../_images/role_session.png" style="width: 8.85417in; height: 6.67187in;" /></a>
 </figure>
 </section>
 </section>
@@ -4210,7 +4210,7 @@ _
 <div class="line">ITA readmeファイルと、代入値管理機能の関係を以下の図に示します。</div>
 </div>
 <figure class="align-center">
-<a class="reference internal image-reference" href="../../../../_images/image_2b_3.png"><img alt="../../../../_images/image_2b_3.png" src="../../../../_images/image_2b_3.png" style="width: 8.85417in; height: 6.67187in;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/readme_format.png"><img alt="../../../../_images/readme_format.png" src="../../../../_images/readme_format.png" style="width: 8.85417in; height: 6.67187in;" /></a>
 </figure>
 <div class="line-block">
 <div class="line">Playbook中に無い変数をITA readmeファイルで定義した場合、定義した変数を代入値管理機能で値を設定することができます。</div>
@@ -4292,7 +4292,7 @@ _
 <div class="line">以下は、「ita_readme」と「読替表」を用いてアップロードから結果確認までを表した全体イメージ図です。</div>
 </div>
 <figure class="align-center" id="id160">
-<a class="reference internal image-reference" href="../../../../_images/image67.png"><img alt="全体イメージ図" src="../../../../_images/image67.png" style="width: 6.49606in; height: 4.84121in;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/ansible-legacyrole_usage_example1.png"><img alt="全体イメージ図" src="../../../../_images/ansible-legacyrole_usage_example1.png" style="width: 6.49606in; height: 4.84121in;" /></a>
 <figcaption>
 <p><span class="caption-text">全体イメージ図</span><a class="headerlink" href="#id160" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -4372,7 +4372,7 @@ _
 </li>
 </ul>
 <figure class="align-center" id="id161">
-<a class="reference internal image-reference" href="../../../../_images/image68.png"><img alt="観点１のイメージ図" src="../../../../_images/image68.png" style="width: 6.49606in; height: 4.84593in;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/ansible-legacyrole_usage_example2.png"><img alt="観点１のイメージ図" src="../../../../_images/ansible-legacyrole_usage_example2.png" style="width: 6.49606in; height: 4.84593in;" /></a>
 <figcaption>
 <p><span class="caption-text">観点１のイメージ図</span><a class="headerlink" href="#id161" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -4388,7 +4388,7 @@ _
 </li>
 </ul>
 <figure class="align-center" id="id162">
-<a class="reference internal image-reference" href="../../../../_images/image69.png"><img alt="観点２のイメージ図" src="../../../../_images/image69.png" style="width: 6.49606in; height: 4.84593in;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/ansible-legacyrole_usage_example3.png"><img alt="観点２のイメージ図" src="../../../../_images/ansible-legacyrole_usage_example3.png" style="width: 6.49606in; height: 4.84593in;" /></a>
 <figcaption>
 <p><span class="caption-text">観点２のイメージ図</span><a class="headerlink" href="#id162" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -4402,7 +4402,7 @@ _
 </li>
 </ul>
 <figure class="align-center" id="id163">
-<a class="reference internal image-reference" href="../../../../_images/image70.png"><img alt="観点３のイメージ図" src="../../../../_images/image70.png" style="width: 6.49606in; height: 4.84593in;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/ansible-legacyrole_usage_example4.png"><img alt="観点３のイメージ図" src="../../../../_images/ansible-legacyrole_usage_example4.png" style="width: 6.49606in; height: 4.84593in;" /></a>
 <figcaption>
 <p><span class="caption-text">観点３のイメージ図</span><a class="headerlink" href="#id163" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -4415,7 +4415,7 @@ _
 </li>
 </ul>
 <figure class="align-center" id="id164">
-<a class="reference internal image-reference" href="../../../../_images/image71.png"><img alt="観点４のイメージ図" src="../../../../_images/image71.png" style="width: 6.49606in; height: 4.84121in;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/ansible-legacyrole_usage_example5.png"><img alt="観点４のイメージ図" src="../../../../_images/ansible-legacyrole_usage_example5.png" style="width: 6.49606in; height: 4.84121in;" /></a>
 <figcaption>
 <p><span class="caption-text">観点４のイメージ図</span><a class="headerlink" href="#id164" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -4433,7 +4433,7 @@ _
 </li>
 </ul>
 <figure class="align-center" id="id165">
-<a class="reference internal image-reference" href="../../../../_images/image72.png"><img alt="観点５のイメージ図" src="../../../../_images/image72.png" style="width: 6.49606in; height: 4.84593in;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/ansible-legacyrole_usage_example6.png"><img alt="観点５のイメージ図" src="../../../../_images/ansible-legacyrole_usage_example6.png" style="width: 6.49606in; height: 4.84593in;" /></a>
 <figcaption>
 <p><span class="caption-text">観点５のイメージ図</span><a class="headerlink" href="#id165" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -4453,7 +4453,7 @@ _
 </li>
 </ul>
 <figure class="align-center" id="id166">
-<a class="reference internal image-reference" href="../../../../_images/image73.png"><img alt="観点６のイメージ図" src="../../../../_images/image73.png" style="width: 6.49606in; height: 4.84121in;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/ansible-legacyrole_usage_example7.png"><img alt="観点６のイメージ図" src="../../../../_images/ansible-legacyrole_usage_example7.png" style="width: 6.49606in; height: 4.84121in;" /></a>
 <figcaption>
 <p><span class="caption-text">観点６のイメージ図</span><a class="headerlink" href="#id166" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -4477,7 +4477,7 @@ _
 </li>
 </ul>
 <figure class="align-center" id="id167">
-<a class="reference internal image-reference" href="../../../../_images/image74.png"><img alt="観点７のイメージ図" src="../../../../_images/image74.png" style="width: 6.49606in; height: 4.23387in;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/ansible-legacyrole_usage_example8.png"><img alt="観点７のイメージ図" src="../../../../_images/ansible-legacyrole_usage_example8.png" style="width: 6.49606in; height: 4.23387in;" /></a>
 <figcaption>
 <p><span class="caption-text">観点７のイメージ図</span><a class="headerlink" href="#id167" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -4492,7 +4492,7 @@ _
 </li>
 </ul>
 <figure class="align-center" id="id168">
-<a class="reference internal image-reference" href="../../../../_images/image75.png"><img alt="観点８のイメージ図" src="../../../../_images/image75.png" style="width: 6.49606in; height: 4.84593in;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/ansible-legacyrole_usage_example9.png"><img alt="観点８のイメージ図" src="../../../../_images/ansible-legacyrole_usage_example9.png" style="width: 6.49606in; height: 4.84593in;" /></a>
 <figcaption>
 <p><span class="caption-text">観点８のイメージ図</span><a class="headerlink" href="#id168" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -4509,7 +4509,7 @@ _
 </li>
 </ul>
 <figure class="align-center" id="id169">
-<a class="reference internal image-reference" href="../../../../_images/image76.png"><img alt="観点９のイメージ図" src="../../../../_images/image76.png" style="width: 6.49606in; height: 4.84593in;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/ansible-legacyrole_usage_example10.png"><img alt="観点９のイメージ図" src="../../../../_images/ansible-legacyrole_usage_example10.png" style="width: 6.49606in; height: 4.84593in;" /></a>
 <figcaption>
 <p><span class="caption-text">観点９のイメージ図</span><a class="headerlink" href="#id169" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -5148,7 +5148,7 @@ _fact_cache</p>
 <div class="line">ITA独自変数を利用して作成したファイルの出力先ディレクトリパスはAnsible Automation ControllerのITA作業用ディレクトリ配下「/var/lib/exastro」に設定されます。Movement実行前に結果データをAnsible Automation Controller（各実行ノード）のITA作業用ディレクトリ配下「/var/lib/exastro」にファイル転送します。Movement実行でここに作成されたファイルは、Movement実行後に各Ansible Automation Controller（各実行ノード）より結果データに上書きモードでファイル転送します。同一ファイル名でファイルを作成している場合、更新したファイルが結果データに正しく反映されない場合があります。</div>
 </div>
 <figure class="align-center">
-<a class="reference internal image-reference" href="../../../../_images/image_2b_4.png"><img alt="../../../../_images/image_2b_4.png" src="../../../../_images/image_2b_4.png" style="width: 7.49606in; height: 5.84593in;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/original_hensu.png"><img alt="../../../../_images/original_hensu.png" src="../../../../_images/original_hensu.png" style="width: 5.49606in; height: 5.84593in;" /></a>
 </figure>
 <ol class="arabic">
 <li><div class="line-block">

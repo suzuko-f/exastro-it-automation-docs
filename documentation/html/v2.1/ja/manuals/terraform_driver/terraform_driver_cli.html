@@ -1,0 +1,3011 @@
+
+<!DOCTYPE html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>目次 &#8212; Documentation  ドキュメント</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/option.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/exastro_documents.css?v=2" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/swagger/swagger-ui.css" />
+    
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/translations.js"></script>
+    <script src="../../../../_static/jquery-3.6.3.min.js"></script>
+    <script src="../../../../_static/exastro_documents.js?v=1"></script>
+    <script src="../../../../_static/swagger/swagger-ui-bundle.js"></script>
+    <script src="../../../../_static/swagger/swagger-ui-standalone-preset.js"></script>
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../../../../genindex.html" />
+    <link rel="search" title="検索" href="../../../../search.html" /> 
+  </head>
+<body id="page" class="ja">
+
+
+<div id="container">
+
+<div id="header">
+  <header class="divInner">
+    <!-- Exastro logo -->
+    <div id="logo"><img src="../../../../_static/img/exastro.svg" alt="Exastro"></div>
+    <!-- Project name -->
+    <div id="projectName"><a href="../../../../index.html">Documentation</a></div>
+    <!-- Heaedr navigation -->
+    <div id="headerSearch">
+      <form class="search" action="../../../../search.html" method="get">
+        <input type="text" name="q" aria-labelledby="searchlabel">
+        <button type="submit" value="検索"><img src="../../../../_static/img/search.png" alt="検索"></button>
+      </form>
+    </div>
+  </header>
+</div><!-- End #header -->
+
+
+<div id="toolbar">
+  <div class="divInner">
+    
+    <div id="documentVersion">
+      <dl>
+        <dt>Document version</dt>
+        <dd>
+          <div>
+            <select name="version" onchange="location.href=value;">
+                file_path: v2.0/ja/manuals/terraform_driver/terraform_driver_cli
+                file_path: v2.0/ja/manuals/terraform_driver/terraform_driver_cli
+            </select>
+          </div>
+        </dd>
+      </dl>
+    </div>
+
+    <div id="documentLanguage">
+      <dl>
+        <dt>Language</dt>
+        <dd>
+          <div>
+            <select name="lang" onchange="location.href=value;">
+                file_path: v2.1/ja/manuals/terraform_driver/terraform_driver_cli
+                hasdoc: True
+                  <option value="#"
+                  selected
+                  >日本語</option>
+                file_path: v2.1/en/manuals/terraform_driver/terraform_driver_cli
+                hasdoc: False
+            </select>
+          </div>
+        </dd>
+      </dl>
+    </div>
+    <div id="toolbarNavigation">
+      <ul>
+      </ul>
+    </div>
+  </div>
+</div><!-- End #toolbar -->
+
+<div id="sideMenu">
+
+  <div id="menuButton"></div>
+  
+  <aside class="divInner">
+    <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../v2.0/index.html">Exastro IT Automation Documentation</a></li>
+</ul>
+
+    <!-- <ul>
+      <li class="toctree-l1"><a class="reference internal" href="../../../../genindex.html">索引</a></li>
+    </ul> -->
+    
+  </aside>
+</div><!-- End #sideMenu -->
+
+
+<div id="tableOfContents">
+  <div id="tocButton"></div>
+  <ul>
+<li><a class="reference internal" href="#">目次</a></li>
+<li><a class="reference internal" href="#id2">はじめに</a></li>
+<li><a class="reference internal" href="#terraform-cli-driver">Terraform-CLI-driver概要</a><ul>
+<li><a class="reference internal" href="#terraform">Terraformについて</a></li>
+<li><a class="reference internal" href="#terrform-cli-driver">Terrform-CLI-driverについて</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id3">Terraform-CLI-driverでの変数取り扱い</a><ul>
+<li><a class="reference internal" href="#id4">変数の種類</a></li>
+<li><a class="reference internal" href="#id5">変数の抜出および具体値登録</a></li>
+<li><a class="reference internal" href="#id6">変数のタイプについて</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id15">Terraform-CLI-driver コンソールメニュー構成</a><ul>
+<li><a class="reference internal" href="#id16">メニュー/画面一覧</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id17">Terraform-CLI-driver利用手順</a><ul>
+<li><a class="reference internal" href="#id18">Terraform作業フロー</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id31">Terraform-CLI-driver機能・操作方法説明</a><ul>
+<li><a class="reference internal" href="#id32">基本コンソール</a><ul>
+<li><a class="reference internal" href="#id33">オペレーション一覧</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id34">Terraform-CLI-driverコンソール</a><ul>
+<li><a class="reference internal" href="#id35">インターフェース情報</a></li>
+<li><a class="reference internal" href="#workspaces">Workspaces管理</a></li>
+<li><a class="reference internal" href="#movement">Movement一覧</a></li>
+<li><a class="reference internal" href="#module">Module素材集</a><ul>
+<li><a class="reference internal" href="#id38">**</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#movement-module">Movement-Module紐付</a></li>
+<li><a class="reference internal" href="#id39">変数ネスト管理</a></li>
+<li><a class="reference internal" href="#id40">代入値自動登録設定</a></li>
+<li><a class="reference internal" href="#id41">代入値管理</a></li>
+<li><a class="reference internal" href="#id42">作業実行</a></li>
+<li><a class="reference internal" href="#id43">作業状態確認</a></li>
+<li><a class="reference internal" href="#id60">作業管理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id61">構築コード記述方法</a><ul>
+<li><a class="reference internal" href="#id62">Moduleの記述</a></li>
+<li><a class="reference internal" href="#backyard">BackYard コンテンツ</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id65">運用操作</a><ul>
+<li><a class="reference internal" href="#id66">メンテナンス</a></li>
+<li><a class="reference internal" href="#id67">メンテナンス方法について</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id68">付録</a><ul>
+<li><a class="reference internal" href="#id69">Module素材記入例・登録例</a></li>
+<li><a class="reference internal" href="#id70">変数ネスト管理フロー例</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+<div id="contents">
+<main class="divInner">
+
+ <div id="breadcrumbs">
+  <ul>
+    <li><a href="../../../../index.html">HOME</a></li>
+    
+    <li>目次</li>
+  </ul>
+</div>
+
+<div id="article">
+<article class="divInner">
+<div class="body" role="main">
+
+  <p><a class="reference internal" href="../../../../_images/image116.png"><img alt="image1" src="../../../../_images/image116.png" style="width: 3.35069in; height: 0.78542in;" /></a></p>
+<p>ITA_利用手順マニュアル</p>
+<p>Terraform-CLI-driver</p>
+<p><em>－</em>第1.11版<em>－</em></p>
+<p>Copyright © NEC Corporation 2023. All rights reserved.</p>
+<p>免責事項</p>
+<p>本書の内容はすべて日本電気株式会社が所有する著作権に保護されています。</p>
+<p>本書の内容の一部または全部を無断で転載および複写することは禁止されています。</p>
+<p>本書の内容は将来予告なしに変更することがあります。</p>
+<p>日本電気株式会社は、本書の技術的もしくは編集上の間違い、欠落について、一切責任を負いません。</p>
+<p>日本電気株式会社は、本書の内容に関し、その正確性、有用性、確実性その他いかなる保証もいたしません。</p>
+<p>商標</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>LinuxはLinus</dt><dd><p>Torvalds氏の米国およびその他の国における登録商標または商標です。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Red Hatは、Red Hat,</dt><dd><p>Inc.の米国およびその他の国における登録商標または商標です。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Apache、Apache Tomcat、Tomcatは、Apache Software</dt><dd><p>Foundationの登録商標または商標です。</p>
+</dd>
+</dl>
+</li>
+<li><p>Terraformは、HashiCorpの登録商標または商標です。</p></li>
+</ul>
+<p>その他、本書に記載のシステム名、会社名、製品名は、各社の登録商標もしくは商標です。</p>
+<p>なお、® マーク、TMマークは本書に明記しておりません。</p>
+<p>※本書では「Exastro IT Automation」を「ITA」として記載します。</p>
+<section id="id1">
+<h1>目次<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h1>
+<p><a class="reference external" href="#目次">目次 2</a></p>
+<p><a class="reference external" href="#はじめに">はじめに 3</a></p>
+<p><a class="reference external" href="#terraform-cli-driver概要">1 Terraform-CLI-driver概要 4</a></p>
+<p><a class="reference external" href="#terraformについて">1.1 Terraformについて 4</a></p>
+<p><a class="reference external" href="#terrform-cli-driverについて">1.2 Terrform-CLI-driverについて 4</a></p>
+<p><a class="reference external" href="#terraform-cli-driverでの変数取り扱い">2 Terraform-CLI-driverでの変数取り扱い
+5</a></p>
+<p><a class="reference external" href="#変数の種類">2.1 変数の種類 5</a></p>
+<p><a class="reference external" href="#変数の抜出および具体値登録">2.2 変数の抜出および具体値登録 5</a></p>
+<p><a class="reference external" href="#変数のタイプについて">2.3 変数のタイプについて 6</a></p>
+<p><a class="reference external" href="#terraform-cli-driver-コンソールメニュー構成">3 Terraform-CLI-driver コンソールメニュー構成
+11</a></p>
+<p><a class="reference external" href="#メニュー画面一覧">3.1 メニュー/画面一覧 11</a></p>
+<p><a class="reference external" href="#terraform-cli-driver利用手順">4 Terraform-CLI-driver利用手順 13</a></p>
+<p><a class="reference external" href="#_Toc124263705">4.1 Terraform作業フロー 13</a></p>
+<p><a class="reference external" href="#terraform-cli-driver機能操作方法説明">5 Terraform-CLI-driver機能・操作方法説明
+15</a></p>
+<p><a class="reference external" href="#基本コンソール">5.1 基本コンソール 15</a></p>
+<p><a class="reference external" href="#オペレーション一覧">5.1.1 オペレーション一覧 15</a></p>
+<p><a class="reference external" href="#terraform-cli-driverコンソール">5.2 Terraform-CLI-driverコンソール
+16</a></p>
+<p><a class="reference external" href="#インターフェース情報">5.2.1 インターフェース情報 16</a></p>
+<p><a class="reference external" href="#workspaces管理">5.2.2 Workspaces管理 18</a></p>
+<p><a class="reference external" href="#movement一覧">5.2.3 Movement一覧 20</a></p>
+<p><a class="reference external" href="#module素材集">5.2.4 Module素材集 22</a></p>
+<p><a class="reference external" href="#movement-module紐付">5.2.5 Movement-Module紐付 24</a></p>
+<p><a class="reference external" href="#変数ネスト管理">5.2.6 変数ネスト管理 26</a></p>
+<p><a class="reference external" href="#代入値自動登録設定">5.2.7 代入値自動登録設定 28</a></p>
+<p><a class="reference external" href="#代入値管理">5.2.8 代入値管理 31</a></p>
+<p><a class="reference external" href="#_Toc124263718">5.2.9 作業実行 33</a></p>
+<p><a class="reference external" href="#作業状態確認">5.2.10 作業状態確認 35</a></p>
+<p><a class="reference external" href="#作業管理">5.2.11 作業管理 38</a></p>
+<p><a class="reference external" href="#構築コード記述方法">6 構築コード記述方法 39</a></p>
+<p><a class="reference external" href="#moduleの記述">6.1 Moduleの記述 39</a></p>
+<p><a class="reference external" href="#backyard-コンテンツ">6.2 BackYard コンテンツ 39</a></p>
+<p><a class="reference external" href="#運用操作">7 運用操作 41</a></p>
+<p><a class="reference external" href="#メンテナンス">7.1 メンテナンス 41</a></p>
+<p><a class="reference external" href="#メンテナンス方法について">7.2 メンテナンス方法について 42</a></p>
+<p><a class="reference external" href="#付録">8 付録 43</a></p>
+<p><a class="reference external" href="#module素材記入例登録例">8.1 Module素材記入例・登録例 43</a></p>
+<p><a class="reference external" href="#変数ネスト管理フロー例">8.2 変数ネスト管理フロー例 57</a></p>
+</section>
+<section id="id2">
+<h1>はじめに<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h1>
+<p>本書では、ITAの機能および操作方法について説明します。</p>
+</section>
+<section id="terraform-cli-driver">
+<h1>Terraform-CLI-driver概要<a class="headerlink" href="#terraform-cli-driver" title="この見出しへのパーマリンク">¶</a></h1>
+<p>本章ではTerraformおよびTerraform-CLI-driverについて説明します。</p>
+<section id="terraform">
+<h2>Terraformについて<a class="headerlink" href="#terraform" title="この見出しへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><p>TerraformとはHashiCorp社が提供するインフラストラクチャを効率化するオーケストレーションツールです。</p>
+<p>HCL(HashiCorp Configuration
+Language)という言語でコード化したインフラストラクチャ構成について、実行計画を生成したうえで構築を実行します。</p>
+<p>Terraform-CLI-driverでは、HashiCorp社が提供するTerraform
+CLIパッケージをITAと同一サーバにインストールし、利用します。</p>
+<p>Terraformの詳細情報については、Terraformの製品マニュアルを参照してください。</p>
+</div></blockquote>
+</section>
+<section id="terrform-cli-driver">
+<h2>Terrform-CLI-driverについて<a class="headerlink" href="#terrform-cli-driver" title="この見出しへのパーマリンク">¶</a></h2>
+<p>Terraform-CLI-deriverはITAシステムのオプションとして機能し、ITAと同一のサーバにインストールしたTerraformに対し、作業の実行（Plan
+/ Apply）および作業ログの取得を行うことができます。</p>
+<p>作業の実行（Plan /
+Apply）に利用するModuleファイルをITAシステム上で部品化し、再利用できるよう管理することができます。</p>
+<p><a class="reference internal" href="../../../../_images/image47.png"><img alt="image2" src="../../../../_images/image47.png" style="width: 6.09231in; height: 3.04351in;" /></a></p>
+<p><strong>図</strong> <strong>1.2-1 ITAシステム概要</strong></p>
+<blockquote>
+<div><p>また、Terraform-CLI-driverは、Module中の変数を画面から設定することができます。詳細は本書「<em>2</em>
+<em>Terraform-CLI-driverでの変数取り扱い</em>」をご参照ください。</p>
+</div></blockquote>
+</section>
+</section>
+<section id="id3">
+<h1>Terraform-CLI-driverでの変数取り扱い<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h1>
+<section id="id4">
+<h2>変数の種類<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h2>
+<p>Terraform-CLI-driverでは、Module中の変数の具体値をITAの設定画面から設定することができます。</p>
+<blockquote>
+<div><p><strong>※設定方法の詳細は、本書 「5.2.8</strong>
+<strong>代入値管理」を参照してください。</strong></p>
+<p>Module中の変数で、ITAの変数として扱える変数は以下の1種類があります。</p>
+</div></blockquote>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>種類</p></th>
+<th class="head"><p>内容</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>通常変数</p></td>
+<td><p>変数名に対して具体値を定義できる変数です。</p>
+<p>Module内の変数は HCL（HashiCorp Configuration
+Language）の変数ルールに従い
+以下の形式で記述してくださ
+い。この場合「xxx」がModuleから変数として抜出されます。</p>
+<p>また、typeとdefault値を設定することができます。</p>
+<p>この場合、
+「○○」がtypeとして、「△△」がdefaultとして抜出されます。</p>
+<p>typeとdefaultの設定は必須ではありません。</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>variable “xxx” {</p>
+<p>type = ○○</p>
+<p>default = △△</p>
+<p>～省略~</p>
+<p>}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id5">
+<h2>変数の抜出および具体値登録<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h2>
+<p>ITAにアップロードされたModule素材から変数を抜出して具体値を登録できます。</p>
+<p>抜出した変数の具体値は「<em>5.2.7</em>代入値自動登録設定」「<em>5.2.8</em>代入値管理」で具体値を登録します。</p>
+<p>登録された変数と具体値は、作業実行時に生成されるterraform.tfvarsファイルに「変数名」が「Key」、「具体値」が「Value」として記載され、作業実行で使用されます。</p>
+</section>
+<section id="id6">
+<h2>変数のタイプについて<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h2>
+<p>変数内でtypeを設定することができます。</p>
+<p>Module内の変数は HCL（HashiCorp Configuration
+Language）の変数ルールに従い記述してください。</p>
+<p>ITA内で扱う変数は以下の通りです。</p>
+<p>記入例は「 <em>8.1</em> Module素材記入例」をご参照ください。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>type</strong></p></th>
+<th class="head"><p><strong>詳細</strong></p></th>
+<th class="head"><p><strong>代
+入順序</strong></p>
+<p>**
+対象※1**</p>
+</th>
+<th class="head"><p><strong>メンバ
+ー変数</strong></p>
+<p>**
+対象※2**</p>
+</th>
+<th class="head"><p>**
+typeの**</p>
+<p>**
+記述例**</p>
+</th>
+<th class="head"><p><strong>d
+efaultの
+記述例</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>文
+字列型。</p></td>
+<td><p>×</p></td>
+<td><p>×</p></td>
+<td><p>string</p></td>
+<td><p>あいう</p></td>
+</tr>
+<tr class="row-odd"><td><p>number</p></td>
+<td><p>数値型。</p></td>
+<td><p>×</p></td>
+<td><p>×</p></td>
+<td><p>number</p></td>
+<td><p>2022</p></td>
+</tr>
+<tr class="row-even"><td><p>bool</p></td>
+<td><p>trueまた
+はfalse</p></td>
+<td><p>×</p></td>
+<td><p>×</p></td>
+<td><p>bool</p></td>
+<td><p>true</p></td>
+</tr>
+<tr class="row-odd"><td><p>list</p></td>
+<td><p>配列型。</p></td>
+<td><p>〇</p></td>
+<td><p>×</p></td>
+<td><p>list
+(string)</p></td>
+<td><p>[“あ”,
+“い”,
+“う”]</p></td>
+</tr>
+<tr class="row-even"><td><p>set</p></td>
+<td><p>配列型。
+ユニーク
+な値の設
+定が求め
+られる。</p>
+<p>I
+TA上では
+具体値が
+ユニーク
+か否かは
+判定され
+ません。</p>
+</td>
+<td><p>〇</p></td>
+<td><p>×</p></td>
+<td><p>set
+(number)</p></td>
+<td><p>[1, 2,
+3]</p></td>
+</tr>
+<tr class="row-odd"><td><p>tuple</p></td>
+<td><p>配
+列型。予
+めn番目
+にどのty
+peを設定
+するか決
+めておく
+必要があ
+ります。</p>
+<p>値
+の入力数
+が決めら
+れている
+のでITA
+上ではメ
+ンバー変
+数として
+プルダウ
+ンで選択
+します。</p>
+</td>
+<td><p>×</p></td>
+<td><p>〇</p></td>
+<td><p>tuple(
+[string,
+number])</p></td>
+<td><p>[“
+あいう”,
+2022]</p></td>
+</tr>
+<tr class="row-even"><td><p>map</p></td>
+<td><p>key-va
+lue型。I
+TA上では
+map型が
+一つ以上
+含まれて
+いるtype
+を設定し
+た場合、
+type情報
+からKEY
+値を特定
+できない
+ので、代
+入値を設
+定する場
+合はHCL
+設定をON
+にしてく
+ださい。</p>
+<p>HCL
+設定につ
+いての説
+明は「<a href="#id7"><span class="problematic" id="id8">*</span></a>5.2.7代
+入値自動
+登録設定
+<a href="#id9"><span class="problematic" id="id10">*</span></a>」ま
+たは「<a href="#id11"><span class="problematic" id="id12">*</span></a>5.2.8代
+入値管理
+<a href="#id13"><span class="problematic" id="id14">*</span></a>」を
+ご参照く
+ださい。</p>
+</td>
+<td><p>×</p></td>
+<td><p>×</p></td>
+<td><p>map
+(string)</p></td>
+<td><p>{ “key”
+=
+“value”
+}</p></td>
+</tr>
+<tr class="row-odd"><td><p>object</p></td>
+<td><p>key-v
+alue型。</p>
+<p>ITA上で
+はkeyを
+メンバー
+変数とし
+て扱いま
+す。key
+名に日本
+語は含ま
+ないでく
+ださい。</p>
+</td>
+<td><p>×</p></td>
+<td><p>〇</p></td>
+<td><p>object({</p>
+<p>key =
+number</p>
+<p>})</p>
+</td>
+<td><p>{</p>
+<p>“key” =
+2022</p>
+<p>}</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>any</p></td>
+<td><p>すべ
+てに適合
+する型。</p>
+<p>ITA上で
+はstring
+型と同じ
+扱いとな
+ります。</p>
+</td>
+<td><p>×</p></td>
+<td><p>×</p></td>
+<td><p>any</p></td>
+<td><p>あいう</p></td>
+</tr>
+<tr class="row-odd"><td><p>記載なし</p></td>
+<td><p>ty
+peを記載
+しなかっ
+た場合、
+ITA上で
+はstring
+型と同じ
+扱いにな
+ります。</p></td>
+<td><p>×</p></td>
+<td><p>×</p></td>
+<td></td>
+<td><p>あいう</p></td>
+</tr>
+</tbody>
+</table>
+<p>※１…代入順序</p>
+<p>変数に複数具体値を設定する際の先頭から代入する順序。</p>
+<blockquote>
+<div><p>変数または階層構造の変数の最下層の変数のタイプがlist,setの場合、代入値自動登録設定メニュー/代入値管理メニューにて設定可能。</p>
+<p>※２…メンバー変数</p>
+<p>変数がkey-value型である場合のkey名。変数のタイプがobjectの場合、&lt;KEY&gt;
+= &lt;TYPE&gt;の&lt;KEY&gt;をメンバー変数とする。</p>
+<p>変数のタイプがtupleの場合、tuple内に定義した変数を先頭から[0],[1],[2]…と採番してメンバー変数とする。</p>
+<p>変数のタイプが変数ネスト管理メニューの登録対象の場合、最大繰返数をもとに[0],[1],[2]…と採番してメンバー変数とする。</p>
+<p>変数ネストに関しては「<em>5.2.6</em>変数ネスト管理」をご参照ください。</p>
+</div></blockquote>
+</section>
+</section>
+<section id="id15">
+<h1>Terraform-CLI-driver コンソールメニュー構成<a class="headerlink" href="#id15" title="この見出しへのパーマリンク">¶</a></h1>
+<p>本章では、ITAコンソールのメニュー構成について説明します</p>
+<section id="id16">
+<h2>メニュー/画面一覧<a class="headerlink" href="#id16" title="この見出しへのパーマリンク">¶</a></h2>
+<ol class="arabic simple">
+<li><p>ITA<strong>基本コンソールのメニュー</strong></p></li>
+</ol>
+<blockquote>
+<div><p>Terraform-CLI-driverで利用するITA基本コンソールのメニュー一覧を以下に記述します。</p>
+</div></blockquote>
+<p>表 3.1‑1基本コンソール メニュー/画面一覧</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>メニューグループ</p></th>
+<th class="head"><p>メニュー・画面</p></th>
+<th class="head"><p>説明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>ITA
+基本コンソール</p></td>
+<td><p>投入オペレーション</p>
+<p>一覧</p>
+</td>
+<td><p>オペレーシ
+ョン一覧をメンテナ
+ンス(閲覧/登録/更
+新/廃止)できます。</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="2">
+<li><p><strong>Terraform-CLI-driverコンソールのメニュー</strong></p></li>
+</ol>
+<blockquote>
+<div><p>Terraform-CLI-driverコンソールのメニュー一覧を以下に記述します。</p>
+</div></blockquote>
+<p>表 3.1‑2Terraform-CLI-driverコンソール メニュー/画面一覧</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>メニ
+ューグループ</p></th>
+<th class="head"><p>メ
+ニュー・画面</p></th>
+<th class="head"><blockquote>
+<div><p>非表</p>
+</div></blockquote>
+<p>示メニュー※１</p>
+</th>
+<th class="head"><p>説明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Terraform</p></td>
+<td><p>インター
+フェース情報</p></td>
+<td></td>
+<td><p>作業
+実行の情報を
+管理します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td></td>
+<td><p>W
+orkspaces管理</p></td>
+<td></td>
+<td><p>Terraformで
+利用するWork
+spaceの情報を
+管理します。</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td></td>
+<td><p>Movement一覧</p></td>
+<td></td>
+<td><p>Symphony
+に登録するMov
+ementの一覧を
+管理します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td></td>
+<td><p>Module素材集</p></td>
+<td></td>
+<td><p>Mod
+uleファイルを
+管理します。</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td></td>
+<td><p>Moveme
+nt-Module紐付</p></td>
+<td></td>
+<td><p>Movemen
+tとModule素材
+の関連付けを
+管理します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td></td>
+<td><p>変
+数ネスト管理</p></td>
+<td></td>
+<td><p>Module素材
+集で登録したt
+fファイルで定
+義されている
+変数のタイプ
+がlist,setか
+つ、その変数
+の中でlist,se
+t,tuple,objec
+tが定義されて
+いる場合、メ
+ンバー変数の
+最大繰返数を
+管理します。</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td></td>
+<td><p>代入値
+自動登録設定</p></td>
+<td></td>
+<td><p>パ
+ラメータシー
+トのメニュー
+に登録されて
+いるオペレー
+ション毎の項
+目や値を紐付
+けるMovement
+と変数
+を管理します</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td></td>
+<td><p>代入値管理</p></td>
+<td></td>
+<td><p>変
+数の代入値を
+管理します。</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td></td>
+<td><p>作業実行</p></td>
+<td></td>
+<td><p>作業実行するM
+ovementとオペ
+レーションを
+選択し実行を
+指示します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td></td>
+<td><p>作業状態確認</p></td>
+<td></td>
+<td><p>作
+業実行状態を
+表示します。</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td></td>
+<td><p>作業管理</p></td>
+<td></td>
+<td><p>作
+業実行履歴を
+管理します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td></td>
+<td><p>Modul
+e変数紐付管理</p></td>
+<td><p>〇</p></td>
+<td><p>Modu
+le変数とModul
+e素材の紐付を
+管理します。</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td></td>
+<td><p>メン
+バー変数管理</p></td>
+<td><p>〇</p></td>
+<td><p>メ
+ンバー変数を
+管理します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td></td>
+<td><p>Movemen
+t変数紐付管理</p></td>
+<td><p>〇</p></td>
+<td><p>Movementと変
+数名の紐付を
+管理します。</p></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p>※1非表示メニューは、バックヤード機能でデータの登録・更新を行うメニューです。</p>
+<p>Terraform-CLI-driver機能をインストールした状態では表示されないメニューに設定されています。</p>
+<p>非表示メニューを表示するには、「管理コンソール/ロール・メニュー紐付管理」で各メニューの復活処理を行います。詳細は「利用手順マニュアル_管理コンソール」
+を参照してください。</p>
+<p>尚、データの更新を行うとバックヤード機能が正しく動作しなくなります。データの更新はしないで下さい。</p>
+</div></blockquote>
+</section>
+</section>
+<section id="id17">
+<h1>Terraform-CLI-driver利用手順<a class="headerlink" href="#id17" title="この見出しへのパーマリンク">¶</a></h1>
+<p>各Terraformコンソールの利用手順について説明します</p>
+<section id="id18">
+<h2>Terraform作業フロー<a class="headerlink" href="#id18" title="この見出しへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><p>各Terraformコンソールにおける標準的な作業フローは以下のとおりです。</p>
+<p>各作業の詳細は次項に記載しています。</p>
+<p>ITA基本コンソールの利用方法は、「利用手順マニュアル_基本コンソール」を参照してください。</p>
+</div></blockquote>
+<p>以下は、Terraformで作業を実行するまでの流れです。</p>
+<ul class="simple">
+<li><p><strong>作業フロー詳細と参照先</strong></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p><strong>投入オペレーション名の登録</strong></p></li>
+</ol>
+<blockquote>
+<div><p>ITA基本コンソールのオペレーション一覧の画面から、作業用の投入オペレーション名を登録します。</p>
+<p>詳細は「<em>5.1.1</em>オペレーション一覧」を参照してください。</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p><strong>インターフェース情報の設定</strong></p></li>
+</ol>
+<blockquote>
+<div><p>作業実行の情報を設定します。</p>
+<p>詳細は「<em>5.2.1インターフェース情報</em>」を参照してください。</p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p><strong>Workspaceの登録と連携</strong></p></li>
+</ol>
+<blockquote>
+<div><p>Workspaceの情報を登録します。</p>
+<p>詳細は「<em>5.2.2</em> <em>Workspaces管理</em>」を参照してください。</p>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p><strong>作業パターン(Movement)の登録</strong></p></li>
+</ol>
+<blockquote>
+<div><div class="line-block">
+<div class="line">作業用のMovementを登録します。</div>
+<div class="line">詳細は「<em>5.2.3</em> <em>Movement一覧</em>」を参照してください。</div>
+</div>
+</div></blockquote>
+<ol class="arabic" start="5">
+<li><div class="line-block">
+<div class="line"><a href="#id19"><span class="problematic" id="id20">**</span></a>Module素材の登録
+  <a href="#id21"><span class="problematic" id="id22">**</span></a>作業で実行するModuleファイルを登録します。
+| 詳細は「<em>5.2.4</em> <em>Module素材集</em>」を参照してください。</div>
+</div>
+</li>
+<li><p><strong>MovementにModule素材を指定</strong></p></li>
+</ol>
+<blockquote>
+<div><p>登録したMovementにModule素材を指定します。</p>
+<p>詳細は「<em>5.2.5</em> <em>Movement-Module紐付</em>」を参照してください。</p>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p><strong>最大繰返数の設定（必要に応じて実施）</strong></p></li>
+</ol>
+<blockquote>
+<div><p>メンバー変数の最大繰返数を設定します。</p>
+<p>詳細は「<em>5.2.6変数ネスト管理</em>」を参照してください。</p>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p><strong>変数値の設定（必要に応じて実施）</strong></p></li>
+</ol>
+<blockquote>
+<div><p>Movementに登録したModule素材内で定義した変数の値を設定します。変数を利用していない場合、設定は不要です。</p>
+<p>詳細は「<em>5.2.7</em>代入値自動登録設定」「<em>5.2.8</em>代入値管理」を参照してください。</p>
+</div></blockquote>
+<ol class="arabic simple" start="9">
+<li><p><strong>作業実行</strong></p></li>
+</ol>
+<blockquote>
+<div><p>実行日時、投入オペレーションを選択して設定して処理の実行を指示します。</p>
+<p>詳細は「<em>5.2.9</em>作業実行」を参照してください。</p>
+</div></blockquote>
+<ol class="arabic simple" start="10">
+<li><dl class="simple">
+<dt><a href="#id23"><span class="problematic" id="id24">**</span></a>作業状態確認</dt><dd><p><a href="#id25"><span class="problematic" id="id26">**</span></a>実行した作業の状態がリアルタイムで表示されます。</p>
+</dd>
+</dl>
+</li>
+</ol>
+<blockquote>
+<div><div class="line-block">
+<div class="line">また、作業の緊急停止や、実行ログ、エラーログを監視することができます。</div>
+<div class="line">詳細は「<em>5.2.10</em>作業状態確認」を参照してください。</div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="11">
+<li><dl class="simple">
+<dt><a href="#id27"><span class="problematic" id="id28">**</span></a>作業履歴確認</dt><dd><p><a href="#id29"><span class="problematic" id="id30">**</span></a>実行した作業の一覧が表示され履歴が確認できます。</p>
+</dd>
+</dl>
+</li>
+</ol>
+<blockquote>
+<div><p>詳細は「<em>5.2.11</em>作業管理」を参照してください。</p>
+</div></blockquote>
+</section>
+</section>
+<section id="id31">
+<h1>Terraform-CLI-driver機能・操作方法説明<a class="headerlink" href="#id31" title="この見出しへのパーマリンク">¶</a></h1>
+<p>本章では、Terraform-CLI-driverで利用する各コンソールの機能について説明します。</p>
+<section id="id32">
+<h2>基本コンソール<a class="headerlink" href="#id32" title="この見出しへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><p>本節では、ITA基本コンソールでの操作について記載します。</p>
+<p>本作業はITA基本コンソールマニュアルを参照して、ITA基本コンソール画面内で作業を実施してください。</p>
+</div></blockquote>
+<section id="id33">
+<h3>オペレーション一覧<a class="headerlink" href="#id33" title="この見出しへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p>[オペレーション一覧]画面では、オーケストレータで実行する作業対象ホストに対するオペレーションを管理します。作業はITA基本コンソール内メニューより選択します。</p>
+<p><a class="reference internal" href="../../../../_images/image58.png"><img alt="image3" src="../../../../_images/image58.png" style="width: 5.96443in; height: 3.08693in;" /></a></p>
+</li>
+</ol>
+<p>図 5.1.1- 1 サブメニュー画面（オペレーション一覧）</p>
+<p>登録方法の詳細は、関連マニュアルの「利用手順マニュアル_基本コンソール」をご参照下さい。</p>
+</section>
+</section>
+<section id="id34">
+<h2>Terraform-CLI-driverコンソール<a class="headerlink" href="#id34" title="この見出しへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><p>本節では、Terraform-CLIコンソールでの操作について記載します。</p>
+</div></blockquote>
+<section id="id35">
+<h3>インターフェース情報<a class="headerlink" href="#id35" title="この見出しへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p>[インターフェース情報]では、ITAシステムと連携するTerraformの作業実行時の情報をメンテナンス（閲覧／更新）することができます。</p>
+<p><a class="reference internal" href="../../../../_images/image66.png"><img alt="image4" src="../../../../_images/image66.png" style="width: 5.73383in; height: 2.96667in;" /></a></p>
+</li>
+</ol>
+<p>図 5.2.1- 1 サブメニュー画面（インターフェース情報）</p>
+<ol class="arabic" start="2">
+<li><p>「一覧」-「更新」ボタンより、インターフェース情報の登録を行います。</p>
+<p>インターフェース情報が未登録または、複数レコード登録されている状態で作業実行した場合、<strong>作業実行は想定外エラーとなります</strong>。</p>
+<p><a class="reference internal" href="../../../../_images/image76.png"><img alt="image5" src="../../../../_images/image76.png" style="width: 4.92174in; height: 1.09097in;" /></a></p>
+</li>
+</ol>
+<p>図 5.2.1- 2登録画面（インターフェース情報）</p>
+<ol class="arabic simple" start="3">
+<li><p>インターフェース情報画面の項目一覧は以下のとおりです。</p></li>
+</ol>
+<p><strong>表</strong> <strong>5.2.1‑1　項目一覧（インタフェース情報）</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
+<th class="head"><p><strong>説明</strong></p></th>
+<th class="head"><p><strong>入力</strong></p>
+<p><strong>必須</strong></p>
+</th>
+<th class="head"><ul class="simple">
+<li></li>
+</ul>
+<p><em>入力形式*</em></p>
+</th>
+<th class="head"><ul class="simple">
+<li></li>
+</ul>
+<p><em>制約事項*</em></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>並列実行数</p></td>
+<td><p>同時に実
+行できるMo
+vement(Tera
+form-CLI)の
+最大数を入
+力します。</p></td>
+<td><p>○</p></td>
+<td><p>手動入力</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>状態監
+視周期（単
+位ミリ秒）</p></td>
+<td><p>「<em>5.2
+.10作業状態
+確認</em>」で
+表示される
+ログのリフ
+レッシュ間
+隔を入力し
+ます。通常
+は3000ミリ
+秒程度が推
+奨値です。</p></td>
+<td><p>○</p></td>
+<td><p>手動入力</p></td>
+<td><p>最小値 1000
+ミリ秒</p></td>
+</tr>
+<tr class="row-even"><td><p>進行状
+態表示行数</p></td>
+<td><p>「<em>5.2
+.10作業状態
+確認</em>」で
+の進行ログ
+・エラーロ
+グの最大表
+示行数を入
+力します。</p>
+<p>ステ
+ータスが[未
+実行]、[準
+備中]、[実
+行中]、[実
+行中(遅延)
+]の場合、指
+定した行数
+でログを出
+力します。</p>
+<p>ステ
+ータスが[完
+了]、[完了(
+異常)]、[想
+定外エラー]
+、[緊急停止
+]、[未実行(
+予約)]、[予
+約取消]の場
+合、指定し
+た行数では
+なくすべて
+のログを出
+力します。</p>
+<p>環
+境毎にチュ
+ーニングを
+要しますが
+、通常は100
+0行程度が推
+奨値です。</p>
+</td>
+<td><p>○</p></td>
+<td><p>手動入力</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>NULL連携</p></td>
+<td><p>代入値
+自動登録設
+定でパラメ
+ータシート
+の具体値が
+NULL(空
+白)の場合に
+、代入値管
+理への登録
+を
+NULL(空
+白)の値で行
+うか設定し
+ます。代入
+値自動登録
+設定メニュ
+ーの「NULL
+連携」が空
+白の場合こ
+の値が適用
+されます。</p>
+<p>・「有効」
+の場合、パ
+ラメータシ
+ートの値が
+どのような
+値でも代
+入値管理へ
+の登録が行
+われます。</p>
+<p>・「無効」
+の場合、パ
+ラメータシ
+ートに値が
+入っている
+場合のみ代
+入値管理へ
+の登録が行
+われます。</p>
+</td>
+<td><p>○</p></td>
+<td><p>リスト選択</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>備考</p></td>
+<td><p>自由記
+述欄です。</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>手動入力</p></td>
+<td><p>最大長
+4000バイト</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="workspaces">
+<h3>Workspaces管理<a class="headerlink" href="#workspaces" title="この見出しへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p>[Workspaces管理]では、Terraformで利用するWorkspaceについてのメンテナンス（閲覧／登録／更新／廃止／リソース削除）を行います。</p>
+<p>WorkspaceはTerraformコマンドを実行するためのディレクトリとして利用します。</p>
+<p>同一のWorkspaceを対象とした作業実行を行う場合、Terraformが生成するstateファイルはWorkspace単位で管理され、冪等性が保たれます。</p>
+<p><a class="reference internal" href="../../../../_images/image82.png"><img alt="image6" src="../../../../_images/image82.png" style="width: 5.44714in; height: 2.82444in;" /></a></p>
+</li>
+</ol>
+<p>図 5.2.22‑1 サブメニュー画面（Workspaces管理）</p>
+<ol class="arabic" start="2">
+<li><p>「登録」-「登録開始」ボタンより、Workspace情報の登録を行います。</p>
+<p><a class="reference internal" href="../../../../_images/image92.png"><img alt="image7" src="../../../../_images/image92.png" style="width: 5.01175in; height: 1.21561in;" /></a></p>
+</li>
+</ol>
+<p>図 5.2.22-2 登録画面（Workspaces管理）</p>
+<ol class="arabic" start="3">
+<li><p>リソース削除ボタンをクリックすると、対象のWorkspaceに対してリソース削除(terraform
+destroy)が実行されます。</p>
+<p>Movement一覧ボタンをクリックすると、対象のWorkspaceの「<em>5.2.3</em>
+<em>Movement一覧</em>」へ遷移します。</p>
+<p><a class="reference internal" href="../../../../_images/image104.png"><img alt="image8" src="../../../../_images/image104.png" style="width: 5.01175in; height: 1.1883in;" /></a></p>
+</li>
+</ol>
+<p>図 5.2.22‑3 Workspaces管理</p>
+<ol class="arabic" start="4">
+<li><p>Workspaces管理画面の項目一覧は以下のとおりです。</p>
+<p><strong>表</strong> <strong>5.2.22-1項目一覧（Workspaces管理）</strong></p>
+</li>
+</ol>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
+<th class="head"><p><strong>説明</strong></p></th>
+<th class="head"><p><strong>入力</strong></p>
+<p><strong>必須</strong></p>
+</th>
+<th class="head"><ul class="simple">
+<li></li>
+</ul>
+<p><em>入力形式*</em></p>
+</th>
+<th class="head"><ul class="simple">
+<li></li>
+</ul>
+<p><em>制約事項*</em></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Workspace
+Name</p></td>
+<td><p>Workspac
+eの名前を入
+力します。</p>
+<p>半角英
+数字と記号
+_ -
+（ア
+ンダーバー
+とハイフン
+）のみ利用
+可能です。</p>
+</td>
+<td><p>○</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大
+長90バイト</p></td>
+</tr>
+<tr class="row-odd"><td><p>リ
+ソース削除</p></td>
+<td><p>Worksp
+aceごとに構
+成・管理さ
+れたリソー
+スの削除を
+実行するボ
+タンです。</p>
+<p>クリック
+すると確認
+ダイアログ
+が表示され[
+OK]をクリッ
+クすると「
+<em>5.2.10</em></p>
+<blockquote>
+<div><p>作業状態確</p>
+</div></blockquote>
+<p>認」に遷移
+し、対象の
+Workspaceご
+とに構成・
+管理された
+リソースの
+削除が実行
+されます。</p>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>M
+ovement一覧</p></td>
+<td><p>「<em>5.2.3</em>
+<em>Movement
+一覧</em>」へ
+遷移するボ
+タンです。</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>備考</p></td>
+<td><p>自由記
+述欄です。</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>手動入力</p></td>
+<td><p>最大長
+4000バイト</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="movement">
+<h3>Movement一覧<a class="headerlink" href="#movement" title="この見出しへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p>[Movement一覧]では、Movement名についてのメンテナンス（閲覧／登録／更新／廃止）を行います。</p>
+<p>MovementはTerraform利用情報としてWorkspaceと紐付ける必要があるため、先に「<em>5.2.2</em>
+<em>Workspaces管理</em>」で対象を登録しておく必要があります。</p>
+<p><a class="reference internal" href="../../../../_images/image117.png"><img alt="image9" src="../../../../_images/image117.png" style="width: 4.8186in; height: 2.50022in;" /></a></p>
+</li>
+</ol>
+<p><strong>図5.2.33-1サブメニュー画面（Movement一覧）</strong></p>
+<ol class="arabic" start="2">
+<li><p>「登録」-「登録開始」ボタンより、Movement情報の登録を行います。</p>
+<p><a class="reference internal" href="../../../../_images/image124.png"><img alt="image10" src="../../../../_images/image124.png" style="width: 5.27252in; height: 1.36135in;" /></a></p>
+<p><strong>図</strong> <strong>5.2.33-2 登録画面（Movement一覧）</strong></p>
+</li>
+</ol>
+<ol class="arabic" start="4">
+<li><p>Movement-Module紐付ボタンをクリックすると対象のMovementの「<em>5.2.5</em>
+<em>Movement-Module紐付</em>」へ遷移します。</p>
+<p><a class="reference internal" href="../../../../_images/image133.png"><img alt="image11" src="../../../../_images/image133.png" style="width: 4.95649in; height: 1.23912in;" /></a></p>
+</li>
+</ol>
+<p>　　　　　　<strong>図5.2.33-3サブメニュー画面（Movement一覧）</strong></p>
+<ol class="arabic simple" start="3">
+<li><p>Movement一覧画面の項目は以下の通りです。</p></li>
+</ol>
+<p><strong>表</strong> <strong>5.2.33-1 項目一覧（Movement一覧）</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
+<th class="head"><p><strong>説明</strong></p></th>
+<th class="head"><p><strong>入力</strong></p>
+<p><strong>必須</strong></p>
+</th>
+<th class="head"><p><strong>入
+力形式</strong></p></th>
+<th class="head"><p><strong>制
+約事項</strong></p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>M
+ovement名</p></td>
+<td><p>Mov
+ementの名
+称を入力
+します。</p></td>
+<td><p>○</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長
+256バイト</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>オーケス
+トレータ</p></td>
+<td><p>『
+Terraform
+CL
+I』が自動
+で入力さ
+れます。</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>遅延
+タイマー</p></td>
+<td><p>Mov
+ementが指
+定期間遅
+延した場
+合にステ
+ータスを
+遅延とし
+て警告表
+示したい
+場合に指
+定期間(1
+～)を入力
+します。
+(単位:分)</p>
+<p>未入力の
+場合は警
+告表示し
+ません。</p>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>手動入力</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Terrafor
+m利用情報</p></td>
+<td><p>Workspace</p></td>
+<td><p>「
+<em>5.2.2</em>
+<em>Wor
+kspaces管
+理</em>」に
+て登録し
+たWorksp
+aceを選択
+します。</p></td>
+<td><p>○</p></td>
+<td><p>リ
+スト選択</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>M
+ovement-M
+odule紐付</p></td>
+<td><p>「
+<em>5.2.5</em>
+<em>Mov
+ement-Mod
+ule紐付</em></p>
+<blockquote>
+<div><p>」へ遷移</p>
+</div></blockquote>
+<p>するボタ
+ンです。</p>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>　　-</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>備考</p></td>
+<td><p>自由記述
+欄です。</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>手動入力</p></td>
+<td><p>最大長4
+000バイト</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module">
+<h3>Module素材集<a class="headerlink" href="#module" title="この見出しへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p>[Module素材集]ではユーザーが作成したModuleのメンテナンス（閲覧／登録／更新／廃止）を行います。</p>
+<p>Moduleの記述などに関しては、「 <em>6.1</em>
+<em>Moduleの記述</em>」を参照してください。</p>
+<p><a class="reference internal" href="../../../../_images/image144.png"><img alt="image12" src="../../../../_images/image144.png" style="width: 5.06769in; height: 2.62023in;" /></a></p>
+</li>
+</ol>
+<p>図 5.2.44-1サブメニュー画面（Module素材集）</p>
+<ol class="arabic" start="2">
+<li><p>「登録」-「登録開始」ボタンより、Movement情報の登録を行います。</p>
+<p><a class="reference internal" href="../../../../_images/image153.png"><img alt="image13" src="../../../../_images/image153.png" style="width: 5.02128in; height: 1.45171in;" /></a></p>
+</li>
+</ol>
+<p>図 5.2.44-2登録画面（Module素材集）</p>
+<blockquote>
+<div><p>「登録」の前に、「Module素材」を「事前アップロード（①）」してください。「アップロード状況（②）」にModuleのファイル名が表示されたのを確認してから、「登録」ボタンを押してください。</p>
+<p><a class="reference internal" href="../../../../_images/image163.png"><img alt="image14" src="../../../../_images/image163.png" style="width: 1.95218in; height: 1.22404in;" /></a></p>
+</div></blockquote>
+<ol class="arabic" start="3">
+<li><p>Movement-Module紐付ボタンをクリックすると対象のMovementの「<em>5.2.5</em>
+<em>Movement-Module紐付</em>」へ遷移します。</p>
+<p><a class="reference internal" href="../../../../_images/image173.png"><img alt="image15" src="../../../../_images/image173.png" style="width: 5.74877in; height: 1.23572in;" /></a></p>
+</li>
+</ol>
+<p>図 5.2.44-3サブメニュー画面（Module素材集）</p>
+<ol class="arabic" start="4">
+<li><p>Module素材集の項目一覧は以下のとおりです。</p>
+<p><strong>表</strong> <strong>5.2.44-1 項目一覧（Module素材集）</strong></p>
+</li>
+</ol>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
+<th class="head"><p><strong>説明</strong></p></th>
+<th class="head"><p><strong>入力</strong></p>
+<p><strong>必須</strong></p>
+</th>
+<th class="head"><ul class="simple">
+<li></li>
+</ul>
+<p><em>入力形式*</em></p>
+</th>
+<th class="head"><ul class="simple">
+<li></li>
+</ul>
+<p><em>制約事項*</em></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>M
+odule素材名</p></td>
+<td><p>ITAで管
+理するModul
+e素材名を入
+力します。</p></td>
+<td><p>○</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大
+長256バイト</p></td>
+</tr>
+<tr class="row-odd"><td><p>Module素材</p></td>
+<td><p>作
+成したModul
+eファイルを
+アップロー
+ドします。</p></td>
+<td><p>○</p></td>
+<td><p>フ
+ァイル選択</p></td>
+<td><p>最大サイ
+ズ4Gバイト</p></td>
+</tr>
+<tr class="row-even"><td><p>Movement
+-Module紐付</p></td>
+<td><p>「<em>5.2.5</em>
+<em>Move
+ment-Module
+紐付</em>」へ
+遷移するボ
+タンです。</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>　　-</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>備考</p></td>
+<td><p>自由記
+述欄です。</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>手動入力</p></td>
+<td><p>最大長
+4000バイト</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic" start="5">
+<li><p>BackYardの処理でModuleファイル内に定義している変数を抜出します。抜出した変数は「<em>5.2.7</em>代入値自動登録設定」や「<em>5.2.8</em>代入値管理」で具体値の登録が可能になります。</p>
+<p>抜出するタイミングはリアルタイムではありませんので「<em>5.2.7</em>代入値自動登録設定」や「<em>5.2.8</em>代入値管理」で変数が扱えるまでに<em>時間がかかる※１</em>場合があります。</p>
+</li>
+</ol>
+<blockquote>
+<div><p><strong>※1 抜出のタイミングは「</strong> <strong>7.2メンテナンス方法について」の「③
+起動周期の変更」に記載していますので、そちらをご参照ください。</strong></p>
+</div></blockquote>
+<section id="id38">
+<h4><a href="#id36"><span class="problematic" id="id37">**</span></a><a class="headerlink" href="#id38" title="この見出しへのパーマリンク">¶</a></h4>
+</section>
+</section>
+<section id="movement-module">
+<h3>Movement-Module紐付<a class="headerlink" href="#movement-module" title="この見出しへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p>[Movement-Module紐付]では、Movementで実行するModule素材のメンテナンス（閲覧／登録／更新／廃止）を行います。</p>
+<p>Movementに対して複数のModule素材を紐付けることが可能です。</p>
+<p><a class="reference internal" href="../../../../_images/image182.png"><img alt="image16" src="../../../../_images/image182.png" style="width: 4.82751in; height: 2.50022in;" /></a></p>
+</li>
+</ol>
+<p><strong>図5.2.55-1サブメニュー画面（Movement-Module紐付）</strong></p>
+<ol class="arabic" start="2">
+<li><p>「登録」-「登録開始」ボタンより、Movement-Module紐付の登録を行います。</p>
+<p><a class="reference internal" href="../../../../_images/image192.png"><img alt="image17" src="../../../../_images/image192.png" style="width: 5.55637in; height: 1.42048in;" /></a></p>
+</li>
+</ol>
+<p>図 5.2.55-2登録画面（Movement-Module紐付）</p>
+<ol class="arabic">
+<li></li>
+<li></li>
+<li><p>Movementのリンクをクリックすると、「<em>5.2.3</em>
+<em>Movement一覧</em>」へ遷移します。</p>
+<p>また、Module素材のリンクをクリックすると、「<em>5.2.4</em>
+<em>Module素材集</em>」へ遷移します。</p>
+<p><a class="reference internal" href="../../../../_images/image202.png"><img alt="image18" src="../../../../_images/image202.png" style="width: 5.70014in; height: 1.23292in;" /></a></p>
+</li>
+</ol>
+<p><strong>図5.2.55-3サブメニュー画面（Movement-Module紐付）</strong></p>
+<ol class="arabic" start="3">
+<li><p>Movement-Module紐付の項目一覧は以下のとおりです。</p>
+<p><strong>表</strong> <strong>5.2.55-1項目一覧（Movement-Module紐付）</strong></p>
+</li>
+</ol>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
+<th class="head"><p><strong>説明</strong></p></th>
+<th class="head"><p><strong>入力</strong></p>
+<p><strong>必須</strong></p>
+</th>
+<th class="head"><p><strong>入力形式</strong></p></th>
+<th class="head"><p><strong>制約事項</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Movement</p></td>
+<td><p>「<em>5.2.3</em>
+<em>Mov
+ement一覧</em>」にて登録し
+たMovementを
+選択します。</p></td>
+<td><p>○</p></td>
+<td><p>リスト選択</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Module素材</p></td>
+<td><p>「<em>5.2.4</em>
+<em>Mod
+ule素材集</em>」で登録した
+Module素材を
+選択します。</p></td>
+<td><p>○</p></td>
+<td><p>リスト選択</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>備考</p></td>
+<td><p>自由
+記述欄です。</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>手動入力</p></td>
+<td><p>最大
+長4000バイト</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id39">
+<h3>変数ネスト管理<a class="headerlink" href="#id39" title="この見出しへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p>[変数ネスト管理]では、Module素材集で登録したtfファイルで定義されている変数のタイプがlist,setかつ、その変数の中でlist,set,tuple,objectが定義されている場合、メンバー変数の最大繰返数を閲覧及び更新できます。</p>
+<p>本メニューはModule素材集を元にBackYardがレコードを管理するため、登録・廃止・復活はできません。</p>
+<p>変数ネストの管理対象については「
+<em>8.1</em>Module素材記入例」をご参照ください。</p>
+<p>変数ネストの管理フロー例については「
+<em>8.2</em>変数ネスト管理フロー例」をご参照ください。</p>
+<p><a class="reference internal" href="../../../../_images/image212.png"><img alt="image19" src="../../../../_images/image212.png" style="width: 5.61692in; height: 2.92917in;" /></a></p>
+</li>
+</ol>
+<p>図 5.2.66‑1 サブメニュー画面（変数ネスト管理）</p>
+<ol class="arabic simple">
+<li><p>「一覧」-「更新」ボタンより最大繰返数の更新を行います。</p></li>
+</ol>
+<blockquote>
+<div><p><a class="reference internal" href="../../../../_images/image222.png"><img alt="image20" src="../../../../_images/image222.png" style="width: 6.69236in; height: 1.16181in;" /></a></p>
+</div></blockquote>
+<p>図 5.2.66‑2 更新画面（変数ネスト管理）</p>
+<ol class="arabic" start="2">
+<li><p>変数ネスト管理の項目一覧は以下の通りです。</p>
+<p><strong>表</strong> <strong>5.2.56-1項目一覧（変数ネスト管理）</strong></p>
+</li>
+</ol>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
+<th class="head"><p><strong>説明</strong></p></th>
+<th class="head"><p><strong>入力</strong></p>
+<p><strong>必須</strong></p>
+</th>
+<th class="head"><ul class="simple">
+<li></li>
+</ul>
+<p><em>入力形式*</em></p>
+</th>
+<th class="head"><ul class="simple">
+<li></li>
+</ul>
+<p><em>制約事項*</em></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>変数名</p></td>
+<td><p>Moveme
+nt-Module紐
+付で登録し
+た資材で使
+用している
+変数が表示
+されます。</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>入力不可</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>メンバ
+ー変数名（
+繰返し有）</p></td>
+<td><p>変数ネスト
+管理対象が
+メンバー変
+数である場
+合、メンバ
+ー変数名が
+表示されま
+す。メンバ
+ー変数名は
+各階層の変
+数を「.」で
+連結して表
+示します。</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>入力不可</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>最大繰返数</p></td>
+<td><p>配列の最
+大繰返数を1
+～99,999,99
+9の範囲で入
+力します。</p>
+<p>初期値は
+tfファイル
+のdefaultに
+記載されて
+いる値から
+取得した繰
+返数が設定
+されます。</p>
+<p>t
+fファイルに
+defaultの記
+載がない場
+合、1が設定
+されます。</p>
+<p>最終更新
+者が「Terr
+aform変数更
+新プロシー
+ジャ」でな
+い場合はMod
+ule素材の更
+新により値
+が変更され
+ることはあ
+りません。</p>
+</td>
+<td><p>○</p></td>
+<td><p>手動入力</p></td>
+<td><p>入力値
+1～
+99,999,999</p></td>
+</tr>
+<tr class="row-odd"><td><p>備考</p></td>
+<td><p>自由記
+述欄です。</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>手動入力</p></td>
+<td><p>最大長
+4000バイト</p></td>
+</tr>
+</tbody>
+</table>
+<p>※初期登録および繰返数の更新はリアルタイムではないので、「<em>5.2.7</em>代入値自動登録設定」や「<em>5.2.8</em>代入値管理」で変数が扱えるまでに時間がかかる場合があります。</p>
+<p>初期登録および繰返数の更新タイミングは「
+<em>7.2</em>メンテナンス方法について」に記載していますので、そちらをご参照ください。</p>
+<ol class="arabic" start="3">
+<li><p>アクセス許可ロール</p>
+<p>変数ネスト管理に設定されるアクセス許可ロールは、該当の変数が定義されているModule素材集のアクセス許可ロールが設定されます。</p>
+</li>
+</ol>
+</section>
+<section id="id40">
+<h3>代入値自動登録設定<a class="headerlink" href="#id40" title="この見出しへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p>[代入値自動登録設定]では、メニュー作成機能で作成したパラメータシート（オペレーションあり）と、Movementの変数を紐付けます。登録した情報はBackYardの処理により代入値管理に反映されます。</p>
+<p><em>6.2</em> BackYard
+コンテンツ<em>(2)代入値自動登録設定</em>に反映ルールを記載しています。</p>
+<p><a class="reference internal" href="../../../../_images/image232.png"><img alt="image21" src="../../../../_images/image232.png" style="width: 4.76443in; height: 2.47355in;" /></a></p>
+<p><strong>図5.2.67-1サブメニュー画面（代入値自動登録）</strong></p>
+</li>
+<li><p>「登録」-「登録開始」ボタンより、代入値管理を行います。</p>
+<p><a class="reference internal" href="../../../../_images/image241.png"><img alt="image22" src="../../../../_images/image241.png" style="width: 5.1533in; height: 1.40797in;" /></a></p>
+<p><strong>図</strong> <strong>5.2.67-2登録画面（代入値自動登録）</strong></p>
+</li>
+</ol>
+<ol class="arabic" start="5">
+<li><p>メニューIDまたは、メニュー名のリンクをクリックすると、対象のメニューへ遷移します。</p>
+<p><a class="reference internal" href="../../../../_images/image251.png"><img alt="image23" src="../../../../_images/image251.png" style="width: 5.21739in; height: 1.29408in;" /></a></p>
+<p><strong>図5.2.67-3サブメニュー画面（代入値自動登録）</strong></p>
+</li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>登録画面の項目一覧は以下のとおりです。</p></li>
+</ol>
+<p><strong>表5.2.7-1　項目一覧（代入値自動登録）</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>**
+カラム**</p></th>
+<th class="head"><p><strong>説明</strong></p></th>
+<th class="head"><p><strong>入
+力必須</strong></p></th>
+<th class="head"><p><strong>入
+力形式</strong></p></th>
+<th class="head"><p><strong>制
+約事項</strong></p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>メ
+ニューグ
+ループ：
+メニュー</p></td>
+<td><p>メニュ
+ー作成機
+能で作成
+したパラ
+メータシ
+ート（オ
+ペレーシ
+ョンあり
+）が表示
+さ
+れます。
+該当
+のパラメ
+ータシー
+トを選択
+します。</p></td>
+<td><p>○</p></td>
+<td><p>リ
+スト選択</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>項目</p></td>
+<td><p>選択し
+たパラメ
+ータシー
+トの項目
+が表示さ
+れます。
+対象の項
+目を選択
+します。</p></td>
+<td><p>○</p></td>
+<td><p>リ
+スト選択</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>登録方式</p></td>
+<td><p>Value
+型：項
+目の設定
+値を紐付
+けた変数
+の具体値
+とする場
+合に選択
+します。</p>
+<p>Key
+型：
+項目の名
+称を紐付
+けた変数
+の具体値
+とする場
+合に選択
+します。</p>
+<p>項目
+の設定値
+が空白の
+場合は紐
+付け対象
+外となり</p>
+<p>ます。</p>
+<p>K
+ey-Value
+型：項
+目の名称
+(Key)と
+設定値(
+Value)を</p>
+<p>紐付
+けた変数
+の具体値
+とする場
+合に選択
+します。</p>
+</td>
+<td><p>○</p></td>
+<td><p>リ
+スト選択</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Movement</p></td>
+<td><p>Movement
+一覧で
+登録した
+Movement
+が表示さ
+れます。
+Movement
+を選択
+します。</p></td>
+<td><p>○</p></td>
+<td><p>リ
+スト選択</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Key</p>
+<p>情報</p>
+</td>
+<td><p>変数名</p></td>
+<td><p>Mov
+ement-Mo
+dule紐付
+で登録し
+た資材で
+使用して
+いる変数
+が表示さ
+れます。</p>
+<p>Key
+型で具体
+値に紐付
+けたい変
+数を選択
+します。</p>
+</td>
+<td><p>○</p></td>
+<td><p>リ
+スト選択</p></td>
+<td><p>登録方式
+でKey型</p>
+<p>また
+はKey-V
+alue型を</p>
+<p>選
+択した場
+合は必須</p>
+</td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>メン
+バー変数</p></td>
+<td><p>メンバー
+変数を持
+つ変数名
+を選択し
+た場合に</p>
+<p>メン
+バー変数
+が表示さ
+れます。</p>
+<p>メ
+ンバー変
+数を選択
+します。</p>
+</td>
+<td><p>変数名に
+より変動</p></td>
+<td><p>リ
+スト選択</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>代入順序</p></td>
+<td><p>複
+数具体値
+が設定で
+きる変数
+名の場合
+のみ必須
+入力にな
+ります。</p>
+<p>具体値
+の代入順
+序（1～
+）を入力
+します。
+入力値に
+従い昇順
+で代入さ
+れます。</p>
+</td>
+<td><p>変数名に
+より変動</p></td>
+<td><p>手動入力</p></td>
+<td><p>ブランク</p>
+<p>または、</p>
+<p>正の整数</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Value</p>
+<p>情報</p>
+</td>
+<td><p>変数名</p></td>
+<td><p>Mov
+ement-Mo
+dule紐付
+で登録し
+た資材で
+使用して
+いる変数
+が表示さ
+れます。</p>
+<p>Value
+型で具体
+値に紐付
+けたい変
+数を選択
+します。</p>
+</td>
+<td><p>○</p></td>
+<td><p>リ
+スト選択</p></td>
+<td><p>登
+録方式で
+Value型</p>
+<p>また
+はKey-V
+alue型を</p>
+<p>選
+択した場
+合は必須</p>
+</td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>HCL設定</p></td>
+<td><p>「
+OFF」ま
+たは「ON
+」を選択
+します。</p>
+<p>BackYard
+の処理に
+より代入
+値管理に
+反映する
+際、選択
+した値が
+引き継が
+れます。</p>
+</td>
+<td><p>○</p></td>
+<td><p>リ
+スト選択</p></td>
+<td><p>選
+択した変
+数名がm
+ap型の場
+合はONで
+設定する
+必要があ
+ります。</p>
+<p>オペレ
+ーション
+、Moveme
+nt、変数
+名が一致
+している
+場合、H
+CL設定は
+ONまたは
+OFFに統
+一してく
+ださい。</p>
+</td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>メン
+バー変数</p></td>
+<td><p>メンバー
+変数を持
+つ変数名
+を選択し
+た場合に</p>
+<p>メン
+バー変数
+が表示さ
+れます。</p>
+<p>メ
+ンバー変
+数を選択
+します。</p>
+</td>
+<td><p>変数名に
+より変動</p></td>
+<td><p>リ
+スト選択</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>代入順序</p></td>
+<td><p>複
+数具体値
+が設定で
+きる変数
+名の場合
+のみ必須
+入力にな
+ります。</p>
+<p>具体値
+の代入順
+序（1～
+）を入力
+します。
+入力値に
+従い昇順
+で代入さ
+れます。</p>
+</td>
+<td><p>変数名に
+より変動</p></td>
+<td><p>手動入力</p></td>
+<td><p>ブランク</p>
+<p>または、</p>
+<p>正の整数</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>NULL連携</p></td>
+<td><p>パラ
+メータシ
+ートの具
+体値がNU
+LL(空白)
+の場合に
+、代入値
+管理への
+登録をNU
+LL(空白)
+の値で行
+うか設定
+します。</p>
+<p>・「有効
+」の場合
+、パラメ
+ータシー
+トの値が
+どのよう
+な値でも
+代入値管
+理への登
+録が行わ
+れます。</p>
+<p>・
+「無効」
+の場合、
+パラメー
+タシート
+に値が入
+っている
+場合のみ
+代入値管
+理への登
+録が行わ
+れます。</p>
+<p>・空
+白の場合
+、インタ
+ーフェー
+ス情報の
+「NULL連
+携」の値
+が適用さ
+れます。</p>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>リ
+スト選択</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>備考</p></td>
+<td><p>自由記述
+欄です。</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>手動入力</p></td>
+<td><p>最大長40
+00バイト</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>※登録方式でKey型を選択した場合、代入値管理に反映する際にHCL設定はOFFで設定されます。</p>
+<p>※メンバー変数を設定する場合は、同じ変数内のメンバー変数の具体値も全て設定してください。</p>
+<p>代入値を設定しなかった他のメンバー変数でもデフォルト値が使用されることはありません。</p>
+</section>
+<section id="id41">
+<h3>代入値管理<a class="headerlink" href="#id41" title="この見出しへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p>[代入値管理]では、オペレーションごとに、対象のMovementで利用されるModule内の変数に代入する具体値をメンテナンス（閲覧／登録／更新／廃止）できます。</p>
+<p><a class="reference internal" href="../../../../_images/image261.png"><img alt="image24" src="../../../../_images/image261.png" style="width: 4.76117in; height: 2.47355in;" /></a></p>
+</li>
+</ol>
+<p><strong>図5.2.88-1サブメニュー画面（代入値管理）</strong></p>
+<ol class="arabic" start="4">
+<li><p>「登録」-「登録開始」ボタンより、代入値管理を行います。</p>
+<p><a class="reference internal" href="../../../../_images/image271.png"><img alt="image25" src="../../../../_images/image271.png" style="width: 5.97504in; height: 1.52077in;" /></a></p>
+</li>
+</ol>
+<p>図 5.2.88-2登録画面（代入値管理）</p>
+<p>代入値管理の変数は、「<em>5.2.4</em>
+<em>Module素材集</em>」で登録されたファイルの情報から反映されます。</p>
+<blockquote>
+<div><p><strong>※ 反映のタイミングは「</strong>
+<strong>7.2メンテナンス方法について」の「③起動周期の変更」に記載していますので、そちらをご参照ください</strong></p>
+</div></blockquote>
+<ol class="arabic" start="5">
+<li><p>代入値管理に登録した変数は、作業実行時に生成されるterraform.tfvarsファイルに「変数名」が「Key」、「具体値」が「Value」として記載され、作業実行で使用されます。</p>
+<p>「Secure設定」を「ON」にしていた場合は作業実行時に生成されるsecure.tfvarsファイルに「変数名」が「Key」、「具体値」が「Value」として記載され、作業実行で使用されます。secure.tfvarsファイルは「<em>5.2.10</em>作業状態確認」「<em>5.2.11</em>作業管理」で取得できる投入データの中に格納されません。</p>
+</li>
+<li><p>代入値管理の項目一覧は以下のとおりです。</p>
+<p><strong>表5.2.8-1　項目一覧（代入値管理）</strong></p>
+</li>
+</ol>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
+<th class="head"><p><strong>説明</strong></p></th>
+<th class="head"><p><strong>入力</strong></p>
+<p><strong>必須</strong></p>
+</th>
+<th class="head"><ul class="simple">
+<li></li>
+</ul>
+<p><em>入力形式*</em></p>
+</th>
+<th class="head"><ul class="simple">
+<li></li>
+</ul>
+<p><em>制約事項*</em></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>オペ
+レーション</p></td>
+<td><p>対象
+のオペレー
+ションを選
+択します。</p></td>
+<td><p>○</p></td>
+<td><p>リスト選択</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Movement</p></td>
+<td><p>対象のM
+ovementを選
+択します。</p></td>
+<td><p>○</p></td>
+<td><p>リスト選択</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>変数名</p></td>
+<td><p>Movement
+-Module紐付
+にて登録さ
+れているMod
+ule素材の中
+から、選択
+されたMovem
+entにアタッ
+チしている
+変数名が表
+示されます
+。変数を選
+択します。</p></td>
+<td><p>○</p></td>
+<td><p>リスト選択</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>HCL設定</p></td>
+<td><p>「
+OFF」または
+「ON」を選
+択します。</p>
+<p>変数に文
+字列以外の
+値を設定す
+る際などに
+「ON」を設
+定します。</p>
+</td>
+<td><p>○</p></td>
+<td><p>リスト選択</p></td>
+<td><p>選択し
+た変数名が
+map型の場合
+はONで設定
+する必要が
+あります。</p>
+<p>オペレー
+ション、Mov
+ement、変数
+名が一致し
+ている場合
+、HCL設定は
+ONまたはOF
+Fに統一して
+ください。</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>メ
+ンバー変数</p></td>
+<td><p>メンバー変
+数を持つ変
+数名を選択
+した場合に</p>
+<p>メンバー
+変数が表示
+されます。</p>
+<p>メンバ
+ー変数を選
+択します。</p>
+</td>
+<td><p>変数名
+により変動</p></td>
+<td><p>リスト選択</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>代入順序</p></td>
+<td><p>複数具体
+値が設定で
+きる変数名
+の場合のみ
+必須入力に
+なります。</p>
+<p>具体値の
+代入順序（
+1～）を入力
+します。入
+力値に従い
+昇順で代入
+されます。</p>
+</td>
+<td><p>変数名
+により変動</p></td>
+<td><p>手動入力</p></td>
+<td><p>ブランク</p>
+<p>または、</p>
+<p>正の整数</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>デ
+フォルト値</p></td>
+<td><p>default内で
+変数に紐づ
+いている具
+体値が表示
+されます。</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Secure設定</p></td>
+<td><p>「
+OFF」または
+「ON」を選
+択します。</p>
+<p>「ON」を選
+択した場合
+、具体値を
+暗号化しIT
+A上で表示さ
+せないよう
+にします。</p>
+<p>また
+「ON」にし
+た対象は「
+<em>5.2.10</em></p>
+<blockquote>
+<div><p>作業状態確</p>
+</div></blockquote>
+<p>認」「<em>5.
+2.11</em>作業
+管理」で取
+得できる投
+入データの
+中に格納さ
+れません。</p>
+</td>
+<td><p>○</p></td>
+<td><p>リスト選択</p></td>
+<td><p>Te
+rraformが出
+力するPlan
+やApplyのロ
+グ上で値を
+非表示にす
+る場合は、
+登録したMo
+dule素材のv
+ariableブロ
+ックの中で
+『sensitive
+=
+t
+rue』を指定
+する必要が
+あります。</p></td>
+</tr>
+<tr class="row-even"><td><p>具体値</p></td>
+<td><p>オペレー
+ション/Mov
+ementで使用
+する変数の
+具体値を入
+力します。</p></td>
+<td><p>○</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長
+8192バイト</p></td>
+</tr>
+<tr class="row-odd"><td><p>備考</p></td>
+<td><p>自由記
+述欄です。</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>手動入力</p></td>
+<td><p>最大長
+4000バイト</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id42">
+<h3>作業実行<a class="headerlink" href="#id42" title="この見出しへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p>作業の実行を指示します。Movement一覧、オペレーション一覧からそれぞれラジオボタンで選択し、実行ボタンを押すと、「<em>5.2.10作業状態確認</em>」に遷移し、実行されます。</p>
+<p><a class="reference internal" href="../../../../_images/image281.png"><img alt="image26" src="../../../../_images/image281.png" style="width: 5.18712in; height: 3.82923in;" /></a></p>
+</li>
+</ol>
+<p><strong>図</strong> <strong>5.2.99-1 サブメニュー画面（作業実行）</strong></p>
+<ol class="arabic simple">
+<li><p><strong>予約日時の指定</strong></p></li>
+</ol>
+<blockquote>
+<div><p>「予約日時」を入力することで、実行およびPlan確認を予約することができます。</p>
+<p>「予約日時」には、未来の日時のみ登録可能です。</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p><strong>Movementの指定</strong></p></li>
+</ol>
+<blockquote>
+<div><p>「<em>5.2.3</em> <em>Movement一覧</em>」で登録したMovementを選択します。</p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p><strong>オペレーションの指定</strong></p></li>
+</ol>
+<blockquote>
+<div><p>「<em>5.1.1オペレーション一覧</em>」で登録したオペレーションを選択します。</p>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p><strong>実行</strong></p></li>
+</ol>
+<blockquote>
+<div><p>「実行」ボタンをクリックすると、「<em>5.2.10作業状態確認</em>」に遷移し、作業が実行されます。</p>
+<p>Plan完了後にApplyが自動で実行されます。</p>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p><strong>Plan確認</strong></p></li>
+</ol>
+<blockquote>
+<div><p>「Plan確認」ボタンをクリックすると、「実行」ボタンをクリックした場合同様に作業実行が開始されますが、Planのみを実行し、Applyは実行されません。</p>
+</div></blockquote>
+<ol class="arabic" start="4">
+<li><p>Outputブロックを含むModuleがConductorから実行された場合、Outputブロックに書かれた内容がデータリレイストレージパス（Conductor実行時、各Movementで共有するディレクトリを、ITAサーバから見たディレクトリパス）にjson形式ファイルで保存されます。</p>
+<p>このファイルを使用することにより、同一Conductorの別のMovementでTerraformが出力した値を使用することができます。</p>
+<p>ファイルパス</p>
+<p>[データリレイストレージパス]/[ConductorインスタンスID]/terraform_output_[作業No].json</p>
+<p>例：/exastro/data_relay_storage/conductor/0000000001/terraform_output_0000000001.json</p>
+<p>データリレイストレージパス・・・[Conductor]-[Conductorインターフェース情報]メニューの[データリレイストレージパス]</p>
+<p>ConductorインスタンスID・・・[Conductor]-[Conductor作業一覧]メニューの[ConductorインスタンスID]（左0埋め10桁）</p>
+<p>作業No.・・・[Terraform]-[作業管理]メニューの[作業No.]（左0埋め10桁）</p>
+<p>記述例</p>
+</li>
+</ol>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>variable &quot;VAR_sample&quot; {</p>
+<p>type = string</p>
+<p>default = &quot;sample_string&quot;</p>
+<p>}</p>
+<p>output &quot;output_sample&quot; {</p>
+<p>value = &quot;${var.VAR_sample}&quot;</p>
+<p>}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>出力例</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>{</p>
+<p>&quot;output_sample&quot;: &quot;sample_string&quot;</p>
+<p>}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id43">
+<h3>作業状態確認<a class="headerlink" href="#id43" title="この見出しへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p>作業の実行状態を監視します。</p>
+<p><a class="reference internal" href="../../../../_images/image291.png"><img alt="image27" src="../../../../_images/image291.png" style="width: 5.34783in; height: 3.43273in;" /></a></p>
+</li>
+</ol>
+<p><strong>図</strong> <strong>5.2.100-1サブメニュー画面（作業状態確認）</strong></p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt><a href="#id44"><span class="problematic" id="id45">**</span></a>実行状態表示</dt><dd><p><a href="#id46"><span class="problematic" id="id47">**</span></a>実行状況に即し、ステータスが表示されます。</p>
+</dd>
+</dl>
+</li>
+</ol>
+<blockquote>
+<div><p>「実行種別」にはPlan確認の場合には「Plan確認」、Workspaceごとに構成・管理されたリソースの削除（「<em>5.2.2</em>
+<em>Workspaces管理</em>」から実行されます。）の場合は「リソース削除」、それ以外の場合には「通常」が入ります。</p>
+<p>「進行状況(Initログ)」「進行状況(Planログ)」「進行状況(Applyログ)」にはTerraformで実行するコマンドterraform
+init / terraform plan / terraform
+applyの各実行状況のログが表示されます。</p>
+<p>ステータスが想定外エラーで終了した場合、「<em>5.2.1インターフェース情報</em>」の登録不備や、その他のWebコンテンツの登録不備が原因であれば、「進行状況(エラーログ)」にメッセージが表示されます。</p>
+<p>それ以外のエラーの場合は「進行状況(エラーログ)」にメッセージが表示されません。この場合は、プロセスのログにエラー情報が記録されます。必要に応じてプロセスのログを確認ください。</p>
+<p>※プロセスのログは「
+<em>7.2メンテナンス方法について</em>」の「④ログファイル名」に記載していますので、そちらをご参照ください。</p>
+<p>「呼出元Symphony」には、どのSymphonyから実行されたかを表示します。Terraform
+CLIドライバから直接実行した場合やConductorから実行した場合は空欄になります。</p>
+<p>「呼出元
+Conductor」には、どのConductorから実行されたかを表示します。Terraform
+CLIドライバから直接実行した場合やSymphonyから実行した場合は空欄になります。</p>
+<p>「実行ユーザ」には、作業実行メニューより「実行」ボタンを押下した際のログインユーザが表示されます。</p>
+<p>※「実行種別」が「リソース削除」の場合は下記の項目が設定されません。</p>
+<p>・呼出元Symphony</p>
+<p>・呼出元Conductor</p>
+<p>・Movement（ID、名称、遅延データ（分））</p>
+<p>・オペレーション（No.、名称、ID）</p>
+<p>・代入値</p>
+<p>・入力データ（投入データ）</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p><strong>代入値確認</strong></p></li>
+</ol>
+<blockquote>
+<div><p>「確認」ボタンで「<em>5.2.8</em>代入値管理」が表示され、作業対象のオペレーションとMovementに絞り込んだ代入値が表示されます。</p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p><strong>緊急停止/予約取り消し</strong></p></li>
+</ol>
+<blockquote>
+<div><p>「緊急停止」ボタンで構築作業を停止させることができます。</p>
+<p>また、実行前の「予約実行」の作業の場合は、「予約取消」ボタンが表示されます。「予約取消」ボタンで予約実行が取り消せます。</p>
+</div></blockquote>
+<ol class="arabic" start="4">
+<li><div class="line-block">
+<div class="line"><a href="#id48"><span class="problematic" id="id49">**</span></a>ログ検索
+  <a href="#id50"><span class="problematic" id="id51">**</span></a>実行ログ、エラーログは、フィルタリングができます。各ログのフィルタのテキストボックスに検索したい文字列を入力し、「該当行のみ表示」のチェックボックスをチェックすることで該当する行だけが表示されます。
+| 実行ログ、エラーログのリフレッシュ表示間隔と最大表示行数を、「<em>5.2.1</em>インターフェース情報」の「状態監視周期（単位ミリ秒）」と「進行状態表示行数」で設定できます。</div>
+</div>
+</li>
+<li><dl class="simple">
+<dt><a href="#id52"><span class="problematic" id="id53">**</span></a>投入データ</dt><dd><p><a href="#id54"><span class="problematic" id="id55">**</span></a>実行したModule素材および設定した代入値の一覧をjson形式で取得したファイルを格納したzip形式ファイルをダウンロードすることができます。</p>
+</dd>
+</dl>
+</li>
+</ol>
+<blockquote>
+<div><p>格納されているファイルは以下の通りです。</p>
+</div></blockquote>
+<p><strong>表</strong> <strong>5.2.100-1 投入データ格納ファイル</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>ファイル名</strong></p></th>
+<th class="head"><p><strong>説明</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>(投入したModule素材ファイル名)</p></td>
+<td><p>投入したModule素材ファイルがzipフ
+ァイルの直下にすべて格納されます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>terraform.tfvars</p></td>
+<td><p>設定した各代入値
+についての「変数名(key)」「具体値
+(value)」を記載したファイルです。</p>
+<p>Secu
+re設定がONの対象は記載されません。</p>
+</td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="6">
+<li><dl class="simple">
+<dt><a href="#id56"><span class="problematic" id="id57">**</span></a>結果データ</dt><dd><p><a href="#id58"><span class="problematic" id="id59">**</span></a>実行ログ、エラーログおよび、terraformコマンドが生成したファイルを格納したzip形式ファイルをダウンロードすることができます。</p>
+</dd>
+</dl>
+</li>
+</ol>
+<blockquote>
+<div><p>格納されているファイルは以下の通りです。</p>
+</div></blockquote>
+<p><strong>表</strong> <strong>5.2.100-2 結果データ格納ファイル</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>ファイル名</strong></p></th>
+<th class="head"><p><strong>説明</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Init.log</p></td>
+<td><p>進行状況(Initログ)に出
+力された内容を記載したlogファイルです。</p></td>
+</tr>
+<tr class="row-odd"><td><p>plan.log</p></td>
+<td><p>進行状況(Planログ)に出
+力された内容を記載したlogファイルです。</p></td>
+</tr>
+<tr class="row-even"><td><p>apply.log</p></td>
+<td><p>進行状況(Applyログ)に出
+力された内容を記載したlogファイルです。</p></td>
+</tr>
+<tr class="row-odd"><td><p>error.log</p></td>
+<td><p>進行状況(エラーログ)に出
+力された内容を記載したlogファイルです。</p></td>
+</tr>
+<tr class="row-even"><td><p>result.txt</p></td>
+<td><p>作業実行時にバックヤードが
+利用する進行状況を記録するファイルです。</p></td>
+</tr>
+<tr class="row-odd"><td><p>.terraform.lock.hcl</p></td>
+<td><p>Terraformが生成したファイルです
+。providerやmoduleの情報が記載されます。</p></td>
+</tr>
+<tr class="row-even"><td><p>terraform.tfstate</p></td>
+<td><p>Terraformが生成したstateファイルです。</p>
+<p>暗号化された状態で保存されています。</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>terraform.tfstate.backup</p></td>
+<td><p>Terraformが生
+成したstateファイルのバックアップです。</p>
+<p>暗号化された状態で保存されています。</p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id60">
+<h3>作業管理<a class="headerlink" href="#id60" title="この見出しへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li><p>作業の履歴を閲覧できます。</p></li>
+</ol>
+<blockquote>
+<div><p>条件を指定し「フィルタ」ボタンをクリックすると、作業一覧テーブルを表示します。</p>
+</div></blockquote>
+<p>「作業状態確認」ボタンで、「<em>5.2.10作業状態確認</em>」に遷移し、実行状態の詳細を見ることができます。</p>
+<p><a class="reference internal" href="../../../../_images/image301.png"><img alt="image28" src="../../../../_images/image301.png" style="width: 5.26236in; height: 2.83358in;" /></a></p>
+<p><strong>図5.2.111-1サブメニュー画面（作業管理）</strong></p>
+</section>
+</section>
+</section>
+<section id="id61">
+<h1>構築コード記述方法<a class="headerlink" href="#id61" title="この見出しへのパーマリンク">¶</a></h1>
+<p>Terraform-CLI-driverでModuleの記述について説明します。</p>
+<section id="id62">
+<h2>Moduleの記述<a class="headerlink" href="#id62" title="この見出しへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><p>Moduleファイルは、HCL（HashiCorp Configuration
+Language）というHashiCorp社独自の言語により記述します。</p>
+<p>HCLの詳細については、Terraformの製品マニュアルを参照してください。</p>
+</div></blockquote>
+</section>
+<section id="backyard">
+<h2>BackYard コンテンツ<a class="headerlink" href="#backyard" title="この見出しへのパーマリンク">¶</a></h2>
+<ol class="arabic">
+<li><p><strong>変数自動登録</strong></p>
+<p>「<em>5.2.4</em>
+Module素材集」に登録したModule素材ファイルから変数を抽出します。</p>
+<p>変数の抽出ルールについては「 <em>2.1</em>変数の種類」をご参照ください。</p>
+<p>なお、取出すタイミングは「Terraform変数自動登録」プロセスの起動周期に依存します。</p>
+</li>
+<li><p><strong>代入値自動登録設定</strong></p>
+<p>連携対象としたパラメータシートのオペレーションの項目の設定値と紐付けたMovementと変数の情報を代入値管理に反映します。</p>
+<p>なお、取出すタイミングは「Terraform自動登録設定」プロセスの起動周期に依存します。</p>
+<p>代入値管理は複数の操作者が更新を行います。最終更新者が他操作者の場合は反映処理をしません。</p>
+<p>代入値自動登録設定のデータを反映したい場合は、代入値管理で該当レコードを廃止にする操作を行ってください。</p>
+<p>代入値管理への反映ルールを以下に記載します。</p>
+</li>
+</ol>
+<ol class="arabic simple">
+<li><p><strong>代入値自動登録設定に登録されている情報を代入値管理へ反映時</strong></p></li>
+</ol>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>代入
+値管理</strong></p>
+<p>**
+の状態**</p>
+</th>
+<th class="head"><p><strong>該当レ
+コード</strong></p>
+<p><strong>なし</strong></p>
+</th>
+<th class="head"><p><strong>該
+当レコー
+ドあり</strong></p></th>
+<th class="head"><p><strong>該当レ
+コード</strong></p>
+<p>**
+廃止中**</p>
+</th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p><strong>=
+具体値</strong></p></td>
+<td><p><strong>≠
+具体値</strong></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td><p><strong>最終
+更新者</strong></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td><p><strong>BackYa
+rd処理</strong></p></td>
+<td><p><strong>他
+操作者</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>代入
+値管理</strong></p>
+<p><strong>へ
+の反映</strong></p>
+</td>
+<td><p>新規
+レコード</p>
+<p>追加</p>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>該当レ
+コードの</p>
+<p>具
+体値更新</p>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>廃止
+レコード</p>
+<p>復活</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>※
+該当レコード：オペレーション＋Movement+変数名+HCL設定+アクセス権が同一のレコードの意</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>代入値自動登録設定に登録されていない情報（代入値管理のみに登録）を代入値管理へ反映</strong></p></li>
+</ol>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><a href="#id63"><span class="problematic" id="id64">**</span></a>代入値管理</p></th>
+<th class="head"><p><strong>該当レコードあり</strong></p></th>
+<th class="head"></th>
+</tr>
+<tr class="row-even"><th class="head"><p>の状態**</p></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p></p></td>
+<td><p><strong>最終更新者</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><strong>BackYard処理</strong></p></td>
+<td><p><strong>他操作者</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>代入値管理への反映</strong></p></td>
+<td><p>該当レコード廃止</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic" start="3">
+<li><p><strong>HCL設定について</strong></p>
+<p>代入値自動登録に設定した「HCL設定」の値は代入値管理に反映する際に同じ値が設定されます。</p>
+</li>
+<li><p><strong>Secure設定について</strong></p>
+<p>連携対象としたパラメータシートの項目が「パスワード」の場合は代入値管理に反映する際に「Secure設定」がONで設定されます。それ以外の場合はOFFで設定されます。</p>
+</li>
+<li><p><strong>アクセス許可ロールについて</strong></p>
+<p>連連携対象としたパラメータシートのレコードに設定されたオペレーションのアクセス許可ロールと、代入値自動登録のレコードに設定されたMovementのアクセス許可ロールを参照し、一致しているすべてのアクセス許可ロールが代入値管理に反映する際に設定されます。</p>
+<p>どちらもアクセス許可ロールが設定されていない場合（空欄の場合）は、代入値管理に反映する際も空欄が設定されます。</p>
+<p>また、一致するアクセス許可ロールが一つも無い場合は代入値管理にレコードが作成されません。</p>
+</li>
+</ol>
+</section>
+</section>
+<section id="id65">
+<h1>運用操作<a class="headerlink" href="#id65" title="この見出しへのパーマリンク">¶</a></h1>
+<p>本機能を活用する操作は、クライアントPCのブラウザ画面からのユーザー利用による入力だけでなく、システム運用・保守による操作もあります。用意している運用・保守の操作は次のとおりです。</p>
+<section id="id66">
+<h2>メンテナンス<a class="headerlink" href="#id66" title="この見出しへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><p>Terraform-CLI-driverのプロセスの開始/停止/再起動に必要なファイルは以下となります。</p>
+</div></blockquote>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>説明</strong></p></th>
+<th class="head"><p><strong>対象ファイル名</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Terraform作業実行監視</p>
+<p>未実行作業の実行を行う。</p>
+</td>
+<td><p>ky_terraf
+orm_cli_execute-workflow.service</p></td>
+</tr>
+<tr class="row-odd"><td><p>Terraform変数自動登録</p>
+<p>アップロード
+したModule素材から変数・メンバー
+変数・最大繰返数の取出しを行う。</p>
+<p>最大
+繰返数をメンバー変数に反映する。</p>
+</td>
+<td><p>ky_terraform_cli
+_varsautolistup-workflow.service</p></td>
+</tr>
+<tr class="row-even"><td><p>Terraform自動登録設定</p>
+<p>代入値自動登録に設定され
+た情報を代入値管理に反映を行う。</p>
+</td>
+<td><p>ky_terraform_c
+li_valautosetup-workflow.service</p></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p>対象ファイルは「/usr/lib/systemd/system」に格納されています。</p>
+<p>プロセス起動/停止/再起動の方法は次の通りです。</p>
+<p>root権限でコマンドを実行してください。</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>プロセス起動</p></li>
+<li><p>プロセス停止</p></li>
+<li><p>プロセス再起動</p></li>
+</ol>
+<blockquote>
+<div><p>各対象ファイル名に置き換えて起動/停止/再起動を行ってください。</p>
+</div></blockquote>
+</section>
+<section id="id67">
+<h2>メンテナンス方法について<a class="headerlink" href="#id67" title="この見出しへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><p>①　NORMALレベルへの変更</p>
+<p>　以下のファイルの8行目「DEBUG」を「NORMAL」に書き換えます。</p>
+<p>　ログレベル設定ファイル：
+&lt;インストールディレクトリ&gt;/ita-root/confs/backyardconfs/ita_env</p>
+<p>②　DEBUGレベルへの変更</p>
+<p>　以下のファイルの8行目「NORMAL」を「DEBUG」に書き換えます。</p>
+<p>　ログレベル設定ファイル：
+&lt;インストールディレクトリ&gt;/ita-root/confs/backyardconfs/ita_env</p>
+<p>③ 起動周期の変更</p>
+<p>　各対象ファイルのExecStartの5番目のパラメータを変更します。（単位:秒）</p>
+<p>　例外を除き起動周期はデフォルト値の使用をしてください。</p>
+</div></blockquote>
+<p>書き換え後、<strong>プロセス再起動(restart)後に有効になります。</strong></p>
+<blockquote>
+<div><p>④ ログファイル名</p>
+</div></blockquote>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>プロセス名</strong></p></th>
+<th class="head"><p><strong>ログファイル名</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>k
+y_terraform_cli_execute-workflow</p></td>
+<td><p>ky_terraform_c
+li_execute-workflow_YYYYMMDD.log</p></td>
+</tr>
+<tr class="row-odd"><td><p>k
+y_terraform_cli_execute-workflow</p></td>
+<td><p>ky_terraform_cli_exe
+cute-child-workflow_YYYYMMDD.log</p></td>
+</tr>
+<tr class="row-even"><td><p>ky_terra
+form_cli_varsautolistup-workflow</p></td>
+<td><p>ky_terraform_cli_vars
+autolistup-workflow_YYYYMMDD.log</p></td>
+</tr>
+<tr class="row-odd"><td><p>ky_ter
+raform_cli_valautosetup-workflow</p></td>
+<td><p>ky_terraform_cli_va
+lautosetup-workflow_YYYYMMDD.log</p></td>
+</tr>
+</tbody>
+</table>
+<p>ログファイルの出力先：
+<em>&lt;インストールディレクトリ&gt;/ita-root/logs/backyardlogs</em></p>
+</section>
+</section>
+<section id="id68">
+<h1>付録<a class="headerlink" href="#id68" title="この見出しへのパーマリンク">¶</a></h1>
+<section id="id69">
+<h2>Module素材記入例・登録例<a class="headerlink" href="#id69" title="この見出しへのパーマリンク">¶</a></h2>
+<p>Module素材の記入例と登録例を「 <em>4.1</em>
+Terraform作業フロー」のフロー番号と照らし合わせて記載します。</p>
+<ol class="arabic simple">
+<li><p>シンプルなパターン</p></li>
+<li><p>string型</p></li>
+<li><p>number型</p></li>
+<li><p>bool型</p></li>
+<li><p>list型</p></li>
+<li><p>set型</p></li>
+<li><p>tuple型</p></li>
+</ol>
+<ol class="arabic simple" start="7">
+<li><p>map型</p></li>
+<li><p>object型</p></li>
+<li><p>any型</p></li>
+</ol>
+<ol class="arabic simple" start="10">
+<li><p>typeの記載がない</p>
+<ol class="arabic simple">
+<li><p>複雑なパターン</p></li>
+</ol>
+</li>
+<li><p>list型配下のlist</p></li>
+<li><p>list型配下のobject</p></li>
+<li><p>object配下のlist配下のobject</p>
+<ol class="arabic simple">
+<li><p>特殊な型</p></li>
+<li><p>list型配下のmap型</p></li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="id70">
+<h2>変数ネスト管理フロー例<a class="headerlink" href="#id70" title="この見出しへのパーマリンク">¶</a></h2>
+<p>変数ネスト管理の操作例を「 <em>4.1</em>
+Terraform作業フロー」のフロー番号と照らし合わせて記載します。</p>
+<ol class="arabic simple">
+<li><p>最大繰返数を増加させる</p></li>
+<li><p>最大繰返数を減少させる</p></li>
+</ol>
+</section>
+</section>
+
+
+</div>
+
+
+<div id="articleNavigation">
+  <ul>
+  </ul>
+</div>
+
+
+<div id="pageTopLink">
+  <a href="#container"><i>↑</i> Page Top</a>
+</div>
+
+</article>
+</div>
+</main>
+</div><!-- End #contents -->
+<div id="footer">
+  <footer class="divInner">
+    <small>Copyright © 2023 NEC Corporation</small>
+  </footer>
+</div><!-- End #footer -->
+
+<div id="overlay"></div>
+<div id="grayBack"></div>
+
+</div><!-- End #container -->
+  </body>
+</html>

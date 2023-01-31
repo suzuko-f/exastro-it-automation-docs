@@ -69,7 +69,7 @@ ITA管理コンソールについて
 | 各メニュー右上のユーザー名表示部分をクリックし、 \ :guilabel:`ログアウト`\  をクリックするとシステムからログアウトします。
 | ログアウト後はログイン画面に遷移します。
 
-.. figure:: ./management_console/login_login_info.gif
+.. figure:: /images/ja//manuals/platform/login/ITA_login.gif
    :alt: ITAログイン画面
    :width: 800px
    :align: center
@@ -86,7 +86,7 @@ ITA管理コンソールについて
 | パネルをクリックすることで指定のメニューグループのメインメニューへ遷移出来ます。
 | インストールしたドライバのみが表示されます。
 
-.. figure:: ./management_console/メインメニュー.gif
+.. figure:: /images/ja/basic_console/operation/main_menu.gif
    :alt: メインメニュー
    :width: 800px
    :align: center
@@ -97,7 +97,7 @@ ITA管理コンソールについて
 | ITAシステムが提供する各メニュー画面は基本的に同じ要素で構成されています。
 | その構成要素は次の通りです。
 
-.. figure:: ./management_console/画面構成.png
+.. figure:: /images/ja/diagram/画面構成.png
    :alt: 画面構成
    :align: center
    :width: 800px
@@ -139,7 +139,7 @@ ITA管理コンソールについて
   | 登録内容は各メニューによって異なりますので、各利用手順マニュアルを参照して下さい。
   | エクセル形式、JSON形式のファイルを使用する一括登録については「\ :ref:`management_console_download_all_and_edit_file_uploads`\ 」をご確認下さい。
 
-  .. figure:: ./management_console/登録操作.gif
+  .. figure:: /images/ja/management_console/menu_group_list/menu_register.gif
      :alt: メインメニュー
      :width: 800px
      :align: center
@@ -161,7 +161,7 @@ ITA管理コンソールについて
   .. note:: | **プルダウンによる入力項目について**
             | 登録/更新時の入力項目で、プルダウンによる選択が可能な項目は、以下の仕様となっています。
 
-            .. figure:: ./management_console/プルダウンによる入力項目.gif
+            .. figure:: /images/ja/usecase/manuals/プルダウンによる入力項目.gif
                :alt:  プルダウンによる入力項目
                :align: center
                :width: 6in
@@ -177,7 +177,7 @@ ITA管理コンソールについて
   | 検索条件、検索項目はメニューごとに異なります。ここでは共通機能について説明します。
   | 「一覧」タブ内右上の \ :guilabel:`フィルタ|開く/閉じる`\  をクリックすることで表示／非表示の切替が可能です。
 
-  .. figure:: ./management_console/表示フィルタ画面.gif
+  .. figure:: /images/ja/management_console/menu_group_list/表示フィルタ画面.gif
      :alt: 表示フィルタ画面
      :align: center
      :width: 800px
@@ -207,7 +207,7 @@ ITA管理コンソールについて
   | 登録されている項目の更新を行います。
   | 編集内容は各メニューによって異なりますので、各利用手順マニュアルを参照して下さい。
 
-  .. figure:: ./management_console/編集操作.gif
+  .. figure:: /images/ja/management_console/menu_group_list/menu_update.gif
      :alt: 編集の操作
      :align: center
      :width: 800px
@@ -240,7 +240,7 @@ ITA管理コンソールについて
      | 登録/編集画面に遷移したら \ :guilabel:`複製`\  をクリックします。
   #. | 対象項目の値を反映した状態の新規登録用レコードが表示されます。
 
-  .. figure:: ./management_console/複製操作.gif
+  .. figure:: /images/ja/management_console/menu_group_list/menu_copy.gif
      :alt: 編集の操作
      :align: center
      :width: 800px
@@ -259,7 +259,7 @@ ITA管理コンソールについて
      | もしくは、「一覧」タブの対象項目の \ :guilabel:`…`\  > \ :guilabel:`履歴`\  を順にクリックすると変更履歴を表示することが出来ます。
   #. | 変更実施日時が新しい順に一覧表示され、前回との変更箇所がオレンジ色太文字で表示されます。
 
-  .. figure:: ./management_console/変更履歴操作.gif
+  .. figure:: /images/ja/management_console/menu_group_list/変更履歴操作.gif
      :alt: 変更履歴の操作
      :width: 800px
      :align: center
@@ -274,7 +274,7 @@ ITA管理コンソールについて
   #. | 事前準備として、メニュー作成メニューグループ>メニュー定義・作成メニューで以下のデータシートとパラメータシートを作成します。
      - | データシート「マスタ001」
 
-       .. figure:: ./management_console/データシート「マスタ001」.png
+       .. figure:: /images/ja/usecase/manuals/データシート「マスタ001」.png
           :alt: 「メニュー定義・作成」メニューで作成したデータシート
           :align: center
           :width: 6in
@@ -283,7 +283,7 @@ ITA管理コンソールについて
 
      - | パラメータシート「ぱらむ001」
 
-       .. figure:: ./management_console/パラメータシート「ぱらむ001」.png
+       .. figure:: /images/ja/usecase/manuals/パラメータシート「ぱらむ001」.png
           :alt: 「メニュー定義・作成」メニューで作成したパラメータシート
           :align: center
           :width: 6in
@@ -296,7 +296,7 @@ ITA管理コンソールについて
   #. | 入力用メニューグループ>マスタ001メニューからパラメータ「マスタ」の値を編集し「mas1-3」で更新を行います。
   #. | 入力用メニューグループ>ぱらむ001メニューから先ほど登録した対象の「ぱらむA」を編集し、更新を行います。
 
-     .. figure:: ./management_console/プルダウン選択を含んだ変更履歴の操作.gif
+     .. figure:: /images/ja/management_console/menu_group_list/プルダウン選択を含んだ変更履歴の操作.gif
         :alt: プルダウン選択を含んだ変更履歴の操作
         :align: center
         :width: 800px
@@ -307,14 +307,14 @@ ITA管理コンソールについて
 
   #. | 以下のような結果になります。
 
-  .. figure:: ./management_console/マスタ001変更履歴.png
+  .. figure:: /images/ja/management_console/menu_group_list/マスタ001変更履歴.png
      :alt:  データシート「マスタ001」の変更履歴
      :align: center
      :width: 5in
 
      データシート「マスタ001」の変更履歴
 
-  .. figure:: ./management_console/ぱらむ001変更履歴.png
+  .. figure:: /images/ja/usecase/manuals/ぱらむ001変更履歴.png
      :alt:  パラメータシート「ぱらむ001」の変更履歴
      :align: center
      :width: 5in
@@ -327,7 +327,7 @@ ITA管理コンソールについて
 | 各メニュー画面に登録されている情報を一括してエクセル形式またはJSON形式でダウンロードすることが出来ます。
 | また、同じ形式のファイルで、一括して情報を登録することが出来ます。
 
-.. figure:: ./management_console/ファイル一括登録操作.gif
+.. figure:: /images/ja/usecase/management_console/menu_group_list/file_all_register.gif
    :alt: ファイル一括登録の操作
    :align: center
    :width: 800px
@@ -475,7 +475,7 @@ ITA管理コンソールについて
   | **{{#4:パネル画像エディタ機能は実装されていない認識で合っているでしょうか。}}**
 
   | 「パネル画像エディタ」サブメニューでパネル用画像を作成することが出来ます。
-  .. figure:: ./management_console/image63.png
+  .. figure:: /images/ja/management_console/menu_group_list/パネル画像エディタ画面.png
      :alt:  パネル画像エディタ画面
      :align: center
      :width: 5.90551in
@@ -586,7 +586,7 @@ ITA管理コンソールについて
 
    | 「Web表示最大行数」と「Web表示前確認行数」には次のような関係があります。
 
-   .. figure:: ./management_console/Web表示最大行数の処理概要.png
+   .. figure:: /images/ja/diagram/Web表示最大行数の処理概要.png
       :alt:  Web表示最大行数の処理概要
       :align: center
       :width: 5in
@@ -605,7 +605,7 @@ ITA管理コンソールについて
 
 | Exastro Platform「ロール管理」で登録したロールと「:ref:`menu_list`」で登録したメニューがリストボックスに表示されるので（下図 ①,②）、それぞれを選択し、紐付タイプ（下図 ③）を選択します。
 
-.. figure:: ./management_console/ロール・メニュー紐付管理_設定画面.png
+.. figure:: /images/ja/manuals/it_automation_base/management_console/role_menu_link_list/ロール・メニュー紐付管理_設定画面.png
    :alt:  グループメニュー権限の設定画面（ロール・メニュー紐付管理）
    :align: center
    :width: 5in
@@ -712,7 +712,7 @@ BackYard処理説明
    | メールテンプレートで使用する変数数や送信先アドレスなどをリストするファイルです。
    | このリストを元に送信処理が行われます。
    |
-   .. figure:: ./management_console/image200.png
+   .. figure:: /images/ja/diagram/テンプレートリスト記述例.png
       :width: 5in
       :align: center
       :alt: template_list example
@@ -751,14 +751,14 @@ BackYard処理説明
    | メール本文と、可変部分があれば置換用の変数（%%001%% ～ %%999%%）を記述します。
    | 変数は、テンプレートリストファイルに指定した「置き換え文言数」分の連番にします。
 
-   .. figure:: ./management_console/image201.png
+   .. figure:: /images/ja/diagram/テンプレート例OK.png
       :width: 5in
       :align: center
       :alt: template_list example
 
       テンプレート記述例 [OK]
 
-   .. figure:: ./management_console/image202.png
+   .. figure:: /images/ja/diagram/テンプテート例ＮＧ.png
       :width: 5in
       :align: center
       :alt: template_list example
@@ -801,31 +801,30 @@ BackYard処理説明
    | 送信依頼ファイル記述例
    #. | **フリー型例**： テンプレートID = 001
 
-      .. figure:: ./management_console/image203.png
+      .. figure:: /images/ja/diagram/フリー型例.png
          :width: 5in
          :align: center
          :alt: template_list example
 
          sysmail_001_20160401_0001.txt
 
-      .. figure:: ./management_console/image204.png
+      .. figure:: /images/ja/diagram/送信されたメール（フリー型）.png
          :width: 5in
          :align: center
          :alt: template_list example
 
          送信されたメール ： 送信依頼ファイルから置換された箇所（赤字）
-         テンプレートリストから置換されたか所（青字）
 
    #. | **セーフ型例**： テンプレートID = 002
 
-      .. figure:: ./management_console/image205.png
+      .. figure:: /images/ja/diagram/セーフ型例.png
          :width: 5in
          :align: center
          :alt: template_list example
 
       .. note:: | メールアドレスはテンプレートリストファイルに指定
 
-      .. figure:: ./management_console/image206.png
+      .. figure:: /images/ja/diagram/送信されたメール（セーフ型）.png
          :width: 5in
          :align: center
          :alt: template_list example
@@ -835,21 +834,21 @@ BackYard処理説明
 
    #. | **フリーフォーマット型**： テンプレートID = 004
 
-      .. figure:: ./management_console/image207.png
+      .. figure:: /images/ja/diagram/フォーマット型例.png
          :width: 5in
          :align: center
          :alt: template_list example
 
          sysmail_004_20160401_0001.txt
 
-      .. figure:: ./management_console/image208.png
+      .. figure:: /images/ja/diagram/送信されたメール（フォーマット型）.png
          :width: 5in
          :align: center
          :alt: template_list example
 
          送信されたメール： テンプレートリストから置換されたか所（青字）
 
-      .. figure:: ./management_console/image209.png
+      .. figure:: /images/ja/diagram/動作イメージ（フォーマット型）.png
          :width: 5in
          :align: center
          :alt: template_list example

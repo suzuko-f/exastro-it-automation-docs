@@ -14,10 +14,9 @@
      - 不可
      - "ita-database"
    * - global.itaDatabaseDefinition.enabled
-     - | Exastro IT Automation 用データベースの有効フラグ
-       | ※現在このパラメータは使用していません。
-     - 可 (無効)
-     - | :program:`true` (デフォルト): -
+     - Exastro IT Automation 用データベースの定義の利用有無
+     - 不可
+     - true
    * - global.itaDatabaseDefinition.config.DB_VENDOR
      - Exastro IT Automation 用データベースで使用するデータベース
      - 可 (外部データベース利用時)

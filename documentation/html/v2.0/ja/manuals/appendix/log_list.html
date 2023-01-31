@@ -1,0 +1,872 @@
+
+<!DOCTYPE html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>Exastro IT Automation ログ一覧 &#8212; Documentation  ドキュメント</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/option.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/exastro_documents.css?v=2" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/swagger/swagger-ui.css" />
+    
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/translations.js"></script>
+    <script src="../../../../_static/jquery-3.6.3.min.js"></script>
+    <script src="../../../../_static/exastro_documents.js?v=1"></script>
+    <script src="../../../../_static/swagger/swagger-ui-bundle.js"></script>
+    <script src="../../../../_static/swagger/swagger-ui-standalone-preset.js"></script>
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../../../../genindex.html" />
+    <link rel="search" title="検索" href="../../../../search.html" /> 
+  </head>
+<body id="page" class="ja">
+
+
+<div id="container">
+
+<div id="header">
+  <header class="divInner">
+    <!-- Exastro logo -->
+    <div id="logo"><img src="../../../../_static/img/exastro.svg" alt="Exastro"></div>
+    <!-- Project name -->
+    <div id="projectName"><a href="../../../../index.html">Documentation</a></div>
+    <!-- Heaedr navigation -->
+    <div id="headerSearch">
+      <form class="search" action="../../../../search.html" method="get">
+        <input type="text" name="q" aria-labelledby="searchlabel">
+        <button type="submit" value="検索"><img src="../../../../_static/img/search.png" alt="検索"></button>
+      </form>
+    </div>
+  </header>
+</div><!-- End #header -->
+
+
+<div id="toolbar">
+  <div class="divInner">
+    
+    <div id="documentVersion">
+      <dl>
+        <dt>Document version</dt>
+        <dd>
+          <div>
+            <select name="version" onchange="location.href=value;">
+                file_path: v2.0/ja/manuals/appendix/log_list
+                  <option value="#"
+                  selected
+                  >current</option>
+                file_path: v2.0/ja/manuals/appendix/log_list
+                  <option value="#"
+                  selected
+                  >v2.0 (current)</option>
+            </select>
+          </div>
+        </dd>
+      </dl>
+    </div>
+
+    <div id="documentLanguage">
+      <dl>
+        <dt>Language</dt>
+        <dd>
+          <div>
+            <select name="lang" onchange="location.href=value;">
+                file_path: v2.0/ja/manuals/appendix/log_list
+                hasdoc: True
+                  <option value="#"
+                  selected
+                  >日本語</option>
+                file_path: v2.0/en/manuals/appendix/log_list
+                hasdoc: False
+            </select>
+          </div>
+        </dd>
+      </dl>
+    </div>
+    <div id="toolbarNavigation">
+      <ul>
+      </ul>
+    </div>
+  </div>
+</div><!-- End #toolbar -->
+
+<div id="sideMenu">
+
+  <div id="menuButton"></div>
+  
+  <aside class="divInner">
+    <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Exastro IT Automation Documentation</a></li>
+</ul>
+
+    <!-- <ul>
+      <li class="toctree-l1"><a class="reference internal" href="../../../../genindex.html">索引</a></li>
+    </ul> -->
+    
+  </aside>
+</div><!-- End #sideMenu -->
+
+
+<div id="tableOfContents">
+  <div id="tocButton"></div>
+  <ul>
+<li><a class="reference internal" href="#">Exastro IT Automation ログ一覧</a><ul>
+<li><a class="reference internal" href="#platform-job">platform-job</a></li>
+<li><a class="reference internal" href="#platform-api">platform-api</a></li>
+<li><a class="reference internal" href="#platform-web">platform-web</a></li>
+<li><a class="reference internal" href="#platform-auth">platform-auth</a></li>
+<li><a class="reference internal" href="#keycloak">keycloak</a></li>
+<li><a class="reference internal" href="#platform-db">platform-db</a></li>
+<li><a class="reference internal" href="#ita-api-organization">ita-api-organization</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+<div id="contents">
+<main class="divInner">
+
+ <div id="breadcrumbs">
+  <ul>
+    <li><a href="../../../../index.html">HOME</a></li>
+    
+    <li>Exastro IT Automation ログ一覧</li>
+  </ul>
+</div>
+
+<div id="article">
+<article class="divInner">
+<div class="body" role="main">
+
+  <section id="exastro-it-automation">
+<h1>Exastro IT Automation ログ一覧<a class="headerlink" href="#exastro-it-automation" title="この見出しへのパーマリンク">¶</a></h1>
+<div class="line-block">
+<div class="line">Exastro IT Automationの各コンテナの出力メッセージに関するログについて。</div>
+<div class="line">各コンテナのログの例と文字列の意味を以下に記載します。</div>
+</div>
+<section id="platform-job">
+<h2>platform-job<a class="headerlink" href="#platform-job" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>形式：%(asctime)s %(levelname)s (%(userid)s) %(pathname)s(%(lineno)d) %(message)s
+例　：2023/01/11 11:27:05.976995 INFO (None) /app/platform_init.py(88) platform initialize setting start
+</pre></div>
+</div>
+<table class="docutils align-left">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 23%" />
+<col style="width: 31%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>フォーマット文字列</p></th>
+<th class="head"><p>フォーマットの意味</p></th>
+<th class="head"><p>ログの例</p></th>
+<th class="head"><p>備考</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>%(asctime)s</p></td>
+<td><p>ログ出力日時</p></td>
+<td><p>2023/01/11 11:27:05.976995</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>%(levelname)s</p></td>
+<td><p>メッセージレベル</p></td>
+<td><p>INFO</p></td>
+<td><p>DEBUG, INFO, WARNING, ERROR, CRITICAL が出力される。</p></td>
+</tr>
+<tr class="row-even"><td><p>(%(userid)s)</p></td>
+<td><p>アクセスユーザー（Noneは指定なし）</p></td>
+<td><p>（None）</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>%(pathname)s</p></td>
+<td><p>ログ出力元のソース</p></td>
+<td><p>/app/platform_init.py</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>(%(lineno)d)</p></td>
+<td><p>ログ出力元の行</p></td>
+<td><p>(88)</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>%(message)s</p></td>
+<td><p>メッセージ</p></td>
+<td><p>platform initialize setting start</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="platform-api">
+<h2>platform-api<a class="headerlink" href="#platform-api" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>形式：%(asctime)s %(levelname)s (%(userid)s) %(pathname)s(%(lineno)d) %(message)s
+例　：2023/01/06 10:15:47.537174 INFO (2d6aabce-04c7-4938-a616-fa283cd6693) /app/common_library/common/api_keycloak_roles.py(372) Get keycloak user list for each role. realm_name=org3, client_id=743c50ae-7656-40d2-9ac1-b6cc6e39d15c, role_name=_workspace-1-admin
+</pre></div>
+</div>
+<table class="docutils align-left">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 23%" />
+<col style="width: 31%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><div class="line-block">
+<div class="line">フォーマット文字列</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">フォーマットの意味</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">ログの例</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">備考</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">%(asctime)s</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ログ出力日時</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">2023/01/06 10:15:47.537174</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">%(levelname)s</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">メッセージレベル</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">INFO</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">DEBUG, INFO, WARNING, ERROR, CRITICAL が出力される。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">(%(userid)s)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">アクセスユーザー（Noneは指定なし）</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">(2d6aabce-04c7-4938-a616-fa283cd6693)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">%(pathname)s</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ログ出力元のソース</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">/app/common_library/common/api_keycloak_roles.py</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">(%(lineno)d)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ログ出力元の行</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">(372)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">%(message)s</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">メッセージ</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">platform initialize setting start</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="platform-web">
+<h2>platform-web<a class="headerlink" href="#platform-web" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">デフォルトのapacheログ形式になっています。</div>
+<div class="line">設定内容は以下の通りです。</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LogFormat</span> <span class="s2">&quot;%h %l </span><span class="si">%u</span><span class="s2"> %t </span><span class="se">\&quot;</span><span class="si">%r</span><span class="se">\&quot;</span><span class="s2"> %&gt;s %b </span><span class="se">\&quot;</span><span class="s2">%</span><span class="si">{Referer}</span><span class="s2">i</span><span class="se">\&quot;</span><span class="s2"> </span><span class="se">\&quot;</span><span class="s2">%{User-Agent}i</span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="n">combined</span> \
+<span class="n">LogFormat</span> <span class="s2">&quot;%h %l </span><span class="si">%u</span><span class="s2"> %t </span><span class="se">\&quot;</span><span class="si">%r</span><span class="se">\&quot;</span><span class="s2"> %&gt;s %b&quot;</span> <span class="n">common</span> \
+<span class="o">&lt;</span><span class="n">IfModule</span> <span class="n">logio_module</span><span class="o">&gt;</span> \
+  <span class="c1"># You need to enable mod_logio.c to use %I and %O \</span>
+  <span class="n">LogFormat</span> <span class="s2">&quot;%h %l </span><span class="si">%u</span><span class="s2"> %t </span><span class="se">\&quot;</span><span class="si">%r</span><span class="se">\&quot;</span><span class="s2"> %&gt;s %b </span><span class="se">\&quot;</span><span class="s2">%</span><span class="si">{Referer}</span><span class="s2">i</span><span class="se">\&quot;</span><span class="s2"> </span><span class="se">\&quot;</span><span class="s2">%{User-Agent}i</span><span class="se">\&quot;</span><span class="s2"> %I %O&quot;</span> <span class="n">combinedio</span> \
+<span class="o">&lt;/</span><span class="n">IfModule</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">commonフォーマットは以下の構成になっています。</div>
+<div class="line">ログの保存としてcommonを指定した場合は表の情報が一行で記録されていきます。</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>例：192.168.128.2 - - [12/Jan/2023:15:38:10 +0900] &quot;GET /favicon.ico/platform/ HTTP/1.1&quot; 200 9817
+&quot;http://localhost:8000/org3/platform/roles&quot; &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+(KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36&quot;
+</pre></div>
+</div>
+<table class="docutils align-left" id="id1">
+<caption><span class="caption-text">commonでログ保存を指定した場合</span><a class="headerlink" href="#id1" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 23%" />
+<col style="width: 31%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><div class="line-block">
+<div class="line">フォーマット文字列</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">フォーマットの意味</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">ログの例</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">備考</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">%h</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">アクセス元のホスト名</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">192.168.128.2</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">%l</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">クライアントの識別子</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">-</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">&amp;u</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">認証ユーザ名</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">-</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">%t</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">リクエストを受け付けた時刻</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">[12/Jan/2023:15:38:10 +0900]</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">%r</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">リクエストの最初の行</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">&quot;GET /favicon.ico/platform/ HTTP/1.1&quot;</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">%&gt;s</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">最後のレスポンスのステータス</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">200</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">%b</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">送信されたバイト数</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">9817</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">combinedフォーマットは、commonフォーマットに以下の項目が追加されています。</div>
+</div>
+<table class="docutils align-left" id="id2">
+<caption><span class="caption-text">combinedフォーマットでログ保存を指定した場合</span><a class="headerlink" href="#id2" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 23%" />
+<col style="width: 31%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><div class="line-block">
+<div class="line">フォーマット文字列</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">フォーマットの意味</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">ログの例</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">備考</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">%{Referer}i</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">リファラー</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">&quot;<a class="reference external" href="http://localhost:8000/org3/platform/roles">http://localhost:8000/org3/platform/roles</a>&quot;</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">リファラーとは参照元ページのことです。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">%{User-Agent}i</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">User Agent</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36&quot;</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">User Agent とは、使用しているOS・ブラウザなどの情報のことです。</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">combinedioフォーマットは、combinedフォーマットに以下の項目が追加されています。</div>
+</div>
+<table class="docutils align-left" id="id3">
+<caption><span class="caption-text">combinedioフォーマットでログ保存を指定した場合</span><a class="headerlink" href="#id3" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 23%" />
+<col style="width: 31%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><div class="line-block">
+<div class="line">フォーマット文字列</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">フォーマットの意味</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">ログの例</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">備考</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">&amp;I</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">受け取ったバイト数</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">-</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">%O</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">送信したバイト</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">-</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="platform-auth">
+<h2>platform-auth<a class="headerlink" href="#platform-auth" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">authログは、上述のapacheログとapiログの混合されたものが出力されますが、</div>
+<div class="line">apacheログ（platform-web）とほとんど同じです。</div>
+</div>
+</section>
+<section id="keycloak">
+<h2>keycloak<a class="headerlink" href="#keycloak" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>形式：%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%c] (%t) %s%e%n
+例　：2023-01-12 09:21:49,040 INFO  [org.keycloak.events] (default task-13) type=INTROSPECT_TOKEN, realmId=org3, clientId=system-org3-auth, userId=null, ipAddress=172.18.0.14, client_auth_method=client-secret
+</pre></div>
+</div>
+<table class="docutils align-left">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 23%" />
+<col style="width: 31%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><div class="line-block">
+<div class="line">フォーマット文字列</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">フォーマットの意味</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">ログの例</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">備考</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">%d{yyyy-MM-dd HH:mm:ss,SSS}</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ログ出力日時</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">2023-01-12 09:21:49,040</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">%-5p</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">エラーレベル（DEBUG, INFO, WARN, ERROR）</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">INFO</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">[%c]</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ログ　カテゴリ名</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">[org.keycloak.events]</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">(%t)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">スレッド名</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">(default task-13)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">%s</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">簡単なメッセージ</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">%e</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">例外</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">%n</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">改行</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">keycloakのログの詳細については以下のURLをご参照ください。</div>
+<div class="line"><a class="reference external" href="https://www.keycloak.org/server/logging">https://www.keycloak.org/server/logging</a></div>
+</div>
+</section>
+<section id="platform-db">
+<h2>platform-db<a class="headerlink" href="#platform-db" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">DBについては使用するデータベースのログフォーマットとなります。</div>
+<div class="line">設定もDBによりますが、デフォルトでmariadbを立ち上げた際はエラーログが出力されます。</div>
+<div class="line">詳細は下記URLをご参照ください。</div>
+<div class="line"><a class="reference external" href="https://mariadb.com/kb/en/error-log/">https://mariadb.com/kb/en/error-log/</a></div>
+</div>
+</section>
+<section id="ita-api-organization">
+<h2>ita-api-organization<a class="headerlink" href="#ita-api-organization" title="この見出しへのパーマリンク">¶</a></h2>
+</section>
+</section>
+
+
+</div>
+
+
+<div id="articleNavigation">
+  <ul>
+  </ul>
+</div>
+
+
+<div id="pageTopLink">
+  <a href="#container"><i>↑</i> Page Top</a>
+</div>
+
+</article>
+</div>
+</main>
+</div><!-- End #contents -->
+<div id="footer">
+  <footer class="divInner">
+    <small>Copyright © 2023 NEC Corporation</small>
+  </footer>
+</div><!-- End #footer -->
+
+<div id="overlay"></div>
+<div id="grayBack"></div>
+
+</div><!-- End #container -->
+  </body>
+</html>

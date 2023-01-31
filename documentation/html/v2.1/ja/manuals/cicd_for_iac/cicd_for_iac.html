@@ -1,0 +1,2962 @@
+
+<!DOCTYPE html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>はじめに &#8212; Documentation  ドキュメント</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/option.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/exastro_documents.css?v=2" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/swagger/swagger-ui.css" />
+    
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/translations.js"></script>
+    <script src="../../../../_static/jquery-3.6.3.min.js"></script>
+    <script src="../../../../_static/exastro_documents.js?v=1"></script>
+    <script src="../../../../_static/swagger/swagger-ui-bundle.js"></script>
+    <script src="../../../../_static/swagger/swagger-ui-standalone-preset.js"></script>
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../../../../genindex.html" />
+    <link rel="search" title="検索" href="../../../../search.html" /> 
+  </head>
+<body id="page" class="ja">
+
+
+<div id="container">
+
+<div id="header">
+  <header class="divInner">
+    <!-- Exastro logo -->
+    <div id="logo"><img src="../../../../_static/img/exastro.svg" alt="Exastro"></div>
+    <!-- Project name -->
+    <div id="projectName"><a href="../../../../index.html">Documentation</a></div>
+    <!-- Heaedr navigation -->
+    <div id="headerSearch">
+      <form class="search" action="../../../../search.html" method="get">
+        <input type="text" name="q" aria-labelledby="searchlabel">
+        <button type="submit" value="検索"><img src="../../../../_static/img/search.png" alt="検索"></button>
+      </form>
+    </div>
+  </header>
+</div><!-- End #header -->
+
+
+<div id="toolbar">
+  <div class="divInner">
+    
+    <div id="documentVersion">
+      <dl>
+        <dt>Document version</dt>
+        <dd>
+          <div>
+            <select name="version" onchange="location.href=value;">
+                file_path: v2.0/ja/manuals/cicd_for_iac/cicd_for_iac
+                file_path: v2.0/ja/manuals/cicd_for_iac/cicd_for_iac
+            </select>
+          </div>
+        </dd>
+      </dl>
+    </div>
+
+    <div id="documentLanguage">
+      <dl>
+        <dt>Language</dt>
+        <dd>
+          <div>
+            <select name="lang" onchange="location.href=value;">
+                file_path: v2.1/ja/manuals/cicd_for_iac/cicd_for_iac
+                hasdoc: True
+                  <option value="#"
+                  selected
+                  >日本語</option>
+                file_path: v2.1/en/manuals/cicd_for_iac/cicd_for_iac
+                hasdoc: False
+            </select>
+          </div>
+        </dd>
+      </dl>
+    </div>
+    <div id="toolbarNavigation">
+      <ul>
+      </ul>
+    </div>
+  </div>
+</div><!-- End #toolbar -->
+
+<div id="sideMenu">
+
+  <div id="menuButton"></div>
+  
+  <aside class="divInner">
+    <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../v2.0/index.html">Exastro IT Automation Documentation</a></li>
+</ul>
+
+    <!-- <ul>
+      <li class="toctree-l1"><a class="reference internal" href="../../../../genindex.html">索引</a></li>
+    </ul> -->
+    
+  </aside>
+</div><!-- End #sideMenu -->
+
+
+<div id="tableOfContents">
+  <div id="tocButton"></div>
+  <ul>
+<li><a class="reference internal" href="#">はじめに</a></li>
+<li><a class="reference internal" href="#ci-cd-for-iac">CI/CD For IaC機能の概要</a><ul>
+<li><a class="reference internal" href="#id2">機能概要</a></li>
+<li><a class="reference internal" href="#id3">機能概要図</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">CI/CD For IaC機能 メニュー構成</a><ul>
+<li><a class="reference internal" href="#id5">メニュー/画面一覧</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id6">CI/CD For IaC機能　利用手順</a><ul>
+<li><a class="reference internal" href="#id7">作業フロー</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id10">CI/CD For IaC機能メニュー操作説明</a><ul>
+<li><a class="reference internal" href="#id11">CI/CD For IaC 標準メニュー</a><ul>
+<li><a class="reference internal" href="#id13">登録アカウント</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id15">CI/CD For IaC 非表示メニュー</a><ul>
+<li><a class="reference internal" href="#id16">インターフェース情報</a></li>
+<li><a class="reference internal" href="#id17">リモートリポジトリ資材</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id18">運用操作</a><ul>
+<li><a class="reference internal" href="#id19">メンテナンス方法について</a></li>
+<li><a class="reference internal" href="#id20">ログレベルの変更</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id21">付録</a><ul>
+<li><a class="reference internal" href="#git">資材をGitリポジトリに登録する場合の注意事項</a></li>
+<li><a class="reference internal" href="#id22">ロールパッケージ管理に紐付する資材をGitリポジトリに登録する場合の注意事項</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+<div id="contents">
+<main class="divInner">
+
+ <div id="breadcrumbs">
+  <ul>
+    <li><a href="../../../../index.html">HOME</a></li>
+    
+    <li>はじめに</li>
+  </ul>
+</div>
+
+<div id="article">
+<article class="divInner">
+<div class="body" role="main">
+
+  <p><a class="reference internal" href="../../../../_images/image19.png"><img alt="image1" src="../../../../_images/image19.png" style="width: 3.35079in; height: 0.78559in;" /></a></p>
+<p>ITA_利用手順マニュアル</p>
+<p>CI/CD For IaC機能</p>
+<p><em>－</em>第1.11版<em>－</em></p>
+<p>Copyright © NEC Corporation 2021. All rights reserved.</p>
+<p>免責事項</p>
+<p>本書の内容はすべて日本電気株式会社が所有する著作権に保護されています。</p>
+<p>本書の内容の一部または全部を無断で転載および複写することは禁止されています。</p>
+<p>本書の内容は将来予告なしに変更することがあります。</p>
+<p>日本電気株式会社は、本書の技術的もしくは編集上の間違い、欠落について、一切責任を負いません。</p>
+<p>日本電気株式会社は、本書の内容に関し、その正確性、有用性、確実性その他いかなる保証もいたしません。</p>
+<p>商標</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>LinuxはLinus</dt><dd><p>Torvalds氏の米国およびその他の国における登録商標または商標です。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Red Hatは、Red Hat,</dt><dd><p>Inc.の米国およびその他の国における登録商標または商標です。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Apache、Apache Tomcat、Tomcatは、Apache Software</dt><dd><p>Foundationの登録商標または商標です。</p>
+</dd>
+</dl>
+</li>
+<li><p>Ansibleは、Red Hat, Inc.の登録商標または商標です。</p></li>
+<li><p>Terraformは、HashiCorpの登録商標または商標です。</p></li>
+<li></li>
+</ul>
+<p>その他、本書に記載のシステム名、会社名、製品名は、各社の登録商標もしくは商標です。</p>
+<p>なお、® マーク、TMマークは本書に明記しておりません。</p>
+<p>用語の定義</p>
+<blockquote>
+<div><p>本書では以下として記載します。</p>
+</div></blockquote>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>用語名</p></th>
+<th class="head"><p>内容</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ITA</p></td>
+<td><p>「Exastro IT Automation」の略語です。</p></td>
+</tr>
+<tr class="row-odd"><td><p>紐付元資材</p></td>
+<td><p>CI/CD For
+IaC機能で連携するGitリポジトリ内の資材を表します。</p></td>
+</tr>
+<tr class="row-even"><td><p>紐付先資材</p></td>
+<td><p>ITAの連携ドライバ「Ansibl
+e-Driver」と「Terraform-Driver」と「Terraform-CLI-Driv
+er」の下記メニューからアップロードする資材を表します。</p>
+<blockquote>
+<div><p>・Ansible-Legacy/Playbook素材集</p>
+<p>・Ansible-Pioneer/対話ファイル素材集</p>
+<p>・Ansible-LegacyRole/ロールパッケージ管理</p>
+<p>・Ansible共通/ファイル管理</p>
+<p>・Ansible共通/テンプレート管理</p>
+<p>・Terraform/Module素材集</p>
+<p>・Terraform/Policy管理</p>
+<p>・Terraform-CLI/Module素材集</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>目次</strong></p>
+<p><a class="reference external" href="#はじめに">はじめに 3</a></p>
+<p><a class="reference external" href="#cicd-for-iac機能の概要">1. CI/CD For IaC機能の概要 4</a></p>
+<p><a class="reference external" href="#機能概要">1.1 機能概要 4</a></p>
+<p><a class="reference external" href="#機能概要図">1.2 機能概要図 5</a></p>
+<p><a class="reference external" href="#cicd-for-iac機能-メニュー構成">2. CI/CD For IaC機能 メニュー構成 6</a></p>
+<p><a class="reference external" href="#_Toc86328853">1.3 メニュー/画面一覧 6</a></p>
+<p><a class="reference external" href="#cicd-for-iac機能-利用手順">3. CI/CD For IaC機能　利用手順 7</a></p>
+<p><a class="reference external" href="#作業フロー">3.1 作業フロー 7</a></p>
+<p><a class="reference external" href="#_Toc86328863">4. CI/CD For IaC機能メニュー操作説明 8</a></p>
+<p><a class="reference external" href="#_Toc86328868">4.1 CI/CD For IaC 標準メニュー 8</a></p>
+<p><a class="reference external" href="#_Toc86328873">4.1.1. リモートリポジトリ 8</a></p>
+<p><a class="reference external" href="#登録アカウント">4.1.2 登録アカウント 12</a></p>
+<p><a class="reference external" href="#_Toc86328877">4.1.3 資材紐付 13</a></p>
+<p><a class="reference external" href="#cicd-for-iac-非表示メニュー">4.2 CI/CD For IaC 非表示メニュー 19</a></p>
+<p><a class="reference external" href="#インターフェース情報">4.2.1. インターフェース情報 19</a></p>
+<p><a class="reference external" href="#リモートリポジトリ資材">4.2.2. リモートリポジトリ資材 20</a></p>
+<p><a class="reference external" href="#運用操作">5. 運用操作 21</a></p>
+<p><a class="reference external" href="#_Toc86328895">5.1 メンテナンス方法について 21</a></p>
+<p><a class="reference external" href="#ログレベルの変更">5.2 ログレベルの変更 22</a></p>
+<p><a class="reference external" href="#付録">6. 付録 23</a></p>
+<p><a class="reference external" href="#_Toc86328899">6.1 資材をGitリポジトリに登録する場合の注意事項 23</a></p>
+<p><a class="reference external" href="#ロールパッケージ管理に紐付する資材をgitリポジトリに登録する場合の注意事項">6.2
+ロールパッケージ管理に紐付する資材をGitリポジトリに登録する場合の注意事項
+23</a></p>
+<section id="id1">
+<h1>はじめに<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h1>
+<p>本書では、CI/CD For IaC機能の機能および操作方法について説明します。</p>
+</section>
+<section id="ci-cd-for-iac">
+<h1>CI/CD For IaC機能の概要<a class="headerlink" href="#ci-cd-for-iac" title="この見出しへのパーマリンク">¶</a></h1>
+<section id="id2">
+<h2>機能概要<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><p>CI/CD For IaC機能は、大きく分けて2つの機能があります。</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Git連携機能</p></li>
+</ol>
+<blockquote>
+<div><div class="line-block">
+<div class="line">ITA内にGitリポジトリのクローンを作成します。</div>
+<div class="line">クローンを介して定期的に紐付元資材の更新を検知しITAの「リモートリポジトリ資材」メニューに一覧を作成します。</div>
+</div>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><p>資材紐付機能</p>
+<p>紐付元資材と紐付先資材の紐付を登録し、紐付先資材の動作検証を行う為のオペレーションとMovementを登録します。</p>
+<p>紐付元資材が更新されると、紐付先資材が自動更新され、動作検証を行う為のオペレーションとMovementで作業実行を行います。</p>
+</li>
+</ol>
+</section>
+<section id="id3">
+<h2>機能概要図<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><p>CI/CD For IaC機能の概要図を以下に示します。</p>
+</div></blockquote>
+</section>
+</section>
+<section id="id4">
+<h1>CI/CD For IaC機能 メニュー構成<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h1>
+<ol class="arabic simple">
+<li></li>
+<li></li>
+</ol>
+<ol class="arabic simple">
+<li></li>
+</ol>
+<div class="line-block">
+<div class="line">本章では、CI/CD For IaC機能のメニュー構成について説明します。</div>
+<div class="line">なお、Webへのログイン方法、およびメニュー画面の構成要素/基本的な操作については、</div>
+<div class="line">「利用手順マニュアル_管理コンソール」を参照してください。</div>
+</div>
+<ol class="arabic simple">
+<li></li>
+</ol>
+<section id="id5">
+<h2>メニュー/画面一覧<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h2>
+<ol class="arabic simple">
+<li></li>
+<li><ol class="arabic simple">
+<li></li>
+</ol>
+</li>
+</ol>
+<p>CI/CD For IaC機能のメニュー一覧を以下に記述します。</p>
+<p>表 2.1-1 CI/CD For IaC機能　メニュー一覧</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>No</strong></p></th>
+<th class="head"><p><strong>メニュ
+ーグループ</strong></p></th>
+<th class="head"><p><strong>メニ
+ュー・画面</strong></p></th>
+<th class="head"><p><strong>段落</strong></p></th>
+<th class="head"><p><strong>概要</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>CI/CD For IaC</p></td>
+<td><p>インター
+フェース情報</p></td>
+<td><p>4.2.1</p></td>
+<td><p>ITAの
+RestAPIで紐付
+先資材にアク
+セスする為の
+インタフェー
+ス情報を管理</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td></td>
+<td><p>リモー
+トリポジトリ</p></td>
+<td><p>4.1.1</p></td>
+<td><p>Gitリポジトリ
+の情報を管理</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td></td>
+<td><p>登
+録アカウント</p></td>
+<td><p>4.1.2</p></td>
+<td><p>I
+TAのRestAPIで
+紐付先資材に
+アクセスする
+為のアカウン
+ト情報を管理</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td></td>
+<td><p>リモートリ
+ポジトリ資材</p></td>
+<td><p>4.2.2</p></td>
+<td><p>Gitリ
+ポジトリの資
+材情報を管理</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td></td>
+<td><p>資材紐付</p></td>
+<td><p>4.1.3</p></td>
+<td><p>紐付
+元資材と紐付
+先資材との紐
+付情報を管理</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple">
+<li></li>
+<li><ol class="arabic simple">
+<li><ol class="arabic simple">
+<li></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+<section id="id6">
+<h1>CI/CD For IaC機能　利用手順<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h1>
+<p>CI/CD For IaC機能の利用手順について説明します</p>
+<section id="id7">
+<h2>作業フロー<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><p>CI/CD For IaC機能の標準的な作業フローは以下のとおりです。</p>
+<p>各作業の詳細は次項に記載しています。</p>
+<p><strong>作業フロー詳細と参照先</strong></p>
+</div></blockquote>
+<ol class="arabic">
+<li><p>インターフェース情報の登録</p>
+<div class="line-block">
+<div class="line">ITAのRestAPIから紐付先資材にアクセスする為のインターフェース情報を登録します。</div>
+<div class="line">デフォルトは、インストール先のＩＴＡにアクセスする為のインターフェース情報が登録されています。</div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p>紐付先資材をインストール先のＩＴＡ以外にしたい場合に、インターフェース情報を変更して下さい。</p>
+<p>詳細は「4.2.1インターフェース情報」メニューを参照してください。</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>リモートリポジトリの登録</p></li>
+</ol>
+<blockquote>
+<div><div class="line-block">
+<div class="line">連携するGitリポジトリの情報を登録します。</div>
+<div class="line">詳細は「4.1.1リモートリポジトリ」メニューを参照してください。</div>
+</div>
+</div></blockquote>
+<ol class="arabic" start="3">
+<li><p>登録アカウントの登録</p>
+<p>ITAのRestAPIから紐付先資材にアクセスする為のアカウント情報を登録します。</p>
+</li>
+</ol>
+<blockquote>
+<div><p>詳細は「34.1.2登録アカウント」メニューを参照してください。</p>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><dl class="simple">
+<dt>資材紐付の登録**</dt><dd><p><a href="#id8"><span class="problematic" id="id9">**</span></a>紐付元資材と紐付先資材の紐付を登録します。</p>
+</dd>
+</dl>
+</li>
+</ol>
+<blockquote>
+<div><p>詳細は「34.1.3資材紐付」メニューを参照してください。</p>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>資材紐付にオペレーション+Movementの情報を登録</p></li>
+</ol>
+<blockquote>
+<div><p>更新された紐付先資材の動作検証を行う場合に、オペレーションとMovementを登録します。</p>
+<p>詳細は「34.1.3資材紐付」メニューを参照してください。</p>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>自動での資材更新と動作検証の確認</p></li>
+</ol>
+<blockquote>
+<div><p>紐付元資材が更新される度に、紐付先資材が自動更新されることを確認します。</p>
+<p>また、オペレーションとMovementを登録している場合に、作業実行が自動で行われることを確認します。</p>
+<p>詳細は「34.1.3資材紐付」メニューを参照してください。</p>
+</div></blockquote>
+</section>
+</section>
+<section id="id10">
+<h1>CI/CD For IaC機能メニュー操作説明<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">¶</a></h1>
+<blockquote>
+<div><p>本章では、CI/CD For IaC機能のメニュー操作について説明します。</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li></li>
+</ol>
+<ol class="arabic simple">
+<li></li>
+<li></li>
+<li></li>
+</ol>
+<section id="id11">
+<h2>CI/CD For IaC 標準メニュー<a class="headerlink" href="#id11" title="この見出しへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><p>本節では、CI/CD For
+IaC機能をインストールした状態で表示されるメニューの操作について記載します。</p>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li></li>
+<li></li>
+<li><ol class="arabic">
+<li><ol class="arabic">
+<li><p class="rubric" id="id12">リモートリポジトリ</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<ol class="arabic">
+<li><p>「リモートリポジトリ」メニューでは、連携するGItリポジトリの情報を登録します。</p>
+<p><a class="reference internal" href="../../../../_images/image23.png"><img alt="image2" src="../../../../_images/image23.png" style="width: 6.32116in; height: 3.09845in;" /></a></p>
+</li>
+</ol>
+<p><strong>図</strong> <strong>4.1‑1メニュー画面（リモートリポジトリ）</strong></p>
+<ol class="arabic simple" start="3">
+<li><p>リモートリポジトリ画面の入力項目は以下の通りです。</p></li>
+</ol>
+<p><strong>表</strong>
+<strong>4.1‑1　**リモートリポジトリ画面**入力項目一覧（リモートリポジトリ）</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
+<th class="head"><p><strong>説明</strong></p></th>
+<th class="head"><p><strong>入力</strong></p>
+<p><strong>必須</strong></p>
+</th>
+<th class="head"><p><strong>入
+力形式</strong></p></th>
+<th class="head"><p><strong>制
+約事項</strong></p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>リモ
+ートリポ
+ジトリ名</p></td>
+<td><p>CI/CD
+Ｆｏｒ
+IaC
+機能の各
+メニュー
+でリモー
+トリポジ
+トリを示
+す名称を
+入力して
+下さい。</p></td>
+<td><p>○</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長
+256ﾊﾞｲﾄ</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>リモート
+リポジト
+リ(URL)</p></td>
+<td><p>git
+cloneコ
+マンドに
+指定する
+Gitリポ
+ジトリの
+URLを入
+力してく
+ださい。</p></td>
+<td><p>○</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長
+256ﾊﾞｲﾄ</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ブランチ</p></td>
+<td><p>git
+clo
+neコマン
+ドに指定
+するGit
+リポジト
+リのブラ
+ンチ名を
+入力して
+下さい。
+未
+入力時は
+default
+ブランチ
+が指定さ
+れます。</p></td>
+<td><p>－</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長
+256ﾊﾞｲﾄ</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>プ
+ロトコル</p></td>
+<td><blockquote>
+<div><p>Git</p>
+</div></blockquote>
+<p>リポジト
+リと接続
+するプロ
+トコルを
+選択して
+下さい。</p>
+<blockquote>
+<div><p>●https</p>
+<blockquote>
+<div><p>リ</p>
+</div></blockquote>
+</div></blockquote>
+<p>モートの
+Ｇｉｔリ
+ポジトリ
+とhttps
+で接続す
+る場合に
+選択して
+下さい。</p>
+<p>●s
+shパスワ
+ード認証</p>
+<p>リモート
+のＧｉｔ
+リポジト
+リとssh
+のパスワ
+ード認証
+で接続す
+る場合に
+選択して
+下さい。</p>
+<p>●ssh鍵
+認証（パ
+スフレー
+ズなし）</p>
+<p>リモート
+のＧｉｔ
+リポジト
+リとssh
+の鍵認証
+で接続す
+る場合に
+選択して
+下さい。</p>
+<p>●ssh鍵
+認証（パ
+スフレー
+ズあり）</p>
+<blockquote>
+<div><p>リモー</p>
+</div></blockquote>
+<p>トのＧｉ
+ｔリポジ
+トリとs
+shのパス
+フレーズ
+付鍵認証
+で接続す
+る場合に
+選択して
+下さい。</p>
+<p>●Local</p>
+<p>ローカ
+ルのGit
+の場合に
+選択して
+下さい。</p>
+</td>
+<td><p>○</p></td>
+<td><p>リ
+スト選択</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Visibili
+tyタイプ</p></td>
+<td><p>G
+itリポジ
+トリのVi
+sibility
+タイプ(P
+ublic/Pr
+ivate)を
+選択して
+下さい。
+プロトコ
+ルでhtt
+psを選択
+した場合
+、Visibi
+lityタイ
+プの選択
+は必須入
+力です。</p></td>
+<td><p>－</p></td>
+<td><p>リ
+スト選択</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><blockquote>
+<div><p>G</p>
+</div></blockquote>
+<p>itアカウ
+ント情報</p>
+</td>
+<td><p>ユーザ</p></td>
+<td><p>Git
+cloneコ
+マンド実
+行時に求
+められる
+ユーザを
+入力して
+下さい。
+Vi
+sibility
+タイプで
+Private
+を選択し
+た場合、
+ユーザの
+入力は必
+須です。</p></td>
+<td><p>－</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長
+128ﾊﾞｲﾄ</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>パ
+スワード</p></td>
+<td><p>Gitのclo
+neコマン
+ドを実行
+した際に
+求められ
+るパスワ
+ードを入
+力してく
+ださい。</p>
+<p>Visibi
+lityタイ
+プでPri
+vateを選
+択した場
+合、パス
+ワードの
+入力は必
+須です。</p>
+<p>尚
+、GitHu
+bでは202
+1年8月13
+日でパス
+ワード認
+証が廃止
+されます
+。<a href="#id23"><span class="problematic" id="id24">`参
+考URL &lt;
+https://
+github.b
+log/2020
+-12-15-t
+oken-aut
+henticat
+ion-requ
+irements
+-for-git
+-operati
+ons/&gt;`__</span></a></p>
+<p>パスワ
+ード認証
+が廃止さ
+れている
+GitHubを
+利用して
+いる場合
+、Gitア
+カウント
+情報のパ
+スワード
+には、自
+身で個人
+アクセス
+トークン
+を作成し
+入力して
+下さい。</p>
+<p><a class="reference external" href="https://docs.github.com/ja/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token">個
+人アクセ
+ストーク
+ン作成方
+法</a></p>
+</td>
+<td><p>－</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長
+128ﾊﾞｲﾄ</p></td>
+</tr>
+<tr class="row-odd"><td><blockquote>
+<div><p>ssh</p>
+</div></blockquote>
+<p>接続情報</p>
+</td>
+<td><p>パ
+スワード</p></td>
+<td><p>Git
+c
+loneコマ
+ンド実行
+時に求め
+られるL
+inuxユー
+ザのパス
+ワードを
+入力して
+下さい。
+プ
+ロトコル
+でsshパ
+スワード
+認証を選
+択した場
+合、パス
+ワードの
+入力は必
+須です。</p></td>
+<td><p>－</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長
+128ﾊﾞｲﾄ</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>パス
+フレーズ</p></td>
+<td><p>Git
+cloneコ
+マンド実
+行時に求
+められる
+鍵ファイ
+ルに設定
+されてい
+るパスフ
+レーズを
+入力して
+下さい。</p>
+<p>プロ
+トコルで
+ssh鍵認
+証を選択
+した場合
+、パスフ
+レーズの
+入力は必
+須です。</p>
+</td>
+<td><p>－</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長
+128ﾊﾞｲﾄ</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>接続パ
+ラメータ</p></td>
+<td><p>Gi
+tのclone
+コマンド
+を実行時
+に環境変
+数「GIT
+_SSH_COM
+MAND」に
+設定する
+パラメー
+タを入力
+します。</p>
+<p>G
+IT_SSH_C
+OMMANDは
+、Git2.3
+以降のバ
+ージョン
+で設定出
+来る環境
+変数です
+。ITAサ
+ーバにイ
+ンストー
+ルされて
+いるGIt
+バージョ
+ンがGit2
+.3より古
+い場合は
+、設定さ
+れたパラ
+メータは
+無効にな
+ります。</p>
+<p>環境
+変数「G
+IT_SSH_C
+OMMAND」
+はデフォ
+ルトで下
+記のパラ
+メータを
+設定して
+います。
+設定され
+たパラメ
+ータは、
+この後ろ
+に追加さ
+れます。</p>
+<p>User
+KnownHos
+tsFile=/
+dev/null
+-o
+StrictHo
+stKeyChe
+cking=no</p>
+<p>ま
+た、git
+config
+–global
+に
+core.ss
+hCommand
+の設定が
+無い場合
+、下記の
+パラメー
+タを設定
+します。</p>
+<div class="line-block">
+<div class="line">ssh –o
+User</div>
+</div>
+<p>KnownHos
+tsFile=/
+dev/null</p>
+<blockquote>
+<div><p>-o</p>
+</div></blockquote>
+<p>StrictHo
+stKeyChe
+cking=no
+| git</p>
+<blockquote>
+<div><blockquote>
+<div><p>config</p>
+</div></blockquote>
+<dl class="simple">
+<dt>–global</dt><dd><p>にcor</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>e.sshCom
+mandを設
+定してい
+る場合、
+下記のパ
+ラメータ
+を含めて
+下さい。</p>
+<p>–o
+User
+KnownHos
+tsFile=/
+dev/null
+-o
+StrictHo
+stKeyChe
+cking=no</p>
+</td>
+<td><p>－</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長
+512ﾊﾞｲﾄ</p></td>
+</tr>
+<tr class="row-even"><td><p>Proxy</p></td>
+<td><p>Address</p></td>
+<td><p>プロキ
+シサーバ
+のアドレ
+スを入力
+します。</p>
+<p>ITAがプ
+ロキシ環
+境下にあ
+る場合、
+Gitサー
+バまでの
+疎通のた
+めに設定
+が必要な
+場合があ
+ります。</p>
+<div class="line-block">
+<div class="line">プロキ</div>
+</div>
+<p>シサーバ
+のURLが
+| http
+://procy
+.gate.co
+.jp:8080
+の場合
+| Addr
+essには</p>
+<blockquote>
+<div><p><a class="reference external" href="http://">http://</a></p>
+</div></blockquote>
+<p>procy.ga
+te.co.jp</p>
+<blockquote>
+<div><p>を入力</p>
+</div></blockquote>
+<p>します。
+|
+Portには</p>
+<blockquote>
+<div><p>80</p>
+</div></blockquote>
+<p>80を入力
+します。</p>
+</td>
+<td><p>－</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長
+128ﾊﾞｲﾄ</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Port</p></td>
+<td><p>プロ
+キシサー
+バのポー
+トを入力
+します。</p>
+<p>ITAがプ
+ロキシ環
+境下にあ
+る場合、
+Gitサー
+バまでの
+疎通のた
+めに設定
+が必要な
+場合があ
+ります。</p>
+</td>
+<td><p>－</p></td>
+<td><p>手動入力</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><blockquote>
+<div><p>リ</p>
+</div></blockquote>
+<p>モートリ
+ポジトリ
+同期情報</p>
+</td>
+<td><p>自動同期</p></td>
+<td><p>Gitリ
+ポジトリ
+との同期
+を自動で
+行うかを
+選択して
+下さい。</p>
+<p>有効：入
+力された
+周期でG
+itリポジ
+トリとの
+同期を行
+います。</p>
+<p>無効：G
+itリポジ
+トリとの
+同期は自
+動で行い
+ません。</p>
+</td>
+<td><p>〇</p></td>
+<td><p>リ
+スト選択</p></td>
+<td><p>初期
+値：有効</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>周期(秒)</p></td>
+<td><p>Gitリポ
+ジトリと
+の同期を
+自動で行
+う周期を
+入力して
+下さい。</p>
+<p>未入力時
+のデフォ
+ルトは60
+秒です。</p>
+</td>
+<td><p>－</p></td>
+<td><p>手動入力</p></td>
+<td><p>単位:秒</p></td>
+</tr>
+<tr class="row-even"><td><p>通信リト
+ライ情報</p></td>
+<td><p>回数</p></td>
+<td><p>Git
+との通信
+に失敗し
+た場合、
+通信をリ
+トライす
+る回数を
+入力して
+下さい。
+未入力時
+のデフォ
+ルトは3
+回です。</p></td>
+<td><p>－</p></td>
+<td><p>手動入力</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>周期(ms)</p></td>
+<td><p>Git
+との通信
+に失敗し
+た場合、
+通信をリ
+トライす
+る間隔を
+入力して
+下さい。
+未入力時
+のデフォ
+ルトは10
+00msです</p></td>
+<td><p>－</p></td>
+<td><p>手動入力</p></td>
+<td><p>単位:ms</p></td>
+</tr>
+<tr class="row-even"><td><p>備考</p></td>
+<td><p>自由記述
+欄です。</p></td>
+<td><p>－</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長
+4000ﾊﾞｲﾄ</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic" start="4">
+<li><p>Gitリポジトリとの同期状態を表示する項目は以下の通りです。</p>
+<p><strong>表</strong> <strong>4.1‑2
+Gitリポジトリ同期状態表示項目一覧（リモートリポジトリ）</strong></p>
+</li>
+</ol>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
+<th class="head"><p><strong>説明</strong></p></th>
+<th class="head"><p><strong>備考</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>状態</p></td>
+<td><div class="line-block">
+<div class="line">Gitリ</div>
+</div>
+<p>ポジトリとの同期状態を下
+記4つの状態で表示します。
+| 空白：</p>
+<blockquote>
+<div><p>レコ</p>
+</div></blockquote>
+<p>ードの新規登録・更新・廃
+止からの復活を行った状態
+| 正常
+：　Gitリポジトリとの同期
+が正常に行われている状態</p>
+<p>異常：　Gitリポジトリとの
+同期で異常が発生した状態</p>
+<div class="line-block">
+<div class="line">再開：
+再開</div>
+</div>
+<p>ボタンをクリックした状態
+| 状態が
+異常になると、Gitリポジト
+リとの同期が停止します。
+再開するには、再開ボタン
+をクリックするか、該当レ
+コードを更新して下さい。</p>
+</td>
+<td><p>「6.1資材をGitリポジ
+トリに登録する場合の注意
+事項」を参照して下さい。</p></td>
+</tr>
+<tr class="row-odd"><td><p>詳細情報</p></td>
+<td><p>状態が異
+常になった場合、異常とな
+った原因が表示されます。
+再開ボ
+タンをクリックするか、該
+当レコードを更新すると詳
+細情報はクリアされます。</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>最終日時</p></td>
+<td><p>最後
+にGitリポジトリと同期を行
+った日時が表示されます。
+再開ボ
+タンをクリックするか、該
+当レコードを更新すると最
+終日時はクリアされます。</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>再開ボタン</p></td>
+<td><p>状態が異常の場合
+にボタンが活性化します。
+再開ボタンをクリックする
+と状態が再開になります。</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="5">
+<li><p>ssh鍵認証の場合の鍵ファイルについて</p></li>
+</ol>
+<blockquote>
+<div><p>rootユーザで鍵ファイルを作成し鍵交換して下さい。</p>
+<p>秘密鍵ファイル(id_ras)のパスはデフォルト(/root/.ssh/id_ras)を使用して下さい。デフォルト以外にしたい場合、ssh接続情報／接続パラメータに秘密鍵ファイル(id_ras)のパスを設定して下さい。</p>
+<p>　　　　 -i 秘密鍵ファイル(id_ras)のパス</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>ITAサーバにリモートリポジトリを作成する場合のGitバージョンに関する注意事項</p></li>
+</ol>
+<blockquote>
+<div><p>Gitバージョンが1.8.4.3より古い場合、リモートリポジトリに新規ブランチを作成してからコミットするまでの間、リモートリポジトリのHEADブランチ(Default
+branch)の特定が出来なくなる為、この間にブランチ切り替えを行った場合にブランチ切り替えの検出できません。この事により切り替え先ブランチの資材が「資材紐付」メニューの資材パスに表示されない事があります。</p>
+<p>ITAサーバにリモートリポジトリを作成する場合のGitバージョンは1.8.4.3以上を使用して下さい。</p>
+</div></blockquote>
+<section id="id13">
+<h3>登録アカウント<a class="headerlink" href="#id13" title="この見出しへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p>「登録アカウント」メニューでは、ITAのRestAPIから紐付先資材にアクセスする為のアカウント情報を登録します。</p>
+<p>登録アカウントに登録するアカウント情報は「管理コンソール/ユーザ管理」メニューに登録しておく必要があります。</p>
+<p><a class="reference internal" href="../../../../_images/image33.png"><img alt="image3" src="../../../../_images/image33.png" style="width: 6.69236in; height: 2.95278in;" /></a></p>
+</li>
+</ol>
+<p><strong>図</strong> <strong>4.1‑2メニュー画面（登録アカウント）</strong></p>
+<ol class="arabic simple" start="6">
+<li><p>登録アカウント画面の入力項目は以下の通りです。</p></li>
+</ol>
+<p><strong>表 4.1‑3　**登録アカウント**画面入力項目一覧（登録アカウント）</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>入力</p>
+<p>必須</p>
+</th>
+<th class="head"><p>入力形式</p></th>
+<th class="head"><p>制約事項</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ログインID</p></td>
+<td><p>「管理コンソー
+ル/ユーザ管理」
+メニューに登録
+されている、ユ
+ーザのログイン
+IDの一覧が表示
+されます。Rest
+APIで使用するユ
+ーザのログインI
+Dを選択します。</p></td>
+<td><p>○</p></td>
+<td><p>リスト選択</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>ログインPW</p></td>
+<td><p>ログインI
+Dで選択したユー
+ザのパスワード
+を入力します。
+「管理コンソー
+ル/ユーザ管理」
+メニューで登録
+したパスワード
+を入力します。</p></td>
+<td><p>○</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長128ﾊﾞｲﾄ</p></td>
+</tr>
+<tr class="row-even"><td><p>備考</p></td>
+<td><p>自
+由記述欄です。</p></td>
+<td><p>－</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長4000ﾊﾞｲﾄ</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic">
+<li></li>
+<li></li>
+<li><p class="rubric" id="id14">資材紐付</p>
+</li>
+</ol>
+<ol class="arabic simple">
+<li><p>「資材紐付」メニューでは、紐付元資材と紐付先資材を紐付し、紐付先資材の動作検証を行う為のオペレーションとMovementを登録します。</p></li>
+</ol>
+<blockquote>
+<div><p>紐付元資材が更新されると、バックヤード機能で紐付先資材を自動更新し、動作検証を行う為のオペレーションとMovementで作業実行を行い、処理結果が表示されます。</p>
+<p><a class="reference internal" href="../../../../_images/image43.png"><img alt="image4" src="../../../../_images/image43.png" style="width: 6.34722in; height: 3.30029in;" /></a></p>
+</div></blockquote>
+<p><strong>図</strong> <strong>4.1‑3 メニュー画面（資材紐付）</strong></p>
+<ol class="arabic simple" start="7">
+<li><p>資材紐付画面の入力項目は以下の通りです。</p></li>
+</ol>
+<p><strong>表</strong> <strong>4.1‑4　**資材紐付画面入力**項目一覧（</strong>資材紐付<strong>）</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>入力</p>
+<p>必須</p>
+</th>
+<th class="head"><p>入
+力形式</p></th>
+<th class="head"><p>制
+約事項</p></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>紐付先
+資材名</p></td>
+<td><p>紐付
+先資材
+に登録
+されて
+いる資
+材名を
+入力し
+てくだ
+さい。
+この名
+前は、
+紐付先
+資材タ
+イプに
+より、
+下記メ
+ニュー
+の項目
+に紐付
+けます
+。各メ
+ニュー
+の項目
+と同等
+の入力
+規則が
+ありま
+す。各
+項目の
+入力規
+則に従
+い、資
+材名を
+入力し
+てくだ
+さい。</p></td>
+<td><p>○</p></td>
+<td><p>手
+動入力</p></td>
+<td><p>最
+大長2
+56ﾊﾟｲﾄ</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>や</p></td>
+<td><p>**
+メニュ
+ー名**</p></td>
+<td><p><strong>項
+目名</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>A
+nsible
+-Legac
+y/Play
+book素
+材集</p></td>
+<td><p>P
+aybook
+素材名</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Ansi
+ble-Pi
+oneer/
+対話フ
+ァイル
+素材集</p></td>
+<td><p>対象項
+目なし</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Ans
+ible-L
+egacyR
+ole/ロ
+ールパ
+ッケー
+ジ管理</p></td>
+<td><p>ﾛｰﾙﾊﾟｯ
+ｹｰｼﾞ名</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Ansibl
+e共通/
+ファイ
+ル管理</p></td>
+<td><p>ﾌｧ
+ｲﾙ埋込
+変数名</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Ansib
+le共通
+/テン
+プレー
+ト管理</p></td>
+<td><p>ﾃﾝﾌﾟﾚ
+ｰﾄ埋込
+変数名</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Terr
+aform/
+Module
+素材集</p></td>
+<td><p>Module
+素材名</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>Te
+rrafor
+m/Poli
+cy管理</p></td>
+<td><p>Po
+licy名</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>Te
+rrafor
+m-CLI/
+Module
+素材集</p></td>
+<td><p>Module
+素材名</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>紐
+付先資
+材名に
+入力し
+た資材
+名の登
+録有無
+等の条
+件によ
+り紐付
+処理が
+異なり
+ます。
+詳細は
+「(4)
+紐付先
+資材の
+更新処
+理の流
+れ」を
+参照し
+てくだ
+さい。
+また、
+紐付先
+資材名
+を変更
+する場
+合、「
+(5)紐
+付先資
+材名を
+変更す
+る場合
+の注意
+事項」
+を参照
+して下
+さい。</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><blockquote>
+<div><blockquote>
+<div><p>Git</p>
+</div></blockquote>
+<p>リポ</p>
+</div></blockquote>
+<p>ジトリ
+(From)</p>
+</td>
+<td><p>リモー
+トリポ
+ジトリ</p></td>
+<td><p>「
+4.1.1
+リモー
+トリポ
+ジトリ
+」メニ
+ューに
+登録さ
+れてい
+るリモ
+ートリ
+ポジト
+リが一
+覧で表
+示され
+ます。
+紐付元
+となる
+資材が
+含まれ
+ている
+リモー
+トリポ
+ジトリ
+を選択
+して下
+さい。</p></td>
+<td><p>○</p></td>
+<td><p>リス
+ト選択</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>資
+材パス</p></td>
+<td><p>紐付
+元資材
+が一覧
+で表示
+されま
+す。紐
+付元資
+材とな
+る資材
+パスを
+選択し
+てくだ
+さい。
+紐付
+先資材
+タイプ
+が「A
+nsible
+-Legac
+yRole/
+ロール
+パッケ
+ージ管
+理」メ
+ニュー
+の場合
+、「6
+.2ロー
+ルパッ
+ケージ
+管理に
+紐付す
+る資材
+をGit
+リポジ
+トリに
+登録す
+る場合
+の注意
+事項」
+を参照
+して下
+さい。</p></td>
+<td><p>○</p></td>
+<td><p>リス
+ト選択</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><blockquote>
+<div><p>E</p>
+</div></blockquote>
+<dl class="simple">
+<dt>xastro</dt><dd><p>IT
+au</p>
+</dd>
+</dl>
+<p>tomati
+on(To)</p>
+</td>
+<td><p>紐付
+先資材
+タイプ</p></td>
+<td><p>紐付
+先資材
+タイプ
+（メニ
+ュー）
+を選択
+して下
+さい。
+紐付先
+資材は
+下記の
+メニュ
+ーから
+選択で
+きます
+。各メ
+ニュー
+を選択
+するに
+は、各
+メニュ
+ーに対
+応した
+ドライ
+バがイ
+ンスト
+ールさ
+れてい
+る必要
+があり
+ます。</p></td>
+<td><p>○</p></td>
+<td><p>リス
+ト選択</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td><p>**
+メニュ
+ー名**</p></td>
+<td><p>**
+インス
+トール
+が必要
+なドラ
+イバ**</p></td>
+<td><p>や</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td><p>A
+nsible
+-Legac
+y/Play
+book素
+材集</p></td>
+<td><p>An
+sible-
+Driver</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td><p>Ansi
+ble-Pi
+oneer/
+対話フ
+ァイル
+素材集</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td><p>Ans
+ible-L
+egacyR
+ole/ロ
+ールパ
+ッケー
+ジ管理</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td><p>Ansibl
+e共通/
+ファイ
+ル管理</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td><p>Ansib
+le共通
+/テン
+プレー
+ト管理</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td><p>Terr
+aform/
+Module
+素材集</p></td>
+<td><p>Terr
+aform-
+Driver</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td><p>Te
+rrafor
+m/Poli
+cy管理</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td><p>Te
+rrafor
+m-CLI/
+Module
+素材集</p></td>
+<td><p>Te
+rrafor
+m-CLI-
+Driver</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><blockquote>
+<div><p>ﾃﾝﾌﾟﾚ</p>
+</div></blockquote>
+<p>ｰﾄ管理</p>
+</td>
+<td><p>変
+数定義</p></td>
+<td><p>紐
+付先資
+材タイ
+プで「
+Ansib
+le共通
+/テン
+プレー
+ト管理
+」メニ
+ューを
+選択し
+た場合
+、資材
+に必要
+な変数
+定義を
+入力し
+て下さ
+い。「
+Ansib
+le共通
+/テン
+プレー
+ト管理
+」メニ
+ュー以
+外を選
+択して
+いる場
+合は入
+力不要
+です。</p></td>
+<td><p>－</p></td>
+<td><p>手
+動入力</p></td>
+<td><p>最
+大長81
+92ﾊﾞｲﾄ</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><blockquote>
+<div><p>Ans</p>
+</div></blockquote>
+<p>ible-P
+ioneer</p>
+</td>
+<td><p>対
+話種別</p></td>
+<td><p>「An
+sible-
+Pionee
+r/対話
+種別」
+メニュ
+ーに登
+録され
+ている
+対話種
+別が一
+覧に表
+示され
+ます。
+紐付先
+資材タ
+イプで
+「Ansi
+ble-Pi
+oneer/
+対話フ
+ァイル
+素材集
+」メニ
+ューを
+選択し
+た場合
+、紐付
+先資材
+の対話
+種別を
+一覧よ
+り選択
+して下
+さい。
+紐付先
+資材タ
+イプで
+「Ansi
+ble-Pi
+oneer/
+対話フ
+ァイル
+素材集
+」メニ
+ュー以
+外を選
+択して
+いる場
+合は選
+択不要
+です。</p></td>
+<td><p>－</p></td>
+<td><p>リス
+ト選択</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>OS種別</p></td>
+<td><p>「An
+sible-
+Pionee
+r/OS種
+別」メ
+ニュー
+に登録
+されて
+いるOS
+種別が
+一覧に
+表示さ
+れます
+。紐付
+先資材
+タイプ
+で「An
+sible-
+Pionee
+r/対話
+ファイ
+ル素材
+集」メ
+ニュー
+を選択
+した場
+合、紐
+付先資
+材のOS
+種別を
+一覧よ
+り選択
+して下
+さい。
+紐付先
+資材タ
+イプで
+「Ansi
+ble-Pi
+oneer/
+対話フ
+ァイル
+素材集
+」メニ
+ュー以
+外を選
+択して
+いる場
+合は選
+択不要
+です。</p></td>
+<td><p>－</p></td>
+<td><p>リス
+ト選択</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>実
+行ログ
+インID</p></td>
+<td><p>「
+4.1.2
+登録ア
+カウン
+ト」メ
+ニュー
+に登録
+されて
+いるユ
+ーザの
+ログイ
+ンIDの
+一覧が
+表示さ
+れます
+。Res
+tAPIか
+ら紐付
+先資材
+にアク
+セス。
+又は作
+業実行
+する為
+のログ
+インID
+を選択
+して下
+さい。</p>
+<p>「紐
+付先資
+材タイ
+プ」で
+指定し
+たメニ
+ューに
+対して
+、「管
+理コン
+ソール
+/ロー
+ル・メ
+ニュー
+紐付管
+理」メ
+ニュー
+の「紐
+付」が
+「メン
+テナン
+ス可」
+のロー
+ルに所
+属して
+いるユ
+ーザの
+ログイ
+ンIDを
+選択す
+る必要
+があり
+ます。</p>
+</td>
+<td><p>〇</p></td>
+<td><p>リス
+ト選択</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>アク
+セス許
+可ロー
+ル付与</p></td>
+<td><p>紐付先
+資材の
+レコー
+ドを追
+加・更
+新した
+場合、
+アクセ
+ス許可
+ロール
+の設定
+内容を
+選択し
+ます。</p>
+<p>なし：
+空白（
+アクセ
+ス許可
+ロール
+なし）</p>
+<p>あり
+：「実
+行ログ
+インID
+」に対
+して「
+管理コ
+ンソー
+ル/ロ
+ール・
+ユーザ
+紐付管
+理」メ
+ニュー
+で紐付
+けてい
+るロー
+ルの内
+、「デ
+フォル
+トアク
+セス権
+」が設
+定され
+ている
+ロール
+をアク
+セス許
+可ロー
+ルに設
+定しま
+す。「
+デフォ
+ルトア
+クセス
+権」が
+設定さ
+れてい
+るロー
+ルが無
+い場合
+、アク
+セス許
+可ロー
+ルは空
+白が設
+定され
+ます。</p>
+<p>未選択
+時のデ
+フォル
+トは「
+なし」
+です。</p>
+</td>
+<td><p>－</p></td>
+<td><p>リス
+ト選択</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>素材同
+期情報</p></td>
+<td><p>自
+動同期</p></td>
+<td><p>G
+itリポ
+ジトリ
+の資材
+が更新
+された
+場合に
+紐付先
+資材の
+更新を
+自動で
+行うか
+を選択
+して下
+さい。</p>
+<p>有効：
+Gitリ
+ポジト
+リの資
+材が更
+新され
+た場合
+、紐付
+先資材
+の更新
+を自動
+で行い
+ます。</p>
+<p>無効
+：Git
+リポジ
+トリの
+資材が
+更新さ
+れても
+紐付先
+資材の
+更新を
+行いま
+せん。</p>
+</td>
+<td><p>〇</p></td>
+<td><p>リス
+ト選択</p></td>
+<td><p>初期値
+：有効</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>デリバ
+リ情報</p></td>
+<td><p>オ
+ペレー
+ション</p></td>
+<td><p>「基本
+コンソ
+ール/
+投入オ
+ペレー
+ション
+一覧」
+メニュ
+ーに登
+録され
+ている
+オペレ
+ーショ
+ンの一
+覧が表
+示され
+ます。
+紐
+付先資
+材を更
+新した
+場合に
+、Move
+mnetを
+実行す
+るオペ
+レーシ
+ョンを
+選択し
+ます。</p></td>
+<td><p>－</p></td>
+<td><p>リス
+ト選択</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Mo
+vement</p></td>
+<td><p>「
+基本コ
+ンソー
+ル/Mo
+vement
+一覧」
+メニュ
+ーに登
+録され
+ている
+Moveme
+ntの一
+覧が表
+示され
+ます。
+紐付
+先資材
+を更新
+した場
+合に、
+実行す
+るMove
+mentを
+選択し
+ます。</p></td>
+<td><p>－</p></td>
+<td><p>リス
+ト選択</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>ドラ
+イラン</p></td>
+<td><p>Mo
+vement
+を実行
+するモ
+ードを
+選択し
+ます。
+●:を
+選択し
+た場合
+、ドラ
+イラン
+モード
+でMove
+mentを
+実行し
+ます。
+未
+選択時
+はドラ
+イラン
+モード
+では実
+行しま
+せん。</p></td>
+<td><p>－</p></td>
+<td><p>リス
+ト選択</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>備考</p></td>
+<td><p>自由
+記述欄
+です。</p></td>
+<td><p>－</p></td>
+<td><p>手
+動入力</p></td>
+<td><p>最
+大長40
+00ﾊﾞｲﾄ</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic" start="8">
+<li><p>Gitリポジトリの資材と紐付先資材との同期の状態を表示する項目は以下の通りです。</p>
+<p><strong>表</strong> <strong>4.1‑5　 資材紐付状態表示項目一覧（資材紐付）</strong></p>
+</li>
+</ol>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
+<th class="head"><p><strong>説明</strong></p></th>
+<th class="head"><p><strong>備考</strong></p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>資材同期情報</p></td>
+<td><p>状態</p></td>
+<td><div class="line-block">
+<div class="line">紐付元資</div>
+</div>
+<p>材と紐付先資材の同
+期状態を下記4つの
+状態で表示します。
+| 空白：</p>
+<p>レコードの新規登録
+・更新・廃止からの
+復活を行った状態。
+| 正常：
+　紐付元資材と紐付
+先資材の同期が正常
+に行われている状態</p>
+<p>異常：
+　以下の2通りの状
+態が考えられます。</p>
+<blockquote>
+<div><p>・紐付元資材と</p>
+</div></blockquote>
+<p>紐付先資材の同期で
+異常が発生した状態</p>
+<blockquote>
+<div><p>・</p>
+</div></blockquote>
+<p>紐付先資材の更新に
+より、設定されてい
+るオペレーションと
+Movementで作業実行
+をしたが作業実行が
+出来なかった状態※1</p>
+<p>再開：
+再開ボタン
+をクリックした状態</p>
+<p>状態が
+異常になると、紐付
+元資材と紐付先資材
+の同期が停止します
+。再開するには、再
+開ボタンをクリック
+するか、該当レコー
+ドを更新して下さい</p>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>詳細情報</p></td>
+<td><p>紐付元資材と
+紐付先資材の同期状
+態が異常になった場
+合、異常となった原
+因が表示されます。
+再開ボ
+タンをクリックする
+か、該当レコードを
+更新すると詳細情報
+はクリアされます。</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>最終日時</p></td>
+<td><p>最後に紐
+付元資材と紐付先資
+材の同期を行った日
+時が表示されます。
+再開ボ
+タンをクリックする
+か、該当レコードを
+更新すると最終日時
+はクリアされます。</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>最終実行ログインID</p></td>
+<td><p>最後に紐付元資
+材と紐付先資材の同
+期を行ったログイン
+IDが表示されます。</p>
+<p>再開ボタンをクリ
+ックするか、該当レ
+コードを更新すると
+最終実行ログインID
+はクリアされます。</p>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>再開ボタン</p></td>
+<td><p>状
+態が異常の場合にボ
+タンが活性します。
+再開ボタンを
+クリックすると状態
+が再開になります。</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>デリバリ情報</p></td>
+<td><p>詳細情報</p></td>
+<td><blockquote>
+<div><p>紐付先資</p>
+</div></blockquote>
+<p>材の更新により、設
+定されているオペレ
+ーションとMovement
+で作業実行をしたが
+作業実行が出来なか
+った場合、実行出来
+なかったエラー原因
+が表示されます。※1</p>
+<p>尚、作業実
+行が実行できた場合
+、実行結果が異常か
+どうかの判定※2はし
+ていません。作業状
+態確認ボタンをクリ
+ックし「各ドライバ
+/作業状態確認」メ
+ニューより実行結果
+を確認して下さい。</p>
+<p>再開ボ
+タンをクリックする
+か、該当レコードを
+更新すると詳細情報
+はクリアされます。</p>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>作業インスタンスNo</p></td>
+<td><p>オペレ
+ーションとMovement
+で作業実行が実行で
+きた場合、作業実行
+の作業インスタンス
+Noが表示されます。
+再開ボタンをクリ
+ックするか、該当レ
+コードを更新すると
+作業インスタンスNo
+はクリアされます。</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>作業状態確認ボタン</p></td>
+<td><p>オペレーショ
+ンとMovementで作業
+実行が実行できた場
+合、作業状態確認ボ
+タンが活性します。</p>
+<div class="line-block">
+<div class="line">作業状態確認ボ</div>
+</div>
+<p>タンをクリックする
+と、「各ドライバ/
+作業状態確認」メニ
+ューが表示され、作
+業実行の状態を確認
+する事が出来ます。
+| 「作業状態確
+認」の詳細について
+は各ドライバの「利
+用手順マニュアル」</p>
+<blockquote>
+<div><p>を</p>
+</div></blockquote>
+<p>参照してください。</p>
+<p>再開ボタンをクリッ
+クするか、該当レコ
+ードを更新すると作
+業状態確認ボタンは
+非活性になります。</p>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>※1 オペレーションやMovementが廃止されている場合など。</p>
+<p>※2
+紐付先資材に誤りがあった場合や、作業実行に必要な情報が不足している場合など。</p>
+<ol class="arabic simple" start="9">
+<li><p>紐付先資材の更新処理の流れ</p></li>
+</ol>
+<ol class="arabic simple">
+<li><ol class="arabic simple">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+</li>
+</ol>
+<ol class="arabic simple">
+<li></li>
+</ol>
+<ol class="arabic simple">
+<li></li>
+<li><ol class="arabic simple">
+<li></li>
+</ol>
+</li>
+</ol>
+<p>※1　紐付先資材タイプが「Ansible-Pioneer/対話ファイル素材集」の場合、紐付先資材名は対話種別とOS種別の組み合わせになります。</p>
+<p>※2　作業実行に必要な情報が不足している場合、作業実行が失敗する場合があります。</p>
+<p>※3　項目の差分は、アクセス許可ロールと備考も含まれます。また、備考については常に空白で更新されます。</p>
+<p>※4　「4.1.3資材紐付」メニューの「資材同期情報-&gt;状態」に「異常」、「資材同期情報-&gt;詳細情報」にエラー原因を設定します。</p>
+<p>※5　「4.1.3資材紐付」メニューの「資材同期情報-&gt;状態」に「異常」、「デリバリ情報-&gt;詳細情報」にエラー原因を設定します。</p>
+<p>※6　「4.1.3資材紐付」メニューの「資材同期情報-&gt;状態」に「正常」を設定します。</p>
+<ol class="arabic simple" start="10">
+<li><p>紐付先資材名を変更する場合の注意事項</p></li>
+</ol>
+<blockquote>
+<div><p>紐付先資材名を変更した場合、紐付先資材の変更前のレコードはそのまま残り、変更後の紐付先資材名で新しいレコードが作成されます。</p>
+</div></blockquote>
+</section>
+</section>
+<section id="id15">
+<h2>CI/CD For IaC 非表示メニュー<a class="headerlink" href="#id15" title="この見出しへのパーマリンク">¶</a></h2>
+<ol class="arabic simple">
+<li></li>
+</ol>
+<blockquote>
+<div><p>本節では、CI/CD For
+IaC機能をインストールした状態では表示されないメニューの操作について記載します。各メニューにアクセスするには、「管理コンソール/ロール・メニュー紐付管理」で各メニューを復活処理を行うことによって表示されるようになります。詳細は「利用手順マニュアル_管理コンソール」
+を参照してください。</p>
+</div></blockquote>
+<section id="id16">
+<h3>インターフェース情報<a class="headerlink" href="#id16" title="この見出しへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><div class="line-block">
+<div class="line">「インターフェース情報」メニューには、ITAのRestAPIから紐付先資材にアクセスする為のインターフェース情報を登録します。</div>
+<div class="line">デフォルトは、インストール先のＩＴＡにアクセスする為のインターフェース情報が登録されています。</div>
+</div>
+<p>紐付先資材をインストール先のＩＴＡ以外にしたい場合に、インターフェース情報を変更して下さい。</p>
+<p><a class="reference internal" href="../../../../_images/image54.png"><img alt="image5" src="../../../../_images/image54.png" style="width: 6.69236in; height: 2.89931in;" /></a></p>
+</li>
+</ol>
+<p><strong>図</strong> <strong>4.2‑1メニュー画面（インタフェース情報）</strong></p>
+<ol class="arabic simple" start="11">
+<li><p>インターフェース情報画面の入力項目は以下の通りです。</p></li>
+</ol>
+<p><strong>表</strong>
+<strong>4.2‑1　**インターフェース情報**画面入力項目一覧（インタフェース情報）</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
+<th class="head"><p><strong>説明</strong></p></th>
+<th class="head"><p><strong>入力</strong></p>
+<p><strong>必須</strong></p>
+</th>
+<th class="head"><p><strong>入力形式</strong></p></th>
+<th class="head"><p><strong>制約事項</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ホスト名</p></td>
+<td><p>I
+TAサーバのホ
+スト名または
+IPアドレスを
+入力します。</p></td>
+<td><p>○</p></td>
+<td><p>手動入力</p></td>
+<td><p>最
+大長128ﾊﾞｲﾄ
+初期値:
+127.0.0.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>プロトコル</p></td>
+<td><p>I
+TAサーバとの
+プロトコル(h
+ttp/https)を
+入力します。</p></td>
+<td><p>○</p></td>
+<td><p>手動入力</p></td>
+<td><p>初期値: http</p></td>
+</tr>
+<tr class="row-even"><td><p>ポート</p></td>
+<td><p>ITAサー
+バの接続ポー
+ト(80/443)を
+入力します。</p></td>
+<td><p>○</p></td>
+<td><p>手動入力</p></td>
+<td><p>初期値: 80</p></td>
+</tr>
+<tr class="row-odd"><td><p>備考</p></td>
+<td><p>自由
+記述欄です。</p></td>
+<td><p>－</p></td>
+<td><p>手動入力</p></td>
+<td><p>最
+大長4000ﾊﾞｲﾄ</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id17">
+<h3>リモートリポジトリ資材<a class="headerlink" href="#id17" title="この見出しへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p>「リモートリポジトリ資材」メニューには、紐付元資材の一覧が表示されます。</p>
+<div class="line-block">
+<div class="line">「リモートリポジトリ資材」メニューに表示される情報はバックヤード機能で更新しています。</div>
+<div class="line">レコード追加・更新・削除は行わないで下さい。</div>
+</div>
+<p><a class="reference internal" href="../../../../_images/image62.png"><img alt="image6" src="../../../../_images/image62.png" style="width: 6.4939in; height: 3.64698in;" /></a></p>
+<p><strong>図</strong> <strong>4.2‑2メニュー画面（リモートリポジトリ資材）</strong></p>
+</li>
+</ol>
+<ol class="arabic" start="12">
+<li><p>リモートリポジトリ資材画面の表示項目は以下の通りです。</p>
+<p><strong>表</strong>
+<strong>4.2‑2　**リモートリポジトリ資材表示**項目一覧（リモートリポジトリ資材）</strong></p>
+</li>
+</ol>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>入力</p>
+<p>必須</p>
+</th>
+<th class="head"><p>入力形式</p></th>
+<th class="head"><p>制約事項</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>リモート
+リポジトリ名</p></td>
+<td><p>「4.1.1リ
+モートリポジ
+トリ」メニュ
+ーで登録した
+リモートリポ
+ジトリ名が表
+示されます。</p></td>
+<td><p>○</p></td>
+<td><p>リスト選択</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>資材パス</p></td>
+<td><p>紐付元資材の
+資材パスが表
+示されます。
+「4.1.1リモー
+トリポジトリ
+」メニューの
+「同期状態」
+が「異常」が
+設定されてい
+るリモートリ
+ポジトリの資
+材パスは表示
+されません。</p></td>
+<td><p>○</p></td>
+<td><p>リスト選択</p></td>
+<td><p>最
+大長4096ﾊﾞｲﾄ</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="id18">
+<h1>運用操作<a class="headerlink" href="#id18" title="この見出しへのパーマリンク">¶</a></h1>
+<blockquote>
+<div><p>本機能を活用する操作は、クライアントPCのブラウザ画面からのユーザ利用による入力だけでなく、システム運用・保守による操作もあります。用意している運用・保守の操作は次のとおりです。</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>メンテナンス</p></li>
+<li><p>ログレベルの変更</p></li>
+</ul>
+<ol class="arabic simple">
+<li></li>
+</ol>
+<ol class="arabic simple" start="4">
+<li></li>
+</ol>
+<section id="id19">
+<h2>メンテナンス方法について<a class="headerlink" href="#id19" title="この見出しへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><p>CICD For
+IaC機能のプロセスの開始/停止/再起動に必要なファイルは以下となります。</p>
+</div></blockquote>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>説明</strong></p></th>
+<th class="head"><p><strong>対象ファイル名</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CICD For IaC機能</p>
+<p>「4.1.1リモートリポジトリ
+」に登録されているGitリポジトリ
+のローカルクローンを作成する。※1</p>
+<p>「4.1.3資材紐付」で紐付
+けられている紐付先資材を自動更新
+し、動作検証を行う為のオペレーシ
+ョンとMovementで作業実行を行う。</p>
+</td>
+<td><p><a href="#id25"><span class="problematic" id="id26">ky_CICD_for_IaC_</span></a>
+git_synchronize-workflow.service</p></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><div class="line-block">
+<div class="line">　　※1
+Gitリポジトリのローカルクローンのパスは/「ITAインストールディレクトリ」/ita-root/repositorys/000000000x</div>
+<div class="line">(x:「4.1.1リモートリポジトリ」の項番 右詰10桁)になります。</div>
+</div>
+<p>対象ファイルは「/usr/lib/systemd/system」に格納されています。</p>
+<p>プロセス起動/停止/再起動の方法は次の通りです。</p>
+<p>root権限でコマンドを実行してください。</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>プロセス起動</p></li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><p>プロセス停止</p></li>
+<li><p>プロセス再起動</p></li>
+</ol>
+<blockquote>
+<div><p>各対象ファイル名に置き換えて起動/停止/再起動を行ってください。</p>
+</div></blockquote>
+</section>
+<section id="id20">
+<h2>ログレベルの変更<a class="headerlink" href="#id20" title="この見出しへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">①　NORMALレベルへの変更</div>
+<div class="line">以下のファイルの8行目「DEBUG」を「NORMAL」に書き換えます。</div>
+<div class="line">ログレベル設定ファイル：
+<em>&lt;インストールディレクトリ&gt;/ita-root/confs/backyardconfs/ita_env</em></div>
+</div>
+<div class="line-block">
+<div class="line">②　DEBUGレベルへの変更</div>
+<div class="line">以下のファイルの8行目「NORMAL」を「DEBUG」に書き換えます。</div>
+<div class="line">ログレベル設定ファイル：
+<em>&lt;インストールディレクトリ&gt;/ita-root/confs/backyardconfs/ita_env</em></div>
+</div>
+<p>書き換え後、<strong>プロセス再起動(restart)後に有効になります。</strong></p>
+<p>ログファイルの出力先：
+<em>&lt;インストールディレクトリ&gt;/ita-root/logs/backyardlogs</em></p>
+</div></blockquote>
+</section>
+</section>
+<section id="id21">
+<h1>付録<a class="headerlink" href="#id21" title="この見出しへのパーマリンク">¶</a></h1>
+<ol class="arabic simple" start="5">
+<li></li>
+</ol>
+<section id="git">
+<h2>資材をGitリポジトリに登録する場合の注意事項<a class="headerlink" href="#git" title="この見出しへのパーマリンク">¶</a></h2>
+<p>資材をGitリポジトリに登録する場合の注意事項を以下に記述します。</p>
+<ol class="arabic simple">
+<li><p>255ﾊﾞｲﾄ以上の資材名が含まれるGitリポジトリを「4.1.1リモートリポジトリ」メニューに登録すると、Git
+clone commandが異常終了します。</p></li>
+<li><p>ファイルパスも含めて4096ﾊﾞｲﾄ以上の資材名が含まれるGitリポジトリを「4.1.1リモートリポジトリ」メニューに登録すると、Git
+clone commandが異常終了します。</p></li>
+</ol>
+</section>
+<section id="id22">
+<h2>ロールパッケージ管理に紐付する資材をGitリポジトリに登録する場合の注意事項<a class="headerlink" href="#id22" title="この見出しへのパーマリンク">¶</a></h2>
+<p>「Ansible-LegacyRole/ロールパッケージ管理」メニューに紐付する資材をGitリポジトリに登録する場合の注意事項を以下に記述します。</p>
+<ol class="arabic">
+<li><p>rolesという名前のディレクトリを含むディレクトリを作成し、この配下にロールパッケージに必要なファイル・ディレクトリを配置して下さい。ロールパッケージとしてzipで固められる資材は、rolesディレクトリの上位ディレクトリ配下になります。ただし、Gitリポジトリのルートディレクトリ直下にrolesという名前のディレクトリを作成しても、「Ansible-LegacyRole/ロールパッケージ管理」メニューに紐付するrolesディレクトリとして認識しません。</p>
+<p>&lt;Exp&gt;</p>
+<p>以下のようなファイル・ディレクトリ構成の場合、「sample/roles」はrolesディレクトリとして認識しますが、「roles」はrolesディレクトリとして認識しません。</p>
+<p>Gitリポジトリのルートディレクトリ</p>
+<p>├─roles ・・・・・・・rolesディレクトリとして認識しません。</p>
+<p>│ │ ita_readme_test_role.yml</p>
+<p>│ │ ita_translation-table_test_role.txt</p>
+<p>│ └─test_role</p>
+<p>│ ├─defaults</p>
+<p>│ │ main.yml</p>
+<p>│ └─tasks</p>
+<p>│ main.yml</p>
+<p>│</p>
+<p>└─sample</p>
+<p>│ ita_readme_test_role.yml</p>
+<p>│ ita_translation-table_test_role.txt</p>
+<p>└─roles ・・・・・・・rolesディレクトリとして認識します。</p>
+<p>└─test_role</p>
+<p>├─defaults</p>
+<p>│ main.yml</p>
+<p>└─tasks</p>
+<p>main.yml</p>
+<p>「4.1.3資材紐付」メニューの資材パスに「sample/roles」が表示されます。「Ansible-LegacyRole/ロールパッケージ管理」メニューに紐付ける資材パスには、「sample/roles」を選択して下さい。</p>
+</li>
+</ol>
+<blockquote>
+<div><p><a class="reference internal" href="../../../../_images/image72.png"><img alt="image7" src="../../../../_images/image72.png" style="width: 5.53992in; height: 1.69985in;" /></a></p>
+</div></blockquote>
+</section>
+</section>
+
+
+</div>
+
+
+<div id="articleNavigation">
+  <ul>
+  </ul>
+</div>
+
+
+<div id="pageTopLink">
+  <a href="#container"><i>↑</i> Page Top</a>
+</div>
+
+</article>
+</div>
+</main>
+</div><!-- End #contents -->
+<div id="footer">
+  <footer class="divInner">
+    <small>Copyright © 2023 NEC Corporation</small>
+  </footer>
+</div><!-- End #footer -->
+
+<div id="overlay"></div>
+<div id="grayBack"></div>
+
+</div><!-- End #container -->
+  </body>
+</html>

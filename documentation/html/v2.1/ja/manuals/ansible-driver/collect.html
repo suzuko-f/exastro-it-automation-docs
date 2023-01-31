@@ -1,0 +1,2317 @@
+
+<!DOCTYPE html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>目次 &#8212; Documentation  ドキュメント</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/option.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/exastro_documents.css?v=2" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/swagger/swagger-ui.css" />
+    
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/translations.js"></script>
+    <script src="../../../../_static/jquery-3.6.3.min.js"></script>
+    <script src="../../../../_static/exastro_documents.js?v=1"></script>
+    <script src="../../../../_static/swagger/swagger-ui-bundle.js"></script>
+    <script src="../../../../_static/swagger/swagger-ui-standalone-preset.js"></script>
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../../../../genindex.html" />
+    <link rel="search" title="検索" href="../../../../search.html" /> 
+  </head>
+<body id="page" class="ja">
+
+
+<div id="container">
+
+<div id="header">
+  <header class="divInner">
+    <!-- Exastro logo -->
+    <div id="logo"><img src="../../../../_static/img/exastro.svg" alt="Exastro"></div>
+    <!-- Project name -->
+    <div id="projectName"><a href="../../../../index.html">Documentation</a></div>
+    <!-- Heaedr navigation -->
+    <div id="headerSearch">
+      <form class="search" action="../../../../search.html" method="get">
+        <input type="text" name="q" aria-labelledby="searchlabel">
+        <button type="submit" value="検索"><img src="../../../../_static/img/search.png" alt="検索"></button>
+      </form>
+    </div>
+  </header>
+</div><!-- End #header -->
+
+
+<div id="toolbar">
+  <div class="divInner">
+    
+    <div id="documentVersion">
+      <dl>
+        <dt>Document version</dt>
+        <dd>
+          <div>
+            <select name="version" onchange="location.href=value;">
+                file_path: v2.0/ja/manuals/ansible-driver/collect
+                file_path: v2.0/ja/manuals/ansible-driver/collect
+            </select>
+          </div>
+        </dd>
+      </dl>
+    </div>
+
+    <div id="documentLanguage">
+      <dl>
+        <dt>Language</dt>
+        <dd>
+          <div>
+            <select name="lang" onchange="location.href=value;">
+                file_path: v2.1/ja/manuals/ansible-driver/collect
+                hasdoc: True
+                  <option value="#"
+                  selected
+                  >日本語</option>
+                file_path: v2.1/en/manuals/ansible-driver/collect
+                hasdoc: False
+            </select>
+          </div>
+        </dd>
+      </dl>
+    </div>
+    <div id="toolbarNavigation">
+      <ul>
+      </ul>
+    </div>
+  </div>
+</div><!-- End #toolbar -->
+
+<div id="sideMenu">
+
+  <div id="menuButton"></div>
+  
+  <aside class="divInner">
+    <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../v2.0/index.html">Exastro IT Automation Documentation</a></li>
+</ul>
+
+    <!-- <ul>
+      <li class="toctree-l1"><a class="reference internal" href="../../../../genindex.html">索引</a></li>
+    </ul> -->
+    
+  </aside>
+</div><!-- End #sideMenu -->
+
+
+<div id="tableOfContents">
+  <div id="tocButton"></div>
+  <ul>
+<li><a class="reference internal" href="#">目次</a></li>
+<li><a class="reference internal" href="#id2">はじめに</a></li>
+<li><a class="reference internal" href="#id3">収集機能概要</a><ul>
+<li><a class="reference internal" href="#id4">収集機能について</a><ul>
+<li><a class="reference internal" href="#id5">収集機能概要図</a></li>
+<li><a class="reference internal" href="#id6">収集機能データ登録処理概要図</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id7">パラメータシートへの登録方法について</a><ul>
+<li><a class="reference internal" href="#id8">収集機能の動作要件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id9">収集機能でのディレクトリ、ファイル構造、変数取り扱い</a><ul>
+<li><a class="reference internal" href="#id10">収集対象ディレクトリ、ファイル構造</a></li>
+<li><a class="reference internal" href="#id15">取り扱う変数と種類</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id16">収集機能 コンソールメニュー構成</a><ul>
+<li><a class="reference internal" href="#id17">メニュー/画面一覧</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id18">収集機能の利用手順</a><ul>
+<li><a class="reference internal" href="#id19">作業フロー</a><ul>
+<li><a class="reference internal" href="#id20">収集機能作業フロー</a><ul>
+<li><a class="reference internal" href="#id23">**</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id44">収集機能・操作方法説明</a><ul>
+<li><a class="reference internal" href="#ansible">Ansible 共通コンソール</a><ul>
+<li><a class="reference internal" href="#id45">収集インターフェース情報</a></li>
+<li><a class="reference internal" href="#id46">収集項目値管理</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ansible-legacyansible-pioneeransible-legacyrole">Ansible-Legacy、Ansible-Pioneer、Ansible-LegacyRoleコンソール</a><ul>
+<li><a class="reference internal" href="#id47">収集状況の確認</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#backyard">BackYardコンテンツ</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id49">運用操作</a><ul>
+<li><a class="reference internal" href="#id50">メンテナンス</a></li>
+<li><a class="reference internal" href="#id51">メンテナンス方法について</a></li>
+<li><a class="reference internal" href="#id54">収集実行例</a><ul>
+<li><a class="reference internal" href="#id55">複数ファイルの同一メニューを対象とした場合</a></li>
+<li><a class="reference internal" href="#id56">収集対象ファイルの値の取り扱い</a></li>
+<li><a class="reference internal" href="#id57">複数の同一ファイル名がアップロード対象ファイルの指定例</a></li>
+<li><a class="reference internal" href="#id70">ファイル削除時の収集対象ファイル内の記載例</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+<div id="contents">
+<main class="divInner">
+
+ <div id="breadcrumbs">
+  <ul>
+    <li><a href="../../../../index.html">HOME</a></li>
+    
+    <li>目次</li>
+  </ul>
+</div>
+
+<div id="article">
+<article class="divInner">
+<div class="body" role="main">
+
+  <p><a class="reference internal" href="../../../../_images/image15.png"><img alt="image1" src="../../../../_images/image15.png" style="width: 3.35069in; height: 0.78542in;" /></a></p>
+<p>ITA_利用手順マニュアル</p>
+<p>収集機能</p>
+<p><em>－</em>第1.10版<em>－</em></p>
+<p>Copyright © NEC Corporation 2020. All rights reserved.</p>
+<p>免責事項</p>
+<p>本書の内容はすべて日本電気株式会社が所有する著作権に保護されています。</p>
+<p>本書の内容の一部または全部を無断で転載および複写することは禁止されています。</p>
+<p>本書の内容は将来予告なしに変更することがあります。</p>
+<p>日本電気株式会社は、本書の技術的もしくは編集上の間違い、欠落について、一切責任を負いません。</p>
+<p>日本電気株式会社は、本書の内容に関し、その正確性、有用性、確実性その他いかなる保証もいたしません。</p>
+<p>商標</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>LinuxはLinus</dt><dd><p>Torvalds氏の米国およびその他の国における登録商標または商標です。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Red Hatは、Red Hat,</dt><dd><p>Inc.の米国およびその他の国における登録商標または商標です。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Apache、Apache Tomcat、Tomcatは、Apache Software</dt><dd><p>Foundationの登録商標または商標です。</p>
+</dd>
+</dl>
+</li>
+<li><p>Ansibleは、Red Hat, Inc.の登録商標または商標です。</p></li>
+<li><p>AnsibleTowerは、Red Hat, Inc.の登録商標または商標です。</p></li>
+</ul>
+<p>その他、本書に記載のシステム名、会社名、製品名は、各社の登録商標もしくは商標です。</p>
+<p>なお、® マーク、TMマークは本書に明記しておりません。</p>
+<p>※本書では「Exastro IT Automation」を「ITA」として記載します。</p>
+<section id="id1">
+<h1>目次<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h1>
+<p><a class="reference external" href="#目次">目次 2</a></p>
+<p><a class="reference external" href="#_Toc101979278">はじめに 3</a></p>
+<p><a class="reference external" href="#収集機能概要">1 収集機能概要 4</a></p>
+<p><a class="reference external" href="#収集機能について">1.1 収集機能について 4</a></p>
+<p><a class="reference external" href="#収集機能概要図">1.1.1 収集機能概要図 4</a></p>
+<p><a class="reference external" href="#収集機能データ登録処理概要図">1.1.2 収集機能データ登録処理概要図 5</a></p>
+<p><a class="reference external" href="#パラメータシートへの登録方法について">1.2 パラメータシートへの登録方法について
+6</a></p>
+<p><a class="reference external" href="#収集機能の動作要件">1.2.3 収集機能の動作要件 6</a></p>
+<p><a class="reference external" href="#収集機能でのディレクトリファイル構造変数取り扱い">2 収集機能でのディレクトリ、ファイル構造、変数取り扱い
+7</a></p>
+<p><a class="reference external" href="#収集対象ディレクトリファイル構造">2.1 収集対象ディレクトリ、ファイル構造
+7</a></p>
+<p><a class="reference external" href="#収集対象のファイルフォーマット">2.1.1 収集対象のファイルフォーマット
+7</a></p>
+<p><a class="reference external" href="#収集対象ディレクトリ構造">2.1.2 収集対象ディレクトリ構造 7</a></p>
+<p><a class="reference external" href="#取り扱う変数と種類">2.2 取り扱う変数と種類 10</a></p>
+<p><a class="reference external" href="#_Toc101979290">3 収集機能 コンソールメニュー構成 11</a></p>
+<p><a class="reference external" href="#メニュー画面一覧">3.1 メニュー/画面一覧 11</a></p>
+<p><a class="reference external" href="#収集機能の利用手順">4 収集機能の利用手順 13</a></p>
+<p><a class="reference external" href="#_Toc101979293">4.1 作業フロー 13</a></p>
+<p><a class="reference external" href="#収集機能作業フロー">4.1.1 収集機能作業フロー 13</a></p>
+<p><a class="reference external" href="#収集機能操作方法説明">5 収集機能・操作方法説明 15</a></p>
+<p><a class="reference external" href="#ansible-共通コンソール">5.1 Ansible 共通コンソール 15</a></p>
+<p><a class="reference external" href="#収集インターフェース情報">5.1.1 収集インターフェース情報 15</a></p>
+<p><a class="reference external" href="#収集項目値管理">5.1.2 収集項目値管理 17</a></p>
+<p><a class="reference external" href="#ansible-legacyansible-pioneeransible-legacyroleコンソール">5.2 Ansible-Legacy、Ansible-Pioneer、Ansible-LegacyRoleコンソール
+20</a></p>
+<p><a class="reference external" href="#収集状況の確認">5.2.1 収集状況の確認 20</a></p>
+<p><a class="reference external" href="#backyardコンテンツ">5.3 BackYardコンテンツ 22</a></p>
+<p><a class="reference external" href="#パラメータシートへの登録処理の概要">5.3.1 パラメータシートへの登録処理の概要
+22</a></p>
+<p><a class="reference external" href="#運用操作">6 運用操作 23</a></p>
+<p><a class="reference external" href="#メンテナンス">6.1 メンテナンス 23</a></p>
+<p><a class="reference external" href="#メンテナンス方法について">6.2 メンテナンス方法について 23</a></p>
+<p><a class="reference external" href="#_Toc101979306">7 付録 25</a></p>
+<p><a class="reference external" href="#参考資材">7.1 参考資材 25</a></p>
+<p><a class="reference external" href="#収集実行例">7.2 収集実行例 27</a></p>
+<p><a class="reference external" href="#複数ファイルの同一メニューを対象とした場合">7.2.1 複数ファイルの同一メニューを対象とした場合
+27</a></p>
+<p><a class="reference external" href="#収集対象ファイルの値の取り扱い">7.2.2 収集対象ファイルの値の取り扱い
+28</a></p>
+<p><a class="reference external" href="#複数の同一ファイル名がアップロード対象ファイルの指定例">7.2.3 複数の同一ファイル名がアップロード対象ファイルの指定例
+32</a></p>
+<p><a class="reference external" href="#ファイル削除時の収集対象ファイル内の記載例">7.2.4 ファイル削除時の収集対象ファイル内の記載例
+33</a></p>
+</section>
+<section id="id2">
+<h1>はじめに<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h1>
+<p>本書では、ITAの機能および操作方法について説明します。</p>
+</section>
+<section id="id3">
+<h1>収集機能概要<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h1>
+<p>本章では収集機能について説明します。</p>
+<section id="id4">
+<h2>収集機能について<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><p>収集機能とは、ITAで実施した、作業実行結果（規定のフォーマットで出力されたソースファイル）を元に、パラメータシートへ値を自動で登録する機能です。</p>
+<p>本機能は、Ansible-Driverを対象としています。</p>
+<p>Ansibleの詳細情報については、「Ansibleの製品マニュアル」を参照してください。</p>
+<p>Ansible-Driverの詳細情報については、「利用手順マニュアル
+Ansible-driver」を参照してください。</p>
+<p>パラメータシートの詳細については、「利用手順マニュアル
+メニュー作成機能」を参照してください。</p>
+</div></blockquote>
+<section id="id5">
+<h3>収集機能概要図<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
+<blockquote>
+<div><p>以下は、収集機能実行までの全体の概要図です。</p>
+</div></blockquote>
+</section>
+<section id="id6">
+<h3>収集機能データ登録処理概要図<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h3>
+<blockquote>
+<div><p>以下は、収集機能のデータ登録処理の概要図です。</p>
+</div></blockquote>
+<p><a class="reference internal" href="../../../../_images/image4.emf"><img alt="image2" src="../../../../_images/image4.emf" style="width: 6.23056in; height: 5in;" /></a></p>
+<p>※収集機能のデータ型の取り扱い例については、「<strong>7.2.2収集対象ファイルの値の取り扱い</strong>」をご参照ください。</p>
+</section>
+</section>
+<section id="id7">
+<h2>パラメータシートへの登録方法について<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h2>
+<p>収集機能は、ITAのオプションとして機能し、ITAの標準RESTAPI機能を利用してパラメータシートへの登録処理を実施します。</p>
+<blockquote>
+<div><p>RESTAPI機能の詳細については、「利用手順マニュアル_RestAPI」を参照してください。</p>
+</div></blockquote>
+<section id="id8">
+<h3>収集機能の動作要件<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h3>
+<p>ITAで以下の設定がされていること。</p>
+<ul class="simple">
+<li><p>ITA　インストーラにて、「createparam」、「ansible_driver」が選択され、インストールされている</p></li>
+<li><p>メニュー定義/作成にて、パラメータシート（ホスト/オペレーションあり）が作成されている</p></li>
+<li><p>設定値項目管理にて、登録情報（ソースファイル）とパラメータシートの項目と紐づけ設定がされている</p></li>
+<li><p>収集インターフェース情報のRESTアクセス情報を更新済み</p></li>
+<li><p>収集対象機器（ホスト名）が、機器一覧に登録済み</p></li>
+</ul>
+<p>作業実行後に、以下の状態である場合、パラメータシートへの登録を実施します。</p>
+<ul class="simple">
+<li><p>作業実行の結果、正常に完了している</p></li>
+<li><p>作業実行の出力結果として、規定の構造でディレクトリ、ファイルが配置されている</p></li>
+</ul>
+<blockquote>
+<div><p>※パラメータシートへの登録元となるソースファイルを生成するIaC（Playbook、Role）については、各ユーザー様で準備する必要があります。</p>
+<div class="line-block">
+<div class="line">参考： Ansible Playbook Collection（OS設定収集）</div>
+<div class="line"><a class="reference external" href="https://github.com/exastro-suite/playbook-collection-docs/blob/master/README.ja.md">https://github.com/exastro-suite/playbook-collection-docs/blob/master/README.ja.md</a></div>
+</div>
+</div></blockquote>
+</section>
+</section>
+</section>
+<section id="id9">
+<h1>収集機能でのディレクトリ、ファイル構造、変数取り扱い<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h1>
+<section id="id10">
+<h2>収集対象ディレクトリ、ファイル構造<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">¶</a></h2>
+<ol class="arabic">
+<li><p class="rubric" id="id11">収集対象のファイルフォーマット</p>
+<ol class="arabic simple">
+<li><p>Yaml形式で出力されたファイル</p></li>
+</ol>
+</li>
+<li><p class="rubric" id="id12">収集対象ディレクトリ構造</p>
+</li>
+</ol>
+<p>収集対象ディレクトリについて、収集対象ディレクトリパス（ソースファイルの出力先として）をIaC(Playbook,Role)内にて、で以下の変数として扱えます。</p>
+<p>表 2-1　収集機能対象ディレクトリITA 独自変数</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>ITA独自変数</strong></p></th>
+<th class="head"><p><strong>変数指定内容</strong></p></th>
+<th class="head"><p><strong>備考</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>__parameter_dir__</p></td>
+<td><p>作業結果ディレクトリ配
+下の「_parameters」のパス</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>__parameters_file_dir__</p></td>
+<td><p>作業結果ディレクトリ配下の
+「_parameters_file」のパス</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>_
+_parameters_dir_for_epc__</p></td>
+<td><p>作業ディレクトリ配
+下の「_parameters」のパス</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>__para
+<a href="#id71"><span class="problematic" id="id72">meters_file_dir_for_epc_</span></a>_</p></td>
+<td><p>作業ディレクトリ配下の
+「_parameters_file」のパス</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p>収集対象のディレクトリ（_parameters）の上位ディレクトリのパスについて、「Ansible共通」-「インターフェース情報」の「データリレイストレージパス(Ansible)」、Ansible-Driverの実行モード、実施した作業Noに依存します。</p>
+</div></blockquote>
+<p>表 2-2　収集機能対象ディレクトリ、ファイル階層</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>階層構造</strong></p></th>
+<th class="head"><p><strong>備考</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>【上位ディレクトリ】</p>
+<p>|- _parameters 　※1</p>
+<p>| |- localhost 　※2</p>
+<p>| |- SAMPLE.yml 　※3</p>
+<p>|- _parameters_file ※4</p>
+<p>| |- localhost 　※2</p>
+<p>　　　　<a href="#id13"><span class="problematic" id="id14">|</span></a>- test.txt 　※5</p>
+</td>
+<td><p>※1 収集対象ディレクトリ（名称固定）</p>
+<p>※2ホスト名</p>
+<p>（
+機器一覧に登録されているものが収集対象）</p>
+<p>※3 収集対象ファイル</p>
+<p>※4収集対象ディレ
+クトリファイルアップロード用（名称固定）</p>
+<p>※5ファイルアップロード対象ファイル</p>
+</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p>※データリレイストレージパス(Ansible)以降の階層構造</p>
+</div></blockquote>
+<p>ソースファイルを生成するPlaybookを作成する際、の出力先について、「表
+2-1　収集機能対象ディレクトリITA
+独自変数」を使用しない場合、以下の構造を認識してPlaybookを記述する必要があります。</p>
+<p>表 2-3　 Ansible-Driverモード別上位ディレクトリパス</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>モード</strong></p></th>
+<th class="head"><p><strong>モード別</strong></p>
+<p><strong>識別子</strong></p>
+</th>
+<th class="head"><p><strong>階層構造</strong></p></th>
+<th class="head"><p><strong>備考</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ansible-Legacy</p></td>
+<td><p>legacy/ns/</p></td>
+<td><p>/データリレイ
+ストレージパス(An
+sible）/legacy/ns/</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Ansible-Pioneer</p></td>
+<td><p>pioneer/ns/</p></td>
+<td><p>/データリ
+レイストレージパス
+(Ansible）/pioneer
+/ns/</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Ansible-LegacyRole</p></td>
+<td><p>legacy/rl/</p></td>
+<td><p>/データリレイ
+ストレージパス(An
+sible）/legacy/rl/</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>e.g.)　収集対象ファイルのファイルパス、ディレクトリ構造</p>
+<p>実行モード： Ansible-Legacy</p>
+<p>作業No ： 1</p>
+<p>対象ホスト： localhost</p>
+<p>作業実行ディレク
+トリ；/データリレイストレージパス(Ansible）/legacy/ns/0000000001/in/</p>
+<p>作業結果ディレクト
+リ；/データリレイストレージパス(Ansible）/legacy/ns/0000000001/out/</p>
+<p>収集対象ファイルパス、ディレクトリ構造：</p>
+<p>/データリレイストレージパス
+(Ansible）/legacy/ns/0000000001/in/_parameters/localhost/SAMPLE.yml</p>
+<p>/データリレイストレージパス(Ans
+ible）/legacy/ns/0000000001/in/_parameters/localhost/OS/RH_snmpd.yml</p>
+<p>/データリレイストレージパス(A
+nsible）/legacy/ns/0000000001/in/_parameters_file/localhost/TEST.txt</p>
+<p>もしくは、</p>
+<p>/データリレイストレージパス
+(Ansible）/legacy/ns/0000000001/out/_parameters/localhost/SAMPLE.yml</p>
+<p>/データリレイストレージパス(Ansi
+ble）/legacy/ns/0000000001/out/_parameters/localhost/OS/RH_snmpd.yml</p>
+<p>/データリレイストレージパス(An
+sible）/legacy/ns/0000000001/out/_parameters_file/localhost/TEST.txt</p>
+</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p>ファイルアップロードのメニューを収集対象とする場合、ソースファイルの変数の値（ファイル名/ファイルパス）と該当するファイル、が_parameters_file配下に配置されている必要があります。</p>
+<p>収集項目値管理の設定は、「5.1.2収集項目値管理」参照してください。</p>
+<p>ファイルアップロードの最大ファイルサイズについて、サーバースペックに依存するため、詳細は、「利用手順マニュアル_RestAPI」を参照してください</p>
+</div></blockquote>
+<p>_parameters_file配下に配置されているアップロード対象ファイルの指定方法として、以下の記載方法があります。</p>
+<p>表 2-4　 アップロード対象ファイルの指定方法</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>指定方式</strong></p></th>
+<th class="head"><p><strong>YAMLファイルへの記載方法</strong></p></th>
+<th class="head"><p><strong>備考</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ファイル名指定</p></td>
+<td><p>VAR_FILE_NAME : &lt;‘ファイル名&gt;’</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>ファイルパス指定</p>
+<p>(完全一致)</p>
+</td>
+<td><p>VAR_FILE_NAME :
+‘/
+&lt;上位ディレクトリ&gt;/_parameters_file/
+localhost/&lt;階層X&gt;/&lt;ファイル名&gt;’</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ファイルパス指定</p>
+<p>(後方一致)</p>
+</td>
+<td><p>VAR_FILE_NAME :
+‘/&lt;階層X&gt;/&lt;ファイル名&gt;’</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p>※ファイル名指定時、該当するファイルが複数存在する場合、対象となるファイルは、ランダムとなります。</p>
+<p>ファイルパス指定(完全一致)時、該当するパスにあるファイルとなります。</p>
+<p>ファイルパス指定(後方一致)時、該当するファイルが複数ある場合、対象となるファイルは、ランダムとなります。</p>
+</div></blockquote>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>e.g.)
+通常変数の構造の変数の場合のディレクトリ構造とソースファイルの内容</p>
+<p>■構造</p>
+<p>【上位ディレクトリ】</p>
+<p>|- _parameters</p>
+<p>| |- localhost</p>
+<p>| |- SAMPLE.yml ※ソースファイル</p>
+<p>|- _parameters_file</p>
+<p>| |- localhost</p>
+<p>| |- test.txt ※アップロード対象ファイル</p>
+<p>| |- APP001</p>
+<p>|- config ※アップロード対象ファイル</p>
+<p>■収集対象ファイル名：SAMPLE.yml</p>
+<p>■ファイルの内容</p>
+<p>VAR_upload_file: test.txt</p>
+<p>VAR_upload_fileX: config</p>
+<p>VAR_upload_fileY: ‘/&lt;上位ディレクトリ&gt;/_parameters_file /localhost
+/APP001/config’</p>
+<p>VAR_upload_fileZ: ‘/APP001/config’</p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id15">
+<h2>取り扱う変数と種類<a class="headerlink" href="#id15" title="この見出しへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><p>収集機能で扱うソースファイル内で扱える変数は以下の3種類があります。</p>
+</div></blockquote>
+<p>表2.1変数の種類</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>種類</p></th>
+<th class="head"><p>内容</p></th>
+<th class="head"><p>備考</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>通常変数</p></td>
+<td><p>変数
+名に対して具体値を1つ定義できる変数です。</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>e.g.)</p>
+<p>VAR_users: root</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>複数具体値変数</p></td>
+<td><p>変数
+名に対して具体値を複数定義できる変数です。</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>e.g.)</p>
+<p>VAR_users:</p>
+<ul class="simple">
+<li><p>root</p></li>
+<li><p>mysql</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>多段変数</p></td>
+<td><p>階層化された変数です。</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>e.g.)</p>
+<p>VAR_users:</p>
+<ul class="simple">
+<li><p>user-name: alice</p></li>
+</ul>
+<p>authorized: password</p>
+<p>メンバー
+変数名は、下記の7文字を除くascii文字</p>
+<div class="line-block">
+<div class="line">(0x20～0x7e)が使用出来ます。</div>
+<div class="line">　&quot; . [ ] ' \ :</div>
+</div>
+<p>尚、コーテーショ
+ンで囲まないと変数名の先頭に使用出来</p>
+<p>ない文字がいくつかあり
+ます。詳しくは、Ansibleドキュメント
+Yaml sntaxを参照くだ<a class="reference external" href="https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html#gotchas">Yaml
+synt
+ax</a>を参照下さい。</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id16">
+<h1>収集機能 コンソールメニュー構成<a class="headerlink" href="#id16" title="この見出しへのパーマリンク">¶</a></h1>
+<p>本章では、ITAコンソールのメニュー構成について説明します</p>
+<section id="id17">
+<h2>メニュー/画面一覧<a class="headerlink" href="#id17" title="この見出しへのパーマリンク">¶</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Ansible共通コンソールのメニュー</strong></p></li>
+</ol>
+<blockquote>
+<div><p>Ansible共通コンソールのメニュー一覧を以下に記述します。</p>
+</div></blockquote>
+<p>表 3-1共通コンソール メニュー/画面一覧</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>メニューグループ</p></th>
+<th class="head"><p>メニュー・画面</p></th>
+<th class="head"><p>説明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Ansible共通</p>
+<p>コンソール</p>
+</td>
+<td><p>収集イ
+ンターフェース情報</p></td>
+<td><p>パラメータシート
+へのデータの登録時
+に使用する、ITA標
+準REST機能にアクセ
+スするサーバへの接
+続インターフェース
+情報を管理します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td></td>
+<td><p>設定項目値管理</p></td>
+<td><p>作
+業実行の出力結果（
+ソースファイル）と
+、パラメータシート
+の項目の紐づけ設定
+を行い、収集機能で
+登録する対象パラメ
+ータを管理します。</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple">
+<li><p><strong>Ansibleコンソールのメニュー</strong></p></li>
+</ol>
+<blockquote>
+<div><p>各Ansibleコンソールに対応するメニュー一覧を以下に記述します。</p>
+</div></blockquote>
+<p>表 3-2 Ansible driverコンソール メニュー/画面一覧</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>メニュー
+グループ</p></th>
+<th class="head"><p>メニュ
+ー・画面</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td><p><strong>Ansible
+コン
+ソール</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Legacy</p></td>
+<td><p>Legacy
+Role</p></td>
+<td><p>Pioneer</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>14</p></td>
+<td><p><strong>○</strong></p></td>
+<td><p><strong>○</strong></p></td>
+<td><p><strong>○</strong></p></td>
+<td><p>作業管理</p></td>
+<td><p>作業実行
+履歴を管
+理します</p>
+<p>収集機能
+によるパ
+ラメータ
+シートの
+登録状況
+、実行ロ
+グを参照
+します。</p>
+</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p><a class="reference internal" href="../../../../_images/image71.png"><img alt="image3" src="../../../../_images/image71.png" style="width: 6.00372in; height: 2.87662in;" /></a></p>
+</div></blockquote>
+<p><strong>図</strong> <strong>3.1‑1作業管理画面</strong></p>
+</section>
+</section>
+<section id="id18">
+<h1>収集機能の利用手順<a class="headerlink" href="#id18" title="この見出しへのパーマリンク">¶</a></h1>
+<p>収集機能の利用手順について説明します</p>
+<section id="id19">
+<h2>作業フロー<a class="headerlink" href="#id19" title="この見出しへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><p>収集機能の実施における標準的なフローは以下のとおりです。</p>
+<p>ITA　Ansible-Driverの利用方法は、「利用手順マニュアル_Ansible-Driver」を参照してください。</p>
+<p>ITA　基本コンソールの利用方法は、「利用手順マニュアル_基本コンソール」を参照してください。</p>
+</div></blockquote>
+<section id="id20">
+<h3>収集機能作業フロー<a class="headerlink" href="#id20" title="この見出しへのパーマリンク">¶</a></h3>
+<p>以下は、Ansible-Legacyで作業を実行するまでの流れです。</p>
+<section id="id23">
+<h4><a href="#id21"><span class="problematic" id="id22">**</span></a><a class="headerlink" href="#id23" title="この見出しへのパーマリンク">¶</a></h4>
+<ul class="simple">
+<li><p><strong>作業フロー詳細と参照先</strong></p></li>
+</ul>
+<ol class="arabic">
+<li><div class="line-block">
+<div class="line"><a href="#id24"><span class="problematic" id="id25">**</span></a>収集機能用のユーザーの作成
+<a href="#id26"><span class="problematic" id="id27">**</span></a>ITA
+管理コンソールの機器一覧の画面から、収集機能用のユーザーを登録します。</div>
+<div class="line">登録方法は「利用手順マニュアル_管理コンソール」
+を参照してください。</div>
+</div>
+</li>
+<li><p><strong>収集機能用のロールの作成</strong></p></li>
+</ol>
+<blockquote>
+<div><p>ITA管理コンソールのロール一覧の画面から、収集機能用のロールを登録します。</p>
+<p>登録方法は「利用手順マニュアル_管理コンソール」 を参照してください。</p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p><strong>ロール・ユーザーの紐づけ</strong></p></li>
+</ol>
+<blockquote>
+<div><p>ITA管理コンソールのロール・ユーザー紐付の画面から、ロールの紐づけを行います。</p>
+<p>登録方法は「利用手順マニュアル_管理コンソール」 を参照してください。</p>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p><strong>収集インターフェース情報の登録</strong></p></li>
+</ol>
+<blockquote>
+<div><p>Ansible共通コンソールの収集インターフェース情報の画面から、接続情報を登録します。</p>
+<p>詳細は「5.1.1 収集インターフェース情報」を参照してください。</p>
+</div></blockquote>
+<ol class="arabic" start="5">
+<li><div class="line-block">
+<div class="line"><a href="#id28"><span class="problematic" id="id29">**</span></a>パラメータシート（ホスト/オペレーションあり）の作成
+  <a href="#id30"><span class="problematic" id="id31">**</span></a>メニュー作成コンソールのメニュー定義/作成の画面からのパラメータシートを作成します。
+| 詳細は
+  「利用手順マニュアル_メニュー作成機能」を参照してください。</div>
+</div>
+</li>
+<li><p><strong>収集項目値管理の登録</strong></p></li>
+</ol>
+<blockquote>
+<div><p>Ansible共通コンソールの収集項目値管理の画面から、ソースファイルとパラメータシートの項目の紐付情報の登録をします。</p>
+<p>詳細は「5.1.2収集項目値管理」を参照してください。</p>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><dl class="simple">
+<dt><a href="#id32"><span class="problematic" id="id33">**</span></a>作業準備</dt><dd><p><a href="#id34"><span class="problematic" id="id35">**</span></a>作業実行のための準備を行います。。</p>
+</dd>
+</dl>
+</li>
+</ol>
+<blockquote>
+<div><p>詳細は、「利用手順マニュアル_Ansible-Driver」、「利用手順マニュアル_Symphony」、「利用手順マニュアル_Conductor」
+を参照してください。</p>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><dl class="simple">
+<dt><a href="#id36"><span class="problematic" id="id37">**</span></a>作業実行</dt><dd><p><a href="#id38"><span class="problematic" id="id39">**</span></a>実行日時、投入オペレーション、Movement、ワークフローを選択し処理の実行を指示します。</p>
+</dd>
+</dl>
+</li>
+</ol>
+<blockquote>
+<div><p>実行について「利用手順マニュアル_Ansible-Driver」、「利用手順マニュアル_Symphony」、「利用手順マニュアル_Conductor」
+を参照してください。</p>
+</div></blockquote>
+<ol class="arabic simple" start="9">
+<li><p><strong>収集機能実行</strong></p></li>
+</ol>
+<blockquote>
+<div><p>作業実行が完了した作業Noを収集機能の対象として、パラメータシートへの登録処理を実施します。</p>
+<p>詳細は「 5.3　BackYardコンテンツ」を参照してください。</p>
+</div></blockquote>
+<ol class="arabic simple" start="10">
+<li><p><a href="#id40"><span class="problematic" id="id41">**</span></a>収集状況確認
+<a href="#id42"><span class="problematic" id="id43">**</span></a>Ansible-Legacy/Ansible-Pioneer/Ansible-LegacyRoleコンソールの作業管理の画面では、完了した作業の収集状態の確認、ログファイルがDL可能です。</p></li>
+</ol>
+<blockquote>
+<div><p>詳細は「5.2.1収集状況の確認」を参照してください。</p>
+</div></blockquote>
+</section>
+</section>
+</section>
+</section>
+<section id="id44">
+<h1>収集機能・操作方法説明<a class="headerlink" href="#id44" title="この見出しへのパーマリンク">¶</a></h1>
+<p>本章では、収集機能で利用する各コンソールの機能について説明します。</p>
+<p>登録方法の詳細は、関連マニュアルの「利用手順マニュアル_基本コンソール」をご参照下さい。</p>
+<section id="ansible">
+<h2>Ansible 共通コンソール<a class="headerlink" href="#ansible" title="この見出しへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><p>本節では、Ansible共通コンソールでの操作について記載します。</p>
+</div></blockquote>
+<section id="id45">
+<h3>収集インターフェース情報<a class="headerlink" href="#id45" title="この見出しへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p>[収集インターフェース情報]では、収集機能で利用するITAの標準RESTAPIを利用する為、RESTAPIアクセス用の接続インターフェース情報の更新を行います。</p>
+<p><a class="reference internal" href="../../../../_images/image10.png"><img alt="image4" src="../../../../_images/image10.png" style="width: 5.65382in; height: 2.70023in;" /></a></p>
+</li>
+</ol>
+<p><strong>図</strong> <strong>5.1‑1サブメニュー画面（収集インターフェース情報）</strong></p>
+<ol class="arabic" start="2">
+<li><p>「一覧」-「更新」ボタンより、収集インターフェース情報の登録を行います。</p>
+<p><a class="reference internal" href="../../../../_images/image111.png"><img alt="image5" src="../../../../_images/image111.png" style="width: 5.475in; height: 0.70833in;" /></a></p>
+</li>
+</ol>
+<p>図 5.1‑2 更新画面（収集インターフェース情報）</p>
+<ol class="arabic" start="3">
+<li><div class="line-block">
+<div class="line">収集インターフェース情報画面の項目一覧は以下のとおりです。
+| 収集インターフェース情報が未登録または、複数レコード登録されている状態で作業実行した場合、<strong>収集機能によるパラメータシートへの登録はされません</strong>。</div>
+</div>
+</li>
+</ol>
+<p><strong>表</strong> <strong>5.1‑1　登録画面項目一覧（インタフェース情報）</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
+<th class="head"><p><strong>説明</strong></p></th>
+<th class="head"><p><strong>入力</strong></p>
+<p><strong>必須</strong></p>
+</th>
+<th class="head"><ul class="simple">
+<li></li>
+</ul>
+<p><em>入力形式*</em></p>
+</th>
+<th class="head"><ul class="simple">
+<li></li>
+</ul>
+<p><em>制約事項*</em></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>ホスト名</p></td>
+<td><p>使
+用するホス
+ト名を入力</p>
+<p>初期値
+：localhost</p>
+</td>
+<td><p>〇</p></td>
+<td><p>手動入力</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>IP</p></td>
+<td><p>使用す
+るIPを入力</p>
+<p>初期値
+：127.0.0.1</p>
+</td>
+<td><p>〇</p></td>
+<td><p>手動入力</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>R
+ESTユーザー</p></td>
+<td><p>使用す
+るITAユーザ
+ーのログイ
+ンIDを入力</p></td>
+<td></td>
+<td><p>手動入力</p></td>
+<td><p>※1</p></td>
+</tr>
+<tr class="row-even"><td><p>RES
+Tパスワード</p></td>
+<td><p>使用
+するITAユー
+ザーのログ
+インパスワ
+ードを入力</p></td>
+<td></td>
+<td><p>手動入力</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>REST方式</p></td>
+<td><p>ホスト名、
+IPのどちら
+か使用する
+ものを選択</p>
+<ul class="simple">
+<li><p>IP</p></li>
+<li><p>ホスト名</p></li>
+</ul>
+</td>
+<td><p>〇</p></td>
+<td><p>リスト選択</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>プロトコル</p></td>
+<td><p>使用
+するプロト
+コルを入力</p>
+<p>初
+期値：http</p>
+</td>
+<td><p>〇</p></td>
+<td><p>手動入力</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>ポート</p></td>
+<td><p>使用するポ
+ートを入力</p>
+<p>初期値：80</p>
+</td>
+<td><p>〇</p></td>
+<td><p>手動入力</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>備考</p></td>
+<td><p>自由記
+述欄です。</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>手動入力</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>※1　RESTユーザーに入力されたユーザーは、以下が必須にとなります。</p>
+<ul class="simple">
+<li><p>ユーザーが所属しているロールが、作成されたパラメータシートのメニューのアクセス権/アクセス許可ロールをもっている。</p></li>
+<li><p>メニューのロール情報にて、ユーザーに紐づくロールがメンテナンス可である。</p></li>
+</ul>
+<blockquote>
+<div><p>ユーザー、ロールの作成、紐付、について「利用手順マニュアル_管理コンソール」を参照してください。</p>
+</div></blockquote>
+</section>
+<section id="id46">
+<h3>収集項目値管理<a class="headerlink" href="#id46" title="この見出しへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p>[収集項目値管理]では、収集項目とパラメータシートの項目の紐付設定を行います。</p>
+<p><a class="reference internal" href="../../../../_images/image121.png"><img alt="image6" src="../../../../_images/image121.png" style="width: 5.74716in; height: 2.75357in;" /></a></p>
+</li>
+</ol>
+<p><strong>図</strong> <strong>5.1‑3サブメニュー画面（収集項目値管理）</strong></p>
+<ol class="arabic" start="4">
+<li><p>「一覧」-「登録開始」ボタンより、収集項目の登録を行います。</p>
+<p><a class="reference internal" href="../../../../_images/image131.png"><img alt="image7" src="../../../../_images/image131.png" style="width: 5.47222in; height: 0.85139in;" /></a></p>
+</li>
+</ol>
+<p>図 5.1‑4 登録画面（収集項目値管理）</p>
+<ol class="arabic simple" start="5">
+<li><p>収集項目値管理画面の項目一覧は以下のとおりです。</p></li>
+</ol>
+<p><strong>表</strong> <strong>5.1‑1　登録画面項目一覧（収集項目値管理）</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
+<th class="head"><p><strong>説明</strong></p></th>
+<th class="head"><p><strong>入力</strong></p>
+<p><strong>必須</strong></p>
+</th>
+<th class="head"><p><strong>入
+力形式</strong></p></th>
+<th class="head"><p><strong>制
+約事項</strong></p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>収集項
+目(FROM)</p></td>
+<td><p>パ
+ース形式</p></td>
+<td><p>ソ
+ースファ
+イルのフ
+ァイル形
+式を選択</p></td>
+<td><p>〇</p></td>
+<td><p>リ
+スト選択</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>PREFIX(フ
+ァイル名)</p></td>
+<td><p>ソース
+ファイル
+の拡張子
+を除いた
+ファイル
+名を入力</p></td>
+<td><p>〇</p></td>
+<td><p>手動入力</p></td>
+<td><p>※1</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>変数名</p></td>
+<td><p>変数
+名を入力</p></td>
+<td><p>〇</p></td>
+<td><p>手動入力</p></td>
+<td><p>※1</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>メン
+バー変数</p></td>
+<td><p>変数が
+、複数具
+体値、多
+段変数の
+場合入力</p></td>
+<td></td>
+<td><p>手動入力</p></td>
+<td><p>※1</p></td>
+</tr>
+<tr class="row-odd"><td><p>パラ
+メータシ
+ート(TO)</p></td>
+<td><p>メニュー
+グループ</p></td>
+<td><p>メ
+ニュー作
+成機能で
+作成され
+たメニュ
+ーの一覧
+から選択</p>
+<p>グルー
+プ名：メ
+ニュー名</p>
+</td>
+<td><p>〇</p></td>
+<td><p>リ
+スト選択</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>メニュー</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>項目</p></td>
+<td><p>項
+目を選択</p></td>
+<td><p>〇</p></td>
+<td><p>リ
+スト選択</p></td>
+<td><p>※2</p></td>
+</tr>
+</tbody>
+</table>
+<p>※1ファイル名、変数、メンバー変数入力値の例</p>
+<p>※2　同一の「パラメータシート(TO)-メニューグループ：メニュー-項目」に対して、複数の「PREFIX(ファイル名)-
+変数名」を設定している場合、ファイル順に処理が実行されます。詳しくは「
+7.2収集実行例」参照。</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>e.g.) 通常変数の構造の変数の場合</p>
+<p>■ファイル名：SAMPLE.yml</p>
+<p>■ファイルの内容</p>
+<p>VAR_sample_config_1: yes</p>
+<p>VAR_sample_config_2: test_parameter</p>
+<p>■収集値項目管理の収集項目(FROM)の入力可能な値</p>
+<p>PREFIX(ファイル名)： SAMPLE</p>
+<p>変数名： VAR_sample_config_1</p>
+<p>VAR_sample_config_2</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>e.g.) 複数具体値の構造の変数の場合</p>
+<p>■ファイル名：SAMPLE_2.yml</p>
+<p>■ファイルの内容</p>
+<p>VAR_sample2_conf:</p>
+<ul class="simple">
+<li><p>SAMPLE1</p></li>
+<li><p>SAMPLE2</p></li>
+<li><p>SAMPLE3</p></li>
+</ul>
+<p>■収集値項目管理の収集項目(FROM)の入力可能な値</p>
+<p>PREFIX(ファイル名)： SAMPLE_2</p>
+<p>変数名： VAR_sample2_conf</p>
+<p>メンバー変数： [0]</p>
+<p>[1]</p>
+<p>[2]</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>e.g.) 複数具体値の構造の変数の場合</p>
+<p>■ファイル名：RH_sshd.yml</p>
+<p>■ファイルの内容</p>
+<p>VAR_RH_sshd_config:</p>
+<ul class="simple">
+<li><p>key: PermitRootLogin</p></li>
+</ul>
+<p>value: yes</p>
+<ul class="simple">
+<li><p>key: PasswordAuthentication</p></li>
+</ul>
+<p>value: no</p>
+<p>■収集値項目管理の収集項目(FROM)の入力可能な値</p>
+<p>PREFIX(ファイル名)： RH_sshd</p>
+<p>変数名： VAR_RH_sshd_config:</p>
+<p>メンバー変数： [0].key</p>
+<p>[0].value</p>
+<p>[1].key</p>
+<p>[1].value</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>e.g.) 複数具体値の構造の変数の場合2</p>
+<p>■ファイル名：RH_snmp.yml</p>
+<p>■ファイルの内容</p>
+<p>VAR_RH_snmpd_info:</p>
+<p>com2sec:</p>
+<ul class="simple">
+<li><p>sec_name: &quot;testsec&quot;</p></li>
+</ul>
+<p>source: &quot;192.168.1.0/24&quot;</p>
+<p>community: &quot;public&quot;</p>
+<ul class="simple">
+<li><p>sec_name: &quot;local&quot;</p></li>
+</ul>
+<p>source: &quot;localhost&quot;</p>
+<p>community: &quot;private&quot;</p>
+<p>■収集値項目管理の収集項目(FROM)の入力可能な値</p>
+<p>PREFIX(ファイル名)： RH_snmp</p>
+<p>変数名： VAR_RH_snmp_config:</p>
+<p>メンバー変数： com2sec[0].sec_name</p>
+<p>com2sec[0].source</p>
+<p>com2sec[0].community</p>
+<p>com2sec[1].sec_name]</p>
+<p>com2sec[1].source</p>
+<p>com2sec[1].community</p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ansible-legacyansible-pioneeransible-legacyrole">
+<h2>Ansible-Legacy、Ansible-Pioneer、Ansible-LegacyRoleコンソール<a class="headerlink" href="#ansible-legacyansible-pioneeransible-legacyrole" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="id47">
+<h3>収集状況の確認<a class="headerlink" href="#id47" title="この見出しへのパーマリンク">¶</a></h3>
+<blockquote>
+<div><p>各コンソール（Ansible-Legacy/Ansible-Pioneer/Ansible-LegacyRole）の作業管理の画面では、</p>
+<p>完了した作業の収集状態の確認、ログファイルがDL可能です。</p>
+<p><a class="reference internal" href="../../../../_images/image71.png"><img alt="image8" src="../../../../_images/image71.png" style="width: 5.78688in; height: 2.77273in;" /></a></p>
+<p><strong>図</strong> <strong>5.2‑1作業管理画面</strong></p>
+<p><strong>表</strong> <strong>5.2‑1　作業管理画面収集状況詳細</strong></p>
+</div></blockquote>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
+<th class="head"><p><strong>説明</strong></p></th>
+<th class="head"><p><strong>備考</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ステータス</p></td>
+<td><p>収集機能の実行状況の表示</p>
+<p>対
+象外：収集機能対象外　（対象ファイルなし）</p>
+<p>収集済み：収集機能実施済み</p>
+<p>収集済み（
+通知あり）：登録/更新中に不備があった場合</p>
+<p>収集エラー：Moveme
+ntのオペレーション、ホストに不備がある場合</p>
+</td>
+<td><p>※</p></td>
+</tr>
+<tr class="row-odd"><td><p>収集ログ</p></td>
+<td><p>収集機能実行のログをダウンロード</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p>**　表** <strong>5.2‑2　収集状況詳細</strong></p>
+</div></blockquote>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>作
+業状態</strong></p></th>
+<th class="head"><p><strong>収集機
+能対象</strong></p></th>
+<th class="head"><p><strong>収
+集状況</strong></p></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>ステ
+ータス</strong></p></td>
+<td><p><strong>対象フ
+ァイル</strong></p></td>
+<td></td>
+<td><p><strong>ステ
+ータス</strong></p></td>
+<td><p><strong>収
+集ログ</strong></p></td>
+<td><p><strong>備考</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>完了以外</p></td>
+<td><p>なし</p></td>
+<td><p>対象外</p></td>
+<td><p>空</p></td>
+<td><p>空</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>完了以外</p></td>
+<td><p>あり</p></td>
+<td><p>対象外</p></td>
+<td><p>空</p></td>
+<td><p>空</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>完了</p></td>
+<td><p>なし</p></td>
+<td><p>対象</p></td>
+<td><p>対象外</p></td>
+<td><p>ログファ
+イルあり</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>完了</p></td>
+<td><p>あり</p></td>
+<td><p>対象</p></td>
+<td><p>収集済み</p></td>
+<td><p>ログファ
+イルあり</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>完了</p></td>
+<td><p>あり</p></td>
+<td><p>対象</p></td>
+<td><p>収集
+済み（通
+知あり）</p></td>
+<td><p>ログファ
+イルあり</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>※ステータスの表記について</p>
+<ul class="simple">
+<li><p>作業状態が完了でない場合、収集機能対象外の為、収集状況は更新されないため、空のままとなります。</p></li>
+<li><p>作業状態が完了で、収集対象ファイルが存在しない場合、ステータスは収集済み、収集ログは空の状態となります。</p></li>
+<li><p>収集インターフェース情報、設定項目値管理、メニューのアクセス権/アクセス許可ロールの不備により、RESTAPIの登録処理が失敗した場合でも収集済み（通知あり）となります。詳細は、収集ログ内を参照。</p></li>
+</ul>
+<p>ログファイル出力内容例</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>e.g.) ログファイル出力内容例 (登録処理成功)</p>
+<p>2020-11-13 13:51:02 Collect START ( ホスト名:ita-sample
+ファイル名:RH_snmpd )</p>
+<p>2020-11-13 13:51:02 REST DATA ( ホスト名: ita-sample メニューID:
+0000000004 オペレーションNO: 1 )</p>
+<p>Array</p>
+<p>(</p>
+<p>[0] =&gt;
+<a class="reference external" href="http://127.0.0.1:80/default/menu/07_rest_api_ver1.php?no=0000000004">http://127.0.0.1:80/default/menu/07_rest_api_ver1.php?no=0000000004</a></p>
+<p>[1] =&gt; [[&quot;更新&quot;,&quot;&quot;,&quot;3&quot;,&quot;ita-sample&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;2023/10/26
+16:35_1:OP001&quot;,&quot;Root &lt;<a class="reference external" href="mailto:root&#37;&#52;&#48;localhost">root<span>&#64;</span>localhost</a>&gt; (configure
+\/etc/snmp/snmp.local.conf)&quot;,&quot;Unknown (edit
+\/etc/snmp/snmpd
+.conf)&quot;,&quot;public&quot;,&quot;notConfigUser&quot;,&quot;&quot;,&quot;&quot;,&quot;T_20201111115557819037&quot;,&quot;&quot;]]</p>
+<p>[2] =&gt;
+{&quot;status&quot;:&quot;SUCCEED&quot;,&quot;resultdata&quot;:{&quot;LIST&quot;
+:{&quot;NORMAL&quot;:{&quot;register&quot;:{&quot;name&quot;:&quot;登録&quot;,&quot;ct&quot;:0},&quot;update&quot;:{&quot;name&quot;:&quot;更新
+&quot;,&quot;ct&quot;:1},&quot;delete&quot;:{&quot;name&quot;:&quot;廃止&quot;,&quot;ct&quot;:0},&quot;revive&quot;:{&quot;name&quot;:&quot;復活&quot;,&quot;
+ct&quot;:0},&quot;error&quot;:{&quot;name&quot;:&quot;エラー&quot;,&quot;ct&quot;:0}},&quot;RAW&quot;:[[&quot;000&quot;,&quot;200&quot;,&quot;&quot;]]}}}</p>
+<p>)</p>
+<p>2020-11-13 13:51:02 Collect END ( ホスト名:ita-sample
+ファイル名:RH_snmpd )</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>e.g.) ログファイル出力内容例 (登録処理失敗)</p>
+<p>2020-11-06 13:32:52 Collect START ( ホスト名:ita-sample
+ファイル名:RH_snmpd )</p>
+<p>2020-11-06 13:32:52 [処理]RESTアクセスに失敗しました。</p>
+<p>Array</p>
+<p>(</p>
+<p>[0] =&gt;
+<a class="reference external" href="http://127.0.0.1:80/default/menu/07_rest_api_ver1.php?no=0000000005">http://127.0.0.1:80/default/menu/07_rest_api_ver1.php?no=0000000005</a></p>
+<p>[1] =&gt; [[&quot;登録&quot;,&quot;&quot;,&quot;&quot;,&quot;ita-sample&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;2023/10/26
+16:35_1:OP001&quot;,&quot;Root &lt;<a class="reference external" href="mailto:root&#37;&#52;&#48;localhost">root<span>&#64;</span>localhost</a>&gt;(configure
+\/etc/snmp/snmp.local.conf)&quot;,&quot;Unknown (edit
+\/etc/snmp/snmpd.conf)&quot;,&quot;public&quot;,&quot;notConfigUser&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;]]</p>
+<p>[2] =&gt; {&quot;Error&quot;:メンテナンス権限がありません。&quot;,&quot;Exception&quot;:&quot;Generic
+error&quot;,&quot;StackTrace&quot;:&quot;none&quot;}</p>
+<p>)</p>
+<p>2020-11-06 13:32:52 Collect END ( ホスト名:ita-sample
+ファイル名:RH_snmpd )</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>e.g.) ログファイル出力内容例 (対象外)</p>
+<p>2020-11-05 16:55:31
+[処理]対象機器が登録されていない
+か、廃止されているため、登録、更新処理をスキップ(ホスト名:ita-test)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="backyard">
+<h2>BackYardコンテンツ<a class="headerlink" href="#backyard" title="この見出しへのパーマリンク">¶</a></h2>
+<ol class="arabic">
+<li><p class="rubric" id="id48">パラメータシートへの登録処理の概要</p>
+<ol class="arabic simple">
+<li><p>収集インターフェース情報の取得</p></li>
+<li><p>正常に完了した作業の一覧を取得</p></li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<div><p>収集対象ステータス： 完了</p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>収集対象作業Noから以下の情報を取得</p></li>
+</ol>
+<ul class="simple">
+<li><p>オペレーション情報</p></li>
+<li><p>対象ホスト</p></li>
+<li><p>対象ソースファイル</p>
+<ol class="arabic simple">
+<li><p>対象のホストが機器一覧に登録されているか問い合わせ</p></li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<div><p>登録： 収集対象</p>
+<p>未登録： 対象外</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>対象ソースファイルと収集項目値管理から対象パラメータシートのメニューIDを取得</p></li>
+</ol>
+<blockquote>
+<div><p>※対象ソースファイルが複数ある場合、ファイル名の昇順で処理を実行します。</p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>(1)～（4）の情報からRESTAPIのパラメータを生成</p></li>
+</ol>
+<blockquote>
+<div><p>対象のメニューIDに対して、データの問い合わせを実施し、RESTAPIの実行種別を判定</p>
+<p>登録：　一意のオペレーション、ホスト組み合わせのデータが登録されていない</p>
+<p>更新：　一意のオペレーション、ホスト組み合わせのデータが登録されている</p>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>ITA標準RESTAPI機能にて、データの登録/更新を実施します。</p></li>
+<li><p>作業Noに収集状況のステータスを更新</p></li>
+</ol>
+<blockquote>
+<div><p>なお、パラメータシートへのデータ登録のタイミングは自動プロセスの起動周期に依存します。</p>
+<p>起動周期の変更については、後述「
+<strong>6.2メンテナンス方法について</strong>」を参照してください。</p>
+<p>登録・更新されたレコードのアクセス権/アクセス許可ロールは、収集対象の作業結果のアクセス権/アクセス許可ロールを継承します。</p>
+<p>対象の作業結果については、別紙「Exastro-ITA_利用手順マニュアル_Ansible-driver」を参照してください。</p>
+</div></blockquote>
+</section>
+</section>
+<section id="id49">
+<h1>運用操作<a class="headerlink" href="#id49" title="この見出しへのパーマリンク">¶</a></h1>
+<p>本機能を活用する操作は、クライアントPCのブラウザ画面からのユーザー利用による入力だけでなく、システム運用・保守による操作もあります。用意している運用・保守の操作は次のとおりです。</p>
+<section id="id50">
+<h2>メンテナンス<a class="headerlink" href="#id50" title="この見出しへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><p>収集機能のプロセスの開始/停止/再起動に必要なファイルは以下となります。</p>
+</div></blockquote>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>説明</strong></p></th>
+<th class="head"><p><strong>対象ファイル名</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>パラメータ自動登録</p>
+<p>作業実
+行が完了した、作業結果から、設定
+項目値管理に登録した情報を元に、
+パラメータシートへの登録を行う。</p>
+</td>
+<td><p>ky_s
+td_synchronize-Collector.service</p></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p>対象ファイルは「/usr/lib/systemd/system」に格納されています。</p>
+<p>プロセス起動/停止/再起動の方法は次の通りです。</p>
+<p>root権限でコマンドを実行してください。</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>プロセス起動</p></li>
+<li><p>プロセス停止</p></li>
+<li><p>プロセス再起動</p></li>
+</ol>
+<blockquote>
+<div><p>各対象ファイル名に置き換えて起動/停止/再起動を行ってください。</p>
+</div></blockquote>
+</section>
+<section id="id51">
+<h2>メンテナンス方法について<a class="headerlink" href="#id51" title="この見出しへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><p>①　NORMALレベルへの変更</p>
+<p>　以下のファイルの8行目「DEBUG」を「NORMAL」に書き換えます。</p>
+<p>　ログレベル設定ファイル：
+&lt;インストールディレクトリ&gt;/ita-root/confs/backyardconfs/ita_env</p>
+<p>②　DEBUGレベルへの変更</p>
+<p>　以下のファイルの8行目「NORMAL」を「DEBUG」に書き換えます。</p>
+<p>　ログレベル設定ファイル：
+&lt;インストールディレクトリ&gt;/ita-root/confs/backyardconfs/ita_env</p>
+<p>③ 起動周期の変更</p>
+<p>　各対象ファイルのExecStartの5番目のパラメータを変更します。（単位:秒）</p>
+<p>　例外を除き起動周期はデフォルト値の使用をしてください。</p>
+</div></blockquote>
+<p>書き換え後、<strong>プロセス再起動(restart)後に有効になります。</strong></p>
+<p>ログファイルの出力先：
+<em>&lt;インストールディレクトリ&gt;/ita-root/logs/backyardlogs</em></p>
+<ol class="arabic">
+<li><p class="rubric" id="id52">付録</p>
+<ol class="arabic">
+<li><p class="rubric" id="id53">参考資材</p>
+</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<div><p>以下、IaC(Playbook、Role)の参考例となります。</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Ansible Playbook Collection（OS設定収集）</p></li>
+</ol>
+<blockquote>
+<div><p><a class="reference external" href="https://github.com/exastro-suite/playbook-collection-docs/blob/master/README.ja.md">https://github.com/exastro-suite/playbook-collection-docs/blob/master/README.ja.md</a></p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Ansibleコンフィグ取得、パラメータ生成Playbook</p></li>
+</ol>
+<blockquote>
+<div><p>makeYml_Ansible.yml</p>
+</div></blockquote>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><ul class="simple">
+<li><p>name: make yaml file</p></li>
+</ul>
+<p>blockinfile:</p>
+<p>create: yes</p>
+<p>mode: 0644</p>
+<p>insertbefore: EOF</p>
+<p>marker: &quot;&quot;</p>
+<p>dest: &quot;/tmp/Ansible_conf.yml&quot;</p>
+<p>content: |</p>
+<p>ansible_architecture: {{ ansible_architecture }}</p>
+<p>ansible_bios_version: {{ ansible_bios_version }}</p>
+<p>ansible_default_ipv4__address: {{ ansible_default_ipv4.address }}</p>
+<p>ansible_default_ipv4__interface: {{ ansible_default_ipv4.interface
+}}</p>
+<p>ansible_default_ipv4__network: {{ ansible_default_ipv4.network }}</p>
+<p>ansible_distribution: {{ ansible_distribution }}</p>
+<p>ansible_distribution_file_path: {{ ansible_distribution_file_path }}</p>
+<p>ansible_distribution_file_variety: {{
+ansible_distribution_file_variety }}</p>
+<p>ansible_distribution_major_version: {{
+ansible_distribution_major_version }}</p>
+<p>ansible_distribution_release: {{ ansible_distribution_release }}</p>
+<p>ansible_distribution_version: {{ ansible_distribution_version }}</p>
+<p>ansible_machine: {{ ansible_machine }}</p>
+<p>ansible_memtotal_mb: {{ ansible_memtotal_mb }}</p>
+<p>ansible_nodename: {{ ansible_nodename }}</p>
+<p>ansible_os_family: {{ ansible_os_family }}</p>
+<p>ansible_pkg_mgr: {{ ansible_pkg_mgr }}</p>
+<p>ansible_processor_cores: {{ ansible_processor_cores }}</p>
+<p>ansible_processor_count: {{ ansible_processor_count }}</p>
+<p>ansible_processor_threads_per_core: {{
+ansible_processor_threads_per_core }}</p>
+<p>ansible_processor_vcpus: {{ ansible_processor_vcpus }}</p>
+<p>ansible_product_name: {{ ansible_product_name }}</p>
+<p>ansible_product_serial: {{ ansible_product_serial }}</p>
+<p>ansible_product_uuid: {{ ansible_product_uuid }}</p>
+<p>ansible_product_version: {{ ansible_product_version }}</p>
+<p>ansible_python__executable: {{ ansible_python.executable }}</p>
+<p>ansible_python_version: {{ ansible_python_version }}</p>
+<p>ansible_service_mgr: {{ ansible_service_mgr }}</p>
+<p>ansible_php_config: php.ini</p>
+<ul class="simple">
+<li><p>name: Copy the make yaml file to local</p></li>
+</ul>
+<p>fetch:</p>
+<p>src: &quot;/tmp/Ansible_conf.yml&quot;</p>
+<p>dest: &quot;{{ __parameter_dir__ }}/{{ inventory_hostname }}/&quot;</p>
+<p>flat: yes</p>
+<ul class="simple">
+<li><p>name: get php config</p></li>
+</ul>
+<p>fetch:</p>
+<p>src: /etc/php.ini</p>
+<p>dest: &quot;{{ __parameters_file_dir__ }}/{{ inventory_hostname }}/&quot;</p>
+<p>flat: yes</p>
+</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p>※　makeYml_Ansible.yml実行して、収集対象のソースファイル(yaml)を生成する場合、gather_factsを有効にする必要があります。</p>
+<p>「Ansible-Legacy」-「Movement一覧」編集時、「ヘッダーセクション」に以下を記載する。</p>
+<p>設定変更については、「利用手順マニュアル
+Ansible-driver」を参照してください。</p>
+<p>e.g) gather_facts有効設定例</p>
+</div></blockquote>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><ul class="simple">
+<li><p>hosts: all</p></li>
+</ul>
+<p>remote_user: &quot;{{ __loginuser__ }}&quot;</p>
+<p>gather_facts: yes</p>
+<p>become: yes</p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id54">
+<h2>収集実行例<a class="headerlink" href="#id54" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="id55">
+<h3>複数ファイルの同一メニューを対象とした場合<a class="headerlink" href="#id55" title="この見出しへのパーマリンク">¶</a></h3>
+<p>収集項目値管理にて、一つの「メニュー-項目」に対して、複数の「PREFIX(ファイル名)-変数名」の設定をしている場合、対象ホストの収集対象ディレクトリ内に、該当する複数のソースファイルがある場合の収集処理の例について記載します。</p>
+<p>収集対象ファイル</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>【上位ディレクトリ】</p>
+<p>|- _parameters</p>
+<p>|- ita-sample01</p>
+<p>|- SAMPLE_01.yml</p>
+<p>|- SAMPLE_02.yml</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>収集項目値管理設定</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>■ファイル名：SAMPLE_01.yml</p>
+<p>　　　　　　　　 SAMPLE_02.yml</p>
+<p>■ファイルの内容</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>SAMPLE_01.yml</p></th>
+<th class="head"><p>SAMPLE_02.yml</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>VAR_sample_config_1: 1</p></td>
+<td><p>VAR_sample_config_1: “A”</p></td>
+</tr>
+<tr class="row-odd"><td><p>VAR_sample_config_2: 2</p></td>
+<td><p>VAR_sample_config_B: “B”</p></td>
+</tr>
+<tr class="row-even"><td><p>VAR_sample_config_3: 3</p></td>
+<td><p>VAR_sample_config_X: “X”</p></td>
+</tr>
+</tbody>
+</table>
+<p>■収集値項目管理の設定と対象メニュー項目の収集例</p>
+<p>e.g) 収集値項目管理の設定と対象メニュー-項目</p>
+<p><a class="reference internal" href="../../../../_images/image141.png"><img alt="image14" src="../../../../_images/image141.png" style="width: 6.11686in; height: 2.26773in;" /></a></p>
+<p><a class="reference internal" href="../../../../_images/image151.png"><img alt="image15" src="../../../../_images/image151.png" style="width: 6.09421in; height: 0.32738in;" /></a></p>
+<p>■対象ファ
+イル、収集値項目管理の設定内容に沿って、ファイル単位に収集処理を実行</p>
+<ol class="arabic simple">
+<li><p>SAMPLE_01.ymlの登録処理（登録）</p></li>
+</ol>
+<p><a class="reference internal" href="../../../../_images/image16.png"><img alt="image16" src="../../../../_images/image16.png" style="width: 6.00785in; height: 0.51786in;" /></a></p>
+<p>2.SAMPLE_02.ymlの登録処理（更新）</p>
+<p><a class="reference internal" href="../../../../_images/image17.png"><img alt="image17" src="../../../../_images/image17.png" style="width: 6in; height: 0.52304in;" /></a></p>
+<p>3.収集機能完了後のレコードの状態</p>
+<p><a class="reference internal" href="../../../../_images/image151.png"><img alt="image18" src="../../../../_images/image151.png" style="width: 6.06086in; height: 0.52834in;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id56">
+<h3>収集対象ファイルの値の取り扱い<a class="headerlink" href="#id56" title="この見出しへのパーマリンク">¶</a></h3>
+<p>Yaml形式で出力された収集対象ファイルについて、パラメータシートへの登録処理時の値の取り扱いについて以下として扱います。</p>
+<p>Sample.yml</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>VAR_TEST: TEST</p>
+<p>VAR_STR_TEST1: 'TEST1'</p>
+<p>VAR_STR_TEST2: &quot;TEST2&quot;</p>
+<p>VAR_null: null</p>
+<p>VAR_NULL: NULL</p>
+<p>VAR_STR_null: &quot;null&quot;</p>
+<p>VAR_STR_NULL: &quot;NULL&quot;</p>
+<p>VAR_true: true</p>
+<p>VAR_false: false</p>
+<p>VAR_STR_true: &quot;true&quot;</p>
+<p>VAR_STR_false: &quot;false&quot;</p>
+<p>VAR_YES: YES</p>
+<p>VAR_NO: NO</p>
+<p>VAR_STR_YES: &quot;YES&quot;</p>
+<p>VAR_STR_NO: &quot;NO&quot;</p>
+<p>VAR_NON:</p>
+<p>VAR_Quotation: ''</p>
+<p>VAR_WQuotation: &quot;&quot;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>表 7-1　収集対象YAML(sample.yml)のキーと値</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>No</strong></p></th>
+<th class="head"><p><strong>キー</strong></p></th>
+<th class="head"><p><strong>値</strong></p></th>
+<th class="head"><p><strong>備考</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><ol class="arabic simple">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_TEST</p></td>
+<td><p>TEST</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="2">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_STR_TEST1</p></td>
+<td><p>'TEST1'</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="3">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_STR_TEST2</p></td>
+<td><p>&quot;TEST2&quot;</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="4">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_null</p></td>
+<td><p>null</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="5">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_NULL</p></td>
+<td><p>NULL</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="6">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_STR_null</p></td>
+<td><p>&quot;null&quot;</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="7">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_STR_NULL</p></td>
+<td><p>&quot;NULL&quot;</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="8">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_true</p></td>
+<td><p>true</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="9">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_false</p></td>
+<td><p>false</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="10">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_STR_true</p></td>
+<td><p>&quot;true&quot;</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="11">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_STR_false</p></td>
+<td><p>&quot;false&quot;</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="12">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_YES</p></td>
+<td><p>YES</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="13">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_NO</p></td>
+<td><p>NO</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="14">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_STR_YES</p></td>
+<td><p>&quot;YES&quot;</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="15">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_STR_NO</p></td>
+<td><p>&quot;NO&quot;</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="16">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_NON</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="17">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_Quotation</p></td>
+<td><p>''</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="18">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_WQuotation</p></td>
+<td><p>&quot;&quot;</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>表 7-2　収集対象YAML(sample.yml)の収集</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>No</strong></p></th>
+<th class="head"><p><strong>収集対象</strong></p>
+<p><strong>（
+キー:値）</strong></p>
+</th>
+<th class="head"><p>**
+パラメータシ
+ート項目名**</p></th>
+<th class="head"><p><strong>RESTAPI</strong></p></th>
+<th class="head"><p><strong>WEB画面</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><ol class="arabic simple">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_TEST:
+TEST</p></td>
+<td><p>パラメー
+タ/VAR_TEST</p></td>
+<td><p>&quot;TEST&quot;</p></td>
+<td><p>TEST</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="2">
+<li></li>
+</ol>
+</td>
+<td><p>VA
+R_STR_TEST1:
+'TEST1'</p></td>
+<td><p>パラメータ/V
+AR_STR_TEST1</p></td>
+<td><p>&quot;TEST1&quot;</p></td>
+<td><p>TEST1</p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="3">
+<li></li>
+</ol>
+</td>
+<td><p>VA
+R_STR_TEST2:
+&quot;TEST2&quot;</p></td>
+<td><p>パラメータ/V
+AR_STR_TEST2</p></td>
+<td><p>&quot;TEST2&quot;</p></td>
+<td><p>TEST2</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="4">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_null:
+null</p></td>
+<td><p>パラメー
+タ/VAR_null</p></td>
+<td><p>null</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="5">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_NULL:
+NULL</p></td>
+<td><p>パラメー
+タ/VAR_NULL</p></td>
+<td><p>null</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="6">
+<li></li>
+</ol>
+</td>
+<td><p>V
+AR_STR_null:
+&quot;null&quot;</p></td>
+<td><p>パラメータ/
+VAR_STR_null</p></td>
+<td><p>&quot;null&quot;</p></td>
+<td><p>null</p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="7">
+<li></li>
+</ol>
+</td>
+<td><p>V
+AR_STR_NULL:
+&quot;NULL&quot;</p></td>
+<td><p>パラメータ/
+VAR_STR_NULL</p></td>
+<td><p>&quot;NULL&quot;</p></td>
+<td><p>NULL</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="8">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_true:
+true</p></td>
+<td><p>パラメー
+タ/VAR_true</p></td>
+<td><p>&quot;1&quot;</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="9">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_false:
+false</p></td>
+<td><p>パラメー
+タ/VAR_false</p></td>
+<td><p>&quot;&quot;</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="10">
+<li></li>
+</ol>
+</td>
+<td><p>V
+AR_STR_true:
+&quot;true&quot;</p></td>
+<td><p>パラメータ/
+VAR_STR_true</p></td>
+<td><p>&quot;true&quot;</p></td>
+<td><p>true</p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="11">
+<li></li>
+</ol>
+</td>
+<td><p>VA
+R_STR_false:
+&quot;false&quot;</p></td>
+<td><p>パラメータ/V
+AR_STR_false</p></td>
+<td><p>&quot;false&quot;</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="12">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_YES: YES</p></td>
+<td><p>パラメ
+ータ/VAR_YES</p></td>
+<td><p>&quot;1&quot;</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="13">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_NO: NO</p></td>
+<td><p>パラメ
+ータ/VAR_NO</p></td>
+<td><p>&quot;&quot;</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="14">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_STR_YES:
+&quot;YES&quot;</p></td>
+<td><p>パラメータ
+/VAR_STR_YES</p></td>
+<td><p>&quot;YES&quot;</p></td>
+<td><p>YES</p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="15">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_STR_NO:
+&quot;NO&quot;</p></td>
+<td><p>パラメータ
+/VAR_STR_NO</p></td>
+<td><p>&quot;NO&quot;</p></td>
+<td><p>NO</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="16">
+<li></li>
+</ol>
+</td>
+<td><p>VAR_NON:</p></td>
+<td><p>パラメ
+ータ/VAR_NON</p></td>
+<td><p>null</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="17">
+<li></li>
+</ol>
+</td>
+<td><p>VA
+R_Quotation:
+''</p></td>
+<td><p>パラメータ/V
+AR_Quotation</p></td>
+<td><p>null</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="18">
+<li></li>
+</ol>
+</td>
+<td><p>VAR
+_WQuotation:
+&quot;&quot;</p></td>
+<td><p>パ
+ラメータ/VA
+R_WQuotation</p></td>
+<td><p>null</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p>※パラメータシートの値は、RESTAPIでFILTERの取得結果から、文字列に関して、””で囲った状態で記載しています。</p>
+<p>※RESTAPI（FILTER）での取得結果例、WEB画面の表示結果例について記載しています。</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>対象パラメータシートの画面上の表示結果</p></li>
+</ul>
+<p><a class="reference internal" href="../../../../_images/image18.png"><img alt="image19" src="../../../../_images/image18.png" style="width: 6.96252in; height: 1.98221in;" /></a></p>
+<ul class="simple">
+<li><p>対象パラメータシートのRESTAPI(FILTER)での取得結果</p></li>
+</ul>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>{</p>
+<p>&quot;status&quot;: &quot;SUCCEED&quot;,</p>
+<p>&quot;resultdata&quot;: {</p>
+<p>&quot;CONTENTS&quot;: {</p>
+<p>&quot;RECORD_LENGTH&quot;: 1,</p>
+<p>&quot;BODY&quot;: [</p>
+<p>[</p>
+<p>&quot;実行処理種別&quot;,</p>
+<p>&quot;廃止&quot;,</p>
+<p>&quot;No&quot;,</p>
+<p>&quot;ホスト名&quot;,</p>
+<p>&quot;オペレーション/ID&quot;,</p>
+<p>&quot;オペレーション/オペレーション名&quot;,</p>
+<p>&quot;オペレーション/基準日時&quot;,</p>
+<p>&quot;オペレーション/実施予定日時&quot;,</p>
+<p>&quot;オペレーション/最終実行日時&quot;,</p>
+<p>&quot;オペレーション/オペレーション&quot;,</p>
+<p>&quot;パラメータ/VAR_TEST&quot;,</p>
+<p>&quot;パラメータ/VAR_STR_TEST1&quot;,</p>
+<p>&quot;パラメータ/VAR_STR_TEST2&quot;,</p>
+<p>&quot;パラメータ/VAR_null&quot;,</p>
+<p>&quot;パラメータ/VAR_NULL&quot;,</p>
+<p>&quot;パラメータ/VAR_STR_null&quot;,</p>
+<p>&quot;パラメータ/VAR_STR_NULL&quot;,</p>
+<p>&quot;パラメータ/VAR_true&quot;,</p>
+<p>&quot;パラメータ/VAR_false&quot;,</p>
+<p>&quot;パラメータ/VAR_STR_true&quot;,</p>
+<p>&quot;パラメータ/VAR_STR_false&quot;,</p>
+<p>&quot;パラメータ/VAR_YES&quot;,</p>
+<p>&quot;パラメータ/VAR_NO&quot;,</p>
+<p>&quot;パラメータ/VAR_STR_YES&quot;,</p>
+<p>&quot;パラメータ/VAR_STR_NO&quot;,</p>
+<p>&quot;パラメータ/VAR_NON&quot;,</p>
+<p>&quot;パラメータ/VAR_Quotation&quot;,</p>
+<p>&quot;パラメータ/VAR_WQuotation&quot;,</p>
+<p>&quot;アクセス権/アクセス許可ロール&quot;,</p>
+<p>&quot;備考&quot;,</p>
+<p>&quot;最終更新日時&quot;,</p>
+<p>&quot;更新用の最終更新日時&quot;,</p>
+<p>&quot;最終更新者&quot;</p>
+<p>],</p>
+<p>[</p>
+<p>null,</p>
+<p>&quot;&quot;,</p>
+<p>&quot;1&quot;,</p>
+<p>&quot;local&quot;,</p>
+<p>&quot;1&quot;,</p>
+<p>&quot;OP01&quot;,</p>
+<p>&quot;2021/11/17 13:30&quot;,</p>
+<p>&quot;2021/11/23 16:04&quot;,</p>
+<p>&quot;2021/11/17 13:30&quot;,</p>
+<p>&quot;2021/11/23 16:04_1:OP01&quot;,</p>
+<p>&quot;TEST&quot;,</p>
+<p>&quot;TEST1&quot;,</p>
+<p>&quot;TEST2&quot;,</p>
+<p>null,</p>
+<p>null,</p>
+<p>&quot;null&quot;,</p>
+<p>&quot;NULL&quot;,</p>
+<p>&quot;1&quot;,</p>
+<p>&quot;&quot;,</p>
+<p>&quot;true&quot;,</p>
+<p>&quot;false&quot;,</p>
+<p>&quot;1&quot;,</p>
+<p>&quot;&quot;,</p>
+<p>&quot;YES&quot;,</p>
+<p>&quot;NO&quot;,</p>
+<p>null,</p>
+<p>null,</p>
+<p>null,</p>
+<p>&quot;&quot;,</p>
+<p>null,</p>
+<p>&quot;2021/11/17 16:04:28&quot;,</p>
+<p>&quot;T_20211117160428242847&quot;,</p>
+<p>&quot;システム管理者&quot;</p>
+<p>]</p>
+<p>],</p>
+<p>&quot;UPLOAD_FILE&quot;: []</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id57">
+<h3>複数の同一ファイル名がアップロード対象ファイルの指定例<a class="headerlink" href="#id57" title="この見出しへのパーマリンク">¶</a></h3>
+<p>Yaml形式で出力された収集対象ファイルについて、同一ホストで、階層別で同一ファイル名を取り扱う必要がある場合に、アップロード対象ファイルの指定例について記載します。</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>e.g.)　収集対象ファイルのファイルパス、ディレクトリ構造</p>
+<p>【上位ディレクトリ】</p>
+<p>|- _parameters</p>
+<p>| |- localhost</p>
+<p>| |- SAMPLE.yml</p>
+<p>|- _parameters_file</p>
+<p>| |- localhost</p>
+<p>　　　　<a href="#id58"><span class="problematic" id="id59">|</span></a>- APP001</p>
+<p>　　　　<a href="#id60"><span class="problematic" id="id61">|</span></a>- config #①</p>
+<p>　　　　<a href="#id62"><span class="problematic" id="id63">|</span></a>- APP002</p>
+<p>　　　　<a href="#id64"><span class="problematic" id="id65">|</span></a>- config #②</p>
+<p>　　　　<a href="#id66"><span class="problematic" id="id67">|</span></a>- APP003</p>
+<p>　　　　<a href="#id68"><span class="problematic" id="id69">|</span></a>- config #③</p>
+<p>　　　　 |- APP002</p>
+<p>　　　　 |- config #④</p>
+<p>■収集対象ファイル名：SAMPLE.yml</p>
+<p>■ファイルの内容</p>
+<p>VAR_upload_file_1: config</p>
+<p>VAR_upload_file_2: ‘/&lt;上位ディレクトリ&gt;/_parameters_file /localhost
+/APP002/config’</p>
+<p>VAR_upload_file_3: ‘/APP002/config’</p>
+<p>VAR_upload_file_4: ‘/APP001/config’</p>
+<p>VAR_upload_file_5: ‘/APP003/APP002/config’</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>※上位ディレクトリについては、「
+2.1収集対象ディレクトリ、ファイル構造」をご参照ください。</p>
+<p>収集対象ファイルの内容収集時に対処となるファイルの実体は以下となります。</p>
+<p>表 7-3　収集対象ファイルとファイルの実体</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>収集項目(FROM)/変数名</strong></p></th>
+<th class="head"><p><strong>対象ファイル</strong></p></th>
+<th class="head"><p><strong>備考</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>VAR_upload_file_1</p></td>
+<td><p>、①、②、③、④のファイルからランダム</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>VAR_upload_file_2</p></td>
+<td><p>、②のファイルが対象</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>VAR_upload_file_3</p></td>
+<td><p>、②、④のファイルからランダム</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>VAR_upload_file_4</p></td>
+<td><p>、①のファイルが対象</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>VAR_upload_file_5</p></td>
+<td><p>、④のファイルが対象</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id70">
+<h3>ファイル削除時の収集対象ファイル内の記載例<a class="headerlink" href="#id70" title="この見出しへのパーマリンク">¶</a></h3>
+<p>ファイルアップロード項目のファイル削除する場合の収集対象ファイルの指定例について記載します。</p>
+<p>削除するファイルについて対象の変数名の値を空文字として設定することで削除可能です。</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>e.g.)　
+ファイルア
+ップロード項目の削除収集対象ファイルのファイルパス、ディレクトリ構造</p>
+<p>■構造</p>
+<p>【上位ディレクトリ】</p>
+<p>|- _parameters</p>
+<p>| |- localhost</p>
+<p>| |- SAMPLE.yml ※ソースファイル</p>
+<p>|- _parameters_file</p>
+<p>| |- localhost</p>
+<p>■収集対象ファイル名：SAMPLE.yml</p>
+<p>■ファイルの内容</p>
+<p>VAR_upload_file: &quot;&quot; ※アップロード対象ファイル</p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+</div>
+
+
+<div id="articleNavigation">
+  <ul>
+  </ul>
+</div>
+
+
+<div id="pageTopLink">
+  <a href="#container"><i>↑</i> Page Top</a>
+</div>
+
+</article>
+</div>
+</main>
+</div><!-- End #contents -->
+<div id="footer">
+  <footer class="divInner">
+    <small>Copyright © 2023 NEC Corporation</small>
+  </footer>
+</div><!-- End #footer -->
+
+<div id="overlay"></div>
+<div id="grayBack"></div>
+
+</div><!-- End #container -->
+  </body>
+</html>

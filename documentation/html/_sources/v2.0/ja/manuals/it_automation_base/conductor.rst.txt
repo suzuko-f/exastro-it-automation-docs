@@ -125,7 +125,7 @@ Conductor一覧
 
    | 「一覧」サブメニューの :guilabel:`詳細` をクリックすると、 :ref:`conductor_editandexcute` 画面へ遷移出来ます。
 
-.. figure:: ./conductor/conductor-list.gif
+.. figure:: /images/ja/conductor/conductor_class_list/conductor-list.gif
    :width: 800px
    :alt: 「Conductor一覧」メニュー
 
@@ -166,7 +166,7 @@ Conductor編集/作業実行
 
 * 選択したNodeにより、画面右上（詳細情報）に表示される内容が変わります。
   
-.. figure:: ./conductor/conductor_main.png
+.. figure:: /images/ja/conductor/condudtor_edit_and_excute/conductor_main.png
    :width: 800px
    :alt: Conductor編集/作業実行メニュー画面(編集モード)
 
@@ -188,7 +188,6 @@ Node一覧
     * Conductor end
     * Conductor pause
     * Conductor call
-    * Symphony call
     * Conditional branch
     * Parallel branch
     * Parallel merge
@@ -270,35 +269,35 @@ Node一覧
 * Nodeにおける制約事項は以下の通りです。
 
   * 登録/更新を行うには、全てのNodeのIN/OUTが接続されている必要があります。
-  .. figure:: ./conductor/image17.png
+  .. figure:: /images/ja/conductor/condudtor_edit_and_excute/Node制約事項正常例Parallel_branch.png
       :width: 600px
       :alt: Node制約事項（正常例：Parallel branch）
 
       Node制約事項（正常例：Parallel branch）
 
   * Parallel mergeを使用する場合、Parallel branchを使用している必要があります。
-  .. figure:: ./conductor/image18.png
+  .. figure:: /images/ja/conductor/condudtor_edit_and_excute/Node制約事項NG例Parallel_branch.png
      :width: 600px
      :alt: Node制約事項（NG例：Parallel branch）
 
      Node制約事項（NG例：Parallel branch）
 
   * Conditional branch で分岐されたフローについてParallel mergeでマージする事はできません。
-  .. figure:: ./conductor/image19.png
+  .. figure:: /images/ja/conductor/condudtor_edit_and_excute/Node制約事項NG例Conditional_branch.png
      :width: 600px
      :alt: Node制約事項（NG例：Conditional branch）
 
      Node制約事項（NG例：Conditional branch）
 
   * Parallel branch、Conditional branch、Parallel merge、Conductor pauseについて、連続して同じ種類のNodeを接続する事はできません。
-  .. figure:: ./conductor/image20.png
+  .. figure:: /images/ja/conductor/condudtor_edit_and_excute/Node制約事項NG例連続使用.png
      :width: 600px
      :alt: Node制約事項（NG例：連続使用）
 
      Node制約事項（NG例：連続使用）
 
   * Conductor callについて、更新中のConductorをConductor callで指定し、更新することはできません。
-  .. figure:: ./conductor/image21.png
+  .. figure:: /images/ja/manuals/conductor/condudtor_edit_and_excute/Node制約事項NG例Conductor_call.png
      :width: 600px
      :alt: Node制約事項（NG例：Conductor call）
 
@@ -666,7 +665,7 @@ Node一覧
      * Nodeを複数選択する方法については、ドラッグアンドドロップでの範囲選択の他、「shift」キーをクリックしながらの選択が可能です。
      * タブ内の項目は以下の通りです。
      
-     .. figure:: ./conductor/align-nodes.gif
+     .. figure:: /images/ja/conductor/condudtor_edit_and_excute/align-nodes.gif
         :width: 800px
         :alt: Nodeの整列
 
@@ -781,7 +780,7 @@ Node一覧
 
 | 「Conductor一覧」メニューから遷移した場合や、登録が完了した場合は、以下の画面が表示されます。
 
-.. figure:: ./conductor/view_mode.png
+.. figure:: /images/ja/conductor/condudtor_edit_and_excute/view_mode.png
    :width: 800px
    :alt: 「Conductor編集/作業実行」メニュー（「閲覧」モード）
 
@@ -810,7 +809,7 @@ Node一覧
 
 | 閲覧モードにて :guilabel:`編集` をクリックした場合は、以下の画面が表示されます。
 
-.. figure:: ./conductor/update_mode.png
+.. figure:: /images/ja/conductor/condudtor_edit_and_excute/update_mode.png
    :width: 800px
    :alt: 「Conductor編集/作業実行」メニュー（「更新」モード）
 
@@ -882,7 +881,7 @@ Conductor作業実行について
         - ○
         - ボタン
 
-.. figure:: ./conductor/excute_conductor.gif
+.. figure:: /images/ja/conductor/condudtor_edit_and_excute/excute_conductor.gif
    :width: 800px
 
 .. tip:: | **オペレーションの指定について**
@@ -900,9 +899,6 @@ Conductor作業実行について
    | また、閲覧モードでも実行前に個別指定ができ、既にConductor編集で保存されているスキップについて変更を行いConductor実行することが出来ます。
    | ただし、閲覧モードでは実行時のみの反映となり、設定は保存されません。
    | 一時的に、処理を飛ばして、又は実施して、作業実行したい時などにご活用下さい。
-   | 
-   | **実行する作業のアクセス権限について**
-   | 「 :ref:`conductor_editandexcute` 」メニューに表示された「Movement」および「Conductor Call」内で呼び出されるすべての作業および個別指定されたオペレーションについて、アクセス権限が無い対象が一つでも含まれている場合は :guilabel:`実行` をクリックした際にバリデーションエラーになります。
 
 .. _conductor_conductor_job_list:
 Conductor作業一覧
@@ -913,12 +909,10 @@ Conductor作業一覧
    | 作業表示欄の「詳細」ボタンをクリックすると、 :ref:`conductor_check_conductor_job` 画面へ遷移します。
    | :guilabel:`投入データ一式(zip)` をクリックすると、実行された全てのConductor配下のMovement(*)の実行ファイルなどをまとめてダウンロードすることが出来ます。
    | :guilabel:`結果データ一式(zip)` をクリックすると、実行された全てのConductor配下のMovement(*)の実行ログ、エラーログなどをまとめてダウンロードすることが出来ます。
-   | 通知ログ欄から、通知の実行ログをダウンロードすることが出来ます。
-   | ログの出力例は、「 :ref:`conductor_notification_log` 」を参照して下さい。
    
    | ※Conductorが階層構造になっている場合は、末端のMovementも対象になります。
 
-.. figure:: ./conductor/conductor_job_list.png
+.. figure:: /images/ja/conductor/conductor_list/conductor_job_list.png
    :width: 800px
    :alt: 「Conductor作業一覧」メニュー
    
@@ -933,7 +927,7 @@ Conductor作業確認
 *  実行中以降のステータスになっている実行状況サークルをクリックすると、各ドライバの「作業状態確認」メニューに遷移し作業実行状況の詳細を確認することが可能です。
 *  | 「 :ref:`conductor_conductor_job_list` 」の :guilabel:`詳細` をクリックすると、選択したConductor作業の処理状況をモニター表示します。状況に応じて「予約取消」、「停止解除」や「緊急停止」の投入が可能です。
    | ※「Movement」、「Conductor Call」のNodeについては、Node選択後に、画面右側に表示される :guilabel:`作業情報確認` からも「作業状態確認」メニューに遷移出来ます。
-.. figure:: ./conductor/job_detail.gif
+.. figure:: /images/ja/conductor/condudtor_edit_and_excute/job_detail.gif
    :width: 800px
    :alt: 作業状態確認
 
@@ -973,13 +967,13 @@ Conductor作業確認
         - ボタン
         - 予約日時が設定されていて、かつ未実行の場合に表示される。
 
-.. figure:: ./conductor/conductor_pause.png
+.. figure:: /images/ja/conductor/conductor_verification/conductor_pause_state.png
    :width: 800px
    :alt: Conductor実行中/Conductor Pause状態画面
 
    Conductor実行中/Conductor Pause状態画面
    
-.. figure:: ./conductor/reserved_conductor.png
+.. figure:: /images/ja/conductor/conductor_verification/reserved_conductor.png
    :width: 800px
    :alt: 日時予約されたConductor実行画面（未実行）
 
@@ -1002,7 +996,7 @@ Conductor作業確認
         | Conductor\       | ID           | Conductorインスタンスに対応した一意のID\ |
         | インスタンス\    |              | が自動採番されます。                     |
         | 情報             +--------------+------------------------------------------+
-        |                  | 名称         | 実行中の Conductor クラス名称を\         |
+        |                  | 名称         | 実行中の Conductor 名称を\               |
         |                  |              | 表示します。                             |
         |                  +--------------+------------------------------------------+
         |                  | ステータス   | 実行中のConductorのステータスを表示し\   |
@@ -1021,13 +1015,15 @@ Conductor作業確認
         |                  |              |                                          |
         |                  |              | ・正常終了                               |
         |                  |              |                                          |
-        |                  |              | ・緊急停止                               |
-        |                  |              |                                          |
         |                  |              | ・異常終了                               |
         |                  |              |                                          |
-        |                  |              | ・想定外エラー                           |
+        |                  |              | ・警告終了                               |
+        |                  |              |                                          |
+        |                  |              | ・緊急停止                               |
         |                  |              |                                          |
         |                  |              | ・予約取消                               |
+        |                  |              |                                          |
+        |                  |              | ・想定外エラー                           |
         |                  +--------------+------------------------------------------+
         |                  | 開始時間     | 実行開始日時を表示します。               |
         |                  +--------------+------------------------------------------+
@@ -1038,8 +1034,8 @@ Conductor作業確認
         |                  | 予約日時     | 予約中のConductorの実行日時を表示します。|
         |                  +--------------+------------------------------------------+
         |                  | 緊急停止     | 実行中の Conductor が緊急停止された場合\ |
-        |                  |              | 「発令済」、それ以外の場合は\            |
-        |                  |              | 「未発令」を表示します。                 |
+        |                  |              | 「True」、それ以外の場合は\              |
+        |                  |              | 「False」を表示します。                  |
         +------------------+--------------+------------------------------------------+
         | オペレーション                  | オペレーション名を表示します。           |
         +---------------------------------+------------------------------------------+
@@ -1078,25 +1074,19 @@ Conductor作業確認
         |                  |              |                                          |
         |                  |              | ・実行中（遅延）                         |
         |                  |              |                                          |
-        |                  |              | ・実行完了                               |
+        |                  |              | ・正常終了                               |
         |                  |              |                                          |
         |                  |              | ・異常終了                               |
         |                  |              |                                          |
+        |                  |              | ・想定外エラー                           |
+        |                  |              |                                          |
         |                  |              | ・緊急停止                               |
         |                  |              |                                          |
-        |                  |              | ・保留中                                 |
-        |                  |              |                                          |
-        |                  |              | ・正常終了                               |
+        |                  |              | ・一時停止                               |
         |                  |              |                                          |
         |                  |              | ・準備エラー                             |
         |                  |              |                                          |
-        |                  |              | ・想定外エラー                           |
-        |                  |              |                                          |
-        |                  |              | ・Skip 完了                              |
-        |                  |              |                                          |
-        |                  |              | ・Skip後保留中                           |
-        |                  |              |                                          |
-        |                  |              | ・Skip完了                               |
+        |                  |              | ・Skip終了                               |
         |                  |              |                                          |
         |                  |              | ・警告終了                               |
         |                  +--------------+------------------------------------------+
@@ -1113,500 +1103,3 @@ Conductor作業確認
         | 備考                            | Nodeに対する説明や\                      |
         |                                 | コメントを表示します。                   |
         +---------------------------------+------------------------------------------+
-  
-
-
-付録
-====
-
-Conductor通知先定義
--------------------
-
-Conductor通知先定義設定例
-~~~~~~~~~~~~~~~~~~~~~~~~~
-.. table:: Teams設定例
-   :align: left
-
-   +-----------------------+--------------------------------------------------+
-   | 通知名称              | 通知サンプル                                     |
-   +=======================+==================================================+
-   | 通\                   |  通知先のTeamsのWebhook URLを入力して下さい。    |
-   | 知先(CURLOPT_URL)     |                                                  |
-   +-----------------------+--------------------------------------------------+
-   | ヘッダー              |  [ "Content-Type: application/json" ]            |
-   | (CURLOPT_HTTPHEADER)  |                                                  |
-   +-----------------------+--------------------------------------------------+
-   | メッセージ(C\         | {"text": "通知名：__NOTICE_NAME__, <br>          |
-   | URLOPT_POSTFIELDS)    | Conductor名称: \__CONDUCTOR_NAME__, <br>         |
-   |                       | Con                                              |
-   |                       | ductorインスタンスID:__CONDUCTOR_INSTANCE_ID__,  |
-   |                       | <br> オペレーションID: \__OPERATION_ID__,        |
-   |                       | <br>オペレーション名:__OPERATION_NAME__,         |
-   |                       | <br>ステータスID: \__STATUS_ID__,                |
-   |                       | <br>ステータス: \__STATUS_NAME__,                |
-   |                       | <br>実行ユーザー: \__EXECUTION_USER__, <br>      |
-   |                       | 予約日時: \__TIME_BOOK__, <br>開始日時:          |
-   |                       | \__TIME_START__, <br>終了日時: \__TIME_END__,    |
-   |                       | <br>緊急停止フラグ: \__ABORT_FLAG__, <br>        |
-   |                       | 作業URL: \__JUMP_URL__, <br> "}                  |
-   +-----------------------+--------------------------------------------------+
-   | PROXY / URL           | http://proxy.co.jp                               |
-   | (CURLOPT_PROXY)       |                                                  |
-   +-----------------------+--------------------------------------------------+
-   | PROXY / PORT          | 8080                                             |
-   | (\                    |                                                  |
-   | CURLOPT_PROXYPORT)    |                                                  |
-   +-----------------------+--------------------------------------------------+
-   | 作業確認URL(FQDN)     | http://exastro-it-automation.local               |
-   +-----------------------+--------------------------------------------------+
-   | その他                |                                                  |
-   +-----------------------+--------------------------------------------------+
-   | 開始日時              |                                                  |
-   +-----------------------+--------------------------------------------------+
-   | 終了日時              |                                                  |
-   +-----------------------+--------------------------------------------------+
-|
-
-.. figure:: ./conductor/image56.png
-   :width: 600px
-   :alt: Teams通知表示例
-
-   Teams通知表示例
-
-.. table:: Slack設定例
-   :align: left
-   
-   +--------------------+-------------------------------------------------+
-   | 通知名称           | 通知サンプル                                    |
-   +====================+=================================================+
-   | 通\                | 通知先のSlackのWebhook URLを入力して下さい。    |
-   | 知先(CURLOPT_URL)  |                                                 |
-   +--------------------+-------------------------------------------------+
-   | ヘッダー(C\        | [ "Content-Type: application/json" ]            |
-   | URLOPT_HTTPHEADER) |                                                 |
-   +--------------------+-------------------------------------------------+
-   | メッセージ(C\      | {                                               |
-   | URLOPT_POSTFIELDS) |                                                 |
-   |                    | "username": "ITAConductor実行通知",             |
-   |                    |                                                 |
-   |                    | "text": "通知名：__NOTICE_NAME__, \\n           |
-   |                    | Conductor名称: \__CONDUCTOR_NAME__, \\n         |
-   |                    | Con                                             |
-   |                    | ductorインスタンスID:__CONDUCTOR_INSTANCE_ID__, |
-   |                    | \\n オペレーションID: \__OPERATION_ID__,        |
-   |                    | \\nオペレーション名:__OPERATION_NAME__,         |
-   |                    | \\nステータスID: \__STATUS_ID__, \\nステータス: |
-   |                    | \__STATUS_NAME__, \\n実行ユーザー:              |
-   |                    | \__EXECUTION_USER__, \\n 予約日時:              |
-   |                    | \__TIME_BOOK__, \\n開始日時: \__TIME_START__,   |
-   |                    | \\n終了日時: \__TIME_END__, \\n緊急停止フラグ:  |
-   |                    | \__ABORT_FLAG__, \\n 作業URL: \__JUMP_URL_\_ "  |
-   |                    |                                                 |
-   |                    | }                                               |
-   +--------------------+-------------------------------------------------+
-   | PROXY / URL        | http://proxy.co.jp                              |
-   | (CURLOPT_PROXY)    |                                                 |
-   +--------------------+-------------------------------------------------+
-   | PROXY / PORT       | 8080                                            |
-   | (\                 |                                                 |
-   | CURLOPT_PROXYPORT) |                                                 |
-   +--------------------+-------------------------------------------------+
-   | 作業確認URL(FQDN)  | http://exastro-it-automation.local              |
-   +--------------------+-------------------------------------------------+
-   | その他             |                                                 |
-   +--------------------+-------------------------------------------------+
-   | 開始日時           |                                                 |
-   +--------------------+-------------------------------------------------+
-   | 終了日時           |                                                 |
-   +--------------------+-------------------------------------------------+
-
-
-.. figure:: ./conductor/image57.png
-   :width: 600px
-   :alt: Slack通知表示例
-
-   Slack通知表示例
-
-.. table:: 設定サンプル(Proxy設定、通知抑止設定、その他設定あり)
-   :align: left
-
-   +--------------------+-------------------------------------------------+
-   | 通知名称           | 通知サンプル                                    |
-   +====================+=================================================+
-   | 通\                | https://sample.webhook.xxx.com/yyyyyyyy         |
-   | 知先(CURLOPT_URL)  |                                                 |
-   +--------------------+-------------------------------------------------+
-   | ヘッダー(C\        | [ "Content-Type: application/json" ]            |
-   | URLOPT_HTTPHEADER) |                                                 |
-   +--------------------+-------------------------------------------------+
-   | メッセージ(C\      | {"text": "通知内容"}                            |
-   | URLOPT_POSTFIELDS) |                                                 |
-   +--------------------+-------------------------------------------------+
-   | PROXY / URL        | http://proxy.co.jp                              |
-   | (CURLOPT_PROXY)    |                                                 |
-   +--------------------+-------------------------------------------------+
-   | PROXY / PORT       | 8080                                            |
-   | (\                 |                                                 |
-   | CURLOPT_PROXYPORT) |                                                 |
-   +--------------------+-------------------------------------------------+
-   | 作業確認URL(FQDN)  | http://exastro-it-automation.local              |
-   +--------------------+-------------------------------------------------+
-   | その他             | {"CURLOPT_TIMEOUT":"10"}                        |
-   +--------------------+-------------------------------------------------+
-   | 開始日時           | 2020/01/01 00:00:00                             |
-   +--------------------+-------------------------------------------------+
-   | 終了日時           | 2020/01/01 00:00:00                             |
-   +--------------------+-------------------------------------------------+
-   | 備考               | 自由記述欄です                                  |
-   +--------------------+-------------------------------------------------+
-
-.. _conductor_notification_log:
-通知ログ出力例
-~~~~~~~~~~~~~~
-
-通知ログの構造
-**************
-
-
-.. code-block:: 
-
-   YYYY-MM-dd HH:ii:ss 通知実行結果(<ID:通知名称>,<ID:ステータス名称>) 
-                                                                       
-   Array                                                               
-                                                                       
-   (                                                                   
-                                                                       
-   [RETURN_MSG] =>　 ：通知実行時の返り値                              
-                                                                       
-   [OPTION] => Array 　　　　　　　　　　　 ：通知実行時のオプション   
-                                                                       
-   (                                                                   
-                                                                       
-   [CURLOPT_XXXXXXXX] =>                                               
-                                                                       
-   ・・・・・・・・略・・・・・・・・                                  
-                                                                       
-   )                                                                   
-                                                                       
-   [RESSULT] => Array ：通知実行結果                                   
-                                                                       
-   (                                                                   
-                                                                       
-   [url] => ：通知先URL                                                
-                                                                       
-   [http_code] => 　：HTTPステータスコード                             
-                                                                       
-   ・・・・・・・・略・・・・・・・・                                  
-                                                                       
-   )                                                                   
-                                                                       
-   )                                                                 
-
-例) 通知実行ログ(正常)
-^^^^^^^^^^^^^^^^^^^^^^
-.. code-block:: 
-
-   2021-11-05 15:10:22 通知実行結果(2:通知サンプル,5:正常終了)           
-                                                                         
-   Array                                                                 
-                                                                         
-   (                                                                     
-                                                                         
-   [RETURN_MSG] => 1                                                     
-                                                                         
-   [OPTION] => Array                                                     
-                                                                         
-   (                                                                     
-                                                                         
-   [CURLOPT_CUSTOMREQUEST] => POST                                       
-                                                                         
-   [CURLOPT_HEADER] =>                                                   
-                                                                         
-   [CURLOPT_SSL_VERIFYPEER] =>                                           
-                                                                         
-   [CURLOPT_SSL_VERIFYHOST] => 0                                         
-                                                                         
-   [CURLOPT_TIMEOUT] => 5                                                
-                                                                         
-   [CURLOPT_CONNECTTIMEOUT] => 2                                         
-                                                                         
-   [CURLOPT_RETURNTRANSFER] => 1                                         
-                                                                         
-   [CURLOPT_HTTPPROXYTUNNEL] => 1                                        
-                                                                         
-   [CURLOPT_URL] => https://sample.webhook.xxx.com/yyyyyyyy              
-                                                                         
-   [CURLOPT_HTTPHEADER] => Array                                         
-                                                                         
-   (                                                                     
-                                                                         
-   [0] => Content-Type: application/json                                 
-                                                                         
-   )                                                                     
-                                                                         
-   [CURLOPT_POSTFIELDS] => {"text": "通知名：通知サンプル2, <br>         
-   Conductor名称: NULL, <br> ConductorインスタンスID:3, <br>             
-   オペレーションID: 1, <br>オペレーション名:OP_NULL, <br>ステータスID:  
-   5, <br>ステータス: 正常終了, <br>実行ユーザー: システム管理者, <br>   
-   予約日時: , <br>開始日時: 2021/11/05 15:10:08, <br>終了日時:          
-   2021/11/05 15:10:18, <br>緊急停止フラグ: 未発令, <br> 作業URL:        
-   http://exastro-it-automation.lo                                       
-   cal/default/menu/01_browse.php?no=2100180005&conductor_instance_id=3, 
-   <br> "}                                                               
-                                                                         
-   [CURLOPT_PROXY] => https://sample.proxy.xxx.com                       
-                                                                         
-   [CURLOPT_PROXYPORT] => 8080                                           
-                                                                         
-   )                                                                     
-                                                                         
-   [RESSULT] => Array                                                    
-                                                                         
-   (                                                                     
-                                                                         
-   [url] => https://sample.webhook.xxx.com/yyyyyyyy                      
-                                                                         
-   [content_type] => text/plain; charset=utf-8                           
-                                                                         
-   [http_code] => 200                                                    
-                                                                         
-   [header_size] => 834                                                  
-                                                                         
-   [request_size] => 1005                                                
-                                                                         
-   [filetime] => -1                                                      
-                                                                         
-   [ssl_verify_result] => 0                                              
-                                                                         
-   [redirect_count] => 0                                                 
-                                                                         
-   [total_time] => 1.519411                                              
-                                                                         
-   [namelookup_time] => 0.083714                                         
-                                                                         
-   [connect_time] => 0.107712                                            
-                                                                         
-   [pretransfer_time] => 0.44203                                         
-                                                                         
-   [size_upload] => 560                                                  
-                                                                         
-   [size_download] => 1                                                  
-                                                                         
-   [speed_download] => 0                                                 
-                                                                         
-   [speed_upload] => 368                                                 
-                                                                         
-   [download_content_length] => 1                                        
-                                                                         
-   [upload_content_length] => 560                                        
-                                                                         
-   [starttransfer_time] => 1.519364                                      
-                                                                         
-   [redirect_time] => 0                                                  
-                                                                         
-   [redirect_url] =>                                                     
-                                                                         
-   [primary_ip] => XXX.XXX.XXX.XXX                                       
-                                                                         
-   [certinfo] => Array                                                   
-                                                                         
-   (                                                                     
-                                                                         
-   )                                                                     
-                                                                         
-   [primary_port] => 8080                                                
-                                                                         
-   [local_ip] => XXX.XXX.XXX.XXX                                         
-                                                                         
-   [local_port] => 39874                                                 
-                                                                         
-   )                                                                     
-                                                                         
-   )
-
-
-例) 通知実行ログ(異常)
-^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: 
-
-   2021-11-05 15:10:20 通知実行結果(1:通知サンプル,5:正常終了)           
-                                                                         
-   Array                                                                 
-                                                                         
-   (                                                                     
-                                                                         
-   [RETURN_MSG] =>                                                       
-                                                                         
-   [OPTION] => Array                                                     
-                                                                         
-   (                                                                     
-                                                                         
-   [CURLOPT_CUSTOMREQUEST] => POST                                       
-                                                                         
-   [CURLOPT_HEADER] =>                                                   
-                                                                         
-   [CURLOPT_SSL_VERIFYPEER] =>                                           
-                                                                         
-   [CURLOPT_SSL_VERIFYHOST] => 0                                         
-                                                                         
-   [CURLOPT_TIMEOUT] => 5                                                
-                                                                         
-   [CURLOPT_CONNECTTIMEOUT] => 2                                         
-                                                                         
-   [CURLOPT_RETURNTRANSFER] => 1                                         
-                                                                         
-   [CURLOPT_HTTPPROXYTUNNEL] => 1                                        
-                                                                         
-   [CURLOPT_URL] => https://sample.webhook.xxx.com/yyyyyyyy              
-                                                                         
-   [CURLOPT_HTTPHEADER] => Array                                         
-                                                                         
-   (                                                                     
-                                                                         
-   [0] => Content-Type: application/json                                 
-                                                                         
-   )                                                                     
-                                                                         
-   [CURLOPT_POSTFIELDS] => {"text": "通知名：通知サンプル, <br>          
-   Conductor名称: NULL, <br> ConductorインスタンスID:3, <br>             
-   オペレーションID: 1, <br>オペレーション名:OP_NULL, <br>ステータスID:  
-   5, <br>ステータス: 正常終了, <br>実行ユーザー: システム管理者, <br>   
-   予約日時: , <br>開始日時: 2021/11/05 15:10:08, <br>終了日時:          
-   2021/11/05 15:10:18, <br>緊急停止フラグ: 未発令, <br> 作業URL:        
-   http://exastro-it-automation.lo                                       
-   cal/default/menu/01_browse.php?no=2100180005&conductor_instance_id=3, 
-   <br> "}                                                               
-                                                                         
-   [CURLOPT_PROXY] =>                                                    
-                                                                         
-   [CURLOPT_PROXYPORT] =>                                                
-                                                                         
-   )                                                                     
-                                                                         
-   [RESSULT] => Array                                                    
-                                                                         
-   (                                                                     
-                                                                         
-   [url] => https://sample.webhook.xxx.com/yyyyyyyy                      
-                                                                         
-   [content_type] =>                                                     
-                                                                         
-   [http_code] => 0                                                      
-                                                                         
-   [header_size] => 0                                                    
-                                                                         
-   [request_size] => 0                                                   
-                                                                         
-   [filetime] => -1                                                      
-                                                                         
-   [ssl_verify_result] => 0                                              
-                                                                         
-   [redirect_count] => 0                                                 
-                                                                         
-   [total_time] => 2.011686                                              
-                                                                         
-   [namelookup_time] => 0.532318                                         
-                                                                         
-   [connect_time] => 0                                                   
-                                                                         
-   [pretransfer_time] => 0                                               
-                                                                         
-   [size_upload] => 0                                                    
-                                                                         
-   [size_download] => 0                                                  
-                                                                         
-   [speed_download] => 0                                                 
-                                                                         
-   [speed_upload] => 0                                                   
-                                                                         
-   [download_content_length] => -1                                       
-                                                                         
-   [upload_content_length] => -1                                         
-                                                                         
-   [starttransfer_time] => 0                                             
-                                                                         
-   [redirect_time] => 0                                                  
-                                                                         
-   [redirect_url] =>                                                     
-                                                                         
-   [primary_ip] => XXX.XXX.XXX.XXX                                       
-                                                                         
-   [certinfo] => Array                                                   
-                                                                         
-   (                                                                     
-                                                                         
-   )                                                                     
-                                                                         
-   [primary_port] => 443                                                 
-                                                                         
-   [local_ip] =>                                                         
-                                                                         
-   [local_port] => 0                                                     
-                                                                         
-   )                                                                     
-                                                                         
-   )                                                                     
-
-.. |image1| image:: ./conductor/image7.png
-   :width: 1.1811in
-   :height: 0.4086in
-.. |image2| image:: ./conductor/image8.png
-   :width: 1.1811in
-   :height: 0.4086in
-.. |image3| image:: ./conductor/image9.png
-   :width: 1.1811in
-   :height: 0.31287in
-.. |image4| image:: ./conductor/node_conductor_call.png
-   :width: 1.22047in
-   :height: 0.34259in
-.. |image5| image:: ./conductor/image11.png
-   :width: 1.1811in
-   :height: 0.30743in
-.. |image6| image:: ./conductor/image12.png
-   :width: 1.1811in
-   :height: 0.67068in
-.. |image7| image:: ./conductor/image13.png
-   :width: 1.1811in
-   :height: 0.9765in
-.. |image8| image:: ./conductor/image14.png
-   :width: 1.1811in
-   :height: 0.67667in
-.. |image9| image:: ./conductor/image15.png
-   :width: 1.12963in
-   :height: 0.59834in
-.. |image10| image:: ./conductor/node_movement_alr.png
-   :width: 1.1811in
-   :height: 1.49864in
-.. |image11| image:: ./conductor/image37.png
-   :width: 0.3937in
-   :height: 0.3937in
-.. |image12| image:: ./conductor/image38.png
-   :width: 0.3937in
-   :height: 0.43032in
-.. |image13| image:: ./conductor/image39.png
-   :width: 0.3937in
-   :height: 0.41045in
-.. |image14| image:: ./conductor/image40.png
-   :width: 0.3937in
-   :height: 0.38532in
-.. |image15| image:: ./conductor/image41.png
-   :width: 0.3937in
-   :height: 0.41082in
-.. |image16| image:: ./conductor/image42.png
-   :width: 0.3937in
-   :height: 0.40276in
-.. |image17| image:: ./conductor/image43.png
-   :width: 0.37391in
-   :height: 0.39758in
-.. |image18| image:: ./conductor/image44.png
-   :width: 0.3937in
-   :height: 0.40298in
-.. |image19| image:: ./conductor/image48.png
-   :width: 5.50714in
-   :height: 7.70067in
-.. |image20| image:: ./conductor/image48.png
-   :width: 5.50714in
-   :height: 7.70067in
-.. |nodeRule1| image:: ./conductor/image17.png
-   :width: 600px

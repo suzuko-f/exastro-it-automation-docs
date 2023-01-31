@@ -146,7 +146,7 @@
 <div class="body" role="main">
 
   <table class="filter-table docutils align-left" id="id1">
-<caption><span class="caption-text">Keycloak 機能のオプションパラメータ</span><a class="headerlink" href="#id1" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-text">Keycloak コンテナのオプションパラメータ</span><a class="headerlink" href="#id1" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31%" />
 <col style="width: 31%" />
@@ -161,17 +161,26 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>keycloak.image.repository</p></td>
+<tr class="row-even"><td><p>exastro-platform.keycloak.enabled</p></td>
+<td><p>Keycloak コンテナのデプロイの有無</p></td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">true</strong> (デフォルト): Keycloak コンテナをデプロイします。</div>
+<div class="line"><strong class="program">false</strong> : Keycloak コンテナをデプロイしません。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.keycloak.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
 <td><p>&quot;exastro/keycloak&quot;</p></td>
 </tr>
-<tr class="row-odd"><td><p>keycloak.image.tag</p></td>
+<tr class="row-even"><td><p>exastro-platform.keycloak.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
 <td><p>不可</p></td>
 <td><p>&quot;1.0.6&quot;</p></td>
 </tr>
-<tr class="row-even"><td><p>keycloak.image.pullPolicy</p></td>
+<tr class="row-odd"><td><p>exastro-platform.keycloak.image.pullPolicy</p></td>
 <td><p>イメージプルポリシー</p></td>
 <td><p>可</p></td>
 <td><div class="line-block">
@@ -181,22 +190,22 @@
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>keycloak.resources.requests.memory</p></td>
+<tr class="row-even"><td><p>exastro-platform.keycloak.resources.requests.memory</p></td>
 <td><p>メモリ要求</p></td>
 <td><p>可</p></td>
 <td><p>&quot;256Mi&quot;</p></td>
 </tr>
-<tr class="row-even"><td><p>keycloak.resources.requests.cpu</p></td>
+<tr class="row-odd"><td><p>exastro-platform.keycloak.resources.requests.cpu</p></td>
 <td><p>CPU要求</p></td>
 <td><p>可</p></td>
 <td><p>&quot;1m&quot;</p></td>
 </tr>
-<tr class="row-odd"><td><p>keycloak.resources.limits.memory</p></td>
+<tr class="row-even"><td><p>exastro-platform.keycloak.resources.limits.memory</p></td>
 <td><p>メモリ上限</p></td>
 <td><p>可</p></td>
 <td><p>&quot;2Gi&quot;</p></td>
 </tr>
-<tr class="row-even"><td><p>keycloak.resources.limits.cpu</p></td>
+<tr class="row-odd"><td><p>exastro-platform.keycloak.resources.limits.cpu</p></td>
 <td><p>CPU上限</p></td>
 <td><p>可</p></td>
 <td><p>&quot;4&quot;</p></td>

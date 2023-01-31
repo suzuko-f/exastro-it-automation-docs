@@ -14,9 +14,8 @@
      - 不可
      - gitlab
    * - global.gitlabDefinition.enabled
-     - | GitLab のデプロイ要否
-       | ※現在このパラメータは使用していません。
-     - 可 (無効)
+     - GitLab の定義の利用有無
+     - 不可
      - true
    * - global.gitlabDefinition.config.GITLAB_PROTOCOL
      - GitLab エンドポイントのプロトコル

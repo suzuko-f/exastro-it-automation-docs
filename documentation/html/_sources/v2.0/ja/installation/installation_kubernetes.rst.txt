@@ -18,8 +18,8 @@
 インストール方法 (Kubernetes)
 =============================
 
-はじめに
-========
+目的
+====
 
 | 本章では、Exastro IT Automation を利用する際に必要となる、Exastro Platform および Exastro IT Automation を導入する手順について説明します。
 
@@ -167,8 +167,8 @@
          DB_ADMIN_PASSWORD: ""
          DB_USER: ""
          DB_PASSWORD: ""
-     authGlobalDefinition:
-       name: auth-global
+     pfGlobalDefinition:
+       name: pf-global
        enabled: true
        image:
          registry: "docker.io"
@@ -227,8 +227,8 @@
          ITA_API_ADMIN_PROTOCOL: "http"
          ITA_API_ADMIN_HOST: "ita-api-admin"
          ITA_API_ADMIN_PORT: "8080"
-     authDatabaseDefinition:
-       name: auth-database
+     pfDatabaseDefinition:
+       name: pf-database
        enabled: true
        config:
          DB_VENDOR: "mariadb"
@@ -383,6 +383,7 @@
          tag: "1.3.0-beta1"
    
      mariadb:
+       enabled: true
        image:
          repository: "mariadb"
          tag: "10.9"
@@ -396,6 +397,7 @@
            cpu: "4"
    
      keycloak:
+       enabled: true
        image:
          repository: "exastro/keycloak"
          tag: "1.3.0-beta1"
@@ -633,14 +635,14 @@
 
           | データベースの接続情報を設定します。
 
-          .. include:: ../include/helm_option_authDatabaseDefinition.rst
+          .. include:: ../include/helm_option_pfDatabaseDefinition.rst
 
           .. code-block:: diff
             :caption: exastro.yaml
             :linenos:
             :lineno-start: 112
 
-              authDatabaseDefinition:
+              pfDatabaseDefinition:
                 name: auth-database
                 enabled: true
                 config:
@@ -668,10 +670,9 @@
           .. code-block:: diff
             :caption: exastro.yaml
             :linenos:
-            :lineno-start: 125
+            :lineno-start: 267
 
-              databaseDefinition:
-                name: mariadb
+              mariadb:
             -   enabled: true
             +   enabled: false
 
@@ -782,14 +783,14 @@
 
           | Exastro 共通基盤のコンテナがデータベースに接続できるようにするために、「1.  データベースコンテナの設定」で作成した root アカウントのパスワードを設定します。
 
-          .. include:: ../include/helm_option_authDatabaseDefinition.rst
+          .. include:: ../include/helm_option_pfDatabaseDefinition.rst
 
           .. code-block:: diff
             :caption: exastro.yaml
             :linenos:
             :lineno-start: 112
 
-              authDatabaseDefinition:
+              pfDatabaseDefinition:
                 name: auth-database
                 enabled: true
                 config:
@@ -888,14 +889,14 @@
 
     | アプリケーションが利用・作成する DB ユーザを設定します。
 
-    .. include:: ../include/helm_option_authDatabaseDefinition.rst
+    .. include:: ../include/helm_option_pfDatabaseDefinition.rst
 
     .. code-block:: diff
       :caption: exastro.yaml
       :linenos:
       :lineno-start: 112
 
-        authDatabaseDefinition:
+        pfDatabaseDefinition:
           name: auth-database
           enabled: true
           config:
@@ -1621,21 +1622,21 @@
 
 | 以下の画面が表示された場合、:menuselection:`Administration Console` を選択して、ログイン画面を開きます。
 
-.. figure:: /images/platform/keycloak/administrator-console.png
+.. figure:: /images/ja/manuals/platform/keycloak/administrator-console.png
   :alt: administrator-console
   :width: 600px
   :name: 管理コンソール
 
 | ログイン ID とパスワードは :ref:`create_system_manager` で登録した、:kbd:`KEYCLOAK_USER` 及び :kbd:`KEYCLOAK_PASSWORD` です。
 
-.. figure:: /images/platform/login/exastro-login.png
+.. figure:: /images/ja/manuals/platform/login/exastro-login.png
   :alt: login
   :width: 300px
   :name: ログイン画面
 
 | Keycloak の管理画面が開きます。
 
-.. figure:: /images/platform/keycloak/keycloak-home.png
+.. figure:: /images/ja/manuals/platform/keycloak/keycloak-home.png
   :alt: login
   :width: 600px
   :name: Keycloak 管理画面

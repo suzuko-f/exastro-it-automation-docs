@@ -5,24 +5,23 @@
    :align: left
    :class: filter-table
 
-
    * - パラメータ
      - 説明
      - 変更
      - デフォルト値・選択可能な設定値
-   * - ita-web-server.replicaCount
+   * - exastro-it-automation.ita-web-server.replicaCount
      - Pod のレプリカ数
      - 不可
      - 1
-   * - ita-web-server.image.repository
+   * - exastro-it-automation.ita-web-server.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
      - exastro/exastro-it-automation-web-server
-   * - ita-web-server.image.tag
+   * - exastro-it-automation.ita-web-server.image.tag
      - コンテナイメージのタグ
      - 不可
      - 2.0.1
-   * - ita-web-server.image.pullPolicy
+   * - exastro-it-automation.ita-web-server.image.pullPolicy
      - イメージプルポリシー
      - 可
      - | :program:`IfNotPresent` (デフォルト): コンテナイメージが存在しない場合のみプル

@@ -1488,7 +1488,7 @@ span.highlighted {
 #article table.filter-table span.icon-filter:before {
   content: "\e936";
   display: inline-block;
-  padding: 3px 6px;
+  padding: 2px 2px;
 }
 
 #article table.filter-table .iconButton .icon {
@@ -1540,7 +1540,7 @@ span.highlighted {
   background-color: #FFA500;
   color: #FFF;
   border: solid 2px #FFF;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 #article table.filter-table .ft-list{

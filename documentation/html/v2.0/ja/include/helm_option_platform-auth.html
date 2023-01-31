@@ -161,7 +161,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>platform-auth.ingress.enabled</p></td>
+<tr class="row-even"><td><p>exastro-platform.platform-auth.ingress.enabled</p></td>
 <td><p>Exastro Platform における Ingress 利用の要否</p></td>
 <td><p>可</p></td>
 <td><div class="line-block">
@@ -170,7 +170,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>platform-auth.ingress.hosts[0].host</p></td>
+<tr class="row-odd"><td><p>exastro-platform.platform-auth.ingress.hosts[0].host</p></td>
 <td><div class="line-block">
 <div class="line">Exastro Platform 管理コンソールエンドポイントのホスト名、もしくは、FQDN</div>
 <div class="line">別途、DNSへのレコード登録が必要です。</div>
@@ -179,22 +179,22 @@
 <td><p>可 (Ingress利用時)</p></td>
 <td><p>&quot;exastro-suite.example.local&quot;</p></td>
 </tr>
-<tr class="row-even"><td><p>platform-auth.ingress.hosts[0].paths[0].path</p></td>
+<tr class="row-even"><td><p>exastro-platform.platform-auth.ingress.hosts[0].paths[0].path</p></td>
 <td><p>Exastro Platform 管理コンソールエンドポイントのパスのルール</p></td>
 <td><p>不可</p></td>
 <td><p>&quot;/&quot;</p></td>
 </tr>
-<tr class="row-odd"><td><p>platform-auth.ingress.hosts[0].paths[0].pathType</p></td>
+<tr class="row-odd"><td><p>exastro-platform.platform-auth.ingress.hosts[0].paths[0].pathType</p></td>
 <td><p>Exastro Platform 管理コンソールエンドポイントのパスの一致条件</p></td>
 <td><p>不可</p></td>
 <td><p>&quot;Prefix&quot;</p></td>
 </tr>
-<tr class="row-even"><td><p>platform-auth.ingress.hosts[0].paths[0].backend</p></td>
+<tr class="row-even"><td><p>exastro-platform.platform-auth.ingress.hosts[0].paths[0].backend</p></td>
 <td><p>Exastro Platform 管理コンソールのサービス名</p></td>
 <td><p>不可</p></td>
 <td><p>&quot;http&quot;</p></td>
 </tr>
-<tr class="row-odd"><td><p>platform-auth.ingress.hosts[1].host</p></td>
+<tr class="row-odd"><td><p>exastro-platform.platform-auth.ingress.hosts[1].host</p></td>
 <td><div class="line-block">
 <div class="line">Exastro Platform エンドポイントのホスト名、もしくは、FQDN</div>
 <div class="line">別途、DNSへのレコード登録が必要です。</div>
@@ -203,22 +203,22 @@
 <td><p>可 (Ingress利用時)</p></td>
 <td><p>&quot;exastro-suite-mng.example.local&quot;</p></td>
 </tr>
-<tr class="row-even"><td><p>platform-auth.ingress.hosts[1].paths[0].path</p></td>
+<tr class="row-even"><td><p>exastro-platform.platform-auth.ingress.hosts[1].paths[0].path</p></td>
 <td><p>Exastro Platform エンドポイントのパスのルール</p></td>
 <td><p>不可</p></td>
 <td><p>&quot;/&quot;</p></td>
 </tr>
-<tr class="row-odd"><td><p>platform-auth.ingress.hosts[1].paths[0].pathType</p></td>
+<tr class="row-odd"><td><p>exastro-platform.platform-auth.ingress.hosts[1].paths[0].pathType</p></td>
 <td><p>Exastro Platform エンドポイントのパスの一致条件</p></td>
 <td><p>不可</p></td>
 <td><p>&quot;Prefix&quot;</p></td>
 </tr>
-<tr class="row-even"><td><p>platform-auth.ingress.hosts[1].paths[0].backend</p></td>
+<tr class="row-even"><td><p>exastro-platform.platform-auth.ingress.hosts[1].paths[0].backend</p></td>
 <td><p>Exastro Platform エンドポイントのエンドポイントのサービス名</p></td>
 <td><p>不可</p></td>
 <td><p>&quot;httpMng&quot;</p></td>
 </tr>
-<tr class="row-odd"><td><p>platform-auth.service.type</p></td>
+<tr class="row-odd"><td><p>exastro-platform.platform-auth.service.type</p></td>
 <td><p>Exastro Platform のサービスタイプ</p></td>
 <td><p>可</p></td>
 <td><div class="line-block">
@@ -228,7 +228,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p>platform-auth.service.http.nodePort</p></td>
+<tr class="row-even"><td><p>exastro-platform.platform-auth.service.http.nodePort</p></td>
 <td><div class="line-block">
 <div class="line">Exastro Platform のサービス用公開ポート番号</div>
 </div>
@@ -236,7 +236,7 @@
 <td><p>可 (NodePort利用時)</p></td>
 <td><p>&quot;30080&quot;</p></td>
 </tr>
-<tr class="row-odd"><td><p>platform-auth.service.httpMng.nodePort</p></td>
+<tr class="row-odd"><td><p>exastro-platform.platform-auth.service.httpMng.nodePort</p></td>
 <td><div class="line-block">
 <div class="line">Exastro Platform のシステム管理用公開ポート番号</div>
 </div>
@@ -244,12 +244,12 @@
 <td><p>可 (NodePort利用時)</p></td>
 <td><p>&quot;30081&quot;</p></td>
 </tr>
-<tr class="row-even"><td><p>platform-auth.image.repository</p></td>
+<tr class="row-even"><td><p>exastro-platform.platform-auth.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
 <td><p>&quot;exastro/exastro-platform-auth&quot;</p></td>
 </tr>
-<tr class="row-odd"><td><p>platform-auth.image.tag</p></td>
+<tr class="row-odd"><td><p>exastro-platform.platform-auth.image.tag</p></td>
 <td><p>コンテナイメージのタグ</p></td>
 <td><p>不可</p></td>
 <td><p>&quot;1.0.6&quot;</p></td>
