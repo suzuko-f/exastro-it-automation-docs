@@ -15,6 +15,10 @@ Organization (オーガナイゼーション)
 | Exastro Suite の各アプリケーションの利用を開始するためには、オーガナイゼーションを作成する必要があります。
 
 
+.. figure:: /images/ja/diagram/overview_of_the_organization.png
+    :alt: オーガナイゼーション全体図
+
+
 オーガナイゼーションの作成
 ==========================
 

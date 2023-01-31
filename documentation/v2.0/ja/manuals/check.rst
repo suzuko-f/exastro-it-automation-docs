@@ -18,7 +18,7 @@
    <div id="multiColumnIndex">
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    platform_management/check
    organization_management/check

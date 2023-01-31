@@ -9,11 +9,11 @@
      - 説明
      - 変更
      - デフォルト値・選択可能な設定値
-   * - platform-setup.keycloak.image.repository
+   * - exastro-platform.platform-setup.keycloak.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
      - "exastro/exastro-platform-job"
-   * - platform-setup.keycloak.image.tag
+   * - exastro-platform.platform-setup.keycloak.image.tag
      - コンテナイメージのタグ
      - 不可
      - "1.0.6"

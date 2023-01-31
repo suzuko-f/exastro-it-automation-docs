@@ -5,16 +5,15 @@
    :align: left
    :class: filter-table
 
-
    * - パラメータ
      - 説明
      - 変更
      - デフォルト値・選択可能な設定値
-   * - platform-web.image.repository
+   * - exastro-platform.platform-web.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
      - "exastro/exastro-platform-web"
-   * - platform-web.image.tag
+   * - exastro-platform.platform-web.image.tag
      - コンテナイメージのタグ
      - 不可
      - "1.0.6"

@@ -9,15 +9,15 @@
      - 説明
      - 変更
      - デフォルト値・選択可能な設定値
-   * - ita-database-setup-job.image.repository
+   * - exastro-it-automation.ita-database-setup-job.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
      - ※現在このパラメータは使用していません。
-   * - ita-database-setup-job.image.tag
+   * - exastro-it-automation.ita-database-setup-job.image.tag
      - コンテナイメージのタグ
      - 不可
      - ※現在このパラメータは使用していません。
-   * - ita-database-setup-job.image.pullPolicy
+   * - exastro-it-automation.ita-database-setup-job.image.pullPolicy
      - イメージプルポリシー
      - 可
      - | :program:`IfNotPresent` (デフォルト): コンテナイメージが存在しない場合のみプル

@@ -1,5 +1,5 @@
 
-.. list-table:: MariaDB のオプションパラメータ
+.. list-table:: MariaDB コンテナのオプションパラメータ
    :widths: 25 25 10 20
    :header-rows: 1
    :align: left
@@ -9,33 +9,38 @@
      - 説明
      - 変更
      - デフォルト値・選択可能な設定値
-   * - mariadb.image.repository
+   * - exastro-platform.mariadb.enabled
+     - MariaDB コンテナのデプロイの有無
+     - 可
+     - | :program:`true` (デフォルト): MariaDB コンテナをデプロイします。
+       | :program:`false` : MariaDB コンテナをデプロイしません。
+   * - exastro-platform.mariadb.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
      - "mariadb"
-   * - mariadb.image.tag
+   * - exastro-platform.mariadb.image.tag
      - コンテナイメージのタグ
      - 不可
      - "10.9"
-   * - mariadb.image.pullPolicy
+   * - exastro-platform.mariadb.image.pullPolicy
      - イメージプルポリシー
      - 可
      - | :program:`IfNotPresent` (デフォルト): コンテナイメージが存在しない場合のみプル
        | :program:`Always`: 毎回必ずプル
        | :program:`None`: プルしない
-   * - mariadb.resources.requests.memory
+   * - exastro-platform.mariadb.resources.requests.memory
      - メモリ要求
      - 可
      - "256Mi"
-   * - mariadb.resources.requests.cpu
+   * - exastro-platform.mariadb.resources.requests.cpu
      - CPU要求
      - 可
      - "1m"
-   * - mariadb.resources.limits.memory
+   * - exastro-platform.mariadb.resources.limits.memory
      - メモリ上限
      - 可
      - "2Gi"
-   * - mariadb.resources.limits.cpu
+   * - exastro-platform.mariadb.resources.limits.cpu
      - CPU上限
      - 可
      - "4"

@@ -9,13 +9,12 @@
      - 説明
      - 変更
      - デフォルト値・選択可能な設定値
-
    * - global.itaGlobalDefinition.name
      - Exastro IT Automation の定義名
      - 不可
      - ita-global
    * - global.itaGlobalDefinition.enabled
-     - Exastro IT Automation の有効フラグ
+     - Exastro IT Automation の定義の利用有無
      - 不可
      - true
    * - global.itaGlobalDefinition.image.registry

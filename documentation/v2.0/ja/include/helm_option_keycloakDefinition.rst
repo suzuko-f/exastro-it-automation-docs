@@ -14,11 +14,9 @@
      - 不可
      - "keycloak"
    * - global.keycloakDefinition.enabled
-     - | Exastro Platform と同一のクラスタ内への Keycloak のデプロイ要否
-       | ※現在このパラメータは使用していません。
-     - 可 (無効)
-     - | :program:`true` (デフォルト): 同一クラスタ内に Keycloak をデプロイします。
-       | :program:`false` : 同一クラスタ内に Keycloak をデプロイしません。(別途 Keycloak の容易が必要です。)
+     - Keycloak の定義の利用有無
+     - 不可
+     - true
    * - global.keycloakDefinition.config.API_KEYCLOAK_PROTOCOL
      - Keycloak API エンドポイントのプロトコル
      - 可 (外部Keycloak利用時)

@@ -1,5 +1,5 @@
 
-.. list-table:: 共通設定 (Exastro ITA) のオプションパラメータ
+.. list-table:: 共通設定 (Exastro IT Automation) のオプションパラメータ
    :widths: 25 25 10 20
    :header-rows: 1
    :align: left
@@ -14,10 +14,9 @@
      - 不可
      - "ita"
    * - global.itaDefinition.enabled
-     - | Exastro Platform と同一のクラスタ内への Exastro IT Automation のデプロイ要否
-       | 現在は同一クラスタ内でのみ利用可能。(マルチクラスタへの分散配置は不可)
+     - Exastro IT Automation 共通定義の利用有無
      - 不可
-     - "true"
+     - true
    * - global.itaDefinition.config.ITA_WEB_PROTOCOL
      - Exastro IT Automation エンドポイントのプロトコル
      - 不可
