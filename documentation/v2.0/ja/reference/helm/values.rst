@@ -10,7 +10,7 @@ Exastro Platform
 共通設定 (認証機能)
 -------------------
 
-.. include:: ../../include/helm_option_authGlobalDefinition.rst
+.. include:: ../../include/helm_option_pfGlobalDefinition.rst
 
 共通設定 (Keycloak)
 -------------------
@@ -25,7 +25,7 @@ Exastro Platform
 共通設定 (認証機能用データベース)
 ---------------------------------
 
-.. include:: ../../include/helm_option_authDatabaseDefinition.rst
+.. include:: ../../include/helm_option_pfDatabaseDefinition.rst
 
 共通設定 (Exastro 共用データベース)
 ---------------------------------

@@ -2270,7 +2270,7 @@ span.highlighted {
 }
 
 #swaggerBody .topbar {
-  display: none;
+  /* display: none; */
 }
 
 #swaggerBody .main {
