@@ -16,11 +16,11 @@
        | - :menuselection:`Proxy`
      - | :program:`true`: Exastro IT Automation の画面上から編集不可
        | :program:`false`: Exastro IT Automation の画面上から編集可能
-   * - exection_engine_list
+   * - execution_engine_list
      - | :menuselection:`Ansible共通 --> インターフェース情報 --> 実行エンジン` の選択肢に入れる項目を指定。
      - :kbd:`Ansible-Core` または :kbd:`Ansible Automation Controller` のいずれか、または、その両方を指定
-   * - initial_data.ansible_automation_controller_host_list.file.ssh_private_key_file
-     - Ansible Automation Controller に接続するための秘密鍵ファイルを Base64 エンコードした値。
+   * - initial_data.ansible_automation_controller_host_list[*].file.ssh_private_key_file
+     - Ansible Automation Controller に接続するために登録する秘密鍵ファイルを Base64 エンコードした値。
      - 
    * - initial_data.ansible_automation_controller_host_list[*].parameter.host
      - Ansible Automation Controller のコントロールノードのホスト名を指定。
@@ -40,6 +40,9 @@
      - | パスワード認証する場合のパスワードを指定。
        | ※ 最大長128バイト
      - 
+   * - initial_data.ansible_automation_controller_host_list[*].parameter.ssh_private_key_file
+     - Ansible Automation Controller に接続するために登録する秘密鍵ファイルのファイル名。
+     - 
    * - initial_data.ansible_automation_controller_host_list[*].parameter.passphrase
      - | SSH 秘密鍵ファイルにパスフレーズが設定されている場合、そのパスフレーズを指定。
        | ※ 最大長256バイト
@@ -53,7 +56,7 @@
      - 
    * - initial_data.parameter.execution_engine
      - | 実行エンジンの指定
-       | Ansible-Core または Ansible Automation Controller の指定可能
+       | :kbd:`Ansible-Core` または :kbd:`Ansible Automation Controller` の指定可能
      - 
    * - initial_data.parameter.representative_server
      - | 代表ホスト
@@ -80,10 +83,11 @@
    * - initial_data.parameter.delete_runtime_data
      - | 作業実行時に Exastro IT Automation と Ansible Automation Controller 内に一時的に生成されるデータリソースを作業終了後に削するかを選択します。
        | ※ 実行エンジンが Ansible Automation Controller の場合に入力必須
-     - 
+     - | :kbd:`True` : 作業終了時にリソースを削除する
+       | :kbd:`False` : 作業終了時にリソースを削除しない
    * - initial_data.parameter.proxy_address
      - | Exastro IT Automation がプロキシ環境下にある場合、Ansible/ Ansible Automation Controller サーバまでの疎通のために設定が必要な場合があります。
-       | プロキシサーバのURLが http://proxy.example.com:8080 の場合、http://proxy.example.com を入力します。
+       | プロキシサーバのURLが http://proxy.example.com:8080 の場合、:kbd:`http://proxy.example.com` を入力します。
        | ※ 最大128バイト
      - 
    * - initial_data.parameter.proxy_port
