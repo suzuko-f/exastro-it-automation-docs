@@ -5,10 +5,11 @@ Exastro IT Automation Documentation
 .. raw:: html
 
    </div>
-   <div id="homeIndex">
+   <div id="multiColumnIndex">
+   
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    v2.0/index
 

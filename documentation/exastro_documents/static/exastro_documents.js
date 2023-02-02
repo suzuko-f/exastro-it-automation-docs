@@ -1,6 +1,11 @@
 
 $(function () {
 
+  $("#multiColumnIndex li>a").each(function(){
+    var text = $(this).text();
+   $(this).text(text.replace(/^([0-9]+\.) /,''));
+  });
+
   $('#menuButton').on('click', function () {
     $('#sideMenu').toggleClass('on');
   });

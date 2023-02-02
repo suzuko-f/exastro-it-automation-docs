@@ -39,7 +39,13 @@ Ansible Automation Controller の登録
 
 .. tabs::
 
-   .. tab:: 設定ファイルとスクリプトによる作成
+   .. group-tab:: 設定ファイルとスクリプト利用
+
+      - 特徴
+       
+      | Rest API を使った登録方法に比べ、利用するパラメータ情報の事前準備が不要なためユーザの操作に向いています。
+
+      - 登録方法
 
       | GitHub リポジトリから取得した資材の中にある、シェルスクリプトを実行し Ansible Automation Controller を登録します。
 
@@ -65,7 +71,7 @@ Ansible Automation Controller の登録
             :caption: api-auth.conf
      
             - CONF_BASE_URL=http://platform-auth:8001
-            + CONF_BASE_URL=http://exastro-suite-mng.xxxxxxxxxxxxxxxxxx.japaneast.aksapp.io
+            + CONF_BASE_URL=http://exastro-suite-mng.example.local
               CURL_OPT=-sv
         
          .. tip::
@@ -164,7 +170,7 @@ Ansible Automation Controller の登録
          .. code-block:: bash
             :caption: コマンド
 
-            ./exastro-platform/tools/initial-settings-ansible.sh initial-settings-ansible.json
+            ./exastro-platform/tools/initial-settings-ansible.sh ./exastro-platform/tools/initial-settings-ansible.json
 
             organization id : INPUT-ORGANIZATION-ID-TO-SET # 設定先のオーガナイゼーションID
 
@@ -219,30 +225,121 @@ Ansible Automation Controller の登録
                  "ts": "2022-08-18T05:29:35.643Z"
                }
 
-   .. tab:: Rest API による作成
+   .. group-tab:: Rest API 利用
 
       - 特徴
 
-      | 外部システムからAnsible Automation Controller の登録を行う場合は、Rest API を使います
-      | また、Basic 認証を利用するためには、システム管理者の認証情報を :kbd:`BASE64_BASIC` に設定する必要があります。
-      | 認証情報に関して、:ref:`インストール時に登録した認証情報 <create_system_manager>` で登録した内容となります。
+      | Rest API は外部システムから Ansible Automation Controller の登録を行う際に有用です。
 
       - 登録方法
 
-      | cURL を使用する場合は、下記のようにコマンドを実行します。
+      1. SSH 鍵ファイルのエンコード
+
+         | SSH 秘密鍵ファイルをアップロードする必要があるため、Base64 エンコードをします。
+
+         .. code-block::
+           :caption: コマンド
+   
+           MY_KEY=`base64 -w 0 my-aac-key.pem`
+
+      2. コマンド
+
+         | オーガナイゼーションIDを :kbd:`ORG_ID` に設定する必要があります。
+         | また、Basic 認証を利用するためには、システム管理者の認証情報を :kbd:`BASE64_BASIC` に設定する必要があります。
+         | 認証情報に関して、:ref:`インストール時に登録した認証情報 <create_system_manager>` で登録した内容となります。
+         | cURL を使用する場合は、下記のようにコマンドを実行します。
+
+
+         | 各パラメータについては下記を参照してください。
+
+         .. raw:: html
+          
+            <details> 
+              <summary>Ansible Automation Controller 登録時のパラメータ</summary>
+
+         .. include:: ../../include/api_option_initial_settings_ansible.rst
+          
+         .. raw:: html
+          
+            </details> 
+
+         .. code-block:: bash
+            :caption: コマンド
+
+            ORG_ID=org001
+            BASE64_BASIC=$(echo -n "KEYCLOAK_USER:KEYCLOAK_PASSWORD" | base64)
+            BASE_URL=http://exastro-suite-mng.example.local
+
+            curl -X 'POST' \
+              "http://${BASE_URL}/api/ita/${ORG_ID}/initial-settings/ansible/" \
+              -H 'accept: application/json' \
+              -H "Authorization: Basic ${BASE64_BASIC}" \
+              -H 'Content-Type: application/json' \
+              -d '{
+              "input_limit_setting": true,
+              "execution_engine_list": [
+                "Ansible Automation Controller"
+              ],
+              "initial_data": {
+                "ansible_automation_controller_host_list": [
+                  {
+                    "file": {
+                      "ssh_private_key_file": "'${MY_KEY}'"
+                    },
+                    "parameter": {
+                      "host": "aac-server01",
+                      "user": "awx",
+                      "authentication_method": "鍵認証（パスフレーズなし）",
+                      "password": "awx-password",
+                      "ssh_private_key_file": "my-aac-key.pem",
+                      "passphrase": "",
+                      "isolated_tower": "False",
+                      "remarks": ""
+                    }
+                  }
+                ],
+                "interface_info_ansible": {
+                  "parameter": {
+                    "execution_engine": "Ansible Automation Controller",
+                    "representative_server": "aac-server01",
+                    "ansible_automation_controller_protocol": "https",
+                    "ansible_automation_controller_port": "443",
+                    "organization_name": "organization001",
+                    "authentication_token": "LS0tLS1CRUdJTiBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjNCbGJuTnphQzFyWlhrdGRqRUFBQUFBQkc1dmJtVUFBQUFFYm05dVpR...",
+                    "delete_runtime_data": "True",
+                    "proxy_address": "",
+                    "proxy_port": ""
+                  }
+                }
+              }
+            }'
+
+Ansible Automation Contoller 連携の確認
+---------------------------------------
+
+#. オーガナイゼーション作成結果を確認します。
+
+.. tabs::
+
+   .. group-tab:: 設定ファイルとスクリプト利用
 
       .. code-block:: bash
-        :caption: コマンド
+         :caption: コマンド
+    
+         ./exastro-platform/tools/get-initial-settings-ansible.sh
+          
+         organization id : INPUT-ORGANIZATION-ID-TO-SET # 設定先のオーガナイゼーションID
+    
+         your username : INPUT-YOUR-USERNAME # システム管理者のユーザ名を入力します
+         your password : INPUT-USER-PASSWORD # システム管理者のパスワードを入力します
 
-        BASE64_BASIC=$(echo -n "KEYCLOAK_USER:KEYCLOAK_PASSWORD" | base64)
-        BASE_URL=http://exastro-suite-mng.xxxxxxxxxxxxxxxxxx.japaneast.aksapp.io
+      -  結果表示
 
-        curl -k -X POST \
-            -H "Content-Type: application/json" \
-            -H "Authorization: basic ${BASE64_BASIC}" \
-            -d  @- \
-            "${BASE_URL}/api/platform/organizations?retry=1" \
-            << EOF
+         resultが”000-00000”が、 Ansible Automation Controller の作成に成功したことを示しています。
+          
+         .. code-block:: bash
+            :caption: 実行結果(成功例)
+
             {
               "result": "000-00000",
               "data": {
@@ -284,109 +381,112 @@ Ansible Automation Controller の登録
                 }
               },
               "message": "string"
+            }        
+
+
+      -  失敗時の結果表示イメージ
+
+         .. code-block:: bash
+            :caption: 実行結果(失敗例)
+
+            ...
+            < HTTP/1.1 400 BAD REQUEST
+            < Date: Thu, 18 Aug 2022 05:29:35 GMT
+            < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
+            < Content-Length: 252
+            < Connection: close
+            < Content-Type: application/json
+            <
+            { [252 bytes data]
+            * Closing connection 0
+            {
+              "data": null,
+              "message": "エラーメッセージ,
+              "result": "エラーコード",
+              "ts": "2022-08-18T05:29:35.643Z"
             }
-        EOF
 
-      | 各パラメータについては下記を参照してください。
+   .. group-tab:: Rest API 利用
 
-      .. raw:: html
+      .. code-block:: bash
+         :caption: コマンド
+    
+         curl -X 'GET' \
+           'http://exastro-suite-mng.example.local/api/ita/org001/initial-settings/ansible/' \
+            -H 'accept: application/json'
 
-        <details> 
-          <summary>Ansible Automation Controller 登録時のパラメータ</summary>
+      -  結果表示
 
-      .. include:: ../../include/api_option_initial_settings_ansible.rst
+         resultが”000-00000”が、 Ansible Automation Controller の作成に成功したことを示しています。
+          
+         .. code-block:: bash
+            :caption: 実行結果(成功例)
 
-      .. raw:: html
-
-        </details> 
-
-
-Ansible Automation Contoller 連携の確認
----------------------------------------
-
-#. オーガナイゼーション作成結果を確認します。
-
-   -  コマンド
-
-      .. code:: bash
-
-         ./exastro-platform/tools/get-initial-settings-ansible.sh
-         
-         organization id : INPUT-ORGANIZATION-ID-TO-SET # 設定先のオーガナイゼーションID
- 
-         your username : INPUT-YOUR-USERNAME # システム管理者のユーザ名を入力します
-         your password : INPUT-USER-PASSWORD # システム管理者のパスワードを入力します
-
-   -  結果表示
-
-      resultが”000-00000”が、 Ansible Automation Controller の作成に成功したことを示しています。
-      
-      .. code:: bash
-
-         {
-           "result": "000-00000",
-           "data": {
-             "input_limit_setting": true,
-             "execution_engine_list": [
-               "string"
-             ],
-             "initial_data": {
-               "ansible_automation_controller_host_list": [
-                 {
-                   "file": {
-                     "ssh_private_key_file": "string"
-                   },
-                   "parameter": {
-                     "host": "string",
-                     "authentication_method": "string",
-                     "user": "string",
-                     "password": "string",
-                     "ssh_private_key_file": "string",
-                     "passphrase": "string",
-                     "isolated_tower": "string",
-                     "remarks": "string"
-                   }
-                 }
-               ],
-               "interface_info_ansible": {
-                 "parameter": {
-                   "execution_engine": "string",
-                   "representative_server": "string",
-                   "ansible_automation_controller_protocol": "string",
-                   "ansible_automation_controller_port": "string",
-                   "organization_name": "string",
-                   "authentication_token": "string",
-                   "delete_runtime_data": "string",
-                   "proxy_address": "string",
-                   "proxy_port": "string"
-                 }
-               }
-             }
-           },
-           "message": "string"
-         }        
+            {
+              "result": "000-00000",
+              "data": {
+                "input_limit_setting": true,
+                "execution_engine_list": [
+                  "string"
+                ],
+                "initial_data": {
+                  "ansible_automation_controller_host_list": [
+                    {
+                      "file": {
+                        "ssh_private_key_file": "string"
+                      },
+                      "parameter": {
+                        "host": "string",
+                        "authentication_method": "string",
+                        "user": "string",
+                        "password": "string",
+                        "ssh_private_key_file": "string",
+                        "passphrase": "string",
+                        "isolated_tower": "string",
+                        "remarks": "string"
+                      }
+                    }
+                  ],
+                  "interface_info_ansible": {
+                    "parameter": {
+                      "execution_engine": "string",
+                      "representative_server": "string",
+                      "ansible_automation_controller_protocol": "string",
+                      "ansible_automation_controller_port": "string",
+                      "organization_name": "string",
+                      "authentication_token": "string",
+                      "delete_runtime_data": "string",
+                      "proxy_address": "string",
+                      "proxy_port": "string"
+                    }
+                  }
+                }
+              },
+              "message": "string"
+            }        
 
 
-   -  失敗時の結果表示イメージ
+      -  失敗時の結果表示イメージ
 
-      .. code:: bash
+         .. code-block:: bash
+            :caption: 実行結果(失敗例)
 
-         ...
-         < HTTP/1.1 400 BAD REQUEST
-         < Date: Thu, 18 Aug 2022 05:29:35 GMT
-         < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
-         < Content-Length: 252
-         < Connection: close
-         < Content-Type: application/json
-         <
-         { [252 bytes data]
-         * Closing connection 0
-         {
-           "data": null,
-           "message": "エラーメッセージ,
-           "result": "エラーコード",
-           "ts": "2022-08-18T05:29:35.643Z"
-         }
+            ...
+            < HTTP/1.1 400 BAD REQUEST
+            < Date: Thu, 18 Aug 2022 05:29:35 GMT
+            < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
+            < Content-Length: 252
+            < Connection: close
+            < Content-Type: application/json
+            <
+            { [252 bytes data]
+            * Closing connection 0
+            {
+              "data": null,
+              "message": "エラーメッセージ,
+              "result": "エラーコード",
+              "ts": "2022-08-18T05:29:35.643Z"
+            }
 
 
 その他制約事項・備考
