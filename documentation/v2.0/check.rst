@@ -14,9 +14,11 @@ Exastro IT Automation Documentation 2.0
    :maxdepth: 2
 
    ja/installation/check
+   ja/learn/check
+   ja/configuration/check
    ja/manuals/check
    ja/reference/check
-   ja/document_design/index
+   ja/contribute/check
 
 
 .. raw:: html

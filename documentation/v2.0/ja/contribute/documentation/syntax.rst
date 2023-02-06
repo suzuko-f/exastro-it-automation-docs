@@ -315,7 +315,7 @@ Hello world を出力するプログラム
 記述例
 ^^^^^^
 
-.. code-block:: code
+.. code-block:: yaml
 
    .. code-block:: yaml
       :name: exastro_yaml
@@ -447,7 +447,7 @@ Hello world を出力するプログラム
 
 | 幅100pxで表示されます。
 
-.. figure:: ../../../images/manual_design/chart.png
+.. figure:: /images/manual_design/chart.png
    :width: 100px
    :alt: role_of_index
 
@@ -480,7 +480,7 @@ Hello world を出力するプログラム
 
 画像を文中　|aa| に挿入できます。
 
-.. |aa| image:: ../../../images/manual_design/chart.png
+.. |aa| image:: /images/manual_design/chart.png
    :width: 2.0em
    :alt: サンプルイメージ
    

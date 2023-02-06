@@ -1,6 +1,6 @@
-====
-貢献
-====
+================
+構成・構築ガイド
+================
 
 .. raw:: html
 
@@ -10,9 +10,8 @@
 .. toctree::
    :maxdepth: 2
 
-   environment/check
-   development/check
-   documentation/check
+   kubernetes/check
+   ansible/check
 
 .. raw:: html
 

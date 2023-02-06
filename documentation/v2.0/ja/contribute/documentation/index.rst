@@ -1,8 +1,9 @@
 ============
-インストール
+ドキュメント
 ============
 
 .. toctree::
    :maxdepth: 2
 
-   kubernetes
+   rule
+   syntax

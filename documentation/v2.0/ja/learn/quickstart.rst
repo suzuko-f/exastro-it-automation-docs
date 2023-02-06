@@ -2,100 +2,96 @@
 クイックスタート
 ================
 
-はじめに
-=========
 
-| 本書は、はじめて IT Automation（以下ITAと記載）に触れるユーザが、ITAのインタフェースをスムーズに体感できるクイックスタートの手順書としてご活用できます。
-| システム構築においてよくあるLinuxサーバのパッケージのインストール作業を通して、構築対象サーバごとの作業とパッケージ管理を自動化・一元管理化を行い、
-| 従来のシステム構築とは異なるITAを使用した効率的なシステム構築を体感できます。
+目的
+====
 
-.. figure::  ../../../images/learn/quickstart/common/overview1.png
-      :alt: ITAでできること
-      :align: left
-      :width: 700px
-      
+| 本頁は、はじめて Exastro IT Automation（以下、ITA とも記載）に触れるユーザが、 Exastro IT Automation のインタフェースをスムーズに体感することを目的とした教材です。
+| システム構築においてよくある Linux サーバのパッケージのインストール作業を通して、構築対象サーバごとの作業とパッケージ管理を自動化・一元管理化を行い、従来のシステム構築とは異なる Exastro IT Automation を使用した効率的なシステム構築を体感できます。
 
-本クイックスタートで体感できる主なITA機能の範囲
------------------------------------------------
+.. figure::  /images/learn/quickstart/common/overview1.png
+   :width: 600px
 
-- 自動化ソフトウェア(Ansible)との連携
-- パラメータ管理(メニュー作成・登録・履歴管理等)
-- 変数紐付け(代入値自動登録)
 
-  .. figure::  ../../../images/learn/quickstart/common/overview2.png
-      :alt: ITAの機能範囲
-      :align: left
-      :width: 700px
-   
-本シナリオと作業範囲の位置づけ
-------------------------------
+概要
+====
 
-| 本シナリオではAnsibleドライバを使用し、Linuxサーバ構築で実施するyumパッケージのインストール作業を構築対象サーバごとにパラメータ管理し、
-| 構築作業の自動化を行う内容となっています。
+| 本シナリオでは Ansible ドライバを使用した Linux サーバ上への yum パッケージのインストールを行います。
+| その際に、構築対象のサーバ毎にことなるパッケージをインストールする必要がありますが、Exastro IT Automation のパラメータ管理を利用し、効率的に構築作業の自動化を行っていきます。
 
-- 作業環境
+.. figure:: /images/learn/quickstart/common/executionimage1.png
+    :width: 600px
 
-  ..  figure:: ../../../images/learn/quickstart/common/workenvironment.png
-      :alt: 作業環境
-      :align: left
-      :width: 700px
-    
+前提条件
+--------
+
+| 本シナリオを進める前に、下記の環境を準備しておく必要があります。
+| Exastro IT Automation のインストール方法は、:doc:`../installation/index` を参照してください。
+
 - 使用するシステム
 
-  - Exastro IT Automation 1.10.0
-  - CentOS Linux 7.8(ITAサーバ用)
-  - CentOS Linux 7.8(ターゲットマシン用)
-  - Windows 10(クライアント)
-  - Google Chrome (Win10側)
+  - Exastro IT Automation 2.1
+  - AlmaLinux Linux 8 (ターゲットマシン用)
+  - 作業端末
 
+    - Windows 10
+    - Google Chrome
 
+..  figure:: /images/learn/quickstart/common/workenvironment.png
+    :width: 600px
 
-シナリオ実行イメージ
-********************
+   
 
-.. figure:: ../../../images/learn/quickstart/common/executionimage1.png
-    :alt: 実行イメージ①
-    :align: left
-    :width: 700px
-    
+作業内容
+--------
 
-インストール後からAnsible-Legacyを実行するまでのシナリオ
-********************************************************
+| シナリオと、開発者(実行前準備)／作業者(実行操作)の作業内容については以下の通りです。
 
-| シナリオと、開発者(実行前準備)／作業者(実行操作)の作業範囲については以下の通りです。
-
-.. figure:: ../../../images/learn/quickstart/common/executionimage2.png
-    :alt: 実行イメージ②
-    :align: left
-    :width: 700px
+.. figure:: /images/learn/quickstart/common/executionimage2.png
+    :width: 600px
     
  
+
+機能の範囲
+----------
+
+| 本シナリオでは、Exastro IT Automation を利用する上で最もよく使われるであろう下記の機能に絞って紹介します。
+
+- 本シナリオで扱う機能
+
+  - 自動化ソフトウェア(Ansible)との連携
+  - パラメータ管理(メニュー作成・登録・履歴管理等)
+  - 変数紐付け(代入値自動登録)
+
+.. figure::  /images/learn/quickstart/common/overview2.png
+   :width: 600px
+
+
 各種用語の説明
 --------------
 
 .. list-table:: 本シナリオに登場する主な用語
    :widths: 10  20
    :header-rows: 1
-   :align: left
 
 
    * - 用語
      - 説明
     
    * - Playbook
-     - | 定型業務をタスクで記述し、Ansibleに実行させるためのファイルです。
+     - | 定型業務をタスクで記述し、Ansible に実行させるためのファイルです。
        | YAML形式で使用します。
      
-   * - Ansible-Legacy
-     - | ITA から Ansible を利用する機能です。
-       | Legacy コンソールでは、構築コードとして単体のYAMLファイルを使う場合に使用します。
+   * - Ansible-LegacyRole
+     - | Exastro IT Automation から Ansible Role を利用する機能です。
+       | LegacyRole コンソールでは、構築コードとして YAML ファイルのセットを使う場合に使用します。
 
    * - オペレーション名(operation)
-     - | ITA での作業実行単位です。
+     - | Exastro IT Automation での作業実行単位です。
        | 作業予定、実行履歴などを管理することができます。
 
    * - Conductor
-     - | ITA での一連の作業の単位です。
+     - | Exastro IT Automation での一連の作業の単位です。
        | オペレーション名と関連付けて実行します。
        | Node と呼ぶ各種パーツを組み合わせて、ジョブフローを作成し、
        | 複数の機器に対して、一連の構築・設定などの作業を行います。
@@ -103,54 +99,241 @@
    * - Movement
      - | 各機器に対する構築ツールを使った構築、設定などの作業の単位です。
 
-    
+
+オーガナイゼーション作成
+========================
+
+| Exastro システムをインストールした直後は、Exastro IT Automation を使うためにまず、オーガナイゼーションの作成を行います。
+| オーガナイゼーションの詳細については、:doc:`../manuals/platform_management/organization` を参照してください。
+
+
+- 作成方法
+
+| 画面の指示に従ってオーガナイゼーション情報を指定し、オーガナイゼーションを作成します。
+
+| GitHub リポジトリから取得した資材の中にある、シェルスクリプトを実行しオーガナイゼーションを作成します。
+
+#. オーガナイゼーション作成用シェルスクリプトを、リポジトリから :kbd:`git clone` により取得します。
+
+   .. code-block:: bash
+      :caption: コマンド
+
+      # Exastro Platform の資材を入手
+      git clone https://github.com/exastro-suite/exastro-platform.git
+
+#. 設定ファイルの :kbd:`CONF_BASE_URL` に Exastro Suite の管理用エンドポイント URL を設定します。
+
+   .. code-block:: bash
+      :caption: コマンド
+
+      # Exastro Platform への接続のための設定情報を登録
+      vi ./exastro-platform/tools/api-auth.conf
+
+   | 例えば、:ref:`service_setting` で、Ingress を使ったサービス公開の設定をした場合は下記のようになります。
+
+   .. code-block:: diff
+      :caption: create-organization.conf
+      :linenos:
+      :lineno-start: 1
+
+      - CONF_BASE_URL=http://platform-auth:8001
+      + CONF_BASE_URL=http://exastro-suite-mng.example.local
+        CURL_OPT=-sv
+  
+   .. tip::
+       | 自己証明書を利用している場合、証明書エラーが発生します。
+       | 設定ファイル内の :kbd:`CURL_OPT=-sv` を :kbd:`CURL_OPT=-svk` に変更することで証明書エラーを回避できますが、認証機関から発行された正しい証明書をインストールすることを推奨します。
+
+#. オーガナイゼーション作成実行
+
+   | オーガナイゼーション作成時の初期登録情報として下記の項目を登録します。
+
+   .. list-table:: 作成するオーガナイゼーション情報
+     :widths: 25 40
+     :header-rows: 1
+     :align: left
+
+     * - 設定項目
+       - 設定値
+     * - organization id
+       - :program:`qs-org`
+     * - organization name
+       - :program:`Quickstart organization`
+     * - organization manager's username
+       - :program:`qs-admin`
+     * - organization manager's email
+       - :program:`qs-admin@example.com`
+     * - organization manager's firstName
+       - :program:`quickstart`
+     * - organization manager's lastName
+       - :program:`administrator`
+     * - organization manager's initial password
+       - :program:`password`
+
+   .. code-block:: sh
+      :caption: コマンド 
+
+      bash ./exastro-platform/tools/create-organization.sh
+
+   | :kbd:`your username` と :kbd:`your username` は :ref:`create_system_manager` で登録した、:kbd:`KEYCLOAK_USER` 及び :kbd:`KEYCLOAK_PASSWORD` です。
+
+   .. code-block::
+      :caption: コマンド (入力例)
+
+      Please enter the organization information to be created
+  
+      organization id : qs-org                             # オーガナイゼーションIDを入力します
+      organization name : Quickstart organization          # オーガナイゼーション名を入力します
+      organization manager's username : qs-admin           # オーガナイゼーション管理者のユーザ名（ログインするときのID）を入力します
+      organization manager's email : qs-admin@example.com  # オーガナイゼーション管理者のE-mailアドレスを入力します
+      organization manager's first name : quickstart       # オーガナイゼーション管理者の名を入力します
+      organization manager's last name : administrator     # オーガナイゼーション管理者の姓を入力します
+      organization manager's initial password : password   # オーガナイゼーション管理者の初期パスワードを入力します
+      organization plan id (optional) :                    # プランを指定(任意)します ※ 初期状態では未作成のため入力不要
+
+      your username : INPUT-YOUR-USERNAME                  # システム管理者のユーザ名を入力します
+      your password : INPUT-USER-PASSWORD                  # システム管理者のパスワードを入力します
+
+      Create an organization, are you sure? (Y/other) : Y # "Y"を入力すると実行します
+
+
+   | 成功時の結果表示は、:kbd:`result` が "000-00000”となります。
+      
+   .. code-block:: bash
+      :caption: 実行結果 (成功時)
+
+      ...
+      < HTTP/1.1 200 OK
+      < Date: Thu, 18 Aug 2022 01:49:13 GMT
+      < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
+      < Content-Length: 107
+      < Content-Type: application/json
+      < 
+      {
+        "data": null, 
+        "message": "SUCCESS", 
+        "result": "000-00000", 
+        "ts": "2022-08-18T01:49:17.251Z"
+      }
+      * Connection #0 to host platform-auth left intact
+
+
+ワークスペース作成
+==================
+
+#. 作成したオーガナイゼーションにオーガナイゼーション管理者でログインします。
+
+   http://exastro-suite.example.local/qs-org/platform/
+
+   .. figure:: /images/learn/quickstart/login/login.png
+      :width: 300px
+      :align: left
+
+   .. list-table:: ログイン情報
+     :widths: 25 50
+     :header-rows: 1
+     :align: left
+
+     * - 入力項目
+       - 入力値
+     * - URL
+       - :program:`http://exastro-suite.example.local/qs-org/platform/`
+     * - ユーザ名
+       - :program:`qs-admin`
+     * - パスワード
+       - :program:`password`
+
+#. 初回ログイン時のみパスワードとアカウントの更新を実施します。
+
+   .. figure:: /images/learn/quickstart/login/change-password.png
+      :width: 300px
+      :align: left
+
+      パスワードの更新
+
+   .. figure:: /images/learn/quickstart/login/change-account-info.png
+      :width: 300px
+      :align: left
+
+      アカウント情報の更新
+
+#. | :menuselection:`メインメニュー --> ワークスペース一覧` で、 :guilabel:`作成` をクリックします。
+
+   .. figure:: /images/ja/manuals/platform/workspace/ワークスペース一覧.png
+      :width: 600px
+      :align: left
+
+   .. warning::
+      | オーガナイゼーション管理者以外でログインしている時は、 :guilabel:`作成` は表示されません。
+
+#. | 新規ワークスペース画面が表示されるので、ワークスペースの情報を入力し、 :guilabel:`登録` をクリックします。
+
+   .. figure:: /images/ja/manuals/platform/workspace/新規ワークスペース作成画面.png
+      :width: 600px
+      :align: left
+
+   .. list-table:: ワークスペース設定項目
+      :widths: 60 80
+      :header-rows: 1
+      :align: left
+   
+      * - 項目名
+        - 説明
+      * - ワークスペースID
+        - :program:`quickstart`
+      * - ワークスペース名
+        - :program:`クイックスタート`
+      * - 環境一覧
+        - 
+      * - 説明
+        - 
+
+Exastro IT Automation 実行前作業
+================================
+
+Exastro IT Automation 画面
+--------------------------
+
+#. | :menuselection:`メインメニュー --> ワークスペース一覧` から、 :menuselection:`quickstart` ワークスペースにある :guilabel:`Exastro IT Automation` をクリックし、ITA の操作画面に遷移します。
+
+.. figure:: /images/learn/quickstart/login/select-workspace.png
+   :width: 600px
+   :align: left
+
 
 画面説明
-=========
+--------
 
-Webコンソール画面(ログイン)
----------------------------
+| 画面は以下のように表示されます。
 
-| ITAのインストールが完了しURLへアクセスすると、ログイン画面が表示されます。
-| ※インストール手順については” IT Automation オンラインインストールをご参照ください。
 
-.. figure:: ../../../images/learn/quickstart/login&mainmenu/v1.0_login.png
-    :alt: ログイン
-    :align: left
-    :width: 700px
-
-画面説明(メインメニュー)
-------------------------
-
-| **画面は以下のように表示されます。**
-
-| メイングループ、メインメニュー
-
-.. figure:: ../../../images/learn/quickstart/login&mainmenu/v1.0_mainmenu1.png
-    :alt: ログイン
-    :align: left
-    :width: 700px
+.. figure:: /images/learn/quickstart/login&mainmenu/v1.0_mainmenu1.png
+   :width: 600px
     
-| サブメニュー概略①
+   メイングループ、メインメニュー
 
-.. figure::  ../../../images/learn/quickstart/login&mainmenu/v1.0_mainmenu2.png
-    :alt: ログイン
-    :align: left
-    :width: 700px
+.. figure::  /images/learn/quickstart/login&mainmenu/v1.0_mainmenu2.png
+   :width: 600px
    
-| サブメニュー概略②
+   サブメニュー概略①
 
-.. figure::  ../../../images/learn/quickstart/login&mainmenu/v1.0_mainmenu3.png
-    :alt: ログイン
-    :align: left
-    :width: 700px
+.. figure::  /images/learn/quickstart/login&mainmenu/v1.0_mainmenu3.png
+   :width: 600px
 
+   サブメニュー概略②
 
-実行前準備
-==========
 
 Playbookをアップロードしてジョブ(Movement)に紐付け 
 --------------------------------------------------
+
+|  Exastro IT Automation のインストールが完了しURLへアクセスすると、ログイン画面が表示されます。
+| ※インストール手順については” IT Automation オンラインインストールをご参照ください。
+
+.. figure:: /images/learn/quickstart/login&mainmenu/v1.0_login.png
+    :width: 600px
+
+画面説明(メインメニュー)
+------------------------
 
 Playbookの準備
 **************
@@ -179,19 +362,16 @@ Movement一覧へ新規Movementを登録
 
 | 次にMovementの登録を行っていきます。
 
-#. メインメニューより、「Ansible-Legacy」メニューグループ >>「Movement一覧」メニューをクリックします。
-#. 「登録開始」ボタンをクリックします。
+#. メインメニューより、「Ansible-LegacyRole」メニューグループ >>「Movement一覧」メニューをクリックします。
+#. :guilabel:`登録開始` をクリックします。
 #. 各項目へ下表のように入力し、登録をクリックしてください。
 
-.. figure:: ../../../images/learn/quickstart/preparation/v1.0_legacy_movement_register.png
-    :alt: Movement登録
-    :align: left
-    :width: 700px
+.. figure:: /images/learn/quickstart/preparation/v1.0_legacy_movement_register.png
+    :width: 600px
     
 .. list-table:: Movement一覧
    :widths: 10 10 20
    :header-rows: 1
-   :align: left
 
    * - Movement名
      - ホスト指定形式
@@ -206,18 +386,15 @@ Movement一覧へ新規Movementを登録
 
 | 次に作成したPlaybookの登録を行います。
 
-#. 「Ansible-Legacy」メニューグループ >>「Playbook素材集」メニューをクリックします。
+#. 「Ansible-LegacyRole」メニューグループ >>「Playbook素材集」メニューをクリックします。
 #. 登録開始をクリックし、各項目へ下表のように入力し登録をクリックしてください。
 
-.. figure::   ../../../images/learn/quickstart/preparation/v1.0_legacy_playbook_register1.png
-    :alt: Playbook登録
-    :align: left
-    :width: 700px
+.. figure::   /images/learn/quickstart/preparation/v1.0_legacy_playbook_register1.png
+    :width: 600px
     
 .. list-table:: Playbook素材集
    :widths: 10  20
    :header-rows: 1
-   :align: left
 
    * - Playbook素材名
      - Playbook素材
@@ -230,19 +407,16 @@ Movement一覧へ新規Movementを登録
 「Movement-Playbook紐付」への登録
 *********************************
 
-#. 「Ansible-Legacy」メニューグループ >>「Movement-Playbook紐付」メニューをクリックします。
+#. 「Ansible-LegacyRole」メニューグループ >>「Movement-Playbook紐付」メニューをクリックします。
 #.  各項目へ下表のように入力、選択し登録をクリックしてください。
 
-.. figure::   ../../../images/learn/quickstart/preparation/v1.0_legacy_playbook_register2.png
-    :alt: Movement-Playbook紐づけ登録
-    :align: left
-    :width: 700px
+.. figure::   /images/learn/quickstart/preparation/v1.0_legacy_playbook_register2.png
+    :width: 600px
 
 
 .. list-table:: Movement-Playbook紐付
    :widths: 10 10 20
    :header-rows: 1
-   :align: left
 
    * - Movement
      - Playbook素材
@@ -264,10 +438,8 @@ Movement一覧へ新規Movementを登録
 #. 「Conductor」メニューグループ >>「Conductorクラス編集」メニューをクリックします。
 #. 下記の通りConducor名に「パッケージインストール」と入力、しMovementを移動、連結させ登録をクリックしてください。
 
-.. figure::   ../../../images/learn/quickstart/preparation/v1.0_conductor_edit.gif
-    :alt: Conductor作成
-    :align: left
-    :width: 700px
+.. figure::   /images/learn/quickstart/preparation/v1.0_conductor_edit.gif
+    :width: 600px
     
 
 CMDBにパラメータシートを設定
@@ -281,15 +453,12 @@ CMDBにパラメータシートを設定
 #. 「メニュー作成」メニューグループ >>「メニュー定義・作成」メニューをクリックします。
 #. 各項目へ下表のように入力、選択して下さい。
 
-.. figure::   ../../../images/learn/quickstart/preparation/v1.0_menu_create1.gif
-    :alt: パラメータシート作成1
-    :align: left
-    :width: 500px
+.. figure::   /images/learn/quickstart/preparation/v1.0_menu_create1.gif
+    :width: 600px
 
 .. list-table:: パラメータシートの作成
    :widths: 10 10 10 5
    :header-rows: 1
-   :align: left
   
 
    * - グループ名
@@ -303,16 +472,13 @@ CMDBにパラメータシートを設定
      
 | 項目を追加し、各項目へ下表のように入力、選択して下さい。
 
-.. figure::   ../../../images/learn/quickstart/preparation/v1.0_menu_create2.png
-    :alt: パラメータシート作成2
-    :align: left
-    :width: 500px
+.. figure::   /images/learn/quickstart/preparation/v1.0_menu_create2.png
+    :width: 600px
 
 
 .. list-table:: パラメータシートの作成
    :widths: 10 10 20 
    :header-rows: 1
-   :align: left
 
    * - 項目名
      - 入力方式
@@ -339,10 +505,8 @@ CMDBにパラメータシートを設定
 
 | 項目の移動が完了できたら作成をクリックして下さい。
 
-.. figure::   ../../../images/learn/quickstart/preparation/v1.0_menu_create3.gif
-    :alt: パラメータシート作成2
-    :align: left
-    :width: 700px
+.. figure::   /images/learn/quickstart/preparation/v1.0_menu_create3.gif
+    :width: 600px
 
 
 
@@ -354,20 +518,17 @@ CMDBにパラメータシートを設定
 
 | 最後に代入値自動登録を行います。
 
-#. 「Ansible-Legacy」メニューグループ >>「代入値自動登録設定」メニューをクリックします。
+#. 「Ansible-LegacyRole」メニューグループ >>「代入値自動登録設定」メニューをクリックします。
 #. 各項目へ下表のように入力、選択して下さい。
 #. 各項目へ入力、選択が完了したら登録をクリックして下さい。
 
-.. figure::   ../../../images/learn/quickstart/preparation/v1.0_substitution_value_automatic_registration1.png
-    :alt: パラメータシート作成2
-    :align: left
-    :width: 500px
+.. figure::   /images/learn/quickstart/preparation/v1.0_substitution_value_automatic_registration1.png
+    :width: 600px
     
 
 .. list-table:: 代入値自動登録設定
    :widths: 10 10 3 7 7 3
    :header-rows: 1
-   :align: left
 
    * - メニューグループ:メニュー
      - 項目
@@ -429,10 +590,8 @@ CMDBにパラメータシートを設定
 | 表示フィルタで5件のデータが登録できているかの確認を行って下さい。
 | ここまでで実行準備は終了になります。
 
-.. figure::   ../../../images/learn/quickstart/preparation/v1.0_substitution_value_automatic_registration2.png
-    :alt: 代入値自動登録確認
-    :align: left
-    :width: 700px
+.. figure::   /images/learn/quickstart/preparation/v1.0_substitution_value_automatic_registration2.png
+    :width: 600px
     
 
 
@@ -449,15 +608,12 @@ CMDBにパラメータシートを設定
 #. 「基本コンソール」メニューグループ >>「機器一覧」メニューをクリックします。
 #. 各項目へ下表のように入力して下さい。
 
-.. figure::   ../../../images/learn/quickstart/execution/v1.0_devicelist1.png
-    :alt: 機器一覧登録
-    :align: left
-    :width: 500px
+.. figure::   /images/learn/quickstart/execution/v1.0_devicelist1.png
+    :width: 600px
 
 .. list-table:: 機器一覧
    :widths: 10 10 10
    :header-rows: 1
-   :align: left
 
    * - HW機器種別
      - ホスト名
@@ -470,15 +626,12 @@ CMDBにパラメータシートを設定
 
 | スクロールバーを右にスライドし各項目へ下表のように入力して下さい。
 
-.. figure::   ../../../images/learn/quickstart/execution/v1.0_devicelist2.png
-    :alt: 機器一覧登録
-    :align: left
-    :width: 500px
+.. figure::   /images/learn/quickstart/execution/v1.0_devicelist2.png
+    :width: 600px
 
 .. list-table:: 機器一覧
    :widths: 10 10 10
    :header-rows: 1
-   :align: left
 
    * - ログインユーザID
      - ログインパスワード管理
@@ -490,22 +643,19 @@ CMDBにパラメータシートを設定
 
 | 最後の項目へ下表のように選択し登録をクリックして下さい。
 
-.. figure::   ../../../images/learn/quickstart/execution/v1.0_devicelist3.png
-    :alt: 機器一覧登録
-    :align: left
-    :width: 500px
+.. figure::   /images/learn/quickstart/execution/v1.0_devicelist3.png
+    :width: 600px
 
 .. list-table:: 機器一覧
    :widths: 10 
    :header-rows: 1
-   :align: left
 
-   * - Legacy/Role利用情報認証方式
+   * - LegacyRole/Role利用情報認証方式
    * - パスワード認証
    
 
 .. note::
-  | Ansible-Legacyを実行するための必須入力項目は以下の6項目です。
+  | Ansible-LegacyRoleを実行するための必須入力項目は以下の6項目です。
   | [ホスト名][IPアドレス][ログインユーザID][ログインパスワード管理][ログインパスワード][認証方式]
 
 作業名(Operation)の登録
@@ -519,16 +669,13 @@ CMDBにパラメータシートを設定
 #. 「基本コンソール」メニューグループ >>「オペレーション一覧」メニューをクリックします。
 #. 各項目へ入力、選択が完了したら登録をクリックして下さい。
 
-.. figure::   ../../../images/learn/quickstart/execution/v1.0_operation_registration.png
-    :alt: operation
-    :align: left
-    :width: 500px
+.. figure::   /images/learn/quickstart/execution/v1.0_operation_registration.png
+    :width: 600px
     
 
 .. list-table:: オペレーション登録
    :widths: 10 10
    :header-rows: 1
-   :align: left
 
    * - オペレーション名
      - 実施予定日時
@@ -547,16 +694,13 @@ CMDBにパラメータシートを設定
 #. 「入力用」メニューグループ >>「インストールパッケージ一覧」メニューをクリックします。
 #.  各項目へ入力、選択が完了したら登録をクリックして下さい。
 
-.. figure::   ../../../images/learn/quickstart/execution/v1.0_dataregistration1.png
-    :alt: パラメータシートにデータを登録
-    :align: left
-    :width: 700px
+.. figure::   /images/learn/quickstart/execution/v1.0_dataregistration1.png
+    :width: 600px
 
 
 .. list-table:: 入力用登録
    :widths: 10 10 5 5 5 5 5 
    :header-rows: 1
-   :align: left
 
    * - ホスト名
      - オペレーション
@@ -579,10 +723,8 @@ CMDBにパラメータシートを設定
 
 | 実行前準備の代入値自動登録設定の時と同様、表示フィルタを開き「フィルタ」ボタンをクリックして登録したデータを確認してください。
 
-.. figure::   ../../../images/learn/quickstart/execution/v1.0_dataregistration2.png
-    :alt: インストールパッケージ一覧への登録
-    :align: left
-    :width: 500px
+.. figure::   /images/learn/quickstart/execution/v1.0_dataregistration2.png
+    :width: 600px
 
 
 Conductorの実行
@@ -596,10 +738,8 @@ Conductorの実行
 #. 「Conductor」メニューグループ >>「Conductor作業実行」メニューをクリックします。
 #. 実行する「Conductor」と「オペレーション」を選択し実行をクリックして下さい。
 
-.. figure::   ../../../images/learn/quickstart/execution/v1.0_conductor1.png
-    :alt: Conductor実行
-    :align: left
-    :width: 500px
+.. figure::   /images/learn/quickstart/execution/v1.0_conductor1.png
+    :width: 600px
 
 
 実行結果確認
@@ -607,18 +747,14 @@ Conductorの実行
 
 | 実行すると「Conductor作業確認」メニュー画面に切替わり、実行ステータスやログが表示されます。
 
-.. figure::   ../../../images/learn/quickstart/execution/v1.0_conductor2.png
-    :alt: 実行結果の確認
-    :align: left
-    :width: 700px
+.. figure::   /images/learn/quickstart/execution/v1.0_conductor2.png
+    :width: 600px
 
 
 | ジョブ(Movement)を選択し、Doneのアイコンまたは右側のOperation statusをクリックすると詳細が表示されます。
 
-.. figure::   ../../../images/learn/quickstart/execution/v1.0_conductor3.png
-    :alt: 実行結果の確認
-    :align: left
-    :width: 700px
+.. figure::   /images/learn/quickstart/execution/v1.0_conductor3.png
+    :width: 600px
 
 
 
@@ -631,10 +767,8 @@ Conductorの実行
 
 | 詳細画面の進行状況(実行ログ)でAnsibleの実行ログを確認していきます。
 
-.. figure::   ../../../images/learn/quickstart/execution/v1.0_executionresult1.png
-    :alt: 実行結果の確認
-    :align: left
-    :width: 500px
+.. figure::   /images/learn/quickstart/execution/v1.0_executionresult1.png
+    :width: 600px
 
 | httpd,php,perl,pythonをインストールされているか実行ログから確認して下さい。
 
@@ -706,16 +840,13 @@ Conductorの実行
 #. 「基本コンソール」メニューグループ >>「オペレーション一覧」メニューをクリックします。
 #. 各項目へ入力、選択が完了したら登録をクリックして下さい。
  
-.. figure::   ../../../images/learn/quickstart/execution2/v1.0_operation2.png
-    :alt: Operation登録
-    :align: left
-    :width: 500px
+.. figure::   /images/learn/quickstart/execution2/v1.0_operation2.png
+    :width: 600px
 
 
 .. list-table:: オペレーション登録
    :widths: 10 10
    :header-rows: 1
-   :align: left
 
    * - オペレーション名
      - 実施予定日時
@@ -734,16 +865,13 @@ Conductorの実行
 
 | ※1回目とインストールするパッケージが異なっているので注意して下さい。
 
-.. figure::   ../../../images/learn/quickstart/execution2/v1.0_dataregistration3.png
-    :alt: Operation登録
-    :align: left
-    :width: 700px
+.. figure::   /images/learn/quickstart/execution2/v1.0_dataregistration3.png
+    :width: 600px
 
 
 .. list-table:: 入力用登録
    :widths: 10 10 5 5 5 5 5 
    :header-rows: 1
-   :align: left
 
    * - ホスト名
      - オペレーション
@@ -768,29 +896,23 @@ Conductorの実行
 #.  「Conductor」メニューグループ >>「Conductor作業実行」メニューをクリックします。
 #.  実行する「Conductor」と「オペレーション」を選択し実行をクリックして下さい。
 
-.. figure::   ../../../images/learn/quickstart/execution2/v1.0_conductor4.png
-    :alt: Conducorの実行
-    :align: left
-    :width: 700px
+.. figure::   /images/learn/quickstart/execution2/v1.0_conductor4.png
+    :width: 600px
 
 
 | **作業結果の確認**
 | 実行すると「Conductor作業確認」メニュー画面に切替わり、実行ステータスやログが表示されます。
 
-.. figure::   ../../../images/learn/quickstart/execution/v1.0_conductor2.png
-    :alt: Conducorの実行
-    :align: left
-    :width: 700px
+.. figure::   /images/learn/quickstart/execution/v1.0_conductor2.png
+    :width: 600px
 
 .. note::
   | 実行ステータスやログをリアルタイムで確認可能です。
 
 | ジョブ(Movement)を選択し、Doneのアイコンまたは右側のOperation statusをクリックすると詳細が表示されます。
 
-.. figure::   ../../../images/learn/quickstart/execution2/v1.0_conductor5.png
-    :alt: 作業結果確認
-    :align: left
-    :width: 700px
+.. figure::   /images/learn/quickstart/execution2/v1.0_conductor5.png
+    :width: 600px
 
 実行結果の確認
 --------------
@@ -803,10 +925,8 @@ Conductorの実行
 | 新たにMariaDBのインストールと他のパッケージとの依存関係の解決、他の4つのパッケージ(httpd,php,perl,python)の
 | バージョンアップが行われていることを確認して下さい。
 
-.. figure::   ../../../images/learn/quickstart/execution2/v1.0_exectuionresult2.png
-    :alt: Conducorの実行
-    :align: left
-    :width: 700px
+.. figure::   /images/learn/quickstart/execution2/v1.0_exectuionresult2.png
+    :width: 600px
 
 | 新たにMariaDBのインストールと他のパッケージとの依存関係の解決、他の4つのパッケージ(httpd,php,perl,python)のバージョンアップが行われていることを確認して下さい。
 
@@ -848,13 +968,11 @@ CMDBパラメータの履歴確認
 履歴管理と本シナリオのポイント
 ******************************
 
-| ITAはCMDBに「誰が・いつ・何をしたのか？」を履歴管理し、その時の時点でシステムのパラメータはどうなっているのかを抽出できる機能があります。
+|  Exastro IT Automation はCMDBに「誰が・いつ・何をしたのか？」を履歴管理し、その時の時点でシステムのパラメータはどうなっているのかを抽出できる機能があります。
 | パラメータの履歴管理をすることにより、設計者や運用者がストレスなくシステム更改を行うことができます。
 
-.. figure:: ../../../images/learn/quickstart/Historycheck_CMDB_parameters/v1.0_checkhistory1.png
-    :alt: 履歴確認
-    :align: left
-    :width: 700px
+.. figure:: /images/learn/quickstart/Historycheck_CMDB_parameters/v1.0_checkhistory1.png
+    :width: 600px
     
 CMDBパラメータの履歴を確認する
 ------------------------------
@@ -866,56 +984,46 @@ CMDBパラメータの履歴を確認する
 | 「参照用」メニューグループ >>「インストールパッケージ一覧」メニューをクリックします。
 |  まずは基準日付を入力せずにフィルタをかけます。
 
-.. figure:: ../../../images/learn/quickstart/Historycheck_CMDB_parameters/v1.0_checkhistory2.png
-    :alt: 履歴確認
-    :align: left
-    :width: 700px
+.. figure:: /images/learn/quickstart/Historycheck_CMDB_parameters/v1.0_checkhistory2.png
+    :width: 600px
 
 | 次に2回目の実行を行った基準日時より前の日付を入力してフィルタをかけます。
 
-.. figure:: ../../../images/learn/quickstart/Historycheck_CMDB_parameters/v1.0_checkhistory3.png
-    :alt: 履歴確認
-    :align: left
-    :width: 700px
+.. figure:: /images/learn/quickstart/Historycheck_CMDB_parameters/v1.0_checkhistory3.png
+    :width: 600px
 
 | 最後に1回目の実行を行った基準日時より前の日付を入力してフィルタをかけます。
 
-.. figure:: ../../../images/learn/quickstart/Historycheck_CMDB_parameters/v1.0_checkhistory4.png
-    :alt: 履歴確認
-    :align: left
-    :width: 700px
+.. figure:: /images/learn/quickstart/Historycheck_CMDB_parameters/v1.0_checkhistory4.png
+    :width: 600px
 
 
 A. 付録
 =======
 
-参考① 【Ansible-Legacy】単体実行
----------------------------------
+参考① 【Ansible-LegacyRole】単体実行
+-------------------------------------
 
 作業実行
 ********
 
-| Ansible-Legacyは「作業実行」メニューがあり、Movementごとに個別実行や、ドライランが可能です。
+| Ansible-LegacyRoleは「作業実行」メニューがあり、Movementごとに個別実行や、ドライランが可能です。
 
-.. figure:: ../../../images/learn/quickstart/reference/v1.0_singleexecution.png
-    :alt: 単体実行
-    :align: left
-    :width: 700px
+.. figure:: /images/learn/quickstart/reference/v1.0_singleexecution.png
+    :width: 600px
 
 
 
-参考② 【Ansible-Legacy】実行確認
----------------------------------
+参考② 【Ansible-LegacyRole】実行確認
+-------------------------------------
 
 作業結果確認
 *************
 
 | 実行(またはドライラン)すると画面が切替わり、実行ステータスやログが表示されます。
 
-.. figure:: ../../../images/learn/quickstart/reference/v1.0_executionconfirmation.png
-    :alt: 実行確認
-    :align: left
-    :width: 700px
+.. figure:: /images/learn/quickstart/reference/v1.0_executionconfirmation.png
+    :width: 600px
 
 | クイックスタートは、以上となります。
 

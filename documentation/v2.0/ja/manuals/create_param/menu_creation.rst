@@ -22,7 +22,7 @@
   | 「メニュー作成」メニューグループ＞「メニュー定義・作成」メニュー＞「メニュー作成情報」タブ＞「基本情報」枠＞「作成対象」項目にて、「パラメータシート（オペレーションあり）」および「パラメータシート（ホスト/オペレーションあり）」を選択し作成したメニューをパラメータシートと呼びます。
   | 各ドライバの「代入値自動登録設定」メニューにて、対象となるパラメータシートとIaC変数を設定しておくことで、パラメータシートの「パラメータ」項目に入力された値をIaC変数に自動で代入することが可能です。
 
-  .. figure:: /images/ja/menu_creation/png/paramsheet1m.png
+  .. figure:: /images/ja/menu_creation/menu_definition_and_create/paramsheet1m.png
      :width: 6.67391in
      :height: 3.20028in
      :align: center
@@ -30,7 +30,7 @@
 
      例）パラメータシート（ホスト/オペレーションあり）定義画面
       
-  .. figure:: /images/ja/menu_creation/gif/menu_done_operation1.gif
+  .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_done_operation1.gif
      :width: 6.67391in
      :height: 3.20028in
      :align: center
@@ -50,7 +50,7 @@
   | 自由に項目を作成できるデータシートの作成が可能です。データシートは各ドライバの「代入値自動登録設定」メニューでは利用できません。
   | CMDB（Configuration Management Database、構成管理データベース）として、ITA上で情報を管理する場合に利用できます。
 
-  .. figure:: /images/ja/menu_creation/png/datasheet1m.png
+  .. figure:: /images/ja/menu_creation/menu_definition_and_create/datasheet1m.png
      :width: 6.67391in
      :height: 3.20028in
      :align: center
@@ -58,7 +58,7 @@
 
      データシート定義画面
 
-  .. figure:: /images/ja/menu_creation/gif/menu_done_operation2.gif
+  .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_done_operation2.gif
      :width: 6.67391in
      :height: 3.20028in
      :align: center
@@ -180,7 +180,7 @@
   - | パラメータシート」を選択してメニュー作成を実行
     | 各ドライバの「代入値自動登録設定」メニューで項目の設定が可能なメニュー（\ **パラメータシート）**\ が作成されます。
 
-  .. figure:: /images/ja/menu_creation/gif/menu_done_operation1.gif
+  .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_done_operation1.gif
      :width: 5.21378in
      :height: 1.64681in
      :align: center
@@ -191,7 +191,7 @@
   - | 「データシート」を選択してメニュー作成を実行
     | 「代入値自動登録設定」メニューでは利用できないメニュー（\ **データシート）**\ が作成されます。
 
-  .. figure:: /images/ja/menu_creation/gif/menu_done_operation2.gif
+  .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_done_operation2.gif
      :width: 5.09378in
      :height: 1.64681in
      :align: center
@@ -258,7 +258,7 @@
   | パラメーターシート「パラメーターシート１」、データシート「デタシ１」を作成した場合、
   | 入力用、代入値自動登録用、参照用各グループでの見え方は以下の通りです。
 
-  .. figure:: /images/ja/menu_creation/gif/menu_3_groups.gif
+  .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_3_groups.gif
      :width: 5.09378in
      :height: 1.64681in
      :align: center
@@ -273,7 +273,7 @@
 
 | 「メニュー作成」メニューグループの「メニュー定義・作成」メニューでは、メニュー（パラメータシート/データシート）の作成と項目の設定が同時に行えます。
 
-.. figure:: /images/ja/menu_creation/png/menu_definition_m.png
+.. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_definition_m.png
    :width: 6.69236in
    :height: 4.15903in
    :align: center
@@ -287,7 +287,7 @@
 -  | 「項目」ボタン
    :guilabel:`項目` ボタンを押下すると項目が出力され設定できるようになります。
 
-   .. figure:: /images/ja/menu_creation/gif/menu_add_item.gif
+   .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_add_item.gif
       :width: 5.90486in
       :height: 1.59306in
       :align: center
@@ -297,7 +297,7 @@
 
    | 項目を入力するとメニュー（パラメータシート/データシート）に項目として追加することが可能です。
 
-   .. figure:: /images/ja/menu_creation/png/menu_part_item.png
+   .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_part_item.png
       :width: 5.90486in
       :height: 1.59306in
       :align: center
@@ -308,13 +308,13 @@
    | 表示したカラムグループの領域に項目をドラッグ&ドロップすると設定できるようになります。
    | 1つのグループに対して複数の項目が設定できます
 
-   .. figure:: /images/ja/menu_creation/gif/menu_grouping.gif
+   .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_grouping.gif
       :width: 6.08396in
       :height: 1.41856in
       :align: center
       :alt: カラムグループ作成
 
-   .. figure:: /images/ja/menu_creation/png/menu_grouping_result.png
+   .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_grouping_result.png
       :width: 6.08396in
       :height: 1.41856in
       :align: center
@@ -325,7 +325,7 @@
 -  | 「取り消し」ボタン
    | 入力・設定した項目を直前に戻します。
 
-   .. figure:: /images/ja/menu_creation/png/menu_cancel.png
+   .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_cancel.png
       :width: 6.08396in
       :height: 1.41856in
       :align: center
@@ -334,7 +334,7 @@
 -  | 「やり直し」ボタン
    | 「取り消し」ボタンを押す前の状態に戻します。
 
-   .. figure:: /images/ja/menu_creation/png/menu_redo.png
+   .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_redo.png
       :width: 6.08396in
       :height: 1.41856in
       :align: center
@@ -345,7 +345,7 @@
 -  | 「作成」ボタン
    | 「取り消し」ボタンを押す前の状態に戻します。
 
-   .. figure:: /images/ja/menu_creation/png/menu_redo.png
+   .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_redo.png
       :width: 6.08396in
       :height: 1.41856in
       :align: center
@@ -356,7 +356,7 @@
 -  | 項目名定義
    | 項目の名称を入力します。初期値は「項目1」です。「/」は使用禁止です。
 
-   .. figure:: /images/ja/menu_creation/png/menu_item_definition1.png
+   .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_item_definition1.png
       :width: 5.90486in
       :height: 1.59306in
       :align: center
@@ -367,7 +367,7 @@
 -  | 項目名定義 (REST API 用)
    | 項目の名称 (REST API 用)を入力します。初期値は「項目1」です。「/」は使用禁止です。
 
-   .. figure:: /images/ja/menu_creation/png/menu_item_definition2.png
+   .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_item_definition2.png
       :width: 5.90486in
       :height: 1.59306in
       :align: center
@@ -378,7 +378,7 @@
 -  | 入力方式選択
    | プルダウンメニューから入力方式を選択します。
 
-   .. figure:: /images/ja/menu_creation/png/menu_item_definition3.png
+   .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_item_definition3.png
       :width: 5.90486in
       :height: 1.59306in
       :align: center
@@ -631,7 +631,7 @@
 - | メニュー作成のために必要な情報を入力します。
   - | 「基本情報」枠
 
-    .. figure:: /images/ja/menu_creation/png/menu_base_info.png
+    .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_base_info.png
        :width: 6.08396in
        :height: 1.41856in
        :align: center
@@ -776,7 +776,7 @@
        |      |                                              |       |       |
        +------+----------------------------------------------+-------+-------+
 
-    .. figure:: /images/ja/menu_creation/gif/menu_target_group.gif
+    .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_target_group.gif
        :width: 6.29921in
        :height: 3.12575in
        :align: center
@@ -796,7 +796,7 @@
   - | 「一意制約(複数項目)」枠
     | 作成したメニューにデータを登録する際に、指定した複数の項目で同じレコードの組み合わせが登録できないように制御する機能です。
 
-    .. figure:: /images/ja/menu_creation/gif/menu_unique_restriction2.gif
+    .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_unique_restriction2.gif
        :width: 5.91544in
        :height: 5.18333in
        :alt: 「一意制約(複数項目)」の機能
@@ -812,7 +812,7 @@
       - | 「取消」ボタンを押下することで、設定を反映させずに設定画面を閉じることができます。
       - | 「決定」ボタンを押下することで、設定した組み合わせのパターンが反映されます。
 
-      .. figure:: /images/ja/menu_creation/gif/menu_unique_restriction.gif
+      .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_unique_restriction.gif
          :width: 6.26679in
          :height: 3.65152in
          :align: center
@@ -824,7 +824,7 @@
         | ① 1つのパターンに項目が1つしか選択されていない場合。
         | ② 同じ項目の組み合わせのパターンが存在する場合。
 
-      .. figure:: /images/ja/menu_creation/png/menu_unique_restriction_wrong1.png
+      .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_unique_restriction_wrong1.png
          :width: 4.23577in
          :height: 1.98283in
          :align: center
@@ -832,7 +832,7 @@
 
          1つのパターンに項目が1つしか選択されていない場合
 
-      .. figure:: /images/ja/menu_creation/png/menu_unique_restriction_wrong2.png
+      .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_unique_restriction_wrong2.png
          :width: 4.23577in
          :height: 1.98283in
          :align: center
@@ -848,7 +848,7 @@
       | メニュー定義（「メニュー作成」メニューグループ配下の各メニュー）は、すべてのロールがアクセス可能となります。
       | 作成したメニュー（パラメータシート/データシート）は、「ロール/メニュー紐付管理」メニューの設定によりシステム管理者のロールと作成ユーザが所属するロールのみアクセス可能となります。
 
-      .. figure:: /images/ja/menu_creation/gif/menu_access_control.gif
+      .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_access_control.gif
          :width: 6.26679in
          :height: 3.65152in
          :align: center
@@ -862,7 +862,7 @@
 - | 「プレビュー」タブ
   | 入力中の項目がテーブル形式で表示されます。
 
-  .. figure:: /images/ja/menu_creation/png/menu_preview.png
+  .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_preview.png
      :width: 6.08396in
      :height: 1.41856in
      :align: center
@@ -881,7 +881,7 @@
 - | 「作成」ボタン
   | 必須項目入力後に押下するとメニュー（パラメータシート/データシート）の作成を行います。
 
-  .. figure:: /images/ja/menu_creation/gif/menu_creation_button.gif
+  .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_creation_button.gif
      :width: 6.08396in
      :height: 1.41856in
      :align: center
@@ -891,7 +891,7 @@
 
   | 作成後は画面上部の「メニュー作成履歴ボタンから「メニュー作成履歴」メニューに遷移し、正常にメニューが作成されたか確認をしてください。
 
-  .. figure:: /images/ja/menu_creation/png/menu_history_button.png
+  .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_history_button.png
      :width: 6.08396in
      :height: 1.41856in
      :align: center
@@ -908,7 +908,7 @@
 | 「メニュー定義・作成」メニューでメニュー(パラメータシート/データシート)を新規作成した後は、作成したメニューの編集や初期化、作成したメニューをテンプレートとして流用する形で新規作成することが可能です。
 - | 閲覧画面
 
-  .. figure:: /images/ja/menu_creation/gif/menu_after_creation.gif
+  .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_after_creation.gif
      :width: 6.08396in
      :height: 1.41856in
      :align: center
@@ -923,7 +923,7 @@
   | メニュー作成完了後にブラウザ画面を更新すると、「編集」ボタンと「初期化」ボタンが表示されるようになります。
   | メニュー作成のステータスは「メニュー作成履歴」ボタンより遷移できる「メニュー作成履歴」メニューで確認できます。
 
-  .. figure:: /images/ja/menu_creation/png/menu_button_on_browse1.png
+  .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_button_on_browse1.png
      :width: 3.07895in
      :height: 0.69767in
      :align: center
@@ -933,7 +933,7 @@
 
   | 
 
-  .. figure:: /images/ja/menu_creation/png/menu_button_on_browse2.png
+  .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_button_on_browse2.png
      :width: 3.07895in
      :height: 0.69767in
      :align: center
@@ -948,7 +948,7 @@
     | （既存の項目の設定値や、基本情報は一部箇所を除いて修正できません）
     | 編集し「作成(編集)」ボタンを押下するとメニュー（パラメータシート/データシート）の編集が実行されます。
 
-  .. figure:: /images/ja/menu_creation/png/menu_uneditable.png
+  .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_uneditable.png
      :width: 3.07895in
      :height: 0.69767in
      :align: center
@@ -967,7 +967,7 @@
     |
 - | 編集画面
 
-  .. figure:: /images/ja/menu_creation/png/menu_not_editable.png
+  .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_not_editable.png
      :width: 5.20712in
      :height: 2.76691in
      :align: center
@@ -993,7 +993,7 @@
   - | 「キャンセル」ボタン
     | 「編集」ボタン押下前の状態に戻ります。
 
-  .. figure:: /images/ja/menu_creation/png/menu_edit_button.png
+  .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_edit_button.png
      :width: 5.20712in
      :height: 2.76691in
      :align: center
@@ -1003,7 +1003,7 @@
 
 - | 初期化画面
 
-  .. figure:: /images/ja/menu_creation/png/menu_not_editable2.png
+  .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_not_editable2.png
      :width: 4.85375in
      :height: 2.58022in
      :align: center
@@ -1024,7 +1024,7 @@
   - | 「キャンセル」ボタン
     | 「編集」ボタン押下前の状態に戻ります。
 
-    .. figure:: /images/ja/menu_creation/png/menu_init_button.png
+    .. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_init_button.png
 
        :width: 4.85375in
        :height: 2.58022in
@@ -1046,7 +1046,7 @@
 | メニュー（パラメータシート/データシート）のメンテナンス(参照/更新/廃止/復活)が可能です。
 | 左メニュー一覧から「メニュー定義一覧」メニュー を押下すると以下の画面がでます。
 
-.. figure:: /images/ja/menu_creation/gif/menu_list.gif
+.. figure:: /images/ja/menu_creation/menu_definition_list/menu_list.gif
    :width: 6.69236in
    :height: 2.95903in
    :align: center
@@ -1056,7 +1056,7 @@
 
 :guilabel:`フィルタボタン` 押下によって作成したメニュー（パラメータシート/データシート）の一覧が表示されます。
 
-.. figure:: /images/ja/menu_creation/png/menu_definition_filter.png
+.. figure:: /images/ja/menu_creation/menu_definition_list/menu_definition_filter.png
    :width: 6.69236in
    :height: 2.95903in
    :align: center
@@ -1066,7 +1066,7 @@
 
 :guilabel:`メニュー定義・作成ボタン` を押下すると「メニュー定義・作成」メニューの閲覧画面に遷移します。
 
-.. figure:: /images/ja/menu_creation/png/menu_list_items_for_entry.png
+.. figure:: /images/ja/menu_creation/menu_definition_list/menu_list_items_for_entry.png
    :width: 6.69236in
    :height: 2.95903in
    :align: center
@@ -1076,7 +1076,7 @@
 
 :guilabel:`登録ボタン` 押下によって新規メニュー（パラメータシート/データシート）を定義する画面へ遷移します。
 
-.. figure:: /images/ja/menu_creation/png/menu_definition_reg.png
+.. figure:: /images/ja/menu_creation/menu_definition_list/menu_definition_reg.png
    :width: 6.69236in
    :height: 2.95903in
    :align: center
@@ -1187,7 +1187,7 @@
 
 | パラメータシートまたはデータシートのメニュー作成の状態を確認します。
 
-.. figure:: /images/ja/menu_creation/gif/menu_history.gif
+.. figure:: /images/ja/menu_creation/menu_creation_history/menu_history.gif
    :width: 5.90718in
    :height: 2.82691in
    :align: center
@@ -1250,7 +1250,7 @@
    | B. 代入値自動登録用メニューグループ
    | C. 参照用メニューグループ
 
-.. figure:: /images/ja/menu_creation/png/selection_of_basic_information_frame.png
+.. figure:: /images/ja/menu_creation/menu_definition_and_create/selection_of_basic_information_frame.png
    :width: 9.68725in
    :height: 6.43354in
    :align: center
@@ -1263,7 +1263,7 @@
 
 メニュー（パラメータシート/データシート）作成時に「メニュー定義・作成」メニュー（または「メニュー定義一覧」メニュー）の「作成対象」欄で「データシート」を選択した場合、データシートが作成されます。
 
-.. figure:: /images/ja/menu_creation/png/data_sheet_creation.png
+.. figure:: /images/ja/menu_creation/menu_definition_and_create/data_sheet_creation.png
    :width: 9.54048in
    :height: 6.28686in
    :align: center
@@ -1273,7 +1273,7 @@
 
 | 「入力用（メニューグループ）」欄で指定したメニューグループにデータシートが追加されていることを確認してください。
 
-.. figure:: /images/ja/menu_creation/png/menu_group_for_input.png
+.. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_group_for_input.png
    :width: 9.29401in
    :height: 6.7088in
    :align: center
@@ -1285,7 +1285,7 @@ A) 入力用メニューグループ
 *************************
 メンテナンス（登録/更新/廃止/復活）が可能なデータシートが作成されます。
 
-.. figure:: /images/ja/menu_creation/png/data_sheet_for_input.png
+.. figure:: /images/ja/menu_creation/menu_definition_and_create/data_sheet_for_input.png
    :width: 9.90718in
    :height: 6.76682in
    :align: center
@@ -1302,7 +1302,7 @@ A) 入力用メニューグループ
 
 メニュー（パラメータシート/データシート）作成時に「メニュー定義・作成」メニュー（または「メニュー定義一覧」メニュー）の「作成対象」欄で「パラメータシート（ホスト/オペレーションあり）」を選択した場合、ホスト名単位のパラメータシートが作成されます。
 
-.. figure:: /images/ja/menu_creation/png/parametersheet_with_host_operation_creation.png
+.. figure:: /images/ja/menu_creation/menu_definition_and_create/parametersheet_with_host_operation_creation.png
    :width: 9.16042in
    :height: 6.37986in
    :align: center
@@ -1312,7 +1312,7 @@ A) 入力用メニューグループ
 
 | 「入力用（メニューグループ）」欄、「代入値自動管理用（メニューグループ）」欄、「参照用（メニューグループ）」欄で指定したメニューグループにパラメータシートが追加されていることを確認してください。
 
-.. figure:: /images/ja/menu_creation/png/menu_group_for_input.png
+.. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_group_for_input.png
    :width: 9.66197in
    :height: 6.38541in
    :align: center
@@ -1325,7 +1325,7 @@ A) 入力用メニューグループ
 
 ホスト名単位でメンテナンス（登録/更新/廃止/復活）が可能なパラメータシートが作成されます。
 
-.. figure:: /images/ja/menu_creation/gif/parameter_sheet_for_input.gif
+.. figure:: /images/ja/menu_creation/menu_definition_and_create/parameter_sheet_for_input.gif
    :width: 9.06711in
    :height: 6.9135in
    :align: center
@@ -1338,7 +1338,7 @@ B) 代入値自動登録用メニューグループ
 
 閲覧専用メニューです。入力用メニューグループで登録した内容がホスト名単位で「一覧」サブメニューに表示されます。
 
-.. figure:: /images/ja/menu_creation/png/parameter_sheet_for_substitution_value_automatic_registration.png
+.. figure:: /images/ja/menu_creation/menu_definition_and_create/parameter_sheet_for_substitution_value_automatic_registration.png
    :width: 9.36046in
    :height: 6.50022in
    :align: center
@@ -1351,7 +1351,7 @@ C) 参照用メニューグループ
 
 閲覧専用メニューです。「表示フィルタ」サブメニューの「オペレーション：基準日時」欄で指定した日時の時点で有効になっている設定をホスト名単位で「一覧」サブメニューに表示します。
 
-.. figure:: /images/ja/menu_creation/png/parameter_sheet_for_reference.png
+.. figure:: /images/ja/menu_creation/menu_definition_and_create/parameter_sheet_for_reference.png
    :width: 6.85384in
    :height: 6.91359in
    :align: center
@@ -1365,7 +1365,7 @@ C) 参照用メニューグループ
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 メニュー（パラメータシート/データシート）作成時に「メニュー定義・作成」メニュー（または「メニュー定義一覧」メニュー）の「作成対象」欄で「パラメータシート（ホスト/オペレーションあり）」を選択し、「縦メニュー利用」欄の「利用する」チェックボックスにチェックを入れた場合、縦表示のパラメータシートが作成されます。
 
-.. figure:: /images/ja/menu_creation/png/parameter_sheet_create_as_vertical_menu.png
+.. figure:: /images/ja/menu_creation/menu_definition_and_create/parameter_sheet_create_as_vertical_menu.png
    :width: 9.16042in
    :height: 6.37986in
    :align: center
@@ -1375,7 +1375,7 @@ C) 参照用メニューグループ
 
 「入力用（メニューグループ）」欄、「代入値自動管理用（メニューグループ）」欄、「参照用（メニューグループ）」欄で指定したメニューグループにパラメータシートが追加されていることを確認してください。
 
-.. figure:: /images/ja/menu_creation/png/menu_group_for_input.png
+.. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_group_for_input.png
    :width: 9.66197in
    :height: 6.38541in
    :align: center
@@ -1389,7 +1389,7 @@ A) 入力用メニューグループ
 | 　ホスト名単位でメンテナンス（登録/更新/廃止/復活）が可能なパラメータシートが作成されます。
 | 　登録済みの「ホスト名」と「オペレーション」の組み合わせに対して、「代入順序」欄を入力することで複数のパラメータを設定することが可能です。
 
-.. figure:: /images/ja/menu_creation/gif/parameter_sheet_for_input_2.gif
+.. figure:: /images/ja/menu_creation/menu_definition_and_create/parameter_sheet_for_input_2.gif
    :width: 9.06711in
    :height: 6.9135in
    :align: center
@@ -1400,7 +1400,7 @@ A) 入力用メニューグループ
 例）縦メニューを利用しないで上記の登録を試みた場合①
   | 登録済みの「ホスト名」と「オペレーション」の組み合わせに対して、複数のパラメータを設定することはできません。
 
-.. figure:: /images/ja/menu_creation/gif/parameter_sheet_for_input_3.gif
+.. figure:: /images/ja/menu_creation/menu_definition_and_create/parameter_sheet_for_input_3.gif
    :width: 9.06711in
    :height: 6.9135in
    :align: center
@@ -1413,7 +1413,7 @@ A) 入力用メニューグループ
 例）縦メニューを利用しないで上記の登録を試みた場合②
   | 登録済みの「ホスト名」と「オペレーション」の組み合わせに対して、複数のパラメータを設定する場合、項目数を増やすことで設定可能ですが、パラメータシートが横長になり視認性が悪くなります。
 
-.. figure:: /images/ja/menu_creation/png/menu_defination_creation_menu.png
+.. figure:: /images/ja/menu_creation/menu_definition_and_create/menu_defination_creation_menu.png
    :width: 9.16042in
    :height: 6.37986in
    :align: center
@@ -1423,7 +1423,7 @@ A) 入力用メニューグループ
 
 .. note:: | 「メニュー作成」メニューグループ>「メニュー定義・作成」メニューにて項目を作成した分、パラメータを設定することが可能です。
 
-.. figure:: /images/ja/menu_creation/gif/parameter_sheet_for_input_4.gif
+.. figure:: /images/ja/menu_creation/menu_definition_and_create/parameter_sheet_for_input_4.gif
    :width: 9.06711in
    :height: 6.9135in
    :align: center
@@ -1441,7 +1441,7 @@ B) 代入値自動登録用メニューグループ
 
 閲覧専用メニューです。入力用メニューグループで登録した内容がホスト名単位で「一覧」サブメニューに表示されます。
 
-.. figure:: /images/ja/menu_creation/png/parameter_sheet_for_substitution_value_automatic_registration_2.png
+.. figure:: /images/ja/menu_creation/menu_definition_and_create/parameter_sheet_for_substitution_value_automatic_registration_2.png
    :width: 9.36046in
    :height: 6.50022in
    :align: center
@@ -1454,7 +1454,7 @@ C) 参照用メニューグループ
 
 閲覧専用メニューです。「表示フィルタ」サブメニューの「オペレーション：基準日時」欄で指定した日時の時点で有効になっている設定をホスト名単位で「一覧」サブメニューに表示します。
 
-.. figure:: /images/ja/menu_creation/png/parameter_sheet_for_reference_2.png
+.. figure:: /images/ja/menu_creation/menu_definition_and_create/parameter_sheet_for_reference_2.png
    :width: 9.85384in
    :height: 6.91359in
    :align: center
@@ -1475,7 +1475,7 @@ C) 参照用メニューグループ
 | インストール時「カラムグループ管理」メニューは非表示です。
 | 作成するメニュー（パラメータシート/データシート）のカラムグループをメンテナンス(参照/更新/廃止/復活)できます。
 
-.. figure:: /images/ja/menu_creation/png/column_group_list_menu.png
+.. figure:: /images/ja/menu_creation/calam_group_creation_list/column_group_list_menu.png
    :width: 9.5739in
    :height: 6.92692in
    :align: center
@@ -1486,7 +1486,7 @@ C) 参照用メニューグループ
 | カラムグループとは、メニュー（パラメータシート/データシート）項目の見出し部分を表示上まとめるグループのことです。メニュー作成機能では、作成する項目のカラムグループを作成することができます。
 | 下記の赤枠線部分はカラムグループの例です。
 
-.. figure:: /images/ja/menu_creation/png/column_group_for_input.png
+.. figure:: /images/ja/menu_creation/calam_group_creation_list/column_group_for_input.png
    :width: 9.78717in
    :height: 6.74024in
    :align: center
@@ -1546,7 +1546,7 @@ C) 参照用メニューグループ
 | インストール時「メニュー項目作成情報」メニューは非表示です。
 | パラメータシートまたはデータシートのメニューで管理する項目をメンテナンス(参照/更新/廃止/復活)できます。
 
-.. figure:: /images/ja/menu_creation/png/menu_item_creation_information_menu.png
+.. figure:: /images/ja/menu_creation/menu_item_creation_info/menu_item_creation_information_menu.png
    :width: 9.25388in
    :height: 6.76691in
    :align: center
@@ -1681,7 +1681,7 @@ C) 参照用メニューグループ
 | インストール時「一意制約(複数項目)作成情報」メニューは非表示です。
 | 作成するメニュー（パラメータシート/データシート）の一意制約(複数項目)をメンテナンス(参照/更新/廃止/復活)できます。
 
-.. figure:: /images/ja/menu_creation/png/unique_constraint_multiple_items_creation_information_menu.png
+.. figure:: /images/ja/menu_creation/unique_constraint_creation_info/unique_constraint_multiple_items_creation_information_menu.png
    :width: 9.20045in
    :height: 6.02026in
    :align: center
@@ -1691,7 +1691,7 @@ C) 参照用メニューグループ
 
 | 一意制約(複数項目)は、作成したメニューにデータを登録する際に、指定した複数の項目で同じレコードの組み合わせが登録できないように制御する機能です。
 
-.. figure:: /images/ja/menu_creation/png/unique_item_data.png
+.. figure:: /images/ja/menu_creation/unique_constraint_creation_info/unique_item_data.png
    :width: 9.16154in
    :height: 6.98153in
    :align: center
@@ -1699,7 +1699,7 @@ C) 参照用メニューグループ
 
    「一意制約(複数項目)作成情報」メニューの登録データ
 
-.. figure:: /images/ja/menu_creation/png/registered_data.png
+.. figure:: /images/ja/menu_creation/unique_constraint_creation_info/registered_data.png
    :width: 9.16154in
    :height: 6.98153in
    :align: center
@@ -1707,7 +1707,7 @@ C) 参照用メニューグループ
 
    「一意制約(複数項目)作成情報」を設定したメニューの登録データ
 
-.. figure:: /images/ja/menu_creation/png/unique_constraint_multiple_items_creation_information_menu_function.png
+.. figure:: /images/ja/menu_creation/unique_constraint_creation_info/unique_constraint_multiple_items_creation_information_menu_function.png
    :width: 9.16154in
    :height: 6.98153in
    :align: center
@@ -1743,7 +1743,7 @@ C) 参照用メニューグループ
 | インストール時「メニューロール作成情報」メニューは非表示です。
 | 作成するメニュー（パラメータシート/データシート）のメニューロール作成情報をメンテナンス(参照/更新/廃止/復活)できます。
 
-.. figure:: /images/ja/menu_creation/png/menu_role_information_menu.png
+.. figure:: /images/ja/menu_creation/menu_role_creation_info/menu_role_information_menu.png
    :width: 9.16154in
    :height: 6.98153in
    :align: center
@@ -1776,7 +1776,7 @@ C) 参照用メニューグループ
 | BackYardが利用するメニューで、ユーザが操作することはありません。
 | メニュー作成後に紐付けを直接変更しても、追随して本メニューが変更されることはありません。
 
-.. figure:: /images/ja/menu_creation/png/menu_table_link.png
+.. figure:: /images/ja/menu_creation/menu_definition_table_link/menu_table_link.png
    :width: 9.69236in
    :height: 6.09931in
    :align: center
@@ -1811,7 +1811,7 @@ C) 参照用メニューグループ
 | BackYardが利用するメニューで、ユーザが操作することはありません。
 | メニュー作成後に紐付けを直接変更しても、追随して本メニューが変更されることはありません。
 
-.. figure:: /images/ja/menu_creation/png/link_with_other_menus.png
+.. figure:: /images/ja/menu_creation/other_menu_link/link_with_other_menus.png
    :width: 9.69236in
    :height: 6.84583in
    :align: center
@@ -1873,7 +1873,7 @@ C) 参照用メニューグループ
 | インストール時は非表示のメニューです。
 | ユーザが操作することはありません。
 
-.. figure:: /images/ja/menu_creation/png/selection_1.png
+.. figure:: /images/ja/menu_creation/slection_1/selection_1.png
    :width: 9.69236in
    :height: 6.36597in
    :align: center
@@ -1898,7 +1898,7 @@ C) 参照用メニューグループ
 | インストール時は非表示のメニューです。
 | ユーザが操作することはありません。
 
-.. figure:: /images/ja/menu_creation/png/selection_2.png
+.. figure:: /images/ja/menu_creation/selection_2/selection_2.png
    :width: 9.69236in
    :height: 6.3125in
    :align: center
@@ -1976,7 +1976,7 @@ C) 参照用メニューグループ
 | 「メニュー作成」メニューグループの「メニュー定義・作成」メニューにて、項目に「プルダウン選択」を設定した際、「参照項目を選択」ボタンを押下すると、「選択項目」のメニューにあるほかの項目が選択できる画面が表示されます。
 | 横並びで表示させたい対象の項目にチェックを入れ、「決定」を押下すると「参照項目」に値が挿入されます。
 
-.. figure:: /images/ja/menu_creation/gif/reference_items_when_using_pulldown_selection.gif
+.. figure:: /images/ja/menu_creation/menu_definition_and_create/reference_items_when_using_pulldown_selection.gif
    :width: 9.40859in
    :height: 6.05379in
    :align: center
@@ -2009,7 +2009,7 @@ C) 参照用メニューグループ
 | 上記とは別に『「選択項目」が「メニュー作成」メニューグループの機能で作成したメニューのとき、「選択項目」で選んだメニューが持つほかの項目でカラムクラスが「文字列(単一行)」「文字列(複数行)」「整数」「小数」「日時」「日付」「パスワード」「ファイルアップロード」「リンク」のいずれかである項目』も対象となります。
 | 「プルダウン選択」に「参照項目」を設定した状態でメニューを作成すると、「入力用」メニューグループに作成されたメニューについて、「登録」からは「プルダウン選択」項目の欄しか表示されませんが、「一覧/更新」では「プルダウン選択」で設定した値と同じ行にあるレコードが横並びで表示されるようになります。
 
-.. figure:: /images/ja/menu_creation/gif/reference_items_when_using_pulldown_selection_2.gif
+.. figure:: /images/ja/menu_creation/menu_definition_and_create/reference_items_when_using_pulldown_selection_2.gif
    :width: 9.75315in
    :height: 6.85225in
    :align: center
@@ -2028,7 +2028,7 @@ C) 参照用メニューグループ
 | インストール時は非表示のメニューです。
 | BackYardが利用するメニューで、ユーザが操作することはありません。
 
-.. figure:: /images/ja/menu_creation/png/reference_Item_Info_menu.png
+.. figure:: /images/ja/menu_creation/refeerence_item_info/reference_item_info_menu.png
    :width: 9.68058in
    :height: 6.52697in
    :align: center

@@ -14,9 +14,11 @@ Exastro IT Automation Documentation 2.0
    :maxdepth: 2
 
    ja/installation/index
+   ja/learn/index
+   ja/configuration/index
    ja/manuals/index
    ja/reference/index
-   ja/document_design/index
+   ja/contribute/index
 
 .. English
 .. =======

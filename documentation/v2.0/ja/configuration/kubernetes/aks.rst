@@ -114,4 +114,4 @@ AKS クラスタの作成例
 
 | ※この出力結果のドメインを後続のIngress利用時の設定として利用します。
 
-| AKS クラスタの構築が完了したら :doc:`installation_kubernetes` に従って、Exastro IT Automation をインストールします。
+| AKS クラスタの構築が完了したら :doc:`../../installation/kubernetes` に従って、Exastro IT Automation をインストールします。
