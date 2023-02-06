@@ -1,10 +1,19 @@
-======
-貢献者
-======
+====
+貢献
+====
+
+.. raw:: html
+
+   </div>
+   <div id="multiColumnIndex">
 
 .. toctree::
    :maxdepth: 2
 
-   server_setting
-   client_setting
-   
+   environment/check
+   development/check
+   documentation/check
+
+.. raw:: html
+
+   </div>

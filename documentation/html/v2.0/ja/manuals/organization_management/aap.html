@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
-    <title>4. Ansible Automation Platform 連携 &#8212; Documentation  ドキュメント</title>
+    <title>1. Ansible Automation Platform 連携 &#8212; Documentation  ドキュメント</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/option.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
@@ -126,15 +126,14 @@
 <div id="tableOfContents">
   <div id="tocButton"></div>
   <ul>
-<li><a class="reference internal" href="#">4. Ansible Automation Platform 連携</a><ul>
-<li><a class="reference internal" href="#id1">4.1. 目的</a></li>
-<li><a class="reference internal" href="#id2">4.2. 前提条件</a></li>
-<li><a class="reference internal" href="#ansible-automation-controller">4.3. Ansible Automation Controller の登録</a><ul>
-<li><a class="reference internal" href="#id3">4.3.1. 前提条件</a></li>
-<li><a class="reference internal" href="#id4">4.3.2. 登録方法</a></li>
-<li><a class="reference internal" href="#ansible-automation-contoller">4.3.3. Ansible Automation Contoller 連携の確認</a></li>
-<li><a class="reference internal" href="#id5">4.3.4. その他制約事項・備考</a><ul>
-<li><a class="reference internal" href="#id6">4.3.4.1. Ansible Automation Controller 登録を再実行する場合</a></li>
+<li><a class="reference internal" href="#">1. Ansible Automation Platform 連携</a><ul>
+<li><a class="reference internal" href="#id1">1.1. 目的</a></li>
+<li><a class="reference internal" href="#ansible-automation-controller">1.2. Ansible Automation Controller の登録</a><ul>
+<li><a class="reference internal" href="#id2">1.2.1. 前提条件</a></li>
+<li><a class="reference internal" href="#id3">1.2.2. 登録方法</a></li>
+<li><a class="reference internal" href="#ansible-automation-contoller">1.2.3. Ansible Automation Contoller 連携の確認</a></li>
+<li><a class="reference internal" href="#id4">1.2.4. その他制約事項・備考</a><ul>
+<li><a class="reference internal" href="#id5">1.2.4.1. Ansible Automation Controller 登録を再実行する場合</a></li>
 </ul>
 </li>
 </ul>
@@ -153,7 +152,7 @@
   <ul>
     <li><a href="../../../../index.html">HOME</a></li>
     
-    <li><span class="section-number">4. </span>Ansible Automation Platform 連携</li>
+    <li><span class="section-number">1. </span>Ansible Automation Platform 連携</li>
   </ul>
 </div>
 
@@ -162,29 +161,21 @@
 <div class="body" role="main">
 
   <section id="ansible-automation-platform">
-<h1><span class="section-number">4. </span>Ansible Automation Platform 連携<a class="headerlink" href="#ansible-automation-platform" title="この見出しへのパーマリンク">¶</a></h1>
+<h1><span class="section-number">1. </span>Ansible Automation Platform 連携<a class="headerlink" href="#ansible-automation-platform" title="この見出しへのパーマリンク">¶</a></h1>
 <section id="id1">
-<h2><span class="section-number">4.1. </span>目的<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">1.1. </span>目的<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
-<div class="line">Ansible Automation Platform とは、PF 構築自動化ツールである Ansible にアクセスコントロール、ジョブスケジューリング、タスクの可視化などの機能を拡張した管理プラットフォームです。</div>
-<div class="line">本頁では、 Exastro IT Automation と Ansible Automation Controller との連携方法について説明します。</div>
-<div class="line">Ansible Automation Platform を使用しない場合には本手順は不要です。</div>
-</div>
-</section>
-<section id="id2">
-<h2><span class="section-number">4.2. </span>前提条件<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
-<div class="line-block">
-<div class="line">連携する Ansible Automation Controller にてユーザの作成がされている必要があります。</div>
+<div class="line">本項では、システム管理者がオーガナイゼーションに所属するユーザーに対して、Ansible Core もしくは Ansible Automation Controller の利用を制御するための方法について紹介します。</div>
 </div>
 </section>
 <section id="ansible-automation-controller">
-<h2><span class="section-number">4.3. </span>Ansible Automation Controller の登録<a class="headerlink" href="#ansible-automation-controller" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">1.2. </span>Ansible Automation Controller の登録<a class="headerlink" href="#ansible-automation-controller" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">Ansible Automation Controller の登録をすることで、“プロジェクト”、”インベントリ”、”認証情報”の組合せで”ジョブテンプレート”を作成しAnsibleを実行できます。</div>
 <div class="line">複数の“ジョブテンプレート”を組み合せて”ワークフロージョブテンプレート”を作成することによって、より多彩な作業フローを表現することができます。</div>
 </div>
-<section id="id3">
-<h3><span class="section-number">4.3.1. </span>前提条件<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id2">
+<h3><span class="section-number">1.2.1. </span>前提条件<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">本作業には下記のコマンドが必要となるため、事前にインストールをしてください。</div>
 </div>
@@ -198,8 +189,8 @@
 </li>
 </ul>
 </section>
-<section id="id4">
-<h3><span class="section-number">4.3.2. </span>登録方法<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id3">
+<h3><span class="section-number">1.2.2. </span>登録方法<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">Ansible Automation Controller の Exastro IT Automation への登録には、下記の2通りの方法があります。</div>
 </div>
@@ -218,8 +209,8 @@
 </div>
 <ol class="arabic">
 <li><p>Ansible Automation Controller 登録用シェルスクリプトを、リポジトリから <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">git</kbd> <kbd class="kbd docutils literal notranslate">clone</kbd></kbd> により取得します。</p>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id7" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id6" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exastro Platform の資材を入手</span>
 git<span class="w"> </span>clone<span class="w"> </span>https://github.com/exastro-suite/exastro-platform.git
 </pre></div>
@@ -227,18 +218,18 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/exast
 </div>
 </li>
 <li><p>設定ファイルの <kbd class="kbd docutils literal notranslate">CONF_BASE_URL</kbd> に Exastro システムの管理用エンドポイント URL を設定します。</p>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id8" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id7" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exastro Platform への接続のための設定情報を登録</span>
 vi<span class="w"> </span>./exastro-platform/tools/api-auth.conf
 </pre></div>
 </div>
 </div>
 <div class="line-block">
-<div class="line">例えば、<span class="xref std std-ref">サービス公開の設定 (Ingress の設定)</span> をした場合は下記のようになります。</div>
+<div class="line">例えば、<a class="reference internal" href="../../installation/kubernetes.html#ingress-setting"><span class="std std-ref">サービス公開の設定 (Ingress の設定)</span></a> をした場合は下記のようになります。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text">api-auth.conf</span><a class="headerlink" href="#id9" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">api-auth.conf</span><a class="headerlink" href="#id8" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gd">- CONF_BASE_URL=http://platform-auth:8001</span>
 <span class="gi">+ CONF_BASE_URL=http://exastro-suite-mng.example.local</span>
 <span class="w"> </span> CURL_OPT=-sv
@@ -257,8 +248,8 @@ vi<span class="w"> </span>./exastro-platform/tools/api-auth.conf
 <div class="line-block">
 <div class="line">設定ファイルの作成は、<code class="file docutils literal notranslate"><span class="pre">./exastro-platform/tools/initial-settings-ansible.sample.json</span></code> を基に、作成する Ansible Automation Controller の情報を指定した JSON ファイルを基に作成します。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id10" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id9" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>-pi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible<span class="o">{</span>.sample,<span class="o">}</span>.json
 
 vi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
@@ -267,42 +258,42 @@ vi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 </div>
 <details>
   <summary>initial-settings-ansible.sample.json</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;input_limit_setting&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;execution_engine_list&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="s2">&quot;string&quot;</span>
-<span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;initial_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;ansible_automation_controller_host_list&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                    </span><span class="nt">&quot;ssh_private_key_file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
-<span class="w">                </span><span class="p">},</span>
-<span class="w">                </span><span class="nt">&quot;parameter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                    </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">                    </span><span class="nt">&quot;authentication_method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">                    </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">                    </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">                    </span><span class="nt">&quot;ssh_private_key_file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">                    </span><span class="nt">&quot;passphrase&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">                    </span><span class="nt">&quot;isolated_tower&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">                    </span><span class="nt">&quot;remarks&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
-<span class="w">                </span><span class="p">}</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">],</span>
-<span class="w">        </span><span class="nt">&quot;interface_info_ansible&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;parameter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;execution_engine&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;representative_server&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;ansible_automation_controller_protocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;ansible_automation_controller_port&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;organization_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;authentication_token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;delete_runtime_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;proxy_address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;proxy_port&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
-<span class="w">            </span><span class="p">}</span>
+<span class="w">  </span><span class="nt">&quot;input_limit_setting&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;execution_engine_list&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;Ansible Automation Controller&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;initial_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;ansible_automation_controller_host_list&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;ssh_private_key_file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LS0tLS1CRUdJTiBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjNCbGJuTnphQzFyWlhrdGRqRUFBQUFBQkc1dmJtVUFBQUFFYm05dVpRQUFBQUFBQUFBQkFBQUJsd0FBQUFkemMyZ3RjbgpOaEFBQUFBd0VBQVFBQUFZRUF0V0ZvVVA5ZkZSRlhUTTV0U2s4cmU1dTVEVjNqclF3VVd5d2swMkwrZ0tkNElsOFQ4TnBkCk40Z3ZGVkMxM1VueGNxc1pxVWdEWk41NnphSnMrdThQcTBlVjl2R0dkWmZDcU11OHRrbzh5WUw2MGQ2VUVoVXFOVVJkb1UKSEJ3bngzbjZidlNWMVE0em56V0JBNVBqOFl3SENiL0swVGFEMndvMkRkbFhqTXhhTlpXTXlpRFVMbE1pSk02VFdCU0lYMwo2emE5ZnI2cGFmak5Vc0hBTk9YSTdGbUFQcC9Jcy80TmtJVkhZN2M1UkJkUTUvNWgrTCtxRmlVazhKbE9vcFdnMjJOWWlXCkpKUGM0U09iTWxtRUY1OEdMdloxZTlCS0FvaXEvdWIvVmlhZG9hRFlyTzlEM0U3UW1NTldWMjNNMnMyN2tnS0ZKcFJJSUMKbmllZlJyaTdkOVhEYldoclBFY1FlRUMyZnNrRzVyY3Q0RFhrQUtVVCtSTkdwMll6bWZqSHlHNkRPWkJIa1RCNnJ5OVF3SgpRaFpFTjEvM3k2K0Q1V1BpbWlxeVFBNmtXdnZYZUtHWkhzZEhLdG5QaGZra1EyUWlteFgyWFRHaGZwdjRSUkUzZWNGUmxRClQvenRLeWg5enIzWmd4UU1nWHgwdEJ5V2dZSUJwZVZHa1dFTTVkeTNBQUFGa1BlMkRlYjN0ZzNtQUFBQUIzTnphQzF5YzIKRUFBQUdCQUxWaGFGRC9YeFVSVjB6T2JVcFBLM3VidVExZDQ2ME1GRnNzSk5OaS9vQ25lQ0pmRS9EYVhUZUlMeFZRdGQxSgo4WEtyR2FsSUEyVGVlczJpYlBydkQ2dEhsZmJ4aG5XWHdxakx2TFpLUE1tQyt0SGVsQklWS2pWRVhhRkJ3Y0o4ZDUrbTcwCmxkVU9NNTgxZ1FPVDQvR01Cd20veXRFMmc5c0tOZzNaVjR6TVdqV1ZqTW9nMUM1VElpVE9rMWdVaUY5K3Mydlg2K3FXbjQKelZMQndEVGx5T3haZ0Q2ZnlMUCtEWkNGUjJPM09VUVhVT2YrWWZpL3FoWWxKUENaVHFLVm9OdGpXSWxpU1QzT0VqbXpKWgpoQmVmQmk3MmRYdlFTZ0tJcXY3bS8xWW1uYUdnMkt6dlE5eE8wSmpEVmxkdHpOck51NUlDaFNhVVNDQXA0bm4wYTR1M2ZWCncyMW9henhIRUhoQXRuN0pCdWEzTGVBMTVBQ2xFL2tUUnFkbU01bjR4OGh1Z3ptUVI1RXdlcTh2VU1DVUlXUkRkZjk4dXYKZytWajRwb3Fza0FPcEZyNzEzaWhtUjdIUnlyWno0WDVKRU5rSXBzVjlsMHhvWDZiK0VVUk4zbkJVWlVFLzg3U3NvZmM2OQoyWU1VRElGOGRMUWNsb0dDQWFYbFJwRmhET1hjdHdBQUFBTUJBQUVBQUFHQkFMRHVJTzBKL3YwMUdqeXhETWswNjB5N2ZjCnM5TUErb3ZkNmw5QkpEK2RFVUM4c3poZWNuaTFEVlJtQjdoN3dpR2lYcUk3RU9yMGpoQVZmQVBxQ1ZQR3F1L09tVGRyOFUKMSswQ09NWjFLbEREdE5tdVRqQkpkdy9ZN2FDVTNXWlROZm1GeE51QzdKbUsrUWFKWk4yRWZTZVRjWVlNYXViL2JtUWc1RwpXZkhka1kyOW9VVzJ1bU9wOHArRzV4SS9qVHZpQXpHS3dmWG5FaUkxKzc0anQzZndTVzFkUEExKzVFUDRVZmphRUdwUlQzCnpaTlFnTTgrWDdNVWJyRklTdjJzQ0VWSU54cGJDSE9iQkRZcTdodUljeDdKUVEvcW5EMVJGdFhBa3d4M1ZkMFF4elZUTDUKZXF6ci9jc3h6S3l1M08yVE5weWVodE1SWVB6M2dXZ2xieFI1SStObWl1VGlTQWFHa1o2OXJqblY0bVNmL25xUnJwUWRpeAozS1E1bUZldVNUUFdEdXZQNFdWNlJybzBPajRjalZnNTlGNHVWM05xQmpvMFpXYmt1QnhZeDRBK2hsZjcwMmdMLzVMZTBPCllTc1dFS0U5aFhueHZ5b0NBUTBCLy9meDFnaHkxY2xQWi9JR3FpWDYwUEQrY0FmTnFWNmt6aFo5WmZmQmVOZ2x3NThRQUEKQU1FQTBqbVF4VVc2WW9ZRnovUFg5aXgrNEd3VXh4WWFTdlVYRDJHZGt4cGtkYS9EV3lKUlJFd1FjTzhPQTdhWUFhV0hxSwp1T1ZCWVJlY3h0Z01SbzUreUNpZjVoNE9HNzVyVEtSQ0NRLy9Td2hyS25iQjFoOVJ0Q2dWNjlSd0tMSUhxcXo0dGQ0V20wCkw0NmFtditjd0ZrVVdxOFRtdzNkR1NlV3AydURQcjVxSjVGWDlEdmZRWUNKSEVkNThnN2lESXdzMUd3VExKaTJ3L0J1QlEKbzB2MUw4dGo0eG1MTUxpcW1zdDZLRHM3cHBlOGpJYTgycHVTSUJ1ZWJ5Y3pKdXljcmNBQUFBd1FEbU5SV25qcisxWmJSdgpPRjJVT2hGQ2I2UVlpQkFsTzVuWVZQUnQ2amhMWmdvMjlkUVUwUmRnYzNObmtOdzY1ZFpQbnZVMTlaamkzcFBlRnVQczJQCnEyaDg1aFNCK3VRR3JodEovRGM2MU1ZS2k5cjkxQmtvd0ZHSDR3YW9mSUsyYmF1V2VFMGg3UFFmajhrSzZVbndLbnpPSTcKc1o2anJTZStxaHQwMzkxUzhTb2F1bkhnMXNsOTRYS092bG1RQUpQMHNuS2VMcGIyalZIR0ZTR0JRdG1GQUh2aXV6Zm5nUgpGc3hrd2ROSU1ERGxLNmxVMnFhbkppL0NBM0VOQldDLzhBQUFEQkFNbXoyUkVEbllkSjM0N2prWWFDNzNHdGtjWDZDN0NxCjZ6cGRXQkZ6Zjd0NkhJbzJMdUlPenVFa2IxV0VjOFZibTBHbTA1YkZ4YnFEYjF2OWpJRmErTG9qTHVOUmFoSEZHVFRRUDYKTk9DMzA2SDd2TWgwMStNUVJNaERKYW9GRlRRVy9uSVBIQldwcDVJNzFVN0FNa0d6cXJoWVU5dlVNSXBNS2taQUQyYWF3dwpreUp6eFZzTFhUQXhrT3BVU3lWZmJsZVBKZXJpVmIydmVXbm5RUmRnRm02empSeXpSTXlYODFkaldzelNDTVZUeWI2YW9GCjdBYjZPZzlib0lnRmVQU1FBQUFCTnpjR2hwYm5oQU1qWmxNR05pWkRrM05UZGxBUUlEQkFVRwotLS0tLUVORCBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0K&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;parameter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aap.example.com&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;authentication_method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;鍵認証(パスフレーズなし)&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;awx&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;ssh_private_key_file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aap_id_rsa&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;passphrase&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;isolated_tower&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;False&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;remarks&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
 <span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;interface_info_ansible&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;parameter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;execution_engine&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ansible Automation Controller&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;representative_server&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aap.example.com&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ansible_automation_controller_protocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ansible_automation_controller_port&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;443&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;organization_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;authentication_token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LwWw3dwoHGx19ZhP1YQZU0JdZzobFv&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;delete_runtime_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;True&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;proxy_address&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;proxy_port&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -310,8 +301,8 @@ vi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 <div class="line">各パラメータについては下記を参照してください。</div>
 </div>
 <details>
-  <summary>Ansible Automation Controller 登録時のパラメータ(表示・非表示)</summary><table class="filter-table docutils align-left" id="id11">
-<caption><span class="caption-text">Ansible Automation Controller 登録時のパラメータ</span><a class="headerlink" href="#id11" title="このテーブルへのパーマリンク">¶</a></caption>
+  <summary>Ansible Automation Controller 登録時のパラメータ(表示・非表示)</summary><table class="filter-table docutils align-left" id="id10">
+<caption><span class="caption-text">Ansible Automation Controller 登録時のパラメータ</span><a class="headerlink" href="#id10" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 30%" />
 <col style="width: 40%" />
@@ -320,7 +311,7 @@ vi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
 <th class="head"><p>説明</p></th>
-<th class="head"><p>選択可能な設定値</p></th>
+<th class="head"><p>設定値</p></th>
 </tr>
 </thead>
 <tbody>
@@ -344,11 +335,16 @@ vi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 <div class="line"><span class="menuselection">Ansible共通 ‣ インターフェース情報 ‣ 実行エンジン</span> の選択肢に入れる項目を指定。</div>
 </div>
 </td>
-<td><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ansible</kbd>-<kbd class="kbd docutils literal notranslate">Core</kbd></kbd> または <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ansible</kbd> <kbd class="kbd docutils literal notranslate">Automation</kbd> <kbd class="kbd docutils literal notranslate">Controller</kbd></kbd> のいずれか、または、その両方を指定</p></td>
+<td><div class="line-block">
+<div class="line"><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ansible</kbd>-<kbd class="kbd docutils literal notranslate">Core</kbd></kbd>: コミュニティ版Ansible</div>
+<div class="line"><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ansible</kbd> <kbd class="kbd docutils literal notranslate">Automation</kbd> <kbd class="kbd docutils literal notranslate">Controller</kbd></kbd>: Red Hat Ansible Automation Controller</div>
+<div class="line">上記のいずれか、または、その両方を指定。</div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td><p>initial_data.ansible_automation_controller_host_list[*].file.ssh_private_key_file</p></td>
 <td><p>Ansible Automation Controller に接続するために登録する秘密鍵ファイルを Base64 エンコードした値。</p></td>
-<td></td>
+<td><p>秘密鍵ファイルのBase64 エンコード文字列</p></td>
 </tr>
 <tr class="row-odd"><td><p>initial_data.ansible_automation_controller_host_list[*].parameter.host</p></td>
 <td><p>Ansible Automation Controller のコントロールノードのホスト名を指定。</p></td>
@@ -362,9 +358,9 @@ vi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 </td>
 <td><div class="line-block">
 <div class="line"><kbd class="kbd docutils literal notranslate">パスワード認証</kbd> : ログインパスワードの管理で●の選択と、ログインパスワードの入力が必須です。</div>
-<div class="line"><kbd class="kbd docutils literal notranslate">鍵認証（パスフレーズなし）</kbd> : SSH 秘密鍵ファイル(id_ras)のアップロードが必須です。</div>
-<div class="line"><kbd class="kbd docutils literal notranslate">鍵認証（パスフレーズあり）</kbd> : SSH 秘密鍵ファイル(id_ras)のアップロードと、パスフレーズの入力が必須です。</div>
-<div class="line"><kbd class="kbd docutils literal notranslate">鍵認証（鍵交換済み）</kbd> : SSH 秘密鍵ファイル(id_ras)のアップロードは必要ありません。</div>
+<div class="line"><kbd class="kbd docutils literal notranslate">鍵認証(パスフレーズなし)</kbd> : SSH 秘密鍵ファイル(id_ras)のアップロードが必須です。</div>
+<div class="line"><kbd class="kbd docutils literal notranslate">鍵認証(パスフレーズあり)</kbd> : SSH 秘密鍵ファイル(id_ras)のアップロードと、パスフレーズの入力が必須です。</div>
+<div class="line"><kbd class="kbd docutils literal notranslate">鍵認証(鍵交換済み)</kbd> : SSH 秘密鍵ファイル(id_ras)のアップロードは必要ありません。</div>
 </div>
 </td>
 </tr>
@@ -385,11 +381,11 @@ vi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 <div class="line">※ 最大長128バイト</div>
 </div>
 </td>
-<td></td>
+<td><p>任意の文字列</p></td>
 </tr>
 <tr class="row-odd"><td><p>initial_data.ansible_automation_controller_host_list[*].parameter.ssh_private_key_file</p></td>
 <td><p>Ansible Automation Controller に接続するために登録する秘密鍵ファイルのファイル名。</p></td>
-<td></td>
+<td><p>秘密鍵ファイルのファイル名</p></td>
 </tr>
 <tr class="row-even"><td><p>initial_data.ansible_automation_controller_host_list[*].parameter.passphrase</p></td>
 <td><div class="line-block">
@@ -397,7 +393,7 @@ vi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 <div class="line">※ 最大長256バイト</div>
 </div>
 </td>
-<td></td>
+<td><p>パスフレーズ</p></td>
 </tr>
 <tr class="row-odd"><td><p>initial_data.ansible_automation_controller_host_list[*].parameter.isolated_tower</p></td>
 <td><p>このノードが Ansible Automation Controller の Execution node であるかどうかを指定。</p></td>
@@ -409,15 +405,19 @@ vi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 </tr>
 <tr class="row-even"><td><p>initial_data.ansible_automation_controller_host_list[*].parameter.remarks</p></td>
 <td><p>備考</p></td>
-<td></td>
+<td><p>任意の文字列</p></td>
 </tr>
 <tr class="row-odd"><td><p>initial_data.parameter.execution_engine</p></td>
 <td><div class="line-block">
 <div class="line">実行エンジンの指定</div>
-<div class="line"><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ansible</kbd>-<kbd class="kbd docutils literal notranslate">Core</kbd></kbd> または <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ansible</kbd> <kbd class="kbd docutils literal notranslate">Automation</kbd> <kbd class="kbd docutils literal notranslate">Controller</kbd></kbd> の指定可能</div>
 </div>
 </td>
-<td></td>
+<td><div class="line-block">
+<div class="line"><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ansible</kbd>-<kbd class="kbd docutils literal notranslate">Core</kbd></kbd>: コミュニティ版Ansible</div>
+<div class="line"><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ansible</kbd> <kbd class="kbd docutils literal notranslate">Automation</kbd> <kbd class="kbd docutils literal notranslate">Controller</kbd></kbd>: Red Hat Ansible Automation Controller</div>
+<div class="line">上記のいずれかを指定。</div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td><p>initial_data.parameter.representative_server</p></td>
 <td><div class="line-block">
@@ -426,7 +426,7 @@ vi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 <div class="line">※ 実行エンジンが Ansible Automation Controller の場合に入力必須</div>
 </div>
 </td>
-<td></td>
+<td><p>Ansible Automation Controller ホスト</p></td>
 </tr>
 <tr class="row-odd"><td><p>initial_data.parameter.ansible_automation_controller_protocol</p></td>
 <td><div class="line-block">
@@ -435,7 +435,12 @@ vi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 <div class="line">※ 実行エンジンが Ansible Automation Controller の場合に入力必須</div>
 </div>
 </td>
-<td></td>
+<td><div class="line-block">
+<div class="line"><kbd class="kbd docutils literal notranslate">http</kbd></div>
+<div class="line"><kbd class="kbd docutils literal notranslate">https</kbd></div>
+<div class="line">上記のいずれか。</div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td><p>initial_data.parameter.ansible_automation_controller_port</p></td>
 <td><div class="line-block">
@@ -443,7 +448,7 @@ vi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 <div class="line">※ 実行エンジンが Ansible Automation Controller の場合に入力必須</div>
 </div>
 </td>
-<td></td>
+<td><p>ポート番号</p></td>
 </tr>
 <tr class="row-odd"><td><p>initial_data.parameter.organization_name</p></td>
 <td><div class="line-block">
@@ -451,7 +456,7 @@ vi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 <div class="line">※ 実行エンジンが Ansible Core 以外の場合に入力必須</div>
 </div>
 </td>
-<td></td>
+<td><p>組織名の文字列</p></td>
 </tr>
 <tr class="row-even"><td><p>initial_data.parameter.authentication_token</p></td>
 <td><div class="line-block">
@@ -459,7 +464,7 @@ vi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 <div class="line">※ 実行エンジンが Ansible Automation Controller の場合に入力必須</div>
 </div>
 </td>
-<td></td>
+<td><p>認証トークン文字列</p></td>
 </tr>
 <tr class="row-odd"><td><p>initial_data.parameter.delete_runtime_data</p></td>
 <td><div class="line-block">
@@ -480,7 +485,7 @@ vi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 <div class="line">※ 最大128バイト</div>
 </div>
 </td>
-<td></td>
+<td><p>プロキシサーバのURL</p></td>
 </tr>
 <tr class="row-odd"><td><p>initial_data.parameter.proxy_port</p></td>
 <td><div class="line-block">
@@ -488,7 +493,7 @@ vi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 <div class="line">プロキシサーバのURLが <a class="reference external" href="http://proxy.example.com:8080">http://proxy.example.com:8080</a> の場合、<kbd class="kbd docutils literal notranslate">8080</kbd> を入力します。</div>
 </div>
 </td>
-<td></td>
+<td><p>プロキシサーバのポート番号</p></td>
 </tr>
 </tbody>
 </table>
@@ -507,8 +512,8 @@ vi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 </div>
 </details></li>
 <li><p>Ansible Automation Controller 作成実行</p>
-<div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id12" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id11" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./exastro-platform/tools/initial-settings-ansible.sh<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 
 organization<span class="w"> </span>id<span class="w"> </span>:<span class="w"> </span>INPUT-ORGANIZATION-ID-TO-SET<span class="w"> </span><span class="c1"># 設定先のオーガナイゼーションID</span>
@@ -523,8 +528,8 @@ Create<span class="w"> </span>an<span class="w"> </span>organization,<span class
 <ul>
 <li><p>成功時の結果表示</p>
 <p>resultが”000-00000”が、 Ansible Automation Controller の作成に成功したことを示しています。</p>
-<div class="literal-block-wrapper docutils container" id="id13">
-<div class="code-block-caption"><span class="caption-text">実行結果(成功時)</span><a class="headerlink" href="#id13" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">実行結果(成功時)</span><a class="headerlink" href="#id12" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>...
 &lt;<span class="w"> </span>HTTP/1.1<span class="w"> </span><span class="m">200</span><span class="w"> </span>OK
 &lt;<span class="w"> </span>Date:<span class="w"> </span>Thu,<span class="w"> </span><span class="m">18</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="m">01</span>:49:13<span class="w"> </span>GMT
@@ -544,8 +549,8 @@ Create<span class="w"> </span>an<span class="w"> </span>organization,<span class
 </div>
 </li>
 <li><p>失敗時の結果表示イメージ</p>
-<div class="literal-block-wrapper docutils container" id="id14">
-<div class="code-block-caption"><span class="caption-text">実行結果(失敗時)</span><a class="headerlink" href="#id14" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text">実行結果(失敗時)</span><a class="headerlink" href="#id13" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>...
 &lt;<span class="w"> </span>HTTP/1.1<span class="w"> </span><span class="m">400</span><span class="w"> </span>BAD<span class="w"> </span>REQUEST
 &lt;<span class="w"> </span>Date:<span class="w"> </span>Thu,<span class="w"> </span><span class="m">18</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="m">05</span>:29:35<span class="w"> </span>GMT
@@ -583,8 +588,8 @@ Create<span class="w"> </span>an<span class="w"> </span>organization,<span class
 <div class="line-block">
 <div class="line">SSH 秘密鍵ファイルをアップロードする必要があるため、Base64 エンコードをします。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id15">
-<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id15" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id14" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>MY_KEY=`base64 -w 0 my-aac-key.pem`
 </pre></div>
 </div>
@@ -594,15 +599,15 @@ Create<span class="w"> </span>an<span class="w"> </span>organization,<span class
 <div class="line-block">
 <div class="line">オーガナイゼーションIDを <kbd class="kbd docutils literal notranslate">ORG_ID</kbd> に設定する必要があります。</div>
 <div class="line">また、Basic 認証を利用するためには、システム管理者の認証情報を <kbd class="kbd docutils literal notranslate">BASE64_BASIC</kbd> に設定する必要があります。</div>
-<div class="line">認証情報に関して、<a class="reference internal" href="../../installation/installation_kubernetes.html#create-system-manager"><span class="std std-ref">インストール時に登録した認証情報</span></a> で登録した内容となります。</div>
+<div class="line">認証情報に関して、<a class="reference internal" href="../../installation/kubernetes.html#create-system-manager"><span class="std std-ref">インストール時に登録した認証情報</span></a> で登録した内容となります。</div>
 <div class="line">cURL を使用する場合は、下記のようにコマンドを実行します。</div>
 </div>
 <div class="line-block">
 <div class="line">各パラメータについては下記を参照してください。</div>
 </div>
 <details>
-  <summary>Ansible Automation Controller 登録時のパラメータ</summary><table class="filter-table docutils align-left" id="id16">
-<caption><span class="caption-text">Ansible Automation Controller 登録時のパラメータ</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
+  <summary>Ansible Automation Controller 登録時のパラメータ</summary><table class="filter-table docutils align-left" id="id15">
+<caption><span class="caption-text">Ansible Automation Controller 登録時のパラメータ</span><a class="headerlink" href="#id15" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 30%" />
 <col style="width: 40%" />
@@ -611,7 +616,7 @@ Create<span class="w"> </span>an<span class="w"> </span>organization,<span class
 <thead>
 <tr class="row-odd"><th class="head"><p>パラメータ</p></th>
 <th class="head"><p>説明</p></th>
-<th class="head"><p>選択可能な設定値</p></th>
+<th class="head"><p>設定値</p></th>
 </tr>
 </thead>
 <tbody>
@@ -635,11 +640,16 @@ Create<span class="w"> </span>an<span class="w"> </span>organization,<span class
 <div class="line"><span class="menuselection">Ansible共通 ‣ インターフェース情報 ‣ 実行エンジン</span> の選択肢に入れる項目を指定。</div>
 </div>
 </td>
-<td><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ansible</kbd>-<kbd class="kbd docutils literal notranslate">Core</kbd></kbd> または <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ansible</kbd> <kbd class="kbd docutils literal notranslate">Automation</kbd> <kbd class="kbd docutils literal notranslate">Controller</kbd></kbd> のいずれか、または、その両方を指定</p></td>
+<td><div class="line-block">
+<div class="line"><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ansible</kbd>-<kbd class="kbd docutils literal notranslate">Core</kbd></kbd>: コミュニティ版Ansible</div>
+<div class="line"><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ansible</kbd> <kbd class="kbd docutils literal notranslate">Automation</kbd> <kbd class="kbd docutils literal notranslate">Controller</kbd></kbd>: Red Hat Ansible Automation Controller</div>
+<div class="line">上記のいずれか、または、その両方を指定。</div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td><p>initial_data.ansible_automation_controller_host_list[*].file.ssh_private_key_file</p></td>
 <td><p>Ansible Automation Controller に接続するために登録する秘密鍵ファイルを Base64 エンコードした値。</p></td>
-<td></td>
+<td><p>秘密鍵ファイルのBase64 エンコード文字列</p></td>
 </tr>
 <tr class="row-odd"><td><p>initial_data.ansible_automation_controller_host_list[*].parameter.host</p></td>
 <td><p>Ansible Automation Controller のコントロールノードのホスト名を指定。</p></td>
@@ -653,9 +663,9 @@ Create<span class="w"> </span>an<span class="w"> </span>organization,<span class
 </td>
 <td><div class="line-block">
 <div class="line"><kbd class="kbd docutils literal notranslate">パスワード認証</kbd> : ログインパスワードの管理で●の選択と、ログインパスワードの入力が必須です。</div>
-<div class="line"><kbd class="kbd docutils literal notranslate">鍵認証（パスフレーズなし）</kbd> : SSH 秘密鍵ファイル(id_ras)のアップロードが必須です。</div>
-<div class="line"><kbd class="kbd docutils literal notranslate">鍵認証（パスフレーズあり）</kbd> : SSH 秘密鍵ファイル(id_ras)のアップロードと、パスフレーズの入力が必須です。</div>
-<div class="line"><kbd class="kbd docutils literal notranslate">鍵認証（鍵交換済み）</kbd> : SSH 秘密鍵ファイル(id_ras)のアップロードは必要ありません。</div>
+<div class="line"><kbd class="kbd docutils literal notranslate">鍵認証(パスフレーズなし)</kbd> : SSH 秘密鍵ファイル(id_ras)のアップロードが必須です。</div>
+<div class="line"><kbd class="kbd docutils literal notranslate">鍵認証(パスフレーズあり)</kbd> : SSH 秘密鍵ファイル(id_ras)のアップロードと、パスフレーズの入力が必須です。</div>
+<div class="line"><kbd class="kbd docutils literal notranslate">鍵認証(鍵交換済み)</kbd> : SSH 秘密鍵ファイル(id_ras)のアップロードは必要ありません。</div>
 </div>
 </td>
 </tr>
@@ -676,11 +686,11 @@ Create<span class="w"> </span>an<span class="w"> </span>organization,<span class
 <div class="line">※ 最大長128バイト</div>
 </div>
 </td>
-<td></td>
+<td><p>任意の文字列</p></td>
 </tr>
 <tr class="row-odd"><td><p>initial_data.ansible_automation_controller_host_list[*].parameter.ssh_private_key_file</p></td>
 <td><p>Ansible Automation Controller に接続するために登録する秘密鍵ファイルのファイル名。</p></td>
-<td></td>
+<td><p>秘密鍵ファイルのファイル名</p></td>
 </tr>
 <tr class="row-even"><td><p>initial_data.ansible_automation_controller_host_list[*].parameter.passphrase</p></td>
 <td><div class="line-block">
@@ -688,7 +698,7 @@ Create<span class="w"> </span>an<span class="w"> </span>organization,<span class
 <div class="line">※ 最大長256バイト</div>
 </div>
 </td>
-<td></td>
+<td><p>パスフレーズ</p></td>
 </tr>
 <tr class="row-odd"><td><p>initial_data.ansible_automation_controller_host_list[*].parameter.isolated_tower</p></td>
 <td><p>このノードが Ansible Automation Controller の Execution node であるかどうかを指定。</p></td>
@@ -700,15 +710,19 @@ Create<span class="w"> </span>an<span class="w"> </span>organization,<span class
 </tr>
 <tr class="row-even"><td><p>initial_data.ansible_automation_controller_host_list[*].parameter.remarks</p></td>
 <td><p>備考</p></td>
-<td></td>
+<td><p>任意の文字列</p></td>
 </tr>
 <tr class="row-odd"><td><p>initial_data.parameter.execution_engine</p></td>
 <td><div class="line-block">
 <div class="line">実行エンジンの指定</div>
-<div class="line"><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ansible</kbd>-<kbd class="kbd docutils literal notranslate">Core</kbd></kbd> または <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ansible</kbd> <kbd class="kbd docutils literal notranslate">Automation</kbd> <kbd class="kbd docutils literal notranslate">Controller</kbd></kbd> の指定可能</div>
 </div>
 </td>
-<td></td>
+<td><div class="line-block">
+<div class="line"><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ansible</kbd>-<kbd class="kbd docutils literal notranslate">Core</kbd></kbd>: コミュニティ版Ansible</div>
+<div class="line"><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ansible</kbd> <kbd class="kbd docutils literal notranslate">Automation</kbd> <kbd class="kbd docutils literal notranslate">Controller</kbd></kbd>: Red Hat Ansible Automation Controller</div>
+<div class="line">上記のいずれかを指定。</div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td><p>initial_data.parameter.representative_server</p></td>
 <td><div class="line-block">
@@ -717,7 +731,7 @@ Create<span class="w"> </span>an<span class="w"> </span>organization,<span class
 <div class="line">※ 実行エンジンが Ansible Automation Controller の場合に入力必須</div>
 </div>
 </td>
-<td></td>
+<td><p>Ansible Automation Controller ホスト</p></td>
 </tr>
 <tr class="row-odd"><td><p>initial_data.parameter.ansible_automation_controller_protocol</p></td>
 <td><div class="line-block">
@@ -726,7 +740,12 @@ Create<span class="w"> </span>an<span class="w"> </span>organization,<span class
 <div class="line">※ 実行エンジンが Ansible Automation Controller の場合に入力必須</div>
 </div>
 </td>
-<td></td>
+<td><div class="line-block">
+<div class="line"><kbd class="kbd docutils literal notranslate">http</kbd></div>
+<div class="line"><kbd class="kbd docutils literal notranslate">https</kbd></div>
+<div class="line">上記のいずれか。</div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td><p>initial_data.parameter.ansible_automation_controller_port</p></td>
 <td><div class="line-block">
@@ -734,7 +753,7 @@ Create<span class="w"> </span>an<span class="w"> </span>organization,<span class
 <div class="line">※ 実行エンジンが Ansible Automation Controller の場合に入力必須</div>
 </div>
 </td>
-<td></td>
+<td><p>ポート番号</p></td>
 </tr>
 <tr class="row-odd"><td><p>initial_data.parameter.organization_name</p></td>
 <td><div class="line-block">
@@ -742,7 +761,7 @@ Create<span class="w"> </span>an<span class="w"> </span>organization,<span class
 <div class="line">※ 実行エンジンが Ansible Core 以外の場合に入力必須</div>
 </div>
 </td>
-<td></td>
+<td><p>組織名の文字列</p></td>
 </tr>
 <tr class="row-even"><td><p>initial_data.parameter.authentication_token</p></td>
 <td><div class="line-block">
@@ -750,7 +769,7 @@ Create<span class="w"> </span>an<span class="w"> </span>organization,<span class
 <div class="line">※ 実行エンジンが Ansible Automation Controller の場合に入力必須</div>
 </div>
 </td>
-<td></td>
+<td><p>認証トークン文字列</p></td>
 </tr>
 <tr class="row-odd"><td><p>initial_data.parameter.delete_runtime_data</p></td>
 <td><div class="line-block">
@@ -771,7 +790,7 @@ Create<span class="w"> </span>an<span class="w"> </span>organization,<span class
 <div class="line">※ 最大128バイト</div>
 </div>
 </td>
-<td></td>
+<td><p>プロキシサーバのURL</p></td>
 </tr>
 <tr class="row-odd"><td><p>initial_data.parameter.proxy_port</p></td>
 <td><div class="line-block">
@@ -779,12 +798,12 @@ Create<span class="w"> </span>an<span class="w"> </span>organization,<span class
 <div class="line">プロキシサーバのURLが <a class="reference external" href="http://proxy.example.com:8080">http://proxy.example.com:8080</a> の場合、<kbd class="kbd docutils literal notranslate">8080</kbd> を入力します。</div>
 </div>
 </td>
-<td></td>
+<td><p>プロキシサーバのポート番号</p></td>
 </tr>
 </tbody>
 </table>
-</details><div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id17" title="このコードへのパーマリンク">¶</a></div>
+</details><div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id16" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">ORG_ID</span><span class="o">=</span>org001
 <span class="nv">BASE64_BASIC</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;KEYCLOAK_USER:KEYCLOAK_PASSWORD&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="k">)</span>
 <span class="nv">BASE_URL</span><span class="o">=</span>http://exastro-suite-mng.example.local
@@ -795,43 +814,43 @@ curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Basic </span><span class="si">${</span><span class="nv">BASE64_BASIC</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
-<span class="s1">  &quot;input_limit_setting&quot;: true,</span>
-<span class="s1">  &quot;execution_engine_list&quot;: [</span>
-<span class="s1">    &quot;Ansible Automation Controller&quot;</span>
-<span class="s1">  ],</span>
-<span class="s1">  &quot;initial_data&quot;: {</span>
-<span class="s1">    &quot;ansible_automation_controller_host_list&quot;: [</span>
-<span class="s1">      {</span>
-<span class="s1">        &quot;file&quot;: {</span>
-<span class="s1">          &quot;ssh_private_key_file&quot;: &quot;&#39;</span><span class="si">${</span><span class="nv">MY_KEY</span><span class="si">}</span><span class="s1">&#39;&quot;</span>
-<span class="s1">        },</span>
-<span class="s1">        &quot;parameter&quot;: {</span>
-<span class="s1">          &quot;host&quot;: &quot;aac-server01&quot;,</span>
-<span class="s1">          &quot;user&quot;: &quot;awx&quot;,</span>
-<span class="s1">          &quot;authentication_method&quot;: &quot;鍵認証（パスフレーズなし）&quot;,</span>
-<span class="s1">          &quot;password&quot;: &quot;awx-password&quot;,</span>
-<span class="s1">          &quot;ssh_private_key_file&quot;: &quot;my-aac-key.pem&quot;,</span>
-<span class="s1">          &quot;passphrase&quot;: &quot;&quot;,</span>
-<span class="s1">          &quot;isolated_tower&quot;: &quot;False&quot;,</span>
-<span class="s1">          &quot;remarks&quot;: &quot;&quot;</span>
+<span class="s1">        &quot;input_limit_setting&quot;: true,</span>
+<span class="s1">        &quot;execution_engine_list&quot;: [</span>
+<span class="s1">          &quot;Ansible Automation Controller&quot;</span>
+<span class="s1">        ],</span>
+<span class="s1">        &quot;initial_data&quot;: {</span>
+<span class="s1">          &quot;ansible_automation_controller_host_list&quot;: [</span>
+<span class="s1">            {</span>
+<span class="s1">              &quot;file&quot;: {</span>
+<span class="s1">                &quot;ssh_private_key_file&quot;: &quot;LS0tLS1CRUdJTiBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjNCbGJuTnphQzFyWlhrdGRqRUFBQUFBQkc1dmJtVUFBQUFFYm05dVpRQUFBQUFBQUFBQkFBQUJsd0FBQUFkemMyZ3RjbgpOaEFBQUFBd0VBQVFBQUFZRUF0V0ZvVVA5ZkZSRlhUTTV0U2s4cmU1dTVEVjNqclF3VVd5d2swMkwrZ0tkNElsOFQ4TnBkCk40Z3ZGVkMxM1VueGNxc1pxVWdEWk41NnphSnMrdThQcTBlVjl2R0dkWmZDcU11OHRrbzh5WUw2MGQ2VUVoVXFOVVJkb1UKSEJ3bngzbjZidlNWMVE0em56V0JBNVBqOFl3SENiL0swVGFEMndvMkRkbFhqTXhhTlpXTXlpRFVMbE1pSk02VFdCU0lYMwo2emE5ZnI2cGFmak5Vc0hBTk9YSTdGbUFQcC9Jcy80TmtJVkhZN2M1UkJkUTUvNWgrTCtxRmlVazhKbE9vcFdnMjJOWWlXCkpKUGM0U09iTWxtRUY1OEdMdloxZTlCS0FvaXEvdWIvVmlhZG9hRFlyTzlEM0U3UW1NTldWMjNNMnMyN2tnS0ZKcFJJSUMKbmllZlJyaTdkOVhEYldoclBFY1FlRUMyZnNrRzVyY3Q0RFhrQUtVVCtSTkdwMll6bWZqSHlHNkRPWkJIa1RCNnJ5OVF3SgpRaFpFTjEvM3k2K0Q1V1BpbWlxeVFBNmtXdnZYZUtHWkhzZEhLdG5QaGZra1EyUWlteFgyWFRHaGZwdjRSUkUzZWNGUmxRClQvenRLeWg5enIzWmd4UU1nWHgwdEJ5V2dZSUJwZVZHa1dFTTVkeTNBQUFGa1BlMkRlYjN0ZzNtQUFBQUIzTnphQzF5YzIKRUFBQUdCQUxWaGFGRC9YeFVSVjB6T2JVcFBLM3VidVExZDQ2ME1GRnNzSk5OaS9vQ25lQ0pmRS9EYVhUZUlMeFZRdGQxSgo4WEtyR2FsSUEyVGVlczJpYlBydkQ2dEhsZmJ4aG5XWHdxakx2TFpLUE1tQyt0SGVsQklWS2pWRVhhRkJ3Y0o4ZDUrbTcwCmxkVU9NNTgxZ1FPVDQvR01Cd20veXRFMmc5c0tOZzNaVjR6TVdqV1ZqTW9nMUM1VElpVE9rMWdVaUY5K3Mydlg2K3FXbjQKelZMQndEVGx5T3haZ0Q2ZnlMUCtEWkNGUjJPM09VUVhVT2YrWWZpL3FoWWxKUENaVHFLVm9OdGpXSWxpU1QzT0VqbXpKWgpoQmVmQmk3MmRYdlFTZ0tJcXY3bS8xWW1uYUdnMkt6dlE5eE8wSmpEVmxkdHpOck51NUlDaFNhVVNDQXA0bm4wYTR1M2ZWCncyMW9henhIRUhoQXRuN0pCdWEzTGVBMTVBQ2xFL2tUUnFkbU01bjR4OGh1Z3ptUVI1RXdlcTh2VU1DVUlXUkRkZjk4dXYKZytWajRwb3Fza0FPcEZyNzEzaWhtUjdIUnlyWno0WDVKRU5rSXBzVjlsMHhvWDZiK0VVUk4zbkJVWlVFLzg3U3NvZmM2OQoyWU1VRElGOGRMUWNsb0dDQWFYbFJwRmhET1hjdHdBQUFBTUJBQUVBQUFHQkFMRHVJTzBKL3YwMUdqeXhETWswNjB5N2ZjCnM5TUErb3ZkNmw5QkpEK2RFVUM4c3poZWNuaTFEVlJtQjdoN3dpR2lYcUk3RU9yMGpoQVZmQVBxQ1ZQR3F1L09tVGRyOFUKMSswQ09NWjFLbEREdE5tdVRqQkpkdy9ZN2FDVTNXWlROZm1GeE51QzdKbUsrUWFKWk4yRWZTZVRjWVlNYXViL2JtUWc1RwpXZkhka1kyOW9VVzJ1bU9wOHArRzV4SS9qVHZpQXpHS3dmWG5FaUkxKzc0anQzZndTVzFkUEExKzVFUDRVZmphRUdwUlQzCnpaTlFnTTgrWDdNVWJyRklTdjJzQ0VWSU54cGJDSE9iQkRZcTdodUljeDdKUVEvcW5EMVJGdFhBa3d4M1ZkMFF4elZUTDUKZXF6ci9jc3h6S3l1M08yVE5weWVodE1SWVB6M2dXZ2xieFI1SStObWl1VGlTQWFHa1o2OXJqblY0bVNmL25xUnJwUWRpeAozS1E1bUZldVNUUFdEdXZQNFdWNlJybzBPajRjalZnNTlGNHVWM05xQmpvMFpXYmt1QnhZeDRBK2hsZjcwMmdMLzVMZTBPCllTc1dFS0U5aFhueHZ5b0NBUTBCLy9meDFnaHkxY2xQWi9JR3FpWDYwUEQrY0FmTnFWNmt6aFo5WmZmQmVOZ2x3NThRQUEKQU1FQTBqbVF4VVc2WW9ZRnovUFg5aXgrNEd3VXh4WWFTdlVYRDJHZGt4cGtkYS9EV3lKUlJFd1FjTzhPQTdhWUFhV0hxSwp1T1ZCWVJlY3h0Z01SbzUreUNpZjVoNE9HNzVyVEtSQ0NRLy9Td2hyS25iQjFoOVJ0Q2dWNjlSd0tMSUhxcXo0dGQ0V20wCkw0NmFtditjd0ZrVVdxOFRtdzNkR1NlV3AydURQcjVxSjVGWDlEdmZRWUNKSEVkNThnN2lESXdzMUd3VExKaTJ3L0J1QlEKbzB2MUw4dGo0eG1MTUxpcW1zdDZLRHM3cHBlOGpJYTgycHVTSUJ1ZWJ5Y3pKdXljcmNBQUFBd1FEbU5SV25qcisxWmJSdgpPRjJVT2hGQ2I2UVlpQkFsTzVuWVZQUnQ2amhMWmdvMjlkUVUwUmRnYzNObmtOdzY1ZFpQbnZVMTlaamkzcFBlRnVQczJQCnEyaDg1aFNCK3VRR3JodEovRGM2MU1ZS2k5cjkxQmtvd0ZHSDR3YW9mSUsyYmF1V2VFMGg3UFFmajhrSzZVbndLbnpPSTcKc1o2anJTZStxaHQwMzkxUzhTb2F1bkhnMXNsOTRYS092bG1RQUpQMHNuS2VMcGIyalZIR0ZTR0JRdG1GQUh2aXV6Zm5nUgpGc3hrd2ROSU1ERGxLNmxVMnFhbkppL0NBM0VOQldDLzhBQUFEQkFNbXoyUkVEbllkSjM0N2prWWFDNzNHdGtjWDZDN0NxCjZ6cGRXQkZ6Zjd0NkhJbzJMdUlPenVFa2IxV0VjOFZibTBHbTA1YkZ4YnFEYjF2OWpJRmErTG9qTHVOUmFoSEZHVFRRUDYKTk9DMzA2SDd2TWgwMStNUVJNaERKYW9GRlRRVy9uSVBIQldwcDVJNzFVN0FNa0d6cXJoWVU5dlVNSXBNS2taQUQyYWF3dwpreUp6eFZzTFhUQXhrT3BVU3lWZmJsZVBKZXJpVmIydmVXbm5RUmRnRm02empSeXpSTXlYODFkaldzelNDTVZUeWI2YW9GCjdBYjZPZzlib0lnRmVQU1FBQUFCTnpjR2hwYm5oQU1qWmxNR05pWkRrM05UZGxBUUlEQkFVRwotLS0tLUVORCBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0K&quot;</span>
+<span class="s1">              },</span>
+<span class="s1">              &quot;parameter&quot;: {</span>
+<span class="s1">                &quot;host&quot;: &quot;aap.example.com&quot;,</span>
+<span class="s1">                &quot;authentication_method&quot;: &quot;鍵認証(パスフレーズなし)&quot;,</span>
+<span class="s1">                &quot;user&quot;: &quot;awx&quot;,</span>
+<span class="s1">                &quot;password&quot;: null,</span>
+<span class="s1">                &quot;ssh_private_key_file&quot;: &quot;aap_id_rsa&quot;,</span>
+<span class="s1">                &quot;passphrase&quot;: null,</span>
+<span class="s1">                &quot;isolated_tower&quot;: &quot;False&quot;,</span>
+<span class="s1">                &quot;remarks&quot;: null</span>
+<span class="s1">              }</span>
+<span class="s1">            }</span>
+<span class="s1">          ],</span>
+<span class="s1">          &quot;interface_info_ansible&quot;: {</span>
+<span class="s1">            &quot;parameter&quot;: {</span>
+<span class="s1">              &quot;execution_engine&quot;: &quot;Ansible Automation Controller&quot;,</span>
+<span class="s1">              &quot;representative_server&quot;: &quot;aap.example.com&quot;,</span>
+<span class="s1">              &quot;ansible_automation_controller_protocol&quot;: &quot;https&quot;,</span>
+<span class="s1">              &quot;ansible_automation_controller_port&quot;: &quot;443&quot;,</span>
+<span class="s1">              &quot;organization_name&quot;: null,</span>
+<span class="s1">              &quot;authentication_token&quot;: &quot;LwWw3dwoHGx19ZhP1YQZU0JdZzobFv&quot;,</span>
+<span class="s1">              &quot;delete_runtime_data&quot;: &quot;True&quot;,</span>
+<span class="s1">              &quot;proxy_address&quot;: null,</span>
+<span class="s1">              &quot;proxy_port&quot;: null</span>
+<span class="s1">            }</span>
+<span class="s1">          }</span>
 <span class="s1">        }</span>
-<span class="s1">      }</span>
-<span class="s1">    ],</span>
-<span class="s1">    &quot;interface_info_ansible&quot;: {</span>
-<span class="s1">      &quot;parameter&quot;: {</span>
-<span class="s1">        &quot;execution_engine&quot;: &quot;Ansible Automation Controller&quot;,</span>
-<span class="s1">        &quot;representative_server&quot;: &quot;aac-server01&quot;,</span>
-<span class="s1">        &quot;ansible_automation_controller_protocol&quot;: &quot;https&quot;,</span>
-<span class="s1">        &quot;ansible_automation_controller_port&quot;: &quot;443&quot;,</span>
-<span class="s1">        &quot;organization_name&quot;: &quot;organization001&quot;,</span>
-<span class="s1">        &quot;authentication_token&quot;: &quot;LS0tLS1CRUdJTiBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjNCbGJuTnphQzFyWlhrdGRqRUFBQUFBQkc1dmJtVUFBQUFFYm05dVpR...&quot;,</span>
-<span class="s1">        &quot;delete_runtime_data&quot;: &quot;True&quot;,</span>
-<span class="s1">        &quot;proxy_address&quot;: &quot;&quot;,</span>
-<span class="s1">        &quot;proxy_port&quot;: &quot;&quot;</span>
-<span class="s1">      }</span>
-<span class="s1">    }</span>
-<span class="s1">  }</span>
-<span class="s1">}&#39;</span>
+<span class="s1">      }&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -840,13 +859,13 @@ curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST
 </div></div>
 </section>
 <section id="ansible-automation-contoller">
-<h3><span class="section-number">4.3.3. </span>Ansible Automation Contoller 連携の確認<a class="headerlink" href="#ansible-automation-contoller" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">1.2.3. </span>Ansible Automation Contoller 連携の確認<a class="headerlink" href="#ansible-automation-contoller" title="この見出しへのパーマリンク">¶</a></h3>
 <ol class="arabic simple">
 <li><p>オーガナイゼーション作成結果を確認します。</p></li>
 </ol>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI5Yip55So" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI5Yip55So" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI5Yip55So" role="tab" tabindex="0">設定ファイルとスクリプト利用</button><button aria-controls="panel-1-UmVzdCBBUEkg5Yip55So" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-UmVzdCBBUEkg5Yip55So" name="UmVzdCBBUEkg5Yip55So" role="tab" tabindex="-1">Rest API 利用</button></div><div aria-labelledby="tab-1-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI5Yip55So" class="sphinx-tabs-panel group-tab" id="panel-1-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI5Yip55So" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI5Yip55So" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id18" title="このコードへのパーマリンク">¶</a></div>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI5Yip55So" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI5Yip55So" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI5Yip55So" role="tab" tabindex="0">設定ファイルとスクリプト利用</button><button aria-controls="panel-1-UmVzdCBBUEkg5Yip55So" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-UmVzdCBBUEkg5Yip55So" name="UmVzdCBBUEkg5Yip55So" role="tab" tabindex="-1">Rest API 利用</button></div><div aria-labelledby="tab-1-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI5Yip55So" class="sphinx-tabs-panel group-tab" id="panel-1-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI5Yip55So" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI5Yip55So" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id17" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./exastro-platform/tools/get-initial-settings-ansible.sh
 
 organization<span class="w"> </span>id<span class="w"> </span>:<span class="w"> </span>INPUT-ORGANIZATION-ID-TO-SET<span class="w"> </span><span class="c1"># 設定先のオーガナイゼーションID</span>
@@ -859,57 +878,58 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 <ul>
 <li><p>結果表示</p>
 <p>resultが”000-00000”が、 Ansible Automation Controller の作成に成功したことを示しています。</p>
-<div class="literal-block-wrapper docutils container" id="id19">
-<div class="code-block-caption"><span class="caption-text">実行結果(成功例)</span><a class="headerlink" href="#id19" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
-<span class="w">  </span><span class="s2">&quot;result&quot;</span>:<span class="w"> </span><span class="s2">&quot;000-00000&quot;</span>,
-<span class="w">  </span><span class="s2">&quot;data&quot;</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="s2">&quot;input_limit_setting&quot;</span>:<span class="w"> </span>true,
-<span class="w">    </span><span class="s2">&quot;execution_engine_list&quot;</span>:<span class="w"> </span><span class="o">[</span>
-<span class="w">      </span><span class="s2">&quot;string&quot;</span>
-<span class="w">    </span><span class="o">]</span>,
-<span class="w">    </span><span class="s2">&quot;initial_data&quot;</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">      </span><span class="s2">&quot;ansible_automation_controller_host_list&quot;</span>:<span class="w"> </span><span class="o">[</span>
-<span class="w">        </span><span class="o">{</span>
-<span class="w">          </span><span class="s2">&quot;file&quot;</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">            </span><span class="s2">&quot;ssh_private_key_file&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>
-<span class="w">          </span><span class="o">}</span>,
-<span class="w">          </span><span class="s2">&quot;parameter&quot;</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">            </span><span class="s2">&quot;host&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">            </span><span class="s2">&quot;authentication_method&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">            </span><span class="s2">&quot;user&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">            </span><span class="s2">&quot;password&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">            </span><span class="s2">&quot;ssh_private_key_file&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">            </span><span class="s2">&quot;passphrase&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">            </span><span class="s2">&quot;isolated_tower&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">            </span><span class="s2">&quot;remarks&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>
-<span class="w">          </span><span class="o">}</span>
-<span class="w">        </span><span class="o">}</span>
-<span class="w">      </span><span class="o">]</span>,
-<span class="w">      </span><span class="s2">&quot;interface_info_ansible&quot;</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">        </span><span class="s2">&quot;parameter&quot;</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">          </span><span class="s2">&quot;execution_engine&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">          </span><span class="s2">&quot;representative_server&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">          </span><span class="s2">&quot;ansible_automation_controller_protocol&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">          </span><span class="s2">&quot;ansible_automation_controller_port&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">          </span><span class="s2">&quot;organization_name&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">          </span><span class="s2">&quot;authentication_token&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">          </span><span class="s2">&quot;delete_runtime_data&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">          </span><span class="s2">&quot;proxy_address&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">          </span><span class="s2">&quot;proxy_port&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>
-<span class="w">        </span><span class="o">}</span>
-<span class="w">      </span><span class="o">}</span>
-<span class="w">    </span><span class="o">}</span>
-<span class="w">  </span><span class="o">}</span>,
-<span class="w">  </span><span class="s2">&quot;message&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>
-<span class="o">}</span>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text">実行結果(成功例)</span><a class="headerlink" href="#id18" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;execution_engine_list&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;Ansible Automation Controller&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;initial_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;ansible_automation_controller_host_list&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;ssh_private_key_file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LS0tLS1CRUdJTiBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjNCbGJuTnphQzFyWlhrdGRqRUFBQUFBQkc1dmJtVUFBQUFFYm05dVpRQUFBQUFBQUFBQkFBQUJsd0FBQUFkemMyZ3RjbgpOaEFBQUFBd0VBQVFBQUFZRUF0V0ZvVVA5ZkZSRlhUTTV0U2s4cmU1dTVEVjNqclF3VVd5d2swMkwrZ0tkNElsOFQ4TnBkCk40Z3ZGVkMxM1VueGNxc1pxVWdEWk41NnphSnMrdThQcTBlVjl2R0dkWmZDcU11OHRrbzh5WUw2MGQ2VUVoVXFOVVJkb1UKSEJ3bngzbjZidlNWMVE0em56V0JBNVBqOFl3SENiL0swVGFEMndvMkRkbFhqTXhhTlpXTXlpRFVMbE1pSk02VFdCU0lYMwo2emE5ZnI2cGFmak5Vc0hBTk9YSTdGbUFQcC9Jcy80TmtJVkhZN2M1UkJkUTUvNWgrTCtxRmlVazhKbE9vcFdnMjJOWWlXCkpKUGM0U09iTWxtRUY1OEdMdloxZTlCS0FvaXEvdWIvVmlhZG9hRFlyTzlEM0U3UW1NTldWMjNNMnMyN2tnS0ZKcFJJSUMKbmllZlJyaTdkOVhEYldoclBFY1FlRUMyZnNrRzVyY3Q0RFhrQUtVVCtSTkdwMll6bWZqSHlHNkRPWkJIa1RCNnJ5OVF3SgpRaFpFTjEvM3k2K0Q1V1BpbWlxeVFBNmtXdnZYZUtHWkhzZEhLdG5QaGZra1EyUWlteFgyWFRHaGZwdjRSUkUzZWNGUmxRClQvenRLeWg5enIzWmd4UU1nWHgwdEJ5V2dZSUJwZVZHa1dFTTVkeTNBQUFGa1BlMkRlYjN0ZzNtQUFBQUIzTnphQzF5YzIKRUFBQUdCQUxWaGFGRC9YeFVSVjB6T2JVcFBLM3VidVExZDQ2ME1GRnNzSk5OaS9vQ25lQ0pmRS9EYVhUZUlMeFZRdGQxSgo4WEtyR2FsSUEyVGVlczJpYlBydkQ2dEhsZmJ4aG5XWHdxakx2TFpLUE1tQyt0SGVsQklWS2pWRVhhRkJ3Y0o4ZDUrbTcwCmxkVU9NNTgxZ1FPVDQvR01Cd20veXRFMmc5c0tOZzNaVjR6TVdqV1ZqTW9nMUM1VElpVE9rMWdVaUY5K3Mydlg2K3FXbjQKelZMQndEVGx5T3haZ0Q2ZnlMUCtEWkNGUjJPM09VUVhVT2YrWWZpL3FoWWxKUENaVHFLVm9OdGpXSWxpU1QzT0VqbXpKWgpoQmVmQmk3MmRYdlFTZ0tJcXY3bS8xWW1uYUdnMkt6dlE5eE8wSmpEVmxkdHpOck51NUlDaFNhVVNDQXA0bm4wYTR1M2ZWCncyMW9henhIRUhoQXRuN0pCdWEzTGVBMTVBQ2xFL2tUUnFkbU01bjR4OGh1Z3ptUVI1RXdlcTh2VU1DVUlXUkRkZjk4dXYKZytWajRwb3Fza0FPcEZyNzEzaWhtUjdIUnlyWno0WDVKRU5rSXBzVjlsMHhvWDZiK0VVUk4zbkJVWlVFLzg3U3NvZmM2OQoyWU1VRElGOGRMUWNsb0dDQWFYbFJwRmhET1hjdHdBQUFBTUJBQUVBQUFHQkFMRHVJTzBKL3YwMUdqeXhETWswNjB5N2ZjCnM5TUErb3ZkNmw5QkpEK2RFVUM4c3poZWNuaTFEVlJtQjdoN3dpR2lYcUk3RU9yMGpoQVZmQVBxQ1ZQR3F1L09tVGRyOFUKMSswQ09NWjFLbEREdE5tdVRqQkpkdy9ZN2FDVTNXWlROZm1GeE51QzdKbUsrUWFKWk4yRWZTZVRjWVlNYXViL2JtUWc1RwpXZkhka1kyOW9VVzJ1bU9wOHArRzV4SS9qVHZpQXpHS3dmWG5FaUkxKzc0anQzZndTVzFkUEExKzVFUDRVZmphRUdwUlQzCnpaTlFnTTgrWDdNVWJyRklTdjJzQ0VWSU54cGJDSE9iQkRZcTdodUljeDdKUVEvcW5EMVJGdFhBa3d4M1ZkMFF4elZUTDUKZXF6ci9jc3h6S3l1M08yVE5weWVodE1SWVB6M2dXZ2xieFI1SStObWl1VGlTQWFHa1o2OXJqblY0bVNmL25xUnJwUWRpeAozS1E1bUZldVNUUFdEdXZQNFdWNlJybzBPajRjalZnNTlGNHVWM05xQmpvMFpXYmt1QnhZeDRBK2hsZjcwMmdMLzVMZTBPCllTc1dFS0U5aFhueHZ5b0NBUTBCLy9meDFnaHkxY2xQWi9JR3FpWDYwUEQrY0FmTnFWNmt6aFo5WmZmQmVOZ2x3NThRQUEKQU1FQTBqbVF4VVc2WW9ZRnovUFg5aXgrNEd3VXh4WWFTdlVYRDJHZGt4cGtkYS9EV3lKUlJFd1FjTzhPQTdhWUFhV0hxSwp1T1ZCWVJlY3h0Z01SbzUreUNpZjVoNE9HNzVyVEtSQ0NRLy9Td2hyS25iQjFoOVJ0Q2dWNjlSd0tMSUhxcXo0dGQ0V20wCkw0NmFtditjd0ZrVVdxOFRtdzNkR1NlV3AydURQcjVxSjVGWDlEdmZRWUNKSEVkNThnN2lESXdzMUd3VExKaTJ3L0J1QlEKbzB2MUw4dGo0eG1MTUxpcW1zdDZLRHM3cHBlOGpJYTgycHVTSUJ1ZWJ5Y3pKdXljcmNBQUFBd1FEbU5SV25qcisxWmJSdgpPRjJVT2hGQ2I2UVlpQkFsTzVuWVZQUnQ2amhMWmdvMjlkUVUwUmRnYzNObmtOdzY1ZFpQbnZVMTlaamkzcFBlRnVQczJQCnEyaDg1aFNCK3VRR3JodEovRGM2MU1ZS2k5cjkxQmtvd0ZHSDR3YW9mSUsyYmF1V2VFMGg3UFFmajhrSzZVbndLbnpPSTcKc1o2anJTZStxaHQwMzkxUzhTb2F1bkhnMXNsOTRYS092bG1RQUpQMHNuS2VMcGIyalZIR0ZTR0JRdG1GQUh2aXV6Zm5nUgpGc3hrd2ROSU1ERGxLNmxVMnFhbkppL0NBM0VOQldDLzhBQUFEQkFNbXoyUkVEbllkSjM0N2prWWFDNzNHdGtjWDZDN0NxCjZ6cGRXQkZ6Zjd0NkhJbzJMdUlPenVFa2IxV0VjOFZibTBHbTA1YkZ4YnFEYjF2OWpJRmErTG9qTHVOUmFoSEZHVFRRUDYKTk9DMzA2SDd2TWgwMStNUVJNaERKYW9GRlRRVy9uSVBIQldwcDVJNzFVN0FNa0d6cXJoWVU5dlVNSXBNS2taQUQyYWF3dwpreUp6eFZzTFhUQXhrT3BVU3lWZmJsZVBKZXJpVmIydmVXbm5RUmRnRm02empSeXpSTXlYODFkaldzelNDTVZUeWI2YW9GCjdBYjZPZzlib0lnRmVQU1FBQUFCTnpjR2hwYm5oQU1qWmxNR05pWkRrM05UZGxBUUlEQkFVRwotLS0tLUVORCBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0K&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;parameter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;authentication_method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;\u9375\u8a8d\u8a3c(\u30d1\u30b9\u30d5\u30ec\u30fc\u30ba\u306a\u3057)&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aap.example.com&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;isolated_tower&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;False&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;passphrase&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;remarks&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;ssh_private_key_file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aap_id_rsa&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;awx&quot;</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;interface_info_ansible&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;parameter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;ansible_automation_controller_port&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;443&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;ansible_automation_controller_protocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;authentication_token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LwWw3dwoHGx19ZhP1YQZU0JdZzobFv&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;delete_runtime_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;True&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;execution_engine&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ansible Automation Controller&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;organization_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;proxy_address&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;proxy_port&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;representative_server&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aap.example.com&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;input_limit_setting&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SUCCESS&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;000-00000&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ts&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-02-03T14:47:10.185Z&quot;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </li>
 <li><p>失敗時の結果表示イメージ</p>
-<div class="literal-block-wrapper docutils container" id="id20">
-<div class="code-block-caption"><span class="caption-text">実行結果(失敗例)</span><a class="headerlink" href="#id20" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text">実行結果(失敗例)</span><a class="headerlink" href="#id19" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>...
 &lt;<span class="w"> </span>HTTP/1.1<span class="w"> </span><span class="m">400</span><span class="w"> </span>BAD<span class="w"> </span>REQUEST
 &lt;<span class="w"> </span>Date:<span class="w"> </span>Thu,<span class="w"> </span><span class="m">18</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="m">05</span>:29:35<span class="w"> </span>GMT
@@ -931,8 +951,8 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 </div>
 </li>
 </ul>
-</div><div aria-labelledby="tab-1-UmVzdCBBUEkg5Yip55So" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-UmVzdCBBUEkg5Yip55So" name="UmVzdCBBUEkg5Yip55So" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id21">
-<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id21" title="このコードへのパーマリンク">¶</a></div>
+</div><div aria-labelledby="tab-1-UmVzdCBBUEkg5Yip55So" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-UmVzdCBBUEkg5Yip55So" name="UmVzdCBBUEkg5Yip55So" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id20" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s1">&#39;http://exastro-suite-mng.example.local/api/ita/org001/initial-settings/ansible/&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>-H<span class="w"> </span><span class="s1">&#39;accept: application/json&#39;</span>
@@ -942,57 +962,58 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 <ul>
 <li><p>結果表示</p>
 <p>resultが”000-00000”が、 Ansible Automation Controller の作成に成功したことを示しています。</p>
-<div class="literal-block-wrapper docutils container" id="id22">
-<div class="code-block-caption"><span class="caption-text">実行結果(成功例)</span><a class="headerlink" href="#id22" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
-<span class="w">  </span><span class="s2">&quot;result&quot;</span>:<span class="w"> </span><span class="s2">&quot;000-00000&quot;</span>,
-<span class="w">  </span><span class="s2">&quot;data&quot;</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="s2">&quot;input_limit_setting&quot;</span>:<span class="w"> </span>true,
-<span class="w">    </span><span class="s2">&quot;execution_engine_list&quot;</span>:<span class="w"> </span><span class="o">[</span>
-<span class="w">      </span><span class="s2">&quot;string&quot;</span>
-<span class="w">    </span><span class="o">]</span>,
-<span class="w">    </span><span class="s2">&quot;initial_data&quot;</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">      </span><span class="s2">&quot;ansible_automation_controller_host_list&quot;</span>:<span class="w"> </span><span class="o">[</span>
-<span class="w">        </span><span class="o">{</span>
-<span class="w">          </span><span class="s2">&quot;file&quot;</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">            </span><span class="s2">&quot;ssh_private_key_file&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>
-<span class="w">          </span><span class="o">}</span>,
-<span class="w">          </span><span class="s2">&quot;parameter&quot;</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">            </span><span class="s2">&quot;host&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">            </span><span class="s2">&quot;authentication_method&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">            </span><span class="s2">&quot;user&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">            </span><span class="s2">&quot;password&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">            </span><span class="s2">&quot;ssh_private_key_file&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">            </span><span class="s2">&quot;passphrase&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">            </span><span class="s2">&quot;isolated_tower&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">            </span><span class="s2">&quot;remarks&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>
-<span class="w">          </span><span class="o">}</span>
-<span class="w">        </span><span class="o">}</span>
-<span class="w">      </span><span class="o">]</span>,
-<span class="w">      </span><span class="s2">&quot;interface_info_ansible&quot;</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">        </span><span class="s2">&quot;parameter&quot;</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">          </span><span class="s2">&quot;execution_engine&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">          </span><span class="s2">&quot;representative_server&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">          </span><span class="s2">&quot;ansible_automation_controller_protocol&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">          </span><span class="s2">&quot;ansible_automation_controller_port&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">          </span><span class="s2">&quot;organization_name&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">          </span><span class="s2">&quot;authentication_token&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">          </span><span class="s2">&quot;delete_runtime_data&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">          </span><span class="s2">&quot;proxy_address&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>,
-<span class="w">          </span><span class="s2">&quot;proxy_port&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>
-<span class="w">        </span><span class="o">}</span>
-<span class="w">      </span><span class="o">}</span>
-<span class="w">    </span><span class="o">}</span>
-<span class="w">  </span><span class="o">}</span>,
-<span class="w">  </span><span class="s2">&quot;message&quot;</span>:<span class="w"> </span><span class="s2">&quot;string&quot;</span>
-<span class="o">}</span>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-text">実行結果(成功例)</span><a class="headerlink" href="#id21" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;execution_engine_list&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;Ansible Automation Controller&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;initial_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;ansible_automation_controller_host_list&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;ssh_private_key_file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LS0tLS1CRUdJTiBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjNCbGJuTnphQzFyWlhrdGRqRUFBQUFBQkc1dmJtVUFBQUFFYm05dVpRQUFBQUFBQUFBQkFBQUJsd0FBQUFkemMyZ3RjbgpOaEFBQUFBd0VBQVFBQUFZRUF0V0ZvVVA5ZkZSRlhUTTV0U2s4cmU1dTVEVjNqclF3VVd5d2swMkwrZ0tkNElsOFQ4TnBkCk40Z3ZGVkMxM1VueGNxc1pxVWdEWk41NnphSnMrdThQcTBlVjl2R0dkWmZDcU11OHRrbzh5WUw2MGQ2VUVoVXFOVVJkb1UKSEJ3bngzbjZidlNWMVE0em56V0JBNVBqOFl3SENiL0swVGFEMndvMkRkbFhqTXhhTlpXTXlpRFVMbE1pSk02VFdCU0lYMwo2emE5ZnI2cGFmak5Vc0hBTk9YSTdGbUFQcC9Jcy80TmtJVkhZN2M1UkJkUTUvNWgrTCtxRmlVazhKbE9vcFdnMjJOWWlXCkpKUGM0U09iTWxtRUY1OEdMdloxZTlCS0FvaXEvdWIvVmlhZG9hRFlyTzlEM0U3UW1NTldWMjNNMnMyN2tnS0ZKcFJJSUMKbmllZlJyaTdkOVhEYldoclBFY1FlRUMyZnNrRzVyY3Q0RFhrQUtVVCtSTkdwMll6bWZqSHlHNkRPWkJIa1RCNnJ5OVF3SgpRaFpFTjEvM3k2K0Q1V1BpbWlxeVFBNmtXdnZYZUtHWkhzZEhLdG5QaGZra1EyUWlteFgyWFRHaGZwdjRSUkUzZWNGUmxRClQvenRLeWg5enIzWmd4UU1nWHgwdEJ5V2dZSUJwZVZHa1dFTTVkeTNBQUFGa1BlMkRlYjN0ZzNtQUFBQUIzTnphQzF5YzIKRUFBQUdCQUxWaGFGRC9YeFVSVjB6T2JVcFBLM3VidVExZDQ2ME1GRnNzSk5OaS9vQ25lQ0pmRS9EYVhUZUlMeFZRdGQxSgo4WEtyR2FsSUEyVGVlczJpYlBydkQ2dEhsZmJ4aG5XWHdxakx2TFpLUE1tQyt0SGVsQklWS2pWRVhhRkJ3Y0o4ZDUrbTcwCmxkVU9NNTgxZ1FPVDQvR01Cd20veXRFMmc5c0tOZzNaVjR6TVdqV1ZqTW9nMUM1VElpVE9rMWdVaUY5K3Mydlg2K3FXbjQKelZMQndEVGx5T3haZ0Q2ZnlMUCtEWkNGUjJPM09VUVhVT2YrWWZpL3FoWWxKUENaVHFLVm9OdGpXSWxpU1QzT0VqbXpKWgpoQmVmQmk3MmRYdlFTZ0tJcXY3bS8xWW1uYUdnMkt6dlE5eE8wSmpEVmxkdHpOck51NUlDaFNhVVNDQXA0bm4wYTR1M2ZWCncyMW9henhIRUhoQXRuN0pCdWEzTGVBMTVBQ2xFL2tUUnFkbU01bjR4OGh1Z3ptUVI1RXdlcTh2VU1DVUlXUkRkZjk4dXYKZytWajRwb3Fza0FPcEZyNzEzaWhtUjdIUnlyWno0WDVKRU5rSXBzVjlsMHhvWDZiK0VVUk4zbkJVWlVFLzg3U3NvZmM2OQoyWU1VRElGOGRMUWNsb0dDQWFYbFJwRmhET1hjdHdBQUFBTUJBQUVBQUFHQkFMRHVJTzBKL3YwMUdqeXhETWswNjB5N2ZjCnM5TUErb3ZkNmw5QkpEK2RFVUM4c3poZWNuaTFEVlJtQjdoN3dpR2lYcUk3RU9yMGpoQVZmQVBxQ1ZQR3F1L09tVGRyOFUKMSswQ09NWjFLbEREdE5tdVRqQkpkdy9ZN2FDVTNXWlROZm1GeE51QzdKbUsrUWFKWk4yRWZTZVRjWVlNYXViL2JtUWc1RwpXZkhka1kyOW9VVzJ1bU9wOHArRzV4SS9qVHZpQXpHS3dmWG5FaUkxKzc0anQzZndTVzFkUEExKzVFUDRVZmphRUdwUlQzCnpaTlFnTTgrWDdNVWJyRklTdjJzQ0VWSU54cGJDSE9iQkRZcTdodUljeDdKUVEvcW5EMVJGdFhBa3d4M1ZkMFF4elZUTDUKZXF6ci9jc3h6S3l1M08yVE5weWVodE1SWVB6M2dXZ2xieFI1SStObWl1VGlTQWFHa1o2OXJqblY0bVNmL25xUnJwUWRpeAozS1E1bUZldVNUUFdEdXZQNFdWNlJybzBPajRjalZnNTlGNHVWM05xQmpvMFpXYmt1QnhZeDRBK2hsZjcwMmdMLzVMZTBPCllTc1dFS0U5aFhueHZ5b0NBUTBCLy9meDFnaHkxY2xQWi9JR3FpWDYwUEQrY0FmTnFWNmt6aFo5WmZmQmVOZ2x3NThRQUEKQU1FQTBqbVF4VVc2WW9ZRnovUFg5aXgrNEd3VXh4WWFTdlVYRDJHZGt4cGtkYS9EV3lKUlJFd1FjTzhPQTdhWUFhV0hxSwp1T1ZCWVJlY3h0Z01SbzUreUNpZjVoNE9HNzVyVEtSQ0NRLy9Td2hyS25iQjFoOVJ0Q2dWNjlSd0tMSUhxcXo0dGQ0V20wCkw0NmFtditjd0ZrVVdxOFRtdzNkR1NlV3AydURQcjVxSjVGWDlEdmZRWUNKSEVkNThnN2lESXdzMUd3VExKaTJ3L0J1QlEKbzB2MUw4dGo0eG1MTUxpcW1zdDZLRHM3cHBlOGpJYTgycHVTSUJ1ZWJ5Y3pKdXljcmNBQUFBd1FEbU5SV25qcisxWmJSdgpPRjJVT2hGQ2I2UVlpQkFsTzVuWVZQUnQ2amhMWmdvMjlkUVUwUmRnYzNObmtOdzY1ZFpQbnZVMTlaamkzcFBlRnVQczJQCnEyaDg1aFNCK3VRR3JodEovRGM2MU1ZS2k5cjkxQmtvd0ZHSDR3YW9mSUsyYmF1V2VFMGg3UFFmajhrSzZVbndLbnpPSTcKc1o2anJTZStxaHQwMzkxUzhTb2F1bkhnMXNsOTRYS092bG1RQUpQMHNuS2VMcGIyalZIR0ZTR0JRdG1GQUh2aXV6Zm5nUgpGc3hrd2ROSU1ERGxLNmxVMnFhbkppL0NBM0VOQldDLzhBQUFEQkFNbXoyUkVEbllkSjM0N2prWWFDNzNHdGtjWDZDN0NxCjZ6cGRXQkZ6Zjd0NkhJbzJMdUlPenVFa2IxV0VjOFZibTBHbTA1YkZ4YnFEYjF2OWpJRmErTG9qTHVOUmFoSEZHVFRRUDYKTk9DMzA2SDd2TWgwMStNUVJNaERKYW9GRlRRVy9uSVBIQldwcDVJNzFVN0FNa0d6cXJoWVU5dlVNSXBNS2taQUQyYWF3dwpreUp6eFZzTFhUQXhrT3BVU3lWZmJsZVBKZXJpVmIydmVXbm5RUmRnRm02empSeXpSTXlYODFkaldzelNDTVZUeWI2YW9GCjdBYjZPZzlib0lnRmVQU1FBQUFCTnpjR2hwYm5oQU1qWmxNR05pWkRrM05UZGxBUUlEQkFVRwotLS0tLUVORCBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0K&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;parameter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;authentication_method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;\u9375\u8a8d\u8a3c(\u30d1\u30b9\u30d5\u30ec\u30fc\u30ba\u306a\u3057)&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aap.example.com&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;isolated_tower&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;False&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;passphrase&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;remarks&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;ssh_private_key_file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aap_id_rsa&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;awx&quot;</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;interface_info_ansible&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;parameter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;ansible_automation_controller_port&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;443&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;ansible_automation_controller_protocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;authentication_token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LwWw3dwoHGx19ZhP1YQZU0JdZzobFv&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;delete_runtime_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;True&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;execution_engine&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ansible Automation Controller&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;organization_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;proxy_address&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;proxy_port&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;representative_server&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aap.example.com&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;input_limit_setting&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SUCCESS&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;000-00000&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ts&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-02-03T14:47:10.185Z&quot;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </li>
 <li><p>失敗時の結果表示イメージ</p>
-<div class="literal-block-wrapper docutils container" id="id23">
-<div class="code-block-caption"><span class="caption-text">実行結果(失敗例)</span><a class="headerlink" href="#id23" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-text">実行結果(失敗例)</span><a class="headerlink" href="#id22" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>...
 &lt;<span class="w"> </span>HTTP/1.1<span class="w"> </span><span class="m">400</span><span class="w"> </span>BAD<span class="w"> </span>REQUEST
 &lt;<span class="w"> </span>Date:<span class="w"> </span>Thu,<span class="w"> </span><span class="m">18</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="m">05</span>:29:35<span class="w"> </span>GMT
@@ -1016,22 +1037,22 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 </ul>
 </div></div>
 </section>
+<section id="id4">
+<h3><span class="section-number">1.2.4. </span>その他制約事項・備考<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h3>
 <section id="id5">
-<h3><span class="section-number">4.3.4. </span>その他制約事項・備考<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
-<section id="id6">
-<h4><span class="section-number">4.3.4.1. </span>Ansible Automation Controller 登録を再実行する場合<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">1.2.4.1. </span>Ansible Automation Controller 登録を再実行する場合<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">Ansible Automation Controller 登録の再実行する場合は、設定ファイルを編集後、再度スクリプトを実行して下さい。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id24">
-<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id24" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id23">
+<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id23" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id25">
-<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id25" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./exastro-platform/tools/initial-settings-ansible.sh<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.sample.json
+<div class="literal-block-wrapper docutils container" id="id24">
+<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id24" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./exastro-platform/tools/initial-settings-ansible.sh<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 </pre></div>
 </div>
 </div>

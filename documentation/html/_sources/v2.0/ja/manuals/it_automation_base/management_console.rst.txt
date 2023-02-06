@@ -161,7 +161,7 @@ ITA管理コンソールについて
   .. note:: | **プルダウンによる入力項目について**
             | 登録/更新時の入力項目で、プルダウンによる選択が可能な項目は、以下の仕様となっています。
 
-            .. figure:: /images/ja/usecase/manuals/プルダウンによる入力項目.gif
+            .. figure:: /images/ja/management_console/menu_group_list /プルダウンによる入力項目.gif
                :alt:  プルダウンによる入力項目
                :align: center
                :width: 6in
@@ -274,7 +274,7 @@ ITA管理コンソールについて
   #. | 事前準備として、メニュー作成メニューグループ>メニュー定義・作成メニューで以下のデータシートとパラメータシートを作成します。
      - | データシート「マスタ001」
 
-       .. figure:: /images/ja/usecase/manuals/データシート「マスタ001」.png
+       .. figure:: /images/ja/menu_creation/menu_definition_and_create/データシート「マスタ001」.png
           :alt: 「メニュー定義・作成」メニューで作成したデータシート
           :align: center
           :width: 6in
@@ -283,7 +283,7 @@ ITA管理コンソールについて
 
      - | パラメータシート「ぱらむ001」
 
-       .. figure:: /images/ja/usecase/manuals/パラメータシート「ぱらむ001」.png
+       .. figure:: /images/ja/management_console/menu_group_list/パラメータシート「ぱらむ001」.png
           :alt: 「メニュー定義・作成」メニューで作成したパラメータシート
           :align: center
           :width: 6in
@@ -314,7 +314,7 @@ ITA管理コンソールについて
 
      データシート「マスタ001」の変更履歴
 
-  .. figure:: /images/ja/usecase/manuals/ぱらむ001変更履歴.png
+  .. figure:: /images/ja/management_console/menu_group_list/ぱらむ001変更履歴.png
      :alt:  パラメータシート「ぱらむ001」の変更履歴
      :align: center
      :width: 5in
@@ -327,7 +327,7 @@ ITA管理コンソールについて
 | 各メニュー画面に登録されている情報を一括してエクセル形式またはJSON形式でダウンロードすることが出来ます。
 | また、同じ形式のファイルで、一括して情報を登録することが出来ます。
 
-.. figure:: /images/ja/usecase/management_console/menu_group_list/file_all_register.gif
+.. figure:: /images/ja//management_console/menu_group_list/file_all_register.gif
    :alt: ファイル一括登録の操作
    :align: center
    :width: 800px

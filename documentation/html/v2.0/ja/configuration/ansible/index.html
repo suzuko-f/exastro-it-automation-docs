@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
-    <title>Ansible ドライバ &#8212; Documentation  ドキュメント</title>
+    <title>Ansible &#8212; Documentation  ドキュメント</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/option.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
@@ -33,7 +33,9 @@
     <script src="../../../../_static/swagger/swagger-ui-standalone-preset.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
     <link rel="index" title="索引" href="../../../../genindex.html" />
-    <link rel="search" title="検索" href="../../../../search.html" /> 
+    <link rel="search" title="検索" href="../../../../search.html" />
+    <link rel="next" title="マニュアル" href="../../manuals/index.html" />
+    <link rel="prev" title="Azure Kubernetes Service" href="../kubernetes/aks.html" /> 
   </head>
 <body id="page" class="ja">
 
@@ -100,6 +102,8 @@
     </div>
     <div id="toolbarNavigation">
       <ul>
+        <li class="prev"><a href="../kubernetes/aks.html" title="前のトピックへ">Azure Kubernetes Service</a></li>
+        <li class="next"><a href="../../manuals/index.html" title="次のトピックへ">マニュアル</a></li>
       </ul>
     </div>
   </div>
@@ -110,8 +114,25 @@
   <div id="menuButton"></div>
   
   <aside class="divInner">
-    <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Exastro IT Automation Documentation 2.0</a></li>
+    <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Exastro IT Automation Documentation 2.0</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html#id1">日本語</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../installation/index.html">インストール</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../learn/index.html">Learn</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">構成・構築ガイド</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../kubernetes/index.html">Kubernetes</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Ansible</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../manuals/index.html">マニュアル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/index.html">リファレンス</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contribute/index.html">貢献</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
     <!-- <ul>
@@ -129,8 +150,10 @@
  <div id="breadcrumbs">
   <ul>
     <li><a href="../../../../index.html">HOME</a></li>
+    <li><a href="../../../index.html">Exastro IT Automation Documentation 2.0</a></li>
+    <li><a href="../index.html">構成・構築ガイド</a></li>
     
-    <li>Ansible ドライバ</li>
+    <li>Ansible</li>
   </ul>
 </div>
 
@@ -139,47 +162,8 @@
 <div class="body" role="main">
 
   <section id="ansible">
-<h1>Ansible ドライバ<a class="headerlink" href="#ansible" title="この見出しへのパーマリンク">¶</a></h1>
+<h1>Ansible<a class="headerlink" href="#ansible" title="この見出しへのパーマリンク">¶</a></h1>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">ITA_システム構成/環境構築ガイド Ansible-driver編</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#id1">はじめに</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#id2">機能</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#id3">システム構成</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="architecture.html#id4">システム構成</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="architecture.html#id5">オールインワン構成イメージ</a></li>
-<li class="toctree-l4"><a class="reference internal" href="architecture.html#ansible-automation-controller">Ansible Automation Controller 構成イメージ</a></li>
-<li class="toctree-l4"><a class="reference internal" href="architecture.html#ansible-automation-controller-aee">Ansible Automation Controller + AEE 構成イメージ</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="architecture.html#id6">システムの通信要件</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#id7">システム要件</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="architecture.html#backyard">Backyard</a></li>
-<li class="toctree-l3"><a class="reference internal" href="architecture.html#ansible-core">Ansible Core</a></li>
-<li class="toctree-l3"><a class="reference internal" href="architecture.html#id8">Ansible Automation Controller</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#playbook">Playbook連携</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#id9">初期設定</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="architecture.html#id10">共有ディレクトリの準備</a></li>
-<li class="toctree-l3"><a class="reference internal" href="architecture.html#ita">ITA作業用ディレクトリの準備</a></li>
-<li class="toctree-l3"><a class="reference internal" href="architecture.html#id11">ITA作業用ディレクトリの公開</a></li>
-<li class="toctree-l3"><a class="reference internal" href="architecture.html#id12">Ansible Automation Controllerへのファイル転送ユーザーの準備</a></li>
-<li class="toctree-l3"><a class="reference internal" href="architecture.html#ansible-automation-controllergit">Ansible Automation Controllerと連携するGitへのユーザーの準備</a></li>
-<li class="toctree-l3"><a class="reference internal" href="architecture.html#id13">パッケージ確認</a></li>
-<li class="toctree-l3"><a class="reference internal" href="architecture.html#id14">必要リソース準備</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="architecture.html#id15">アプリケーション</a></li>
-<li class="toctree-l4"><a class="reference internal" href="architecture.html#id16">ユーザートークン</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="architecture.html#proxy">Proxyの設定</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
 </div>
 </section>
 

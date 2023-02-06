@@ -28,7 +28,7 @@ Exastro Platform
 .. include:: ../../include/helm_option_pfDatabaseDefinition.rst
 
 共通設定 (Exastro 共用データベース)
----------------------------------
+-----------------------------------
 
 .. include:: ../../include/helm_option_databaseDefinition.rst
 

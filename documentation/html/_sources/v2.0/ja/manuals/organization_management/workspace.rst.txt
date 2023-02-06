@@ -25,16 +25,16 @@ Workspase (ワークスペース)
 
 #. | :doc:`../platform_management/organization` で作成したオーガナイゼーションにオーガナイゼーション管理者でログインします。
 
-#. | :menuselection:`メインメニュー --> ワークスペース一覧` で、 :guilabel:`作成` ボタンをクリックします。
+#. | :menuselection:`メインメニュー --> ワークスペース一覧` で、 :guilabel:`作成` をクリックします。
 
-   .. figure:: ./workspace/image1.png
+   .. figure:: /images/ja/manuals/platform/workspace/ワークスペース一覧.png
       :width: 600px
       :align: left
 
    .. warning::
-      | オーガナイゼーション管理者以外でログインしている時は、 :guilabel:`作成` ボタンは表示されません。
+      | オーガナイゼーション管理者以外でログインしている時は、 :guilabel:`作成` は表示されません。
 
-#. | 新規ワークスペース画面が表示されるので、ワークスペースの情報を入力し、 :guilabel:`登録` ボタンをクリックします。
+#. | 新規ワークスペース画面が表示されるので、ワークスペースの情報を入力し、 :guilabel:`登録` をクリックします。
 
    .. figure:: /images/ja/manuals/platform/workspace/新規ワークスペース作成画面.png
       :width: 600px

@@ -242,8 +242,8 @@ Organization (オーガナイゼーション)
 
              ./exastro-platform/tools/create-organization.sh ./exastro-platform/tools/create-organization.json
 
-             your username : INPUT-YOUR-USERNAME # Platform管理者のユーザ名を入力します
-             your password : INPUT-USER-PASSWORD # Platform管理者のパスワードを入力します
+             your username : INPUT-YOUR-USERNAME # システム管理者のユーザ名を入力します
+             your password : INPUT-USER-PASSWORD # システム管理者のパスワードを入力します
 
              Create an organization, are you sure? (Y/other) : Y # Y を入力するとオーガナイゼーションの作成処理が開始します
 
@@ -389,41 +389,6 @@ Organization (オーガナイゼーション)
                 | :program:`none`: SSL の設定なし。
                 | :program:`all`: すべての IP アドレスに対し、SSL を要求。(内部の API が HTTP アクセスのため選択不可)
 
-         .. list-table:: オーガナイゼーション作成パラメータ
-            :widths: 25 30 20
-            :header-rows: 1
-            :align: left
-
-            * - 項目
-              - 説明
-              - 設定例
-            * - organization id
-              - | オーガナイゼーションIDを指定。
-                | 英小文字、数字、ハイフン、アンダースコアが利用可能。
-                | 最大36文字。
-                | ※先頭文字は英小文字であること。
-                | ※予約語(後述)に合致しないこと。
-              - org001
-            * - organization name
-              - オーガナイゼーション名を指定。
-              - 最大255文字
-              - org001-name
-            * - organization manager's username
-              - オーガナイゼーション管理者のユーザ名（ログインするときのID）を指定。
-              - admin
-            * - organization manager's email
-              - オーガナイゼーション管理者のE-mailアドレスを指定。
-              - admin@example.com
-            * - organization manager's firstname
-              - オーガナイゼーション管理者の名を指定。
-              - admin
-            * - organization manager's lastname
-              - オーガナイゼーション管理者の姓を指定。
-              - admin
-            * - organization manager's initial password
-              - オーガナイゼーション管理者の初期パスワードを指定。
-              - password
-
          .. code-block:: sh
             :caption: コマンド 
 
@@ -431,7 +396,7 @@ Organization (オーガナイゼーション)
 
          | :kbd:`your username` と :kbd:`your username` は :ref:`create_system_manager` で登録した、:kbd:`KEYCLOAK_USER` 及び :kbd:`KEYCLOAK_PASSWORD` です。
 
-         .. code-block:: sh
+         .. code-block::
             :caption: コマンド (入力例)
 
             Please enter the organization information to be created
@@ -445,8 +410,8 @@ Organization (オーガナイゼーション)
             organization manager's initial password : password   # オーガナイゼーション管理者の初期パスワードを入力します
             organization plan id (optional) :                    # プランを指定(任意)します ※ 初期状態では未作成のため入力不要
 
-            your username : INPUT-YOUR-USERNAME                  # Platform管理者のユーザ名を入力します
-            your password : INPUT-USER-PASSWORD                  # Platform管理者のパスワードを入力します
+            your username : INPUT-YOUR-USERNAME                  # システム管理者のユーザ名を入力します
+            your password : INPUT-USER-PASSWORD                  # システム管理者のパスワードを入力します
       
             Create an organization, are you sure? (Y/other) : Y # "Y"を入力すると実行します
 
@@ -504,8 +469,8 @@ Organization (オーガナイゼーション)
       #. オーガナイゼーション作成実行
 
          | Rest API を使ってオーガナイゼーションを作成します。
-         | 利用可能なパラメータは下記のとおりです
-         | 詳細は、:doc:`../reference/api/system_manager/platform-api` を参照してください。
+         | 利用可能なパラメータは下記のとおりです。
+         | 詳細は、:doc:`../../reference/api/system_manager/platform-api` を参照してください。
 
          .. list-table:: オーガナイゼーション作成パラメータ
             :widths: 25 30 20 35
@@ -564,7 +529,7 @@ Organization (オーガナイゼーション)
          | BASIC 認証を行うために、Exastro Platform 管理者の認証情報を :kbd:`BASE64_BASIC` に設定する必要があります。
 
       | また、Exastro Platform の管理用 URL 情報を :kbd:`BASE_URL` に設定する必要があります。
-      | 例えば、:ref:`サービス公開の設定 (Ingress の設定) <ingress_setting>` をした場合は下記のようになります。
+      | 例えば、 :ref:`サービス公開の設定 (Ingress の設定) <ingress_setting>` をした場合は下記のようになります。
 
       .. code-block:: bash
 
@@ -608,7 +573,7 @@ Organization (オーガナイゼーション)
 
 | オーガナイゼーション用サイトが表示できるかWebブラウザから確認します。
 
-.. code-block:: address
+.. code-block::
 
    # 書式
    http[s]://{Exastro Platform の管理用 URL}/{オーガナイゼーションID}/platform/
