@@ -984,8 +984,9 @@ Ansible driver利用手順
 ..       | Ansible-Legacyコンソールの作業管理の画面では、実行した作業の一覧が表示され履歴が確認できます。
 ..       | 詳細は :ref:`general_operations_execution_list` を参照してください。
 
+.. _ansible_legacyrole_work_:
 
-Ansible-LegacyRole作業フロー
+Ansible-LegacyRole   
 ----------------------------
 
 | 以下は、Ansible-LegacyRoleで作業を実行するまでの流れです。
