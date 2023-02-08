@@ -155,9 +155,22 @@
 <li><a class="reference internal" href="#">2. ユーザ</a><ul>
 <li><a class="reference internal" href="#id2">2.1. はじめに</a></li>
 <li><a class="reference internal" href="#id3">2.2. ユーザとは</a></li>
-<li><a class="reference internal" href="#id4">2.3. プラットフォーム管理者の作成</a></li>
-<li><a class="reference internal" href="#id5">2.4. オーガナイゼーション管理者の作成</a></li>
-<li><a class="reference internal" href="#id6">2.5. 利用ユーザの作成</a></li>
+<li><a class="reference internal" href="#id4">2.3. プラットフォーム管理者</a><ul>
+<li><a class="reference internal" href="#id5">2.3.1. プラットフォーム管理者の作成</a></li>
+<li><a class="reference internal" href="#id6">2.3.2. プラットフォーム管理者の追加</a><ul>
+<li><a class="reference internal" href="#id7">手順</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id8">2.4. オーガナイゼーション管理者</a><ul>
+<li><a class="reference internal" href="#id9">2.4.1. オーガナイゼーション管理者の作成</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id10">2.5. 利用ユーザ</a><ul>
+<li><a class="reference internal" href="#id11">2.5.1. 利用ユーザの作成</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -204,7 +217,9 @@
 </ul>
 <div class="line-block">
 <div class="line"><em class="dfn">プラットフォーム管理者</em> は、Exastro システム全体の管理者のことで、オーガナイゼーションやオーガナイゼーション管理者の作成、プランの設定といったシステム全体に関わる操作を実行できる一方で、オーガナイゼーション内のワークスペース、および、Exastro IT Automation に関する操作は実行できません。</div>
+<div class="line"><br /></div>
 <div class="line"><em class="dfn">オーガナイゼーション管理者</em> は、オーガナイゼーションの管理者のことで、プラットフォーム管理者により作成されたオーガナイゼーションに対してユーザの作成やロールの割当といったオーガナイゼーションの管理をするための操作を実行できます。</div>
+<div class="line"><br /></div>
 <div class="line"><em class="dfn">利用ユーザ</em> は、上記2つ以外のすべてのユーザのことで、Exastro の各ツールの操作を実行できます。</div>
 </div>
 <div class="line-block">
@@ -212,19 +227,157 @@
 </div>
 </section>
 <section id="id4">
-<h2><span class="section-number">2.3. </span>プラットフォーム管理者の作成<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">2.3. </span>プラットフォーム管理者<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="id5">
+<h3><span class="section-number">2.3.1. </span>プラットフォーム管理者の作成<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">プラットフォーム管理者は、インストール時に <a class="reference internal" href="../../installation/kubernetes.html#installation-kubernetes-keycloak"><span class="std std-ref">5. アプリケーションの DB ユーザ設定</span></a> で <kbd class="kbd docutils literal notranslate">global.keycloakDefinition.secret.KEYCLOAK_USER</kbd> に指定しインストールした際に作成されます。</div>
 </div>
 </section>
-<section id="id5">
-<h2><span class="section-number">2.4. </span>オーガナイゼーション管理者の作成<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="id6">
+<h3><span class="section-number">2.3.2. </span>プラットフォーム管理者の追加<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">登録済みのプラットフォーム管理者アカウントから新たなプラットフォーム管理者アカウントを追加します。</div>
+</div>
+<section id="id7">
+<h4>手順<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h4>
+<ol class="arabic">
+<li><div class="line-block">
+<div class="line">keycloak管理コンソール(masterレルム)に接続します。</div>
+</div>
+</li>
+</ol>
+<ul>
+<li><div class="line-block">
+<div class="line">接続URL</div>
+</div>
+</li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>プラットフォーム管理者用サイトアドレス<span class="o">}</span>/auth/admin/master/console/#/realms/master/users
+</pre></div>
+</div>
+<ol class="arabic" start="2">
+<li><div class="line-block">
+<div class="line">keycloakのログイン画面から登録済みのプラットフォーム管理者アカウントでログインします。</div>
+</div>
+</li>
+</ol>
+<figure class="align-default" id="id12">
+<a class="reference internal image-reference" href="../../../../_images/keycloak_login.png"><img alt="keycloakログイン画面" src="../../../../_images/keycloak_login.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">図 2.1 </span><span class="caption-text">keycloakログイン画面</span><a class="headerlink" href="#id12" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<div class="line-block">
+<div class="line">プラットフォーム管理者アカウントを未登録の場合は、インストール時に platform-secret.yaml に設定し、keycloakの環境変数へ登録されている値でログインします。</div>
+</div>
+<figure class="align-default" id="id13">
+<a class="reference internal image-reference" href="../../../../_images/keycloak_user_password.png"><img alt="platform-secret.yaml" src="../../../../_images/keycloak_user_password.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">図 2.2 </span><span class="caption-text">platform-secret.yaml</span><a class="headerlink" href="#id13" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+</div>
+<ol class="arabic" start="3">
+<li><div class="line-block">
+<div class="line">ユーザーアカウントの追加を行います。</div>
+</div>
+</li>
+</ol>
+<ul>
+<li><div class="line-block">
+<div class="line"><span class="menuselection">「keycloak管理コンソール」 ‣ 「ユーザー」画面</span> の <span class="guilabel">ユーザーの追加</span> ボタンをクリックします。</div>
+</div>
+</li>
+</ul>
+<figure class="align-default" id="id14">
+<a class="reference internal image-reference" href="../../../../_images/keycloak_management_console.png"><img alt="keycloak管理コンソール_ユーザー画面" src="../../../../_images/keycloak_management_console.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">図 2.3 </span><span class="caption-text">keycloak管理コンソール_ユーザー画面</span><a class="headerlink" href="#id14" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<ul>
+<li><div class="line-block">
+<div class="line"><span class="menuselection">「ユーザー追加」画面</span> で、登録するプラットフォーム管理者のユーザーの情報を入力し <span class="guilabel">保存</span> ボタンをクリックします。</div>
+</div>
+</li>
+</ul>
+<figure class="align-default" id="id15">
+<a class="reference internal image-reference" href="../../../../_images/keycloak_add_user.png"><img alt="ユーザー追加画面" src="../../../../_images/keycloak_add_user.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">図 2.4 </span><span class="caption-text">ユーザー追加画面</span><a class="headerlink" href="#id15" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<ul>
+<li><div class="line-block">
+<div class="line">ユーザーの追加後の画面で <span class="guilabel">クレデンシャルタブ</span> をクリックします。</div>
+</div>
+</li>
+</ul>
+<figure class="align-default" id="id16">
+<a class="reference internal image-reference" href="../../../../_images/keycloak_credential_tab.png"><img alt="クレデンシャルタブ" src="../../../../_images/keycloak_credential_tab.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">図 2.5 </span><span class="caption-text">クレデンシャルタブ</span><a class="headerlink" href="#id16" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<ul>
+<li><div class="line-block">
+<div class="line">クレデンシャルタブの画面で、パスワード、新しいパスワード（確認）を入力し <span class="guilabel">パスワードを設定</span> をクリックします。</div>
+</div>
+</li>
+</ul>
+<figure class="align-default" id="id17">
+<a class="reference internal image-reference" href="../../../../_images/keycloak_password_setting.png"><img alt="パスワード設定" src="../../../../_images/keycloak_password_setting.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">図 2.6 </span><span class="caption-text">パスワード設定</span><a class="headerlink" href="#id17" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<div class="line-block">
+<div class="line">一時的「オン」：該当ユーザーが初回ログイン時、パスワード変更が要求されます。（推奨）</div>
+<div class="line">一時的「オフ」：入力したパスワードを、そのまま利用することができます。</div>
+</div>
+</div>
+<ul>
+<li><div class="line-block">
+<div class="line"><span class="guilabel">ロールマッピング</span> タブを選択し、レルムロールの中の「admin」をアサイン済みロールに設定します。</div>
+</div>
+</li>
+</ul>
+<figure class="align-default" id="id18">
+<a class="reference internal image-reference" href="../../../../_images/keycloak_role_mapping.png"><img alt="ロールマッピング" src="../../../../_images/keycloak_role_mapping.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">図 2.7 </span><span class="caption-text">ロールマッピング</span><a class="headerlink" href="#id18" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<ol class="arabic" start="4">
+<li><div class="line-block">
+<div class="line">プラットフォーム管理者アカウントの追加完了です。</div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line">ユーザーの追加、パスワードの設定、追加したユーザーの「admin」ロールへのアサインをもってプラットフォーム管理者アカウントの追加は完了です。</div>
+</div>
+</section>
+</section>
+</section>
+<section id="id8">
+<h2><span class="section-number">2.4. </span>オーガナイゼーション管理者<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="id9">
+<h3><span class="section-number">2.4.1. </span>オーガナイゼーション管理者の作成<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">オーガナイゼーション管理者は、オーガナイゼーション作成時に <a class="reference internal" href="../platform_management/organization.html"><span class="doc">Organization (オーガナイゼーション)</span></a> で <kbd class="kbd docutils literal notranslate">organization_managers</kbd> に指定することで作成されます。</div>
 </div>
 </section>
-<section id="id6">
-<h2><span class="section-number">2.5. </span>利用ユーザの作成<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h2>
+</section>
+<section id="id10">
+<h2><span class="section-number">2.5. </span>利用ユーザ<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="id11">
+<h3><span class="section-number">2.5.1. </span>利用ユーザの作成<a class="headerlink" href="#id11" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">利用ユーザは、下記の方法で作成します。</div>
 </div>
@@ -236,11 +389,13 @@
 <li><div class="line-block">
 <div class="line">Exastro Platformのメニューより <span class="menuselection">ユーザ管理</span> をクリックします。</div>
 </div>
-<a class="reference internal image-reference" href="../../../../_images/image11.png"><img alt="../../../../_images/image11.png" class="align-left" src="../../../../_images/image11.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/platform_users.png"><img alt="../../../../_images/platform_users.png" class="align-left" src="../../../../_images/platform_users.png" style="width: 200px;" /></a>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <div class="line-block">
-<div class="line">オーガナイゼーション管理者以外でログインしている時は、メニューに <span class="menuselection">ユーザ管理</span> は表示されません。</div>
+<div class="line">ユーザー管理権限を有するロールに紐づくユーザー以外でログインしている時は、メニューに <span class="menuselection">ユーザー管理</span> は表示されません。</div>
+<div class="line">ユーザー管理権限を有するロールは以下の3つです。</div>
+<div class="line">_orgnization-manager,_orgnization-user-manager,_orgnization-user-role-manager</div>
 </div>
 </div>
 </li>
@@ -248,33 +403,34 @@
 <div class="line">keycloakのユーザ画面が表示されるので、 <span class="guilabel">ユーザの追加</span> ボタンをクリックします。</div>
 </div>
 <figure class="align-left">
-<a class="reference internal image-reference" href="../../../../_images/image21.png"><img alt="../../../../_images/image21.png" src="../../../../_images/image21.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/keycloak_management_console.png"><img alt="../../../../_images/keycloak_management_console.png" src="../../../../_images/keycloak_management_console.png" style="width: 600px;" /></a>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line">keycloakのユーザの追加画面が表示されるので、ユーザの情報を入力して <span class="guilabel">保存</span> ボタンをクリックします。</div>
 </div>
 <figure class="align-left">
-<a class="reference internal image-reference" href="../../../../_images/image31.png"><img alt="../../../../_images/image31.png" src="../../../../_images/image31.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/keycloak_add_user_member01.png"><img alt="../../../../_images/keycloak_add_user_member01.png" src="../../../../_images/keycloak_add_user_member01.png" style="width: 600px;" /></a>
 </figure>
 </li>
 <li><div class="line-block">
-<div class="line">登録が正常に終了すると、以下の画面が表示されますので、 <span class="menuselection">クレデンシャル</span> タブをクリックします。</div>
+<div class="line">登録が正常に終了すると、以下の画面が表示されるので、 <span class="menuselection">クレデンシャル</span> タブをクリックします。</div>
 </div>
 <figure class="align-left">
-<a class="reference internal image-reference" href="../../../../_images/image42.png"><img alt="../../../../_images/image42.png" src="../../../../_images/image42.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/keycloak_credential_tab_member01.png"><img alt="../../../../_images/keycloak_credential_tab_member01.png" src="../../../../_images/keycloak_credential_tab_member01.png" style="width: 600px;" /></a>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line">「パスワード」および「新しいパスワード（確認）」に初期パスワードを入力し <span class="guilabel">パスワードを設定</span> をクリックします。</div>
 </div>
 <figure class="align-left">
-<a class="reference internal image-reference" href="../../../../_images/image52.png"><img alt="../../../../_images/image52.png" src="../../../../_images/image52.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/keycloak_password_setting_member01.png"><img alt="../../../../_images/keycloak_password_setting_member01.png" src="../../../../_images/keycloak_password_setting_member01.png" style="width: 600px;" /></a>
 </figure>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <div class="line-block">
-<div class="line">一時的を「オン」にした場合は、パスワードを設定したユーザで次回ログイン時にパスワードの変更が必要になります。</div>
+<div class="line">一時的「オン」：該当ユーザーが初回ログイン時、パスワード変更が要求されます。（推奨）</div>
+<div class="line">一時的「オフ」：入力したパスワードを、そのまま利用することができます。</div>
 </div>
 </div>
 </li>
@@ -282,10 +438,11 @@
 <div class="line">確認ダイアログが表示されるので、 <span class="guilabel">Set password</span> ボタンをクリックします。</div>
 </div>
 <figure class="align-left">
-<a class="reference internal image-reference" href="../../../../_images/image61.png"><img alt="../../../../_images/image61.png" src="../../../../_images/image61.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/keycloak_set_password.png"><img alt="../../../../_images/keycloak_set_password.png" src="../../../../_images/keycloak_set_password.png" style="width: 600px;" /></a>
 </figure>
 </li>
 </ol>
+</section>
 </section>
 </section>
 
