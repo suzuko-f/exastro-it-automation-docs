@@ -143,7 +143,7 @@
 
 #. | Exastro Platformのメニューより :menuselection:`ユーザ管理` をクリックします。
 
-   .. image:: /images/ja/manuals/platform/users/platform_users.png
+   .. image:: /images/ja/manuals/platform/platform_menu.png
       :width: 200px
       :align: left
 
