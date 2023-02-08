@@ -5,4 +5,5 @@ Ansible
 .. toctree::
    :maxdepth: 2
 
-   architecture
+   ansible_core
+   ansible_automation_platform

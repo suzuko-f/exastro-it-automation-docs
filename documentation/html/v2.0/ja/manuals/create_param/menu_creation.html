@@ -33,7 +33,9 @@
     <script src="../../../../_static/swagger/swagger-ui-standalone-preset.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
     <link rel="index" title="索引" href="../../../../genindex.html" />
-    <link rel="search" title="検索" href="../../../../search.html" /> 
+    <link rel="search" title="検索" href="../../../../search.html" />
+    <link rel="next" title="メンテナンス" href="../maintenance/index.html" />
+    <link rel="prev" title="パラメータ管理" href="index.html" /> 
   </head>
 <body id="page" class="ja">
 
@@ -100,6 +102,8 @@
     </div>
     <div id="toolbarNavigation">
       <ul>
+        <li class="prev"><a href="index.html" title="前のトピックへ">パラメータ管理</a></li>
+        <li class="next"><a href="../maintenance/index.html" title="次のトピックへ">メンテナンス</a></li>
       </ul>
     </div>
   </div>
@@ -110,8 +114,28 @@
   <div id="menuButton"></div>
   
   <aside class="divInner">
-    <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Exastro IT Automation Documentation 2.0</a></li>
+    <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Exastro IT Automation Documentation 2.0</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html#id1">日本語</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../installation/index.html">インストール</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/index.html">構成・構築ガイド</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">マニュアル</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../platform_management/index.html">システム管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../organization_management/index.html">オーガナイゼーション管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../it_automation_base/index.html">基本操作</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">パラメータ管理</a><ul class="current">
+<li class="toctree-l5 current"><a class="current reference internal" href="#">メニュー作成機能</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../maintenance/index.html">メンテナンス</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/index.html">リファレンス</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contribute/index.html">貢献</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
     <!-- <ul>
@@ -163,11 +187,9 @@
 <li><a class="reference internal" href="#id22">「メニュー作成」メニューグループのインストール時非表示メニュー</a><ul>
 <li><a class="reference internal" href="#registering-column-g">「カラムグループ管理」メニューでカラムグループを登録</a></li>
 <li><a class="reference internal" href="#registering-menu-items">「メニュー項目作成情報」メニューで設定する項目を登録</a></li>
-<li><a class="reference internal" href="#registering-unique">「一意制約(複数項目)作成情報」メニューで一意制約(複数項目)を登録</a></li>
-<li><a class="reference internal" href="#id26">「メニューロール作成情報」作成したメニューに紐づくロールを登録</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id27">付録</a><ul>
+<li><a class="reference internal" href="#id25">付録</a><ul>
 <li><a class="reference internal" href="#mapping-menu-table">メニュー定義-テーブル紐付管理</a></li>
 <li><a class="reference internal" href="#work-with-other-table">他メニュー連携</a></li>
 <li><a class="reference internal" href="#selection1">選択1</a></li>
@@ -190,6 +212,9 @@
  <div id="breadcrumbs">
   <ul>
     <li><a href="../../../../index.html">HOME</a></li>
+    <li><a href="../../../index.html">Exastro IT Automation Documentation 2.0</a></li>
+    <li><a href="../index.html">マニュアル</a></li>
+    <li><a href="index.html">パラメータ管理</a></li>
     
     <li>メニュー作成機能</li>
   </ul>
@@ -215,7 +240,8 @@
 <div class="line">作成したメニュー（パラメータシート/データシート）は、他のメニューと同様にWeb、Excel、RestAPIから操作が可能です。</div>
 <div class="line">メニュー（パラメータシート/データシート）の項目数や形式・サイズ・入力制限はメニュー作成機能で自由に設計することが可能です。</div>
 <div class="line">他のメニューからプルダウンで選択する項目の参照元として利用することで、文言の揺れなどを防ぐことも可能です。</div>
-<div class="line"><br /></div>
+</div>
+<div class="line-block">
 <div class="line">パラメータシート</div>
 </div>
 <ul>
@@ -225,16 +251,16 @@
 <div class="line">「メニュー作成」メニューグループ＞「メニュー定義・作成」メニュー＞「メニュー作成情報」タブ＞「基本情報」枠＞「作成対象」項目にて、「パラメータシート（オペレーションあり）」および「パラメータシート（ホスト/オペレーションあり）」を選択し作成したメニューをパラメータシートと呼びます。</div>
 <div class="line">各ドライバの「代入値自動登録設定」メニューにて、対象となるパラメータシートとIaC変数を設定しておくことで、パラメータシートの「パラメータ」項目に入力された値をIaC変数に自動で代入することが可能です。</div>
 </div>
-<figure class="align-center" id="id35">
+<figure class="align-left" id="id33">
 <a class="reference internal image-reference" href="../../../../_images/paramsheet1m.png"><img alt="パラメータシート（ホスト/オペレーションあり）定義画面" src="../../../../_images/paramsheet1m.png" style="width: 6.67391in; height: 3.20028in;" /></a>
 <figcaption>
-<p><span class="caption-text">例）パラメータシート（ホスト/オペレーションあり）定義画面</span><a class="headerlink" href="#id35" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 16 </span><span class="caption-text">パラメータシート（ホスト/オペレーションあり）定義画面</span><a class="headerlink" href="#id33" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id36">
+<figure class="align-left" id="id34">
 <a class="reference internal image-reference" href="../../../../_images/menu_done_operation1.gif"><img alt="パラメータシート利用例" src="../../../../_images/menu_done_operation1.gif" style="width: 6.67391in; height: 3.20028in;" /></a>
 <figcaption>
-<p><span class="caption-text">パラメータシート利用例</span><a class="headerlink" href="#id36" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 17 </span><span class="caption-text">パラメータシート利用例</span><a class="headerlink" href="#id34" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
@@ -265,16 +291,16 @@
 <div class="line">自由に項目を作成できるデータシートの作成が可能です。データシートは各ドライバの「代入値自動登録設定」メニューでは利用できません。</div>
 <div class="line">CMDB（Configuration Management Database、構成管理データベース）として、ITA上で情報を管理する場合に利用できます。</div>
 </div>
-<figure class="align-center" id="id37">
+<figure class="align-left" id="id35">
 <a class="reference internal image-reference" href="../../../../_images/datasheet1m.png"><img alt="データシート定義画面" src="../../../../_images/datasheet1m.png" style="width: 6.67391in; height: 3.20028in;" /></a>
 <figcaption>
-<p><span class="caption-text">データシート定義画面</span><a class="headerlink" href="#id37" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 18 </span><span class="caption-text">データシート定義画面</span><a class="headerlink" href="#id35" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id38">
+<figure class="align-left" id="id36">
 <a class="reference internal image-reference" href="../../../../_images/menu_done_operation2.gif"><img alt="データシート利用例" src="../../../../_images/menu_done_operation2.gif" style="width: 6.67391in; height: 3.20028in;" /></a>
 <figcaption>
-<p><span class="caption-text">データシート利用例</span><a class="headerlink" href="#id38" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 19 </span><span class="caption-text">データシート利用例</span><a class="headerlink" href="#id36" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
@@ -293,7 +319,7 @@
 </li>
 <li><div class="line-block">
 <div class="line">BackYard</div>
-<div class="line">Webコンテンツとは独立してサーバ上で動作する常駐プロセスのことを指します。</div>
+<div class="line">Webコンテンツとは独立してサーバー上で動作する常駐プロセスのことを指します。</div>
 </div>
 </li>
 </ul>
@@ -305,8 +331,7 @@
 </div>
 <ul>
 <li><div class="line-block">
-<div class="line">「メニュー定義・作成」メニューでメニュー（パラメータシート/データシート）を作成する場合、「メニュー定義一覧」「カラムグループ管理」「メニュー項目作成情報」「メニュー(縦)作成情報」の各メニューへデータが自動で登録されるため、各メニュー内でデータを作成する必要はありません。</div>
-<div class="line">また、自動でメニュー（パラメータシート/データシート）が作成されるため「メニュー作成実行」メニューで作成実行する必要もありません。</div>
+<div class="line">「メニュー定義・作成」メニューでメニュー（パラメータシート/データシート）を作成する場合、「メニュー定義一覧」「カラムグループ管理」「メニュー項目作成情報」の各メニューへデータが自動で登録されるため、各メニュー内でデータを作成する必要はありません。</div>
 </div>
 </li>
 <li><div class="line-block">
@@ -314,8 +339,8 @@
 <div class="line">（復活/廃止の手順は <a class="reference internal" href="../it_automation_base/management_console.html"><span class="doc">「Exastro-ITA_利用手順マニュアル_管理コンソール」</span></a> を参照してください。）</div>
 <div class="line"><br /></div>
 </div>
-<table class="docutils align-left" id="id39">
-<caption><span class="caption-text">「メニュー作成」メニューグループに所属するメニュー</span><a class="headerlink" href="#id39" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id37">
+<caption><span class="caption-number">表 42 </span><span class="caption-text">「メニュー作成」メニューグループに所属するメニュー</span><a class="headerlink" href="#id37" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>メニ
 ューグループ</strong></p></th>
@@ -325,7 +350,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>メニュ
+<tr class="row-even"><td rowspan="12"><p>メニュ
 ー作成</p></td>
 <td><p>メニュー定義・作成</p></td>
 <td><p><a class="reference internal" href="#about-operation"><span class="std std-ref">「メニュー定義・作成」メニューの操作説明</span></a></p></td>
@@ -333,74 +358,63 @@
 <p>パラメータシートまたはデータシートの更新も可能です。</p>
 </td>
 </tr>
-<tr class="row-odd"><td></td>
-<td><p>メニュー定義一覧</p></td>
+<tr class="row-odd"><td><p>メニュー定義一覧</p></td>
 <td><p><a class="reference internal" href="#menu-confirmation"><span class="std std-ref">「メニュー定義一覧」メニューでメニューを確認</span></a></p></td>
 <td><p>作成するパラメータシートまたはデータシートをメンテナンス(参照/更新/廃止/復活)できます。</p></td>
 </tr>
-<tr class="row-even"><td></td>
-<td><p>メニュー作成履歴</p></td>
+<tr class="row-even"><td><p>メニュー作成履歴</p></td>
 <td><p><a class="reference internal" href="#checking-status"><span class="std std-ref">「メニュー作成履歴」メニューで作成状況の確認</span></a></p></td>
 <td><p>メニュー作成の状態を確認できます。</p></td>
 </tr>
-<tr class="row-odd"><td></td>
-<td><p>カラムグループ管理</p></td>
+<tr class="row-odd"><td><p>カラムグループ管理</p></td>
 <td><p><a class="reference internal" href="#registering-column-g"><span class="std std-ref">「カラムグループ管理」メニューでカラムグループを登録</span></a></p></td>
 <td><p>作成するパラメータシートまたはデータシートのカラムグループをメンテナンス(参照/更新/廃止/復活)できます。</p>
 <p>※インストール時は非表示のメニューです。</p>
 </td>
 </tr>
-<tr class="row-even"><td></td>
-<td><p>メニュー項目作成情報</p></td>
+<tr class="row-even"><td><p>メニュー項目作成情報</p></td>
 <td><p><a class="reference internal" href="#registering-menu-items"><span class="std std-ref">「メニュー項目作成情報」メニューで設定する項目を登録</span></a></p></td>
 <td><p>作成するパラメータシートまたはデータシートで管理する項目をメンテナンス(参照/更新/廃止/復活)できます。</p>
 <p>※インストール時は非表示のメニューです。</p>
 </td>
 </tr>
-<tr class="row-odd"><td></td>
-<td><p>一意制約(複数項目)</p></td>
-<td><p><a class="reference internal" href="#registering-unique"><span class="std std-ref">「一意制約(複数項目)作成情報」メニューで一意制約(複数項目)を登録</span></a></p></td>
+<tr class="row-odd"><td><p>メニューロール作成情報</p></td>
+<td><p><a class="reference internal" href="#registering-menu-role"><span class="std std-ref">「メニューロール作成情報」メニュー</span></a></p></td>
+<td><p>作成するパラメータシートまたはデータシートのアクセス許可ロールメンテナンス(参照/更新/廃止/復活)できます</p>
+<p>※インストール時は非表示のメニューです。</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>一意制約(複数項目)</p></td>
+<td><p>-</p></td>
 <td><p>作成するパラメータシートまたはデータシートの一意制約(複数項目)をメンテナンス(参照/更新/廃止/復活)できます。</p>
 <p>※インストール時は非表示のメニューです。</p>
 </td>
 </tr>
-<tr class="row-even"><td></td>
-<td><p>メニュー作成実行</p></td>
-<td><p><a class="reference internal" href="#create-menu"><span class="std std-ref">(D) 「作成」</span></a></p></td>
-<td><p>「メニュー作成情報」で指定したメニューグループにパラメータシートまたはデータシートを作成します。</p>
-<p>※インストール時は非表示のメニューです。</p>
-</td>
-</tr>
-<tr class="row-odd"><td></td>
-<td><p>メニュー・テーブル紐付管理</p></td>
+<tr class="row-odd"><td><p>メニュー・テーブル紐付管理</p></td>
 <td><p><a class="reference internal" href="#mapping-menu-table"><span class="std std-ref">メニュー定義-テーブル紐付管理</span></a></p></td>
 <td><p>作成したメニューとDBのテーブルの紐付けを表示します。</p>
 <p>※インストール時は非表示のメニューです。</p>
 </td>
 </tr>
-<tr class="row-even"><td></td>
-<td><p>他メニュー連携</p></td>
+<tr class="row-even"><td><p>他メニュー連携</p></td>
 <td><p><a class="reference internal" href="#work-with-other-table"><span class="std std-ref">他メニュー連携</span></a></p></td>
 <td><p>作成したメニューのメニューグループ、メニュー、項目、DBのテーブルの紐付けを表示します。</p>
 <p>※インストール時は非表示のメニューです。</p>
 </td>
 </tr>
-<tr class="row-odd"><td></td>
-<td><p>選択1</p></td>
+<tr class="row-odd"><td><p>選択1</p></td>
 <td><p><a class="reference internal" href="#selection1"><span class="std std-ref">選択1</span></a></p></td>
 <td><p>プルダウン選択で使用する項目を管理するメニューです。(1択用)</p>
 <p>※インストール時は非表示のメニューです。</p>
 </td>
 </tr>
-<tr class="row-even"><td></td>
-<td><p>選択2</p></td>
+<tr class="row-even"><td><p>選択2</p></td>
 <td><p><a class="reference internal" href="#selection2"><span class="std std-ref">選択2</span></a></p></td>
 <td><p>プルダウン選択で使用する項目を管理するメニューです。(2択用)</p>
 <p>※インストール時は非表示のメニューです。</p>
 </td>
 </tr>
-<tr class="row-odd"><td></td>
-<td><p>参照項目情報</p></td>
+<tr class="row-odd"><td><p>参照項目情報</p></td>
 <td><p><a class="reference internal" href="#info-item-ro"><span class="std std-ref">参照項目情報</span></a></p></td>
 <td><p>参照項目として利用可能な項目を表示します。</p>
 <p>※インストール時は非表示のメニューです。</p>
@@ -422,6 +436,8 @@
 <ul>
 <li><div class="line-block">
 <div class="line">作成するシートの分類</div>
+</div>
+<div class="line-block">
 <div class="line"><span class="menuselection">「メニュー作成」メニューグループ ‣ 「メニュー定義・作成」メニュー</span> を選び、「メニュー作成情報」タブ内「作成対象」欄にて、</div>
 </div>
 <ul>
@@ -431,10 +447,10 @@
 </div>
 </li>
 </ul>
-<figure class="align-center" id="id40">
+<figure class="align-left" id="id38">
 <a class="reference internal image-reference" href="../../../../_images/menu_done_operation1.gif"><img alt="「作成対象」欄で「パラメータシート」を選択し作成されたメニュー（パラメータシート）" src="../../../../_images/menu_done_operation1.gif" style="width: 5.21378in; height: 1.64681in;" /></a>
 <figcaption>
-<p><span class="caption-text">「作成対象」欄で「パラメータシート」を選択し作成されたメニュー（パラメータシート）</span><a class="headerlink" href="#id40" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 20 </span><span class="caption-text">「作成対象」欄で「パラメータシート」を選択し作成されたメニュー（パラメータシート）</span><a class="headerlink" href="#id38" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <ul>
@@ -444,14 +460,14 @@
 </div>
 </li>
 </ul>
-<figure class="align-center" id="id41">
-<a class="reference internal image-reference" href="../../../../_images/menu_done_operation2.gif"><img alt="「作成対象」欄で「データシート」を選択し作成されたメニュー（データシート）" src="../../../../_images/menu_done_operation2.gif" style="width: 5.09378in; height: 1.64681in;" /></a>
+<figure class="align-left" id="id39">
+<a class="reference internal image-reference" href="../../../../_images/menu_done_operation2.gif"><img alt="「作成対象」欄で「データシート」を選択し作成されたメニュー（データシート）" src="../../../../_images/menu_done_operation2.gif" style="width: 5.21378in; height: 1.64681in;" /></a>
 <figcaption>
-<p><span class="caption-text">「作成対象」欄で「データシート」を選択し作成されたメニュー（データシート）</span><a class="headerlink" href="#id41" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 21 </span><span class="caption-text">「作成対象」欄で「データシート」を選択し作成されたメニュー（データシート）</span><a class="headerlink" href="#id39" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<table class="docutils align-left" id="id42">
-<caption><span class="caption-text">パラメータシートとデータシートの比較</span><a class="headerlink" href="#id42" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id40">
+<caption><span class="caption-number">表 43 </span><span class="caption-text">パラメータシートとデータシートの比較</span><a class="headerlink" href="#id40" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>作成対象の選択値</strong></p></th>
 <th class="head"><p><strong>代入値自動登録設定</strong></p></th>
@@ -488,6 +504,8 @@
 </li>
 <li><div class="line-block">
 <div class="line">作成するメニューの作成パターン</div>
+</div>
+<div class="line-block">
 <div class="line">メニュー作成機能で作成できるメニュー（パラメータシート/データシート）の作成パターンは合計2つです。</div>
 </div>
 <ol class="arabic">
@@ -524,13 +542,11 @@
 <li><div class="line-block">
 <div class="line">A) 入力用</div>
 </div>
-</li>
-</ul>
 <div class="line-block">
 <div class="line">メニュー（パラメータシート/データシート）のメンテナンス（登録/更新/廃止/復活）操作が行えるのは「A）入力用」メニューグループのみであり、その他のメニューグループではメンテナンス（登録/更新/廃止/復活）操作が行えません。</div>
 </div>
-<table class="docutils align-left" id="id43">
-<caption><span class="caption-text">メニュー作成パターン</span><a class="headerlink" href="#id43" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id41">
+<caption><span class="caption-number">表 44 </span><span class="caption-text">メニュー作成パターン</span><a class="headerlink" href="#id41" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>メニュー種別</strong></p></th>
 <th class="head"><p><strong>メニューグループ</strong></p></th>
@@ -555,14 +571,16 @@
 </tr>
 </tbody>
 </table>
+</li>
+</ul>
 <div class="line-block">
 <div class="line">パラメーターシート「パラメーターシート１」、データシート「デタシ１」を作成した場合、</div>
 <div class="line">入力用、代入値自動登録用、参照用各グループでの見え方は以下の通りです。</div>
 </div>
-<figure class="align-center" id="id44">
+<figure class="align-left" id="id42">
 <a class="reference internal image-reference" href="../../../../_images/menu_3_groups.gif"><img alt="各グループでの見え方" src="../../../../_images/menu_3_groups.gif" style="width: 5.09378in; height: 1.64681in;" /></a>
 <figcaption>
-<p><span class="caption-text">各グループでの見え方</span><a class="headerlink" href="#id44" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 22 </span><span class="caption-text">各グループでの見え方</span><a class="headerlink" href="#id42" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
@@ -573,10 +591,10 @@
 <div class="line-block">
 <div class="line">「メニュー作成」メニューグループの「メニュー定義・作成」メニューでは、メニュー（パラメータシート/データシート）の作成と項目の設定が同時に行えます。</div>
 </div>
-<figure class="align-center" id="id45">
+<figure class="align-left" id="id43">
 <a class="reference internal image-reference" href="../../../../_images/menu_definition_m.png"><img alt="../../../../_images/menu_definition_m.png" src="../../../../_images/menu_definition_m.png" style="width: 6.69236in; height: 4.15903in;" /></a>
 <figcaption>
-<p><span class="caption-text">「メニュー定義・作成」メニュー</span><a class="headerlink" href="#id45" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 23 </span><span class="caption-text">「メニュー定義・作成」メニュー</span><a class="headerlink" href="#id43" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <section id="a">
@@ -589,32 +607,32 @@
 <div class="line">「項目」ボタン</div>
 </div>
 <p><span class="guilabel">項目</span> ボタンを押下すると項目が出力され設定できるようになります。</p>
-<figure class="align-center" id="id46">
+<figure class="align-left" id="id44">
 <a class="reference internal image-reference" href="../../../../_images/menu_add_item.gif"><img alt="項目追加" src="../../../../_images/menu_add_item.gif" style="width: 5.90486in; height: 1.59306in;" /></a>
 <figcaption>
-<p><span class="caption-text">項目追加</span><a class="headerlink" href="#id46" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 24 </span><span class="caption-text">項目追加</span><a class="headerlink" href="#id44" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="line-block">
 <div class="line">項目を入力するとメニュー（パラメータシート/データシート）に項目として追加することが可能です。</div>
 </div>
-<figure class="align-center">
-<a class="reference internal image-reference" href="images/ja/menu_creation/menu_definition_and_create/menu_part_item.png"><img alt="項目定義" src="images/ja/menu_creation/menu_definition_and_create/menu_part_item.png" style="width: 5.90486in; height: 1.59306in;" /></a>
+<figure class="align-left">
+<a class="reference internal image-reference" href="../../../../_images/menu_part_item.png"><img alt="項目定義" src="../../../../_images/menu_part_item.png" style="width: 5.90486in; height: 1.59306in;" /></a>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line">「グループ」ボタン</div>
 <div class="line">カラムグループを設定します。</div>
 <div class="line">表示したカラムグループの領域に項目をドラッグ&amp;ドロップすると設定できるようになります。</div>
-<div class="line">1つのグループに対して複数の項目が設定できます</div>
+<div class="line">1つのグループに対して複数の項目が設定できます。</div>
 </div>
-<figure class="align-center">
+<figure class="align-left">
 <a class="reference internal image-reference" href="../../../../_images/menu_grouping.gif"><img alt="カラムグループ作成" src="../../../../_images/menu_grouping.gif" style="width: 6.08396in; height: 1.41856in;" /></a>
 </figure>
-<figure class="align-center" id="id47">
+<figure class="align-left" id="id45">
 <a class="reference internal image-reference" href="../../../../_images/menu_grouping_result.png"><img alt="カラムグループinメニュー" src="../../../../_images/menu_grouping_result.png" style="width: 6.08396in; height: 1.41856in;" /></a>
 <figcaption>
-<p><span class="caption-text">カラムグループinメニュー</span><a class="headerlink" href="#id47" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 25 </span><span class="caption-text">カラムグループinメニュー</span><a class="headerlink" href="#id45" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
@@ -622,29 +640,21 @@
 <div class="line">「取り消し」ボタン</div>
 <div class="line">入力・設定した項目を直前に戻します。</div>
 </div>
-<figure class="align-center">
+<figure class="align-left" id="id46">
 <a class="reference internal image-reference" href="../../../../_images/menu_cancel.png"><img alt="キャンセルボタン" src="../../../../_images/menu_cancel.png" style="width: 6.08396in; height: 1.41856in;" /></a>
+<figcaption>
+<p><span class="caption-number">図 26 </span><span class="caption-text">キャンセルボタン</span><a class="headerlink" href="#id46" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line">「やり直し」ボタン</div>
 <div class="line">「取り消し」ボタンを押す前の状態に戻します。</div>
 </div>
-<figure class="align-center" id="id48">
+<figure class="align-left" id="id47">
 <a class="reference internal image-reference" href="../../../../_images/menu_redo.png"><img alt="やり直しボタンmenu_base_info.png" src="../../../../_images/menu_redo.png" style="width: 6.08396in; height: 1.41856in;" /></a>
 <figcaption>
-<p><span class="caption-text">やり直しボタン</span><a class="headerlink" href="#id48" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
-</li>
-<li><div class="line-block">
-<div class="line">「作成」ボタン</div>
-<div class="line">「取り消し」ボタンを押す前の状態に戻します。</div>
-</div>
-<figure class="align-center" id="id49">
-<a class="reference internal image-reference" href="../../../../_images/menu_redo.png"><img alt="やり直しボタンmenu_base_info.png" src="../../../../_images/menu_redo.png" style="width: 6.08396in; height: 1.41856in;" /></a>
-<figcaption>
-<p><span class="caption-text">やり直しボタン</span><a class="headerlink" href="#id49" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 27 </span><span class="caption-text">やり直しボタン</span><a class="headerlink" href="#id47" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
@@ -652,21 +662,22 @@
 <div class="line">項目名定義</div>
 <div class="line">項目の名称を入力します。初期値は「項目1」です。「/」は使用禁止です。</div>
 </div>
-<figure class="align-center" id="id50">
-<a class="reference internal image-reference" href="../../../../_images/menu_item_definition1.png"><img alt="項目定義" src="../../../../_images/menu_item_definition1.png" style="width: 5.90486in; height: 1.59306in;" /></a>
+<figure class="align-left" id="id48">
+<a class="reference internal image-reference" href="../../../../_images/menu_item_definition1.png"><img alt="項目定義" src="../../../../_images/menu_item_definition1.png" style="width: 3.90486in; height: 1.59306in;" /></a>
 <figcaption>
-<p><span class="caption-text">項目名定義</span><a class="headerlink" href="#id50" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 28 </span><span class="caption-text">項目名定義</span><a class="headerlink" href="#id48" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line">項目名定義 (REST API 用)</div>
-<div class="line">項目の名称 (REST API 用)を入力します。初期値は「項目1」です。「/」は使用禁止です。</div>
+<div class="line">項目の名称 (REST API 用)を入力します。初期値は「item_1」です。</div>
+<div class="line">半角英数字と-_(ハイフン、アンダースコア)以外の文字は使用禁止です。</div>
 </div>
-<figure class="align-center" id="id51">
-<a class="reference internal image-reference" href="../../../../_images/menu_item_definition2.png"><img alt="項目定義 (REST API 用)" src="../../../../_images/menu_item_definition2.png" style="width: 5.90486in; height: 1.59306in;" /></a>
+<figure class="align-left" id="id49">
+<a class="reference internal image-reference" href="../../../../_images/menu_item_definition2.png"><img alt="項目定義 (REST API 用)" src="../../../../_images/menu_item_definition2.png" style="width: 3.90486in; height: 1.59306in;" /></a>
 <figcaption>
-<p><span class="caption-text">項目名定義 (REST API 用)</span><a class="headerlink" href="#id51" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 29 </span><span class="caption-text">項目名定義 (REST API 用)</span><a class="headerlink" href="#id49" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
@@ -674,16 +685,16 @@
 <div class="line">入力方式選択</div>
 <div class="line">プルダウンメニューから入力方式を選択します。</div>
 </div>
-<figure class="align-center" id="id52">
-<a class="reference internal image-reference" href="../../../../_images/menu_item_definition3.png"><img alt="入力方式選択" src="../../../../_images/menu_item_definition3.png" style="width: 5.90486in; height: 1.59306in;" /></a>
+<figure class="align-left" id="id50">
+<a class="reference internal image-reference" href="../../../../_images/menu_item_definition3.png"><img alt="入力方式選択" src="../../../../_images/menu_item_definition3.png" style="width: 3.90486in; height: 1.59306in;" /></a>
 <figcaption>
-<p><span class="caption-text">入力方式選択</span><a class="headerlink" href="#id52" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 30 </span><span class="caption-text">入力方式選択</span><a class="headerlink" href="#id50" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 </ul>
-<span id="setting-of-item"></span><table class="docutils align-left" id="id53">
-<caption><span class="caption-text">入力方式毎の設定項目</span><a class="headerlink" href="#id53" title="このテーブルへのパーマリンク">¶</a></caption>
+<span id="setting-of-item"></span><table class="docutils align-left" id="id51">
+<caption><span class="caption-number">表 45 </span><span class="caption-text">入力方式毎の設定項目</span><a class="headerlink" href="#id51" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>設定箇所</strong></p></th>
 <th class="head"></th>
@@ -779,23 +790,16 @@
 </tr>
 <tr class="row-odd"><td><p>入力項目</p></td>
 <td><p>初期値</p></td>
-<td><p>作成したメニューからデータを登録する際、デフォルトで入力欄に入る値を入力します。</p></td>
+<td><p>作成したメニューからデータを登録する際、デフォルトで入力欄に入る値を入力します。
+「YYYY-MM-DD hh:mm:ss」を入力することができます。</p></td>
 </tr>
 <tr class="row-even"><td rowspan="2"><p>日付</p></td>
 <td colspan="3"><p>カレンダー選択の項目になります。</p></td>
 </tr>
 <tr class="row-odd"><td><p>入力項目</p></td>
 <td><p>初値値</p></td>
-<td><p>作成したメニューからデータを登録する際、デフォルトで入力欄に入る値を入力します。</p></td>
-</tr>
-<tr class="row-even"><td rowspan="2"><p>パラメーターシート参照</p></td>
-<td colspan="3"><p>作成対象「パラメータシート(オペレーションあり)」で作成したメニューの項目を選択し、データを登録した際にオペレーションが一致する項目のレコードが参照されます。</p></td>
-</tr>
-<tr class="row-odd"><td><p>入力項目</p></td>
-<td><p>メニュー</p></td>
-<td><p>作成対象「パラメータシート(オペレーションあり)」で作成したメニューをプルダウンから選択します。</p>
-<p>「パラメータシート参照」は作成対象「データシート」では利用できません。</p>
-</td>
+<td><p>作成したメニューからデータを登録する際、デフォルトで入力欄に入る値を入力します。　
+「YYYY-MM-DD」を入力することができます。</p></td>
 </tr>
 <tr class="row-even"><td rowspan="4"><p>プルダウン選択</p></td>
 <td colspan="3"><p>プルダウンの項目になります。</p></td>
@@ -862,8 +866,8 @@
 </tr>
 </tbody>
 </table>
-<table class="docutils align-left" id="id54">
-<caption><span class="caption-text">各入力方式共通の設定項目</span><a class="headerlink" href="#id54" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id52">
+<caption><span class="caption-number">表 46 </span><span class="caption-text">各入力方式共通の設定項目</span><a class="headerlink" href="#id52" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>設定箇所</strong></p></th>
 <th class="head"><p><strong>説明</strong></p></th>
@@ -895,14 +899,14 @@
 <li><div class="line-block">
 <div class="line">「基本情報」枠</div>
 </div>
-<figure class="align-center" id="id55">
-<a class="reference internal image-reference" href="../../../../_images/menu_base_info.png"><img alt="「基本情報」枠" src="../../../../_images/menu_base_info.png" style="width: 6.08396in; height: 1.41856in;" /></a>
+<figure class="align-left" id="id53">
+<a class="reference internal image-reference" href="../../../../_images/menu_base_info.png"><img alt="「基本情報」枠" src="../../../../_images/menu_base_info.png" style="width: 4.08396in; height: 1.41856in;" /></a>
 <figcaption>
-<p><span class="caption-text">「基本情報」枠</span><a class="headerlink" href="#id55" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 31 </span><span class="caption-text">「基本情報」枠</span><a class="headerlink" href="#id53" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<table class="docutils align-left" id="id56">
-<caption><span class="caption-text">「基本情報」枠設定値</span><a class="headerlink" href="#id56" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id54">
+<caption><span class="caption-number">表 47 </span><span class="caption-text">「基本情報」枠設定値</span><a class="headerlink" href="#id54" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>設定箇所</strong></p></th>
 <th class="head"><p><strong>説明</strong></p></th>
@@ -934,8 +938,6 @@
 <td><p>プルダウンから「パラメータシート(ホスト/オペレーションあり)」、「パラメータシート(オペレーションあり)」、「データシート」のいずれかを選択します。</p>
 <p>「データシート」を選択すると、「対象メニューグループ」枠に「入力用」欄が表示されます。</p>
 <p>「パラメータシート（オペレーションあり）」を選択すると、「基本情報」枠に「縦メニュー利用」チェックボックス、「対象メニューグループ」枠に「入力用」欄、「代入値自動登録用」欄、「参照用」欄が表示されます。</p>
-<p>「パラメータシート（ホスト/オペレーションあり）」を選択すると、「基本情報」枠に「ホストグループ利用」チェックボックス、「縦メニュー利用」チェックボックス、「対象メニューグループ」枠に「入力用」欄、「代入値自動登録用」欄、「参照用」欄が表示されます。</p>
-<p>初期値は「パラメータシート(ホスト/オペレーションあり)」です。</p>
 </td>
 <td><p>表示</p></td>
 <td><p>表示</p></td>
@@ -967,7 +969,7 @@
 </td>
 <td><p>初期表示は「自動入力」となります。</p>
 <p>閲覧、編集モードの場合表示されます</p>
-<p>最終更新者が「メニュー作成機能」(BackYardがレコードを更新する際のユーザ)である場合、そのレコードを除いた最新のレコードの最終更新者が表示されます。</p>
+<p>最終更新者が「メニュー作成機能」(BackYardがレコードを更新する際のユーザー)である場合、そのレコードを除いた最新のレコードの最終更新者が表示されます。</p>
 </td>
 <td><p>表示</p></td>
 <td><p>表示</p></td>
@@ -983,8 +985,8 @@
 <div class="line">メニュー（パラメータシート/データシート）作成時に使用するメニューグループを表示します。</div>
 <div class="line">「対象メニューグループを選択」ボタンを押下すると、「対象メニューグループ」選択画面が表示され、使用したいメニューグループを選択、設定することが出来ます。</div>
 </div>
-<table class="docutils align-left" id="id57">
-<caption><span class="caption-text">対象メニューグループ」枠設定値</span><a class="headerlink" href="#id57" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id55">
+<caption><span class="caption-number">表 48 </span><span class="caption-text">対象メニューグループ」枠設定値</span><a class="headerlink" href="#id55" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>設
 定箇
@@ -1026,10 +1028,10 @@
 </tr>
 </tbody>
 </table>
-<figure class="align-center" id="id58">
+<figure class="align-left" id="id56">
 <a class="reference internal image-reference" href="../../../../_images/menu_target_group.gif"><img alt="../../../../_images/menu_target_group.gif" src="../../../../_images/menu_target_group.gif" style="width: 6.29921in; height: 3.12575in;" /></a>
 <figcaption>
-<p><span class="caption-text">「対象メニューグループ」選択画面</span><a class="headerlink" href="#id58" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 32 </span><span class="caption-text">「対象メニューグループ」選択画面</span><a class="headerlink" href="#id56" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -1075,15 +1077,14 @@
 <div class="line">「一意制約(複数項目)」枠</div>
 <div class="line">作成したメニューにデータを登録する際に、指定した複数の項目で同じレコードの組み合わせが登録できないように制御する機能です。</div>
 </div>
-<figure class="align-default" id="id59">
+<figure class="align-default" id="id57">
 <a class="reference internal image-reference" href="../../../../_images/menu_unique_restriction2.gif"><img alt="「一意制約(複数項目)」の機能" src="../../../../_images/menu_unique_restriction2.gif" style="width: 5.91544in; height: 5.18333in;" /></a>
 <figcaption>
-<p><span class="caption-text">「一意制約(複数項目)」が設定されたメニュー</span><a class="headerlink" href="#id59" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 33 </span><span class="caption-text">「一意制約(複数項目)」が設定されたメニュー</span><a class="headerlink" href="#id57" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="line-block">
 <div class="line">「一意制約(複数項目)を選択」ボタンを押下すると、「一意制約(複数項目)」設定画面が表示され、一意制約を適用させる項目の組み合わせを設定できます。</div>
-<div class="line"><br /></div>
 </div>
 <ul>
 <li><div class="line-block">
@@ -1111,10 +1112,10 @@
 </div>
 </li>
 </ul>
-<figure class="align-center" id="id60">
+<figure class="align-left" id="id58">
 <a class="reference internal image-reference" href="../../../../_images/menu_unique_restriction.gif"><img alt="「一意制約(複数項目)」設定画面" src="../../../../_images/menu_unique_restriction.gif" style="width: 6.26679in; height: 3.65152in;" /></a>
 <figcaption>
-<p><span class="caption-text">「一意制約(複数項目)」設定画面</span><a class="headerlink" href="#id60" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 34 </span><span class="caption-text">「一意制約(複数項目)」設定画面</span><a class="headerlink" href="#id58" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <ul>
@@ -1125,16 +1126,16 @@
 </div>
 </li>
 </ul>
-<figure class="align-center" id="id61">
+<figure class="align-left" id="id59">
 <a class="reference internal image-reference" href="../../../../_images/menu_unique_restriction_wrong1.png"><img alt="1つのパターンに項目が1つしか選択されていない場合" src="../../../../_images/menu_unique_restriction_wrong1.png" style="width: 4.23577in; height: 1.98283in;" /></a>
 <figcaption>
-<p><span class="caption-text">1つのパターンに項目が1つしか選択されていない場合</span><a class="headerlink" href="#id61" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 35 </span><span class="caption-text">1つのパターンに項目が1つしか選択されていない場合</span><a class="headerlink" href="#id59" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id62">
+<figure class="align-left" id="id60">
 <a class="reference internal image-reference" href="../../../../_images/menu_unique_restriction_wrong2.png"><img alt="同じ項目の組み合わせのパターンが存在する場合" src="../../../../_images/menu_unique_restriction_wrong2.png" style="width: 4.23577in; height: 1.98283in;" /></a>
 <figcaption>
-<p><span class="caption-text">同じ項目の組み合わせのパターンが存在する場合</span><a class="headerlink" href="#id62" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 36 </span><span class="caption-text">同じ項目の組み合わせのパターンが存在する場合</span><a class="headerlink" href="#id60" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
@@ -1153,12 +1154,12 @@
 <li><div class="line-block">
 <div class="line">ロールを一つも選択しなかった場合</div>
 <div class="line">メニュー定義（「メニュー作成」メニューグループ配下の各メニュー）は、すべてのロールがアクセス可能となります。</div>
-<div class="line">作成したメニュー（パラメータシート/データシート）は、「ロール/メニュー紐付管理」メニューの設定によりシステム管理者のロールと作成ユーザが所属するロールのみアクセス可能となります。</div>
+<div class="line">作成したメニュー（パラメータシート/データシート）は、「ロール/メニュー紐付管理」メニューの設定によりシステム管理者のロールと作成ユーザーが所属するロールのみアクセス可能となります。</div>
 </div>
-<figure class="align-center" id="id63">
+<figure class="align-left" id="id61">
 <a class="reference internal image-reference" href="../../../../_images/menu_access_control.gif"><img alt="「アクセス許可ロール」設定画面" src="../../../../_images/menu_access_control.gif" style="width: 6.26679in; height: 3.65152in;" /></a>
 <figcaption>
-<p><span class="caption-text">「アクセス許可ロール」設定画面</span><a class="headerlink" href="#id63" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 37 </span><span class="caption-text">「アクセス許可ロール」設定画面</span><a class="headerlink" href="#id61" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
@@ -1175,10 +1176,10 @@
 <div class="line">「プレビュー」タブ</div>
 <div class="line">入力中の項目がテーブル形式で表示されます。</div>
 </div>
-<figure class="align-center" id="id64">
+<figure class="align-left" id="id62">
 <a class="reference internal image-reference" href="../../../../_images/menu_preview.png"><img alt="「プレビュー」タブ" src="../../../../_images/menu_preview.png" style="width: 6.08396in; height: 1.41856in;" /></a>
 <figcaption>
-<p><span class="caption-text">「プレビュー」タブ</span><a class="headerlink" href="#id64" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 38 </span><span class="caption-text">「プレビュー」タブ</span><a class="headerlink" href="#id62" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
@@ -1196,24 +1197,24 @@
 <div class="line">「作成」ボタン</div>
 <div class="line">必須項目入力後に押下するとメニュー（パラメータシート/データシート）の作成を行います。</div>
 </div>
-<figure class="align-center" id="id65">
+<figure class="align-left" id="id63">
 <a class="reference internal image-reference" href="../../../../_images/menu_creation_button.gif"><img alt="「作成」ボタン" src="../../../../_images/menu_creation_button.gif" style="width: 6.08396in; height: 1.41856in;" /></a>
 <figcaption>
-<p><span class="caption-text">「作成」ボタン</span><a class="headerlink" href="#id65" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 39 </span><span class="caption-text">「作成」ボタン</span><a class="headerlink" href="#id63" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="line-block">
 <div class="line">作成後は画面上部の「メニュー作成履歴ボタンから「メニュー作成履歴」メニューに遷移し、正常にメニューが作成されたか確認をしてください。</div>
 </div>
-<figure class="align-center" id="id66">
+<figure class="align-left" id="id64">
 <a class="reference internal image-reference" href="../../../../_images/menu_history_button.png"><img alt="メニュー作成履歴" src="../../../../_images/menu_history_button.png" style="width: 6.08396in; height: 1.41856in;" /></a>
 <figcaption>
-<p><span class="caption-text">メニュー作成履歴</span><a class="headerlink" href="#id66" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 40 </span><span class="caption-text">メニュー作成履歴</span><a class="headerlink" href="#id64" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="line-block">
 <div class="line">「メニュー定義・作成」メニューでメニュー（パラメータシート/データシート）を作成した場合、</div>
-<div class="line">「メニュー定義一覧」、「カラムグループ管理」、「メニュー作成項目」、「メニュー作成(縦)作成情報」の各メニューに対して自動でデータが入ります。</div>
+<div class="line">メニュー定義一覧」、「カラムグループ管理」、「メニュー項目作成情報」、「一意制約(複数項目)作成情報」「メニューロール作成情報」の各メニューに対して自動でデータが入ります。</div>
 </div>
 </li>
 </ul>
@@ -1227,10 +1228,10 @@
 <li><div class="line-block">
 <div class="line">閲覧画面</div>
 </div>
-<figure class="align-center" id="id67">
+<figure class="align-left" id="id65">
 <a class="reference internal image-reference" href="../../../../_images/menu_after_creation.gif"><img alt="閲覧画面" src="../../../../_images/menu_after_creation.gif" style="width: 6.08396in; height: 1.41856in;" /></a>
 <figcaption>
-<p><span class="caption-text">閲覧画面</span><a class="headerlink" href="#id67" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 41 </span><span class="caption-text">閲覧画面</span><a class="headerlink" href="#id65" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="line-block">
@@ -1241,19 +1242,19 @@
 <div class="line">メニュー作成完了後にブラウザ画面を更新すると、「編集」ボタンと「初期化」ボタンが表示されるようになります。</div>
 <div class="line">メニュー作成のステータスは「メニュー作成履歴」ボタンより遷移できる「メニュー作成履歴」メニューで確認できます。</div>
 </div>
-<figure class="align-center" id="id68">
+<figure class="align-left" id="id66">
 <a class="reference internal image-reference" href="../../../../_images/menu_button_on_browse1.png"><img alt="Backyard処理が完了していない場合のボタン配置" src="../../../../_images/menu_button_on_browse1.png" style="width: 3.07895in; height: 0.69767in;" /></a>
 <figcaption>
-<p><span class="caption-text">Backyard処理が完了していない場合のボタン配置</span><a class="headerlink" href="#id68" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 42 </span><span class="caption-text">Backyard処理が完了していない場合のボタン配置</span><a class="headerlink" href="#id66" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<figure class="align-center" id="id69">
+<figure class="align-left" id="id67">
 <a class="reference internal image-reference" href="../../../../_images/menu_button_on_browse2.png"><img alt="Backyard処理が完了している場合のボタン配置" src="../../../../_images/menu_button_on_browse2.png" style="width: 3.07895in; height: 0.69767in;" /></a>
 <figcaption>
-<p><span class="caption-text">Backyard処理が完了している場合のボタン配置</span><a class="headerlink" href="#id69" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 43 </span><span class="caption-text">Backyard処理が完了している場合のボタン配置</span><a class="headerlink" href="#id67" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <ul>
@@ -1270,10 +1271,10 @@
 </div>
 </li>
 </ul>
-<figure class="align-center" id="id70">
+<figure class="align-left" id="id68">
 <a class="reference internal image-reference" href="../../../../_images/menu_uneditable.png"><img alt="Backyard処理が完了している場合の編集不可箇所" src="../../../../_images/menu_uneditable.png" style="width: 3.07895in; height: 0.69767in;" /></a>
 <figcaption>
-<p><span class="caption-text">Backyard処理が完了している場合の編集不可箇所</span><a class="headerlink" href="#id70" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 44 </span><span class="caption-text">Backyard処理が完了している場合の編集不可箇所</span><a class="headerlink" href="#id68" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <ul>
@@ -1300,10 +1301,10 @@
 <li><div class="line-block">
 <div class="line">編集画面</div>
 </div>
-<figure class="align-center" id="id71">
+<figure class="align-left" id="id69">
 <a class="reference internal image-reference" href="../../../../_images/menu_not_editable.png"><img alt="編集画面" src="../../../../_images/menu_not_editable.png" style="width: 5.20712in; height: 2.76691in;" /></a>
 <figcaption>
-<p><span class="caption-text">編集画面</span><a class="headerlink" href="#id71" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 45 </span><span class="caption-text">編集画面</span><a class="headerlink" href="#id69" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="line-block">
@@ -1311,7 +1312,7 @@
 <div class="line">既存項目は「項目名」「正規表現」「説明」「備考」の設定値を自由に変更できます。</div>
 <div class="line">「最大バイト数」「最小値」「最大値」「桁数」「ファイル最大バイト数」の設定値については、元の値よりも大きい数値にのみ変更できます。</div>
 <div class="line">「正規表現」を変更した場合、登録済みのデータが変更後の「正規表現」と不整合な状態になったとしてもデータは保持されます。</div>
-<div class="line">「最大バイト数」「最小値」「最大値」「桁数」「ファイル最大バイト数」の既存項目を削除した場合、その項目に入力されていたデータは削除されます。</div>
+<div class="line">既存項目を削除した場合、その項目に入力されていたデータは削除されます。</div>
 <div class="line">新規項目を追加した場合、レコードが空の状態で項目が追加されます。</div>
 <div class="line">「必須」「一意制約」にチェックを入れた場合でもレコードが空の状態となるため、登録データに不整合が生じる場合があります。</div>
 <div class="line">対象メニューグループを変更した場合、変更前に選択されていたメニューグループに作成されているメニューは廃止され、変更後のメニューグループに新たに登録されます。（その場合も登録したデータは保持されます。）</div>
@@ -1341,26 +1342,24 @@
 </div>
 </li>
 </ul>
-<figure class="align-center" id="id72">
+<figure class="align-left" id="id70">
 <a class="reference internal image-reference" href="../../../../_images/menu_edit_button.png"><img alt="編集画面の各ボタン" src="../../../../_images/menu_edit_button.png" style="width: 5.20712in; height: 2.76691in;" /></a>
 <figcaption>
-<p><span class="caption-text">編集画面の各ボタン</span><a class="headerlink" href="#id72" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 46 </span><span class="caption-text">編集画面の各ボタン</span><a class="headerlink" href="#id70" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line">初期化画面</div>
 </div>
-<figure class="align-center" id="id73">
+<figure class="align-left" id="id71">
 <a class="reference internal image-reference" href="../../../../_images/menu_not_editable2.png"><img alt="初期化画面" src="../../../../_images/menu_not_editable2.png" style="width: 4.85375in; height: 2.58022in;" /></a>
 <figcaption>
-<p><span class="caption-text">初期化画面</span><a class="headerlink" href="#id73" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 47 </span><span class="caption-text">初期化画面</span><a class="headerlink" href="#id71" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="line-block">
-<div class="line-block">
 <div class="line">初期化画面では画面に表示されているメニューを編集することが可能です。</div>
-</div>
 <div class="line">対象メニューグループを変更した場合、変更前に選択されていたメニューグループに作成されているメニューは廃止され、変更後のメニューグループに新たに登録されます。</div>
 <div class="line">「基本情報」の「メニュー名」を変更することはできません。</div>
 <div class="line"><br /></div>
@@ -1389,8 +1388,11 @@
 <div class="line">「キャンセル」ボタン</div>
 <div class="line">「編集」ボタン押下前の状態に戻ります。</div>
 </div>
-<figure class="align-default">
-<img alt="../../../../_images/menu_init_button.png" src="../../../../_images/menu_init_button.png" />
+<figure class="align-left" id="id72">
+<a class="reference internal image-reference" href="../../../../_images/menu_init_button.png"><img alt="初期化画面の各ボタン" src="../../../../_images/menu_init_button.png" style="width: 4.85375in; height: 2.58022in;" /></a>
+<figcaption>
+<p><span class="caption-number">図 48 </span><span class="caption-text">初期化画面の各ボタン</span><a class="headerlink" href="#id72" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
 </figure>
 </li>
 </ul>
@@ -1417,42 +1419,41 @@
 </li>
 </ul>
 <div class="line-block">
-<div class="line"><br /></div>
 <div class="line">メニュー（パラメータシート/データシート）のメンテナンス(参照/更新/廃止/復活)が可能です。</div>
 <div class="line">左メニュー一覧から「メニュー定義一覧」メニュー を押下すると以下の画面がでます。</div>
 </div>
-<figure class="align-center" id="id74">
+<figure class="align-left" id="id73">
 <a class="reference internal image-reference" href="../../../../_images/menu_list.gif"><img alt="「メニュー定義一覧」メニュー" src="../../../../_images/menu_list.gif" style="width: 6.69236in; height: 2.95903in;" /></a>
 <figcaption>
-<p><span class="caption-text">「メニュー定義一覧」メニュー</span><a class="headerlink" href="#id74" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 49 </span><span class="caption-text">「メニュー定義一覧」メニュー</span><a class="headerlink" href="#id73" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <p><span class="guilabel">フィルタボタン</span> 押下によって作成したメニュー（パラメータシート/データシート）の一覧が表示されます。</p>
-<figure class="align-center" id="id75">
-<a class="reference internal image-reference" href="../../../../_images/menu_definition_filter.png"><img alt="フィルタボタン" src="../../../../_images/menu_definition_filter.png" style="width: 6.69236in; height: 2.95903in;" /></a>
+<figure class="align-left" id="id74">
+<a class="reference internal image-reference" href="../../../../_images/menu_definition_filter.png"><img alt="フィルタボタン" src="../../../../_images/menu_definition_filter.png" style="width: 4.69236in; height: 2.95903in;" /></a>
 <figcaption>
-<p><span class="caption-text">フィルタボタン</span><a class="headerlink" href="#id75" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 50 </span><span class="caption-text">フィルタボタン</span><a class="headerlink" href="#id74" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <p><span class="guilabel">メニュー定義・作成ボタン</span> を押下すると「メニュー定義・作成」メニューの閲覧画面に遷移します。</p>
-<figure class="align-center" id="id76">
-<a class="reference internal image-reference" href="../../../../_images/menu_list_items_for_entry.png"><img alt="メニュー編集画面" src="../../../../_images/menu_list_items_for_entry.png" style="width: 6.69236in; height: 2.95903in;" /></a>
+<figure class="align-left" id="id75">
+<a class="reference internal image-reference" href="../../../../_images/menu_list_items_for_entry.png"><img alt="メニュー編集画面" src="../../../../_images/menu_list_items_for_entry.png" style="width: 4.69236in; height: 2.95903in;" /></a>
 <figcaption>
-<p><span class="caption-text">メニュー編集画面</span><a class="headerlink" href="#id76" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 51 </span><span class="caption-text">メニュー編集画面</span><a class="headerlink" href="#id75" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <p><span class="guilabel">登録ボタン</span> 押下によって新規メニュー（パラメータシート/データシート）を定義する画面へ遷移します。</p>
-<figure class="align-center" id="id77">
-<a class="reference internal image-reference" href="../../../../_images/menu_definition_reg.png"><img alt="メニュー編集画面" src="../../../../_images/menu_definition_reg.png" style="width: 6.69236in; height: 2.95903in;" /></a>
+<figure class="align-left" id="id76">
+<a class="reference internal image-reference" href="../../../../_images/menu_definition_reg.png"><img alt="メニュー編集画面" src="../../../../_images/menu_definition_reg.png" style="width: 4.69236in; height: 2.95903in;" /></a>
 <figcaption>
-<p><span class="caption-text">メニュー編集画面</span><a class="headerlink" href="#id77" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 52 </span><span class="caption-text">メニュー編集画面</span><a class="headerlink" href="#id76" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="line-block">
 <div class="line">「メニュー定義一覧」内各項目に任意の値を設定した値をフィルター要素として定義一覧を絞ることができます。</div>
 </div>
-<table class="docutils align-left" id="id78">
-<caption><span class="caption-text">「メニュー定義一覧」メニュー設定値</span><a class="headerlink" href="#id78" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id77">
+<caption><span class="caption-number">表 49 </span><span class="caption-text">「メニュー定義一覧」メニュー設定値</span><a class="headerlink" href="#id77" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>設定箇所</strong></p></th>
 <th class="head"><p><strong>説明</strong></p></th>
@@ -1492,33 +1493,40 @@
 <td><p>表示</p></td>
 <td><p>表示</p></td>
 </tr>
-<tr class="row-odd"><td><p>表示順序</p></td>
+<tr class="row-odd"><td><p>シートタイプ</p></td>
+<td><p>作成するメニューの「作成対象」を入力します。</p>
+<p>「パラメータシート（ホスト/オペレーションあり）」「データシート」いずれかをプルダウンで選択します。</p>
+</td>
+<td><p>表示</p></td>
+<td><p>表示</p></td>
+</tr>
+<tr class="row-even"><td><p>表示順序</p></td>
 <td><p>メニューグループにおける表示順序を入力します。昇順に表示されます。</p></td>
 <td><p>表示</p></td>
 <td><p>表示</p></td>
 </tr>
-<tr class="row-even"><td><p>縦メニュー利用</p></td>
+<tr class="row-odd"><td><p>縦メニュー利用</p></td>
 <td><p>「作成対象」欄で「パラメータシート」を選択した場合、「縦メニュー利用」欄が表示されます。</p>
 <p>プルダウンから「●」を選択した場合、縦メニューに対応したパラメータシートを作成します。</p>
 </td>
 <td><p>表示</p></td>
 <td><p>非表示</p></td>
 </tr>
-<tr class="row-odd"><td><p>入力用メニューグループ※</p></td>
+<tr class="row-even"><td><p>入力用メニューグループ※</p></td>
 <td><p>「作成対象」欄が「パラメータシート」および「データシート」の場合、「入力用メニューグループ」欄が表示されます。</p>
 <p>パラメータシートおよびデータシートを作成するメニューグループをプルダウンから選択します。</p>
 </td>
 <td><p>表示</p></td>
 <td><p>表示</p></td>
 </tr>
-<tr class="row-even"><td><p>代入値自動登録用メニューグループ※</p></td>
+<tr class="row-odd"><td><p>代入値自動登録用メニューグループ※</p></td>
 <td><p>「作成対象」欄が「パラメータシート」の場合、「代入値自動登録用メニューグループ」欄が表示されます。</p>
 <p>代入値自動登録用のパラメータシートを作成するメニューグループをプルダウンから選択します。</p>
 </td>
 <td><p>表示</p></td>
 <td><p>非表示</p></td>
 </tr>
-<tr class="row-odd"><td><p>参照用メニューグループ※</p></td>
+<tr class="row-even"><td><p>参照用メニューグループ※</p></td>
 <td><p>「作成対象」欄が「パラメータシート」の場合、「参照用メニューグループ」欄が表示されます。</p>
 <p>参照用のパラメータシートを作成するメニューグループをプルダウンから選択します。</p>
 </td>
@@ -1526,7 +1534,7 @@
 <td><p>非
 表示</p></td>
 </tr>
-<tr class="row-even"><td><p>メニュー作成状態</p></td>
+<tr class="row-odd"><td><p>メニュー作成状態</p></td>
 <td><p>メニュー作成が実行されたかどうかのフラグです。</p>
 <p>一度でも作成された場合は「作成済み」と表示されます。作成されていない場合は「未作成」と表示されます。</p>
 <p>「作成済み」の場合「メニュー名」を変更できなくなります。</p>
@@ -1534,17 +1542,17 @@
 <td><p>表示</p></td>
 <td><p>表示</p></td>
 </tr>
-<tr class="row-odd"><td><p>説明(ja)</p></td>
+<tr class="row-even"><td><p>説明(ja)</p></td>
 <td><p>メニュー画面の説明欄に表示する内容を入力します。(日本語用)</p></td>
 <td><p>表示</p></td>
 <td><p>表示</p></td>
 </tr>
-<tr class="row-even"><td><p>説明(en)</p></td>
+<tr class="row-odd"><td><p>説明(en)</p></td>
 <td><p>メニュー画面の説明欄に表示する内容を入力します。(英語用)</p></td>
 <td><p>表示</p></td>
 <td><p>表示</p></td>
 </tr>
-<tr class="row-odd"><td><p>備考</p></td>
+<tr class="row-even"><td><p>備考</p></td>
 <td><p>自由記述欄です。</p></td>
 <td><p>表示</p></td>
 <td><p>表示</p></td>
@@ -1563,18 +1571,18 @@
 <div class="line-block">
 <div class="line">パラメータシートまたはデータシートのメニュー作成の状態を確認します。</div>
 </div>
-<figure class="align-center" id="id79">
+<figure class="align-left" id="id78">
 <a class="reference internal image-reference" href="../../../../_images/menu_history.gif"><img alt="メニュー作成履歴」メニュー" src="../../../../_images/menu_history.gif" style="width: 5.90718in; height: 2.82691in;" /></a>
 <figcaption>
-<p><span class="caption-text">「メニュー作成履歴」メニュー</span><a class="headerlink" href="#id79" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 53 </span><span class="caption-text">「メニュー作成履歴」メニュー</span><a class="headerlink" href="#id78" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="line-block">
 <div class="line">ステータス「未実行」をBackYardが監視しており、BackYardは未実行のデータを元に、メニュー（パラメータシート/データシート）の設定ファイル作成、SQLを実行してテーブル作成、メニュー（パラメータシート/データシート）画面プログラムの配置と登録を行います。</div>
 <div class="line">ステータスが「完了」になった時（数十秒程度）にメニュー（パラメータシート/データシート）がメニューグループに追加されます。</div>
 </div>
-<table class="docutils align-left" id="id80">
-<caption><span class="caption-text">「メニュー作成履歴」メニュー各項目</span><a class="headerlink" href="#id80" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id79">
+<caption><span class="caption-number">表 50 </span><span class="caption-text">「メニュー作成履歴」メニュー各項目</span><a class="headerlink" href="#id79" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>項目名</strong></p></th>
 <th class="head"><p><strong>説明</strong></p></th>
@@ -1631,37 +1639,37 @@
 </div>
 </li>
 </ol>
-<figure class="align-center" id="id81">
+<figure class="align-left" id="id80">
 <a class="reference internal image-reference" href="../../../../_images/selection_of_basic_information_frame.png"><img alt="「基本情報」枠の選択箇所" src="../../../../_images/selection_of_basic_information_frame.png" style="width: 9.68725in; height: 6.43354in;" /></a>
 <figcaption>
-<p><span class="caption-text">「基本情報」枠の選択箇所</span><a class="headerlink" href="#id81" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 54 </span><span class="caption-text">「基本情報」枠の選択箇所</span><a class="headerlink" href="#id80" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <section id="id12">
 <h4>1.「作成対象」欄で”データシート”を選択した場合<a class="headerlink" href="#id12" title="この見出しへのパーマリンク">¶</a></h4>
 <p>メニュー（パラメータシート/データシート）作成時に「メニュー定義・作成」メニュー（または「メニュー定義一覧」メニュー）の「作成対象」欄で「データシート」を選択した場合、データシートが作成されます。</p>
-<figure class="align-center" id="id82">
+<figure class="align-left" id="id81">
 <a class="reference internal image-reference" href="../../../../_images/data_sheet_creation.png"><img alt="データシート作成" src="../../../../_images/data_sheet_creation.png" style="width: 9.54048in; height: 6.28686in;" /></a>
 <figcaption>
-<p><span class="caption-text">データシート作成</span><a class="headerlink" href="#id82" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 55 </span><span class="caption-text">データシート作成</span><a class="headerlink" href="#id81" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="line-block">
 <div class="line">「入力用（メニューグループ）」欄で指定したメニューグループにデータシートが追加されていることを確認してください。</div>
 </div>
-<figure class="align-center" id="id83">
+<figure class="align-left" id="id82">
 <a class="reference internal image-reference" href="../../../../_images/menu_group_for_input.png"><img alt="「入力用」メニューグループ" src="../../../../_images/menu_group_for_input.png" style="width: 9.29401in; height: 6.7088in;" /></a>
 <figcaption>
-<p><span class="caption-text">「入力用」メニューグループ</span><a class="headerlink" href="#id83" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 56 </span><span class="caption-text">「入力用」メニューグループ</span><a class="headerlink" href="#id82" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <section id="id13">
 <h5>A) 入力用メニューグループ<a class="headerlink" href="#id13" title="この見出しへのパーマリンク">¶</a></h5>
 <p>メンテナンス（登録/更新/廃止/復活）が可能なデータシートが作成されます。</p>
-<figure class="align-center" id="id84">
+<figure class="align-left" id="id83">
 <a class="reference internal image-reference" href="../../../../_images/data_sheet_for_input.png"><img alt="入力用メニューグループ配下に作成されたデータシート" src="../../../../_images/data_sheet_for_input.png" style="width: 9.90718in; height: 6.76682in;" /></a>
 <figcaption>
-<p><span class="caption-text">入力用メニューグループ配下に作成されたデータシート</span><a class="headerlink" href="#id84" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 57 </span><span class="caption-text">入力用メニューグループ配下に作成されたデータシート</span><a class="headerlink" href="#id83" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -1681,48 +1689,48 @@
 <section id="id14">
 <h4>2.「作成対象」欄で”パラメータシート（ホスト/オペレーションあり）”を選択した場合<a class="headerlink" href="#id14" title="この見出しへのパーマリンク">¶</a></h4>
 <p>メニュー（パラメータシート/データシート）作成時に「メニュー定義・作成」メニュー（または「メニュー定義一覧」メニュー）の「作成対象」欄で「パラメータシート（ホスト/オペレーションあり）」を選択した場合、ホスト名単位のパラメータシートが作成されます。</p>
-<figure class="align-center" id="id85">
+<figure class="align-left" id="id84">
 <a class="reference internal image-reference" href="../../../../_images/parametersheet_with_host_operation_creation.png"><img alt="パラメータシート（ホスト/オペレーションあり）作成" src="../../../../_images/parametersheet_with_host_operation_creation.png" style="width: 9.16042in; height: 6.37986in;" /></a>
 <figcaption>
-<p><span class="caption-text">パラメータシート（ホスト/オペレーションあり）作成</span><a class="headerlink" href="#id85" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 58 </span><span class="caption-text">パラメータシート（ホスト/オペレーションあり）作成</span><a class="headerlink" href="#id84" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="line-block">
 <div class="line">「入力用（メニューグループ）」欄、「代入値自動管理用（メニューグループ）」欄、「参照用（メニューグループ）」欄で指定したメニューグループにパラメータシートが追加されていることを確認してください。</div>
 </div>
-<figure class="align-center" id="id86">
+<figure class="align-left" id="id85">
 <a class="reference internal image-reference" href="../../../../_images/menu_group_for_input.png"><img alt="「入力用」「代入値自動登録用」「参照用」メニューグループ" src="../../../../_images/menu_group_for_input.png" style="width: 9.66197in; height: 6.38541in;" /></a>
 <figcaption>
-<p><span class="caption-text">「入力用」「代入値自動登録用」「参照用」メニューグループ</span><a class="headerlink" href="#id86" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 59 </span><span class="caption-text">「入力用」「代入値自動登録用」「参照用」メニューグループ</span><a class="headerlink" href="#id85" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <section id="id15">
 <h5>A) 入力用メニューグループ<a class="headerlink" href="#id15" title="この見出しへのパーマリンク">¶</a></h5>
 <p>ホスト名単位でメンテナンス（登録/更新/廃止/復活）が可能なパラメータシートが作成されます。</p>
-<figure class="align-center" id="id87">
+<figure class="align-left" id="id86">
 <a class="reference internal image-reference" href="../../../../_images/parameter_sheet_for_input.gif"><img alt="入力用メニューグループ配下に作成されたパラメータシート" src="../../../../_images/parameter_sheet_for_input.gif" style="width: 9.06711in; height: 6.9135in;" /></a>
 <figcaption>
-<p><span class="caption-text">入力用メニューグループ配下に作成されたパラメータシート</span><a class="headerlink" href="#id87" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 60 </span><span class="caption-text">入力用メニューグループ配下に作成されたパラメータシート</span><a class="headerlink" href="#id86" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="id16">
 <h5>B) 代入値自動登録用メニューグループ<a class="headerlink" href="#id16" title="この見出しへのパーマリンク">¶</a></h5>
 <p>閲覧専用メニューです。入力用メニューグループで登録した内容がホスト名単位で「一覧」サブメニューに表示されます。</p>
-<figure class="align-center" id="id88">
+<figure class="align-left" id="id87">
 <a class="reference internal image-reference" href="../../../../_images/parameter_sheet_for_substitution_value_automatic_registration.png"><img alt="代入値自動登録用メニューグループ配下に作成されたパラメータシート" src="../../../../_images/parameter_sheet_for_substitution_value_automatic_registration.png" style="width: 9.36046in; height: 6.50022in;" /></a>
 <figcaption>
-<p><span class="caption-text">代入値自動登録用メニューグループ配下に作成されたパラメータシート</span><a class="headerlink" href="#id88" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 61 </span><span class="caption-text">代入値自動登録用メニューグループ配下に作成されたパラメータシート</span><a class="headerlink" href="#id87" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="id17">
 <h5>C) 参照用メニューグループ<a class="headerlink" href="#id17" title="この見出しへのパーマリンク">¶</a></h5>
 <p>閲覧専用メニューです。「表示フィルタ」サブメニューの「オペレーション：基準日時」欄で指定した日時の時点で有効になっている設定をホスト名単位で「一覧」サブメニューに表示します。</p>
-<figure class="align-center" id="id89">
+<figure class="align-left" id="id88">
 <a class="reference internal image-reference" href="../../../../_images/parameter_sheet_for_reference.png"><img alt="参照用メニューグループ配下に作成されたパラメータシート" src="../../../../_images/parameter_sheet_for_reference.png" style="width: 6.85384in; height: 6.91359in;" /></a>
 <figcaption>
-<p><span class="caption-text">参照用メニューグループ配下に作成されたパラメータシート</span><a class="headerlink" href="#id89" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 62 </span><span class="caption-text">参照用メニューグループ配下に作成されたパラメータシート</span><a class="headerlink" href="#id88" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -1736,29 +1744,29 @@
 <section id="id18">
 <h4>3.「作成対象」欄で”パラメータシート”を選択し、「縦メニュー利用」チェックボックスにチェックを入れた場合<a class="headerlink" href="#id18" title="この見出しへのパーマリンク">¶</a></h4>
 <p>メニュー（パラメータシート/データシート）作成時に「メニュー定義・作成」メニュー（または「メニュー定義一覧」メニュー）の「作成対象」欄で「パラメータシート（ホスト/オペレーションあり）」を選択し、「縦メニュー利用」欄の「利用する」チェックボックスにチェックを入れた場合、縦表示のパラメータシートが作成されます。</p>
-<figure class="align-center" id="id90">
+<figure class="align-left" id="id89">
 <a class="reference internal image-reference" href="../../../../_images/parameter_sheet_create_as_vertical_menu.png"><img alt="パラメータシート（縦メニュー利用）作成" src="../../../../_images/parameter_sheet_create_as_vertical_menu.png" style="width: 9.16042in; height: 6.37986in;" /></a>
 <figcaption>
-<p><span class="caption-text">パラメータシート（縦メニュー利用）作成</span><a class="headerlink" href="#id90" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 63 </span><span class="caption-text">パラメータシート（縦メニュー利用）作成</span><a class="headerlink" href="#id89" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <p>「入力用（メニューグループ）」欄、「代入値自動管理用（メニューグループ）」欄、「参照用（メニューグループ）」欄で指定したメニューグループにパラメータシートが追加されていることを確認してください。</p>
-<figure class="align-center" id="id91">
+<figure class="align-left" id="id90">
 <a class="reference internal image-reference" href="../../../../_images/menu_group_for_input.png"><img alt="「入力用」「代入値自動登録用」「参照用」メニューグループ" src="../../../../_images/menu_group_for_input.png" style="width: 9.66197in; height: 6.38541in;" /></a>
 <figcaption>
-<p><span class="caption-text">「入力用」「代入値自動登録用」「参照用」メニューグループ</span><a class="headerlink" href="#id91" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 64 </span><span class="caption-text">「入力用」「代入値自動登録用」「参照用」メニューグループ</span><a class="headerlink" href="#id90" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <section id="id19">
 <h5>A) 入力用メニューグループ<a class="headerlink" href="#id19" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="line-block">
-<div class="line">　ホスト名単位でメンテナンス（登録/更新/廃止/復活）が可能なパラメータシートが作成されます。</div>
-<div class="line">　登録済みの「ホスト名」と「オペレーション」の組み合わせに対して、「代入順序」欄を入力することで複数のパラメータを設定することが可能です。</div>
+<div class="line">ホスト名単位でメンテナンス（登録/更新/廃止/復活）が可能なパラメータシートが作成されます。</div>
+<div class="line">登録済みの「ホスト名」と「オペレーション」の組み合わせに対して、「代入順序」欄を入力することで複数のパラメータを設定することが可能です。</div>
 </div>
-<figure class="align-center" id="id92">
+<figure class="align-left" id="id91">
 <a class="reference internal image-reference" href="../../../../_images/parameter_sheet_for_input_2.gif"><img alt="入力用メニューグループ配下に作成されたパラメータシート" src="../../../../_images/parameter_sheet_for_input_2.gif" style="width: 9.06711in; height: 6.9135in;" /></a>
 <figcaption>
-<p><span class="caption-text">入力用メニューグループ配下に作成されたパラメータシート</span><a class="headerlink" href="#id92" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 65 </span><span class="caption-text">入力用メニューグループ配下に作成されたパラメータシート</span><a class="headerlink" href="#id91" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <dl>
@@ -1767,10 +1775,10 @@
 </div>
 </dd>
 </dl>
-<figure class="align-center" id="id93">
+<figure class="align-left" id="id92">
 <a class="reference internal image-reference" href="../../../../_images/parameter_sheet_for_input_3.gif"><img alt="入力用メニューグループ配下に作成されたパラメータシート" src="../../../../_images/parameter_sheet_for_input_3.gif" style="width: 9.06711in; height: 6.9135in;" /></a>
 <figcaption>
-<p><span class="caption-text">入力用メニューグループ配下に作成されたパラメータシート</span><a class="headerlink" href="#id93" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 66 </span><span class="caption-text">入力用メニューグループ配下に作成されたパラメータシート</span><a class="headerlink" href="#id92" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -1785,10 +1793,10 @@
 </div>
 </dd>
 </dl>
-<figure class="align-center" id="id94">
+<figure class="align-left" id="id93">
 <a class="reference internal image-reference" href="../../../../_images/menu_defination_creation_menu.png"><img alt="「メニュー定義・作成」メニュー" src="../../../../_images/menu_defination_creation_menu.png" style="width: 9.16042in; height: 6.37986in;" /></a>
 <figcaption>
-<p><span class="caption-text">「メニュー定義・作成」メニュー</span><a class="headerlink" href="#id94" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 67 </span><span class="caption-text">「メニュー定義・作成」メニュー</span><a class="headerlink" href="#id93" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -1797,10 +1805,10 @@
 <div class="line">「メニュー作成」メニューグループ&gt;「メニュー定義・作成」メニューにて項目を作成した分、パラメータを設定することが可能です。</div>
 </div>
 </div>
-<figure class="align-center" id="id95">
+<figure class="align-left" id="id94">
 <a class="reference internal image-reference" href="../../../../_images/parameter_sheet_for_input_4.gif"><img alt="入力用メニューグループ配下に作成されたパラメータシート" src="../../../../_images/parameter_sheet_for_input_4.gif" style="width: 9.06711in; height: 6.9135in;" /></a>
 <figcaption>
-<p><span class="caption-text">入力用メニューグループ配下に作成されたパラメータシート</span><a class="headerlink" href="#id95" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 68 </span><span class="caption-text">入力用メニューグループ配下に作成されたパラメータシート</span><a class="headerlink" href="#id94" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -1815,20 +1823,23 @@
 <section id="id20">
 <h5>B) 代入値自動登録用メニューグループ<a class="headerlink" href="#id20" title="この見出しへのパーマリンク">¶</a></h5>
 <p>閲覧専用メニューです。入力用メニューグループで登録した内容がホスト名単位で「一覧」サブメニューに表示されます。</p>
-<figure class="align-center" id="id96">
+<figure class="align-left" id="id95">
 <a class="reference internal image-reference" href="../../../../_images/parameter_sheet_for_substitution_value_automatic_registration_2.png"><img alt="代入値自動登録用メニューグループ配下に作成されたパラメータシート" src="../../../../_images/parameter_sheet_for_substitution_value_automatic_registration_2.png" style="width: 9.36046in; height: 6.50022in;" /></a>
 <figcaption>
-<p><span class="caption-text">代入値自動登録用メニューグループ配下に作成されたパラメータシート</span><a class="headerlink" href="#id96" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 69 </span><span class="caption-text">代入値自動登録用メニューグループ配下に作成されたパラメータシート</span><a class="headerlink" href="#id95" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="id21">
 <h5>C) 参照用メニューグループ<a class="headerlink" href="#id21" title="この見出しへのパーマリンク">¶</a></h5>
-<p>閲覧専用メニューです。「表示フィルタ」サブメニューの「オペレーション：基準日時」欄で指定した日時の時点で有効になっている設定をホスト名単位で「一覧」サブメニューに表示します。</p>
-<figure class="align-center" id="id97">
+<div class="line-block">
+<div class="line">閲覧専用メニューです。</div>
+<div class="line">「表示フィルタ」サブメニューの「オペレーション：基準日時」欄で指定した日時の時点で有効になっている設定をホスト名単位で「一覧」サブメニューに表示します。</div>
+</div>
+<figure class="align-left" id="id96">
 <a class="reference internal image-reference" href="../../../../_images/parameter_sheet_for_reference_2.png"><img alt="参照用メニューグループ配下に作成されたパラメータシート" src="../../../../_images/parameter_sheet_for_reference_2.png" style="width: 9.85384in; height: 6.91359in;" /></a>
 <figcaption>
-<p><span class="caption-text">参照用メニューグループ配下に作成されたパラメータシート</span><a class="headerlink" href="#id97" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 70 </span><span class="caption-text">参照用メニューグループ配下に作成されたパラメータシート</span><a class="headerlink" href="#id96" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -1846,27 +1857,27 @@
 <section id="registering-column-g">
 <span id="id23"></span><h3>「カラムグループ管理」メニューでカラムグループを登録<a class="headerlink" href="#registering-column-g" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">インストール時「カラムグループ管理」メニューは非表示です。</div>
-<div class="line">作成するメニュー（パラメータシート/データシート）のカラムグループをメンテナンス(参照/更新/廃止/復活)できます。</div>
+<div class="line">インストール時「カラムグループ管理」メニューは非表示です。作成するメニュー（パラメータシート/データシート）のカラムグループをメンテナンス(参照/更新/廃止/復活)できます。</div>
 </div>
-<figure class="align-center" id="id98">
+<figure class="align-left" id="id97">
 <a class="reference internal image-reference" href="../../../../_images/column_group_list_menu.png"><img alt="カラムグループ管理」メニュー" src="../../../../_images/column_group_list_menu.png" style="width: 9.5739in; height: 6.92692in;" /></a>
 <figcaption>
-<p><span class="caption-text">「カラムグループ管理」メニュー</span><a class="headerlink" href="#id98" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 71 </span><span class="caption-text">「カラムグループ管理」メニュー</span><a class="headerlink" href="#id97" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="line-block">
-<div class="line">カラムグループとは、メニュー（パラメータシート/データシート）項目の見出し部分を表示上まとめるグループのことです。メニュー作成機能では、作成する項目のカラムグループを作成することができます。</div>
+<div class="line">カラムグループとは、メニュー（パラメータシート/データシート）項目の見出し部分を表示上まとめるグループのことです。</div>
+<div class="line">メニュー作成機能では、作成する項目のカラムグループを作成することができます。</div>
 <div class="line">下記の赤枠線部分はカラムグループの例です。</div>
 </div>
-<figure class="align-center" id="id99">
+<figure class="align-left" id="id98">
 <a class="reference internal image-reference" href="../../../../_images/column_group_for_input.png"><img alt="入力用メニューグループ配下に作成されたパラメータシート" src="../../../../_images/column_group_for_input.png" style="width: 9.78717in; height: 6.74024in;" /></a>
 <figcaption>
-<p><span class="caption-text">入力用メニューグループ配下に作成されたパラメータシート</span><a class="headerlink" href="#id99" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 72 </span><span class="caption-text">入力用メニューグループ配下に作成されたパラメータシート</span><a class="headerlink" href="#id98" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<table class="docutils align-left" id="id100">
-<caption><span class="caption-text">「カラムグループ管理」メニュー設定値</span><a class="headerlink" href="#id100" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id99">
+<caption><span class="caption-number">表 51 </span><span class="caption-text">「カラムグループ管理」メニュー設定値</span><a class="headerlink" href="#id99" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>設定箇所</strong></p></th>
 <th class="head"><p><strong>説明</strong></p></th>
@@ -1930,14 +1941,14 @@
 <div class="line">インストール時「メニュー項目作成情報」メニューは非表示です。</div>
 <div class="line">パラメータシートまたはデータシートのメニューで管理する項目をメンテナンス(参照/更新/廃止/復活)できます。</div>
 </div>
-<figure class="align-center" id="id101">
+<figure class="align-left" id="id100">
 <a class="reference internal image-reference" href="../../../../_images/menu_item_creation_information_menu.png"><img alt="「メニュー項目作成情報」メニュー" src="../../../../_images/menu_item_creation_information_menu.png" style="width: 9.25388in; height: 6.76691in;" /></a>
 <figcaption>
-<p><span class="caption-text">「メニュー項目作成情報」メニュー</span><a class="headerlink" href="#id101" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 73 </span><span class="caption-text">「メニュー項目作成情報」メニュー</span><a class="headerlink" href="#id100" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<table class="docutils align-left" id="id102">
-<caption><span class="caption-text">「メニュー項目作成情報」メニュー設定値</span><a class="headerlink" href="#id102" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id101">
+<caption><span class="caption-number">表 52 </span><span class="caption-text">「メニュー項目作成情報」メニュー設定値</span><a class="headerlink" href="#id101" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>設定箇所</strong></p></th>
 <th class="head"><p><strong>説明</strong></p></th>
@@ -1988,9 +1999,9 @@
 <p>「NumColumn」を選択した場合、整数であることのチェックが行われるテキストボックスの項目になります。</p>
 <p>「FloatColumn」を選択した場合、小数であることのチェックが行われるテキストボックスの項目になります。</p>
 <p>「DateTimeColumn」と「DateColumn」を選択した場合、カレンダー選択の項目になります。</p>
-<p>「IDColumn」を選択した場合、プルダウンの項目になります。データを登録した際に値がリンクとなり、クリックで元データが登録されているメニューへ遷移できます。遷移後に表示フィルタの検索条件にデータが設定されて検索されますが、検索文字列は先頭から最大1024バイトとなります。また「参照項目を選択」ボタンから、「プルダウン選択」で選んだレコードと同じ行のレコードを横並びで表示させることができます。</p>
+<p>「IDColumn」を選択した場合、プルダウンの項目になります。また「参照項目」により「プルダウン選択」で選んだ同じ行のレコードを横並びで表示させることができます。</p>
 <p>「PasswordColumn」を選択した場合、入力中の文字列が「*」で隠された状態のテキストボックスの項目になります。（枠内の瞳のアイコンを押下している間のみ、入力した文字列が表示されます。）</p>
-<p>「FileUploadColumn」を選択した場合、ファイルを参照し選択できるボタンと「事前アップロード」ボタンのある項目になり、ファイルをアップロードすることが可能になります。
+<p>「FileUploadColumn」を選択した場合、ファイルを参照し選択できるボタンのある項目になり、ファイルをアップロードすることが可能になります。
 「FileUploadColumn」を選択した場合、入力したURLがリンク表示になるテキストボックスの項目になります。</p>
 <p>※代入値自動登録設定の連携対象項目は「文字列(単一行)」、「文字列(複数行)」、「整数」、「小数」、「パスワード」、「リンク」になります。</p>
 <p>「日時」、「日付」、「ファイルアップロード」は連携しません。「プルダウン選択」で選ぶ項目が「日時」、「日付」の場合も連携しません。</p>
@@ -2010,94 +2021,18 @@
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<div class="line-block">
-<div class="line">各カラムクラスについての詳しい説明は、<a class="reference internal" href="#setting-of-item"><span class="std std-ref">入力方式毎の設定項目</span></a> を参照してください。</div>
-</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<div class="line-block">
-<div class="line">作成済みのメニューについて、項目のデータを「メニュー項目作成情報」から更新し、「メニュー定義・作成」の「編集」を実行すると、編集実行後のメニューでデータの不整合が起こる場合があります。</div>
-<div class="line">作成済みのメニューの項目は「メニュー項目作成情報」から直接データを更新しないでください。</div>
-</div>
-</div>
-</section>
-<section id="registering-unique">
-<span id="id25"></span><h3>「一意制約(複数項目)作成情報」メニューで一意制約(複数項目)を登録<a class="headerlink" href="#registering-unique" title="この見出しへのパーマリンク">¶</a></h3>
-<div class="line-block">
-<div class="line">インストール時「一意制約(複数項目)作成情報」メニューは非表示です。</div>
-<div class="line">作成するメニュー（パラメータシート/データシート）の一意制約(複数項目)をメンテナンス(参照/更新/廃止/復活)できます。</div>
-</div>
-<figure class="align-center" id="id103">
-<a class="reference internal image-reference" href="../../../../_images/unique_constraint_multiple_items_creation_information_menu.png"><img alt="「一意制約(複数項目)作成情報」メニュー" src="../../../../_images/unique_constraint_multiple_items_creation_information_menu.png" style="width: 9.20045in; height: 6.02026in;" /></a>
-<figcaption>
-<p><span class="caption-text">「一意制約(複数項目)作成情報」メニュー</span><a class="headerlink" href="#id103" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
-<div class="line-block">
-<div class="line">一意制約(複数項目)は、作成したメニューにデータを登録する際に、指定した複数の項目で同じレコードの組み合わせが登録できないように制御する機能です。</div>
-</div>
-<figure class="align-center" id="id104">
-<a class="reference internal image-reference" href="../../../../_images/unique_item_data.png"><img alt="「一意制約(複数項目)作成情報」メニューの登録データ" src="../../../../_images/unique_item_data.png" style="width: 9.16154in; height: 6.98153in;" /></a>
-<figcaption>
-<p><span class="caption-text">「一意制約(複数項目)作成情報」メニューの登録データ</span><a class="headerlink" href="#id104" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-center" id="id105">
-<a class="reference internal image-reference" href="../../../../_images/registered_data.png"><img alt="「一意制約(複数項目)作成情報」を設定したメニューの登録データ" src="../../../../_images/registered_data.png" style="width: 9.16154in; height: 6.98153in;" /></a>
-<figcaption>
-<p><span class="caption-text">「一意制約(複数項目)作成情報」を設定したメニューの登録データ</span><a class="headerlink" href="#id105" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-center" id="id106">
-<a class="reference internal image-reference" href="../../../../_images/unique_constraint_multiple_items_creation_information_menu_function.png"><img alt="「一意制約(複数項目)作成情報」機能" src="../../../../_images/unique_constraint_multiple_items_creation_information_menu_function.png" style="width: 9.16154in; height: 6.98153in;" /></a>
-<figcaption>
-<p><span class="caption-text">「一意制約(複数項目)作成情報」機能</span><a class="headerlink" href="#id106" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<div class="line-block">
-<div class="line">項目1と項目2、項目3と項目4は同じ組み合わせのレコードを登録できない。</div>
-</div>
-</div>
-<table class="docutils align-left" id="id107">
-<caption><span class="caption-text">「一意制約(複数項目)作成情報」メニュー設定値</span><a class="headerlink" href="#id107" title="このテーブルへのパーマリンク">¶</a></caption>
-<thead>
-<tr class="row-odd"><th class="head"><p><strong>設定項目</strong></p></th>
-<th class="head"><p><strong>説明</strong></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>メニュー名</p></td>
-<td><p>一意制約(複数項目)を設定するメニュー（パラメータシート/データシート）をプルダウンから選択します。</p></td>
-</tr>
-<tr class="row-odd"><td><p>一意制約(複数項目)</p></td>
-<td><p>一意制約を適用する項目の組み合わせを入力します。</p>
-<p>「メニュー名」で選択したメニューで対象となる項目の項目名(rest)をリスト形式で入力することで組み合わせを作成します。</p>
-<p>入力例:</p>
-<p>[[&quot;item_1&quot;, &quot;item_2&quot;], [&quot;item_2&quot;, &quot;item_3&quot;]]</p>
-</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="id26">
-<h3>「メニューロール作成情報」作成したメニューに紐づくロールを登録<a class="headerlink" href="#id26" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">インストール時「メニューロール作成情報」メニューは非表示です。</div>
 <div class="line">作成するメニュー（パラメータシート/データシート）のメニューロール作成情報をメンテナンス(参照/更新/廃止/復活)できます。</div>
 </div>
-<figure class="align-center" id="id108">
-<a class="reference internal image-reference" href="../../../../_images/menu_role_information_menu.png"><img alt="「メニューロール作成情報」メニュー" src="../../../../_images/menu_role_information_menu.png" style="width: 9.16154in; height: 6.98153in;" /></a>
+<figure class="align-left" id="id102">
+<span id="registering-menu-role"></span><a class="reference internal image-reference" href="../../../../_images/menu_role_information_menu.png"><img alt="「メニューロール作成情報」メニュー" src="../../../../_images/menu_role_information_menu.png" style="width: 9.16154in; height: 6.98153in;" /></a>
 <figcaption>
-<p><span class="caption-text">「メニューロール作成情報」メニュー</span><a class="headerlink" href="#id108" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 74 </span><span class="caption-text">「メニューロール作成情報」メニュー</span><a class="headerlink" href="#id102" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<table class="docutils align-left" id="id109">
-<caption><span class="caption-text">「メニューロール作成情報」メニュー設定値</span><a class="headerlink" href="#id109" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id103">
+<caption><span class="caption-number">表 53 </span><span class="caption-text">「メニューロール作成情報」メニュー設定値</span><a class="headerlink" href="#id103" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>設定項目</strong></p></th>
 <th class="head"><p><strong>説明</strong></p></th>
@@ -2114,24 +2049,24 @@
 </table>
 </section>
 </section>
-<section id="id27">
-<h2>付録<a class="headerlink" href="#id27" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="id25">
+<h2>付録<a class="headerlink" href="#id25" title="この見出しへのパーマリンク">¶</a></h2>
 <section id="mapping-menu-table">
-<span id="id28"></span><h3>メニュー定義-テーブル紐付管理<a class="headerlink" href="#mapping-menu-table" title="この見出しへのパーマリンク">¶</a></h3>
+<span id="id26"></span><h3>メニュー定義-テーブル紐付管理<a class="headerlink" href="#mapping-menu-table" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">作成したメニューとDBのテーブルの紐付けを表示するメニューです。</div>
 <div class="line">インストール時は非表示のメニューです。</div>
-<div class="line">BackYardが利用するメニューで、ユーザが操作することはありません。</div>
+<div class="line">BackYardが利用するメニューで、ユーザーが操作することはありません。</div>
 <div class="line">メニュー作成後に紐付けを直接変更しても、追随して本メニューが変更されることはありません。</div>
 </div>
-<figure class="align-center" id="id110">
+<figure class="align-left" id="id104">
 <a class="reference internal image-reference" href="../../../../_images/menu_table_link.png"><img alt="メニュー定義-テーブル紐付管理" src="../../../../_images/menu_table_link.png" style="width: 9.69236in; height: 6.09931in;" /></a>
 <figcaption>
-<p><span class="caption-text">メニュー定義-テーブル紐付管理</span><a class="headerlink" href="#id110" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 75 </span><span class="caption-text">メニュー定義-テーブル紐付管理</span><a class="headerlink" href="#id104" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<table class="docutils align-left" id="id111">
-<caption><span class="caption-text">設定項目一覧</span><a class="headerlink" href="#id111" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id105">
+<caption><span class="caption-number">表 54 </span><span class="caption-text">設定項目一覧</span><a class="headerlink" href="#id105" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>項目名</strong></p></th>
 <th class="head"><p><strong>説明</strong></p></th>
@@ -2157,21 +2092,21 @@
 </table>
 </section>
 <section id="work-with-other-table">
-<span id="id29"></span><h3>他メニュー連携<a class="headerlink" href="#work-with-other-table" title="この見出しへのパーマリンク">¶</a></h3>
+<span id="id27"></span><h3>他メニュー連携<a class="headerlink" href="#work-with-other-table" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">作成したメニューのメニューグループ、メニュー、項目、DBのテーブルの紐付けを表示します。</div>
 <div class="line">インストール時は非表示のメニューです。</div>
-<div class="line">BackYardが利用するメニューで、ユーザが操作することはありません。</div>
+<div class="line">BackYardが利用するメニューで、ユーザーが操作することはありません。</div>
 <div class="line">メニュー作成後に紐付けを直接変更しても、追随して本メニューが変更されることはありません。</div>
 </div>
-<figure class="align-center" id="id112">
+<figure class="align-left" id="id106">
 <a class="reference internal image-reference" href="../../../../_images/link_with_other_menus.png"><img alt="他メニュー連携" src="../../../../_images/link_with_other_menus.png" style="width: 9.69236in; height: 6.84583in;" /></a>
 <figcaption>
-<p><span class="caption-text">他メニュー連携</span><a class="headerlink" href="#id112" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 76 </span><span class="caption-text">他メニュー連携</span><a class="headerlink" href="#id106" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<table class="docutils align-left" id="id113">
-<caption><span class="caption-text">設定項目一覧</span><a class="headerlink" href="#id113" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id107">
+<caption><span class="caption-number">表 55 </span><span class="caption-text">設定項目一覧</span><a class="headerlink" href="#id107" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>項目名</strong></p></th>
 <th class="head"><p><strong>説明</strong></p></th>
@@ -2230,20 +2165,20 @@
 </table>
 </section>
 <section id="selection1">
-<span id="id30"></span><h3>選択1<a class="headerlink" href="#selection1" title="この見出しへのパーマリンク">¶</a></h3>
+<span id="id28"></span><h3>選択1<a class="headerlink" href="#selection1" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">プルダウン選択で利用する項目を管理するメニューです。(1択用)</div>
 <div class="line">インストール時は非表示のメニューです。</div>
-<div class="line">ユーザが操作することはありません。</div>
+<div class="line">ユーザーが操作することはありません。</div>
 </div>
-<figure class="align-center" id="id114">
-<a class="reference internal image-reference" href="images/ja/menu_creation/slection_1/selection_1.png"><img alt="選択1" src="images/ja/menu_creation/slection_1/selection_1.png" style="width: 9.69236in; height: 6.36597in;" /></a>
+<figure class="align-left" id="id108">
+<a class="reference internal image-reference" href="../../../../_images/selection_1.png"><img alt="選択1" src="../../../../_images/selection_1.png" style="width: 9.69236in; height: 6.36597in;" /></a>
 <figcaption>
-<p><span class="caption-text">選択1</span><a class="headerlink" href="#id114" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 77 </span><span class="caption-text">選択1</span><a class="headerlink" href="#id108" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<table class="docutils align-left" id="id115">
-<caption><span class="caption-text">項目一覧</span><a class="headerlink" href="#id115" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id109">
+<caption><span class="caption-number">表 56 </span><span class="caption-text">項目一覧</span><a class="headerlink" href="#id109" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>項目名</strong></p></th>
 <th class="head"><p><strong>説明</strong></p></th>
@@ -2257,20 +2192,20 @@
 </table>
 </section>
 <section id="selection2">
-<span id="id31"></span><h3>選択2<a class="headerlink" href="#selection2" title="この見出しへのパーマリンク">¶</a></h3>
+<span id="id29"></span><h3>選択2<a class="headerlink" href="#selection2" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">プルダウン選択で利用する項目を管理するメニューです。(2択用)</div>
 <div class="line">インストール時は非表示のメニューです。</div>
-<div class="line">ユーザが操作することはありません。</div>
+<div class="line">ユーザーが操作することはありません。</div>
 </div>
-<figure class="align-center" id="id116">
+<figure class="align-left" id="id110">
 <a class="reference internal image-reference" href="../../../../_images/selection_2.png"><img alt="選択2" src="../../../../_images/selection_2.png" style="width: 9.69236in; height: 6.3125in;" /></a>
 <figcaption>
-<p><span class="caption-text">選択2</span><a class="headerlink" href="#id116" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 78 </span><span class="caption-text">選択2</span><a class="headerlink" href="#id110" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<table class="docutils align-left" id="id117">
-<caption><span class="caption-text">項目一覧</span><a class="headerlink" href="#id117" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id111">
+<caption><span class="caption-number">表 57 </span><span class="caption-text">項目一覧</span><a class="headerlink" href="#id111" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>項目名</strong></p></th>
 <th class="head"><p><strong>説明</strong></p></th>
@@ -2287,12 +2222,12 @@
 </table>
 </section>
 <section id="target-available">
-<span id="id32"></span><h3>「プルダウン選択」の「選択項目」で利用できる対象について<a class="headerlink" href="#target-available" title="この見出しへのパーマリンク">¶</a></h3>
+<span id="id30"></span><h3>「プルダウン選択」の「選択項目」で利用できる対象について<a class="headerlink" href="#target-available" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">項目「プルダウン選択」の「選択項目」で利用できる対象は以下の通りです。</div>
 </div>
-<table class="docutils align-left" id="id118">
-<caption><span class="caption-text">項目一覧</span><a class="headerlink" href="#id118" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id112">
+<caption><span class="caption-number">表 58 </span><span class="caption-text">項目一覧</span><a class="headerlink" href="#id112" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>メニュー
 グループ</strong></p></th>
@@ -2307,29 +2242,25 @@
 <td><p>メニューグループ名称+メニュー名称</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>基本コンソール</p></td>
+<tr class="row-odd"><td rowspan="2"><p>基本コンソール</p></td>
 <td><p>オペレーション一覧</p></td>
 <td><p>オペレーション名</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td></td>
-<td><p>Movement一覧</p></td>
+<tr class="row-even"><td><p>Movement一覧</p></td>
 <td><p>Movement名</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Ansible共通</p></td>
+<tr class="row-odd"><td rowspan="3"><p>Ansible共通</p></td>
 <td><p>機器一覧</p></td>
 <td><p>ホスト名</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td></td>
-<td><p>ファイル管理</p></td>
+<tr class="row-even"><td><p>ファイル管理</p></td>
 <td><p>ファイル埋込変数名</p></td>
-<td><p>Ansibleドライバをインスト
-ールしている場合のみ</p></td>
+<td><p>Ansibleドライバをインスト</p></td>
 </tr>
-<tr class="row-odd"><td></td>
-<td><p>テンプレート管理</p></td>
+<tr class="row-odd"><td><p>テンプレート管理</p></td>
 <td><p>テンプレート埋込変数名</p></td>
 <td></td>
 </tr>
@@ -2356,27 +2287,27 @@
 </tbody>
 </table>
 <div class="line-block">
-<div class="line">上記とは別に『「メニュー作成」メニューグループの機能で作成したメニュー（パラメータシート/データシート）のカラムクラスが「文字列(単一行)」「文字列(複数行)」「整数」「小数」「日時」「日付」「リンク」のいずれか、かつ「必須」かつ「一意制約」である項目』も対象となります。</div>
+<div class="line">上記とは別に「メニュー作成」メニューグループの機能で作成したメニュー（パラメータシート/データシート）のカラムクラスが「文字列(単一行)」「文字列(複数行)」「整数」「小数」「日時」「日付」「リンク」のいずれか、かつ「必須」かつ「一意制約」である項目』も対象となります。</div>
 </div>
 </section>
 <section id="reference-item">
-<span id="id33"></span><h3>「プルダウン選択」利用時の「参照項目」について<a class="headerlink" href="#reference-item" title="この見出しへのパーマリンク">¶</a></h3>
+<span id="id31"></span><h3>「プルダウン選択」利用時の「参照項目」について<a class="headerlink" href="#reference-item" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">項目に「プルダウン選択」を利用する際、「プルダウン選択」で選択した値を元に、同じメニューにあるほかの項目を横並びで表示させることができます。</div>
 <div class="line">「メニュー作成」メニューグループの「メニュー定義・作成」メニューにて、項目に「プルダウン選択」を設定した際、「参照項目を選択」ボタンを押下すると、「選択項目」のメニューにあるほかの項目が選択できる画面が表示されます。</div>
 <div class="line">横並びで表示させたい対象の項目にチェックを入れ、「決定」を押下すると「参照項目」に値が挿入されます。</div>
 </div>
-<figure class="align-center" id="id119">
+<figure class="align-left" id="id113">
 <a class="reference internal image-reference" href="../../../../_images/reference_items_when_using_pulldown_selection.gif"><img alt="「プルダウン選択」利用時の「参照項目」" src="../../../../_images/reference_items_when_using_pulldown_selection.gif" style="width: 9.40859in; height: 6.05379in;" /></a>
 <figcaption>
-<p><span class="caption-text">「プルダウン選択」利用時の「参照項目」　図１</span><a class="headerlink" href="#id119" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 79 </span><span class="caption-text">「プルダウン選択」利用時の「参照項目」　図１</span><a class="headerlink" href="#id113" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="line-block">
 <div class="line">「参照項目」として選択できる項目は、以下の通りです。</div>
 </div>
-<table class="docutils align-left" id="id120">
-<caption><span class="caption-text">項目一覧</span><a class="headerlink" href="#id120" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id114">
+<caption><span class="caption-number">表 59 </span><span class="caption-text">項目一覧</span><a class="headerlink" href="#id114" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>選択項目</strong></p></th>
 <th class="head"><p><strong>メニュー</strong></p></th>
@@ -2392,27 +2323,21 @@
 <td><p>menu_name_rest</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>アンシブル共通：機器一覧：ホスト名</p></td>
-<td><p>機器一覧</p></td>
+<tr class="row-odd"><td rowspan="4"><p>アンシブル共通：機器一覧：ホスト名</p></td>
+<td rowspan="4"><p>機器一覧</p></td>
 <td><p>DNSホスト名</p></td>
 <td><p>host_dns_name</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td></td>
-<td></td>
-<td><p>IPアドレス</p></td>
+<tr class="row-even"><td><p>IPアドレス</p></td>
 <td><p>ip_address</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td></td>
-<td></td>
-<td><p>ユーザ</p></td>
+<tr class="row-odd"><td><p>ユーザー</p></td>
 <td><p>login_user</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td></td>
-<td></td>
-<td><p>パスワード</p></td>
+<tr class="row-even"><td><p>パスワード</p></td>
 <td><p>login_password</p></td>
 <td></td>
 </tr>
@@ -2422,10 +2347,10 @@
 <div class="line">上記とは別に『「選択項目」が「メニュー作成」メニューグループの機能で作成したメニューのとき、「選択項目」で選んだメニューが持つほかの項目でカラムクラスが「文字列(単一行)」「文字列(複数行)」「整数」「小数」「日時」「日付」「パスワード」「ファイルアップロード」「リンク」のいずれかである項目』も対象となります。</div>
 <div class="line">「プルダウン選択」に「参照項目」を設定した状態でメニューを作成すると、「入力用」メニューグループに作成されたメニューについて、「登録」からは「プルダウン選択」項目の欄しか表示されませんが、「一覧/更新」では「プルダウン選択」で設定した値と同じ行にあるレコードが横並びで表示されるようになります。</div>
 </div>
-<figure class="align-center" id="id121">
+<figure class="align-left" id="id115">
 <a class="reference internal image-reference" href="../../../../_images/reference_items_when_using_pulldown_selection_2.gif"><img alt="「プルダウン選択」利用時の「参照項目」　図２" src="../../../../_images/reference_items_when_using_pulldown_selection_2.gif" style="width: 9.75315in; height: 6.85225in;" /></a>
 <figcaption>
-<p><span class="caption-text">「プルダウン選択」利用時の「参照項目」　図２</span><a class="headerlink" href="#id121" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 80 </span><span class="caption-text">「プルダウン選択」利用時の「参照項目」　図２</span><a class="headerlink" href="#id115" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="line-block">
@@ -2434,20 +2359,20 @@
 </div>
 </section>
 <section id="info-item-ro">
-<span id="id34"></span><h3>参照項目情報<a class="headerlink" href="#info-item-ro" title="この見出しへのパーマリンク">¶</a></h3>
+<span id="id32"></span><h3>参照項目情報<a class="headerlink" href="#info-item-ro" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">「メニュー定義・作成」のプルダウン選択で利用できる参照項目の情報を表示します。</div>
 <div class="line">インストール時は非表示のメニューです。</div>
-<div class="line">BackYardが利用するメニューで、ユーザが操作することはありません。</div>
+<div class="line">BackYardが利用するメニューで、ユーザーが操作することはありません。</div>
 </div>
-<figure class="align-center" id="id122">
+<figure class="align-left" id="id116">
 <a class="reference internal image-reference" href="../../../../_images/reference_item_info_menu.png"><img alt="「メニュー定義・作成」のプルダウン選択で利用できる参照項目" src="../../../../_images/reference_item_info_menu.png" style="width: 9.68058in; height: 6.52697in;" /></a>
 <figcaption>
-<p><span class="caption-text">「メニュー定義・作成」のプルダウン選択で利用できる参照項目</span><a class="headerlink" href="#id122" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 81 </span><span class="caption-text">「メニュー定義・作成」のプルダウン選択で利用できる参照項目</span><a class="headerlink" href="#id116" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<table class="docutils align-left" id="id123">
-<caption><span class="caption-text">項目一覧</span><a class="headerlink" href="#id123" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id117">
+<caption><span class="caption-number">表 60 </span><span class="caption-text">項目一覧</span><a class="headerlink" href="#id117" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>項目名</strong></p></th>
 <th class="head"><p><strong>説明</strong></p></th>
@@ -2526,6 +2451,8 @@
 
 <div id="articleNavigation">
   <ul>
+    <li class="prev"><a href="index.html" title="前のトピックへ"><span>前のトピックへ</span>パラメータ管理</a></li>
+    <li class="next"><a href="../maintenance/index.html" title="次のトピックへ"><span>次のトピックへ</span>メンテナンス</a></li>
   </ul>
 </div>
 

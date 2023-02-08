@@ -34,7 +34,9 @@
     <script src="../../../../_static/swagger/swagger-ui-standalone-preset.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
     <link rel="index" title="索引" href="../../../../genindex.html" />
-    <link rel="search" title="検索" href="../../../../search.html" /> 
+    <link rel="search" title="検索" href="../../../../search.html" />
+    <link rel="next" title="基本操作" href="../it_automation_base/index.html" />
+    <link rel="prev" title="3. ロール" href="role.html" /> 
   </head>
 <body id="page" class="ja">
 
@@ -101,6 +103,8 @@
     </div>
     <div id="toolbarNavigation">
       <ul>
+        <li class="prev"><a href="role.html" title="前のトピックへ"><span class="section-number">3. </span>ロール</a></li>
+        <li class="next"><a href="../it_automation_base/index.html" title="次のトピックへ">基本操作</a></li>
       </ul>
     </div>
   </div>
@@ -111,8 +115,31 @@
   <div id="menuButton"></div>
   
   <aside class="divInner">
-    <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Exastro IT Automation Documentation 2.0</a></li>
+    <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Exastro IT Automation Documentation 2.0</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html#id1">日本語</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../installation/index.html">インストール</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/index.html">構成・構築ガイド</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">マニュアル</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../platform_management/index.html">システム管理</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">オーガナイゼーション管理</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="workspace.html">1. Workspase (ワークスペース)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="user.html">2. ユーザ</a></li>
+<li class="toctree-l5"><a class="reference internal" href="role.html">3. ロール</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">4. Ansible Automation Platform 連携</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../it_automation_base/index.html">基本操作</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../create_param/index.html">パラメータ管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../maintenance/index.html">メンテナンス</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/index.html">リファレンス</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contribute/index.html">貢献</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
     <!-- <ul>
@@ -151,6 +178,9 @@
  <div id="breadcrumbs">
   <ul>
     <li><a href="../../../../index.html">HOME</a></li>
+    <li><a href="../../../index.html">Exastro IT Automation Documentation 2.0</a></li>
+    <li><a href="../index.html">マニュアル</a></li>
+    <li><a href="index.html">オーガナイゼーション管理</a></li>
     
     <li><span class="section-number">4. </span>Ansible Automation Platform 連携</li>
   </ul>
@@ -210,7 +240,7 @@
 <ol class="arabic">
 <li><p>Ansible Automation Controller 登録用シェルスクリプトを、リポジトリから <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">git</kbd> <kbd class="kbd docutils literal notranslate">clone</kbd></kbd> により取得します。</p>
 <div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id6" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.1 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id6" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exastro Platform の資材を入手</span>
 git<span class="w"> </span>clone<span class="w"> </span>https://github.com/exastro-suite/exastro-platform.git
 </pre></div>
@@ -219,7 +249,7 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/exast
 </li>
 <li><p>設定ファイルの <kbd class="kbd docutils literal notranslate">CONF_BASE_URL</kbd> に Exastro システムの管理用エンドポイント URL を設定します。</p>
 <div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id7" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.2 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id7" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exastro Platform への接続のための設定情報を登録</span>
 vi<span class="w"> </span>./exastro-platform/tools/api-auth.conf
 </pre></div>
@@ -229,7 +259,7 @@ vi<span class="w"> </span>./exastro-platform/tools/api-auth.conf
 <div class="line">例えば、<a class="reference internal" href="../../installation/kubernetes.html#ingress-setting"><span class="std std-ref">サービス公開の設定 (Ingress の設定)</span></a> をした場合は下記のようになります。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">api-auth.conf</span><a class="headerlink" href="#id8" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.3 </span><span class="caption-text">api-auth.conf</span><a class="headerlink" href="#id8" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gd">- CONF_BASE_URL=http://platform-auth:8001</span>
 <span class="gi">+ CONF_BASE_URL=http://exastro-suite-mng.example.local</span>
 <span class="w"> </span> CURL_OPT=-sv
@@ -249,7 +279,7 @@ vi<span class="w"> </span>./exastro-platform/tools/api-auth.conf
 <div class="line">設定ファイルの作成は、<code class="file docutils literal notranslate"><span class="pre">./exastro-platform/tools/initial-settings-ansible.sample.json</span></code> を基に、作成する Ansible Automation Controller の情報を指定した JSON ファイルを基に作成します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id9" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.4 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id9" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>-pi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible<span class="o">{</span>.sample,<span class="o">}</span>.json
 
 vi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
@@ -302,7 +332,7 @@ vi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 </div>
 <details>
   <summary>Ansible Automation Controller 登録時のパラメータ(表示・非表示)</summary><table class="filter-table docutils align-left" id="id10">
-<caption><span class="caption-text">Ansible Automation Controller 登録時のパラメータ</span><a class="headerlink" href="#id10" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 4.1 </span><span class="caption-text">Ansible Automation Controller 登録時のパラメータ</span><a class="headerlink" href="#id10" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 30%" />
 <col style="width: 40%" />
@@ -513,7 +543,7 @@ vi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 </details></li>
 <li><p>Ansible Automation Controller 作成実行</p>
 <div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id11" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.5 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id11" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./exastro-platform/tools/initial-settings-ansible.sh<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 
 organization<span class="w"> </span>id<span class="w"> </span>:<span class="w"> </span>INPUT-ORGANIZATION-ID-TO-SET<span class="w"> </span><span class="c1"># 設定先のオーガナイゼーションID</span>
@@ -529,7 +559,7 @@ Create<span class="w"> </span>an<span class="w"> </span>organization,<span class
 <li><p>成功時の結果表示</p>
 <p>resultが”000-00000”が、 Ansible Automation Controller の作成に成功したことを示しています。</p>
 <div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-text">実行結果(成功時)</span><a class="headerlink" href="#id12" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.6 </span><span class="caption-text">実行結果(成功時)</span><a class="headerlink" href="#id12" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>...
 &lt;<span class="w"> </span>HTTP/1.1<span class="w"> </span><span class="m">200</span><span class="w"> </span>OK
 &lt;<span class="w"> </span>Date:<span class="w"> </span>Thu,<span class="w"> </span><span class="m">18</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="m">01</span>:49:13<span class="w"> </span>GMT
@@ -550,7 +580,7 @@ Create<span class="w"> </span>an<span class="w"> </span>organization,<span class
 </li>
 <li><p>失敗時の結果表示イメージ</p>
 <div class="literal-block-wrapper docutils container" id="id13">
-<div class="code-block-caption"><span class="caption-text">実行結果(失敗時)</span><a class="headerlink" href="#id13" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.7 </span><span class="caption-text">実行結果(失敗時)</span><a class="headerlink" href="#id13" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>...
 &lt;<span class="w"> </span>HTTP/1.1<span class="w"> </span><span class="m">400</span><span class="w"> </span>BAD<span class="w"> </span>REQUEST
 &lt;<span class="w"> </span>Date:<span class="w"> </span>Thu,<span class="w"> </span><span class="m">18</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="m">05</span>:29:35<span class="w"> </span>GMT
@@ -589,7 +619,7 @@ Create<span class="w"> </span>an<span class="w"> </span>organization,<span class
 <div class="line">SSH 秘密鍵ファイルをアップロードする必要があるため、Base64 エンコードをします。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id14">
-<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id14" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.8 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id14" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>MY_KEY=`base64 -w 0 my-aac-key.pem`
 </pre></div>
 </div>
@@ -607,7 +637,7 @@ Create<span class="w"> </span>an<span class="w"> </span>organization,<span class
 </div>
 <details>
   <summary>Ansible Automation Controller 登録時のパラメータ</summary><table class="filter-table docutils align-left" id="id15">
-<caption><span class="caption-text">Ansible Automation Controller 登録時のパラメータ</span><a class="headerlink" href="#id15" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 4.2 </span><span class="caption-text">Ansible Automation Controller 登録時のパラメータ</span><a class="headerlink" href="#id15" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 30%" />
 <col style="width: 40%" />
@@ -803,7 +833,7 @@ Create<span class="w"> </span>an<span class="w"> </span>organization,<span class
 </tbody>
 </table>
 </details><div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id16" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.9 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id16" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">ORG_ID</span><span class="o">=</span>org001
 <span class="nv">BASE64_BASIC</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;KEYCLOAK_USER:KEYCLOAK_PASSWORD&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="k">)</span>
 <span class="nv">BASE_URL</span><span class="o">=</span>http://exastro-suite-mng.example.local
@@ -865,7 +895,7 @@ curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST
 </ol>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI5Yip55So" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI5Yip55So" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI5Yip55So" role="tab" tabindex="0">設定ファイルとスクリプト利用</button><button aria-controls="panel-1-UmVzdCBBUEkg5Yip55So" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-UmVzdCBBUEkg5Yip55So" name="UmVzdCBBUEkg5Yip55So" role="tab" tabindex="-1">Rest API 利用</button></div><div aria-labelledby="tab-1-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI5Yip55So" class="sphinx-tabs-panel group-tab" id="panel-1-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI5Yip55So" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI5Yip55So" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id17" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.10 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id17" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./exastro-platform/tools/get-initial-settings-ansible.sh
 
 organization<span class="w"> </span>id<span class="w"> </span>:<span class="w"> </span>INPUT-ORGANIZATION-ID-TO-SET<span class="w"> </span><span class="c1"># 設定先のオーガナイゼーションID</span>
@@ -879,7 +909,7 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 <li><p>結果表示</p>
 <p>resultが”000-00000”が、 Ansible Automation Controller の作成に成功したことを示しています。</p>
 <div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text">実行結果(成功例)</span><a class="headerlink" href="#id18" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.11 </span><span class="caption-text">実行結果(成功例)</span><a class="headerlink" href="#id18" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;execution_engine_list&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
@@ -929,7 +959,7 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 </li>
 <li><p>失敗時の結果表示イメージ</p>
 <div class="literal-block-wrapper docutils container" id="id19">
-<div class="code-block-caption"><span class="caption-text">実行結果(失敗例)</span><a class="headerlink" href="#id19" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.12 </span><span class="caption-text">実行結果(失敗例)</span><a class="headerlink" href="#id19" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>...
 &lt;<span class="w"> </span>HTTP/1.1<span class="w"> </span><span class="m">400</span><span class="w"> </span>BAD<span class="w"> </span>REQUEST
 &lt;<span class="w"> </span>Date:<span class="w"> </span>Thu,<span class="w"> </span><span class="m">18</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="m">05</span>:29:35<span class="w"> </span>GMT
@@ -952,7 +982,7 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 </li>
 </ul>
 </div><div aria-labelledby="tab-1-UmVzdCBBUEkg5Yip55So" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-UmVzdCBBUEkg5Yip55So" name="UmVzdCBBUEkg5Yip55So" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id20">
-<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id20" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.13 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id20" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s1">&#39;http://exastro-suite-mng.example.local/api/ita/org001/initial-settings/ansible/&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>-H<span class="w"> </span><span class="s1">&#39;accept: application/json&#39;</span>
@@ -963,7 +993,7 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 <li><p>結果表示</p>
 <p>resultが”000-00000”が、 Ansible Automation Controller の作成に成功したことを示しています。</p>
 <div class="literal-block-wrapper docutils container" id="id21">
-<div class="code-block-caption"><span class="caption-text">実行結果(成功例)</span><a class="headerlink" href="#id21" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.14 </span><span class="caption-text">実行結果(成功例)</span><a class="headerlink" href="#id21" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;execution_engine_list&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
@@ -1013,7 +1043,7 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 </li>
 <li><p>失敗時の結果表示イメージ</p>
 <div class="literal-block-wrapper docutils container" id="id22">
-<div class="code-block-caption"><span class="caption-text">実行結果(失敗例)</span><a class="headerlink" href="#id22" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.15 </span><span class="caption-text">実行結果(失敗例)</span><a class="headerlink" href="#id22" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>...
 &lt;<span class="w"> </span>HTTP/1.1<span class="w"> </span><span class="m">400</span><span class="w"> </span>BAD<span class="w"> </span>REQUEST
 &lt;<span class="w"> </span>Date:<span class="w"> </span>Thu,<span class="w"> </span><span class="m">18</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="m">05</span>:29:35<span class="w"> </span>GMT
@@ -1045,13 +1075,13 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 <div class="line">Ansible Automation Controller 登録の再実行する場合は、設定ファイルを編集後、再度スクリプトを実行して下さい。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id23">
-<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id23" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.16 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id23" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vi<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id24">
-<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id24" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.17 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id24" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./exastro-platform/tools/initial-settings-ansible.sh<span class="w"> </span>./exastro-platform/tools/initial-settings-ansible.json
 </pre></div>
 </div>
@@ -1067,6 +1097,8 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 
 <div id="articleNavigation">
   <ul>
+    <li class="prev"><a href="role.html" title="前のトピックへ"><span>前のトピックへ</span><span class="section-number">3. </span>ロール</a></li>
+    <li class="next"><a href="../it_automation_base/index.html" title="次のトピックへ"><span>次のトピックへ</span>基本操作</a></li>
   </ul>
 </div>
 

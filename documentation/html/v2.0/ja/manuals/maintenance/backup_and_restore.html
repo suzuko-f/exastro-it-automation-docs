@@ -1,0 +1,481 @@
+
+<!DOCTYPE html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>データバックアップ・リストア手順 &#8212; Documentation  ドキュメント</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/option.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/exastro_documents.css?v=2" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/swagger/swagger-ui.css" />
+    
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/translations.js"></script>
+    <script src="../../../../_static/jquery-3.6.3.min.js"></script>
+    <script src="../../../../_static/exastro_documents.js?v=1"></script>
+    <script src="../../../../_static/swagger/swagger-ui-bundle.js"></script>
+    <script src="../../../../_static/swagger/swagger-ui-standalone-preset.js"></script>
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../../../../genindex.html" />
+    <link rel="search" title="検索" href="../../../../search.html" />
+    <link rel="next" title="リファレンス" href="../../reference/index.html" />
+    <link rel="prev" title="ログ一覧" href="log_list.html" /> 
+  </head>
+<body id="page" class="ja">
+
+
+<div id="container">
+
+<div id="header">
+  <header class="divInner">
+    <!-- Exastro logo -->
+    <div id="logo"><img src="../../../../_static/img/exastro.svg" alt="Exastro"></div>
+    <!-- Project name -->
+    <div id="projectName"><a href="../../../../index.html">Documentation</a></div>
+    <!-- Heaedr navigation -->
+    <div id="headerSearch">
+      <form class="search" action="../../../../search.html" method="get">
+        <input type="text" name="q" aria-labelledby="searchlabel">
+        <button type="submit" value="検索"><img src="../../../../_static/img/search.png" alt="検索"></button>
+      </form>
+    </div>
+  </header>
+</div><!-- End #header -->
+
+
+<div id="toolbar">
+  <div class="divInner">
+    
+    <div id="documentVersion">
+      <dl>
+        <dt>Document version</dt>
+        <dd>
+          <div>
+            <select name="version" onchange="location.href=value;">
+                file_path: v2.0/ja/manuals/maintenance/backup_and_restore
+                  <option value="#"
+                  selected
+                  >current</option>
+                file_path: v2.0/ja/manuals/maintenance/backup_and_restore
+                  <option value="#"
+                  selected
+                  >v2.0 (current)</option>
+            </select>
+          </div>
+        </dd>
+      </dl>
+    </div>
+
+    <div id="documentLanguage">
+      <dl>
+        <dt>Language</dt>
+        <dd>
+          <div>
+            <select name="lang" onchange="location.href=value;">
+                file_path: v2.0/ja/manuals/maintenance/backup_and_restore
+                hasdoc: True
+                  <option value="#"
+                  selected
+                  >日本語</option>
+                file_path: v2.0/en/manuals/maintenance/backup_and_restore
+                hasdoc: False
+            </select>
+          </div>
+        </dd>
+      </dl>
+    </div>
+    <div id="toolbarNavigation">
+      <ul>
+        <li class="prev"><a href="log_list.html" title="前のトピックへ">ログ一覧</a></li>
+        <li class="next"><a href="../../reference/index.html" title="次のトピックへ">リファレンス</a></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- End #toolbar -->
+
+<div id="sideMenu">
+
+  <div id="menuButton"></div>
+  
+  <aside class="divInner">
+    <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Exastro IT Automation Documentation 2.0</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html#id1">日本語</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../installation/index.html">インストール</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/index.html">構成・構築ガイド</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">マニュアル</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../platform_management/index.html">システム管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../organization_management/index.html">オーガナイゼーション管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../it_automation_base/index.html">基本操作</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../create_param/index.html">パラメータ管理</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">メンテナンス</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="log_list.html">ログ一覧</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">データバックアップ・リストア手順</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/index.html">リファレンス</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contribute/index.html">貢献</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    <!-- <ul>
+      <li class="toctree-l1"><a class="reference internal" href="../../../../genindex.html">索引</a></li>
+    </ul> -->
+    
+  </aside>
+</div><!-- End #sideMenu -->
+
+
+<div id="tableOfContents">
+  <div id="tocButton"></div>
+  <ul>
+<li><a class="reference internal" href="#">データバックアップ・リストア手順</a><ul>
+<li><a class="reference internal" href="#id2">目的</a></li>
+<li><a class="reference internal" href="#id3">前提条件</a></li>
+<li><a class="reference internal" href="#id4">概要</a></li>
+<li><a class="reference internal" href="#id5">バックアップ</a><ul>
+<li><a class="reference internal" href="#id6">サービス再開</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id7">リストア手順(オンプレ)</a><ul>
+<li><a class="reference internal" href="#deploy">deployの確認</a></li>
+<li><a class="reference internal" href="#apache">apache停止</a></li>
+<li><a class="reference internal" href="#id8">バックヤードサービス停止</a></li>
+<li><a class="reference internal" href="#db">DBリストア</a></li>
+<li><a class="reference internal" href="#id9">サービス再開</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+<div id="contents">
+<main class="divInner">
+
+ <div id="breadcrumbs">
+  <ul>
+    <li><a href="../../../../index.html">HOME</a></li>
+    <li><a href="../../../index.html">Exastro IT Automation Documentation 2.0</a></li>
+    <li><a href="../index.html">マニュアル</a></li>
+    <li><a href="index.html">メンテナンス</a></li>
+    
+    <li>データバックアップ・リストア手順</li>
+  </ul>
+</div>
+
+<div id="article">
+<article class="divInner">
+<div class="body" role="main">
+
+  <section id="id1">
+<h1>データバックアップ・リストア手順<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h1>
+<section id="id2">
+<h2>目的<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">本頁では、Exastroシステムで利用する永続データのバックアップとリストア手順について説明します。</div>
+<div class="line">パブリッククラウドの仕組みにより、データバックアップの仕組みが利用可能であればそちらを利用しても問題ありません。</div>
+</div>
+</section>
+<section id="id3">
+<h2>前提条件<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">本頁で紹介するバックアップ・リストア手順は下記の条件を満たしている必要があります。</div>
+</div>
+<ul class="simple">
+<li><p>条件</p>
+<ul>
+<li><p>下記のコマンドが利用可能なこと</p>
+<ul>
+<li><p><strong class="command">tar</strong></p></li>
+<li><p><strong class="command">kubectl</strong></p></li>
+</ul>
+</li>
+<li><p>作業環境のサーバで充分なディスクの空き容量があること</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id4">
+<h2>概要<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">バックアップ対象となるデータは下記の3つです。</div>
+</div>
+<ul class="simple">
+<li><p>バックアップ対象</p>
+<ul>
+<li><p>Exastro Platform のデータベース</p></li>
+<li><p>Exastro IT Automation のデータベース</p></li>
+<li><p>Exastro IT Automation の共有ファイル</p></li>
+</ul>
+</li>
+</ul>
+<div class="line-block">
+<div class="line">これらのデータを <strong class="command">kubectl</strong> コマンドを利用してインストールします。</div>
+</div>
+<div class="line-block">
+<div class="line">作業の流れは、まず、ユーザからのデータの書き込みを制限するために、リバースプロキシを停止します。</div>
+<div class="line">次に、バックヤード処理を停止したら、データのバックアップを実施します。</div>
+<div class="line">最後に、作業前の数に Pod 数を戻します。</div>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">危険</p>
+<div class="line-block">
+<div class="line">本手順では、サービスの停止が発生します。</div>
+</div>
+</div>
+</section>
+<section id="id5">
+<h2>バックアップ<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h2>
+<ol class="arabic">
+<li><p>レプリカ数の確認</p>
+<div class="line-block">
+<div class="line">作業前のレプリカ数の確認をし、状態を記録します。</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-number">リスト 52 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id10" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{range .items[*]}{@.metadata.name}{&quot;\t&quot;}{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>&gt;<span class="w"> </span>before_replica_count_<span class="sb">`</span>date<span class="w"> </span>+<span class="s2">&quot;%Y%m%d-%H%M%S&quot;</span><span class="sb">`</span>.tsv
+</pre></div>
+</div>
+</div>
+</li>
+<li><p>リバースプロキシの停止</p>
+<div class="line-block">
+<div class="line">リバースプロキシ (platform-auth) のレプリカ数を 0 に変更し、エンドユーザーからのアクセスを制限します。</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-number">リスト 53 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id11" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>platform-auth<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
+</pre></div>
+</div>
+</div>
+</li>
+<li><p>バックヤード処理の停止</p>
+<div class="line-block">
+<div class="line">バックヤード処理 (ita-by-***) のレプリカ数を 0 に変更し、データベースの更新を停止します。</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-number">リスト 54 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id12" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-ansible-execute<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
+kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-ansible-legacy-role-vars-listup<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
+kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-ansible-towermaster-sync<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
+kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-conductor-synchronize<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
+kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-menu-create<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
+</pre></div>
+</div>
+</div>
+</li>
+<li><p>データベースのバックアップ</p>
+<div class="line-block">
+<div class="line">データベースを <strong class="command">mysqldump</strong> を使ってバックアップします。</div>
+</div>
+<div class="line-block">
+<div class="line">メンテナンス用コンテナを作成します。</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-number">リスト 55 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id13" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>cat<span class="w"> </span><span class="s">&lt;&lt;_EOF_ | kubectl apply -f - -n exastro</span>
+<span class="linenos"> 2</span><span class="s">apiVersion: v1</span>
+<span class="linenos"> 3</span><span class="s">kind: Pod</span>
+<span class="linenos"> 4</span><span class="s">metadata:</span>
+<span class="linenos"> 5</span><span class="s">  name: platform-db-backup</span>
+<span class="linenos"> 6</span><span class="s">  namespace: exastro</span>
+<span class="linenos"> 7</span><span class="s">spec:</span>
+<span class="linenos"> 8</span><span class="s">  containers:</span>
+<span class="linenos"> 9</span><span class="s">  - command:</span>
+<span class="linenos">10</span><span class="s">    - sh</span>
+<span class="linenos">11</span><span class="s">    - -c</span>
+<span class="linenos">12</span><span class="s">    args:</span>
+<span class="linenos">13</span><span class="s">    - |</span>
+<span class="linenos">14</span><span class="s">       #!/bin/bash</span>
+<span class="linenos">15</span><span class="s">       sleep 3600</span>
+<span class="linenos">16</span><span class="s">    env:</span>
+<span class="linenos">17</span><span class="s">    - name: DB_DATABASE</span>
+<span class="linenos">18</span><span class="s">      valueFrom:</span>
+<span class="linenos">19</span><span class="s">        configMapKeyRef:</span>
+<span class="linenos">20</span><span class="s">          key: DB_DATABASE</span>
+<span class="linenos">21</span><span class="s">          name: platform-params-pf-database</span>
+<span class="linenos">22</span><span class="s">    - name: DB_HOST</span>
+<span class="linenos">23</span><span class="s">      valueFrom:</span>
+<span class="linenos">24</span><span class="s">        configMapKeyRef:</span>
+<span class="linenos">25</span><span class="s">          key: DB_HOST</span>
+<span class="linenos">26</span><span class="s">          name: platform-params-pf-database</span>
+<span class="linenos">27</span><span class="s">    - name: DB_PORT</span>
+<span class="linenos">28</span><span class="s">      valueFrom:</span>
+<span class="linenos">29</span><span class="s">        configMapKeyRef:</span>
+<span class="linenos">30</span><span class="s">          key: DB_PORT</span>
+<span class="linenos">31</span><span class="s">          name: platform-params-pf-database</span>
+<span class="linenos">32</span><span class="s">    - name: DB_ADMIN_PASSWORD</span>
+<span class="linenos">33</span><span class="s">      valueFrom:</span>
+<span class="linenos">34</span><span class="s">        secretKeyRef:</span>
+<span class="linenos">35</span><span class="s">          key: DB_ADMIN_PASSWORD</span>
+<span class="linenos">36</span><span class="s">          name: platform-secret-pf-database</span>
+<span class="linenos">37</span><span class="s">    - name: DB_ADMIN_USER</span>
+<span class="linenos">38</span><span class="s">      valueFrom:</span>
+<span class="linenos">39</span><span class="s">        secretKeyRef:</span>
+<span class="linenos">40</span><span class="s">          key: DB_ADMIN_USER</span>
+<span class="linenos">41</span><span class="s">          name: platform-secret-pf-database</span>
+<span class="linenos">42</span><span class="s">    image: mariadb:10.9</span>
+<span class="linenos">43</span><span class="s">    imagePullPolicy: IfNotPresent</span>
+<span class="linenos">44</span><span class="s">    name: platform-db-backup</span>
+<span class="linenos">45</span><span class="s">    resources: {}</span>
+<span class="linenos">46</span><span class="s">    securityContext:</span>
+<span class="linenos">47</span><span class="s">      allowPrivilegeEscalation: false</span>
+<span class="linenos">48</span><span class="s">      readOnlyRootFilesystem: false</span>
+<span class="linenos">49</span><span class="s">      runAsGroup: 1000</span>
+<span class="linenos">50</span><span class="s">      runAsNonRoot: true</span>
+<span class="linenos">51</span><span class="s">      runAsUser: 1000</span>
+<span class="linenos">52</span><span class="s">  restartPolicy: Always</span>
+<span class="linenos">53</span><span class="s">  securityContext: {}</span>
+<span class="linenos">54</span><span class="s">  serviceAccount: default</span>
+<span class="linenos">55</span><span class="s">  serviceAccountName: default</span>
+<span class="linenos">56</span><span class="s">_EOF_</span>
+</pre></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line">バックアップを取得します。</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-number">リスト 56 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id14" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>platform-db-backup<span class="w"> </span>--<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;mysqldump -h ${DB_HOST} -u ${DB_ADMIN_USER} -p${DB_ADMIN_PASSWORD} --all-databases&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>&gt;<span class="w"> </span>mysqldump_platform-db_<span class="sb">`</span>date<span class="w"> </span>+<span class="s2">&quot;%Y%m%d-%H%M%S&quot;</span><span class="sb">`</span>.sql.gz
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+<section id="id6">
+<h3>サービス再開<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">説明</div>
+<div class="line">Xは置き換えて欲しい旨の記載</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">scale</span> <span class="n">deployment</span> <span class="n">ita</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">ansible</span><span class="o">-</span><span class="n">execute</span> <span class="o">-</span><span class="n">n</span> <span class="n">exastro</span> <span class="o">--</span><span class="n">replicas</span><span class="o">=</span><span class="n">X</span>
+<span class="n">kubectl</span> <span class="n">scale</span> <span class="n">deployment</span> <span class="n">ita</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">ansible</span><span class="o">-</span><span class="n">towermaster</span><span class="o">-</span><span class="n">sync</span> <span class="o">-</span><span class="n">n</span> <span class="n">exastro</span> <span class="o">--</span><span class="n">replicas</span><span class="o">=</span><span class="n">X</span>
+<span class="n">kubectl</span> <span class="n">scale</span> <span class="n">deployment</span> <span class="n">ita</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">conductor</span><span class="o">-</span><span class="n">synchronize</span> <span class="o">-</span><span class="n">n</span> <span class="n">exastro</span> <span class="o">--</span><span class="n">replicas</span><span class="o">=</span><span class="n">X</span>
+<span class="n">kubectl</span> <span class="n">scale</span> <span class="n">deployment</span> <span class="n">ita</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">menu</span><span class="o">-</span><span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">exastro</span> <span class="o">--</span><span class="n">replicas</span><span class="o">=</span><span class="n">X</span>
+<span class="n">kubectl</span> <span class="n">scale</span> <span class="n">deployment</span> <span class="n">ita</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">ansible</span><span class="o">-</span><span class="n">legacy</span><span class="o">-</span><span class="n">role</span><span class="o">-</span><span class="nb">vars</span><span class="o">-</span><span class="n">listup</span> <span class="o">-</span><span class="n">n</span> <span class="n">exastro</span> <span class="o">--</span><span class="n">replicas</span><span class="o">=</span><span class="n">X</span>
+<span class="n">kubectl</span> <span class="n">scale</span> <span class="n">deployment</span> <span class="n">platform</span><span class="o">-</span><span class="n">auth</span> <span class="o">-</span><span class="n">n</span> <span class="n">exastro</span><span class="o">-</span><span class="n">platform</span> <span class="o">--</span><span class="n">replicas</span><span class="o">=</span><span class="n">X</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id7">
+<h2>リストア手順(オンプレ)<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="deploy">
+<h3>deployの確認<a class="headerlink" href="#deploy" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">説明</div>
+<div class="line">確認したdeployは控えておく旨の記載がいるかもしれない</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">get</span> <span class="n">deploy</span> <span class="o">-</span><span class="n">o</span> <span class="n">jsonpath</span><span class="o">=</span><span class="s1">&#39;{range .items[*]}{@.metadata.name}{&quot;</span><span class="se">\t</span><span class="s1">&quot;}{@.spec.replicas}{&quot;</span><span class="se">\n</span><span class="s1">&quot;}&#39;</span> <span class="o">-</span><span class="n">n</span> <span class="n">exastro</span><span class="o">-</span><span class="n">platform</span><span class="p">;</span>
+<span class="n">kubectl</span> <span class="n">get</span> <span class="n">deploy</span> <span class="o">-</span><span class="n">o</span> <span class="n">jsonpath</span><span class="o">=</span><span class="s1">&#39;{range .items[*]}{@.metadata.name}{&quot;</span><span class="se">\t</span><span class="s1">&quot;}{@.spec.replicas}{&quot;</span><span class="se">\n</span><span class="s1">&quot;}&#39;</span> <span class="o">-</span><span class="n">n</span> <span class="n">exastro</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="apache">
+<h3>apache停止<a class="headerlink" href="#apache" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">説明</div>
+<div class="line">絶対にapacheの停止ではないので確認をする</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">scale</span> <span class="n">deployment</span> <span class="n">platform</span><span class="o">-</span><span class="n">auth</span> <span class="o">-</span><span class="n">n</span> <span class="n">exastro</span><span class="o">-</span><span class="n">platform</span> <span class="o">--</span><span class="n">replicas</span><span class="o">=</span><span class="mi">0</span>
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h3>バックヤードサービス停止<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">説明</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">scale</span> <span class="n">deployment</span> <span class="n">ita</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">ansible</span><span class="o">-</span><span class="n">execute</span> <span class="o">-</span><span class="n">n</span> <span class="n">exastro</span> <span class="o">--</span><span class="n">replicas</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">kubectl</span> <span class="n">scale</span> <span class="n">deployment</span> <span class="n">ita</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">ansible</span><span class="o">-</span><span class="n">towermaster</span><span class="o">-</span><span class="n">sync</span> <span class="o">-</span><span class="n">n</span> <span class="n">exastro</span> <span class="o">--</span><span class="n">replicas</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">kubectl</span> <span class="n">scale</span> <span class="n">deployment</span> <span class="n">ita</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">conductor</span><span class="o">-</span><span class="n">synchronize</span> <span class="o">-</span><span class="n">n</span> <span class="n">exastro</span> <span class="o">--</span><span class="n">replicas</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">kubectl</span> <span class="n">scale</span> <span class="n">deployment</span> <span class="n">ita</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">menu</span><span class="o">-</span><span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">exastro</span> <span class="o">--</span><span class="n">replicas</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">kubectl</span> <span class="n">scale</span> <span class="n">deployment</span> <span class="n">ita</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">ansible</span><span class="o">-</span><span class="n">legacy</span><span class="o">-</span><span class="n">role</span><span class="o">-</span><span class="nb">vars</span><span class="o">-</span><span class="n">listup</span> <span class="o">-</span><span class="n">n</span> <span class="n">exastro</span> <span class="o">--</span><span class="n">replicas</span><span class="o">=</span><span class="mi">0</span>
+</pre></div>
+</div>
+</section>
+<section id="db">
+<h3>DBリストア<a class="headerlink" href="#db" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">説明</div>
+<div class="line">コマンドが合っているか不安なので要確認</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>kubectl exec -it mariadb-XXX --mysqldump -u ${DB_ADMIN_USER} -p ${DB_ADMIN_PASSWORD} --all-databases &gt; db_backup.sql
+</pre></div>
+</div>
+</section>
+<section id="id9">
+<h3>サービス再開<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">説明</div>
+<div class="line">Xは置き換えて欲しい旨の記載</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">scale</span> <span class="n">deployment</span> <span class="n">ita</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">ansible</span><span class="o">-</span><span class="n">execute</span> <span class="o">-</span><span class="n">n</span> <span class="n">exastro</span> <span class="o">--</span><span class="n">replicas</span><span class="o">=</span><span class="n">X</span>
+<span class="n">kubectl</span> <span class="n">scale</span> <span class="n">deployment</span> <span class="n">ita</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">ansible</span><span class="o">-</span><span class="n">towermaster</span><span class="o">-</span><span class="n">sync</span> <span class="o">-</span><span class="n">n</span> <span class="n">exastro</span> <span class="o">--</span><span class="n">replicas</span><span class="o">=</span><span class="n">X</span>
+<span class="n">kubectl</span> <span class="n">scale</span> <span class="n">deployment</span> <span class="n">ita</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">conductor</span><span class="o">-</span><span class="n">synchronize</span> <span class="o">-</span><span class="n">n</span> <span class="n">exastro</span> <span class="o">--</span><span class="n">replicas</span><span class="o">=</span><span class="n">X</span>
+<span class="n">kubectl</span> <span class="n">scale</span> <span class="n">deployment</span> <span class="n">ita</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">menu</span><span class="o">-</span><span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">exastro</span> <span class="o">--</span><span class="n">replicas</span><span class="o">=</span><span class="n">X</span>
+<span class="n">kubectl</span> <span class="n">scale</span> <span class="n">deployment</span> <span class="n">ita</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">ansible</span><span class="o">-</span><span class="n">legacy</span><span class="o">-</span><span class="n">role</span><span class="o">-</span><span class="nb">vars</span><span class="o">-</span><span class="n">listup</span> <span class="o">-</span><span class="n">n</span> <span class="n">exastro</span> <span class="o">--</span><span class="n">replicas</span><span class="o">=</span><span class="n">X</span>
+<span class="n">kubectl</span> <span class="n">scale</span> <span class="n">deployment</span> <span class="n">platform</span><span class="o">-</span><span class="n">auth</span> <span class="o">-</span><span class="n">n</span> <span class="n">exastro</span><span class="o">-</span><span class="n">platform</span> <span class="o">--</span><span class="n">replicas</span><span class="o">=</span><span class="n">X</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+</div>
+
+
+<div id="articleNavigation">
+  <ul>
+    <li class="prev"><a href="log_list.html" title="前のトピックへ"><span>前のトピックへ</span>ログ一覧</a></li>
+    <li class="next"><a href="../../reference/index.html" title="次のトピックへ"><span>次のトピックへ</span>リファレンス</a></li>
+  </ul>
+</div>
+
+
+<div id="pageTopLink">
+  <a href="#container"><i>↑</i> Page Top</a>
+</div>
+
+</article>
+</div>
+</main>
+</div><!-- End #contents -->
+<div id="footer">
+  <footer class="divInner">
+    <small>Copyright © 2023 NEC Corporation</small>
+  </footer>
+</div><!-- End #footer -->
+
+<div id="overlay"></div>
+<div id="grayBack"></div>
+
+</div><!-- End #container -->
+  </body>
+</html>
