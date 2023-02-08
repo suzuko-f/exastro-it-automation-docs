@@ -25,7 +25,7 @@
    it_automation_base/check
    create_param/check
    ansible-driver/check
-   appendix/index
+   maintenance/index
 
 .. raw:: html
 

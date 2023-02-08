@@ -676,7 +676,7 @@ Node一覧
            - 作業結果ディレクトリ配下の「MOVEMENT_STATUS_FILE」のパス
            - ※
   
-      | ※ 「 :ref:`ansible_legacyrole_work_flow` 」で対応しています。
+      .. | ※ 「 :ref:`ansible_legacyrole_work_flow` 」で対応しています。
   
   #. 「Node」タブ
   

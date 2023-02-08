@@ -14,9 +14,9 @@
    });
    </script>
 
-==========
-Kubernetes
-==========
+===================================
+Exastro IT Automation on Kubernetes
+===================================
 
 目的
 ====
@@ -87,14 +87,14 @@ Kubernetes
  :header: リポジトリ
  :widths: 50
 
- https://exastro-suite.github.io/exastro-helm/charts/exastro/
+ https://exastro-suite.github.io/exastro-helm/
 
 .. code-block:: shell
    :linenos:
    :caption: コマンド
 
    # Exastro Suite の Helm リポジトリを登録
-   helm repo add exastro https://exastro-suite.github.io/exastro-helm/charts/exastro/ -n exastro
+   helm repo add exastro https://exastro-suite.github.io/exastro-helm/ -n exastro
    # リポジトリ情報の更新
    helm repo update
 
