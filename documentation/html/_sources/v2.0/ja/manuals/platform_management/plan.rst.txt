@@ -1,54 +1,73 @@
-======
-プラン
-======
+==============
+リソースプラン
+==============
 
 はじめに
 ========
 
-| 本章では、Exastro Suite における プラン設定 について説明します。
-| プランの設定はPlatform管理者のみ可能です（オーガナイゼーションユーザーからはアクセス出来ません）。
+| 本章では、Exastro Suite における リソースプラン設定 について説明します。
+| リソースプランの設定はシステム管理者のみ可能です（オーガナイゼーションユーザーからはアクセス出来ません）。
 
+リソースプランとは
+==================
 
-プランとは
-==========
+| オーガナイゼーションごとに使用可能なリソース量を管理するためのものです。
+| プランに複数のリソースの上限値を設定しておき、オーガナイゼーション毎にプランを割り当てることで使用リソースを制限することができます。
 
-| Exastro IT Automation の機能を利用するためには、必ずワークスペースの作成が必要となり、ワークスペース数をプラン設定で指定する必要があります。
-|
-| ※ ワークスペースについては :doc:`../../manuals/organization_management/workspace` を参照ください。
-| 
-| {{#1 想像で書いているところが多い部分です。プランとは何であるかご教示いただきたいです。}}
+.. list-table:: リソースプラン設定例
+    :widths: 20, 20, 20, 20, 20
+    :header-rows: 1
+    :align: left
 
+    * - オーガナイゼーション
+      - リソースプラン
+      - ワークスペース数
+      - ユーザー数
+      - ロール数
+    * - org1
+      - スタンダードプラン 
+      - 上限20
+      - 上限30
+      - 上限30
+    * - org2
+      - プレミアムプラン
+      - 上限50
+      - 上限100
+      - 上限100
+
+リソースプラン設定手順
+----------------------
+| リソースプランを登録のうえ、オーガナイゼーションへリソースプランの紐づけが必要になります。
+| :ref:`organization_creation` に記載のオーガナイゼーション作成パラメータ「plan.id」にてリソースプランを指定することで紐づけることが出来ます。
 
 運用とシステムの動きについて
 ----------------------------
 
-| 例 １月まで「最大ワークスペース数＝５のプラン」、２月から「最大ワークスペース数＝３のプラン」に変更
+| 例） １月まで「最大ワークスペース数＝５のリソースプラン」、２月から「最大ワークスペース数＝３のリソースプラン」に変更
 
 .. figure:: /images/ja/diagram/operation_and_system_movement_num.png
     :alt: 運用とシステムの動き
 
-
-1. | ユーザーから「最大ワークスペース数＝３」へのプラン変更申し込みがあった場合、登録済みデータが「ワークスペース数＝４」であるため、2月からリミット値が超過することをSaaS管理者から警告します。
+1. | ユーザーから「最大ワークスペース数＝３」へのリソースプラン変更申し込みがあった場合、登録済みデータが「ワークスペース数＝４」であるため、2月からリミット値が超過することをシステム管理者から警告します。
   
-2. |  登録済みデータが「ワークスペース数＝４」であるため、リミット値であるプランの「最大ワークスペース数＝５」を超過せずユーザーはワークスペースの追加ができます。
+2. |  登録済みデータが「ワークスペース数＝４」であるため、リミット値であるリソースプランの「最大ワークスペース数＝５」を超過せずユーザーはワークスペースの追加ができます。
   
-3. | 登録済みデータが「ワークスペース数＝５」であるため、リミット値であるプランの「最大ワークスペース数＝５」を超過したワークスペースの追加ができません（エラーになります）。
+3. | 登録済みデータが「ワークスペース数＝５」であるため、リミット値であるリソースプランの「最大ワークスペース数＝５」を超過したワークスペースの追加ができません（エラーになります）。
 
 4. | 「最大ワークスペース数＝３」を超過しているが、利用停止等のシステム的な規制はこの段階ではありません。
   
-5. | リミット値である「最大ワークスペース数＝３」を超過しているため、SaaS管理者からオーガナイゼーションの警告が行われます。
+5. | リミット値である「最大ワークスペース数＝３」を超過しているため、システム管理者からオーガナイゼーションの警告が行われます。
   
-6. | ユーザーが リミット値を超過した状態で使い続けた場合、SaaS管理者は利用停止を実施します。
+6. | ユーザーが リミット値を超過した状態で使い続けた場合、システム管理者は利用停止を実施します。
   
-7. | ユーザーはログイン不可および、「全リミット0プラン」に変更されます。　※スケジュールしていたものも動かなくなります。
-
+7. | ユーザーはログイン不可および、「全リミット0リソースプラン」に変更されます。　※スケジュールしていたものも動かなくなります。
 
 .. danger::
     | 登録したワークスペース数を超えた利用が継続される場合はExastro IT Automation の利用が停止されます。
 
 
-プラン設定
-==========
+リソースプラン設定
+==================
 
 前提条件
 --------
@@ -60,23 +79,19 @@
   - :kbd:`curl`
   - :kbd:`git`
   - :kbd:`jq`
- 
 
-プラン設定の流れ
-----------------
-| プランを登録する流れは以下の通りとなります。
+リソースプラン設定の流れ
+------------------------
 
+| リソースプランを登録する流れは以下の通りとなります。
 
-.. image:: /images/ja/diagram/plan_setting_flow.png
-   :width: 6.68819in
-   :height: 3.35972in
-   :align: center
-   :alt: プラン設定の流れ
-
-
+#. | 現状のリソースプラン確認
+#. | リソースプランの定義を作成
+#. | リソースプランの定義を適用
 
 事前準備
 --------
+
 | GitHub リポジトリから取得した資材の中にある、シェルスクリプトを実行しオーガナイゼーションを作成します。
 | confファイルは、各種設定・取得シェルで使用します。
 
@@ -88,7 +103,7 @@
       git clone https://github.com/exastro-suite/exastro-platform.git
 
 
-#. 取得した資材のtoolsフォルダに移動し、オーガナイゼーション作成用シェルスクリプト内のAPI実行先URLを、Platform管理者用サイトアドレスに変更します。
+#. 取得した資材のtoolsフォルダに移動し、オーガナイゼーション作成用シェルスクリプト内のAPI実行先URLを、システム管理者用サイトアドレスに変更します。
 
    .. code-block:: bash
 
@@ -100,14 +115,19 @@
 
      .. code-block:: bash
         
-        CONF_BASE_URL={Platform管理者用サイトアドレス}
+        CONF_BASE_URL={システム管理者用サイトアドレス}
         CURL_OPT=-svk
 
-| ※HTTPSで実行する場合は、 `CURL_OPT=-sv` から `CURL_OPT=-svk` に変更してください。
+   .. tip::
+       | 自己証明書を利用している場合、証明書エラーが発生します。
+       | 設定ファイル内の :kbd:`CURL_OPT=-sv` を :kbd:`CURL_OPT=-svk` に変更することで証明書エラーを回避できますが、認証機関から発行された正しい証明書をインストールすることを推奨します。
 
 
-プラン設定項目の確認
---------------------
+リソースプラン設定項目の確認
+----------------------------
+
+| 新たなリソースプランを作成するにあたって、指定可能なリソースの種類(ID)を確認します。
+
 - コマンド
     
   .. code-block:: bash
@@ -119,8 +139,8 @@
 
   .. code-block:: bash
 
-      your username : Platform管理者自身のユーザー名を入力します
-      your password : Platform管理者自身のパスワードを入力します
+      your username : システム管理者自身のユーザー名を入力します
+      your password : システム管理者自身のパスワードを入力します
 
 - 成功時の結果表示
   
@@ -166,8 +186,8 @@
 
   .. code-block:: bash
 
-      BASE64_BASIC=$(echo -n "Platform管理者のユーザー名を設定してください:Platform管理者のパスワードを設定してください" | base64)
-      BASE_URL=Platform管理者用サイトアドレスを設定してください
+      BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
+      BASE_URL=システム管理者用サイトアドレスを設定してください
 
       curl -k -X GET \
           -H "Content-Type: application/json" \
@@ -176,15 +196,15 @@
           "${BASE_URL}/api/platform/plan_items"
 
 
-プラン登録
-----------
+リソースプラン登録
+------------------
 
-- 登録するプランのjsonファイルを設定
+- 登録するリソースプランのjsonファイルを設定
     
   | 取得した toolsフォルダ配下にある、 `add-plan.sample.json` を コピーして使用してください。
 
 
-- 登録するPlanの設定
+- 登録するリソースプランの設定
     
   | add-plan.jsonにコピーした例
 
@@ -208,11 +228,11 @@
           }
       } 
 
-  ※limitsは、プラン設定項目の確認で取得した内容をもとに作成します
+  ※limitsは、リソースプラン設定項目の確認で取得した内容をもとに作成します
 
 - 項目説明
 
-  .. list-table:: プラン設定項目
+  .. list-table:: リソースプラン設定項目
      :widths: 20, 20, 40
      :header-rows: 1
      :align: left
@@ -221,18 +241,18 @@
        - 項目の内容
        - 形式
      * - id 
-       - プランID 
+       - リソースプランID 
        - | 英小文字、数字、ハイフン、アンダースコア(最大３６文字)
          | ※先頭文字は英小文字であること
          | ※予約語(後述)に合致しないこと
      * - name 
-       - プラン名
+       - リソースプラン名
        - 最大２５５文字
      * - informations.description 
        - 説明
        - 最大２５５文字
      * - limits.xxxxxx.xxxxx
-       - 取得したプラン項目の内容を設定
+       - 取得したリソースプラン項目の内容を設定
        - 数値
  
 - コマンド
@@ -246,8 +266,8 @@
    
   .. code-block:: bash
 
-      your username : Platform管理者自身のユーザー名を入力します
-      your password : Platform管理者自身のパスワードを入力します
+      your username : システム管理者自身のユーザー名を入力します
+      your password : システム管理者自身のパスワードを入力します
 
 - 成功時の結果表示
   
@@ -294,8 +314,8 @@
 
   .. code-block:: bash
 
-    BASE64_BASIC=$(echo -n "Platform管理者のユーザー名を設定してください:Platform管理者のパスワードを設定してください" | base64)
-    BASE_URL=Platform管理者用サイトアドレスを設定してください
+    BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
+    BASE_URL=システム管理者用サイトアドレスを設定してください
 
     curl -k -X POST \
         -H "Content-Type: application/json" \
@@ -318,8 +338,8 @@
     EOF
 
 
-設定済みプランの確認 
---------------------
+設定済みリソースプランの確認 
+----------------------------
 
 - コマンド
    
@@ -332,8 +352,8 @@
    
   .. code-block:: bash
 
-     your username : Platform管理者自身のユーザー名を入力します
-     your password : Platform管理者自身のパスワードを入力します
+     your username : システム管理者自身のユーザー名を入力します
+     your password : システム管理者自身のパスワードを入力します
 
 
 - 成功時の結果表示
@@ -395,8 +415,8 @@
 
   .. code-block:: bash
 
-    BASE64_BASIC=$(echo -n "Platform管理者のユーザー名を設定してください:Platform管理者のパスワードを設定してください" | base64)
-    BASE_URL=Platform管理者用サイトアドレスを設定してください
+    BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
+    BASE_URL=システム管理者用サイトアドレスを設定してください
 
     curl -k -X GET \
         -H "Content-Type: application/json" \
@@ -405,18 +425,18 @@
         "${BASE_URL}/api/platform/plans"
 
 
-オーガナイゼーションへのプラン設定
-----------------------------------
+オーガナイゼーションへのリソースプラン設定
+------------------------------------------
 
-- 登録するプランのjsonファイルを設定します。
+- 登録するリソースプランのjsonファイルを設定します。
 
   | 取得した toolsフォルダ配下にある、add-organization-plan.sample.json を コピーして使用してください。
 
 - 登録するPlanの設定
   
-  | 例はオーガナイゼーションID:org1、プランID:plan-standardを例として説明します。
+  | 例はオーガナイゼーションID:org1、リソースプランID:plan-standardを例として説明します。
   | 
-  | add-org1-plan.jsonにコピーした例） 
+  | （add-org1-plan.jsonにコピーした例）
 
 
   .. code-block:: bash
@@ -433,7 +453,7 @@
 
 - 項目説明
   
-  .. list-table:: オーガナイゼーションへのプラン設定項目
+  .. list-table:: オーガナイゼーションへのリソースプラン設定項目
      :widths: 20, 20, 40
      :header-rows: 1
      :align: left
@@ -442,10 +462,10 @@
        - 項目の内容
        - 形式
      * - id 
-       - プランID 
-       - プラン設定で設定したプランID
+       - リソースプランID 
+       - リソースプラン設定で設定したリソースプランID
      * - start_datetime 
-       - プラン開始日 
+       - リソースプラン開始日 
        - 日時形式、時分秒必須
 
 
@@ -460,10 +480,10 @@
    
   .. code-block:: bash
 
-     organization id : プラン設定するorganization idを入力します
+     organization id : リソースプランを設定するorganization idを入力します
      
-     your username : Platform管理者自身のユーザー名を入力します
-     your password : Platform管理者自身のパスワードを入力します
+     your username : システム管理者自身のユーザー名を入力します
+     your password : システム管理者自身のパスワードを入力します
 
 - 成功時の結果表示
   
@@ -510,9 +530,9 @@
   
   .. code-block:: bash
 
-      BASE64_BASIC=$(echo -n "Platform管理者のユーザー名を設定してください:Platform管理者のパスワードを設定してください" | base64)
-      BASE_URL=Platform管理者用サイトアドレスを設定してください
-      ORG_ID=プラン設定するorganization idを設定してください
+      BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
+      BASE_URL=システム管理者用サイトアドレスを設定してください
+      ORG_ID=リソースプランを設定するorganization idを設定してください
 
       curl -k -X POST \
           -H "Content-Type: application/json" \
@@ -526,9 +546,70 @@
       }
       EOF
 
+設定済みオーガナイゼーションリソースプランの確認
+------------------------------------------------
 
-オーガナイゼーションへのプラン解除
-----------------------------------
+- コマンド
+ 
+  .. code-block:: bash
+
+     ./get-organization-plan-list.sh
+
+- コマンド実行後に入力（入力例）
+ 
+  .. code-block:: bash
+
+    organization id : 取得するorganization idを入力します
+    
+    your username : システム管理者自身のユーザー名を入力します
+    your password : システム管理者自身のパスワードを入力します
+
+- 成功時の結果表示
+  
+  | `"result": "000-00000"` が、成功したことを示しています。
+   
+  .. code-block:: bash
+
+    < HTTP/1.1 200 OK
+    < Date: Mon, 30 Jan 2023 07:47:35 GMT
+    < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
+    < Content-Length: 432
+    < Content-Type: application/json
+    < 
+    { [432 bytes data]
+    * Connection #0 to host platform-auth left intact
+    {
+      "data": [
+        {
+          "create_timestamp": "2023-01-30T07:44:29.000Z",
+          "create_user": "1c83218e-1f6c-42ba-8b9a-b028bc63a765",
+          "id": "plan-standard",
+          "last_update_timestamp": "2023-01-30T07:44:29.000Z",
+          "last_update_user": "1c83218e-1f6c-42ba-8b9a-b028bc63a765",
+          "start_datetime": "2022-12-01 00:00:00"
+        }
+      ],
+      "message": "SUCCESS",
+      "result": "000-00000",
+      "ts": "2023-01-30T07:47:35.542Z"
+    }
+
+- RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。
+  
+  .. code-block:: bash
+
+    BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
+    BASE_URL=システム管理者用サイトアドレスを設定してください
+    ORG_ID=取得するorganization idを設定してください
+
+    curl -k -X GET \
+        -H "Content-Type: application/json" \
+        -H "Authorization: basic ${BASE64_BASIC}" \
+        -d  @- \
+        "${BASE_URL}/api/platform/${ORG_ID}/plans"
+
+オーガナイゼーションへのリソースプラン解除
+------------------------------------------
 
 - コマンド
  
@@ -536,16 +617,15 @@
 
      ./delete-organization-plan.sh
 
-
 - コマンド実行後に入力（入力例）
  
   .. code-block:: bash
 
-      organization id : プラン解除するorganization idを入力します
-      start datetime (yyyy-mm-dd hh:mm:ss) : プラン解除するstart datetimeを入力します (yyyy-mm-dd hh:mm:ss形式)
+      organization id : リソースプランを解除するorganization idを入力します
+      start datetime (yyyy-mm-dd hh:mm:ss) : リソースプランを解除するstart datetimeを入力します (yyyy-mm-dd hh:mm:ss形式)
 
-      your username : Platform管理者自身のユーザー名を入力します
-      your password : Platform管理者自身のパスワードを入力します
+      your username : システム管理者自身のユーザー名を入力します
+      your password : システム管理者自身のパスワードを入力します
 
 - 成功時の結果表示
   
@@ -592,13 +672,70 @@
   
   .. code-block:: bash
 
-      BASE64_BASIC=$(echo -n "Platform管理者のユーザー名を設定してください:Platform管理者のパスワードを設定してください" | base64)
-      BASE_URL=Platform管理者用サイトアドレスを設定してください
-      ORG_ID=プラン解除するorganization idを設定してください
-      START_DATETIME=プラン解除するプラン開始日時を設定してください(yyyy-mm-dd hh:mm:ss形式)
+      BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
+      BASE_URL=システム管理者用サイトアドレスを設定してください
+      ORG_ID=リソースプラン解除するorganization idを設定してください
+      START_DATETIME=リソースプラン解除するリソースプラン開始日時を設定してください(yyyy-mm-dd hh:mm:ss形式)
 
       curl -k -X DELETE \
           -H "Content-Type: application/json" \
           -H "Authorization: basic ${BASE64_BASIC}" \
           -d  @- \
           "${BASE_URL}/api/platform/${ORG_ID}/plans/${START_DATETIME}"
+
+オーガナイゼーション毎の使用状況確認
+------------------------------------
+
+- コマンド
+ 
+  .. code-block:: bash
+
+    ./get-usage-list.sh
+
+- コマンド実行後に入力（入力例）
+ 
+  .. code-block:: bash
+
+    organization id : 取得するorganization idを入力します（省略時は全オーガナイゼーション）
+    
+    your username : システム管理者自身のユーザー名を入力します
+    your password : システム管理者自身のパスワードを入力します
+
+- 成功時の結果表示
+  
+  | `"result": "000-00000"` が、成功したことを示しています。
+   
+  .. code-block:: bash
+
+    < HTTP/1.1 200 OK
+    < Date: Mon, 30 Jan 2023 08:18:57 GMT
+    < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
+    < Content-Length: 432
+    < Content-Type: application/json
+    < 
+    { [432 bytes data]
+    * Connection #0 to host platform-auth left intact
+    {
+      "data": [
+        {
+          "organization_id": "org1",
+          "usages": [
+            {
+              "current_value": 0,
+              "id": "platform.workspaces"
+            },
+            {
+              "current_value": 1,
+              "id": "platform.users"
+            },
+            {
+              "current_value": 0,
+              "id": "platform.roles"
+            }
+          ]
+        }
+      ],
+      "message": "SUCCESS",
+      "result": "000-00000",
+      "ts": "2023-01-30T08:18:57.887Z"
+    }

@@ -18,7 +18,6 @@ Organization (オーガナイゼーション)
 .. figure:: /images/ja/diagram/overview_of_the_organization.png
     :alt: オーガナイゼーション全体図
 
-
 オーガナイゼーションの作成
 ==========================
 
@@ -56,7 +55,9 @@ Organization (オーガナイゼーション)
     - :kbd:`curl`
     - :kbd:`git`
     - :kbd:`jq`
- 
+
+.. _organization_creation:
+
 オーガナイゼーション作成
 ------------------------
 
@@ -408,7 +409,7 @@ Organization (オーガナイゼーション)
             organization manager's first name : admin            # オーガナイゼーション管理者の名を入力します
             organization manager's last name : admin             # オーガナイゼーション管理者の姓を入力します
             organization manager's initial password : password   # オーガナイゼーション管理者の初期パスワードを入力します
-            organization plan id (optional) :                    # プランを指定(任意)します ※ 初期状態では未作成のため入力不要
+            organization plan id (optional) :                    # リソースプランを指定(任意)します ※ 初期状態では未作成のため入力不要
 
             your username : INPUT-YOUR-USERNAME                  # システム管理者のユーザ名を入力します
             your password : INPUT-USER-PASSWORD                  # システム管理者のパスワードを入力します
