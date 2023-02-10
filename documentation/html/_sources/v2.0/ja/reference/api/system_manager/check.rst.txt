@@ -5,7 +5,6 @@
 .. toctree::
    :maxdepth: 1
    
-   ..certification
-   
+   certification
    platform-api
    ita-api-admin

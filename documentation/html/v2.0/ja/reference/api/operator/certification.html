@@ -167,9 +167,8 @@
 <section id="id2">
 <h3>はじめに<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">本内容はExastro Suite (IT Automation 2.0系)のAPIを利用するための手順について記載しています。</div>
-<div class="line">※Exastro PlatformおよびExastroIT Automationの全てのAPIはどちらの方法でも利用可能です。（※token発行APIを除く）</div>
-<div class="line"><br /></div>
+<div class="line">本内容はExastro Suite (IT Automation 2.0系)のAPIを利用するためのユーザー向け手順について記載しています。</div>
+<div class="line">Exastro Suite (IT Automation 2.0系)のAPIの呼び出し方法として、次の２つがあります。</div>
 </div>
 <ul class="simple">
 <li><p>APIの呼び出し方法</p>
@@ -179,12 +178,15 @@
 </ul>
 </li>
 </ul>
+<div class="line-block">
+<div class="line">※Exastro PlatformおよびExastroIT Automationの全てのAPIはどちらの方法でも利用することが出来ます。（※token発行APIを除く）</div>
+</div>
 </section>
 <section id="basic">
 <h3>Basic認証<a class="headerlink" href="#basic" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">ユーザー名、パスワードを指定してAPIを呼出す、簡易的な認証方式として利用可能です。</div>
-<div class="line">使用するユーザーが二要素認証を設定している場合は、この認証方式は使用できません。</div>
+<div class="line">ユーザー名、パスワードを指定してAPIを呼出す、簡易的な認証方式として利用することが出来ます。</div>
+<div class="line">使用するユーザーが二要素認証を設定している場合は、この認証方式は使用出来ません。</div>
 </div>
 <section id="id3">
 <h4>実行手順（サンプル）<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h4>
@@ -205,8 +207,8 @@ curl<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</s
 <section id="bearer">
 <h3>Bearer認証<a class="headerlink" href="#bearer" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">アクセストークンを指定してAPIを呼出す、認証方式です。</div>
-<div class="line">本実行手順の中には２つのトークンがあります、それぞれの役割・特徴は次の通りです</div>
+<div class="line">アクセストークンを指定してAPIを呼び出す認証方式です。</div>
+<div class="line">本実行手順の中には２つのトークンがあります、それぞれの役割・特徴は次の通りです。</div>
 </div>
 <table class="docutils align-left" id="id4">
 <caption><span class="caption-text">トークンの種類</span><a class="headerlink" href="#id4" title="このテーブルへのパーマリンク">¶</a></caption>
@@ -222,14 +224,14 @@ curl<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</s
 <tbody>
 <tr class="row-even"><td><p>refresh_token</p></td>
 <td><div class="line-block">
-<div class="line">事前に準備するトークンで、access_tokenを発行するために必要になります。</div>
+<div class="line">事前に準備するトークンで、access_tokenを発行するために必要です。</div>
 <div class="line">トークンの有効期限が長い（デフォルト：1年）</div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><p>access_token</p></td>
 <td><div class="line-block">
-<div class="line">APIを呼出す際に、指定するトークン</div>
+<div class="line">APIを呼出す際に指定するトークンです。</div>
 <div class="line">トークンの有効期限が短い（デフォルト：1日）</div>
 </div>
 </td>
@@ -239,11 +241,14 @@ curl<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</s
 <section id="refresh-token">
 <h4>事前準備手順（サンプル） - refresh_tokenの払い出し<a class="headerlink" href="#refresh-token" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
-<div class="line">以下のサンプルはrefresh_tokenの払い出すサンプルです。</div>
-<div class="line">※二要素認証の設定の有無によって、パラメータに違いがあります</div>
+<div class="line">以下のサンプルはrefresh_tokenを払い出すサンプルです。</div>
+<div class="line">※二要素認証の設定の有無によって、パラメータに違いがあります。</div>
 </div>
-<ul class="simple">
-<li><p>二要素認証を設定していないユーザの場合</p></li>
+<ul>
+<li><div class="line-block">
+<div class="line">二要素認証を設定していないユーザの場合</div>
+</div>
+</li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">BASEURL</span><span class="o">=</span><span class="s2">&quot;https://severname&quot;</span>
 <span class="nv">ORGANAIZATION_ID</span><span class="o">=</span><span class="s2">&quot;オーガナイゼーションID&quot;</span>
