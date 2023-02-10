@@ -1,10 +1,10 @@
-==========
-利用者向け
-==========
+============
+ユーザー向け
+============
 
 .. toctree::
-   :maxdepth: 2
-
+   :maxdepth: 1
+   
    certification
    platform-api
    ita-api-organization
