@@ -669,17 +669,18 @@
 - RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。
   
   .. code-block:: bash
+    
+    BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
+    BASE_URL=システム管理者用サイトアドレスを設定してください
+    ORG_ID=リソースプラン解除するorganization idを設定してください
+    START_DATETIME=リソースプラン解除する開始日時を設定してください(yyyy-mm-dd hh:mm:ss形式)
 
-      BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
-      BASE_URL=システム管理者用サイトアドレスを設定してください
-      ORG_ID=リソースプラン解除するorganization idを設定してください
-      START_DATETIME=リソースプラン解除するリソースプラン開始日時を設定してください(yyyy-mm-dd hh:mm:ss形式)
+    curl -k -X DELETE \
+        -H "Content-Type: application/json" \
+        -H "Authorization: basic ${BASE64_BASIC}" \
+        "${BASE_URL}/api/platform/${ORG_ID}/plans/`echo ${START_DATETIME} | sed 's/ /%20/g;s/:/%3A/g'`"
 
-      curl -k -X DELETE \
-          -H "Content-Type: application/json" \
-          -H "Authorization: basic ${BASE64_BASIC}" \
-          -d  @- \
-          "${BASE_URL}/api/platform/${ORG_ID}/plans/${START_DATETIME}"
+
 
 オーガナイゼーション毎の使用状況確認
 ------------------------------------
