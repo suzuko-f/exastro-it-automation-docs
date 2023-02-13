@@ -166,12 +166,13 @@
 <section id="id1">
 <h2>はじめに<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
-<div class="line">本書では、Exastro IT Automation（以下、ITAとも記載する）でAnsibleオプション機能（以下、Ansible driver）として運用する為のAnsible Coreを実行エンジンとしたシステム構成と環境構築について説明します。</div>
+<div class="line">Exastro IT Automation（以下、ITAとも記載する）でAnsibleオプション機能（以下、Ansible driver）として運用する為のシステム構成と環境構築について説明します。</div>
+<div class="line">本書ではそのうちAnsible Coreを実行エンジンとしたシステム構成と環境構築について説明します。</div>
+<div class="line"><br /></div>
 <div class="line">Ansible Automation Platform による構成を行う場合は、「 <a class="reference internal" href="ansible_automation_platform.html"><span class="doc">Ansible Automation Platform</span></a> 」をご覧ください。</div>
 <div class="line"><br /></div>
-<div class="line">{{#1: 下記内容について基本機能はどこでマージするのでしょうか}}</div>
 <div class="line">ITA Ansible driverを利用するにあたっては、ITA基本機能が構築済であることが前提です。</div>
-<div class="line">ITA基本機能の構築に関しては、「 <span class="xref std std-doc">../../manuals/it_automation_base/architecture</span> 」をご覧ください。</div>
+<div class="line">ITA基本機能の構築に関しては、「 <a class="reference internal" href="../../installation/kubernetes.html"><span class="doc">Exastro IT Automation on Kubernetes</span></a> 」をご覧ください。</div>
 </div>
 </section>
 <section id="id2">
@@ -232,7 +233,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Ansible Core</p></td>
-<td><p>{{#2: 説明をお願いします。}}</p></td>
+<td><p>ITA システムと Ansible Core を同一サーバ上に構成</p></td>
 <td><p>×</p></td>
 </tr>
 </tbody>
@@ -240,11 +241,14 @@
 </section>
 <section id="id5">
 <h3>システム構成イメージ<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
-<figure class="align-default">
+<figure class="align-default" id="id11">
 <a class="reference internal image-reference" href="../../../../_images/ansible_core.png"><img alt="Ansible Core" src="../../../../_images/ansible_core.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-text">Ansible Core</span><a class="headerlink" href="#id11" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
 </figure>
-<table class="docutils align-left" id="id11">
-<caption><span class="caption-text">システム通信要件</span><a class="headerlink" href="#id11" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id12">
+<caption><span class="caption-text">システム通信要件</span><a class="headerlink" href="#id12" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 6%" />
 <col style="width: 12%" />
@@ -296,7 +300,7 @@
 </tbody>
 </table>
 <div class="line-block">
-<div class="line">※1「2.1システム構成」の構成イメージに上記番号と紐づく通信番号を記載。</div>
+<div class="line">※1 Ansible Coreの構成イメージの番号と紐づく通信番号を記載。</div>
 <div class="line">※2 ポート番号は標準的なポート番号を記載。</div>
 <div class="line">※3 代表的な例を記載。Ansibleモジュールにより利用プロトコルが異なる。</div>
 </div>
@@ -305,13 +309,13 @@
 <section id="id6">
 <h2>システム要件<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
-<div class="line">Ansible driver はITAシステムのシステム要件に準拠するため、「 <span class="xref std std-doc">../../manuals/it_automation_base/architecture</span> 」を参照してください。</div>
+<div class="line">Ansible driver はITAシステムのシステム要件に準拠するため、「 <a class="reference internal" href="../../installation/kubernetes.html"><span class="doc">Exastro IT Automation on Kubernetes</span></a> 」を参照してください。</div>
 <div class="line">ここではAnsible Coreの要件を記載します。</div>
 </div>
 <section id="id7">
 <h3>Ansible Core<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h3>
-<table class="docutils align-left" id="id12">
-<caption><span class="caption-text">Ansible Core システム要件</span><a class="headerlink" href="#id12" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id13">
+<caption><span class="caption-text">Ansible Core システム要件</span><a class="headerlink" href="#id13" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 35%" />
 <col style="width: 20%" />
@@ -354,8 +358,8 @@
 </tr>
 </tbody>
 </table>
-<table class="docutils align-left" id="id13">
-<caption><span class="caption-text">Ansible Driver必要Linuxコマンド</span><a class="headerlink" href="#id13" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id14">
+<caption><span class="caption-text">Ansible Driver必要Linuxコマンド</span><a class="headerlink" href="#id14" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 27%" />
 <col style="width: 73%" />
@@ -378,10 +382,10 @@
 <div class="line-block">
 <div class="line">ITAとAnsible Core 間のPlaybook連携について説明します。</div>
 </div>
-<figure class="align-default" id="id14">
+<figure class="align-default" id="id15">
 <a class="reference internal image-reference" href="../../../../_images/playbook_link_containers.png"><img alt="ITAとAnsible Core間のPlaybook連携図" src="../../../../_images/playbook_link_containers.png" style="width: 750px;" /></a>
 <figcaption>
-<p><span class="caption-text">ITAとAnsible Core間のPlaybook連携図</span><a class="headerlink" href="#id14" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">ITAとAnsible Core間のPlaybook連携図</span><a class="headerlink" href="#id15" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </section>

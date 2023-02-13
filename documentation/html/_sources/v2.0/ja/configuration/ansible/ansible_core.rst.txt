@@ -4,15 +4,17 @@ Ansible Core
 
 はじめに
 ========================================================
-| 本書では、Exastro IT Automation（以下、ITAとも記載する）でAnsibleオプション機能（以下、Ansible driver）として運用する為のAnsible Coreを実行エンジンとしたシステム構成と環境構築について説明します。
+| Exastro IT Automation（以下、ITAとも記載する）でAnsibleオプション機能（以下、Ansible driver）として運用する為のシステム構成と環境構築について説明します。
+| 本書ではそのうちAnsible Coreを実行エンジンとしたシステム構成と環境構築について説明します。
+|
 | Ansible Automation Platform による構成を行う場合は、「 :doc:`./ansible_automation_platform` 」をご覧ください。
 |
-| {{#1: 下記内容について基本機能はどこでマージするのでしょうか}}
 | ITA Ansible driverを利用するにあたっては、ITA基本機能が構築済であることが前提です。
-| ITA基本機能の構築に関しては、「 :doc:`../../manuals/it_automation_base/architecture` 」をご覧ください。
+| ITA基本機能の構築に関しては、「 :doc:`../../installation/kubernetes` 」をご覧ください。
 
 機能
 ========================================================
+
 | Ansible driverは以下の機能を提供します。
 
 .. table::  機能名
@@ -70,7 +72,7 @@ Ansible Core
      - 説明
      - Ansibleスケールアウト可否
    * - Ansible Core
-     - {{#2: 説明をお願いします。}}
+     - ITA システムと Ansible Core を同一サーバ上に構成 
      - ×
 
 
@@ -81,7 +83,7 @@ Ansible Core
     :alt: Ansible Core
     :width: 800px
 
-
+    Ansible Core
 
 .. list-table:: システム通信要件
    :widths: 10 20 20 40 80
@@ -109,7 +111,7 @@ Ansible Core
        | (ssh [22/tcp] telnet [23/tcp] 等 ※3）
      - 自動構成の対象機器へのコマンド実行
 
-| ※1「2.1システム構成」の構成イメージに上記番号と紐づく通信番号を記載。
+| ※1 Ansible Coreの構成イメージの番号と紐づく通信番号を記載。
 | ※2 ポート番号は標準的なポート番号を記載。
 | ※3 代表的な例を記載。Ansibleモジュールにより利用プロトコルが異なる。
 
@@ -117,7 +119,7 @@ Ansible Core
 システム要件
 ========================================================
 
-| Ansible driver はITAシステムのシステム要件に準拠するため、「 :doc:`../../manuals/it_automation_base/architecture` 」を参照してください。
+| Ansible driver はITAシステムのシステム要件に準拠するため、「 :doc:`../../installation/kubernetes` 」を参照してください。
 | ここではAnsible Coreの要件を記載します。
 
 

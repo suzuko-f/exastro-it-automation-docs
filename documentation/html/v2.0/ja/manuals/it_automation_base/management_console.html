@@ -26,6 +26,7 @@
     <script src="../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script src="../../../../_static/translations.js"></script>
     <script src="../../../../_static/jquery-3.6.3.min.js"></script>
     <script src="../../../../_static/exastro_documents.js?v=1"></script>
@@ -127,64 +128,24 @@
   <ul>
 <li><a class="reference internal" href="#">管理コンソール</a><ul>
 <li><a class="reference internal" href="#id2">はじめに</a></li>
-<li><a class="reference internal" href="#ita">ITAシステム　管理コンソールの概要</a><ul>
-<li><a class="reference internal" href="#id3">ITA管理コンソールについて</a><ul>
-<li><a class="reference internal" href="#id4">画面説明 ログイン画面、ログイン情報</a><ul>
-<li><a class="reference internal" href="#id5">ログイン</a></li>
-<li><a class="reference internal" href="#id6">ワークスペース切替</a></li>
-<li><a class="reference internal" href="#id7">ロール一覧</a></li>
-<li><a class="reference internal" href="#id8">バージョン確認</a></li>
-<li><a class="reference internal" href="#id9">ログアウト</a></li>
+<li><a class="reference internal" href="#id3">概要</a></li>
+<li><a class="reference internal" href="#id4">画面説明</a><ul>
+<li><a class="reference internal" href="#dashboard">DashBoard</a></li>
+<li><a class="reference internal" href="#id5">管理コンソールへのアクセス方法</a></li>
+<li><a class="reference internal" href="#id6">画面構成</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id10">画面説明 メインメニュー</a><ul>
-<li><a class="reference internal" href="#id11">画面構成</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id12">画面説明 基本画面構成</a><ul>
-<li><a class="reference internal" href="#id13">一覧タブ</a></li>
-<li><a class="reference internal" href="#id14">変更履歴タブ</a></li>
+<li><a class="reference internal" href="#id7">各メニュー共通操作</a><ul>
+<li><a class="reference internal" href="#id8">一覧タブ</a></li>
+<li><a class="reference internal" href="#id9">変更履歴タブ</a></li>
 <li><a class="reference internal" href="#management-console-download-all-and-edit-file-uploads">全件ダウンロード・ファイル一括登録</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id16">画面説明 メニューの操作方法</a><ul>
-<li><a class="reference internal" href="#id17">システム設定</a></li>
-<li><a class="reference internal" href="#id18">メニューグループ管理</a></li>
+<li><a class="reference internal" href="#menu-unique-operation">各メニュー個別情報</a><ul>
+<li><a class="reference internal" href="#id12">システム設定</a></li>
+<li><a class="reference internal" href="#id13">メニューグループ管理</a></li>
 <li><a class="reference internal" href="#menu-list">メニュー管理</a></li>
-<li><a class="reference internal" href="#id20">ロール・メニュー紐付管理</a></li>
-<li><a class="reference internal" href="#id21">ファイル項目-ファイル削除機能</a></li>
-<li><a class="reference internal" href="#id22">ファイル項目-ファイルダウンロード機能</a></li>
-<li><a class="reference internal" href="#id23">パスワード項目-パスワード削除機能</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#backyard">BackYardコンテンツ</a><ul>
-<li><a class="reference internal" href="#id24">BackYard処理一覧</a></li>
-<li><a class="reference internal" href="#id25">BackYard処理説明</a><ul>
-<li><a class="reference internal" href="#id26">メール送信</a></li>
-<li><a class="reference internal" href="#id27">ロール紐付確認＋クリーニング</a></li>
-<li><a class="reference internal" href="#id28">投入オペレーション確認＋クリーニング</a></li>
-<li><a class="reference internal" href="#id29">ファイル確認＋クリーニング</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id30">運用操作</a><ul>
-<li><a class="reference internal" href="#installation-related">インストールの開始</a></li>
-<li><a class="reference internal" href="#delete-operation-execution-history-routinely">オペレーション作業履歴の定期削除</a></li>
-<li><a class="reference internal" href="#change-log-level">ログレベルの変更</a></li>
-<li><a class="reference internal" href="#maintenance">メンテナンス</a><ul>
-<li><a class="reference internal" href="#id35">ITAシステム 独立型プロセスの起動/停止/再起動</a><ul>
-<li><a class="reference internal" href="#id36">プロセス起動</a></li>
-<li><a class="reference internal" href="#id37">プロセス停止</a></li>
-<li><a class="reference internal" href="#id38">プロセス再起動</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#id15">ロール・メニュー紐付管理</a></li>
 </ul>
 </li>
 </ul>
@@ -217,19 +178,14 @@
 <div class="line">本書は、ITAシステムの管理コンソールの概要および操作方法について記載したものです。</div>
 </div>
 </section>
-<section id="ita">
-<h2>ITAシステム　管理コンソールの概要<a class="headerlink" href="#ita" title="この見出しへのパーマリンク">¶</a></h2>
-<div class="line-block">
-<div class="line">本章ではITAを操作するための管理コンソールについて説明します。</div>
-</div>
 <section id="id3">
-<h3>ITA管理コンソールについて<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h3>
+<h2>概要<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
-<div class="line">ITA管理コンソールでは、初期メニュー以外に、利用部門が独自の情報をITAのデータベース上で管理する場合、管理レベルにあった個別メニューの作成が出来ます。</div>
+<div class="line">管理コンソールでは、初期メニュー以外に、利用部門が独自の情報をITAのデータベース上で管理する場合、管理レベルにあった個別メニューの作成が出来ます。</div>
 <div class="line">個別メニューの登録／変更／削除をご使用される際は、製品サポートへお問い合わせ下さい。</div>
 </div>
-<table class="docutils align-left" id="id39">
-<caption><span class="caption-text">Webコンテンツメニュー/画面一覧</span><a class="headerlink" href="#id39" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id16">
+<caption><span class="caption-text">Webコンテンツメニュー/画面一覧</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>No.</strong></p></th>
 <th class="head"><p><strong>メニューグループ</strong></p></th>
@@ -238,107 +194,63 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>1</p></td>
-<td rowspan="4"><p>共通部</p></td>
-<td><p>ログイン画面</p></td>
-</tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>ワークスペース切替</p></td>
-</tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>ロール一覧</p></td>
-</tr>
-<tr class="row-odd"><td><p>5</p></td>
-<td><p>バージョン確認</p></td>
-</tr>
-<tr class="row-even"><td><p>4</p></td>
 <td rowspan="5"><p>ITA管理コンソール</p></td>
 <td><p>メインメニュー</p></td>
 </tr>
-<tr class="row-odd"><td><p>5</p></td>
+<tr class="row-odd"><td><p>2</p></td>
 <td><p>システム設定</p></td>
 </tr>
-<tr class="row-even"><td><p>6</p></td>
+<tr class="row-even"><td><p>3</p></td>
 <td><p>メニューグループ管理</p></td>
 </tr>
-<tr class="row-odd"><td><p>7</p></td>
+<tr class="row-odd"><td><p>4</p></td>
 <td><p>メニュー管理</p></td>
 </tr>
-<tr class="row-even"><td><p>8</p></td>
+<tr class="row-even"><td><p>5</p></td>
 <td><p>ロール・メニュー紐付管理</p></td>
 </tr>
 </tbody>
 </table>
+</section>
 <section id="id4">
-<h4>画面説明 ログイン画面、ログイン情報<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h4>
-<section id="id5">
-<h5>ログイン<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h5>
+<h2>画面説明<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
-<div class="line"><strong>{{#1:インストール後の「ログインID」と「パスワード」は固定ではない認識で合っているでしょうか。}}</strong></div>
-<div class="line">ITAシステムのメニュー画面に未ログインでアクセスした場合、「ログイン画面」が表示されます。</div>
-<div class="line">ユーザー登録後に初めてログインした際は「パスワード変更画面」に遷移します。</div>
+<div class="line">管理コンソールの画面について説明します。</div>
 </div>
+<section id="dashboard">
+<h3>DashBoard<a class="headerlink" href="#dashboard" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">DashBoardにはメニューグループの一覧が表示されます。</div>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../_images/DashBoard.png"><img alt="DashBoard" src="../../../../_images/DashBoard.png" style="width: 800px;" /></a>
+</figure>
+</section>
+<section id="id5">
+<h3>管理コンソールへのアクセス方法<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">ログインに成功したITAはメインメニューに遷移します。</div>
+<div class="line">メインメニューのDashBoardから管理コンソールを選ぶことで、管理コンソールへ遷移出来ます。</div>
+<div class="line">左側のメニューグループタブから管理コンソールを選ぶことで、管理コンソール内のメニューを指定して遷移することも出来ます。</div>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../_images/MainMenu.gif"><img alt="メインメニュー" src="../../../../_images/MainMenu.gif" style="width: 800px;" /></a>
+</figure>
 </section>
 <section id="id6">
-<h5>ワークスペース切替<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h5>
-<div class="line-block">
-<div class="line">各メニュー右上のユーザー名表示部分をクリックすると、ユーザーがアクセスできるワークスペースを確認することが可能です。</div>
-<div class="line">ワークスペース名をクリックすると選択したワークスペースのメインメニュー画面へ遷移します。</div>
-</div>
-</section>
-<section id="id7">
-<h5>ロール一覧<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h5>
-<div class="line-block">
-<div class="line">各メニュー右上のユーザー名表示部分をクリックすると、自分がどのロールに所属しているかを確認することが可能です。</div>
-</div>
-</section>
-<section id="id8">
-<h5>バージョン確認<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h5>
-<div class="line-block">
-<div class="line">各メニュー右上のユーザー名表示部分をクリックし、 <span class="guilabel">バージョン確認</span> をクリックするとインストールされているITAのバージョンとドライバを確認することが可能です。</div>
-</div>
-</section>
-<section id="id9">
-<h5>ログアウト<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h5>
-<div class="line-block">
-<div class="line">各メニュー右上のユーザー名表示部分をクリックし、 <span class="guilabel">ログアウト</span> をクリックするとシステムからログアウトします。</div>
-<div class="line">ログアウト後はログイン画面に遷移します。</div>
-</div>
-<figure class="align-center">
-<a class="reference internal image-reference" href="../../../../_images/ITA_login.gif"><img alt="ITAログイン画面" src="../../../../_images/ITA_login.gif" style="width: 800px;" /></a>
-</figure>
-</section>
-</section>
-<section id="id10">
-<h4>画面説明 メインメニュー<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">¶</a></h4>
-<div class="line-block">
-<div class="line">メインメニューにはDashBoardが表示されます。</div>
-</div>
-<section id="id11">
-<h5>画面構成<a class="headerlink" href="#id11" title="この見出しへのパーマリンク">¶</a></h5>
-<div class="line-block">
-<div class="line">各メニューグループのパネルが表示されます。</div>
-<div class="line">パネルをクリックすることで指定のメニューグループのメインメニューへ遷移出来ます。</div>
-<div class="line">インストールしたドライバのみが表示されます。</div>
-</div>
-<figure class="align-center">
-<a class="reference internal image-reference" href="../../../../_images/main_menu.gif"><img alt="メインメニュー" src="../../../../_images/main_menu.gif" style="width: 800px;" /></a>
-</figure>
-</section>
-</section>
-<section id="id12">
-<h4>画面説明 基本画面構成<a class="headerlink" href="#id12" title="この見出しへのパーマリンク">¶</a></h4>
+<h3>画面構成<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">ITAシステムが提供する各メニュー画面は基本的に同じ要素で構成されています。</div>
 <div class="line">その構成要素は次の通りです。</div>
 </div>
-<figure class="align-center" id="id40">
+<figure class="align-center" id="id17">
 <a class="reference internal image-reference" href="../../../../_images/画面構成.png"><img alt="画面構成" src="../../../../_images/%E7%94%BB%E9%9D%A2%E6%A7%8B%E6%88%90.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-text">画面構成</span><a class="headerlink" href="#id40" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">画面構成</span><a class="headerlink" href="#id17" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<table class="docutils align-left" id="id41">
-<caption><span class="caption-text">画面構成一覧</span><a class="headerlink" href="#id41" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id18">
+<caption><span class="caption-text">画面構成一覧</span><a class="headerlink" href="#id18" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>No.</strong></p></th>
 <th class="head"><p><strong>画面名</strong></p></th>
@@ -365,11 +277,16 @@
 </tr>
 </tbody>
 </table>
+</section>
+</section>
+<section id="id7">
+<h2>各メニュー共通操作<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
-<div class="line">各メニュー操作部の構成要素に対する操作方法を説明します。</div>
+<div class="line">各メニュー操作部共通の操作方法を説明します。</div>
+<div class="line">各メニュー個別の情報は<a class="reference internal" href="#menu-unique-operation"><span class="std std-ref">各メニュー個別情報</span></a>からそれぞれのメニューを参照して下さい。</div>
 </div>
-<section id="id13">
-<h5>一覧タブ<a class="headerlink" href="#id13" title="この見出しへのパーマリンク">¶</a></h5>
+<section id="id8">
+<h3>一覧タブ<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">登録されている項目の確認や登録/更新/廃止/復活を行うことが出来ます。</div>
 </div>
@@ -553,7 +470,7 @@
 <ul id="duplicate">
 <li><div class="line-block">
 <div class="line"><strong>複製</strong></div>
-<div class="line">登録されている項目の情報を転用して登録することが可能です。</div>
+<div class="line">登録されている項目の情報を転用して登録することが可能です</div>
 </div>
 <ol class="arabic">
 <li><div class="line-block">
@@ -570,9 +487,6 @@
 <figure class="align-center">
 <a class="reference internal image-reference" href="../../../../_images/menu_copy.gif"><img alt="編集の操作" src="../../../../_images/menu_copy.gif" style="width: 800px;" /></a>
 </figure>
-<div class="line-block">
-<div class="line"><strong>{{#2:sensitive設定について、下記の「Ansible-LegacyRole」の代入値管理メニューのほかにsensitive設定が登録編集出来るメニューはあるでしょうか。}}</strong></div>
-</div>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <ul>
@@ -580,17 +494,13 @@
 <div class="line">対象項目がパスワード項目の場合、複製処理は行われません。</div>
 </div>
 </li>
-<li><div class="line-block">
-<div class="line">Ansible-LegacyRoleメニューグループ＞代入値管理メニューのように、Sensitive設定が存在する項目に関しては、Sensitive設定が「OFF」の場合のみ複製処理を行います。</div>
-</div>
-</li>
 </ul>
 </div>
 </li>
 </ul>
 </section>
-<section id="id14">
-<h5>変更履歴タブ<a class="headerlink" href="#id14" title="この見出しへのパーマリンク">¶</a></h5>
+<section id="id9">
+<h3>変更履歴タブ<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">各メニューで、登録した項目の変更履歴を表示することが出来ます。</div>
 </div>
@@ -630,20 +540,20 @@
 <li><div class="line-block">
 <div class="line">データシート「マスタ001」</div>
 </div>
-<figure class="align-center" id="id42">
+<figure class="align-center" id="id19">
 <a class="reference internal image-reference" href="../../../../_images/データシート「マスタ001」.png"><img alt="「メニュー定義・作成」メニューで作成したデータシート" src="../../../../_images/%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B7%E3%83%BC%E3%83%88%E3%80%8C%E3%83%9E%E3%82%B9%E3%82%BF001%E3%80%8D.png" style="width: 6in;" /></a>
 <figcaption>
-<p><span class="caption-text">「メニュー定義・作成」メニューで作成したデータシート</span><a class="headerlink" href="#id42" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">「メニュー定義・作成」メニューで作成したデータシート</span><a class="headerlink" href="#id19" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line">パラメータシート「ぱらむ001」</div>
 </div>
-<figure class="align-center" id="id43">
+<figure class="align-center" id="id20">
 <a class="reference internal image-reference" href="../../../../_images/パラメータシート「ぱらむ001」.png"><img alt="「メニュー定義・作成」メニューで作成したパラメータシート" src="../../../../_images/%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E3%82%B7%E3%83%BC%E3%83%88%E3%80%8C%E3%81%B1%E3%82%89%E3%82%80001%E3%80%8D.png" style="width: 6in;" /></a>
 <figcaption>
-<p><span class="caption-text">「メニュー定義・作成」メニューで作成したパラメータシート</span><a class="headerlink" href="#id43" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">「メニュー定義・作成」メニューで作成したパラメータシート</span><a class="headerlink" href="#id20" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
@@ -689,33 +599,67 @@
 </div>
 </li>
 </ol>
-<figure class="align-center" id="id44">
+<figure class="align-center" id="id21">
 <a class="reference internal image-reference" href="../../../../_images/マスタ001変更履歴.png"><img alt="データシート「マスタ001」の変更履歴" src="../../../../_images/%E3%83%9E%E3%82%B9%E3%82%BF001%E5%A4%89%E6%9B%B4%E5%B1%A5%E6%AD%B4.png" style="width: 5in;" /></a>
 <figcaption>
-<p><span class="caption-text">データシート「マスタ001」の変更履歴</span><a class="headerlink" href="#id44" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">データシート「マスタ001」の変更履歴</span><a class="headerlink" href="#id21" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id45">
+<figure class="align-center" id="id22">
 <a class="reference internal image-reference" href="../../../../_images/ぱらむ001変更履歴.png"><img alt="パラメータシート「ぱらむ001」の変更履歴" src="../../../../_images/%E3%81%B1%E3%82%89%E3%82%80001%E5%A4%89%E6%9B%B4%E5%B1%A5%E6%AD%B4.png" style="width: 5in;" /></a>
 <figcaption>
-<p><span class="caption-text">パラメータシート「ぱらむ001」の変更履歴</span><a class="headerlink" href="#id45" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">パラメータシート「ぱらむ001」の変更履歴</span><a class="headerlink" href="#id22" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 </ul>
 </section>
 <section id="management-console-download-all-and-edit-file-uploads">
-<span id="id15"></span><h5>全件ダウンロード・ファイル一括登録<a class="headerlink" href="#management-console-download-all-and-edit-file-uploads" title="この見出しへのパーマリンク">¶</a></h5>
+<span id="id10"></span><h3>全件ダウンロード・ファイル一括登録<a class="headerlink" href="#management-console-download-all-and-edit-file-uploads" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">各メニュー画面に登録されている情報を一括してエクセル形式またはJSON形式でダウンロードすることが出来ます。</div>
 <div class="line">また、同じ形式のファイルで、一括して情報を登録することが出来ます。</div>
 </div>
-<figure class="align-center">
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Excel</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">JSON</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><figure class="align-center">
 <a class="reference internal image-reference" href="../../../../_images/file_all_register.gif"><img alt="ファイル一括登録の操作" src="../../../../_images/file_all_register.gif" style="width: 800px;" /></a>
 </figure>
+<ol class="arabic">
+<li><div class="line-block">
+<div class="line">目的に合ったファイルをダウンロードします。</div>
+</div>
 <ul>
 <li><div class="line-block">
-<div class="line"><strong>ファイルによる一括登録/更新</strong></div>
+<div class="line">登録されている情報の更新/廃止/復活を行う場合は <span class="guilabel">全ダウンロード(Excel)</span>をクリックし、ファイルをダウンロードして下さい。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">新規に登録を行う場合は <span class="guilabel">新規登録用ダウンロード(Excel)</span> をクリックしてファイルをダウンロードして下さい。</div>
+</div>
+</li>
+</ul>
+</li>
+<li><div class="line-block">
+<div class="line">ダウンロードしたファイルを編集し、保存して下さい。</div>
+<div class="line">編集内容は各メニューによって異なりますので、各利用手順マニュアルを参照して下さい。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">作成したファイル形式に合った <span class="guilabel">ファイル一括登録</span> をクリックし、対象のファイルを選択して <span class="guilabel">一括登録開始</span> をクリックして下さい。</div>
+</div>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<div class="line-block">
+<div class="line-block">
+<div class="line"><span class="guilabel">変更履歴全件ダウンロード(Excel)</span> からダウンロードできるファイルは一括登録に使用することが出来ません。</div>
+</div>
+<div class="line">「実行処理種別」が未選択および正しい処理種別を選択していない場合、登録が実行されません。</div>
+</div>
+</div>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="line-block">
+<div class="line"><strong>{{#1:ここにExcel同様gifを入れる予定です。}}</strong></div>
 </div>
 <ol class="arabic">
 <li><div class="line-block">
@@ -723,7 +667,7 @@
 </div>
 <ul>
 <li><div class="line-block">
-<div class="line">登録されている情報の更新/廃止/復活を行う場合は <span class="guilabel">全ダウンロード(Excel)</span> または <span class="guilabel">全ダウンロード(JSON)</span> をクリックし、ファイルをダウンロードして下さい。</div>
+<div class="line">登録されている情報の更新/廃止/復活を行う場合は <span class="guilabel">全ダウンロード(JSON)</span>をクリックし、ファイルをダウンロードして下さい。</div>
 </div>
 </li>
 <li><div class="line-block">
@@ -748,43 +692,52 @@
 <div class="line"><span class="guilabel">変更履歴全件ダウンロード(Excel)</span> からダウンロードできるファイルは一括登録に使用することが出来ません。</div>
 </div>
 </div>
-</li>
-</ul>
+</div></div>
 </section>
 </section>
-<section id="id16">
-<h4>画面説明 メニューの操作方法<a class="headerlink" href="#id16" title="この見出しへのパーマリンク">¶</a></h4>
-<section id="id17">
-<h5>システム設定<a class="headerlink" href="#id17" title="この見出しへのパーマリンク">¶</a></h5>
+<section id="menu-unique-operation">
+<span id="id11"></span><h2>各メニュー個別情報<a class="headerlink" href="#menu-unique-operation" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">各メニュー個別の情報を説明します。</div>
+</div>
+<section id="id12">
+<h3>システム設定<a class="headerlink" href="#id12" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">ITAシステム導入・運用時に設定すべき各種情報の更新を行います。</div>
 </div>
-<ul>
-<li><div class="line-block">
-<div class="line"><strong>【システム設定変更方法】</strong></div>
-</div>
-<ol class="arabic">
-<li><div class="line-block">
-<div class="line">「一覧」タブの変更したい項目の <span class="guilabel">…</span> &gt; <span class="guilabel">編集</span> を順にクリックして登録/編集画面に遷移します。</div>
-<div class="line">もしくは、変更したい項目にチェックを入れ、「一覧」タブ内上部の、 <span class="guilabel">編集</span> をクリックして登録/編集画面に遷移します。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">「設定値」に変更したい値を入力し、 <span class="guilabel">編集確認</span> をクリックします。</div>
-</div>
+<table class="docutils align-left" id="id23">
+<caption><span class="caption-text">システム設定</span><a class="headerlink" href="#id23" title="このテーブルへのパーマリンク">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>No.</strong></p></th>
+<th class="head"><p><strong>項目名</strong></p></th>
+<th class="head"><p><strong>説明</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>識別ID</p></td>
+<td><p>システム設定識別用のIDです。</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>項目名</p></td>
+<td><p>システム設定の項目名です。</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>設定値</p></td>
+<td><p>ファイルアップロードを禁止する拡張子をセミコロン区切りで設定できます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>備考</p></td>
+<td><p>自由記述欄です。</p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonition danger">
 <p class="admonition-title">危険</p>
 <div class="line-block">
 <div class="line">「識別ID」は変更しないで下さい。ITAの動作が保証されません。</div>
 </div>
 </div>
-<ul>
-<li><div class="line-block">
-<div class="line">アップロード禁止拡張子</div>
-<div class="line">ファイルアップロードを禁止する拡張子を設定することが出来ます。</div>
-</div>
-</li>
-</ul>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <ul>
@@ -798,102 +751,82 @@
 </li>
 </ul>
 </div>
-</li>
-<li><div class="line-block">
-<div class="line"><span class="guilabel">編集反映</span> をクリックして更新します。</div>
-</div>
-</li>
-</ol>
-</li>
-</ul>
-</section>
-<section id="id18">
-<h5>メニューグループ管理<a class="headerlink" href="#id18" title="この見出しへのパーマリンク">¶</a></h5>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
 <div class="line-block">
-<div class="line">メニュー（子）はメニューグループ（親）に属します。この画面で親となるメニューグループの登録／更新／廃止を行います。</div>
-<div class="line">メニューグループ名称は、<strong>一意</strong>である必要があります。</div>
-<div class="line">ここで、各サブメニューの操作について説明します。操作は、他のメニューにおいても共通です。</div>
+<div class="line">「備考」は任意です。</div>
 </div>
+</div>
+</section>
+<section id="id13">
+<h3>メニューグループ管理<a class="headerlink" href="#id13" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">メニュー（子）はメニューグループ（親）に属します。この画面では親となるメニューグループの登録／更新／廃止を行います。</div>
+</div>
+<table class="docutils align-left" id="id24">
+<caption><span class="caption-text">メニューグループ管理</span><a class="headerlink" href="#id24" title="このテーブルへのパーマリンク">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>No.</strong></p></th>
+<th class="head"><p><strong>項目名</strong></p></th>
+<th class="head"><p><strong>説明</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>メニューグループID</p></td>
+<td><p>メニューグループのIDです。</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>親メニューグループ</p></td>
+<td><p>親のメニューグループを設定できます。</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>メニューグループ名(ja)</p></td>
+<td><p>日本語のメニューグループ名を設定できます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>メニューグループ名(en)</p></td>
+<td><p>英語のメニューグループ名を設定できます。</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>パネル画像</p></td>
+<td><p>メニューグループのパネル画像を設定できます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>メニュー作成利用フラグ</p></td>
+<td><p>メニュー作成機能の「対象メニューグループ」として利用可能かどうかのフラグを設定できます。</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>表示順序</p></td>
+<td><p>DashBoardでのメニューグループの表示順序を設定できます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>備考</p></td>
+<td><p>自由記述欄です。</p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
-<div class="line-block">
+<ul>
+<li><div class="line-block">
 <div class="line">データ更新系の操作のため、システム管理者でログインして下さい。</div>
 </div>
-</div>
-<ul>
-<li><div class="line-block">
-<div class="line"><strong>【登録内容の更新／廃止 － 1件ずつ更新／廃止／復活】</strong></div>
-<div class="line">メニューグループを1件1件更新／廃止／復活する場合の操作です。</div>
-</div>
-<ol class="arabic">
-<li><div class="line-block">
-<div class="line">「表示フィルタ」に検索条件を入力し、Enterキーか <span class="guilabel">フィルタ</span> をクリックします。</div>
-</div>
 </li>
 <li><div class="line-block">
-<div class="line">対象項目の <span class="guilabel">…</span> ＞ <span class="guilabel">編集</span> を順にクリックして登録/編集画面に遷移します。</div>
-<div class="line">もしくは、対象項目にチェックを入れ、「一覧」タブ内上部の <span class="guilabel">編集</span> をクリックして登録/編集画面に遷移します。</div>
+<div class="line">メニューグループ名称は、<strong>一意</strong>である必要があります。</div>
 </div>
 </li>
-<li><div class="line-block">
-<div class="line">目的に合わせて項目を編集します。</div>
-</div>
-<ul>
-<li><div class="line-block">
-<div class="line">登録内容を変更する 　　　　　　ー 設定値を変更します。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">項目を無効にする 　　　　　　　ー 対象項目にチェックを入れ、 <span class="guilabel">廃止</span> をクリックします。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">無効（廃止）の項目を有効にする ー 対象項目にチェックを入れ、 <span class="guilabel">復活</span> をクリックします。</div>
-</div>
-</li>
-</ul>
-</li>
-<li><div class="line-block">
-<div class="line"><span class="guilabel">編集確認</span> をクリックすると確認のポップアップ画面が表示されます。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line"><span class="guilabel">編集反映</span> をクリックして更新します。</div>
-</div>
-</li>
-</ol>
-</li>
-<li><div class="line-block">
-<div class="line"><strong>【追加登録 – 1件ずつ登録】</strong></div>
-<div class="line">メニューグループを1件1件登録する場合の操作です。</div>
-</div>
-<ol class="arabic">
-<li><div class="line-block">
-<div class="line">「一覧」タブ内上部の <span class="guilabel">登録</span> をクリックして登録/編集画面に遷移します。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">「メニューグループ名(ja/en)」「メニュー作成利用フラグ」「表示順序」を入力します。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line"><span class="guilabel">編集確認</span> をクリックすると確認のポップアップ画面が表示されます。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line"><span class="guilabel">編集反映</span> をクリックして更新します。</div>
-</div>
-</li>
-</ol>
-<div class="admonition warning">
-<p class="admonition-title">警告</p>
-<ul>
 <li><div class="line-block">
 <div class="line">メニューグループ名称は重複登録出来ません。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line">「表示順序」の昇順にメインメニューに表示されます。「表示順序」が同じ場合は、「メニューグループID」の昇順で表示されます。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">「パネル用画像」に使用出来るのは<strong>PNGファイルのみ</strong>です。</div>
 </div>
 </li>
 </ul>
@@ -904,340 +837,14 @@
 <div class="line">「備考」は任意です。</div>
 </div>
 </div>
-</li>
-</ul>
-<div class="line-block">
-<div class="line"><strong>{{#7:【登録内容の更新／廃止– まとめて更新／廃止】【追加登録 – まとめて登録】のJSONファイルを使う場合についてご教示いただけないでしょうか。}}</strong></div>
-</div>
-<ul>
-<li><div class="line-block">
-<div class="line"><strong>【登録内容の更新／廃止– まとめて更新／廃止】</strong></div>
-<div class="line">ファイルアップロードでメニューグループを登録する場合の操作です。</div>
-<div class="line"><strong>エクセル形式</strong>と<strong>JSON形式</strong>のファイルに対応しています。</div>
-</div>
-<ol class="arabic">
-<li><div class="line-block">
-<div class="line">「全件ダウンロード・ファイル一括登録」タブを開き、 <span class="guilabel">全件ダウンロード</span> をクリックして登録用シートをダウンロードします。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">以下の各項目を入力してファイルを保存します。</div>
-</div>
-<table class="docutils align-left">
-<thead>
-<tr class="row-odd"><th class="head"><p><strong>項目名</strong></p></th>
-<th class="head"><p><strong>入力内容</strong></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>実行処理種別</p></td>
-<td><p>「登録／更新／廃止／復活」のいずれか</p></td>
-</tr>
-<tr class="row-odd"><td><p>メニューグループ名(ja)</p></td>
-<td><p>変更後の名称</p></td>
-</tr>
-<tr class="row-even"><td><p>メニューグループ名(en)</p></td>
-<td><p>変更後の名称</p></td>
-</tr>
-<tr class="row-odd"><td><p>表示順序</p></td>
-<td><p>変更後の内容</p></td>
-</tr>
-<tr class="row-even"><td><p>備考</p></td>
-<td><p>変更後の内容</p></td>
-</tr>
-</tbody>
-</table>
-</li>
-<li><div class="line-block">
-<div class="line"><span class="guilabel">ファイル一括登録</span> をクリックし、作成したファイルを選択します。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line"><span class="guilabel">一括登録開始</span> をクリックしてアップロードを行います。</div>
-</div>
-</li>
-</ol>
-<div class="admonition warning">
-<p class="admonition-title">警告</p>
-<div class="line-block">
-<div class="line">「実行処理種別」が未選択および正しい処理種別を選択していない場合、登録が実行されません。</div>
-</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line"><strong>【追加登録 – まとめて登録】</strong></div>
-<div class="line">ファイルアップロードでメニューグループを登録する場合の操作です。</div>
-<div class="line"><strong>エクセル形式</strong>と<strong>JSON形式</strong>のファイルに対応しています。</div>
-</div>
-<ol class="arabic">
-<li><div class="line-block">
-<div class="line">「全件ダウンロード・ファイル一括登録」タブを開き、 <span class="guilabel">新規登録用ダウンロード(Excel)</span> をクリックして新規登録用シートをダウンロードします。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">以下の各項目を入力してファイルを保存します。</div>
-</div>
-<table class="docutils align-left">
-<thead>
-<tr class="row-odd"><th class="head"><p><strong>項目名</strong></p></th>
-<th class="head"><p><strong>入力内容</strong></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>実行処理種別</p></td>
-<td><p>登録</p></td>
-</tr>
-<tr class="row-odd"><td><p>メニューグループ名(ja)</p></td>
-<td><p>新規に登録する日本語のメニューグループ名</p></td>
-</tr>
-<tr class="row-even"><td><p>メニューグループ名(en)</p></td>
-<td><p>新規に登録する英語のメニューグループ名</p></td>
-</tr>
-<tr class="row-odd"><td><p>表示順序</p></td>
-<td><p>変更後の内容</p></td>
-</tr>
-</tbody>
-</table>
-</li>
-<li><div class="line-block">
-<div class="line"><span class="guilabel">ファイル一括登録</span> をクリックし、作成したファイルを選択します。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line"><span class="guilabel">一括登録開始</span> をクリックしてアップロードを行います。</div>
-</div>
-</li>
-</ol>
-</li>
-</ul>
-<div class="line-block">
-<div class="line"><strong>{{#3:下記「warning」の内容について、「メニューグループの登録を行うと...」という内容は正しいでしょうか。}}</strong></div>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">警告</p>
-<ul>
-<li><div class="line-block">
-<div class="line">「実行処理種別」を「登録」<strong>以外</strong>にすると、<strong>登録が実行されません</strong>。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">メニューグループの登録を行うと、作成したメニューグループ配下に自動的に「メインメニュー」 が登録されて、「システム管理者」ロールのユーザーで参照することが可能となります。</div>
-<div class="line">具体的には、以下のメニューに自動的にデータが登録されます。</div>
-</div>
-<ul class="simple">
-<li><p>「メニュー管理」メニュー</p></li>
-<li><p>「ロール・メニュー紐付管理」メニュー</p></li>
-</ul>
-</li>
-</ul>
-</div>
-<ul>
-<li><div class="line-block">
-<div class="line"><strong>【パネル用画像】</strong></div>
-<div class="line">登録/編集画面で「パネル用画像」を設定することが出来ます。</div>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">警告</p>
-<div class="line-block">
-<div class="line">「パネル用画像」に使用出来るのは<strong>PNGファイルのみ</strong>です。</div>
-<div class="line">「パネル画像エディタ」機能で編集・保存が可能な独自拡張子「IPF」ファイルは使用することが出来ません。</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line"><strong>{{#4:パネル画像エディタ機能は実装されていない認識で合っているでしょうか。}}</strong></div>
-</div>
-<div class="line-block">
-<div class="line">「パネル画像エディタ」サブメニューでパネル用画像を作成することが出来ます。</div>
-</div>
-<figure class="align-center" id="id46">
-<a class="reference internal image-reference" href="../../../../_images/パネル画像エディタ画面.png"><img alt="パネル画像エディタ画面" src="../../../../_images/%E3%83%91%E3%83%8D%E3%83%AB%E7%94%BB%E5%83%8F%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF%E7%94%BB%E9%9D%A2.png" style="width: 5.90551in; height: 4.03342in;" /></a>
-<figcaption>
-<p><span class="caption-text">パネル画像エディタ画面</span><a class="headerlink" href="#id46" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
-<div class="admonition warning">
-<p class="admonition-title">警告</p>
-<div class="line-block">
-<div class="line">「パネル画像エディタ」サブメニューはIEには対応しておりません。</div>
-</div>
-</div>
-<ol class="arabic">
-<li><div class="line-block">
-<div class="line"><span class="guilabel">Save IPF</span></div>
-<div class="line">編集したパネル画像のデータをIPF形式の圧縮ファイルで保存することが出来ます。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line"><span class="guilabel">Read IPF</span></div>
-<div class="line">IPFファイルをキャンバスに読み込むことが出来ます。</div>
-</div>
-</li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<div class="line-block">
-<div class="line"><span class="guilabel">Save IPF</span>で保存した状態から編集を継続することが出来ます。</div>
-</div>
-</div>
-<ol class="arabic">
-<li><div class="line-block">
-<div class="line"><span class="guilabel">Output PNG</span></div>
-<div class="line">キャンバス上で編集したパネル画像をアートボードの領域でPNG画像として保存します。</div>
-</div>
-</li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<div class="line-block">
-<div class="line">編集の継続は出来ません。</div>
-</div>
-</div>
-<ol class="arabic">
-<li><div class="line-block">
-<div class="line"><span class="guilabel">View Reset</span></div>
-<div class="line">キャンバスの位置を初期値に戻します。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line"><span class="guilabel">Full Screen</span></div>
-<div class="line">エディタをフルスクリーンで表示することが出来ます。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">キャンバス</div>
-<div class="line">右クリックでドラッグアンドドロップし位置を移動することが出来ます。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">アートボード</div>
-<div class="line">PNG画像として書き出される範囲です。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">パネル画像の詳細設定機能</div>
-</div>
-<ul>
-<li><div class="line-block">
-<div class="line">「Layer」タブ</div>
-</div>
-<ol class="arabic">
-<li><div class="line-block">
-<div class="line">各種レイヤーを追加することが出来ます。</div>
-</div>
-<ul>
-<li><div class="line-block">
-<div class="line"><span class="guilabel">Text</span>　　　： 一行テキスト</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line"><span class="guilabel">Symbol</span>　　： アイコン</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line"><span class="guilabel">Shape</span> 　　： 基本図形</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line"><span class="guilabel">Image</span> 　　： 画像</div>
-<div class="line"><br /></div>
-</div>
-</li>
-</ul>
-</li>
-<li><div class="line-block">
-<div class="line">編集対象を選択し、アイコンの左側から下記の操作が可能です。</div>
-</div>
-<ul>
-<li><div class="line-block">
-<div class="line">順番入れ替え　　　　： ドラッグアンドドロップでレイヤーを入れ替えることが出来ます。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">表示非表示　　　　　： アイコンのクリックで切り替えることが出来ます。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">コピー　　　　　　　： 選択したレイヤーをコピーし複製することが出来ます。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">削除　　　　　　　　： 選択したレイヤーを削除することが出来ます。</div>
-<div class="line"><br /></div>
-</div>
-</li>
-</ul>
-</li>
-<li><div class="line-block">
-<div class="line">追加された各種レイヤーに以下の設定が可能です。</div>
-<div class="line">※レイヤーごとに編集出来る項目が変わります。</div>
-</div>
-<ul>
-<li><div class="line-block">
-<div class="line">「Common」タブ　　　： 共通・メイン項目です。色やサイズの変更が可能です。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">「IME」タブ 　　　　： （レイヤーの種類が「Text」の場合）入力補助機能を使用することが出来ます。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">「Symbol」タブ　　　： （レイヤーの種類が「Symbol」の場合）シンボルを切り替えることが可能です。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">「Shape」タブ 　　　： （レイヤーの種類が「Shape」の場合）図形を切り替えることが可能です。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">「Border」タブ　　　： 線の詳細設定が可能です。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">「Transform」タブ 　： 大きさや角度などの詳細設定が可能です。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">「Filter」タブ　　　： 各種効果の詳細設定が可能です。</div>
-</div>
-</li>
-<li></li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">警告</p>
-<div class="line-block">
-<div class="line">Edgeは未対応のため非表示になります。</div>
-</div>
-</div>
-</li>
-</ol>
-</li>
-<li><div class="line-block">
-<div class="line">「Document」タブ</div>
-<div class="line">作成したパネル画像に任意の名称を設定出来ます。</div>
-</div>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
 </section>
 <section id="menu-list">
-<span id="id19"></span><h5>メニュー管理<a class="headerlink" href="#menu-list" title="この見出しへのパーマリンク">¶</a></h5>
+<span id="id14"></span><h3>メニュー管理<a class="headerlink" href="#menu-list" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">この画面でコンテンツの機能（メニュー）の登録／更新／廃止を行います。</div>
-<div class="line">メニュー名称は<strong>一意</strong>である必要があります。</div>
 </div>
-<ol class="arabic">
-<li><div class="line-block">
-<div class="line">パラメータの設定</div>
-<div class="line">メニューの登録情報には次の項目があります。</div>
-</div>
-<div class="line-block">
-<div class="line"><strong>{{#5:[7 ソートキー]の入力内容についてご確認をお願いいたします。}}</strong></div>
-</div>
-<table class="docutils align-left" id="id47">
-<caption><span class="caption-text">「メニュー管理」のパラメータ</span><a class="headerlink" href="#id47" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id25">
+<caption><span class="caption-text">メニュー管理</span><a class="headerlink" href="#id25" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>No.</strong></p></th>
 <th class="head"><p><strong>項目名</strong></p></th>
@@ -1246,44 +853,92 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>1</p></td>
-<td><p>メニューグループ内表示順序</p></td>
-<td><p>メニューグループのサブメニューで表示する順序です。昇順で上から表示されます。</p></td>
+<td><p>メニューID</p></td>
+<td><p>メニューのIDです。</p></td>
 </tr>
 <tr class="row-odd"><td><p>2</p></td>
-<td><p>オートフィルタチェック</p></td>
-<td><p>メニュー表示時に「オートフィルタ」のチェックボックスにチェックを入れるかどうかの設定です。</p></td>
+<td><p>メニューグループ</p></td>
+<td><p>親となるメニューグループを設定できます。</p></td>
 </tr>
 <tr class="row-even"><td><p>3</p></td>
-<td><p>初回フィルタ</p></td>
-<td><p>メニュー表示時に「フィルタ」をクリックした状態で表示するかどうかの設定です。</p></td>
+<td><p>メニュー名(ja)</p></td>
+<td><p>日本語のメニュー名を設定できます。</p></td>
 </tr>
 <tr class="row-odd"><td><p>4</p></td>
-<td><p>Web表示最大行数</p></td>
-<td><p>「一覧」に表示する最大行数です。</p></td>
+<td><p>メニュー名(en)</p></td>
+<td><p>英語のメニュー名を設定できます。</p></td>
 </tr>
 <tr class="row-even"><td><p>5</p></td>
-<td><p>Web表示前確認行数</p></td>
-<td><p>「一覧」に出力する前に確認ダイアログを表示する最大行数です。</p></td>
+<td><p>メニュー名(rest)</p></td>
+<td><p>restでのメニュー名を設定できます。</p></td>
 </tr>
 <tr class="row-odd"><td><p>6</p></td>
-<td><p>Excel出力最大行数</p></td>
-<td><p>Excel出力する最大行数（0～1048576まで設定可能）です。</p></td>
+<td><p>メニューグループ内表示順序</p></td>
+<td><p>メニューグループのサブメニューで表示する順序を設定できます。</p></td>
 </tr>
 <tr class="row-even"><td><p>7</p></td>
+<td><p>オートフィルタチェック</p></td>
+<td><p>メニュー表示時に「オートフィルタ」のチェックボックスにチェックを入れるかどうか設定できます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>初回フィルタ</p></td>
+<td><p>メニュー表示時に「フィルタ」をクリックした状態で表示するかどうか設定できます。</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>Web表示最大行数</p></td>
+<td><p>「一覧」に表示する最大行数を設定できます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>Web表示前確認行数</p></td>
+<td><p>「一覧」に出力する前に確認ダイアログを表示する最大行数を設定できます。</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>Excel出力最大行数</p></td>
+<td><p>Excel出力する最大行数を設定できます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
 <td><p>ソートキー</p></td>
-<td><p>並び替え設定です。JSON形式の表記で設定します。項目名にASC/DESC、値にキーとなるカラム名を入力して下さい。</p>
-<p>例）　{&quot;ASC&quot;:&quot;display_order&quot;}</p>
-</td>
+<td><p>「一覧」に表示する並び順を設定できます。</p></td>
 </tr>
 </tbody>
 </table>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<ul>
+<li><div class="line-block">
+<div class="line">メニュー名称は<strong>一意</strong>である必要があります。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">ソートキーはJSON形式の表記で設定する必要があります。</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<ul>
+<li><div class="line-block">
+<div class="line">Excel出力最大行数は0～1048576まで設定可能です。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">ソートキーは項目名にASC/DESC、値にキーとなるカラム名を入力して下さい。例）　{&quot;ASC&quot;:&quot;display_order&quot;}</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">「備考」は任意です。</div>
+</div>
+</li>
+</ul>
+</div>
 <div class="line-block">
 <div class="line">「Web表示最大行数」と「Web表示前確認行数」には次のような関係があります。</div>
 </div>
-<figure class="align-center" id="id48">
-<a class="reference internal image-reference" href="../../../../_images/Web表示最大行数の処理概要.png"><img alt="Web表示最大行数の処理概要" src="../../../../_images/Web%E8%A1%A8%E7%A4%BA%E6%9C%80%E5%A4%A7%E8%A1%8C%E6%95%B0%E3%81%AE%E5%87%A6%E7%90%86%E6%A6%82%E8%A6%81.png" style="width: 5in;" /></a>
+<figure class="align-center" id="id26">
+<a class="reference internal image-reference" href="../../../../_images/Web表示最大行数の処理概要.png"><img alt="Web表示最大行数の処理概要" src="../../../../_images/Web%E8%A1%A8%E7%A4%BA%E6%9C%80%E5%A4%A7%E8%A1%8C%E6%95%B0%E3%81%AE%E5%87%A6%E7%90%86%E6%A6%82%E8%A6%81.png" style="width: 6in;" /></a>
 <figcaption>
-<p><span class="caption-text">Web表示最大行数の処理概要</span><a class="headerlink" href="#id48" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">Web表示最大行数の処理概要</span><a class="headerlink" href="#id26" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="line-block">
@@ -1292,646 +947,61 @@
 <div class="line">JSON形式のファイルはダウンロードが可能です。</div>
 <div class="line">画面下部の変更履歴全件ダウンロードは出力し確認する用途で、アップロードには対応しておりません。</div>
 </div>
-</li>
-</ol>
 </section>
-<section id="id20">
-<h5>ロール・メニュー紐付管理<a class="headerlink" href="#id20" title="この見出しへのパーマリンク">¶</a></h5>
+<section id="id15">
+<h3>ロール・メニュー紐付管理<a class="headerlink" href="#id15" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">各メニューとロール対応付けの登録／更新／廃止を行います。</div>
-<div class="line">ロールに紐付かないメニュー画面はメニューグループに表示されません。</div>
 </div>
 <div class="line-block">
 <div class="line">Exastro Platform「ロール管理」で登録したロールと「<a class="reference internal" href="#menu-list"><span class="std std-ref">メニュー管理</span></a>」で登録したメニューがリストボックスに表示されるので（下図 ①,②）、それぞれを選択し、紐付タイプ（下図 ③）を選択します。</div>
 </div>
-<figure class="align-center" id="id49">
-<a class="reference internal image-reference" href="images/ja/manuals/it_automation_base/management_console/role_menu_link_list/ロール・メニュー紐付管理_設定画面.png"><img alt="グループメニュー権限の設定画面（ロール・メニュー紐付管理）" src="images/ja/manuals/it_automation_base/management_console/role_menu_link_list/ロール・メニュー紐付管理_設定画面.png" style="width: 5in;" /></a>
-<figcaption>
-<p><span class="caption-text">グループメニュー権限の設定画面（ロール・メニュー紐付管理）</span><a class="headerlink" href="#id49" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../_images/ロール・メニュー紐付管理_設定画面.png"><img alt="グループメニュー権限の設定画面（ロール・メニュー紐付管理）" src="../../../../_images/%E3%83%AD%E3%83%BC%E3%83%AB%E3%83%BB%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC%E7%B4%90%E4%BB%98%E7%AE%A1%E7%90%86_%E8%A8%AD%E5%AE%9A%E7%94%BB%E9%9D%A2.png" style="width: 5in;" /></a>
 </figure>
-</section>
-<section id="id21">
-<h5>ファイル項目-ファイル削除機能<a class="headerlink" href="#id21" title="この見出しへのパーマリンク">¶</a></h5>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
 <div class="line-block">
-<div class="line">必須でないファイル項目において、ファイルクリアした状態で更新を実行すると、登録済みのファイルが削除されます。（必須項目の場合はバリデーションエラーとなります。）</div>
-</div>
-</section>
-<section id="id22">
-<h5>ファイル項目-ファイルダウンロード機能<a class="headerlink" href="#id22" title="この見出しへのパーマリンク">¶</a></h5>
-<div class="line-block">
-<div class="line">ファイル名のリンクをクリックすることでダウンロードが可能です。</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<div class="line-block">
-<div class="line">鍵ファイルの場合はダウンロード不可となります。</div>
+<div class="line">ロールに紐付かないメニュー画面はメニューグループに表示されません。</div>
 </div>
 </div>
-</section>
-<section id="id23">
-<h5>パスワード項目-パスワード削除機能<a class="headerlink" href="#id23" title="この見出しへのパーマリンク">¶</a></h5>
-<div class="line-block">
-<div class="line">必須でないパスワード項目において、パスワードを削除した状態で更新を実行すると、対象項目の値が削除されます。（必須項目の場合はバリデーションエラーとなります。）</div>
-</div>
-<div class="line-block">
-<div class="line"><strong>{{#6:「BackYardコンテンツ」～「メンテナンス」の内容のご確認をお願いいたします。}}</strong></div>
-</div>
-</section>
-</section>
-</section>
-<section id="backyard">
-<h3>BackYardコンテンツ<a class="headerlink" href="#backyard" title="この見出しへのパーマリンク">¶</a></h3>
-<div class="line-block">
-<div class="line">ここでは、ITA基本機能でのBackYardコンテンツについて説明します。</div>
-<div class="line">BackYardはサーバー内で独立して動作する常駐プロセス化した機能です。Webブラウザ上で操作する</div>
-<div class="line">Webコンテンツとは異なり、ユーザーはBackYardの存在を意識することはありません。</div>
-<div class="line">処理の開始・停止等の制御はコマンドラインで実行して下さい。</div>
-</div>
-<section id="id24">
-<h4>BackYard処理一覧<a class="headerlink" href="#id24" title="この見出しへのパーマリンク">¶</a></h4>
-<div class="line-block">
-<div class="line">BackYardの処理の一覧を以下に記述します。</div>
-</div>
-<table class="docutils align-left" id="id50">
-<caption><span class="caption-text">BackYard機能</span><a class="headerlink" href="#id50" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id27">
+<caption><span class="caption-text">ロール・メニュー紐付管理</span><a class="headerlink" href="#id27" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>No.</strong></p></th>
-<th class="head"><p><strong>処理名称</strong></p></th>
-<th class="head"><p><strong>ファイル名</strong></p></th>
-<th class="head"><p><strong>備考</strong></p></th>
+<th class="head"><p><strong>項目名</strong></p></th>
+<th class="head"><p><strong>説明</strong></p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>1</p></td>
-<td><p>メール送信</p></td>
-<td><p>ky_mail<sup>※1</sup></p></td>
-<td><p>必要が無ければ停止可</p></td>
+<td><p>UUID</p></td>
+<td><p>ロール・メニュー紐付管理のIDです。</p></td>
 </tr>
 <tr class="row-odd"><td><p>2</p></td>
-<td><p>ロール紐付確認＋クリーニング</p></td>
-<td><p>ky_std_checkcondition-linklist<sup>※1</sup></p></td>
-<td><p>常駐</p></td>
+<td><p>ロール</p></td>
+<td><p>紐付けるロールを設定できます。</p></td>
 </tr>
 <tr class="row-even"><td><p>3</p></td>
-<td><p>投入オペレーション確認＋クリーニング</p></td>
-<td><p>ky_execinstance_dataautoclean-workflow.sh<sup>※2</sup></p></td>
-<td><p>Cron起動</p></td>
+<td><p>メニュー</p></td>
+<td><p>紐付けるメニューを設定できます。</p></td>
 </tr>
 <tr class="row-odd"><td><p>4</p></td>
-<td><p>ファイル確認＋クリーニング</p></td>
-<td><p>ky_file_autoclean-workflow.sh<sup>※3</sup></p></td>
-<td><p>Cron起動</p></td>
-</tr>
-</tbody>
-</table>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<div class="line-block">
-<div class="line">※1 ファイル配置ディレクトリは ~/ita-root/backyards/webdbcore</div>
-<div class="line">※2 ファイル配置ディレクトリは ~/ita-root/backyards/ita-base</div>
-<div class="line">※3 ファイル配置ディレクトリは ~/ita-root/backyards/common</div>
-</div>
-</div>
-</section>
-<section id="id25">
-<h4>BackYard処理説明<a class="headerlink" href="#id25" title="この見出しへのパーマリンク">¶</a></h4>
-<div class="line-block">
-<div class="line">BackYardの処理の説明を以下に記述します。</div>
-</div>
-<section id="id26">
-<h5>メール送信<a class="headerlink" href="#id26" title="この見出しへのパーマリンク">¶</a></h5>
-<div class="line-block">
-<div class="line">メール送信は、ユーザーが作成したメールのテンプレートに送信元、送信先アドレスや本文内の変数を動的に置換し、自動送信する処理です。</div>
-<div class="line">メール送信はテンプレートリスト、テンプレート、送信依頼ファイルという3つのファイル（詳細後述）を参照し、実行の要否を判断しながら処理を行います。</div>
-<div class="line">送信パターンはフリー型、セーフ型、フリーフォーマット型の3パターンがあります。</div>
-<div class="line">それぞれのパターンによる各ファイルの要不要、必要事項は次の表の通りです。</div>
-</div>
-<table class="docutils align-left" id="id51">
-<caption><span class="caption-text">送信タイプ別参照ファイルへの記載事項</span><a class="headerlink" href="#id51" title="このテーブルへのパーマリンク">¶</a></caption>
-<thead>
-<tr class="row-odd"><th class="head"><p><strong>ファイル名</strong></p></th>
-<th class="head"><p><strong>テンプレート</strong></p></th>
-<th class="head" colspan="4"><p><strong>テンプレートリスト</strong></p></th>
-<th class="head" colspan="4"><p><strong>送信依頼ファイル</strong></p></th>
-</tr>
-<tr class="row-even"><th class="head"></th>
-<th class="head"><p>ファイル中の項目</p></th>
-<th class="head"><p>テンプレートID</p></th>
-<th class="head"><p>置き換え文言数</p></th>
-<th class="head"><p>from,
-to</p></th>
-<th class="head"><p>cc</p></th>
-<th class="head"><p>タイトル</p></th>
-<th class="head"><p>from,
-to</p></th>
-<th class="head"><p>cc</p></th>
-<th class="head"><p>置き換え文字列</p></th>
-</tr>
-<tr class="row-odd"><th class="head"><p>送信タイプ</p></th>
-<th class="head"><p>位置</p></th>
-<th class="head"><p>1列目</p></th>
-<th class="head"><p>2列目</p></th>
-<th class="head"><p>3列目</p></th>
-<th class="head"><p>4列目</p></th>
-<th class="head"><p>1行目</p></th>
-<th class="head"><p>2,3行目</p></th>
-<th class="head"><p>4行目</p></th>
-<th class="head"><p>5行目以降</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>フリー型</p></td>
-<td rowspan="2"><p>必要</p></td>
-<td rowspan="3"><p>必須</p></td>
-<td rowspan="2"><p>数値</p>
-<p>（0以上）</p>
-</td>
-<td colspan="2"><p>不要</p></td>
-<td rowspan="3"><p>必須</p></td>
-<td><p>必須</p></td>
-<td><p>任意</p></td>
-<td rowspan="2"><p>指定分の文字列</p></td>
-</tr>
-<tr class="row-odd"><td><p>セーフ型</p></td>
-<td rowspan="2"><p>必須</p></td>
-<td rowspan="2"><p>任意</p></td>
-<td colspan="2" rowspan="2"><p>不要</p></td>
-</tr>
-<tr class="row-even"><td><p>フリーフォーマット型</p></td>
-<td><p>不要（※）</p></td>
-<td><p>X 固定</p></td>
-<td><p>不要</p></td>
-</tr>
-</tbody>
-</table>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<div class="line-block">
-<div class="line">※メール本文は送信依頼ファイルに記述します。</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line">次に、各ファイルの説明とサンプルを提示します。</div>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">危険</p>
-<div class="line-block">
-<div class="line">各ファイルは、<strong>文字コード[UTF-8]／改行(LF)</strong>で編集して下さい。</div>
-</div>
-</div>
-<ol class="arabic" id="template-list">
-<li><div class="line-block">
-<div class="line">テンプレートリスト</div>
-</div>
-<ul>
-<li><div class="line-block">
-<div class="line">ファイル名 　　　： sysmail.list</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">配置ディレクトリ ： ~/ita-root/confs/backyardconfs/</div>
-</div>
-</li>
-</ul>
-<div class="line-block">
-<div class="line">メールテンプレートで使用する変数数や送信先アドレスなどをリストするファイルです。</div>
-<div class="line">このリストを元に送信処理が行われます。</div>
-<div class="line"><br /></div>
-</div>
-<figure class="align-center" id="id52">
-<a class="reference internal image-reference" href="../../../../_images/テンプレートリスト記述例.png"><img alt="template_list example" src="../../../../_images/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%83%AA%E3%82%B9%E3%83%88%E8%A8%98%E8%BF%B0%E4%BE%8B.png" style="width: 5in;" /></a>
-<figcaption>
-<p><span class="caption-text">テンプレートリスト記述例</span><a class="headerlink" href="#id52" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
-<table class="docutils align-left" id="id53">
-<caption><span class="caption-text">テンプレートリストの必須パラメータ一覧表</span><a class="headerlink" href="#id53" title="このテーブルへのパーマリンク">¶</a></caption>
-<thead>
-<tr class="row-odd"><th class="head"><p><strong>No.</strong></p></th>
-<th class="head"><p><strong>項目</strong></p></th>
-<th class="head"><p><strong>必須</strong></p></th>
-<th class="head"><p><strong>補足</strong></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>テンプレートID</p></td>
-<td><p>○</p></td>
-<td><p>001~999（000は予約済のため使用不可）</p></td>
-</tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>置き換え文言数</p></td>
-<td><p>○</p></td>
-<td><p>可変文字列数。例）日付、人名など</p></td>
-</tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>送信元メールアドレス</p></td>
-<td><p>△</p></td>
-<td><p>送信依頼ファイルに記述しない場合は必須</p></td>
-</tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p>送信先メールアドレス</p></td>
-<td><p>△</p></td>
-<td><p>同上</p></td>
+<td><p>紐付</p></td>
+<td><p>ロールに対してメニューをメンテナンス可能にするか閲覧のみにするかを設定できます。</p></td>
 </tr>
 <tr class="row-even"><td><p>5</p></td>
-<td><p>ccアドレス</p></td>
-<td><p>×</p></td>
-<td><p>不要の場合は「null」を指定</p></td>
+<td><p>備考</p></td>
+<td><p>自由記述欄です。</p></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <div class="line-block">
-<div class="line">「4 送信先メールアドレス」を複数指定する場合はコンマ区切り</div>
+<div class="line">「備考」は任意です。</div>
 </div>
 </div>
-</li>
-<li id="template"><div class="line-block">
-<div class="line">テンプレート</div>
-</div>
-<ul>
-<li><div class="line-block">
-<div class="line">ファイル名 　　　： sysmail_body_nnn.txt</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">配置ディレクトリ ： ~/ita-root/confs/backyardconfs/</div>
-</div>
-</li>
-</ul>
-<div class="line-block">
-<div class="line">メールの本体です。</div>
-<div class="line">ファイル名の[ nnn ]は「テンプレートID」を入れて下さい。</div>
-<div class="line">例）</div>
-<div class="line">　　○ sysmail_body_001.txt</div>
-<div class="line">　　× sysmail_body_1.txt</div>
-<div class="line">メール本文と、可変部分があれば置換用の変数（%%001%% ～ %%999%%）を記述します。</div>
-<div class="line">変数は、テンプレートリストファイルに指定した「置き換え文言数」分の連番にします。</div>
-</div>
-<figure class="align-center" id="id54">
-<a class="reference internal image-reference" href="../../../../_images/テンプレート例OK.png"><img alt="template_list example" src="../../../../_images/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E4%BE%8BOK.png" style="width: 5in;" /></a>
-<figcaption>
-<p><span class="caption-text">テンプレート記述例 [OK]</span><a class="headerlink" href="#id54" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-center" id="id55">
-<a class="reference internal image-reference" href="../../../../_images/テンプテート例ＮＧ.png"><img alt="template_list example" src="../../../../_images/%E3%83%86%E3%83%B3%E3%83%97%E3%83%86%E3%83%BC%E3%83%88%E4%BE%8B%EF%BC%AE%EF%BC%A7.png" style="width: 5in;" /></a>
-<figcaption>
-<p><span class="caption-text">テンプレート記述例 [NG]</span><a class="headerlink" href="#id55" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
-</li>
-<li><div class="line-block">
-<div class="line">送信依頼ファイル</div>
-</div>
-<ul>
-<li><div class="line-block">
-<div class="line">ファイル名 　　　： sysmail_nnn_任意の半角英数字.txt</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">配置ディレクトリ ： ~/ita-root/temp/ky_mail_queues/ky_sysmail_0_queue/</div>
-</div>
-</li>
-</ul>
-<div class="line-block">
-<div class="line">テンプレートに差し込む文字列を記載します。</div>
-<div class="line">ファイル名の[ nnn ]は「テンプレートID」を入れて下さい。</div>
-<div class="line">[ nnn ]以降はファイルが一意になるよう任意の半角文字列を入れて下さい。</div>
-</div>
-<div class="line-block">
-<div class="line">例） ファイル命名の例</div>
-<div class="line-block">
-<div class="line">　　○ sysmail_001_20140813123025_123456789</div>
-<div class="line">　　○ sysmail_001_a001.txt</div>
-<div class="line">　　× sysmail_001_</div>
-<div class="line">　　× sysmail_001_.txt</div>
-</div>
-<div class="line">テンプレートリスト、テンプレートを用意後、このファイルを配置ディレクトリに置くことで、</div>
-<div class="line">メールが送信されます。</div>
-<div class="line"><br /></div>
-<div class="line">メール送信の際、置き換え文字をテンプレート中の変数に差込みます。</div>
-<div class="line">送信依頼ファイルは、メール送信後、送信状況によって以下のディレクトリに移動します。</div>
-<div class="line-block">
-<div class="line">　　送信成功 → ~/ita-root/temp/ky_mail_queues/ky_sysmail_1_success</div>
-<div class="line">　　送信失敗 → ~/ita-root/temp/ky_mail_queues/ky_sysmail_2_error</div>
-</div>
-<div class="line">■ 送信依頼ファイルフォーマット</div>
-<div class="line">　送信依頼ファイルは、行ごとに意味が決まっています。</div>
-<div class="line">　　1行目 ： メールタイトル</div>
-<div class="line">　　2行目 ： 送信元メールアドレス</div>
-<div class="line">　　3行目 ： 送信先メールアドレス（複数指定の場合はコンマで区切る）</div>
-<div class="line">　　4行目 ： ccメールアドレス（不要の場合は空行）</div>
-<div class="line">　　5行目以降 ： 置き換え文字列</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<ul>
-<li><div class="line-block">
-<div class="line">2～4行目はフリー型のみ必要になります。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">5行目以降の<strong>行数</strong>が、テンプレートリストの置き換え文言数、</div>
-<div class="line">およびテンプレートの変数の数と同じでない場合、エラーになります。</div>
-</div>
-</li>
-</ul>
-</div>
-<div class="line-block">
-<div class="line">「<a class="reference internal" href="#template-list"><span class="std std-ref">テンプレートリスト</span></a>」「<a class="reference internal" href="#template"><span class="std std-ref">テンプレート</span></a>」を例に、送信依頼ファイル記述例を提示します。</div>
-<div class="line">送信依頼ファイル記述例</div>
-</div>
-<ol class="arabic">
-<li><div class="line-block">
-<div class="line"><strong>フリー型例</strong>： テンプレートID = 001</div>
-</div>
-<figure class="align-center" id="id56">
-<a class="reference internal image-reference" href="../../../../_images/フリー型例.png"><img alt="template_list example" src="../../../../_images/%E3%83%95%E3%83%AA%E3%83%BC%E5%9E%8B%E4%BE%8B.png" style="width: 5in;" /></a>
-<figcaption>
-<p><span class="caption-text">sysmail_001_20160401_0001.txt</span><a class="headerlink" href="#id56" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-center" id="id57">
-<a class="reference internal image-reference" href="../../../../_images/送信されたメール（フリー型）.png"><img alt="template_list example" src="../../../../_images/%E9%80%81%E4%BF%A1%E3%81%95%E3%82%8C%E3%81%9F%E3%83%A1%E3%83%BC%E3%83%AB%EF%BC%88%E3%83%95%E3%83%AA%E3%83%BC%E5%9E%8B%EF%BC%89.png" style="width: 5in;" /></a>
-<figcaption>
-<p><span class="caption-text">送信されたメール ： 送信依頼ファイルから置換された箇所（赤字）</span><a class="headerlink" href="#id57" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
-</li>
-<li><div class="line-block">
-<div class="line"><strong>セーフ型例</strong>： テンプレートID = 002</div>
-</div>
-<figure class="align-center">
-<a class="reference internal image-reference" href="../../../../_images/セーフ型例.png"><img alt="template_list example" src="../../../../_images/%E3%82%BB%E3%83%BC%E3%83%95%E5%9E%8B%E4%BE%8B.png" style="width: 5in;" /></a>
-</figure>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<div class="line-block">
-<div class="line">メールアドレスはテンプレートリストファイルに指定</div>
-</div>
-</div>
-<figure class="align-center" id="id58">
-<a class="reference internal image-reference" href="../../../../_images/送信されたメール（セーフ型）.png"><img alt="template_list example" src="../../../../_images/%E9%80%81%E4%BF%A1%E3%81%95%E3%82%8C%E3%81%9F%E3%83%A1%E3%83%BC%E3%83%AB%EF%BC%88%E3%82%BB%E3%83%BC%E3%83%95%E5%9E%8B%EF%BC%89.png" style="width: 5in;" /></a>
-<figcaption>
-<p><span class="caption-text">送信されたメール ： 送信依頼ファイルから置換されたか所（赤字）
-テンプレートリストから置換されたか所（青字）</span><a class="headerlink" href="#id58" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
-</li>
-<li><div class="line-block">
-<div class="line"><strong>フリーフォーマット型</strong>： テンプレートID = 004</div>
-</div>
-<figure class="align-center" id="id59">
-<a class="reference internal image-reference" href="../../../../_images/フォーマット型例.png"><img alt="template_list example" src="../../../../_images/%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E5%9E%8B%E4%BE%8B.png" style="width: 5in;" /></a>
-<figcaption>
-<p><span class="caption-text">sysmail_004_20160401_0001.txt</span><a class="headerlink" href="#id59" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-center" id="id60">
-<a class="reference internal image-reference" href="../../../../_images/送信されたメール（フォーマット型）.png"><img alt="template_list example" src="../../../../_images/%E9%80%81%E4%BF%A1%E3%81%95%E3%82%8C%E3%81%9F%E3%83%A1%E3%83%BC%E3%83%AB%EF%BC%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E5%9E%8B%EF%BC%89.png" style="width: 5in;" /></a>
-<figcaption>
-<p><span class="caption-text">送信されたメール： テンプレートリストから置換されたか所（青字）</span><a class="headerlink" href="#id60" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-center" id="id61">
-<a class="reference internal image-reference" href="../../../../_images/動作イメージ（フォーマット型）.png"><img alt="template_list example" src="../../../../_images/%E5%8B%95%E4%BD%9C%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%EF%BC%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E5%9E%8B%EF%BC%89.png" style="width: 5in;" /></a>
-<figcaption>
-<p><span class="caption-text">メール送信の動作イメージ</span><a class="headerlink" href="#id61" title="この画像へのパーマリンク">¶</a></p>
-</figcaption>
-</figure>
-</li>
-</ol>
-</li>
-<li><div class="line-block">
-<div class="line"><strong>メール送信までの操作手順</strong></div>
-</div>
-<div class="line-block">
-<div class="line">テンプレートID決定～送信までの手順を説明します。</div>
-<div class="line">ファイルのフォーマットや命名などは、「<em>①テンプレートリスト</em> ～ <em>③送信依頼ファイル</em>」を参照して下さい。</div>
-</div>
-<ol class="arabic">
-<li><p>テンプレートリストファイルの編集とテンプレートIDの決定</p>
-<div class="line-block">
-<div class="line">テンプレートリストファイルを編集で開き、テンプレートIDを決定します（重複しない番号）。</div>
-<div class="line">行を追加し、1列目に決定したIDを記述します。</div>
-</div>
-<div class="line-block">
-<div class="line">フリー型、セーフ型の場合で可変の文字列を利用したい場合、置換文字数分を2列目に記述します。</div>
-</div>
-<div class="line-block">
-<div class="line">送信モードにより、メールアドレスも記述します。</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">テンプレートファイル作成（フリーフォーマット型以外）</div>
-<div class="line">メール本文を記述します。</div>
-<div class="line">可変部分がある場合、変数で記述します。</div>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<div class="line-block">
-<div class="line">可変部分がない場合、テンプレートファイルは不要です。</div>
-</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">送信依頼ファイル作成</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">所定ディレクトリへファイル配置</div>
-</div>
-<ul>
-<li><div class="line-block">
-<div class="line">テンプレートリスト ―~/ita-root/confs/backyardconfs/</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">テンプレート 　　　―~/ita-root/confs/backyardconfs/</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">送信依頼ファイル 　―~/ita-root/temp/ky_mail_queues/ky_sysmail_0_queue/</div>
-</div>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-</section>
-<section id="id27">
-<h5>ロール紐付確認＋クリーニング<a class="headerlink" href="#id27" title="この見出しへのパーマリンク">¶</a></h5>
-<div class="line-block">
-<div class="line">ロール紐付リスト（ロール・ユーザー／ロール・メニュー）の内容を確認し、ロールとユーザー、</div>
-<div class="line">ロールとメニューで無効な紐付け関係が存在したら、その情報を消去する処理です。</div>
-<div class="line">独立型の常駐プロセスとして動作します。</div>
-</div>
-</section>
-<section id="id28">
-<h5>投入オペレーション確認＋クリーニング<a class="headerlink" href="#id28" title="この見出しへのパーマリンク">¶</a></h5>
-<div class="line-block">
-<div class="line">「オペレーション削除管理」メニューの設定に基づいてデータの削除を行います。</div>
-</div>
-</section>
-<section id="id29">
-<h5>ファイル確認＋クリーニング<a class="headerlink" href="#id29" title="この見出しへのパーマリンク">¶</a></h5>
-<div class="line-block">
-<div class="line">「ファイル削除管理」メニューの設定に基づいてファイルの削除を行います。</div>
-</div>
-</section>
-</section>
-</section>
-</section>
-<section id="id30">
-<h2>運用操作<a class="headerlink" href="#id30" title="この見出しへのパーマリンク">¶</a></h2>
-<div class="line-block">
-<div class="line">ITAシステムに対する操作は、ユーザーによるブラウザ画面からの入力だけではなく、</div>
-<div class="line">sshコンソールやFTPソフトを使ったシステム運用・保守による操作もあります。</div>
-<div class="line">運用・保守の操作対象は次のとおりです。</div>
-</div>
-<ul>
-<li><div class="line-block">
-<div class="line"><a class="reference internal" href="#installation-related"><span class="std std-ref">インストールの開始</span></a></div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line"><a class="reference internal" href="#delete-operation-execution-history-routinely"><span class="std std-ref">オペレーション作業履歴の定期削除</span></a></div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line"><a class="reference internal" href="#change-log-level"><span class="std std-ref">ログレベルの変更</span></a></div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line"><a class="reference internal" href="#maintenance"><span class="std std-ref">メンテナンス</span></a></div>
-</div>
-</li>
-</ul>
-<section id="installation-related">
-<span id="id31"></span><h3>インストールの開始<a class="headerlink" href="#installation-related" title="この見出しへのパーマリンク">¶</a></h3>
-<div class="line-block">
-<div class="line">インストール時の事後作業については、別マニュアル「インストールマニュアル」の「3項 動作確認」をご参照下さい。</div>
-</div>
-</section>
-<section id="delete-operation-execution-history-routinely">
-<span id="id32"></span><h3>オペレーション作業履歴の定期削除<a class="headerlink" href="#delete-operation-execution-history-routinely" title="この見出しへのパーマリンク">¶</a></h3>
-<div class="line-block">
-<div class="line">投入オペレーション一覧に登録されているオペレーションで、実施日が設定されているオペレーションに紐づく作業履歴は、指定した保存期間を過ぎると削除されます。（廃止扱いとされます。）</div>
-<div class="line">作業履歴には以下のものがあります。</div>
-</div>
-<ul>
-<li><div class="line-block">
-<div class="line">ITA  　　　　　　　　　　　　― Symphonyで管理している情報</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">各オーケストレータのドライバ ― Ansible driverで管理している情報</div>
-</div>
-</li>
-</ul>
-<div class="line-block">
-<div class="line">保存期間は以下のファイルによって指定できます。</div>
-</div>
-<ul>
-<li><div class="line-block">
-<div class="line">ITA</div>
-<div class="line">~/ita-root/confs/backyardconfs/ita_base/keep_day_length.txt</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">Ansible</div>
-<div class="line">~/ita-root/confs/backyardconfs/ansible_driver/keep_day_length.txt</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">ドライバ共通</div>
-<div class="line">~/ita-root/confs/backyardconfs/ita_base/dataautoclean_conf.txt</div>
-</div>
-</li>
-</ul>
-<div class="line-block">
-<div class="line">この機能は、Cronに登録されている日時処理によって作動します。</div>
-<div class="line">Cronには、コマンド｛　crontab–e　｝により以下の行が登録されており、実行時間を指定することが出来ます。</div>
-</div>
-</section>
-<section id="change-log-level">
-<span id="id33"></span><h3>ログレベルの変更<a class="headerlink" href="#change-log-level" title="この見出しへのパーマリンク">¶</a></h3>
-<div class="line-block">
-<div class="line">ITAシステム 独立型プロセスのログレベルの変更方法は次のと通りです。</div>
-<div class="line"><br /></div>
-</div>
-<dl>
-<dt>■ 対象ファイル</dt><dd><div class="line-block">
-<div class="line">~/ita-root/backyards/webdbcore/ky_mail</div>
-<div class="line">~/ita-root/backyards/webdbcore/ky_std_checkcondition-linklist</div>
-<div class="line">~/ita-root/backyards/ita_base/ky_std_symphony-dataautoclean.sh</div>
-<div class="line-block">
-<div class="line">~/ita-root/backyardconfs/commn/ky_execinstance_dataautoclean-workflow.sh</div>
-</div>
-</div>
-</dd>
-</dl>
-<ul>
-<li><p>【NORMALレベル】
-| 「LOG_LEVEL='NORMAL'」を有効にします。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#   ログ出力レベル</span>
-<span class="c1">#   DEBUG ：解析レベルでログ出力</span>
-<span class="c1">#   NORMAL：クリティカルな場合のみログ出力</span>
-<span class="c1">#LOG_LEVEL=&#39;DEBUG&#39;</span>
-<span class="nv">LOG_LEVEL</span><span class="o">=</span><span class="s1">&#39;NORMAL&#39;</span>
-</pre></div>
-</div>
-</li>
-<li><p>【DEBUGレベル】
-| 「LOG_LEVEL='DEBUG'」を有効にします。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ログ出力レベル</span>
-<span class="c1">#  DEBUG ：解析レベルでログ出力</span>
-<span class="c1">#  NORMAL：クリティカルな場合のみログ出力</span>
-<span class="nv">LOG_LEVEL</span><span class="o">=</span><span class="s1">&#39;DEBUG&#39;</span>
-<span class="c1">#LOG_LEVEL=&#39;NORMAL&#39;</span>
-</pre></div>
-</div>
-</li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<div class="line-block">
-<div class="line">ログレベル変更は、<strong>プロセス再起動（Restart）後に有効になります</strong>。（「2.4メンテナンス」参照）</div>
-</div>
-</div>
-</section>
-<section id="maintenance">
-<span id="id34"></span><h3>メンテナンス<a class="headerlink" href="#maintenance" title="この見出しへのパーマリンク">¶</a></h3>
-<section id="id35">
-<h4>ITAシステム 独立型プロセスの起動/停止/再起動<a class="headerlink" href="#id35" title="この見出しへのパーマリンク">¶</a></h4>
-<div class="line-block">
-<div class="line">メール送信機能を例示します。</div>
-<div class="line">ロール紐付確認 ＋ クリーニングの場合は、「ky_mail」を「ky_std_checkcondition-linklist」に読み替えて下さい。</div>
-</div>
-<section id="id36">
-<h5>プロセス起動<a class="headerlink" href="#id36" title="この見出しへのパーマリンク">¶</a></h5>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>service<span class="w"> </span>ky_mail<span class="w"> </span>start
-</pre></div>
-</div>
-</section>
-<section id="id37">
-<h5>プロセス停止<a class="headerlink" href="#id37" title="この見出しへのパーマリンク">¶</a></h5>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>service<span class="w"> </span>ky_mail<span class="w"> </span>stop
-</pre></div>
-</div>
-</section>
-<section id="id38">
-<h5>プロセス再起動<a class="headerlink" href="#id38" title="この見出しへのパーマリンク">¶</a></h5>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>service<span class="w"> </span>ky_mail<span class="w"> </span>restart
-</pre></div>
-</div>
-</section>
-</section>
 </section>
 </section>
 </section>

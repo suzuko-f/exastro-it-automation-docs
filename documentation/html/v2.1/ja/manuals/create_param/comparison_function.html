@@ -1,0 +1,909 @@
+
+<!DOCTYPE html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>比較機能 &#8212; Documentation  ドキュメント</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/option.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/exastro_documents.css?v=2" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/swagger/swagger-ui.css" />
+    
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/translations.js"></script>
+    <script src="../../../../_static/jquery-3.6.3.min.js"></script>
+    <script src="../../../../_static/exastro_documents.js?v=1"></script>
+    <script src="../../../../_static/swagger/swagger-ui-bundle.js"></script>
+    <script src="../../../../_static/swagger/swagger-ui-standalone-preset.js"></script>
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../../../../genindex.html" />
+    <link rel="search" title="検索" href="../../../../search.html" /> 
+  </head>
+<body id="page" class="ja">
+
+
+<div id="container">
+
+<div id="header">
+  <header class="divInner">
+    <!-- Exastro logo -->
+    <div id="logo"><img src="../../../../_static/img/exastro.svg" alt="Exastro"></div>
+    <!-- Project name -->
+    <div id="projectName"><a href="../../../../index.html">Documentation</a></div>
+    <!-- Heaedr navigation -->
+    <div id="headerSearch">
+      <form class="search" action="../../../../search.html" method="get">
+        <input type="text" name="q" aria-labelledby="searchlabel">
+        <button type="submit" value="検索"><img src="../../../../_static/img/search.png" alt="検索"></button>
+      </form>
+    </div>
+  </header>
+</div><!-- End #header -->
+
+
+<div id="toolbar">
+  <div class="divInner">
+    
+    <div id="documentVersion">
+      <dl>
+        <dt>Document version</dt>
+        <dd>
+          <div>
+            <select name="version" onchange="location.href=value;">
+                file_path: v2.0/ja/manuals/create_param/comparison_function
+                file_path: v2.0/ja/manuals/create_param/comparison_function
+            </select>
+          </div>
+        </dd>
+      </dl>
+    </div>
+
+    <div id="documentLanguage">
+      <dl>
+        <dt>Language</dt>
+        <dd>
+          <div>
+            <select name="lang" onchange="location.href=value;">
+                file_path: v2.1/ja/manuals/create_param/comparison_function
+                hasdoc: True
+                  <option value="#"
+                  selected
+                  >日本語</option>
+                file_path: v2.1/en/manuals/create_param/comparison_function
+                hasdoc: False
+            </select>
+          </div>
+        </dd>
+      </dl>
+    </div>
+    <div id="toolbarNavigation">
+      <ul>
+      </ul>
+    </div>
+  </div>
+</div><!-- End #toolbar -->
+
+<div id="sideMenu">
+
+  <div id="menuButton"></div>
+  
+  <aside class="divInner">
+    <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../v2.0/index.html">Exastro IT Automation Documentation 2.0</a></li>
+</ul>
+
+    <!-- <ul>
+      <li class="toctree-l1"><a class="reference internal" href="../../../../genindex.html">索引</a></li>
+    </ul> -->
+    
+  </aside>
+</div><!-- End #sideMenu -->
+
+
+<div id="tableOfContents">
+  <div id="tocButton"></div>
+  <ul>
+<li><a class="reference internal" href="#">比較機能</a><ul>
+<li><a class="reference internal" href="#id2">比較機能概要</a><ul>
+<li><a class="reference internal" href="#id3">比較機能について</a><ul>
+<li><a class="reference internal" href="#id4">比較機能全体概要図</a></li>
+<li><a class="reference internal" href="#id5">比較機能処理概要図</a></li>
+<li><a class="reference internal" href="#id6">比較機能定義概要図</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id7">パラメータシートの比較について</a><ul>
+<li><a class="reference internal" href="#id8">比較機能の動作要件</a></li>
+<li><a class="reference internal" href="#id9">比較実行パラメータ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id10">比較機能での対象項目について</a><ul>
+<li><a class="reference internal" href="#id11">比較対象項目</a><ul>
+<li><a class="reference internal" href="#id12">比較対象のパラメータシートの項目</a></li>
+<li><a class="reference internal" href="#id13">比較可能な対象項目の組み合わせ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id14">比較のメニュー構成</a><ul>
+<li><a class="reference internal" href="#id15">メニュー/画面一覧</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+<div id="contents">
+<main class="divInner">
+
+ <div id="breadcrumbs">
+  <ul>
+    <li><a href="../../../../index.html">HOME</a></li>
+    
+    <li>比較機能</li>
+  </ul>
+</div>
+
+<div id="article">
+<article class="divInner">
+<div class="body" role="main">
+
+  <section id="id1">
+<h1>比較機能<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h1>
+<section id="id2">
+<h2>比較機能概要<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">本章では比較機能について説明します。</div>
+</div>
+<section id="id3">
+<h3>比較機能について<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">比較機能とは、ITAのメニュー作成機能で作成したパラメータシートを比較し、差分を出力する機能です。</div>
+<div class="line"><br /></div>
+<div class="line">本機能は、「パラメータシート（ホスト/オペレーションあり）」を対象としています。</div>
+<div class="line">パラメータシートの詳細については、「利用手順マニュアル メニュー作成機能」を参照してください。</div>
+<div class="line">アクセス権/アクセス許可ロールについては、「利用手順マニュアル データレコード毎の</div>
+<div class="line">ロールベースアクセス制御」を参照してください。</div>
+</div>
+<section id="id4">
+<h4>比較機能全体概要図<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h4>
+<div class="line-block">
+<div class="line">以下は、比較機能実行までの全体の概要図です。</div>
+</div>
+<blockquote>
+<div><figure class="align-left">
+<a class="reference internal image-reference" href="../../../../_images/比較機能全体概要図.png"><img alt="比較機能全体概要図" src="../../../../_images/%E6%AF%94%E8%BC%83%E6%A9%9F%E8%83%BD%E5%85%A8%E4%BD%93%E6%A6%82%E8%A6%81%E5%9B%B3.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+</figure>
+</div></blockquote>
+</section>
+<section id="id5">
+<h4>比較機能処理概要図<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h4>
+<div class="line-block">
+<div class="line">以下は、比較機能の処理の概要図です。</div>
+</div>
+<blockquote>
+<div><figure class="align-left">
+<a class="reference internal image-reference" href="../../../../_images/比較機能処理概要図.png"><img alt="比較機能処理概要図" src="../../../../_images/%E6%AF%94%E8%BC%83%E6%A9%9F%E8%83%BD%E5%87%A6%E7%90%86%E6%A6%82%E8%A6%81%E5%9B%B3.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+</figure>
+</div></blockquote>
+</section>
+<section id="id6">
+<h4>比較機能定義概要図<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h4>
+<div class="line-block">
+<div class="line">以下は、パラメータシートの紐付と比較結果の概要図です。</div>
+<div class="line">比較定義、比較定義詳細、各設定については、「5 比較機能・操作方法説明」を参照してください。</div>
+<div class="line"><br /></div>
+<div class="line">・パラメータシートの紐付（比較対象のパラメータシートの項目名が完全に一致している場合）</div>
+</div>
+<blockquote>
+<div><figure class="align-left">
+<a class="reference internal image-reference" href="../../../../_images/比較定義概要図1.png"><img alt="比較対象のパラメータシートの項目名が完全に一致している場合" src="../../../../_images/%E6%AF%94%E8%BC%83%E5%AE%9A%E7%BE%A9%E6%A6%82%E8%A6%81%E5%9B%B31.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+</figure>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">・パラメータシートの紐付（比較対象のパラメータシートの項目が不一致の場合）</div>
+</div>
+<blockquote>
+<div><figure class="align-left">
+<a class="reference internal image-reference" href="../../../../_images/比較定義概要図2.png"><img alt="比較対象のパラメータシートの項目が不一致の場合" src="../../../../_images/%E6%AF%94%E8%BC%83%E5%AE%9A%E7%BE%A9%E6%A6%82%E8%A6%81%E5%9B%B32.png" style="width: 6.67391in; height: 3.20028in;" /></a>
+</figure>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="id7">
+<h3>パラメータシートの比較について<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">比較機能は、比較定義、比較定義詳細にて、紐付された対象パラメータシート、項目情報を元に比較を実施します。</div>
+<div class="line"><br /></div>
+</div>
+<section id="id8">
+<h4>比較機能の動作要件<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h4>
+<div class="line-block">
+<div class="line">ITAで以下の設定がされていること。</div>
+<div class="line">・ITA インストーラにて、「createparam」が選択され、インストールされている</div>
+<div class="line">・ メニュー定義/作成にて、作成対象「パラメータシート（ホスト/オペレーションあり）」が作成されている</div>
+<div class="line">・比較定義にて、比較対象となるパラメータシート同士の紐づけ設定がされている。</div>
+<div class="line">・比較定義詳細にて、比較対象となるの項目同士で紐づけ設定がされている。（比較定義の設定状態によっては、設定不要）</div>
+</div>
+</section>
+<section id="id9">
+<h4>比較実行パラメータ<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h4>
+<div class="line-block">
+<div class="line">以下をパラメータとして設定し比較を実行できます。</div>
+<div class="line">比較定義については、後述の「比較定義」を参照。</div>
+</div>
+<table class="docutils align-left" id="id16">
+<caption><span class="caption-text">表 比較実行パラメータ</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 24%" />
+<col style="width: 9%" />
+<col style="width: 30%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><div class="line-block">
+<div class="line">パラメータ</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">説明</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">入力必須</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">入力形式</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">制約事項</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">比較定義</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">比較定義名を選択</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">リスト選択</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">基準日１</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">比較定義にて比較対象メニュー1 で選択したメニューの</div>
+<div class="line">基準日となる日時を入力</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">手動入力</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">基準日２</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">比較定義にて比較対象メニュー2 で選択したメニューの</div>
+<div class="line">基準日となる日時を入力</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">手動入力</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">対象ホスト</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">対象ホストを選択</div>
+<div class="line">デフォルト：対象の絞り込みなし。（比較対象を全件表示）</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">リスト選択</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="id10">
+<h2>比較機能での対象項目について<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="id11">
+<h3>比較対象項目<a class="headerlink" href="#id11" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id12">
+<h4>比較対象のパラメータシートの項目<a class="headerlink" href="#id12" title="この見出しへのパーマリンク">¶</a></h4>
+<div class="line-block">
+<div class="line">比較機能で使用可能なパラメータシートの項目について以下となります。</div>
+</div>
+<table class="docutils align-left" id="id17">
+<caption><span class="caption-text">表 パラメータシートの比較対象項目</span><a class="headerlink" href="#id17" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><div class="line-block">
+<div class="line">項目種別</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">制約事項</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">文字列(単一行)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">文字列(複数行)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">整数</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">小数</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">プルダウン選択</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">選択したリストの ID での比較を行います。</div>
+<div class="line">アクセス権がない場合、 ID 返還失敗(X)表記となります。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">ファイルアップロード</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ファイルアップロード同士で比較する場合、ファイル名、ファイルの内容で比較を</div>
+<div class="line">実施します。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">リンク</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">※アクセス権については、「利用手順マニュアル データレコード毎のロールベースアクセス制御」を参照してください。</div>
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id13">
+<h4>比較可能な対象項目の組み合わせ<a class="headerlink" href="#id13" title="この見出しへのパーマリンク">¶</a></h4>
+<div class="line-block">
+<div class="line">比較可能なパラメータシートの項目の組み合わせ一覧になります。</div>
+</div>
+<table class="docutils align-left" id="id18">
+<caption><span class="caption-text">表 比較対象項目の比較パターン組み合わせ</span><a class="headerlink" href="#id18" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head stub"><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">文字列</div>
+<div class="line">(単一行)</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">文字列</div>
+<div class="line">(複数行)</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">整数</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">小数</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">プルダウン</div>
+<div class="line">選択</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">ファイル</div>
+<div class="line">アップロード</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">リンク</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><th class="stub"><div class="line-block">
+<div class="line">文字列</div>
+<div class="line">(単一行)</div>
+</div>
+</th>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※１</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※２</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><th class="stub"><div class="line-block">
+<div class="line">文字列</div>
+<div class="line">(複数行)</div>
+</div>
+</th>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※１</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※２</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><th class="stub"><div class="line-block">
+<div class="line">整数</div>
+</div>
+</th>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※１</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※２</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><th class="stub"><div class="line-block">
+<div class="line">小数</div>
+</div>
+</th>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※１</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※２</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><th class="stub"><div class="line-block">
+<div class="line">プルダウン</div>
+<div class="line">選択</div>
+</div>
+</th>
+<td><div class="line-block">
+<div class="line">○※１</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※１</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※１</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※１</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※１</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※１※２</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※１</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><th class="stub"><div class="line-block">
+<div class="line">ファイル</div>
+<div class="line">アップロード</div>
+</div>
+</th>
+<td><div class="line-block">
+<div class="line">○※２</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※２</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※２</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※２</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※１※２</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※３</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※２</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><th class="stub"><div class="line-block">
+<div class="line">リンク</div>
+</div>
+</th>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※１</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○※２</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="id14">
+<h2>比較のメニュー構成<a class="headerlink" href="#id14" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">本章では、比較メニュー構成について説明します。</div>
+</div>
+<section id="id15">
+<h3>メニュー/画面一覧<a class="headerlink" href="#id15" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">比較のメニュー一覧をいかに記述します。</div>
+</div>
+<table class="docutils align-left" id="id19">
+<caption><span class="caption-text">表 比較画面一覧</span><a class="headerlink" href="#id19" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 24%" />
+<col style="width: 32%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head stub"><div class="line-block">
+<div class="line">No</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">メニューグループ</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">メニュー・画面</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">説明</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><th class="stub"><div class="line-block">
+<div class="line">1</div>
+</div>
+</th>
+<td><div class="line-block">
+<div class="line">比較</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">比較定義</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">比較実行する定義名の作成を行います。</div>
+<div class="line">比較対象のパラメータシートの紐付を行います。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><th class="stub"><div class="line-block">
+<div class="line">2</div>
+</div>
+</th>
+<td><div class="line-block">
+<div class="line">比較</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">比較定義詳細</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">比較するパラメータシートの項目について、</div>
+<div class="line">パラメータシートの項目単位での紐付設定を行います。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><th class="stub"><div class="line-block">
+<div class="line">3</div>
+</div>
+</th>
+<td><div class="line-block">
+<div class="line">比較</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">比較実行</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">比較定義・比較定義詳細で設定した、</div>
+<div class="line">設定を元に比較を実施</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+</div>
+
+
+<div id="articleNavigation">
+  <ul>
+  </ul>
+</div>
+
+
+<div id="pageTopLink">
+  <a href="#container"><i>↑</i> Page Top</a>
+</div>
+
+</article>
+</div>
+</main>
+</div><!-- End #contents -->
+<div id="footer">
+  <footer class="divInner">
+    <small>Copyright © 2023 NEC Corporation</small>
+  </footer>
+</div><!-- End #footer -->
+
+<div id="overlay"></div>
+<div id="grayBack"></div>
+
+</div><!-- End #container -->
+  </body>
+</html>

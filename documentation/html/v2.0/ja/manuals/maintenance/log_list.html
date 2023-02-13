@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
-    <title>ログ一覧 &#8212; Documentation  ドキュメント</title>
+    <title>1. ログ一覧 &#8212; Documentation  ドキュメント</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/option.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
@@ -34,7 +34,7 @@
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
     <link rel="index" title="索引" href="../../../../genindex.html" />
     <link rel="search" title="検索" href="../../../../search.html" />
-    <link rel="next" title="データバックアップ・リストア手順" href="backup_and_restore.html" />
+    <link rel="next" title="2. データバックアップ・リストア" href="backup_and_restore.html" />
     <link rel="prev" title="メンテナンス" href="index.html" /> 
   </head>
 <body id="page" class="ja">
@@ -103,7 +103,7 @@
     <div id="toolbarNavigation">
       <ul>
         <li class="prev"><a href="index.html" title="前のトピックへ">メンテナンス</a></li>
-        <li class="next"><a href="backup_and_restore.html" title="次のトピックへ">データバックアップ・リストア手順</a></li>
+        <li class="next"><a href="backup_and_restore.html" title="次のトピックへ"><span class="section-number">2. </span>データバックアップ・リストア</a></li>
       </ul>
     </div>
   </div>
@@ -125,8 +125,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../it_automation_base/index.html">基本操作</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../create_param/index.html">パラメータ管理</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="index.html">メンテナンス</a><ul class="current">
-<li class="toctree-l5 current"><a class="current reference internal" href="#">ログ一覧</a></li>
-<li class="toctree-l5"><a class="reference internal" href="backup_and_restore.html">データバックアップ・リストア手順</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">1. ログ一覧</a></li>
+<li class="toctree-l5"><a class="reference internal" href="backup_and_restore.html">2. データバックアップ・リストア</a></li>
 </ul>
 </li>
 </ul>
@@ -150,14 +150,15 @@
 <div id="tableOfContents">
   <div id="tocButton"></div>
   <ul>
-<li><a class="reference internal" href="#">ログ一覧</a><ul>
-<li><a class="reference internal" href="#platform-job">platform-job</a></li>
-<li><a class="reference internal" href="#platform-api">platform-api</a></li>
-<li><a class="reference internal" href="#platform-web">platform-web</a></li>
-<li><a class="reference internal" href="#platform-auth">platform-auth</a></li>
-<li><a class="reference internal" href="#keycloak">keycloak</a></li>
-<li><a class="reference internal" href="#platform-db">platform-db</a></li>
-<li><a class="reference internal" href="#ita-api-organization">ita-api-organization</a></li>
+<li><a class="reference internal" href="#">1. ログ一覧</a><ul>
+<li><a class="reference internal" href="#id2">1.1. 一般的なログ</a></li>
+<li><a class="reference internal" href="#platform-jobplatform-api">1.2. platform-job・platform-api</a></li>
+<li><a class="reference internal" href="#platform-webita-web-server">1.3. platform-web・ita-web-server</a></li>
+<li><a class="reference internal" href="#platform-auth">1.4. platform-auth</a></li>
+<li><a class="reference internal" href="#keycloak">1.5. keycloak</a></li>
+<li><a class="reference internal" href="#platform-db">1.6. platform-db</a></li>
+<li><a class="reference internal" href="#ita-api-organization">1.7. ita-api-organization</a></li>
+<li><a class="reference internal" href="#ita-api-admin">1.8. ita-api-admin</a></li>
 </ul>
 </li>
 </ul>
@@ -175,7 +176,7 @@
     <li><a href="../index.html">マニュアル</a></li>
     <li><a href="index.html">メンテナンス</a></li>
     
-    <li>ログ一覧</li>
+    <li><span class="section-number">1. </span>ログ一覧</li>
   </ul>
 </div>
 
@@ -184,23 +185,146 @@
 <div class="body" role="main">
 
   <section id="id1">
-<h1>ログ一覧<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h1>
+<h1><span class="section-number">1. </span>ログ一覧<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h1>
 <div class="line-block">
 <div class="line">Exastro IT Automationの各コンテナの出力メッセージに関するログについて。</div>
 <div class="line">各コンテナのログの例と文字列の意味を以下に記載します。</div>
 </div>
-<section id="platform-job">
-<h2>platform-job<a class="headerlink" href="#platform-job" title="この見出しへのパーマリンク">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>形式：%(asctime)s %(levelname)s (%(userid)s) %(pathname)s(%(lineno)d) %(message)s
-例　：2023/01/11 11:27:05.976995 INFO (None) /app/platform_init.py(88) platform initialize setting start
+<section id="id2">
+<h2><span class="section-number">1.1. </span>一般的なログ<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">一般的なログは以下の形式となっています。</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-number">リスト 1.15 </span><span class="caption-text">形式</span><a class="headerlink" href="#id3" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">%</span><span class="p">(</span><span class="n">asctime</span><span class="p">)</span><span class="n">s</span><span class="p">]</span> <span class="p">[</span><span class="o">%</span><span class="p">(</span><span class="n">levelname</span><span class="p">)</span><span class="n">s</span><span class="p">]</span> <span class="p">[</span><span class="o">%</span><span class="p">(</span><span class="n">userid</span><span class="p">)</span><span class="n">s</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">フリーログ</span><span class="o">&gt;</span>
 </pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-number">リスト 1.16 </span><span class="caption-text">例</span><a class="headerlink" href="#id4" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="p">[</span><span class="mi">2023</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">06</span> <span class="mi">14</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">05</span><span class="p">,</span><span class="mi">212</span><span class="p">][</span><span class="n">INFO</span><span class="p">]</span> <span class="p">[</span><span class="n">USER_ID</span><span class="p">:</span><span class="mi">20401</span><span class="p">]</span> <span class="n">AppLog</span> <span class="n">instance</span><span class="p">(</span><span class="n">stdAppLogger</span><span class="p">)</span> <span class="ow">is</span> <span class="n">created</span>
+</pre></div>
+</div>
 </div>
 <table class="docutils align-left">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 23%" />
-<col style="width: 31%" />
-<col style="width: 31%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 29%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><div class="line-block">
+<div class="line">フォーマット文字列</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">フォーマットの意味</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">ログの例</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">備考</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">[%(asctime)s]</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">日付</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">[2023-01-05 18:05:22,875]</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">[%(levelname)s]</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ログレベル</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">[INFO]</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">[%(userid)s]</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ユーザーID</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">[USER_ID:efb59f05-6f31-47d6-b28e-0f9ee236534e]</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">&lt;フリーログ&gt;</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">決まった値はなし</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">AppLog instance(stdAppLogger) is created</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ログによって形式が異なります。</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="platform-jobplatform-api">
+<h2><span class="section-number">1.2. </span>platform-job・platform-api<a class="headerlink" href="#platform-jobplatform-api" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-number">リスト 1.17 </span><span class="caption-text">形式</span><a class="headerlink" href="#id5" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="o">%</span><span class="p">(</span><span class="n">asctime</span><span class="p">)</span><span class="n">s</span> <span class="o">%</span><span class="p">(</span><span class="n">levelname</span><span class="p">)</span><span class="n">s</span> <span class="p">(</span><span class="o">%</span><span class="p">(</span><span class="n">userid</span><span class="p">)</span><span class="n">s</span><span class="p">)</span> <span class="o">%</span><span class="p">(</span><span class="n">pathname</span><span class="p">)</span><span class="n">s</span><span class="p">(</span><span class="o">%</span><span class="p">(</span><span class="n">lineno</span><span class="p">)</span><span class="n">d</span><span class="p">)</span> <span class="o">%</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="n">s</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-number">リスト 1.18 </span><span class="caption-text">例</span><a class="headerlink" href="#id6" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2023</span><span class="o">/</span><span class="mi">01</span><span class="o">/</span><span class="mi">11</span> <span class="mi">11</span><span class="p">:</span><span class="mi">27</span><span class="p">:</span><span class="mf">05.976995</span> <span class="n">INFO</span> <span class="p">(</span><span class="kc">None</span><span class="p">)</span> <span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">platform_init</span><span class="o">.</span><span class="n">py</span><span class="p">(</span><span class="mi">88</span><span class="p">)</span> <span class="n">platform</span> <span class="n">initialize</span> <span class="n">setting</span> <span class="n">start</span>
+</pre></div>
+</div>
+</div>
+<table class="docutils align-left">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 29%" />
+<col style="width: 29%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>フォーマット文字列</p></th>
@@ -216,9 +340,9 @@
 <td></td>
 </tr>
 <tr class="row-odd"><td><p>%(levelname)s</p></td>
-<td><p>メッセージレベル</p></td>
+<td><p>ログレベル</p></td>
 <td><p>INFO</p></td>
-<td><p>DEBUG, INFO, WARNING, ERROR, CRITICAL が出力される。</p></td>
+<td><p>DEBUG, INFO, WARNING, ERROR, CRITICAL のいずれかが出力される。</p></td>
 </tr>
 <tr class="row-even"><td><p>(%(userid)s)</p></td>
 <td><p>アクセスユーザー（Noneは指定なし）</p></td>
@@ -243,174 +367,42 @@
 </tbody>
 </table>
 </section>
-<section id="platform-api">
-<h2>platform-api<a class="headerlink" href="#platform-api" title="この見出しへのパーマリンク">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>形式：%(asctime)s %(levelname)s (%(userid)s) %(pathname)s(%(lineno)d) %(message)s
-例　：2023/01/06 10:15:47.537174 INFO (2d6aabce-04c7-4938-a616-fa283cd6693) /app/common_library/common/api_keycloak_roles.py(372) Get keycloak user list for each role. realm_name=org3, client_id=743c50ae-7656-40d2-9ac1-b6cc6e39d15c, role_name=_workspace-1-admin
-</pre></div>
-</div>
-<table class="docutils align-left">
-<colgroup>
-<col style="width: 15%" />
-<col style="width: 23%" />
-<col style="width: 31%" />
-<col style="width: 31%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><div class="line-block">
-<div class="line">フォーマット文字列</div>
-</div>
-</th>
-<th class="head"><div class="line-block">
-<div class="line">フォーマットの意味</div>
-</div>
-</th>
-<th class="head"><div class="line-block">
-<div class="line">ログの例</div>
-</div>
-</th>
-<th class="head"><div class="line-block">
-<div class="line">備考</div>
-</div>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><div class="line-block">
-<div class="line">%(asctime)s</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">ログ出力日時</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">2023/01/06 10:15:47.537174</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line"><br /></div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><div class="line-block">
-<div class="line">%(levelname)s</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">メッセージレベル</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">INFO</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">DEBUG, INFO, WARNING, ERROR, CRITICAL が出力される。</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><div class="line-block">
-<div class="line">(%(userid)s)</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">アクセスユーザー（Noneは指定なし）</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">(2d6aabce-04c7-4938-a616-fa283cd6693)</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line"><br /></div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><div class="line-block">
-<div class="line">%(pathname)s</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">ログ出力元のソース</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">/app/common_library/common/api_keycloak_roles.py</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line"><br /></div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><div class="line-block">
-<div class="line">(%(lineno)d)</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">ログ出力元の行</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">(372)</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line"><br /></div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><div class="line-block">
-<div class="line">%(message)s</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">メッセージ</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">platform initialize setting start</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line"><br /></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="platform-web">
-<h2>platform-web<a class="headerlink" href="#platform-web" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="platform-webita-web-server">
+<h2><span class="section-number">1.3. </span>platform-web・ita-web-server<a class="headerlink" href="#platform-webita-web-server" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">デフォルトのapacheログ形式になっています。</div>
 <div class="line">設定内容は以下の通りです。</div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LogFormat</span> <span class="s2">&quot;%h %l </span><span class="si">%u</span><span class="s2"> %t </span><span class="se">\&quot;</span><span class="si">%r</span><span class="se">\&quot;</span><span class="s2"> %&gt;s %b </span><span class="se">\&quot;</span><span class="s2">%</span><span class="si">{Referer}</span><span class="s2">i</span><span class="se">\&quot;</span><span class="s2"> </span><span class="se">\&quot;</span><span class="s2">%{User-Agent}i</span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="n">combined</span> \
-<span class="n">LogFormat</span> <span class="s2">&quot;%h %l </span><span class="si">%u</span><span class="s2"> %t </span><span class="se">\&quot;</span><span class="si">%r</span><span class="se">\&quot;</span><span class="s2"> %&gt;s %b&quot;</span> <span class="n">common</span> \
-<span class="o">&lt;</span><span class="n">IfModule</span> <span class="n">logio_module</span><span class="o">&gt;</span> \
-  <span class="c1"># You need to enable mod_logio.c to use %I and %O \</span>
-  <span class="n">LogFormat</span> <span class="s2">&quot;%h %l </span><span class="si">%u</span><span class="s2"> %t </span><span class="se">\&quot;</span><span class="si">%r</span><span class="se">\&quot;</span><span class="s2"> %&gt;s %b </span><span class="se">\&quot;</span><span class="s2">%</span><span class="si">{Referer}</span><span class="s2">i</span><span class="se">\&quot;</span><span class="s2"> </span><span class="se">\&quot;</span><span class="s2">%{User-Agent}i</span><span class="se">\&quot;</span><span class="s2"> %I %O&quot;</span> <span class="n">combinedio</span> \
-<span class="o">&lt;/</span><span class="n">IfModule</span><span class="o">&gt;</span>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-number">リスト 1.19 </span><span class="caption-text">形式</span><a class="headerlink" href="#id7" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">LogFormat</span> <span class="s2">&quot;%h %l </span><span class="si">%u</span><span class="s2"> %t </span><span class="se">\&quot;</span><span class="si">%r</span><span class="se">\&quot;</span><span class="s2"> %&gt;s %b </span><span class="se">\&quot;</span><span class="s2">%</span><span class="si">{Referer}</span><span class="s2">i</span><span class="se">\&quot;</span><span class="s2"> </span><span class="se">\&quot;</span><span class="s2">%{User-Agent}i</span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="n">combined</span> \
+ <span class="n">LogFormat</span> <span class="s2">&quot;%h %l </span><span class="si">%u</span><span class="s2"> %t </span><span class="se">\&quot;</span><span class="si">%r</span><span class="se">\&quot;</span><span class="s2"> %&gt;s %b&quot;</span> <span class="n">common</span> \
+ <span class="o">&lt;</span><span class="n">IfModule</span> <span class="n">logio_module</span><span class="o">&gt;</span> \
+   <span class="c1"># You need to enable mod_logio.c to use %I and %O \</span>
+   <span class="n">LogFormat</span> <span class="s2">&quot;%h %l </span><span class="si">%u</span><span class="s2"> %t </span><span class="se">\&quot;</span><span class="si">%r</span><span class="se">\&quot;</span><span class="s2"> %&gt;s %b </span><span class="se">\&quot;</span><span class="s2">%</span><span class="si">{Referer}</span><span class="s2">i</span><span class="se">\&quot;</span><span class="s2"> </span><span class="se">\&quot;</span><span class="s2">%{User-Agent}i</span><span class="se">\&quot;</span><span class="s2"> %I %O&quot;</span> <span class="n">combinedio</span> \
+ <span class="o">&lt;/</span><span class="n">IfModule</span><span class="o">&gt;</span>
 </pre></div>
+</div>
 </div>
 <div class="line-block">
 <div class="line">commonフォーマットは以下の構成になっています。</div>
 <div class="line">ログの保存としてcommonを指定した場合は表の情報が一行で記録されていきます。</div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>例：192.168.128.2 - - [12/Jan/2023:15:38:10 +0900] &quot;GET /favicon.ico/platform/ HTTP/1.1&quot; 200 9817
-&quot;http://localhost:8000/org3/platform/roles&quot; &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-(KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36&quot;
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-number">リスト 1.20 </span><span class="caption-text">例</span><a class="headerlink" href="#id8" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">192.168.128.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">12</span><span class="o">/</span><span class="n">Jan</span><span class="o">/</span><span class="mi">2023</span><span class="p">:</span><span class="mi">15</span><span class="p">:</span><span class="mi">38</span><span class="p">:</span><span class="mi">10</span> <span class="o">+</span><span class="mi">0900</span><span class="p">]</span> <span class="s2">&quot;GET /favicon.ico/platform/ HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">9817</span>
+<span class="s2">&quot;http://localhost:8000/org3/platform/roles&quot;</span> <span class="s2">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36</span>
+<span class="p">(</span><span class="n">KHTML</span><span class="p">,</span> <span class="n">like</span> <span class="n">Gecko</span><span class="p">)</span> <span class="n">Chrome</span><span class="o">/</span><span class="mf">108.0.0.0</span> <span class="n">Safari</span><span class="o">/</span><span class="mf">537.36</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
-<table class="docutils align-left" id="id2">
-<caption><span class="caption-number">表 61 </span><span class="caption-text">commonでログ保存を指定した場合</span><a class="headerlink" href="#id2" title="このテーブルへのパーマリンク">¶</a></caption>
+</div>
+<table class="docutils align-left" id="id9">
+<caption><span class="caption-number">表 1.5 </span><span class="caption-text">commonでログ保存を指定した場合</span><a class="headerlink" href="#id9" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 23%" />
-<col style="width: 31%" />
-<col style="width: 31%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 29%" />
+<col style="width: 29%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><div class="line-block">
@@ -556,13 +548,13 @@
 <div class="line-block">
 <div class="line">combinedフォーマットは、commonフォーマットに以下の項目が追加されています。</div>
 </div>
-<table class="docutils align-left" id="id3">
-<caption><span class="caption-number">表 62 </span><span class="caption-text">combinedフォーマットでログ保存を指定した場合</span><a class="headerlink" href="#id3" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id10">
+<caption><span class="caption-number">表 1.6 </span><span class="caption-text">combinedフォーマットでログ保存を指定した場合</span><a class="headerlink" href="#id10" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 23%" />
-<col style="width: 31%" />
-<col style="width: 31%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 29%" />
+<col style="width: 29%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><div class="line-block">
@@ -614,7 +606,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">User Agent とは、使用しているOS・ブラウザなどの情報のことです。</div>
+<div class="line">User Agent とは使用しているOS・ブラウザなどの情報のことです。</div>
 </div>
 </td>
 </tr>
@@ -623,13 +615,13 @@
 <div class="line-block">
 <div class="line">combinedioフォーマットは、combinedフォーマットに以下の項目が追加されています。</div>
 </div>
-<table class="docutils align-left" id="id4">
-<caption><span class="caption-number">表 63 </span><span class="caption-text">combinedioフォーマットでログ保存を指定した場合</span><a class="headerlink" href="#id4" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id11">
+<caption><span class="caption-number">表 1.7 </span><span class="caption-text">combinedioフォーマットでログ保存を指定した場合</span><a class="headerlink" href="#id11" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 23%" />
-<col style="width: 31%" />
-<col style="width: 31%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 29%" />
+<col style="width: 29%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><div class="line-block">
@@ -689,24 +681,38 @@
 </table>
 </section>
 <section id="platform-auth">
-<h2>platform-auth<a class="headerlink" href="#platform-auth" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">1.4. </span>platform-auth<a class="headerlink" href="#platform-auth" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">authログは、上述のapacheログとapiログの混合されたものが出力されますが、</div>
 <div class="line">apacheログ（platform-web）とほとんど同じです。</div>
 </div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-number">リスト 1.21 </span><span class="caption-text">例</span><a class="headerlink" href="#id12" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">-</span><span class="p">]</span> <span class="o">-</span> <span class="mf">10.244.0.1</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">08</span><span class="o">/</span><span class="n">Feb</span><span class="o">/</span><span class="mi">2023</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">22</span><span class="p">:</span><span class="mi">20</span> <span class="o">+</span><span class="mi">0900</span><span class="p">]</span> <span class="s2">&quot;GET /auth/resources/b3h1e/common/keycloak/node_modules/patternfly/dist/fonts/OpenSans-Light-webfont.woff2 HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">63180</span> <span class="s2">&quot;-&quot;</span> <span class="s2">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36&quot;</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="keycloak">
-<h2>keycloak<a class="headerlink" href="#keycloak" title="この見出しへのパーマリンク">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>形式：%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%c] (%t) %s%e%n
-例　：2023-01-12 09:21:49,040 INFO  [org.keycloak.events] (default task-13) type=INTROSPECT_TOKEN, realmId=org3, clientId=system-org3-auth, userId=null, ipAddress=172.18.0.14, client_auth_method=client-secret
+<h2><span class="section-number">1.5. </span>keycloak<a class="headerlink" href="#keycloak" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-number">リスト 1.22 </span><span class="caption-text">形式</span><a class="headerlink" href="#id13" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">d</span><span class="p">{</span><span class="n">yyyy</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">dd</span> <span class="n">HH</span><span class="p">:</span><span class="n">mm</span><span class="p">:</span><span class="n">ss</span><span class="p">,</span><span class="n">SSS</span><span class="p">}</span> <span class="o">%-</span><span class="mi">5</span><span class="n">p</span> <span class="p">[</span><span class="o">%</span><span class="n">c</span><span class="p">]</span> <span class="p">(</span><span class="o">%</span><span class="n">t</span><span class="p">)</span> <span class="o">%</span><span class="n">s</span><span class="o">%</span><span class="n">e</span><span class="o">%</span><span class="n">n</span>
 </pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-number">リスト 1.23 </span><span class="caption-text">例</span><a class="headerlink" href="#id14" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2023</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">12</span> <span class="mi">09</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span><span class="mi">49</span><span class="p">,</span><span class="mi">040</span> <span class="n">INFO</span>  <span class="p">[</span><span class="n">org</span><span class="o">.</span><span class="n">keycloak</span><span class="o">.</span><span class="n">events</span><span class="p">]</span> <span class="p">(</span><span class="n">default</span> <span class="n">task</span><span class="o">-</span><span class="mi">13</span><span class="p">)</span> <span class="nb">type</span><span class="o">=</span><span class="n">INTROSPECT_TOKEN</span><span class="p">,</span> <span class="n">realmId</span><span class="o">=</span><span class="n">org3</span><span class="p">,</span> <span class="n">clientId</span><span class="o">=</span><span class="n">system</span><span class="o">-</span><span class="n">org3</span><span class="o">-</span><span class="n">auth</span><span class="p">,</span> <span class="n">userId</span><span class="o">=</span><span class="n">null</span><span class="p">,</span> <span class="n">ipAddress</span><span class="o">=</span><span class="mf">172.18.0.14</span><span class="p">,</span> <span class="n">client_auth_method</span><span class="o">=</span><span class="n">client</span><span class="o">-</span><span class="n">secret</span>
+</pre></div>
+</div>
 </div>
 <table class="docutils align-left">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 23%" />
-<col style="width: 31%" />
-<col style="width: 31%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 29%" />
+<col style="width: 29%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><div class="line-block">
@@ -750,7 +756,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">エラーレベル（DEBUG, INFO, WARN, ERROR）</div>
+<div class="line">ログレベル</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -805,7 +811,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line"><br /></div>
+<div class="line">-</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -822,7 +828,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line"><br /></div>
+<div class="line">-</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -839,7 +845,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line"><br /></div>
+<div class="line">-</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -855,7 +861,7 @@
 </div>
 </section>
 <section id="platform-db">
-<h2>platform-db<a class="headerlink" href="#platform-db" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">1.6. </span>platform-db<a class="headerlink" href="#platform-db" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">DBについては使用するデータベースのログフォーマットとなります。</div>
 <div class="line">設定もDBによりますが、デフォルトでmariadbを立ち上げた際はエラーログが出力されます。</div>
@@ -864,7 +870,211 @@
 </div>
 </section>
 <section id="ita-api-organization">
-<h2>ita-api-organization<a class="headerlink" href="#ita-api-organization" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">1.7. </span>ita-api-organization<a class="headerlink" href="#ita-api-organization" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-number">リスト 1.24 </span><span class="caption-text">形式</span><a class="headerlink" href="#id15" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="p">[</span><span class="o">%</span><span class="p">(</span><span class="n">asctime</span><span class="p">)</span><span class="n">s</span><span class="p">]</span> <span class="p">[</span><span class="o">%</span><span class="p">(</span><span class="n">levelname</span><span class="p">)</span><span class="n">s</span><span class="p">]</span>  <span class="o">&lt;</span><span class="n">フリーログ</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-number">リスト 1.25 </span><span class="caption-text">例</span><a class="headerlink" href="#id16" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="p">[</span><span class="mi">2023</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">19</span> <span class="mi">12</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span><span class="mi">940</span><span class="p">][</span><span class="n">INFO</span><span class="p">]</span> <span class="n">AppLog</span> <span class="n">instance</span><span class="p">(</span><span class="n">stdAppLogger</span><span class="p">)</span> <span class="ow">is</span> <span class="n">created</span>
+</pre></div>
+</div>
+</div>
+<table class="docutils align-left">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 29%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><div class="line-block">
+<div class="line">フォーマット文字列</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">フォーマットの意味</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">ログの例</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">備考</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">%(asctime)s</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">日付</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">[2023-01-19 12:18:25,940]</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">%(levelname)s</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ログレベル</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">INFO</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ERROR, INFO, DEBUG が基本的なログレベル</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">&lt;フリーログ&gt;</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">決まった値はなし</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">AppLog instance(stdAppLogger) is created</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ログによって形式が異なります。</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ita-api-admin">
+<h2><span class="section-number">1.8. </span>ita-api-admin<a class="headerlink" href="#ita-api-admin" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-number">リスト 1.26 </span><span class="caption-text">形式</span><a class="headerlink" href="#id17" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">%</span><span class="p">(</span><span class="n">asctime</span><span class="p">)</span><span class="n">s</span><span class="p">]</span> <span class="p">[</span><span class="o">%</span><span class="p">(</span><span class="n">levelname</span><span class="p">)</span><span class="n">s</span><span class="p">]</span> <span class="p">[</span><span class="o">%</span><span class="p">(</span><span class="n">userid</span><span class="p">)</span><span class="n">s</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">フリーログ</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-number">リスト 1.27 </span><span class="caption-text">例</span><a class="headerlink" href="#id18" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2023</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">05</span> <span class="mi">18</span><span class="p">:</span><span class="mi">05</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="mi">875</span><span class="p">][</span><span class="n">INFO</span><span class="p">]</span> <span class="p">[</span><span class="n">USER_ID</span><span class="p">:</span><span class="n">efb59f05</span><span class="o">-</span><span class="mi">6</span><span class="n">f31</span><span class="o">-</span><span class="mi">47</span><span class="n">d6</span><span class="o">-</span><span class="n">b28e</span><span class="o">-</span><span class="mi">0</span><span class="n">f9ee236534e</span><span class="p">]</span> <span class="p">[</span><span class="n">ts</span><span class="o">=</span><span class="mi">2023</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">05</span><span class="n">T09</span><span class="p">:</span><span class="mi">05</span><span class="p">:</span><span class="mf">22.756</span><span class="n">Z</span><span class="p">][</span><span class="n">api</span><span class="o">-</span><span class="n">start</span><span class="p">]</span><span class="n">url</span><span class="p">:</span> <span class="n">POST</span><span class="p">:</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">ita</span><span class="o">-</span><span class="n">api</span><span class="o">-</span><span class="n">admin</span><span class="p">:</span><span class="mi">8070</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">organizations</span><span class="o">/</span><span class="n">org1</span><span class="o">/</span><span class="n">ita</span><span class="o">/</span>
+</pre></div>
+</div>
+</div>
+<table class="docutils align-left">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 29%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><div class="line-block">
+<div class="line">フォーマット文字列</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">フォーマットの意味</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">ログの例</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">備考</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">[%(asctime)s]</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">日付</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">[2023-01-05 18:05:22,875]</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">[%(levelname)s]</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ログレベル</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">[INFO]</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">[%(userid)s]</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ユーザーID</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">[USER_ID:efb59f05-6f31-47d6-b28e-0f9ee236534e]</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">&lt;フリーログ&gt;</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">決まった値はなし</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">[ts=2023-01-05T09:05:22.756Z][api-start]url: POST:http://ita-api-admin:8070/api/organizations/org1/ita/</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ログによって形式が異なります。</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 
@@ -875,7 +1085,7 @@
 <div id="articleNavigation">
   <ul>
     <li class="prev"><a href="index.html" title="前のトピックへ"><span>前のトピックへ</span>メンテナンス</a></li>
-    <li class="next"><a href="backup_and_restore.html" title="次のトピックへ"><span>次のトピックへ</span>データバックアップ・リストア手順</a></li>
+    <li class="next"><a href="backup_and_restore.html" title="次のトピックへ"><span>次のトピックへ</span><span class="section-number">2. </span>データバックアップ・リストア</a></li>
   </ul>
 </div>
 
