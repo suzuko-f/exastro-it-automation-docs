@@ -914,6 +914,9 @@ Exastro IT Automation on Kubernetes
       +     DB_USER: "pf-db-user"           # Exastro 共通基盤が使うDBユーザ
       +     DB_PASSWORD: "pf-db-password"   # Exastro 共通基盤が使うDBユーザのパスワード
 
+
+.. _installation_kubernetes_gitlablinkage:
+
 6. GitLab 連携設定
 ------------------
 
