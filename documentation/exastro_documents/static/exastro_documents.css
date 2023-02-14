@@ -2108,8 +2108,13 @@ span.highlighted {
 #footer small {
   font-size: 0.84rem;
   color: #FFF;
+  margin: 0 5px;
 }
 
+#footer small a {
+  text-decoration-color: #FFF;
+  color: #FFF;
+}
 
 /* index */
 
