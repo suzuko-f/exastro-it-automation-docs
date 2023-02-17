@@ -13,7 +13,7 @@ Exastro IT Automation Documentation 2.0
 .. toctree::
    :maxdepth: 2
 
-   ja/installation/check
+   ja/installation/index
    ja/learn/check
    ja/configuration/check
    ja/manuals/check

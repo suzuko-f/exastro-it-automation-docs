@@ -77,7 +77,7 @@ Exastro IT Automation on Kubernetes
 1. Helm リポジトリの登録
 ------------------------
 
-| Exastro Suite は、以下の2つのアプリケーションから構成されています。
+| Exastro システムは、以下の2つのアプリケーションから構成されています。
 | Exastro の全ツールは同一の Helm リポジトリ上に存在しています。
 
 - 共通基盤 (Exastro Platform)
@@ -93,7 +93,7 @@ Exastro IT Automation on Kubernetes
    :linenos:
    :caption: コマンド
 
-   # Exastro Suite の Helm リポジトリを登録
+   # Exastro システムの Helm リポジトリを登録
    helm repo add exastro https://exastro-suite.github.io/exastro-helm/ -n exastro
    # リポジトリ情報の更新
    helm repo update
@@ -262,7 +262,7 @@ Exastro IT Automation on Kubernetes
        replicaCount: 1
        image:
          repository: "exastro/exastro-it-automation-api-admin"
-         tag: "2.0.3-beta1"
+         tag: ""
          pullPolicy: IfNotPresent
        extraEnv:
          PLATFORM_API_HOST: "platform-api"
@@ -272,7 +272,7 @@ Exastro IT Automation on Kubernetes
        replicaCount: 1
        image:
          repository: "exastro/exastro-it-automation-api-organization"
-         tag: "2.0.3-beta1"
+         tag: ""
          pullPolicy: IfNotPresent
        extraEnv:
          PLATFORM_API_HOST: "platform-api"
@@ -282,12 +282,12 @@ Exastro IT Automation on Kubernetes
        replicaCount: 1
        image:
          repository: "exastro/exastro-it-automation-by-ansible-execute"
-         tag: "2.0.3-beta1"
+         tag: ""
          pullPolicy: IfNotPresent
        extraEnv:
          EXECUTE_INTERVAL: "10"
          ANSIBLE_AGENT_IMAGE: "exastro/exastro-it-automation-by-ansible-agent"
-         ANSIBLE_AGENT_IMAGE_TAG: "2.0.3-beta1"
+         ANSIBLE_AGENT_IMAGE_TAG: ""
        serviceAccount:
          create: false
          name: "ita-by-ansible-execute-sa"
@@ -298,7 +298,7 @@ Exastro IT Automation on Kubernetes
          EXECUTE_INTERVAL: "10"
        image:
          repository: "exastro/exastro-it-automation-by-ansible-legacy-role-vars-listup"
-         tag: "2.0.3-beta1"
+         tag: ""
          pullPolicy: IfNotPresent
    
      ita-by-ansible-towermaster-sync:
@@ -307,7 +307,7 @@ Exastro IT Automation on Kubernetes
          EXECUTE_INTERVAL: "10"
        image:
          repository: "exastro/exastro-it-automation-by-ansible-towermaster-sync"
-         tag: "2.0.3-beta1"
+         tag: ""
          pullPolicy: IfNotPresent
    
      ita-by-conductor-synchronize:
@@ -316,7 +316,7 @@ Exastro IT Automation on Kubernetes
          EXECUTE_INTERVAL: "10"
        image:
          repository: "exastro/exastro-it-automation-by-conductor-synchronize"
-         tag: "2.0.3-beta1"
+         tag: ""
          pullPolicy: IfNotPresent
    
      ita-by-menu-create:
@@ -325,7 +325,7 @@ Exastro IT Automation on Kubernetes
          EXECUTE_INTERVAL: "10"
        image:
          repository: "exastro/exastro-it-automation-by-menu-create"
-         tag: "2.0.3-beta1"
+         tag: ""
          pullPolicy: IfNotPresent
    
      ita-database-setup-job:
@@ -338,16 +338,20 @@ Exastro IT Automation on Kubernetes
        replicaCount: 1
        image:
          repository: "exastro/exastro-it-automation-web-server"
-         tag: "2.0.3-beta1"
+         tag: ""
          pullPolicy: IfNotPresent
    
    exastro-platform:
      platform-api:
        image:
          repository: "exastro/exastro-platform-api"
-         tag: "1.3.0-beta1"
+         tag: ""
    
      platform-auth:
+       extraEnv:
+         # Please set the URL to access
+         EXTERNAL_URL: ""
+         EXTERNAL_URL_MNG: ""
        ingress:
          enabled: true
          hosts:
@@ -369,18 +373,17 @@ Exastro IT Automation on Kubernetes
          #   nodePort: 30081
        image:
          repository: "exastro/exastro-platform-auth"
-         tag: "1.3.0-beta1"
+         tag: ""
    
-     platform-setup:
-       keycloak:
-         image:
-           repository: "exastro/exastro-platform-job"
-           tag: "1.3.0-beta1"
+     platform-migration:
+       image:
+         repository: "exastro/exastro-platform-migration"
+         tag: ""
    
      platform-web:
        image:
          repository: "exastro/exastro-platform-web"
-         tag: "1.3.0-beta1"
+         tag: ""
    
      mariadb:
        enabled: true
@@ -400,7 +403,7 @@ Exastro IT Automation on Kubernetes
        enabled: true
        image:
          repository: "exastro/keycloak"
-         tag: "1.3.0-beta1"
+         tag: ""
          pullPolicy: IfNotPresent
        resources:
          requests:
@@ -466,6 +469,12 @@ Exastro IT Automation on Kubernetes
          :lineno-start: 232
       
           platform-auth:
+            extraEnv:
+              # Please set the URL to access
+         -    EXTERNAL_URL: ""
+         -    EXTERNAL_URL_MNG: ""
+         +    EXTERNAL_URL: "http://exastro-suite.xxxxxxxxxxxxxxxxxx.japaneast.aksapp.io"
+         +    EXTERNAL_URL_MNG: "http://exastro-suite-mng.xxxxxxxxxxxxxxxxxx.japaneast.aksapp.io"
             ingress:
               enabled: true
          +    annotations:
@@ -477,13 +486,13 @@ Exastro IT Automation on Kubernetes
          +        large_client_header_buffers 4 100k;
               hosts:
          -      - host: exastro-suite.example.local
-         +      - host: exastro-suite.xxxxxxxxxxxxxxxxxx.japaneast.aksapp.io ★ここにドメイン名を記載
+         +      - host: exastro-suite.xxxxxxxxxxxxxxxxxx.japaneast.aksapp.io
                   paths:
                     - path: /
                       pathType: Prefix
                       backend: "http"
          -      - host: exastro-suite-mng.example.local
-         +      - host: exastro-suite-mng.xxxxxxxxxxxxxxxxxx.japaneast.aksapp.io ★ここにドメイン名を記載
+         +      - host: exastro-suite-mng.xxxxxxxxxxxxxxxxxx.japaneast.aksapp.io
                   paths:
                     - path: /
                       pathType: Prefix
@@ -507,6 +516,12 @@ Exastro IT Automation on Kubernetes
          :lineno-start: 232
       
           platform-auth:
+            extraEnv:
+              # Please set the URL to access
+         -    EXTERNAL_URL: ""
+         -    EXTERNAL_URL_MNG: ""
+         +    EXTERNAL_URL: "https://your-exastro.domain"
+         +    EXTERNAL_URL_MNG: "https://your-exastro-mng.domain"
             ingress:
          -    enabled: true
          +    enabled: false
@@ -547,6 +562,12 @@ Exastro IT Automation on Kubernetes
         :lineno-start: 232
 
           platform-auth:
+            extraEnv:
+              # Please set the URL to access
+         -    EXTERNAL_URL: ""
+         -    EXTERNAL_URL_MNG: ""
+         +    EXTERNAL_URL: "http://10.10.10.10:30080"
+         +    EXTERNAL_URL_MNG: "http://10.10.10.10:30081"
             ingress:
         -    enabled: true
         +    enabled: false
@@ -575,7 +596,7 @@ Exastro IT Automation on Kubernetes
 
 .. _DATABASE_SETUP:
 
-4. データベース連携
+1. データベース連携
 -------------------
 
 | Exastro サービスを利用するためには、CMDB やオーガナイゼーションの管理のためのデータベースが必要となります。
@@ -672,7 +693,7 @@ Exastro IT Automation on Kubernetes
           .. code-block:: diff
             :caption: exastro.yaml
             :linenos:
-            :lineno-start: 267
+            :lineno-start: 270
 
               mariadb:
             -   enabled: true
@@ -1190,15 +1211,14 @@ Exastro IT Automation on Kubernetes
               * Service Console       *
               *************************
               http://exastro-suite.example.local/
-            
+
               *************************
               * Administrator Console *
               *************************
-              http://exastro-suite-mng.example.local/
-            
-            
-             # Note: You can display this note again by executing the following command.
+              http://exastro-suite-mng.example.local/auth/
 
+
+            # Note: You can display this note again by executing the following command.
 
          | 以下、上記の出力結果に従って操作をします。
 
@@ -1271,7 +1291,7 @@ Exastro IT Automation on Kubernetes
          | 下記は、実行例のため :ref:`service_setting` で設定したホスト名に読み替えてください。
 
          .. code-block:: bash
-            :caption: 出力結果
+            :caption: 出力結果(例)
 
             *************************
             * Service Console       *
@@ -1303,7 +1323,7 @@ Exastro IT Automation on Kubernetes
               --values exastro.yaml
   
          .. code-block:: bash
-            :caption: 出力結果
+            :caption: 出力結果(例)
       
             NAME: exastro
             LAST DEPLOYED: Sat Jan 28 15:00:02 2023
@@ -1337,15 +1357,17 @@ Exastro IT Automation on Kubernetes
               export NODE_SVC_PORT=$(kubectl get services platform-auth --namespace exastro -o jsonpath="{.spec.ports[0].nodePort}")
               export NODE_MGT_PORT=$(kubectl get services platform-auth --namespace exastro -o jsonpath="{.spec.ports[1].nodePort}")
               export NODE_IP=$(kubectl get services platform-auth --namespace exastro -o jsonpath="{.status.loadBalancer.ingress[0].ip}")
-              echo "*************************"
-              echo "* Administrator Console *"
-              echo "*************************"
+              # *************************
+              # * Administrator Console *
+              # *************************
               echo http://$NODE_IP:$NODE_MGT_PORT/auth/
-              echo ""
-              echo "*************************"
-              echo "* Service Console       *"
-              echo "*************************"
+
+              # *************************
+              # * Service Console       *
+              # *************************
               echo http://$NODE_IP:$NODE_SVC_PORT
+
+            # Note: You can display this note again by executing the following command.
 
          | 以下、上記の出力結果に従って操作をします。
 
@@ -1384,33 +1406,7 @@ Exastro IT Automation on Kubernetes
 
       3. 暗号化キーのバックアップ
 
-         | Exastro システムのパスワードや認証情報といった機密情報はすべて暗号化されています。
-         | 必ず、下記で取得した暗号化キーをバックアップして、適切に保管してください。
-
-         .. danger::
-            | 暗号化キーを紛失した場合、バックアップデータからシステムを復旧した際にデータの復号ができなくなります。
-
-         .. code-block:: bash
-            :caption: コマンド
-
-            # Exastro IT Automation ENCRYPT_KEY
-            kubectl get secret ita-secret-ita-global -n exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
-
-         .. code-block:: bash
-            :caption: 出力結果
-
-            JnIoXzJtPic2MXFqRl1yI1chMj8hWzQrNypmVn41Pk8=
-
-         .. code-block:: bash
-            :caption: コマンド
-
-            # Exastro Platform ENCRYPT_KEY
-            kubectl get secret platform-secret-pf-global -n exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
-
-         .. code-block:: bash
-            :caption: 出力結果
-
-            bHFZe2VEVVM2PmFeQDMqNG4oZT4lTlglLjJJekxBTHE=
+         .. include:: ../include/backup_encrypt_key_k8s.rst
 
       4. 接続確認
 
@@ -1423,21 +1419,21 @@ Exastro IT Automation on Kubernetes
             export NODE_SVC_PORT=$(kubectl get services platform-auth --namespace exastro -o jsonpath="{.spec.ports[0].nodePort}")
             export NODE_MGT_PORT=$(kubectl get services platform-auth --namespace exastro -o jsonpath="{.spec.ports[1].nodePort}")
             export NODE_IP=$(kubectl get services platform-auth --namespace exastro -o jsonpath="{.status.loadBalancer.ingress[0].ip}")
-            echo "*************************"
-            echo "* Administrator Console *"
-            echo "*************************"
+            # *************************
+            # * Administrator Console *
+            # *************************
             echo http://$NODE_IP:$NODE_MGT_PORT/auth/
-            echo ""
-            echo "*************************"
-            echo "* Service Console       *"
-            echo "*************************"
+
+            # *************************
+            # * Service Console       *
+            # *************************
             echo http://$NODE_IP:$NODE_SVC_PORT
 
          | 出力結果に従って、:menuselection:`Administrator Console` の URL にアクセスします。
          | 下記は、実行例のため実際のコマンド実行結果に読み替えてください。
 
          .. code-block:: bash
-            :caption: 出力結果
+            :caption: 出力結果(例)
 
             *************************
             * Administrator Console *
@@ -1497,17 +1493,19 @@ Exastro IT Automation on Kubernetes
               !!! Please save the output ENCRYPT_KEY carefully. !!!
 
             3. Run the following command to get the application URL and go to the URL or go to the displayed URL:
+
+
               export NODE_SVC_PORT=$(kubectl get services platform-auth --namespace exastro -o jsonpath="{.spec.ports[0].nodePort}")
               export NODE_MGT_PORT=$(kubectl get services platform-auth --namespace exastro -o jsonpath="{.spec.ports[1].nodePort}")
               export NODE_IP=$(kubectl get nodes --namespace exastro -o jsonpath="{.items[0].status.addresses[0].address}")
-              echo "*************************"
-              echo "* Administrator Console *"
-              echo "*************************"
+              # *************************
+              # * Administrator Console *
+              # *************************
               echo http://$NODE_IP:$NODE_MGT_PORT/auth/
-              echo ""
-              echo "*************************"
-              echo "* Service Console       *"
-              echo "*************************"
+
+              # *************************
+              # * Service Console       *
+              # *************************
               echo http://$NODE_IP:$NODE_SVC_PORT
 
             # Note: You can display this note again by executing the following command.
@@ -1587,21 +1585,21 @@ Exastro IT Automation on Kubernetes
             export NODE_SVC_PORT=$(kubectl get services platform-auth --namespace exastro -o jsonpath="{.spec.ports[0].nodePort}")
             export NODE_MGT_PORT=$(kubectl get services platform-auth --namespace exastro -o jsonpath="{.spec.ports[1].nodePort}")
             export NODE_IP=$(kubectl get nodes --namespace exastro -o jsonpath="{.items[0].status.addresses[0].address}")
-            echo "*************************"
-            echo "* Administrator Console *"
-            echo "*************************"
+            # *************************
+            # * Administrator Console *
+            # *************************
             echo http://$NODE_IP:$NODE_MGT_PORT/auth/
-            echo ""
-            echo "*************************"
-            echo "* Service Console       *"
-            echo "*************************"
+
+            # *************************
+            # * Service Console       *
+            # *************************
             echo http://$NODE_IP:$NODE_SVC_PORT
 
          | 出力結果に従って、:menuselection:`Administrator Console` の URL にアクセスします。
          | 下記は、実行例のため実際のコマンド実行結果に読み替えてください。
 
          .. code-block:: bash
-            :caption: 出力結果
+            :caption: 出力結果(例)
 
             *************************
             * Administrator Console *
@@ -1622,7 +1620,7 @@ Exastro IT Automation on Kubernetes
             * - 管理コンソール
               - http://172.16.20.xxx:30081/auth/
 
-3. 管理コンソールへのログイン
+1. 管理コンソールへのログイン
 -----------------------------
 
 | 以下の画面が表示された場合、:menuselection:`Administration Console` を選択して、ログイン画面を開きます。
