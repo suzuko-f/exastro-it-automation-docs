@@ -35,7 +35,7 @@
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="検索" href="../../../search.html" />
-    <link rel="next" title="構成・構築ガイド" href="../configuration/index.html" />
+    <link rel="next" title="アップグレード" href="upgrade.html" />
     <link rel="prev" title="インストール" href="index.html" /> 
   </head>
 <body id="page" class="ja">
@@ -104,7 +104,7 @@
     <div id="toolbarNavigation">
       <ul>
         <li class="prev"><a href="index.html" title="前のトピックへ">インストール</a></li>
-        <li class="next"><a href="../configuration/index.html" title="次のトピックへ">構成・構築ガイド</a></li>
+        <li class="next"><a href="upgrade.html" title="次のトピックへ">アップグレード</a></li>
       </ul>
     </div>
   </div>
@@ -126,6 +126,7 @@
 <li class="toctree-l5"><a class="reference internal" href="#id11">インストール</a></li>
 </ul>
 </li>
+<li class="toctree-l4"><a class="reference internal" href="upgrade.html">アップグレード</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../configuration/index.html">構成・構築ガイド</a></li>
@@ -160,7 +161,7 @@
 <li><a class="reference internal" href="#id7">設定例</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#database-setup">4. データベース連携</a></li>
+<li><a class="reference internal" href="#database-setup">1. データベース連携</a></li>
 <li><a class="reference internal" href="#db">5. アプリケーションの DB ユーザ設定</a><ul>
 <li><a class="reference internal" href="#id9">設定例</a></li>
 </ul>
@@ -173,7 +174,7 @@
 <li><a class="reference internal" href="#id11">インストール</a><ul>
 <li><a class="reference internal" href="#id13">1. 永続ボリュームの作成</a></li>
 <li><a class="reference internal" href="#id14">2. インストール</a></li>
-<li><a class="reference internal" href="#id15">3. 管理コンソールへのログイン</a></li>
+<li><a class="reference internal" href="#id15">1. 管理コンソールへのログイン</a></li>
 </ul>
 </li>
 </ul>
@@ -314,7 +315,7 @@ $(window).on('load', function () {
 <section id="helm">
 <h3>1. Helm リポジトリの登録<a class="headerlink" href="#helm" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">Exastro Suite は、以下の2つのアプリケーションから構成されています。</div>
+<div class="line">Exastro システムは、以下の2つのアプリケーションから構成されています。</div>
 <div class="line">Exastro の全ツールは同一の Helm リポジトリ上に存在しています。</div>
 </div>
 <ul class="simple">
@@ -336,7 +337,7 @@ $(window).on('load', function () {
 </table>
 <div class="literal-block-wrapper docutils container" id="id20">
 <div class="code-block-caption"><span class="caption-number">リスト 1 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id20" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># Exastro Suite の Helm リポジトリを登録</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># Exastro システムの Helm リポジトリを登録</span>
 <span class="linenos">2</span>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>exastro<span class="w"> </span>https://exastro-suite.github.io/exastro-helm/<span class="w"> </span>-n<span class="w"> </span>exastro
 <span class="linenos">3</span><span class="c1"># リポジトリ情報の更新</span>
 <span class="linenos">4</span>helm<span class="w"> </span>repo<span class="w"> </span>update
@@ -502,7 +503,7 @@ $(window).on('load', function () {
 <span class="linenos">144</span><span class="w">    </span><span class="nt">replicaCount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 <span class="linenos">145</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span>
 <span class="linenos">146</span><span class="w">      </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;exastro/exastro-it-automation-api-admin&quot;</span>
-<span class="linenos">147</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2.0.3-beta1&quot;</span>
+<span class="linenos">147</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
 <span class="linenos">148</span><span class="w">      </span><span class="nt">pullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
 <span class="linenos">149</span><span class="w">    </span><span class="nt">extraEnv</span><span class="p">:</span>
 <span class="linenos">150</span><span class="w">      </span><span class="nt">PLATFORM_API_HOST</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;platform-api&quot;</span>
@@ -512,7 +513,7 @@ $(window).on('load', function () {
 <span class="linenos">154</span><span class="w">    </span><span class="nt">replicaCount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 <span class="linenos">155</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span>
 <span class="linenos">156</span><span class="w">      </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;exastro/exastro-it-automation-api-organization&quot;</span>
-<span class="linenos">157</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2.0.3-beta1&quot;</span>
+<span class="linenos">157</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
 <span class="linenos">158</span><span class="w">      </span><span class="nt">pullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
 <span class="linenos">159</span><span class="w">    </span><span class="nt">extraEnv</span><span class="p">:</span>
 <span class="linenos">160</span><span class="w">      </span><span class="nt">PLATFORM_API_HOST</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;platform-api&quot;</span>
@@ -522,12 +523,12 @@ $(window).on('load', function () {
 <span class="linenos">164</span><span class="w">    </span><span class="nt">replicaCount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 <span class="linenos">165</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span>
 <span class="linenos">166</span><span class="w">      </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;exastro/exastro-it-automation-by-ansible-execute&quot;</span>
-<span class="linenos">167</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2.0.3-beta1&quot;</span>
+<span class="linenos">167</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
 <span class="linenos">168</span><span class="w">      </span><span class="nt">pullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
 <span class="linenos">169</span><span class="w">    </span><span class="nt">extraEnv</span><span class="p">:</span>
 <span class="linenos">170</span><span class="w">      </span><span class="nt">EXECUTE_INTERVAL</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;10&quot;</span>
 <span class="linenos">171</span><span class="w">      </span><span class="nt">ANSIBLE_AGENT_IMAGE</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;exastro/exastro-it-automation-by-ansible-agent&quot;</span>
-<span class="linenos">172</span><span class="w">      </span><span class="nt">ANSIBLE_AGENT_IMAGE_TAG</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2.0.3-beta1&quot;</span>
+<span class="linenos">172</span><span class="w">      </span><span class="nt">ANSIBLE_AGENT_IMAGE_TAG</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
 <span class="linenos">173</span><span class="w">    </span><span class="nt">serviceAccount</span><span class="p">:</span>
 <span class="linenos">174</span><span class="w">      </span><span class="nt">create</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="linenos">175</span><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ita-by-ansible-execute-sa&quot;</span>
@@ -538,7 +539,7 @@ $(window).on('load', function () {
 <span class="linenos">180</span><span class="w">      </span><span class="nt">EXECUTE_INTERVAL</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;10&quot;</span>
 <span class="linenos">181</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span>
 <span class="linenos">182</span><span class="w">      </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;exastro/exastro-it-automation-by-ansible-legacy-role-vars-listup&quot;</span>
-<span class="linenos">183</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2.0.3-beta1&quot;</span>
+<span class="linenos">183</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
 <span class="linenos">184</span><span class="w">      </span><span class="nt">pullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
 <span class="linenos">185</span>
 <span class="linenos">186</span><span class="w">  </span><span class="nt">ita-by-ansible-towermaster-sync</span><span class="p">:</span>
@@ -547,7 +548,7 @@ $(window).on('load', function () {
 <span class="linenos">189</span><span class="w">      </span><span class="nt">EXECUTE_INTERVAL</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;10&quot;</span>
 <span class="linenos">190</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span>
 <span class="linenos">191</span><span class="w">      </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;exastro/exastro-it-automation-by-ansible-towermaster-sync&quot;</span>
-<span class="linenos">192</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2.0.3-beta1&quot;</span>
+<span class="linenos">192</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
 <span class="linenos">193</span><span class="w">      </span><span class="nt">pullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
 <span class="linenos">194</span>
 <span class="linenos">195</span><span class="w">  </span><span class="nt">ita-by-conductor-synchronize</span><span class="p">:</span>
@@ -556,7 +557,7 @@ $(window).on('load', function () {
 <span class="linenos">198</span><span class="w">      </span><span class="nt">EXECUTE_INTERVAL</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;10&quot;</span>
 <span class="linenos">199</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span>
 <span class="linenos">200</span><span class="w">      </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;exastro/exastro-it-automation-by-conductor-synchronize&quot;</span>
-<span class="linenos">201</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2.0.3-beta1&quot;</span>
+<span class="linenos">201</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
 <span class="linenos">202</span><span class="w">      </span><span class="nt">pullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
 <span class="linenos">203</span>
 <span class="linenos">204</span><span class="w">  </span><span class="nt">ita-by-menu-create</span><span class="p">:</span>
@@ -565,7 +566,7 @@ $(window).on('load', function () {
 <span class="linenos">207</span><span class="w">      </span><span class="nt">EXECUTE_INTERVAL</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;10&quot;</span>
 <span class="linenos">208</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span>
 <span class="linenos">209</span><span class="w">      </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;exastro/exastro-it-automation-by-menu-create&quot;</span>
-<span class="linenos">210</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2.0.3-beta1&quot;</span>
+<span class="linenos">210</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
 <span class="linenos">211</span><span class="w">      </span><span class="nt">pullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
 <span class="linenos">212</span>
 <span class="linenos">213</span><span class="w">  </span><span class="nt">ita-database-setup-job</span><span class="p">:</span>
@@ -578,77 +579,80 @@ $(window).on('load', function () {
 <span class="linenos">220</span><span class="w">    </span><span class="nt">replicaCount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 <span class="linenos">221</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span>
 <span class="linenos">222</span><span class="w">      </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;exastro/exastro-it-automation-web-server&quot;</span>
-<span class="linenos">223</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2.0.3-beta1&quot;</span>
+<span class="linenos">223</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
 <span class="linenos">224</span><span class="w">      </span><span class="nt">pullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
 <span class="linenos">225</span>
 <span class="linenos">226</span><span class="nt">exastro-platform</span><span class="p">:</span>
 <span class="linenos">227</span><span class="w">  </span><span class="nt">platform-api</span><span class="p">:</span>
 <span class="linenos">228</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span>
 <span class="linenos">229</span><span class="w">      </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;exastro/exastro-platform-api&quot;</span>
-<span class="linenos">230</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.3.0-beta1&quot;</span>
+<span class="linenos">230</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
 <span class="linenos">231</span>
 <span class="linenos">232</span><span class="w">  </span><span class="nt">platform-auth</span><span class="p">:</span>
-<span class="linenos">233</span><span class="w">    </span><span class="nt">ingress</span><span class="p">:</span>
-<span class="linenos">234</span><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="linenos">235</span><span class="w">      </span><span class="nt">hosts</span><span class="p">:</span>
-<span class="linenos">236</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exastro-suite.example.local</span>
-<span class="linenos">237</span><span class="w">          </span><span class="nt">paths</span><span class="p">:</span>
-<span class="linenos">238</span><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/</span>
-<span class="linenos">239</span><span class="w">              </span><span class="nt">pathType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Prefix</span>
-<span class="linenos">240</span><span class="w">              </span><span class="nt">backend</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http&quot;</span>
-<span class="linenos">241</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exastro-suite-mng.example.local</span>
-<span class="linenos">242</span><span class="w">          </span><span class="nt">paths</span><span class="p">:</span>
-<span class="linenos">243</span><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/</span>
-<span class="linenos">244</span><span class="w">              </span><span class="nt">pathType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Prefix</span>
-<span class="linenos">245</span><span class="w">              </span><span class="nt">backend</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;httpMng&quot;</span>
-<span class="linenos">246</span><span class="w">    </span><span class="nt">service</span><span class="p">:</span>
-<span class="linenos">247</span><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterIP</span>
-<span class="linenos">248</span><span class="w">      </span><span class="c1"># http:</span>
-<span class="linenos">249</span><span class="w">      </span><span class="c1">#   nodePort: 30080</span>
-<span class="linenos">250</span><span class="w">      </span><span class="c1"># httpMng:</span>
-<span class="linenos">251</span><span class="w">      </span><span class="c1">#   nodePort: 30081</span>
-<span class="linenos">252</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span>
-<span class="linenos">253</span><span class="w">      </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;exastro/exastro-platform-auth&quot;</span>
-<span class="linenos">254</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.3.0-beta1&quot;</span>
-<span class="linenos">255</span>
-<span class="linenos">256</span><span class="w">  </span><span class="nt">platform-setup</span><span class="p">:</span>
-<span class="linenos">257</span><span class="w">    </span><span class="nt">keycloak</span><span class="p">:</span>
-<span class="linenos">258</span><span class="w">      </span><span class="nt">image</span><span class="p">:</span>
-<span class="linenos">259</span><span class="w">        </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;exastro/exastro-platform-job&quot;</span>
-<span class="linenos">260</span><span class="w">        </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.3.0-beta1&quot;</span>
-<span class="linenos">261</span>
-<span class="linenos">262</span><span class="w">  </span><span class="nt">platform-web</span><span class="p">:</span>
-<span class="linenos">263</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span>
-<span class="linenos">264</span><span class="w">      </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;exastro/exastro-platform-web&quot;</span>
-<span class="linenos">265</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.3.0-beta1&quot;</span>
-<span class="linenos">266</span>
-<span class="linenos">267</span><span class="w">  </span><span class="nt">mariadb</span><span class="p">:</span>
-<span class="linenos">268</span><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="linenos">269</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span>
-<span class="linenos">270</span><span class="w">      </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;mariadb&quot;</span>
-<span class="linenos">271</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;10.9&quot;</span>
-<span class="linenos">272</span><span class="w">      </span><span class="nt">pullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
-<span class="linenos">273</span><span class="w">    </span><span class="nt">resources</span><span class="p">:</span>
-<span class="linenos">274</span><span class="w">      </span><span class="nt">requests</span><span class="p">:</span>
-<span class="linenos">275</span><span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;256Mi&quot;</span>
-<span class="linenos">276</span><span class="w">        </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1m&quot;</span>
-<span class="linenos">277</span><span class="w">      </span><span class="nt">limits</span><span class="p">:</span>
-<span class="linenos">278</span><span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2Gi&quot;</span>
-<span class="linenos">279</span><span class="w">        </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;4&quot;</span>
-<span class="linenos">280</span>
-<span class="linenos">281</span><span class="w">  </span><span class="nt">keycloak</span><span class="p">:</span>
-<span class="linenos">282</span><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="linenos">283</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span>
-<span class="linenos">284</span><span class="w">      </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;exastro/keycloak&quot;</span>
-<span class="linenos">285</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.3.0-beta1&quot;</span>
-<span class="linenos">286</span><span class="w">      </span><span class="nt">pullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
-<span class="linenos">287</span><span class="w">    </span><span class="nt">resources</span><span class="p">:</span>
-<span class="linenos">288</span><span class="w">      </span><span class="nt">requests</span><span class="p">:</span>
-<span class="linenos">289</span><span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;256Mi&quot;</span>
-<span class="linenos">290</span><span class="w">        </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1m&quot;</span>
-<span class="linenos">291</span><span class="w">      </span><span class="nt">limits</span><span class="p">:</span>
-<span class="linenos">292</span><span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2Gi&quot;</span>
-<span class="linenos">293</span><span class="w">        </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;4&quot;</span>
+<span class="linenos">233</span><span class="w">    </span><span class="nt">extraEnv</span><span class="p">:</span>
+<span class="linenos">234</span><span class="w">      </span><span class="c1"># Please set the URL to access</span>
+<span class="linenos">235</span><span class="w">      </span><span class="nt">EXTERNAL_URL</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<span class="linenos">236</span><span class="w">      </span><span class="nt">EXTERNAL_URL_MNG</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<span class="linenos">237</span><span class="w">    </span><span class="nt">ingress</span><span class="p">:</span>
+<span class="linenos">238</span><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="linenos">239</span><span class="w">      </span><span class="nt">hosts</span><span class="p">:</span>
+<span class="linenos">240</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exastro-suite.example.local</span>
+<span class="linenos">241</span><span class="w">          </span><span class="nt">paths</span><span class="p">:</span>
+<span class="linenos">242</span><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/</span>
+<span class="linenos">243</span><span class="w">              </span><span class="nt">pathType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Prefix</span>
+<span class="linenos">244</span><span class="w">              </span><span class="nt">backend</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http&quot;</span>
+<span class="linenos">245</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exastro-suite-mng.example.local</span>
+<span class="linenos">246</span><span class="w">          </span><span class="nt">paths</span><span class="p">:</span>
+<span class="linenos">247</span><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/</span>
+<span class="linenos">248</span><span class="w">              </span><span class="nt">pathType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Prefix</span>
+<span class="linenos">249</span><span class="w">              </span><span class="nt">backend</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;httpMng&quot;</span>
+<span class="linenos">250</span><span class="w">    </span><span class="nt">service</span><span class="p">:</span>
+<span class="linenos">251</span><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterIP</span>
+<span class="linenos">252</span><span class="w">      </span><span class="c1"># http:</span>
+<span class="linenos">253</span><span class="w">      </span><span class="c1">#   nodePort: 30080</span>
+<span class="linenos">254</span><span class="w">      </span><span class="c1"># httpMng:</span>
+<span class="linenos">255</span><span class="w">      </span><span class="c1">#   nodePort: 30081</span>
+<span class="linenos">256</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span>
+<span class="linenos">257</span><span class="w">      </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;exastro/exastro-platform-auth&quot;</span>
+<span class="linenos">258</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<span class="linenos">259</span>
+<span class="linenos">260</span><span class="w">  </span><span class="nt">platform-migration</span><span class="p">:</span>
+<span class="linenos">261</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span>
+<span class="linenos">262</span><span class="w">      </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;exastro/exastro-platform-migration&quot;</span>
+<span class="linenos">263</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<span class="linenos">264</span>
+<span class="linenos">265</span><span class="w">  </span><span class="nt">platform-web</span><span class="p">:</span>
+<span class="linenos">266</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span>
+<span class="linenos">267</span><span class="w">      </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;exastro/exastro-platform-web&quot;</span>
+<span class="linenos">268</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<span class="linenos">269</span>
+<span class="linenos">270</span><span class="w">  </span><span class="nt">mariadb</span><span class="p">:</span>
+<span class="linenos">271</span><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="linenos">272</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span>
+<span class="linenos">273</span><span class="w">      </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;mariadb&quot;</span>
+<span class="linenos">274</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;10.9&quot;</span>
+<span class="linenos">275</span><span class="w">      </span><span class="nt">pullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
+<span class="linenos">276</span><span class="w">    </span><span class="nt">resources</span><span class="p">:</span>
+<span class="linenos">277</span><span class="w">      </span><span class="nt">requests</span><span class="p">:</span>
+<span class="linenos">278</span><span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;256Mi&quot;</span>
+<span class="linenos">279</span><span class="w">        </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1m&quot;</span>
+<span class="linenos">280</span><span class="w">      </span><span class="nt">limits</span><span class="p">:</span>
+<span class="linenos">281</span><span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2Gi&quot;</span>
+<span class="linenos">282</span><span class="w">        </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;4&quot;</span>
+<span class="linenos">283</span>
+<span class="linenos">284</span><span class="w">  </span><span class="nt">keycloak</span><span class="p">:</span>
+<span class="linenos">285</span><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="linenos">286</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span>
+<span class="linenos">287</span><span class="w">      </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;exastro/keycloak&quot;</span>
+<span class="linenos">288</span><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<span class="linenos">289</span><span class="w">      </span><span class="nt">pullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
+<span class="linenos">290</span><span class="w">    </span><span class="nt">resources</span><span class="p">:</span>
+<span class="linenos">291</span><span class="w">      </span><span class="nt">requests</span><span class="p">:</span>
+<span class="linenos">292</span><span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;256Mi&quot;</span>
+<span class="linenos">293</span><span class="w">        </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1m&quot;</span>
+<span class="linenos">294</span><span class="w">      </span><span class="nt">limits</span><span class="p">:</span>
+<span class="linenos">295</span><span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2Gi&quot;</span>
+<span class="linenos">296</span><span class="w">        </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;4&quot;</span>
 </pre></div>
 </div>
 </details><div class="line-block">
@@ -692,6 +696,32 @@ $(window).on('load', function () {
 </tr>
 </thead>
 <tbody>
+<tr class="row-even"><td><p>exastro-platform.platform-auth.extraEnv.EXTERNAL_URL</p></td>
+<td><div class="line-block">
+<div class="line">Exastro Platform エンドポイントの公開URL。</div>
+<div class="line">リバースプロキシや PAT(Port Address Transport) などにより、Exastro のエンドポイントと公開時の URL に齟齬が発生することで、サービス接続に失敗する場合に設定をする必要があります。</div>
+</div>
+</td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line">公開用エンドポイントのURL</div>
+<div class="line">(http[s]://your-exastro.domain:port)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>exastro-platform.platform-auth.extraEnv.EXTERNAL_URL_MNG</p></td>
+<td><div class="line-block">
+<div class="line">Exastro Platform 管理コンソールのエンドポイントの公開URL。</div>
+<div class="line">リバースプロキシや PAT(Port Address Transport) などにより、Exastro のエンドポイントと公開時の URL に齟齬が発生することで、サービス接続に失敗する場合に設定をする必要があります。</div>
+</div>
+</td>
+<td><p>可</p></td>
+<td><div class="line-block">
+<div class="line">公開用エンドポイントのURL</div>
+<div class="line">(http[s]://your-exastro.domain:port)</div>
+</div>
+</td>
+</tr>
 <tr class="row-even"><td><p>exastro-platform.platform-auth.ingress.enabled</p></td>
 <td><p>Exastro Platform における Ingress 利用の要否</p></td>
 <td><p>可</p></td>
@@ -813,28 +843,34 @@ $(window).on('load', function () {
 <div class="literal-block-wrapper docutils container" id="id23">
 <div class="code-block-caption"><span class="caption-number">リスト 3 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id23" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="linenos">232</span><span class="w"> </span>platform-auth:
-<span class="linenos">233</span><span class="w"> </span>  ingress:
-<span class="linenos">234</span><span class="w"> </span>    enabled: true
-<span class="linenos">235</span><span class="gi">+    annotations:</span>
-<span class="linenos">236</span><span class="gi">+      kubernetes.io/ingress.class: addon-http-application-routing</span>
-<span class="linenos">237</span><span class="gi">+      nginx.ingress.kubernetes.io/proxy-body-size: 100m</span>
-<span class="linenos">238</span><span class="gi">+      nginx.ingress.kubernetes.io/proxy-buffer-size: 256k</span>
-<span class="linenos">239</span><span class="gi">+      nginx.ingress.kubernetes.io/server-snippet: |</span>
-<span class="linenos">240</span><span class="gi">+        client_header_buffer_size 100k;</span>
-<span class="linenos">241</span><span class="gi">+        large_client_header_buffers 4 100k;</span>
-<span class="linenos">242</span><span class="w"> </span>    hosts:
-<span class="linenos">243</span><span class="gd">-      - host: exastro-suite.example.local</span>
-<span class="linenos">244</span><span class="gi">+      - host: exastro-suite.xxxxxxxxxxxxxxxxxx.japaneast.aksapp.io ★ここにドメイン名を記載</span>
-<span class="linenos">245</span><span class="w"> </span>        paths:
-<span class="linenos">246</span><span class="w"> </span>          - path: /
-<span class="linenos">247</span><span class="w"> </span>            pathType: Prefix
-<span class="linenos">248</span><span class="w"> </span>            backend: &quot;http&quot;
-<span class="linenos">249</span><span class="gd">-      - host: exastro-suite-mng.example.local</span>
-<span class="linenos">250</span><span class="gi">+      - host: exastro-suite-mng.xxxxxxxxxxxxxxxxxx.japaneast.aksapp.io ★ここにドメイン名を記載</span>
+<span class="linenos">233</span><span class="w"> </span>  extraEnv:
+<span class="linenos">234</span><span class="w"> </span>    # Please set the URL to access
+<span class="linenos">235</span><span class="gd">-    EXTERNAL_URL: &quot;&quot;</span>
+<span class="linenos">236</span><span class="gd">-    EXTERNAL_URL_MNG: &quot;&quot;</span>
+<span class="linenos">237</span><span class="gi">+    EXTERNAL_URL: &quot;http://exastro-suite.xxxxxxxxxxxxxxxxxx.japaneast.aksapp.io&quot;</span>
+<span class="linenos">238</span><span class="gi">+    EXTERNAL_URL_MNG: &quot;http://exastro-suite-mng.xxxxxxxxxxxxxxxxxx.japaneast.aksapp.io&quot;</span>
+<span class="linenos">239</span><span class="w"> </span>  ingress:
+<span class="linenos">240</span><span class="w"> </span>    enabled: true
+<span class="linenos">241</span><span class="gi">+    annotations:</span>
+<span class="linenos">242</span><span class="gi">+      kubernetes.io/ingress.class: addon-http-application-routing</span>
+<span class="linenos">243</span><span class="gi">+      nginx.ingress.kubernetes.io/proxy-body-size: 100m</span>
+<span class="linenos">244</span><span class="gi">+      nginx.ingress.kubernetes.io/proxy-buffer-size: 256k</span>
+<span class="linenos">245</span><span class="gi">+      nginx.ingress.kubernetes.io/server-snippet: |</span>
+<span class="linenos">246</span><span class="gi">+        client_header_buffer_size 100k;</span>
+<span class="linenos">247</span><span class="gi">+        large_client_header_buffers 4 100k;</span>
+<span class="linenos">248</span><span class="w"> </span>    hosts:
+<span class="linenos">249</span><span class="gd">-      - host: exastro-suite.example.local</span>
+<span class="linenos">250</span><span class="gi">+      - host: exastro-suite.xxxxxxxxxxxxxxxxxx.japaneast.aksapp.io</span>
 <span class="linenos">251</span><span class="w"> </span>        paths:
 <span class="linenos">252</span><span class="w"> </span>          - path: /
 <span class="linenos">253</span><span class="w"> </span>            pathType: Prefix
-<span class="linenos">254</span><span class="w"> </span>            backend: &quot;httpMng&quot;
+<span class="linenos">254</span><span class="w"> </span>            backend: &quot;http&quot;
+<span class="linenos">255</span><span class="gd">-      - host: exastro-suite-mng.example.local</span>
+<span class="linenos">256</span><span class="gi">+      - host: exastro-suite-mng.xxxxxxxxxxxxxxxxxx.japaneast.aksapp.io</span>
+<span class="linenos">257</span><span class="w"> </span>        paths:
+<span class="linenos">258</span><span class="w"> </span>          - path: /
+<span class="linenos">259</span><span class="w"> </span>            pathType: Prefix
+<span class="linenos">260</span><span class="w"> </span>            backend: &quot;httpMng&quot;
 </pre></div>
 </div>
 </div>
@@ -855,27 +891,33 @@ $(window).on('load', function () {
 <div class="literal-block-wrapper docutils container" id="id24">
 <div class="code-block-caption"><span class="caption-number">リスト 4 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id24" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="linenos">232</span><span class="w"> </span>platform-auth:
-<span class="linenos">233</span><span class="w"> </span>  ingress:
-<span class="linenos">234</span><span class="gd">-    enabled: true</span>
-<span class="linenos">235</span><span class="gi">+    enabled: false</span>
-<span class="linenos">236</span><span class="w"> </span>    hosts:
-<span class="linenos">237</span><span class="w"> </span>      - host: exastro-suite.example.local
-<span class="linenos">238</span><span class="w"> </span>        paths:
-<span class="linenos">239</span><span class="w"> </span>          - path: /
-<span class="linenos">240</span><span class="w"> </span>            pathType: Prefix
-<span class="linenos">241</span><span class="w"> </span>            backend: &quot;http&quot;
-<span class="linenos">242</span><span class="w"> </span>      - host: exastro-suite-mng.example.local
-<span class="linenos">243</span><span class="w"> </span>        paths:
-<span class="linenos">244</span><span class="w"> </span>          - path: /
-<span class="linenos">245</span><span class="w"> </span>            pathType: Prefix
-<span class="linenos">246</span><span class="w"> </span>            backend: &quot;httpMng&quot;
-<span class="linenos">247</span><span class="w"> </span>  service:
-<span class="linenos">248</span><span class="gd">-    type: ClusterIP</span>
-<span class="linenos">249</span><span class="gi">+    type: LoadBalancer</span>
-<span class="linenos">250</span><span class="w"> </span>    # http:
-<span class="linenos">251</span><span class="w"> </span>    #   nodePort: 30080
-<span class="linenos">252</span><span class="w"> </span>    # httpMng:
-<span class="linenos">253</span><span class="w"> </span>    #   nodePort: 30081
+<span class="linenos">233</span><span class="w"> </span>  extraEnv:
+<span class="linenos">234</span><span class="w"> </span>    # Please set the URL to access
+<span class="linenos">235</span><span class="gd">-    EXTERNAL_URL: &quot;&quot;</span>
+<span class="linenos">236</span><span class="gd">-    EXTERNAL_URL_MNG: &quot;&quot;</span>
+<span class="linenos">237</span><span class="gi">+    EXTERNAL_URL: &quot;https://your-exastro.domain&quot;</span>
+<span class="linenos">238</span><span class="gi">+    EXTERNAL_URL_MNG: &quot;https://your-exastro-mng.domain&quot;</span>
+<span class="linenos">239</span><span class="w"> </span>  ingress:
+<span class="linenos">240</span><span class="gd">-    enabled: true</span>
+<span class="linenos">241</span><span class="gi">+    enabled: false</span>
+<span class="linenos">242</span><span class="w"> </span>    hosts:
+<span class="linenos">243</span><span class="w"> </span>      - host: exastro-suite.example.local
+<span class="linenos">244</span><span class="w"> </span>        paths:
+<span class="linenos">245</span><span class="w"> </span>          - path: /
+<span class="linenos">246</span><span class="w"> </span>            pathType: Prefix
+<span class="linenos">247</span><span class="w"> </span>            backend: &quot;http&quot;
+<span class="linenos">248</span><span class="w"> </span>      - host: exastro-suite-mng.example.local
+<span class="linenos">249</span><span class="w"> </span>        paths:
+<span class="linenos">250</span><span class="w"> </span>          - path: /
+<span class="linenos">251</span><span class="w"> </span>            pathType: Prefix
+<span class="linenos">252</span><span class="w"> </span>            backend: &quot;httpMng&quot;
+<span class="linenos">253</span><span class="w"> </span>  service:
+<span class="linenos">254</span><span class="gd">-    type: ClusterIP</span>
+<span class="linenos">255</span><span class="gi">+    type: LoadBalancer</span>
+<span class="linenos">256</span><span class="w"> </span>    # http:
+<span class="linenos">257</span><span class="w"> </span>    #   nodePort: 30080
+<span class="linenos">258</span><span class="w"> </span>    # httpMng:
+<span class="linenos">259</span><span class="w"> </span>    #   nodePort: 30081
 </pre></div>
 </div>
 </div>
@@ -896,31 +938,37 @@ $(window).on('load', function () {
 <div class="literal-block-wrapper docutils container" id="id25">
 <div class="code-block-caption"><span class="caption-number">リスト 5 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id25" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="linenos">232</span><span class="w"> </span> platform-auth:
-<span class="linenos">233</span><span class="w"> </span>   ingress:
-<span class="linenos">234</span><span class="gd">-    enabled: true</span>
-<span class="linenos">235</span><span class="gi">+    enabled: false</span>
-<span class="linenos">236</span><span class="w"> </span>     hosts:
-<span class="linenos">237</span><span class="w"> </span>       - host: exastro-suite.example.local
-<span class="linenos">238</span><span class="w"> </span>         paths:
-<span class="linenos">239</span><span class="w"> </span>           - path: /
-<span class="linenos">240</span><span class="w"> </span>             pathType: Prefix
-<span class="linenos">241</span><span class="w"> </span>             backend: &quot;http&quot;
-<span class="linenos">242</span><span class="w"> </span>       - host: exastro-suite-mng.example.local
-<span class="linenos">243</span><span class="w"> </span>         paths:
-<span class="linenos">244</span><span class="w"> </span>           - path: /
-<span class="linenos">245</span><span class="w"> </span>             pathType: Prefix
-<span class="linenos">246</span><span class="w"> </span>             backend: &quot;httpMng&quot;
-<span class="linenos">247</span><span class="w"> </span>   service:
-<span class="linenos">248</span><span class="gd">-    type: ClusterIP</span>
-<span class="linenos">249</span><span class="gd">-    # http:</span>
-<span class="linenos">250</span><span class="gd">-    #   nodePort: 30080</span>
-<span class="linenos">251</span><span class="gd">-    # httpMng:</span>
-<span class="linenos">252</span><span class="gd">-    #   nodePort: 30081</span>
-<span class="linenos">253</span><span class="gi">+    type: NodePort</span>
-<span class="linenos">254</span><span class="gi">+    http:</span>
-<span class="linenos">255</span><span class="gi">+      nodePort: 30080</span>
-<span class="linenos">256</span><span class="gi">+    httpMng:</span>
-<span class="linenos">257</span><span class="gi">+      nodePort: 30081</span>
+<span class="linenos">233</span><span class="w"> </span>   extraEnv:
+<span class="linenos">234</span><span class="w"> </span>     # Please set the URL to access
+<span class="linenos">235</span><span class="w"> </span>-    EXTERNAL_URL: &quot;&quot;
+<span class="linenos">236</span><span class="w"> </span>-    EXTERNAL_URL_MNG: &quot;&quot;
+<span class="linenos">237</span><span class="w"> </span>+    EXTERNAL_URL: &quot;http://10.10.10.10:30080&quot;
+<span class="linenos">238</span><span class="w"> </span>+    EXTERNAL_URL_MNG: &quot;http://10.10.10.10:30081&quot;
+<span class="linenos">239</span><span class="w"> </span>   ingress:
+<span class="linenos">240</span><span class="gd">-    enabled: true</span>
+<span class="linenos">241</span><span class="gi">+    enabled: false</span>
+<span class="linenos">242</span><span class="w"> </span>     hosts:
+<span class="linenos">243</span><span class="w"> </span>       - host: exastro-suite.example.local
+<span class="linenos">244</span><span class="w"> </span>         paths:
+<span class="linenos">245</span><span class="w"> </span>           - path: /
+<span class="linenos">246</span><span class="w"> </span>             pathType: Prefix
+<span class="linenos">247</span><span class="w"> </span>             backend: &quot;http&quot;
+<span class="linenos">248</span><span class="w"> </span>       - host: exastro-suite-mng.example.local
+<span class="linenos">249</span><span class="w"> </span>         paths:
+<span class="linenos">250</span><span class="w"> </span>           - path: /
+<span class="linenos">251</span><span class="w"> </span>             pathType: Prefix
+<span class="linenos">252</span><span class="w"> </span>             backend: &quot;httpMng&quot;
+<span class="linenos">253</span><span class="w"> </span>   service:
+<span class="linenos">254</span><span class="gd">-    type: ClusterIP</span>
+<span class="linenos">255</span><span class="gd">-    # http:</span>
+<span class="linenos">256</span><span class="gd">-    #   nodePort: 30080</span>
+<span class="linenos">257</span><span class="gd">-    # httpMng:</span>
+<span class="linenos">258</span><span class="gd">-    #   nodePort: 30081</span>
+<span class="linenos">259</span><span class="gi">+    type: NodePort</span>
+<span class="linenos">260</span><span class="gi">+    http:</span>
+<span class="linenos">261</span><span class="gi">+      nodePort: 30080</span>
+<span class="linenos">262</span><span class="gi">+    httpMng:</span>
+<span class="linenos">263</span><span class="gi">+      nodePort: 30081</span>
 </pre></div>
 </div>
 </div>
@@ -928,7 +976,7 @@ $(window).on('load', function () {
 </section>
 </section>
 <section id="database-setup">
-<span id="id8"></span><h3>4. データベース連携<a class="headerlink" href="#database-setup" title="この見出しへのパーマリンク">¶</a></h3>
+<span id="id8"></span><h3>1. データベース連携<a class="headerlink" href="#database-setup" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">Exastro サービスを利用するためには、CMDB やオーガナイゼーションの管理のためのデータベースが必要となります。</div>
 <div class="line">データベース利用時の3つの設定方法について説明します。</div>
@@ -1267,9 +1315,9 @@ $(window).on('load', function () {
 </table>
 <div class="literal-block-wrapper docutils container" id="id31">
 <div class="code-block-caption"><span class="caption-number">リスト 8 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id31" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="linenos">267</span><span class="w"> </span> mariadb:
-<span class="linenos">268</span><span class="gd">-   enabled: true</span>
-<span class="linenos">269</span><span class="gi">+   enabled: false</span>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="linenos">270</span><span class="w"> </span> mariadb:
+<span class="linenos">271</span><span class="gd">-   enabled: true</span>
+<span class="linenos">272</span><span class="gi">+   enabled: false</span>
 </pre></div>
 </div>
 </div>
@@ -1432,7 +1480,7 @@ $(window).on('load', function () {
 </li>
 <li><p>Exastro IT Automation 用データベースの設定</p>
 <div class="line-block">
-<div class="line">Exastro IT Automation コンテナがデータベースに接続できるようにするために、<a class="reference internal" href="#database-setup"><span class="std std-ref">4. データベース連携</span></a> で作成した root アカウントのパスワードを設定します。</div>
+<div class="line">Exastro IT Automation コンテナがデータベースに接続できるようにするために、<a class="reference internal" href="#database-setup"><span class="std std-ref">1. データベース連携</span></a> で作成した root アカウントのパスワードを設定します。</div>
 </div>
 <table class="filter-table docutils align-left" id="id35">
 <caption><span class="caption-number">表 8 </span><span class="caption-text">共通設定 (Exastro IT Automation 用データベース) のオプションパラメータ</span><a class="headerlink" href="#id35" title="このテーブルへのパーマリンク">¶</a></caption>
@@ -2273,7 +2321,7 @@ $(window).on('load', function () {
 </div>
 </div>
 <div class="line-block">
-<div class="line">※ 下記は、<a class="reference internal" href="#database-setup"><span class="std std-ref">4. データベース連携</span></a> で設定済みです。</div>
+<div class="line">※ 下記は、<a class="reference internal" href="#database-setup"><span class="std std-ref">1. データベース連携</span></a> で設定済みです。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id51">
 <div class="code-block-caption"><span class="caption-number">リスト 20 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id51" title="このコードへのパーマリンク">¶</a></div>
@@ -2426,10 +2474,10 @@ Exastro<span class="w"> </span>install<span class="w"> </span>completion!
 <span class="w">  </span>*************************
 <span class="w">  </span>*<span class="w"> </span>Administrator<span class="w"> </span>Console<span class="w"> </span>*
 <span class="w">  </span>*************************
-<span class="w">  </span>http://exastro-suite-mng.example.local/
+<span class="w">  </span>http://exastro-suite-mng.example.local/auth/
 
 
-<span class="w"> </span><span class="c1"># Note: You can display this note again by executing the following command.</span>
+<span class="c1"># Note: You can display this note again by executing the following command.</span>
 </pre></div>
 </div>
 </div>
@@ -2518,7 +2566,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w">
 <div class="line">下記は、実行例のため <a class="reference internal" href="#service-setting"><span class="std std-ref">3. サービス公開の設定</span></a> で設定したホスト名に読み替えてください。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id62">
-<div class="code-block-caption"><span class="caption-number">リスト 31 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id62" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 31 </span><span class="caption-text">出力結果(例)</span><a class="headerlink" href="#id62" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>*************************
 *<span class="w"> </span>Service<span class="w"> </span>Console<span class="w">       </span>*
 *************************
@@ -2556,7 +2604,7 @@ http://exastro-suite-mng.example.local/auth/
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id65">
-<div class="code-block-caption"><span class="caption-number">リスト 33 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id65" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 33 </span><span class="caption-text">出力結果(例)</span><a class="headerlink" href="#id65" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME:<span class="w"> </span>exastro
 LAST<span class="w"> </span>DEPLOYED:<span class="w"> </span>Sat<span class="w"> </span>Jan<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">15</span>:00:02<span class="w"> </span><span class="m">2023</span>
 NAMESPACE:<span class="w"> </span>exastro
@@ -2589,15 +2637,17 @@ Exastro<span class="w"> </span>install<span class="w"> </span>completion!
 <span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">NODE_SVC_PORT</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>services<span class="w"> </span>platform-auth<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.spec.ports[0].nodePort}&quot;</span><span class="k">)</span>
 <span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">NODE_MGT_PORT</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>services<span class="w"> </span>platform-auth<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.spec.ports[1].nodePort}&quot;</span><span class="k">)</span>
 <span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">NODE_IP</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>services<span class="w"> </span>platform-auth<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.status.loadBalancer.ingress[0].ip}&quot;</span><span class="k">)</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;*************************&quot;</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;* Administrator Console *&quot;</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;*************************&quot;</span>
+<span class="w">  </span><span class="c1"># *************************</span>
+<span class="w">  </span><span class="c1"># * Administrator Console *</span>
+<span class="w">  </span><span class="c1"># *************************</span>
 <span class="w">  </span><span class="nb">echo</span><span class="w"> </span>http://<span class="nv">$NODE_IP</span>:<span class="nv">$NODE_MGT_PORT</span>/auth/
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;*************************&quot;</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;* Service Console       *&quot;</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;*************************&quot;</span>
+
+<span class="w">  </span><span class="c1"># *************************</span>
+<span class="w">  </span><span class="c1"># * Service Console       *</span>
+<span class="w">  </span><span class="c1"># *************************</span>
 <span class="w">  </span><span class="nb">echo</span><span class="w"> </span>http://<span class="nv">$NODE_IP</span>:<span class="nv">$NODE_SVC_PORT</span>
+
+<span class="c1"># Note: You can display this note again by executing the following command.</span>
 </pre></div>
 </div>
 </div>
@@ -2690,14 +2740,14 @@ kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w">
 <span class="nb">export</span><span class="w"> </span><span class="nv">NODE_SVC_PORT</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>services<span class="w"> </span>platform-auth<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.spec.ports[0].nodePort}&quot;</span><span class="k">)</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">NODE_MGT_PORT</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>services<span class="w"> </span>platform-auth<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.spec.ports[1].nodePort}&quot;</span><span class="k">)</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">NODE_IP</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>services<span class="w"> </span>platform-auth<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.status.loadBalancer.ingress[0].ip}&quot;</span><span class="k">)</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;*************************&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;* Administrator Console *&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;*************************&quot;</span>
+<span class="c1"># *************************</span>
+<span class="c1"># * Administrator Console *</span>
+<span class="c1"># *************************</span>
 <span class="nb">echo</span><span class="w"> </span>http://<span class="nv">$NODE_IP</span>:<span class="nv">$NODE_MGT_PORT</span>/auth/
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;*************************&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;* Service Console       *&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;*************************&quot;</span>
+
+<span class="c1"># *************************</span>
+<span class="c1"># * Service Console       *</span>
+<span class="c1"># *************************</span>
 <span class="nb">echo</span><span class="w"> </span>http://<span class="nv">$NODE_IP</span>:<span class="nv">$NODE_SVC_PORT</span>
 </pre></div>
 </div>
@@ -2707,7 +2757,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w">
 <div class="line">下記は、実行例のため実際のコマンド実行結果に読み替えてください。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id73">
-<div class="code-block-caption"><span class="caption-number">リスト 41 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id73" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 41 </span><span class="caption-text">出力結果(例)</span><a class="headerlink" href="#id73" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>*************************
 *<span class="w"> </span>Administrator<span class="w"> </span>Console<span class="w"> </span>*
 *************************
@@ -2772,17 +2822,19 @@ Exastro<span class="w"> </span>install<span class="w"> </span>completion!
 <span class="w">  </span>!!!<span class="w"> </span>Please<span class="w"> </span>save<span class="w"> </span>the<span class="w"> </span>output<span class="w"> </span>ENCRYPT_KEY<span class="w"> </span>carefully.<span class="w"> </span>!!!
 
 <span class="m">3</span>.<span class="w"> </span>Run<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span><span class="nb">command</span><span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>the<span class="w"> </span>application<span class="w"> </span>URL<span class="w"> </span>and<span class="w"> </span>go<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>URL<span class="w"> </span>or<span class="w"> </span>go<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>displayed<span class="w"> </span>URL:
+
+
 <span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">NODE_SVC_PORT</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>services<span class="w"> </span>platform-auth<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.spec.ports[0].nodePort}&quot;</span><span class="k">)</span>
 <span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">NODE_MGT_PORT</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>services<span class="w"> </span>platform-auth<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.spec.ports[1].nodePort}&quot;</span><span class="k">)</span>
 <span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">NODE_IP</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>nodes<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.items[0].status.addresses[0].address}&quot;</span><span class="k">)</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;*************************&quot;</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;* Administrator Console *&quot;</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;*************************&quot;</span>
+<span class="w">  </span><span class="c1"># *************************</span>
+<span class="w">  </span><span class="c1"># * Administrator Console *</span>
+<span class="w">  </span><span class="c1"># *************************</span>
 <span class="w">  </span><span class="nb">echo</span><span class="w"> </span>http://<span class="nv">$NODE_IP</span>:<span class="nv">$NODE_MGT_PORT</span>/auth/
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;*************************&quot;</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;* Service Console       *&quot;</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;*************************&quot;</span>
+
+<span class="w">  </span><span class="c1"># *************************</span>
+<span class="w">  </span><span class="c1"># * Service Console       *</span>
+<span class="w">  </span><span class="c1"># *************************</span>
 <span class="w">  </span><span class="nb">echo</span><span class="w"> </span>http://<span class="nv">$NODE_IP</span>:<span class="nv">$NODE_SVC_PORT</span>
 
 <span class="c1"># Note: You can display this note again by executing the following command.</span>
@@ -2877,14 +2929,14 @@ kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">NODE_SVC_PORT</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>services<span class="w"> </span>platform-auth<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.spec.ports[0].nodePort}&quot;</span><span class="k">)</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">NODE_MGT_PORT</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>services<span class="w"> </span>platform-auth<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.spec.ports[1].nodePort}&quot;</span><span class="k">)</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">NODE_IP</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>nodes<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.items[0].status.addresses[0].address}&quot;</span><span class="k">)</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;*************************&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;* Administrator Console *&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;*************************&quot;</span>
+<span class="c1"># *************************</span>
+<span class="c1"># * Administrator Console *</span>
+<span class="c1"># *************************</span>
 <span class="nb">echo</span><span class="w"> </span>http://<span class="nv">$NODE_IP</span>:<span class="nv">$NODE_MGT_PORT</span>/auth/
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;*************************&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;* Service Console       *&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;*************************&quot;</span>
+
+<span class="c1"># *************************</span>
+<span class="c1"># * Service Console       *</span>
+<span class="c1"># *************************</span>
 <span class="nb">echo</span><span class="w"> </span>http://<span class="nv">$NODE_IP</span>:<span class="nv">$NODE_SVC_PORT</span>
 </pre></div>
 </div>
@@ -2894,7 +2946,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w">
 <div class="line">下記は、実行例のため実際のコマンド実行結果に読み替えてください。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id84">
-<div class="code-block-caption"><span class="caption-number">リスト 51 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id84" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 51 </span><span class="caption-text">出力結果(例)</span><a class="headerlink" href="#id84" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>*************************
 *<span class="w"> </span>Administrator<span class="w"> </span>Console<span class="w"> </span>*
 *************************
@@ -2924,7 +2976,7 @@ http://172.16.20.xxx:30080
 </div></div>
 </section>
 <section id="id15">
-<h3>3. 管理コンソールへのログイン<a class="headerlink" href="#id15" title="この見出しへのパーマリンク">¶</a></h3>
+<h3>1. 管理コンソールへのログイン<a class="headerlink" href="#id15" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">以下の画面が表示された場合、<span class="menuselection">Administration Console</span> を選択して、ログイン画面を開きます。</div>
 </div>
@@ -2957,7 +3009,7 @@ http://172.16.20.xxx:30080
 <div id="articleNavigation">
   <ul>
     <li class="prev"><a href="index.html" title="前のトピックへ"><span>前のトピックへ</span>インストール</a></li>
-    <li class="next"><a href="../configuration/index.html" title="次のトピックへ"><span>次のトピックへ</span>構成・構築ガイド</a></li>
+    <li class="next"><a href="upgrade.html" title="次のトピックへ"><span>次のトピックへ</span>アップグレード</a></li>
   </ul>
 </div>
 
