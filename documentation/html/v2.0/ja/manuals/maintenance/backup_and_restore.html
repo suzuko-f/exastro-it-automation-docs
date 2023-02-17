@@ -153,18 +153,22 @@
   <ul>
 <li><a class="reference internal" href="#">2. データバックアップ・リストア</a><ul>
 <li><a class="reference internal" href="#id2">2.1. 目的</a></li>
-<li><a class="reference internal" href="#id3">2.2. 前提条件</a></li>
-<li><a class="reference internal" href="#id4">2.3. 概要</a></li>
-<li><a class="reference internal" href="#id5">2.4. バックアップ</a><ul>
-<li><a class="reference internal" href="#id6">2.4.1. サービス停止</a></li>
-<li><a class="reference internal" href="#id7">2.4.2. バックアップ</a></li>
-<li><a class="reference internal" href="#id8">2.4.3. サービス再開</a></li>
+<li><a class="reference internal" href="#id3">2.2. 前提条件</a><ul>
+<li><a class="reference internal" href="#id4">2.2.1. 条件</a></li>
+<li><a class="reference internal" href="#id5">2.2.2. 暗号キーのバックアップ</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id9">2.5. リストア</a><ul>
+<li><a class="reference internal" href="#id6">2.3. 概要</a></li>
+<li><a class="reference internal" href="#id7">2.4. バックアップ</a><ul>
+<li><a class="reference internal" href="#id8">2.4.1. サービス停止</a></li>
+<li><a class="reference internal" href="#id9">2.4.2. バックアップ</a></li>
+<li><a class="reference internal" href="#id10">2.4.3. サービス再開</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id11">2.5. リストア</a><ul>
 <li><a class="reference internal" href="#check-replica-count-restore">2.5.1. サービス停止</a></li>
-<li><a class="reference internal" href="#id11">2.5.2. リストア</a></li>
-<li><a class="reference internal" href="#id12">2.5.3. サービス再開</a></li>
+<li><a class="reference internal" href="#id13">2.5.2. リストア</a></li>
+<li><a class="reference internal" href="#id14">2.5.3. サービス再開</a></li>
 </ul>
 </li>
 </ul>
@@ -204,30 +208,129 @@
 <section id="id3">
 <h2><span class="section-number">2.2. </span>前提条件<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
-<div class="line">本頁で紹介するバックアップ・リストア手順は下記の条件を満たしている必要があります。</div>
+<div class="line">本頁で紹介するバックアップ・リストア手順では、下記の前提条件を満たしている必要があります。</div>
+</div>
+<section id="id4">
+<h3><span class="section-number">2.2.1. </span>条件<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h3>
+<ul>
+<li><div class="line-block">
+<div class="line">下記のコマンドが利用可能なこと</div>
 </div>
 <ul class="simple">
-<li><p>条件</p>
-<ul>
-<li><p>下記のコマンドが利用可能なこと</p>
-<ul>
 <li><p><strong class="command">tar</strong></p></li>
 <li><p><strong class="command">kubectl</strong></p></li>
 </ul>
 </li>
-<li><p>作業環境のサーバで充分なディスクの空き容量があること</p></li>
-</ul>
+<li><div class="line-block">
+<div class="line">作業環境のサーバで充分なディスクの空き容量があること</div>
+</div>
 </li>
 </ul>
 </section>
-<section id="id4">
-<h2><span class="section-number">2.3. </span>概要<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="id5">
+<h3><span class="section-number">2.2.2. </span>暗号キーのバックアップ<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">Exastro システムのパスワードや認証情報といった機密情報はすべて暗号化されています。</div>
+<div class="line">必ず、下記で取得した暗号化キーをバックアップして、適切に保管してください。</div>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">危険</p>
+<div class="line-block">
+<div class="line">暗号化キーを紛失した場合、バックアップデータからシステムを復旧した際にデータの復号ができなくなります。</div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-number">リスト 2.1 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id15" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exastro IT Automation ENCRYPT_KEY</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>ita-secret-ita-global<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.data.ENCRYPT_KEY}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-number">リスト 2.2 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id16" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">JnIoXzJtPic2MXFqRl1yI1chMj8hWzQrNypmVn41Pk8</span><span class="o">=</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-number">リスト 2.3 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id17" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exastro Platform ENCRYPT_KEY</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>platform-secret-pf-global<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.data.ENCRYPT_KEY}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-number">リスト 2.4 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id18" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">bHFZe2VEVVM2PmFeQDMqNG4oZT4lTlglLjJJekxBTHE</span><span class="o">=</span>
+</pre></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line">取得したキーを exastro.yaml の 「ENCRYPT_KEY」に格納してください。</div>
+</div>
+<ul>
+<li><div class="line-block">
+<div class="line">Exastro IT Automation ENCRYPT_KEY</div>
+</div>
+</li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>itaGlobalDefinition:
+<span class="w">  </span>name:<span class="w"> </span>ita-global
+<span class="w">  </span>enabled:<span class="w"> </span><span class="nb">true</span>
+<span class="w">  </span>image:
+<span class="w">    </span>registry:<span class="w"> </span><span class="s2">&quot;docker.io&quot;</span>
+<span class="w">    </span>organization:<span class="w"> </span>exastro
+<span class="w">    </span>package:<span class="w"> </span>exastro-it-automation
+<span class="w">  </span>config:
+<span class="w">    </span>DEFAULT_LANGUAGE:<span class="w"> </span><span class="s2">&quot;ja&quot;</span>
+<span class="w">    </span>LANGUAGE:<span class="w"> </span><span class="s2">&quot;en&quot;</span>
+<span class="w">    </span>CONTAINER_BASE:<span class="w"> </span><span class="s2">&quot;kubernetes&quot;</span>
+<span class="w">    </span>TZ:<span class="w"> </span><span class="s2">&quot;Asia/Tokyo&quot;</span>
+<span class="w">    </span>STORAGEPATH:<span class="w"> </span><span class="s2">&quot;/storage/&quot;</span>
+<span class="w">  </span>secret:
+<span class="w">    </span>ENCRYPT_KEY:<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w">　</span><span class="c1"># 取得した Exastro IT Automation ENCRYPT_KEY を入力</span>
+</pre></div>
+</div>
+<ul>
+<li><div class="line-block">
+<div class="line">Exastro Platform ENCRYPT_KEY</div>
+</div>
+</li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pfGlobalDefinition:
+<span class="w">  </span>name:<span class="w"> </span>pf-global
+<span class="w">  </span>enabled:<span class="w"> </span><span class="nb">true</span>
+<span class="w">  </span>image:
+<span class="w">    </span>registry:<span class="w"> </span><span class="s2">&quot;docker.io&quot;</span>
+<span class="w">    </span>organization:<span class="w"> </span>exastro
+<span class="w">    </span>package:<span class="w"> </span>exastro-platform
+<span class="w">  </span>config:
+<span class="w">    </span>DEFAULT_LANGUAGE:<span class="w"> </span><span class="s2">&quot;ja&quot;</span>
+<span class="w">    </span>LANGUAGE:<span class="w"> </span><span class="s2">&quot;en&quot;</span>
+<span class="w">    </span>TZ:<span class="w"> </span><span class="s2">&quot;Asia/Tokyo&quot;</span>
+<span class="w">    </span>PYTHONIOENCODING:<span class="w"> </span>utf-8
+<span class="w">    </span>PLATFORM_API_PROTOCOL:<span class="w"> </span><span class="s2">&quot;http&quot;</span>
+<span class="w">    </span>PLATFORM_API_HOST:<span class="w"> </span><span class="s2">&quot;platform-api&quot;</span>
+<span class="w">    </span>PLATFORM_API_PORT:<span class="w"> </span><span class="s2">&quot;8000&quot;</span>
+<span class="w">    </span>PLATFORM_WEB_PROTOCOL:<span class="w"> </span><span class="s2">&quot;http&quot;</span>
+<span class="w">    </span>PLATFORM_WEB_HOST:<span class="w"> </span><span class="s2">&quot;platform-web&quot;</span>
+<span class="w">    </span>PLATFORM_WEB_PORT:<span class="w"> </span><span class="s2">&quot;8000&quot;</span>
+<span class="w">  </span>secret:
+<span class="w">    </span>ENCRYPT_KEY:<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w">  </span><span class="c1"># 取得した Exastro Platform ENCRYPT_KEY を入力</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id6">
+<h2><span class="section-number">2.3. </span>概要<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">バックアップ・リストア対象となるデータは下記の3つです。</div>
 </div>
-<ul class="simple">
-<li><p>バックアップ・リストア対象</p>
 <ul>
+<li><div class="line-block">
+<div class="line">バックアップ・リストア対象</div>
+</div>
+<ul class="simple">
 <li><p>Exastro Platform のデータベース</p></li>
 <li><p>Exastro IT Automation のデータベース</p></li>
 <li><p>Exastro IT Automation の共有ファイル</p></li>
@@ -239,7 +342,7 @@
 </div>
 <div class="line-block">
 <div class="line">作業の流れは、まず、ユーザからのデータの書き込みを制限するために、リバースプロキシを停止します。</div>
-<div class="line">次に、バックヤード処理を停止したら、データのバックアップを実施します。</div>
+<div class="line">次にバックヤード処理を停止し、データのバックアップを実施します。</div>
 <div class="line">最後に、作業前の数に Pod 数を戻します。</div>
 </div>
 <div class="line-block">
@@ -252,17 +355,17 @@
 </div>
 </div>
 </section>
-<section id="id5">
-<h2><span class="section-number">2.4. </span>バックアップ<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h2>
-<section id="id6">
-<h3><span class="section-number">2.4.1. </span>サービス停止<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id7">
+<h2><span class="section-number">2.4. </span>バックアップ<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="id8">
+<h3><span class="section-number">2.4.1. </span>サービス停止<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h3>
 <ol class="arabic">
 <li><p>Pod 起動数の確認</p>
 <div class="line-block">
 <div class="line">作業前の Pod 起動数の確認をし、状態を記録します。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id13">
-<div class="code-block-caption"><span class="caption-number">リスト 2.1 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id13" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-number">リスト 2.5 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id19" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">RS_AE</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-by-ansible-execute<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>-n<span class="w"> </span>exastro<span class="sb">`</span>
 <span class="nv">RS_ALRV</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-by-ansible-legacy-role-vars-listup<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>-n<span class="w"> </span>exastro<span class="sb">`</span>
 <span class="nv">RS_ATS</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-by-ansible-towermaster-sync<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>-n<span class="w"> </span>exastro<span class="sb">`</span>
@@ -277,8 +380,8 @@
 <div class="line-block">
 <div class="line">リバースプロキシ (platform-auth) の Pod 起動数を 0 に変更し、エンドユーザーからのアクセスを制限します。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id14">
-<div class="code-block-caption"><span class="caption-number">リスト 2.2 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id14" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-number">リスト 2.6 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id20" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>platform-auth<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
 </pre></div>
 </div>
@@ -288,8 +391,8 @@
 <div class="line-block">
 <div class="line">バックヤード処理 (ita-by-***) の Pod 起動数を 0 に変更し、データベースの更新を停止します。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id15">
-<div class="code-block-caption"><span class="caption-number">リスト 2.3 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id15" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-number">リスト 2.7 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id21" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-ansible-execute<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
 <span class="linenos">2</span>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-ansible-legacy-role-vars-listup<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
 <span class="linenos">3</span>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-ansible-towermaster-sync<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
@@ -303,14 +406,14 @@
 <div class="line-block">
 <div class="line">上記で停止した対象の Pod 数が 0 になっていることを確認</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-number">リスト 2.4 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id16" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-number">リスト 2.8 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id22" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>get<span class="w"> </span>deployment<span class="w"> </span>-n<span class="w"> </span>exastro
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-number">リスト 2.5 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id17" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id23">
+<div class="code-block-caption"><span class="caption-number">リスト 2.9 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id23" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME<span class="w">                                     </span>READY<span class="w">   </span>UP-TO-DATE<span class="w">   </span>AVAILABLE<span class="w">   </span>AGE
 mariadb<span class="w">                                  </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>3h41m
 ita-web-server<span class="w">                           </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>3h41m
@@ -331,8 +434,8 @@ platform-auth<span class="w">                            </span><span class="m">
 </li>
 </ol>
 </section>
-<section id="id7">
-<h3><span class="section-number">2.4.2. </span>バックアップ<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id9">
+<h3><span class="section-number">2.4.2. </span>バックアップ<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">Exastro システム内で、Exastro Platform と Exastro IT Automation でデータベースを共有するか、分離するかによって手順が異なります。</div>
 </div>
@@ -341,8 +444,8 @@ platform-auth<span class="w">                            </span><span class="m">
 <div class="line-block">
 <div class="line">バックアップ作業用コンテナの作成をします。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-number">リスト 2.6 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id18" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id24">
+<div class="code-block-caption"><span class="caption-number">リスト 2.10 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id24" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>cat<span class="w"> </span><span class="s">&lt;&lt;_EOF_ | kubectl apply -f - -n exastro</span>
 <span class="linenos"> 2</span><span class="s">apiVersion: v1</span>
 <span class="linenos"> 3</span><span class="s">kind: Pod</span>
@@ -446,8 +549,8 @@ platform-auth<span class="w">                            </span><span class="m">
 <div class="line">Exastro Platform と Exastro IT Automation でデータベースサーバを共有するか、分離するかによって手順が異なります。</div>
 </div>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" name="44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" role="tab" tabindex="0">データベースサーバを共有</button><button aria-controls="panel-0-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" name="44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" role="tab" tabindex="-1">データベースサーバを分離</button></div><div aria-labelledby="tab-0-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" class="sphinx-tabs-panel group-tab" id="panel-0-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" name="44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id19">
-<div class="code-block-caption"><span class="caption-number">リスト 2.7 </span><span class="caption-text">Exastro 用データベースバックアップコマンド</span><a class="headerlink" href="#id19" title="このコードへのパーマリンク">¶</a></div>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" name="44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" role="tab" tabindex="0">データベースサーバを共有</button><button aria-controls="panel-0-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" name="44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" role="tab" tabindex="-1">データベースサーバを分離</button></div><div aria-labelledby="tab-0-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" class="sphinx-tabs-panel group-tab" id="panel-0-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" name="44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id25">
+<div class="code-block-caption"><span class="caption-number">リスト 2.11 </span><span class="caption-text">Exastro 用データベースバックアップコマンド</span><a class="headerlink" href="#id25" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># アプリケーション</span>
 kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>exastro-maintenance<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;mysqldump -h ${PF_DB_HOST} -P ${PF_DB_PORT} -u ${PF_DB_ADMIN_USER} -p${PF_DB_ADMIN_PASSWORD} --all-databases --add-drop-table&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>&gt;<span class="w"> </span>exastro_mysqldump_platform_db_<span class="sb">`</span>date<span class="w"> </span>+<span class="s2">&quot;%Y%m%d-%H%M%S&quot;</span><span class="sb">`</span>.sql.gz
 
@@ -456,8 +559,8 @@ kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </sp
 </pre></div>
 </div>
 </div>
-</div><div aria-labelledby="tab-0-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" name="44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id20">
-<div class="code-block-caption"><span class="caption-number">リスト 2.8 </span><span class="caption-text">Exastro Platform 用データベースバックアップコマンド</span><a class="headerlink" href="#id20" title="このコードへのパーマリンク">¶</a></div>
+</div><div aria-labelledby="tab-0-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" name="44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id26">
+<div class="code-block-caption"><span class="caption-number">リスト 2.12 </span><span class="caption-text">Exastro Platform 用データベースバックアップコマンド</span><a class="headerlink" href="#id26" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># アプリケーション</span>
 kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>exastro-maintenance<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;mysqldump -h ${PF_DB_HOST} -P ${PF_DB_PORT} -u ${PF_DB_ADMIN_USER} -p${PF_DB_ADMIN_PASSWORD} --all-databases --add-drop-table&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>&gt;<span class="w"> </span>exastro_mysqldump_platform_db_<span class="sb">`</span>date<span class="w"> </span>+<span class="s2">&quot;%Y%m%d-%H%M%S&quot;</span><span class="sb">`</span>.sql.gz
 
@@ -466,8 +569,8 @@ kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </sp
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id21">
-<div class="code-block-caption"><span class="caption-number">リスト 2.9 </span><span class="caption-text">Exastro IT Automation 用データベースバックアップコマンド</span><a class="headerlink" href="#id21" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id27">
+<div class="code-block-caption"><span class="caption-number">リスト 2.13 </span><span class="caption-text">Exastro IT Automation 用データベースバックアップコマンド</span><a class="headerlink" href="#id27" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># アプリケーション</span>
 kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>exastro-maintenance<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;mysqldump -h ${ITA_DB_HOST} -P ${ITA_DB_PORT} -u ${ITA_DB_ADMIN_USER} -p${ITA_DB_ADMIN_PASSWORD} --all-databases --add-drop-table&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>&gt;<span class="w"> </span>exastro_mysqldump_ita_db_<span class="sb">`</span>date<span class="w"> </span>+<span class="s2">&quot;%Y%m%d-%H%M%S&quot;</span><span class="sb">`</span>.sql.gz
 
@@ -482,8 +585,8 @@ kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </sp
 <div class="line-block">
 <div class="line">Exastro IT Automation のファイルのバックアップを取得します。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id22">
-<div class="code-block-caption"><span class="caption-number">リスト 2.10 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id22" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id28">
+<div class="code-block-caption"><span class="caption-number">リスト 2.14 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id28" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-i<span class="w"> </span>exastro-maintenance<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;tar zcvf - ${ITA_STORAGEPATH}&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>exastro_storage_backup_ita_<span class="sb">`</span>date<span class="w"> </span>+<span class="s2">&quot;%Y%m%d-%H%M%S&quot;</span><span class="sb">`</span>.tar.gz
 </pre></div>
 </div>
@@ -493,8 +596,8 @@ kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </sp
 <div class="line-block">
 <div class="line">バックアップ作業用コンテナの作成をします。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id23">
-<div class="code-block-caption"><span class="caption-number">リスト 2.11 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id23" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id29">
+<div class="code-block-caption"><span class="caption-number">リスト 2.15 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id29" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>delete<span class="w"> </span>pod<span class="w"> </span>exastro-maintenance<span class="w"> </span>-n<span class="w"> </span>exastro
 </pre></div>
 </div>
@@ -502,15 +605,15 @@ kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </sp
 </li>
 </ol>
 </section>
-<section id="id8">
-<h3><span class="section-number">2.4.3. </span>サービス再開<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id10">
+<h3><span class="section-number">2.4.3. </span>サービス再開<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">¶</a></h3>
 <ol class="arabic">
 <li><p>サービス再開</p>
 <div class="line-block">
 <div class="line">サービス停止時に取得した各 Deployment の Pod 起動数を元に戻します。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id24">
-<div class="code-block-caption"><span class="caption-number">リスト 2.12 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id24" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id30">
+<div class="code-block-caption"><span class="caption-number">リスト 2.16 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id30" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>kubectl scale deployment ita-by-ansible-execute -n exastro --replicas=${RS_AE}
 <span class="linenos">2</span>kubectl scale deployment ita-by-ansible-legacy-role-vars-listup -n exastro --replicas=${RS_ALRV}
 <span class="linenos">3</span>kubectl scale deployment ita-by-ansible-towermaster-sync -n exastro --replicas=${RS_ATS}
@@ -525,14 +628,14 @@ kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </sp
 <div class="line-block">
 <div class="line">上記で起動した対象の Pod 数が元に戻りすべて <kbd class="kbd docutils literal notranslate">READY</kbd> になっていることを確認</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id25">
-<div class="code-block-caption"><span class="caption-number">リスト 2.13 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id25" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id31">
+<div class="code-block-caption"><span class="caption-number">リスト 2.17 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id31" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>get<span class="w"> </span>deployment<span class="w"> </span>-n<span class="w"> </span>exastro
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id26">
-<div class="code-block-caption"><span class="caption-number">リスト 2.14 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id26" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id32">
+<div class="code-block-caption"><span class="caption-number">リスト 2.18 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id32" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME<span class="w">                                     </span>READY<span class="w">   </span>UP-TO-DATE<span class="w">   </span>AVAILABLE<span class="w">   </span>AGE
 mariadb<span class="w">                                  </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>3h7m
 ita-web-server<span class="w">                           </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>3h7m
@@ -554,17 +657,17 @@ ita-by-menu-create<span class="w">                       </span><span class="m">
 </ol>
 </section>
 </section>
-<section id="id9">
-<h2><span class="section-number">2.5. </span>リストア<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="id11">
+<h2><span class="section-number">2.5. </span>リストア<a class="headerlink" href="#id11" title="この見出しへのパーマリンク">¶</a></h2>
 <section id="check-replica-count-restore">
-<span id="id10"></span><h3><span class="section-number">2.5.1. </span>サービス停止<a class="headerlink" href="#check-replica-count-restore" title="この見出しへのパーマリンク">¶</a></h3>
+<span id="id12"></span><h3><span class="section-number">2.5.1. </span>サービス停止<a class="headerlink" href="#check-replica-count-restore" title="この見出しへのパーマリンク">¶</a></h3>
 <ol class="arabic">
 <li><p>Pod 起動数の確認</p>
 <div class="line-block">
 <div class="line">作業前の Pod 起動数の確認をし、状態を記録します。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id27">
-<div class="code-block-caption"><span class="caption-number">リスト 2.15 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id27" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id33">
+<div class="code-block-caption"><span class="caption-number">リスト 2.19 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id33" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">RS_AE</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-by-ansible-execute<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>-n<span class="w"> </span>exastro<span class="sb">`</span>
 <span class="nv">RS_ALRV</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-by-ansible-legacy-role-vars-listup<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>-n<span class="w"> </span>exastro<span class="sb">`</span>
 <span class="nv">RS_ATS</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-by-ansible-towermaster-sync<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>-n<span class="w"> </span>exastro<span class="sb">`</span>
@@ -579,8 +682,8 @@ ita-by-menu-create<span class="w">                       </span><span class="m">
 <div class="line-block">
 <div class="line">リバースプロキシ (platform-auth) の Pod 起動数を 0 に変更し、エンドユーザーからのアクセスを制限します。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id28">
-<div class="code-block-caption"><span class="caption-number">リスト 2.16 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id28" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id34">
+<div class="code-block-caption"><span class="caption-number">リスト 2.20 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id34" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>platform-auth<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
 </pre></div>
 </div>
@@ -590,8 +693,8 @@ ita-by-menu-create<span class="w">                       </span><span class="m">
 <div class="line-block">
 <div class="line">バックヤード処理 (ita-by-***) の Pod 起動数を 0 に変更し、データベースの更新を停止します。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id29">
-<div class="code-block-caption"><span class="caption-number">リスト 2.17 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id29" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id35">
+<div class="code-block-caption"><span class="caption-number">リスト 2.21 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id35" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-ansible-execute<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
 <span class="linenos">2</span>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-ansible-legacy-role-vars-listup<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
 <span class="linenos">3</span>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-ansible-towermaster-sync<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
@@ -605,14 +708,14 @@ ita-by-menu-create<span class="w">                       </span><span class="m">
 <div class="line-block">
 <div class="line">上記で停止した対象の Pod 数が 0 になっていることを確認</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id30">
-<div class="code-block-caption"><span class="caption-number">リスト 2.18 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id30" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id36">
+<div class="code-block-caption"><span class="caption-number">リスト 2.22 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id36" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>get<span class="w"> </span>deployment<span class="w"> </span>-n<span class="w"> </span>exastro
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id31">
-<div class="code-block-caption"><span class="caption-number">リスト 2.19 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id31" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id37">
+<div class="code-block-caption"><span class="caption-number">リスト 2.23 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id37" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME<span class="w">                                     </span>READY<span class="w">   </span>UP-TO-DATE<span class="w">   </span>AVAILABLE<span class="w">   </span>AGE
 mariadb<span class="w">                                  </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>3h41m
 ita-web-server<span class="w">                           </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>3h41m
@@ -633,8 +736,8 @@ platform-auth<span class="w">                            </span><span class="m">
 </li>
 </ol>
 </section>
-<section id="id11">
-<h3><span class="section-number">2.5.2. </span>リストア<a class="headerlink" href="#id11" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id13">
+<h3><span class="section-number">2.5.2. </span>リストア<a class="headerlink" href="#id13" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">Exastro システム内で、Exastro Platform と Exastro IT Automation でデータベースを共有するか、分離するかによって手順が異なります。</div>
 </div>
@@ -643,8 +746,8 @@ platform-auth<span class="w">                            </span><span class="m">
 <div class="line-block">
 <div class="line">リストア作業用コンテナの作成をします。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id32">
-<div class="code-block-caption"><span class="caption-number">リスト 2.20 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id32" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id38">
+<div class="code-block-caption"><span class="caption-number">リスト 2.24 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id38" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>cat<span class="w"> </span><span class="s">&lt;&lt;_EOF_ | kubectl apply -f - -n exastro</span>
 <span class="linenos"> 2</span><span class="s">apiVersion: v1</span>
 <span class="linenos"> 3</span><span class="s">kind: Pod</span>
@@ -748,8 +851,8 @@ platform-auth<span class="w">                            </span><span class="m">
 <div class="line">Exastro Platform と Exastro IT Automation でデータベースサーバを共有するか、分離するかによって手順が異なります。</div>
 </div>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" name="44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" role="tab" tabindex="0">データベースサーバを共有</button><button aria-controls="panel-1-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" name="44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" role="tab" tabindex="-1">データベースサーバを分離</button></div><div aria-labelledby="tab-1-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" class="sphinx-tabs-panel group-tab" id="panel-1-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" name="44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id33">
-<div class="code-block-caption"><span class="caption-number">リスト 2.21 </span><span class="caption-text">Exastro 用データベースリストアコマンド</span><a class="headerlink" href="#id33" title="このコードへのパーマリンク">¶</a></div>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" name="44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" role="tab" tabindex="0">データベースサーバを共有</button><button aria-controls="panel-1-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" name="44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" role="tab" tabindex="-1">データベースサーバを分離</button></div><div aria-labelledby="tab-1-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" class="sphinx-tabs-panel group-tab" id="panel-1-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" name="44OH44O844K/44OZ44O844K544K144O844OQ44KS5YWx5pyJ" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id39">
+<div class="code-block-caption"><span class="caption-number">リスト 2.25 </span><span class="caption-text">Exastro 用データベースリストアコマンド</span><a class="headerlink" href="#id39" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ユーザ</span>
 gzip<span class="w"> </span>-dc<span class="w"> </span>exastro_mysqldump_platform_user_YYYYMMDD-HHmmss.sql.gz<span class="w"> </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-i<span class="w"> </span>exastro-maintenance<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;mysql -h ${PF_DB_HOST} -P ${PF_DB_PORT} -u ${PF_DB_ADMIN_USER} -p${PF_DB_ADMIN_PASSWORD} mysql&#39;</span>
 
@@ -758,8 +861,8 @@ gzip<span class="w"> </span>-dc<span class="w"> </span>exastro_mysqldump_platfor
 </pre></div>
 </div>
 </div>
-</div><div aria-labelledby="tab-1-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" name="44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id34">
-<div class="code-block-caption"><span class="caption-number">リスト 2.22 </span><span class="caption-text">Exastro Platform 用データベースリストアコマンド</span><a class="headerlink" href="#id34" title="このコードへのパーマリンク">¶</a></div>
+</div><div aria-labelledby="tab-1-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" name="44OH44O844K/44OZ44O844K544K144O844OQ44KS5YiG6Zui" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id40">
+<div class="code-block-caption"><span class="caption-number">リスト 2.26 </span><span class="caption-text">Exastro Platform 用データベースリストアコマンド</span><a class="headerlink" href="#id40" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ユーザ</span>
 gzip<span class="w"> </span>-dc<span class="w"> </span>exastro_mysqldump_platform_user_YYYYMMDD-HHmmss.sql.gz<span class="w"> </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-i<span class="w"> </span>exastro-maintenance<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;mysql -h ${PF_DB_HOST} -P ${PF_DB_PORT} -u ${PF_DB_ADMIN_USER} -p${PF_DB_ADMIN_PASSWORD} mysql&#39;</span>
 
@@ -768,8 +871,8 @@ gzip<span class="w"> </span>-dc<span class="w"> </span>exastro_mysqldump_platfor
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id35">
-<div class="code-block-caption"><span class="caption-number">リスト 2.23 </span><span class="caption-text">Exastro IT Automation 用データベースリストアコマンド</span><a class="headerlink" href="#id35" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id41">
+<div class="code-block-caption"><span class="caption-number">リスト 2.27 </span><span class="caption-text">Exastro IT Automation 用データベースリストアコマンド</span><a class="headerlink" href="#id41" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ユーザ</span>
 gzip<span class="w"> </span>-dc<span class="w"> </span>exastro_mysqldump_ita_user_YYYYMMDD-HHmmss.sql.gz<span class="w"> </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-i<span class="w"> </span>exastro-maintenance<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;mysql -h ${ITA_DB_HOST} -P ${ITA_DB_PORT} -u ${ITA_DB_ADMIN_USER} -p${ITA_DB_ADMIN_PASSWORD} mysql&#39;</span>
 
@@ -784,8 +887,8 @@ gzip<span class="w"> </span>-dc<span class="w"> </span>exastro_mysqldump_ita_db_
 <div class="line-block">
 <div class="line">Exastro IT Automation のファイルのバックアップを取得します。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id36">
-<div class="code-block-caption"><span class="caption-number">リスト 2.24 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id36" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id42">
+<div class="code-block-caption"><span class="caption-number">リスト 2.28 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id42" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-i<span class="w"> </span>exastro-maintenance<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;tar zxvf - -C ${ITA_STORAGEPATH}&#39;</span><span class="w"> </span>&lt;<span class="w"> </span>exastro_storage_backup_ita_YYYYMMDD-HHmmss.tar.gz
 </pre></div>
 </div>
@@ -795,8 +898,8 @@ gzip<span class="w"> </span>-dc<span class="w"> </span>exastro_mysqldump_ita_db_
 <div class="line-block">
 <div class="line">バックアップ作業用コンテナの作成をします。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id37">
-<div class="code-block-caption"><span class="caption-number">リスト 2.25 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id37" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id43">
+<div class="code-block-caption"><span class="caption-number">リスト 2.29 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id43" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>delete<span class="w"> </span>pod<span class="w"> </span>exastro-maintenance<span class="w"> </span>-n<span class="w"> </span>exastro
 </pre></div>
 </div>
@@ -804,15 +907,15 @@ gzip<span class="w"> </span>-dc<span class="w"> </span>exastro_mysqldump_ita_db_
 </li>
 </ol>
 </section>
-<section id="id12">
-<h3><span class="section-number">2.5.3. </span>サービス再開<a class="headerlink" href="#id12" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id14">
+<h3><span class="section-number">2.5.3. </span>サービス再開<a class="headerlink" href="#id14" title="この見出しへのパーマリンク">¶</a></h3>
 <ol class="arabic">
 <li><p>サービス再開</p>
 <div class="line-block">
 <div class="line">サービス停止時に取得した各 Deployment の Pod 起動数を元に戻します。</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id38">
-<div class="code-block-caption"><span class="caption-number">リスト 2.26 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id38" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id44">
+<div class="code-block-caption"><span class="caption-number">リスト 2.30 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id44" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>kubectl scale deployment ita-by-ansible-execute -n exastro --replicas=${RS_AE}
 <span class="linenos">2</span>kubectl scale deployment ita-by-ansible-legacy-role-vars-listup -n exastro --replicas=${RS_ALRV}
 <span class="linenos">3</span>kubectl scale deployment ita-by-ansible-towermaster-sync -n exastro --replicas=${RS_ATS}
@@ -827,14 +930,14 @@ gzip<span class="w"> </span>-dc<span class="w"> </span>exastro_mysqldump_ita_db_
 <div class="line-block">
 <div class="line">上記で起動した対象の Pod 数が元に戻りすべて <kbd class="kbd docutils literal notranslate">READY</kbd> になっていることを確認</div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id39">
-<div class="code-block-caption"><span class="caption-number">リスト 2.27 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id39" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id45">
+<div class="code-block-caption"><span class="caption-number">リスト 2.31 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id45" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>get<span class="w"> </span>deployment<span class="w"> </span>-n<span class="w"> </span>exastro
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id40">
-<div class="code-block-caption"><span class="caption-number">リスト 2.28 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id40" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id46">
+<div class="code-block-caption"><span class="caption-number">リスト 2.32 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id46" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME<span class="w">                                     </span>READY<span class="w">   </span>UP-TO-DATE<span class="w">   </span>AVAILABLE<span class="w">   </span>AGE
 mariadb<span class="w">                                  </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>3h7m
 ita-web-server<span class="w">                           </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>3h7m
